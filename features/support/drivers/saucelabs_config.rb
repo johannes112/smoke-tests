@@ -1,22 +1,20 @@
-module Sauclabs_custom
-    if ENV['DRIVER'] == 'saucelabs'
-      require 'capybara/cucumber'
-      require "sauce"
-      require "sauce/capybara"
-      require "sauce/cucumber"
+if ENV['DRIVER'] == 'saucelabs'
+  require 'capybara/cucumber'
+  require 'sauce/capybara'
+  module Saucelabs_config
+    Capybara.default_selector = :css
+    Capybara.default_driver = :sauce
+    Capybara.ignore_hidden_elements = true
+    Capybara.default_max_wait_time= 30
     
-      Capybara.default_driver = :sauce
-      # Set up configuration
-      Sauce.config do |c|
-        c[:browsers] = [ 
-         ["Windows 8", "Internet Explorer", "10"],             
-         ["Windows 7", "Firefox", "20"],
-         ["OS X 10.8", "Safari", "6"],                         
-         ["Linux", "Chrome", nil]          
-         ]
-        end
-      at_exit do
-          Capybara.default_driver = :selenium
-      end
+    Sauce.config do |config|
+      config[:name] = "Cucumber tests:"
+      config['screen-resolution'] = "1280x960"
+      config[:start_tunnel] = false
+      config[:browsers] = [
+        ["Windows 7", "Firefox", "40"],
+        #["Windows 8", "Internet Explorer", "10"]
+        ]
     end
+  end
 end
