@@ -1,0 +1,101 @@
+[
+  {
+    "uri": "features/base_features/search.feature",
+    "id": "search",
+    "keyword": "Feature",
+    "name": "search",
+    "description": "    As a customer\n    i will be able to search for a specific product",
+    "line": 3,
+    "tags": [
+      {
+        "name": "@search",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "search;",
+        "keyword": "Scenario",
+        "name": "",
+        "description": "",
+        "line": 8,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@search",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23136
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34654
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website of vega",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/search.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10755021432
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am for an product by entering the sku in the searchfield",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/search.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4709392510
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/search.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 516930310
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 628764177
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
