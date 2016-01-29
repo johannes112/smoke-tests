@@ -1,0 +1,27 @@
+module MyWorld
+  
+  def settings
+    @settings ||= Settings.new
+  end
+  
+  def article
+  	@article ||= Article.new
+  end
+  
+  def user
+    @user ||= User.new
+  end
+
+  def export
+    @export ||= Export.new
+  end
+  
+  def printValue(sym, value)
+    var_name  = sym.to_s
+    #puts "var_name:#{var_name}"
+    var_value = eval(var_name, value)
+    puts "- set #{var_name} = #{var_value.inspect}"
+  end
+end
+
+World(MyWorld)

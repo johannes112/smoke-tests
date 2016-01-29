@@ -15,6 +15,9 @@ TAG=${7}
 
 #export (for saucelabs variables)
 export DRIVER
+export SYSTEM
+export SHOP
+export COUNTRY
 export SAUCE_USERNAME
 export SAUCE_ACCESS_KEY
 
@@ -31,10 +34,14 @@ generate_output="-f pretty -f json -o output/output.json"
 folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $default_support_folder_path"
 config_base="$generate_output $folder_structure_config $tag" #$htaccess_access $magento_config 
 
-echo "parameter_config:"$parameter_config
-echo "sauce_config:"$sauce_config
-echo "tag:"$tag
-echo $config_base
+echo "DRIVER:"$DRIVER
+echo "SYSTEM:"$SYSTEM
+echo "SHOP:"$SHOP
+echo "COUNTRY:"$COUNTRY
+# echo "parameter_config:"$parameter_config
+# echo "sauce_config:"$sauce_config
+# echo "tag:"$tag
+# echo $config_base
 cucumber $config_base 
 #cucumber -t ${TAG}
 #sh run_cucumber.sh saucelabs <sauce_username> <sauce_access_key> @search

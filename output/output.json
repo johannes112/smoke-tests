@@ -33,7 +33,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23136
+              "duration": 25589
             }
           },
           {
@@ -42,7 +42,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34654
+              "duration": 36684
             }
           }
         ],
@@ -56,19 +56,22 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10755021432
+              "duration": 10395108000
             }
           },
           {
             "keyword": "When ",
             "name": "I am for an product by entering the sku in the searchfield",
             "line": 10,
+            "output": [
+              "- set sku = \"21782\""
+            ],
             "match": {
-              "location": "features/step_definitions/search.rb:13"
+              "location": "features/step_definitions/search.rb:14"
             },
             "result": {
               "status": "passed",
-              "duration": 4709392510
+              "duration": 5363414388
             }
           },
           {
@@ -76,22 +79,31 @@
             "name": "I should be on the detailsite of the related product",
             "line": 11,
             "match": {
-              "location": "features/step_definitions/search.rb:27"
+              "location": "features/step_definitions/search.rb:32"
             },
             "result": {
               "status": "passed",
-              "duration": 516930310
+              "duration": 526419127
             }
           }
         ],
         "after": [
           {
             "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28507
+            }
+          },
+          {
+            "match": {
               "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
             },
             "result": {
               "status": "passed",
-              "duration": 628764177
+              "duration": 646667944
             }
           }
         ]

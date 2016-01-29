@@ -1,6 +1,7 @@
 Given(/^I am on the website of vega$/) do
   #variables:path
-  website_url='https://www.em-group.com/'#'http://www.vega-direct.com/'
+  website_url = settings.urlHttps
+  #'https://www.em-group.com/'#'http://www.vega-direct.com/'
   
   #actions
   visit(website_url)
@@ -12,14 +13,18 @@ end
 
 When(/^I am for an product by entering the sku in the searchfield$/) do
   #variables:values  
-  search_productsku='21782'#'93876'
+  sku = article.sku
+  #puts "sku: #{sku}"
+  printValue(:sku, binding)
+  
+  #search_productsku='21782'#'93876'
   
   #variables:path
   search_searchfield_path='li.navigation--entry.entry--search > form > input'#'#search'
   search_searchbutton_path='li.navigation--entry.entry--search > form > button'#'#search_mini_form > div > button'
 
   #actions
-  find(search_searchfield_path).set(search_productsku)
+  find(search_searchfield_path).set(sku)
   search_searchbutton = page.find(search_searchbutton_path)
   search_searchbutton.click()
 end
