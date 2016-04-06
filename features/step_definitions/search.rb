@@ -1,7 +1,7 @@
-Given(/^I am on the website of vega$/) do
+Given(/^I am on the website$/) do
   #variables:path
   website_url = settings.urlHttps
-  #'https://www.em-group.com/'#'http://www.vega-direct.com/'
+  puts "go to #{website_url}"
   
   #actions
   visit(website_url)
@@ -14,7 +14,6 @@ end
 When(/^I am for an product by entering the sku in the searchfield$/) do
   #variables:values  
   sku = article.sku
-  #puts "sku: #{sku}"
   printValue(:sku, binding)
   
   #search_productsku='21782'#'93876'
@@ -31,7 +30,8 @@ end
 
 Then(/^I should be on the detailsite of the related product$/) do
   #variables:value
-  search_product_name='Salad' #'Loungetische'
+  name = article.name
+  search_product_name = name
   
   #variables:path
   search_product_name_path='body > div.page-wrap > section > div > div.content--wrapper > div > header > div > h1'#div.product-name > h1'

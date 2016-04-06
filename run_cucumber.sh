@@ -2,11 +2,12 @@
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
-SYSTEM=${2}
-SHOP=${3}
-COUNTRY=${4}
-SAUCE_USERNAME=${5}
-SAUCE_ACCESS_KEY=${6}
+SAUCE_USERNAME=${2}
+SAUCE_ACCESS_KEY=${3}
+SYSTEM=${4}
+SHOP=${5}
+COUNTRY=${6}
+
 #HTACCESS_USER=${7} 
 #HTACCESS_KEY=${8}
 #MAGENTO_USERNAME=${9} 
@@ -30,8 +31,9 @@ features_folder_path="features/base_features/"
 #support_folder_path="features/extension/shops/${8}/"
 step_definitions_folder_path="features/step_definitions/"
 default_support_folder_path="features/support/"
+support_folder_path="features/extension/shops/$SHOP/"
 generate_output="-f pretty -f json -o output/output.json" 
-folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $default_support_folder_path"
+folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $support_folder_path -r $default_support_folder_path"
 config_base="$generate_output $folder_structure_config $tag" #$htaccess_access $magento_config 
 
 echo "DRIVER:"$DRIVER
@@ -44,5 +46,5 @@ echo "COUNTRY:"$COUNTRY
 # echo $config_base
 cucumber $config_base 
 #cucumber -t ${TAG}
-#sh run_cucumber.sh saucelabs <sauce_username> <sauce_access_key> @search
+#sh run_cucumber.sh saucelabs <sauce_username> <sauce_access_key> <system> <shop> <country> @search
 #DRIVER=headless cucumber -f pretty -f json -o output/output.json -r features/base_features/ -r features/step_definitions/ -r features/support/ -t @search   

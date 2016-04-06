@@ -1,29 +1,29 @@
 [
   {
-    "uri": "features/base_features/search.feature",
-    "id": "search",
+    "uri": "features/base_features/hover.feature",
+    "id": "hovermenu",
     "keyword": "Feature",
-    "name": "search",
-    "description": "    As a customer\n    i will be able to search for a specific product",
-    "line": 3,
+    "name": "hovermenu",
+    "description": "\tAs a customer\n\tI want to be able to use the menu for navigating to a product",
+    "line": 2,
     "tags": [
       {
-        "name": "@search",
-        "line": 2
+        "name": "@hover",
+        "line": 1
       }
     ],
     "elements": [
       {
-        "id": "search;",
+        "id": "hovermenu;use-hovermenu-for-navigating",
         "keyword": "Scenario",
-        "name": "",
+        "name": "use hovermenu for navigating",
         "description": "",
-        "line": 8,
+        "line": 7,
         "type": "scenario",
         "tags": [
           {
-            "name": "@search",
-            "line": 2
+            "name": "@hover",
+            "line": 1
           }
         ],
         "before": [
@@ -33,7 +33,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25589
+              "duration": 50416
             }
           },
           {
@@ -42,48 +42,48 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36684
+              "duration": 75889
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website of vega",
-            "line": 9,
+            "name": "I am on the website",
+            "line": 8,
+            "output": [
+              "go to https://www.chefworks.de/"
+            ],
             "match": {
               "location": "features/step_definitions/search.rb:1"
             },
             "result": {
               "status": "passed",
-              "duration": 10395108000
+              "duration": 11929173314
             }
           },
           {
             "keyword": "When ",
-            "name": "I am for an product by entering the sku in the searchfield",
-            "line": 10,
-            "output": [
-              "- set sku = \"21782\""
-            ],
+            "name": "I navigate to the category on the menu",
+            "line": 9,
             "match": {
-              "location": "features/step_definitions/search.rb:14"
+              "location": "features/step_definitions/hover.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5363414388
+              "duration": 2367876292
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the detailsite of the related product",
-            "line": 11,
+            "name": "I should be on the categorysite",
+            "line": 10,
             "match": {
-              "location": "features/step_definitions/search.rb:32"
+              "location": "features/step_definitions/hover.rb:22"
             },
             "result": {
               "status": "passed",
-              "duration": 526419127
+              "duration": 533169126
             }
           }
         ],
@@ -94,7 +94,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28507
+              "duration": 61400
             }
           },
           {
@@ -103,7 +103,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 646667944
+              "duration": 392659288
             }
           }
         ]

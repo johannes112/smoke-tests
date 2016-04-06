@@ -1,4 +1,5 @@
 module MyWorld
+
   
   def settings
     @settings ||= Settings.new
@@ -12,10 +13,6 @@ module MyWorld
     @user ||= User.new
   end
 
-  def export
-    @export ||= Export.new
-  end
-  
   def printValue(sym, value)
     var_name  = sym.to_s
     #puts "var_name:#{var_name}"

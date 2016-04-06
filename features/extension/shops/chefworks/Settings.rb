@@ -4,26 +4,24 @@ class Settings
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when 'export' then nil
+        when 'de' then 'http://int.chefworks.de/'
       end
-      
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when 'export' then nil
-        end
-      
-      @urlBackend = nil
+        when 'de' then nil
+      end
+      @urlBackend = 'http://int.chefworks.de/backend/'
     end
+    
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when 'export' then nil
+        when 'de' then nil
       end
-      
       @urlHttps = case ENV['COUNTRY']
-        when 'export' then 'https://www.em-group.com/'
+        when 'de' then 'https://www.chefworks.de/'
       end
-      
-      @urlBackend = 'https://www.em-group.com/backend/'
+      @urlBackend = 'https://www.chefworks.de/backend/'
     end
+    
     @baby_steps = true
     @vat = 0.19
   end
