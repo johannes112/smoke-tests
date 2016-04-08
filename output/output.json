@@ -1,31 +1,24 @@
 [
   {
-    "uri": "features/base_features/hover.feature",
-    "id": "hovermenu",
+    "uri": "features/base_features/product_page.feature",
+    "id": "product-page",
     "keyword": "Feature",
-    "name": "hovermenu",
-    "description": "\tAs a customer\n\tI want to be able to use the menu for navigating to a product",
+    "name": "product page",
+    "description": "\tAs a customer,\n\tI want to have the opportunity to use the feaatures of the product page",
     "line": 2,
     "tags": [
       {
-        "name": "@hover",
+        "name": "@product_page",
         "line": 1
       }
     ],
     "elements": [
       {
-        "id": "hovermenu;use-hovermenu-for-navigating",
-        "keyword": "Scenario",
-        "name": "use hovermenu for navigating",
+        "keyword": "Background",
+        "name": "",
         "description": "",
         "line": 7,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@hover",
-            "line": 1
-          }
-        ],
+        "type": "background",
         "before": [
           {
             "match": {
@@ -33,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50416
+              "duration": 18864
             }
           },
           {
@@ -42,48 +35,69 @@
             },
             "result": {
               "status": "passed",
-              "duration": 75889
+              "duration": 38462
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
+            "name": "I am on the product page of an article",
             "line": 8,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBIJWHTXS\""
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:1"
+              "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 11929173314
+              "duration": 15621793375
             }
+          }
+        ]
+      },
+      {
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "keyword": "Scenario",
+        "name": "add an article to the product cart by clicking button",
+        "description": "",
+        "line": 20,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@product_page",
+            "line": 1
           },
           {
+            "name": "@test_p",
+            "line": 19
+          }
+        ],
+        "steps": [
+          {
             "keyword": "When ",
-            "name": "I navigate to the category on the menu",
-            "line": 9,
+            "name": "I add an article to the product cart by clicking the button to pull it into the cart",
+            "line": 21,
             "match": {
-              "location": "features/step_definitions/hover.rb:2"
+              "location": "features/step_definitions/product_page.rb:8"
             },
             "result": {
               "status": "passed",
-              "duration": 2367876292
+              "duration": 929398484
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the categorysite",
-            "line": 10,
+            "name": "I should see the cart on the right of the site",
+            "line": 22,
             "match": {
-              "location": "features/step_definitions/hover.rb:22"
+              "location": "features/step_definitions/product_page.rb:17"
             },
             "result": {
               "status": "passed",
-              "duration": 533169126
+              "duration": 187840002
             }
           }
         ],
@@ -94,7 +108,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61400
+              "duration": 26875
             }
           },
           {
@@ -103,7 +117,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 392659288
+              "duration": 590362193
             }
           }
         ]

@@ -12,8 +12,12 @@ When(/^I navigate to the category on the menu$/) do
   page.find(filter_navigation_path)
   navigationmenu = page.find(filter_navigation_path)
   element = navigationmenu.find_link(category)
+  element.hover
+  #hovermenu
+  #page.find(filter_navigation_hovermenu_path)#.hover
+  hovermenu = page.find(filter_navigation_hovermenu_path)
+  element = hovermenu.find_link(category, match: :first)
   element.click
-
   #check for success
   expect(current_url).not_to eq(url_start),
      "Expect url of filters but it was still #{current_url}"
