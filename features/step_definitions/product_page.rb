@@ -146,7 +146,11 @@ end
 
 When(/^I change in the tab to the customer viewed articles$/) do
   #define path of tab
-  product_page_viewed_tab_menu = 'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+  product_page_viewed_tab_menu = case
+    when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
+    else                                                                      'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+  end
+  
   product_page_viewed_tab_otherCustomer = ':nth-child(3)'
   #click tab for rate
   element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)

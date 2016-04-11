@@ -27,7 +27,6 @@ Feature: product page
 	  When I change in the tab to the rating
 	  Then there should be a form for rating the article
 	  
-	@pp_test	  
   Scenario: rate an article with button
 	  When I click the button to rate for the article
 	  Then there should be a form for rating the article
