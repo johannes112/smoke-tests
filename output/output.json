@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18864
+              "duration": 21386
             }
           },
           {
@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38462
+              "duration": 56457
             }
           }
         ],
@@ -53,17 +53,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15621793375
+              "duration": 22515685512
             }
           }
         ]
       },
       {
-        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "id": "product-page;rate-an-article-with-button",
         "keyword": "Scenario",
-        "name": "add an article to the product cart by clicking button",
+        "name": "rate an article with button",
         "description": "",
-        "line": 20,
+        "line": 31,
         "type": "scenario",
         "tags": [
           {
@@ -71,33 +71,34 @@
             "line": 1
           },
           {
-            "name": "@test_p",
-            "line": 19
+            "name": "@pp_test",
+            "line": 30
           }
         ],
         "steps": [
           {
             "keyword": "When ",
-            "name": "I add an article to the product cart by clicking the button to pull it into the cart",
-            "line": 21,
+            "name": "I click the button to rate for the article",
+            "line": 32,
             "match": {
-              "location": "features/step_definitions/product_page.rb:8"
+              "location": "features/step_definitions/product_page.rb:122"
             },
             "result": {
               "status": "passed",
-              "duration": 929398484
+              "duration": 177052897
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see the cart on the right of the site",
-            "line": 22,
+            "name": "there should be a form for rating the article",
+            "line": 33,
             "match": {
-              "location": "features/step_definitions/product_page.rb:17"
+              "location": "features/step_definitions/product_page.rb:139"
             },
             "result": {
-              "status": "passed",
-              "duration": 187840002
+              "status": "failed",
+              "error_message": "Unable to find css \"#detail--product-reviews > div.review--form-container > form\" (Capybara::ElementNotFound)\n./features/step_definitions/product_page.rb:143:in `/^there should be a form for rating the article$/'\nfeatures/base_features/product_page.feature:33:in `Then there should be a form for rating the article'",
+              "duration": 30066125348
             }
           }
         ],
@@ -108,7 +109,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26875
+              "duration": 43470
             }
           },
           {
@@ -117,7 +118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 590362193
+              "duration": 380735418
             }
           }
         ]

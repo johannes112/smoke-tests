@@ -118,3 +118,44 @@ Then(/^there should see the link to compare$/) do
   expect(page).to have_css(product_page_compareicon_path),
       "Expect to find the css-element (#{product_page_compareicon_path}) but the page with the url #{current_url} has no such element"
 end
+
+When(/^I click the button to rate for the article$/) do
+  #define path of symbol
+  product_page_rate_ratebutton_path = 'a.action--link.link--publish-comment'
+  #expect csspath of symbol
+  element = page.find(product_page_rate_ratebutton_path)
+  element.click
+end
+
+When(/^I change in the tab to the rating$/) do
+  #define path of tab
+  product_page_rate_tab_menu = 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
+  product_page_rate_tab_rateflag = ':nth-child(2)'
+  #click tab for rate
+  element = page.find(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
+  element.click
+end
+
+Then(/^there should be a form for rating the article$/) do
+  #define path of form
+  product_page_rate_form = '#detail--product-reviews > div.review--form-container > form'
+  #find path
+  page.find(product_page_rate_form)
+  puts "found form to rate"
+end
+
+When(/^I change in the tab to the customer viewed articles$/) do
+  #define path of tab
+  product_page_viewed_tab_menu = 'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+  product_page_viewed_tab_otherCustomer = ':nth-child(3)'
+  #click tab for rate
+  element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
+  element.click
+end
+
+Then(/^there should be a box of some articles$/) do
+  product_page_rate_form = 'div.tab-menu--cross-selling.js--tab-menu > div.tab--container-list > div.tab--container.has--content.is--active > div.tab--content.content--also-viewed'
+  #find path
+  page.find(product_page_rate_form)
+  puts "found container list"
+end
