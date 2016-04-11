@@ -1,0 +1,108 @@
+[
+  {
+    "uri": "features/base_features/homepage.feature",
+    "id": "homepage",
+    "keyword": "Feature",
+    "name": "homepage",
+    "description": "    As a customer\n    i will see all elments of the website",
+    "line": 3,
+    "tags": [
+      {
+        "name": "@homepage",
+        "line": 2
+      }
+    ],
+    "elements": [
+      {
+        "id": "homepage;check-for-elements",
+        "keyword": "Scenario",
+        "name": "check for elements",
+        "description": "",
+        "line": 8,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@homepage",
+            "line": 2
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21229
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44016
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 9,
+            "output": [
+              "go to https://www.chefworks.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12417436824
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be a few elements",
+            "line": 10,
+            "output": [
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
+            ],
+            "match": {
+              "location": "features/step_definitions/homepage.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1179154675
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23779
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 350601856
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
