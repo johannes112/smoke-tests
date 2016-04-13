@@ -1,5 +1,5 @@
-#homepage
-Then(/^I should be a few elements$/) do
+#website_elements
+Then(/^I should be a basic elements$/) do
   #define path of header
   homepage_content_header = 'body > div.page-wrap > header'
   homepage_content_searchfield = 'li.navigation--entry.entry--search'

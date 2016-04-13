@@ -3,73 +3,73 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'ex' then '593497053'
+      when 'de' then '593497053'
     end
     @eMail = case ENV['COUNTRY']
-      when 'ex' then 'testmail_exp@test.de'
+      when 'de' then 'testmail_chefworks@test.de'
     end
     @password = case ENV['COUNTRY']
-      when 'ex' then '123456'
+      when 'de' then '123456'
     end
     @company = case ENV['COUNTRY']
-      when 'ex' then 'ex_Test_eBusiness'
+      when 'de' then 'Test_eBusiness'
     end
     @taxvat = case ENV['COUNTRY']
-      when 'ex' then nil
+      when 'de' then nil
     end
     @organumber = case ENV['COUNTRY']
-      when 'ex' then nil
+      when 'de' then nil
     end
     @country = case ENV['COUNTRY']
-      when 'ex' then nil
+      when 'de' then 'Deutschland'
     end
     @owner_firstname = case ENV['COUNTRY']
-      when 'ex' then 'Vorname'
+      when 'de' then 'Vorname'
     end
     @owner_lastname = case ENV['COUNTRY']
-      when 'ex' then 'Nachname'
+      when 'de' then 'Nachname'
     end
     @firstname = case ENV['COUNTRY']
-      when 'ex' then 'Vorname'
+      when 'de' then 'Vorname'
     end
     @lastname = case ENV['COUNTRY']
-      when 'ex' then 'Nachname'
+      when 'de' then 'Nachname'
     end
     @prefix = case ENV['COUNTRY']
-      when 'ex' then 'Herr'
+      when 'de' then 'Herr'
     end
     @street = case ENV['COUNTRY']
-      when 'ex' then 'Vegastr. 2'
+      when 'de' then 'Vegastr. 2'
     end
     @postcode = case ENV['COUNTRY']
-      when 'ex' then '86637'
+      when 'de' then '86637'
     end
     @city = case ENV['COUNTRY']
-      when 'ex' then 'Wertingen'
+      when 'de' then 'Wertingen'
     end
     @telephone = case ENV['COUNTRY']
-      when 'ex' then '01234567'
+      when 'de' then '01234567'
     end
     @store = case ENV['COUNTRY']
-      when 'ex' then 1
+      when 'de' then 1
     end
     @store_id = case ENV['COUNTRY']
-      when 'ex' then '1'
+      when 'de' then '1'
     end
     @website_id = case ENV['COUNTRY']
-      when 'ex' then '1'
+      when 'de' then '1'
     end
     @country_id = case ENV['COUNTRY']
-      when 'ex' then 'DE'
+      when 'de' then 'DE'
     end
     @backend_region_id = case ENV['COUNTRY']
-      when 'ex' then 1
+      when 'de' then 1
     end
     @registration_form_region_id = case ENV['COUNTRY']
-      when 'ex' then nil
+      when 'de' then nil
     end
     @streetnumber = case ENV['COUNTRY']
-      when 'ex' then nil
+      when 'de' then nil
     end
   end
 end

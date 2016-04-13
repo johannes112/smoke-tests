@@ -1,31 +1,24 @@
 [
   {
-    "uri": "features/base_features/homepage.feature",
-    "id": "homepage",
+    "uri": "features/base_features/account.feature",
+    "id": "account",
     "keyword": "Feature",
-    "name": "homepage",
-    "description": "    As a customer\n    i will see all elments of the website",
-    "line": 3,
+    "name": "account",
+    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
+    "line": 2,
     "tags": [
       {
-        "name": "@homepage",
-        "line": 2
+        "name": "@account",
+        "line": 1
       }
     ],
     "elements": [
       {
-        "id": "homepage;check-for-elements",
-        "keyword": "Scenario",
-        "name": "check for elements",
+        "keyword": "Background",
+        "name": "",
         "description": "",
         "line": 8,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@homepage",
-            "line": 2
-          }
-        ],
+        "type": "background",
         "before": [
           {
             "match": {
@@ -33,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21229
+              "duration": 35783
             }
           },
           {
@@ -42,43 +35,82 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44016
+              "duration": 46576
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
+            "name": "I am on the registration page",
             "line": 9,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://www.chefworks.de/account"
             ],
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 12417436824
+              "duration": 10122423011
+            }
+          }
+        ]
+      },
+      {
+        "id": "account;create-new-account",
+        "keyword": "Scenario",
+        "name": "create new account",
+        "description": "",
+        "line": 12,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@registration",
+            "line": 11
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "no user account with my data exists",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47009
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I create an new account with my data",
+            "line": 14,
+            "output": [
+              "- set prefix = \"Herr\""
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11546502103
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be a few elements",
-            "line": 10,
-            "output": [
-              "header exists",
-              "searchfield exists",
-              "navi exists",
-              "inner body exists",
-              "footer exists"
-            ],
+            "name": "I should be on my account page",
+            "line": 15,
             "match": {
-              "location": "features/step_definitions/homepage.rb:2"
+              "location": "features/base_features/account.feature:15"
             },
             "result": {
-              "status": "passed",
-              "duration": 1179154675
+              "status": "undefined"
             }
           }
         ],
@@ -89,7 +121,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23779
+              "duration": 35370
             }
           },
           {
@@ -98,7 +130,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 350601856
+              "duration": 391897219
             }
           }
         ]
