@@ -6,3 +6,4 @@ gem "capybara"
 gem "rspec"
 gem "selenium-webdriver"
 gem "sauce"
+gem 'httparty'

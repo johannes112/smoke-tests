@@ -1,5 +1,5 @@
 class User
-  attr_accessor :customer_number, :eMail, :password, :company, :firstname, :lastname, :prefix, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
+  attr_accessor :customer_number, :eMail, :password, :company, :firstname, :lastname, :department, :prefix, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
   
   def initialize
     @customer_number = case ENV['COUNTRY']
@@ -9,7 +9,7 @@ class User
       when 'de' then 'testmail_chefworks@test.de'
     end
     @password = case ENV['COUNTRY']
-      when 'de' then '123456'
+      when 'de' then 'Test1234'
     end
     @company = case ENV['COUNTRY']
       when 'de' then 'Test_eBusiness'
@@ -34,6 +34,9 @@ class User
     end
     @lastname = case ENV['COUNTRY']
       when 'de' then 'Nachname'
+    end
+    @department = case ENV['COUNTRY']
+      when 'de' then 'eBusiness'
     end
     @prefix = case ENV['COUNTRY']
       when 'de' then 'Herr'
@@ -70,6 +73,9 @@ class User
     end
     @streetnumber = case ENV['COUNTRY']
       when 'de' then nil
+    end
+    @taxvat = case ENV['COUNTRY']
+      when 'de' then 'DE999999999'
     end
   end
 end

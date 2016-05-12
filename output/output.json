@@ -1,15 +1,15 @@
 [
   {
-    "uri": "features/base_features/account.feature",
-    "id": "account",
+    "uri": "features/base_features/website_basics.feature",
+    "id": "website_basics",
     "keyword": "Feature",
-    "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
-    "line": 2,
+    "name": "website_basics",
+    "description": "    As a customer\n    i will be able \n    to see all elements of the website and \n    to use all navigation elements",
+    "line": 3,
     "tags": [
       {
-        "name": "@account",
-        "line": 1
+        "name": "@website_basics",
+        "line": 2
       }
     ],
     "elements": [
@@ -17,7 +17,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 8,
+        "line": 10,
         "type": "background",
         "before": [
           {
@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 35783
+              "duration": 31693
             }
           },
           {
@@ -35,82 +35,76 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46576
+              "duration": 49535
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 9,
+            "name": "I am on the website",
+            "line": 11,
             "output": [
-              "go to https://www.chefworks.de/account"
+              "go to https://www.chefworks.de/"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 10122423011
+              "duration": 10130171413
             }
           }
         ]
       },
       {
-        "id": "account;create-new-account",
+        "id": "website_basics;use-hovermenu-for-navigating",
         "keyword": "Scenario",
-        "name": "create new account",
+        "name": "use hovermenu for navigating",
         "description": "",
-        "line": 12,
+        "line": 20,
         "type": "scenario",
         "tags": [
           {
-            "name": "@account",
-            "line": 1
+            "name": "@website_basics",
+            "line": 2
           },
           {
-            "name": "@registration",
-            "line": 11
+            "name": "@navigation",
+            "line": 17
+          },
+          {
+            "name": "@menu",
+            "line": 18
+          },
+          {
+            "name": "@hovermenu",
+            "line": 19
           }
         ],
         "steps": [
           {
-            "keyword": "And ",
-            "name": "no user account with my data exists",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 47009
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I create an new account with my data",
-            "line": 14,
-            "output": [
-              "- set prefix = \"Herr\""
-            ],
+            "name": "I navigate to the category with the hovermenu",
+            "line": 21,
             "match": {
-              "location": "features/step_definitions/account.rb:15"
+              "location": "features/step_definitions/menu.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 11546502103
+              "duration": 2687099044
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 15,
+            "name": "I should be on the categorysite",
+            "line": 22,
             "match": {
-              "location": "features/base_features/account.feature:15"
+              "location": "features/step_definitions/menu.rb:50"
             },
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 463168041
             }
           }
         ],
@@ -121,7 +115,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 35370
+              "duration": 120440
             }
           },
           {
@@ -130,7 +124,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 391897219
+              "duration": 333746668
             }
           }
         ]

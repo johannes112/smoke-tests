@@ -2,20 +2,22 @@
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
-SAUCE_USERNAME=${2}
-SAUCE_ACCESS_KEY=${3}
-SYSTEM=${4}
-SHOP=${5}
-COUNTRY=${6}
+SHOPWARE_USERNAME=${2} 
+SHOPWARE_PASSWORD=${3}
+SAUCE_USERNAME=${4}
+SAUCE_ACCESS_KEY=${5}
+SYSTEM=${6}
+SHOP=${7}
+COUNTRY=${8}
 
 #HTACCESS_USER=${7} 
 #HTACCESS_KEY=${8}
-#MAGENTO_USERNAME=${9} 
-#MAGENTO_PASSWORD=${10}
-TAG=${7}
+TAG=${9}
 
 #export (for saucelabs variables)
 export DRIVER
+export SHOPWARE_USERNAME
+export SHOPWARE_PASSWORD
 export SYSTEM
 export SHOP
 export COUNTRY

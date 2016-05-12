@@ -17,6 +17,8 @@ When(/^I create an new account with my data$/) do
   prefix = user.prefix
   firstname = user.firstname
   lastname = user.lastname
+  department = user.department
+  taxvat = user.taxvat
   email = user.eMail
   password = user.password
   phone = user.telephone
@@ -31,6 +33,8 @@ When(/^I create an new account with my data$/) do
   account_registerform_prefix_path = 'div.panel.register--personal > div > div.register--salutation.field--select'
   account_registerform_firstname_path = '#firstname'
   account_registerform_lastname_path = '#lastname'
+  account_registerform_department_path = '#register_billing_department'
+  account_registerform_taxvat_path = '#register_billing_ustid'
   account_registerform_email_path = '#register_personal_email'
   account_registerform_password_path = '#register_personal_password'
   account_registerform_phone_path = '#phone'
@@ -72,6 +76,14 @@ When(/^I create an new account with my data$/) do
   element = page.find(account_registerform_company_path)
   element.set(company)
   printValue(:company, binding)
+  #set value for department
+  element = page.find(account_registerform_department_path)
+  element.set(department)
+  printValue(:department, binding)
+  #set value for lastname
+  element = page.find(account_registerform_taxvat_path)
+  element.set(taxvat)
+  printValue(:taxvat, binding)
   #set value for password
   element = page.find(account_registerform_street_path)
   element.set(street)
@@ -90,6 +102,19 @@ When(/^I create an new account with my data$/) do
   #click button
   element = page.find(account_registerform_button_path)
   element.click
+end
+
+Then(/^I should be on my account page$/) do
+  #var
+  email = user.eMail
+  
+  page.find('div.account--welcome.panel')
+  element = page.find('div.account--info')
+  infobox_txt = element.text
+  
+  expect(infobox_txt).to include(email),
+      "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
+  puts "The page contains #{email}"
 end
 
 When(/^I login with valid informations$/) do

@@ -28,6 +28,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   element=page.find(search_product_name_path)
   
   #expections
-  expect(element.text).to include(search_product_name)
+  expect(element.text).to include(search_product_name),
+      "expected to find #{search_product_name} but it does not appears" 
 end
         
