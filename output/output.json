@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31693
+              "duration": 26624
             }
           },
           {
@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49535
+              "duration": 58929
             }
           }
         ],
@@ -52,7 +52,107 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10130171413
+              "duration": 9449588616
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;check-for-elements",
+        "keyword": "Scenario",
+        "name": "check for elements",
+        "description": "",
+        "line": 14,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@website_elements",
+            "line": 13
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should be a basic elements",
+            "line": 15,
+            "output": [
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1197317458
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32569
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 407254611
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48890
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 297390
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1221702164
             }
           }
         ]
@@ -85,14 +185,14 @@
         "steps": [
           {
             "keyword": "When ",
-            "name": "I navigate to the category with the hovermenu",
+            "name": "I navigate to the category by the hovermenu",
             "line": 21,
             "match": {
               "location": "features/step_definitions/menu.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 2687099044
+              "duration": 2554241396
             }
           },
           {
@@ -100,11 +200,11 @@
             "name": "I should be on the categorysite",
             "line": 22,
             "match": {
-              "location": "features/step_definitions/menu.rb:50"
+              "location": "features/step_definitions/menu.rb:51"
             },
             "result": {
               "status": "passed",
-              "duration": 463168041
+              "duration": 466477889
             }
           }
         ],
@@ -115,7 +215,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 120440
+              "duration": 38764
             }
           },
           {
@@ -124,7 +224,559 @@
             },
             "result": {
               "status": "passed",
-              "duration": 333746668
+              "duration": 336778849
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138034
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42753
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1076437613
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;use-menu-for-navigating",
+        "keyword": "Scenario",
+        "name": "use menu for navigating",
+        "description": "",
+        "line": 27,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@navigation",
+            "line": 24
+          },
+          {
+            "name": "@menu",
+            "line": 25
+          },
+          {
+            "name": "@standardmenu",
+            "line": 26
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the menu",
+            "line": 28,
+            "output": [
+              "disable all styleSheets"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3648259711
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/menu.rb:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 454160265
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24673
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 323585509
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17215
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33352
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1117588720
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;navigate-to-account",
+        "keyword": "Scenario",
+        "name": "navigate to account",
+        "description": "",
+        "line": 33,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@navigation",
+            "line": 31
+          },
+          {
+            "name": "@links",
+            "line": 32
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my account",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/links.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1460552740
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the accountpage",
+            "line": 35,
+            "match": {
+              "location": "features/step_definitions/links.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 288756106
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 422778
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345067191
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44083
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28402
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1290998392
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;navigate-to-note",
+        "keyword": "Scenario",
+        "name": "navigate to note",
+        "description": "",
+        "line": 39,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@navigation",
+            "line": 37
+          },
+          {
+            "name": "@links",
+            "line": 38
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my notes",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/links.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2579398086
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the notepage",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/links.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 362800452
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23104
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 366995411
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17964
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29998
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1096822531
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;navigate-to-cart",
+        "keyword": "Scenario",
+        "name": "navigate to cart",
+        "description": "",
+        "line": 45,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@navigation",
+            "line": 43
+          },
+          {
+            "name": "@links",
+            "line": 44
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to the cart",
+            "line": 46,
+            "match": {
+              "location": "features/step_definitions/links.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 485273316
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the product_cart",
+            "line": 47,
+            "match": {
+              "location": "features/step_definitions/links.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 173025271
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55821
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 406018636
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25344
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34843
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1130333573
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;navigate-to-help",
+        "keyword": "Scenario",
+        "name": "navigate to help",
+        "description": "",
+        "line": 51,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 2
+          },
+          {
+            "name": "@navigation",
+            "line": 49
+          },
+          {
+            "name": "@links",
+            "line": 50
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of help",
+            "line": 52,
+            "match": {
+              "location": "features/step_definitions/links.rb:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 388241124
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a contextmenu",
+            "line": 53,
+            "match": {
+              "location": "features/step_definitions/links.rb:63"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150110451
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22302
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 315295880
             }
           }
         ]

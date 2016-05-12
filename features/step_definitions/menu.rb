@@ -1,5 +1,5 @@
 #navigation_menu
-When(/^I navigate to the category with the hovermenu$/) do
+When(/^I navigate to the category by the hovermenu$/) do
   #var
   url_start = current_url
   category = article.category
@@ -23,7 +23,7 @@ When(/^I navigate to the category with the hovermenu$/) do
      "Expect url of category but it was still #{current_url}"
 end
 
-When(/^I navigate to the category with the menu$/) do
+When(/^I navigate to the category by the menu$/) do
   #var
   url_start = current_url
   category = article.category
@@ -33,6 +33,7 @@ When(/^I navigate to the category with the menu$/) do
   navigation_sidebar_path = 'div.sidebar--categories-navigation'
   
   #main-menu
+  disable_css
   page.find(navigation_path)
   navigationmenu = page.find(navigation_path)
   element = navigationmenu.find_link(category)

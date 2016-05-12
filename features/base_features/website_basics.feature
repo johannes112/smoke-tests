@@ -9,7 +9,7 @@ Feature: website_basics
     
     Background:
       Given I am on the website
-    
+
     @website_elements
     Scenario: check for elements
         Then I should be a basic elements
@@ -18,14 +18,14 @@ Feature: website_basics
     @menu
     @hovermenu    
     Scenario: use hovermenu for navigating
-		When I navigate to the category with the hovermenu
+		When I navigate to the category by the hovermenu
 		Then I should be on the categorysite
 		
     @navigation
     @menu
     @standardmenu    
     Scenario: use menu for navigating
-		When I navigate to the category with the menu
+		When I navigate to the category by the menu
 		Then I should be on the categorysite
     
     @navigation
@@ -48,6 +48,6 @@ Feature: website_basics
 
     @navigation
     @links
-    Scenario: navigate to cart
+    Scenario: navigate to help
         When I click the link of help
         Then I should see a contextmenu

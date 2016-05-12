@@ -1,7 +1,11 @@
 module MyWorld
 
   def shopware
-    @magento ||=ShopwareApi.new(settings.urlBackend,ENV['SHOPWARE_USERNAME'],ENV['SHOPWARE_PASSWORD'])
+    @shopware ||=ShopwareApi.new(settings.urlBackend,ENV['SHOPWARE_USERNAME'],ENV['SHOPWARE_PASSWORD'])
+  end
+  
+  def jsfunctions
+    @jsfunctions ||= Jsfunctions.new
   end
 
   def settings

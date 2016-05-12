@@ -16,14 +16,13 @@ Feature: account
 
   @login
 	Scenario: login with existing account
-		Given I am on the registration page
 		And I already created an user account
 		When I login with valid informations
 		Then I should be on my account page
 
   @update
 	Scenario: modify data in my account
-		Given I am logged in
+		And I am logged in
 		When I modify my address
 		When I login with valid informations
 		Then I should be on my account page
