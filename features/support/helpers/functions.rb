@@ -24,3 +24,21 @@ def disable_css
     puts "           can not disable_css"
   end
 end  
+
+#display:none for given css element
+def block_css(csspath)
+  #check if element is class or id
+    page.driver.browser.execute_script("
+      function blockCssElement()
+      {
+        if (matches = $"+csspath+".match(/^([.#])){
+          var element = document.getElementById('"+csspath+"'); 
+          element.style.display = 'none'; 
+        } else {
+          element = document.getElementsByClassName('"+csspath+"');
+          element[0].style.display = 'none';
+        }
+      }
+      myAddToCartFunction();
+      ")
+end

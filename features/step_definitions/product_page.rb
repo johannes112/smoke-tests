@@ -5,7 +5,7 @@ Given(/^I am on the product page of an article$/) do
   step("I should be on the detailsite of the related product")
 end
 
-When(/^I add an article to the product cart by clicking the button to pull it into the cart$/) do
+When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do
   #var
   product_page_buybutton_path = 'div.product--buybox.block > div > form > div > button'
   

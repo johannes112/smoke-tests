@@ -37,20 +37,35 @@ Then(/^I should be on the notepage$/) do
     "Expected to be at #{url_part} but i am on #{current_url}"
 end
 
-When(/^I click the link to the cart$/) do
+When(/^I click the link of the cart$/) do
   #pathes
-  link_cart_path = 'li.navigation--entry.entry--cart'
+  link_cart_symbol_path = 'li.navigation--entry.entry--cart'
   #click button
-  element = page.find(link_cart_path)
+  element = page.find(link_cart_symbol_path)
   element.click
 end
 
-Then(/^I should see the product_cart$/) do
+Then(/^I should see the sidebar of the product cart$/) do
   #pathes
-  link_cart_path = 'div.container--ajax-cart.off-canvas.is--right.is--active.is--open'
+  link_cart_sidebar_path = 'div.container--ajax-cart.off-canvas.is--right.is--active.is--open'
   #wait for path
-  page.find(link_cart_path)
+  page.find(link_cart_sidebar_path)
 end
+
+When(/^I click the link to edit the cart$/) do
+  #pathes
+  link_cart_button_path = 'a.btn.button--open-basket.is--icon-right'
+  #click button
+  element = page.find(link_cart_button_path)
+  element.click
+end
+
+Then(/^I should be on the page of the productcart$/) do
+  url_part_cart = 'checkout/cart'
+  expect(current_url).to include(url_part_cart),
+    "Expected url contains #{url_part_cart} but i am on #{current_url}"
+end
+
 
 When(/^I click the link of help$/) do
   #pathes

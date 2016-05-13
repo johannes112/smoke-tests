@@ -42,9 +42,11 @@ Feature: website_basics
         
     @navigation
     @links
-    Scenario: navigate to cart
-        When I click the link to the cart
-        Then I should see the product_cart
+    Scenario: activate to cart
+        When I click the link of the cart
+        Then I should see the sidebar of the product cart
+        When I click the link to edit the cart
+        Then I should be on the page of the productcart
 
     @navigation
     @links

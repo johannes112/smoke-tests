@@ -1,3 +1,4 @@
+# language: en
 @account
 Feature: account
 
@@ -8,19 +9,19 @@ Feature: account
   Background:
     Given I am on the registration page
   
-  @registration
+  @account_registration
 	Scenario: create new account
 		And no user account with my data exists
 		When I create an new account with my data
 		Then I should be on my account page
 
-  @login
+  @account_login
 	Scenario: login with existing account
 		And I already created an user account
 		When I login with valid informations
 		Then I should be on my account page
 
-  @update
+  @account_update
 	Scenario: modify data in my account
 		And I am logged in
 		When I modify my address

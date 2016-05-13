@@ -1,14 +1,14 @@
 [
   {
-    "uri": "features/base_features/website_basics.feature",
-    "id": "website_basics",
+    "uri": "features/base_features/product_cart.feature",
+    "id": "account",
     "keyword": "Feature",
-    "name": "website_basics",
-    "description": "    As a customer\n    i will be able \n    to see all elements of the website and \n    to use all navigation elements",
+    "name": "account",
+    "description": "\tAs a customer,\n\tI want to be able to put a product into my cart\n\tin order to manage my chosen products",
     "line": 3,
     "tags": [
       {
-        "name": "@website_basics",
+        "name": "@product_cart",
         "line": 2
       }
     ],
@@ -17,7 +17,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 10,
+        "line": 9,
         "type": "background",
         "before": [
           {
@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26624
+              "duration": 23751
             }
           },
           {
@@ -35,63 +35,79 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58929
+              "duration": 38280
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 10,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBIJWHTXS\""
             ],
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9449588616
+              "duration": 17143666948
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the product cart page",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3720773652
             }
           }
         ]
       },
       {
-        "id": "website_basics;check-for-elements",
+        "id": "account;remove-an-article",
         "keyword": "Scenario",
-        "name": "check for elements",
+        "name": "remove an article",
         "description": "",
         "line": 14,
         "type": "scenario",
         "tags": [
           {
-            "name": "@website_basics",
+            "name": "@product_cart",
             "line": 2
           },
           {
-            "name": "@website_elements",
+            "name": "@product_cart_remove",
             "line": 13
           }
         ],
         "steps": [
           {
-            "keyword": "Then ",
-            "name": "I should be a basic elements",
+            "keyword": "When ",
+            "name": "I remove this article from the product cart",
             "line": 15,
-            "output": [
-              "header exists",
-              "searchfield exists",
-              "navi exists",
-              "inner body exists",
-              "footer exists"
-            ],
             "match": {
-              "location": "features/step_definitions/website_basics.rb:2"
+              "location": "features/base_features/product_cart.feature:15"
             },
             "result": {
-              "status": "passed",
-              "duration": 1197317458
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the cart should not contain this article",
+            "line": 16,
+            "match": {
+              "location": "features/base_features/product_cart.feature:16"
+            },
+            "result": {
+              "status": "undefined"
             }
           }
         ],
@@ -102,7 +118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32569
+              "duration": 27309
             }
           },
           {
@@ -111,7 +127,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 407254611
+              "duration": 591197099
             }
           }
         ]
@@ -120,7 +136,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 10,
+        "line": 9,
         "type": "background",
         "before": [
           {
@@ -129,7 +145,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 48890
+              "duration": 18368
             }
           },
           {
@@ -138,73 +154,92 @@
             },
             "result": {
               "status": "passed",
-              "duration": 297390
+              "duration": 32556
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 10,
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1221702164
+              "duration": 6718733488
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the product cart page",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1950771978
             }
           }
         ]
       },
       {
-        "id": "website_basics;use-hovermenu-for-navigating",
+        "id": "account;display-articles-with-data",
         "keyword": "Scenario",
-        "name": "use hovermenu for navigating",
+        "name": "display articles with data",
         "description": "",
-        "line": 20,
+        "line": 19,
         "type": "scenario",
         "tags": [
           {
-            "name": "@website_basics",
+            "name": "@product_cart",
             "line": 2
           },
           {
-            "name": "@navigation",
-            "line": 17
-          },
-          {
-            "name": "@menu",
+            "name": "@product_cart_data",
             "line": 18
-          },
-          {
-            "name": "@hovermenu",
-            "line": 19
           }
         ],
         "steps": [
           {
-            "keyword": "When ",
-            "name": "I navigate to the category by the hovermenu",
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 20,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBIJWHTXS\""
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16707492225
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the product cart page",
             "line": 21,
             "match": {
-              "location": "features/step_definitions/menu.rb:2"
+              "location": "features/step_definitions/product_cart.rb:7"
             },
             "result": {
               "status": "passed",
-              "duration": 2554241396
+              "duration": 1962362445
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the categorysite",
+            "name": "I should see all necessary informations about this article within the product list of the product cart",
             "line": 22,
             "match": {
-              "location": "features/step_definitions/menu.rb:51"
+              "location": "features/base_features/product_cart.feature:22"
             },
             "result": {
-              "status": "passed",
-              "duration": 466477889
+              "status": "undefined"
             }
           }
         ],
@@ -215,7 +250,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38764
+              "duration": 24658
             }
           },
           {
@@ -224,7 +259,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 336778849
+              "duration": 642617401
             }
           }
         ]
@@ -233,7 +268,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 10,
+        "line": 9,
         "type": "background",
         "before": [
           {
@@ -242,7 +277,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 138034
+              "duration": 15686
             }
           },
           {
@@ -251,76 +286,103 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42753
+              "duration": 29006
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 10,
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1076437613
+              "duration": 6858297758
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the product cart page",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2343676734
             }
           }
         ]
       },
       {
-        "id": "website_basics;use-menu-for-navigating",
+        "id": "account;navigate-to-checkout",
         "keyword": "Scenario",
-        "name": "use menu for navigating",
+        "name": "navigate to checkout",
         "description": "",
-        "line": 27,
+        "line": 25,
         "type": "scenario",
         "tags": [
           {
-            "name": "@website_basics",
+            "name": "@product_cart",
             "line": 2
           },
           {
-            "name": "@navigation",
+            "name": "@product_cart_checkout",
             "line": 24
-          },
-          {
-            "name": "@menu",
-            "line": 25
-          },
-          {
-            "name": "@standardmenu",
-            "line": 26
           }
         ],
         "steps": [
           {
-            "keyword": "When ",
-            "name": "I navigate to the category by the menu",
-            "line": 28,
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 26,
             "output": [
-              "disable all styleSheets"
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBIJWHTXS\""
             ],
             "match": {
-              "location": "features/step_definitions/menu.rb:26"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 3648259711
+              "duration": 7359993961
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the product cart page",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2109496073
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
+            "line": 28,
+            "match": {
+              "location": "features/base_features/product_cart.feature:28"
+            },
+            "result": {
+              "status": "undefined"
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the categorysite",
+            "name": "I should be on the checkout-page",
             "line": 29,
             "match": {
-              "location": "features/step_definitions/menu.rb:51"
+              "location": "features/base_features/product_cart.feature:29"
             },
             "result": {
-              "status": "passed",
-              "duration": 454160265
+              "status": "undefined"
             }
           }
         ],
@@ -331,7 +393,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24673
+              "duration": 21237
             }
           },
           {
@@ -340,443 +402,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 323585509
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17215
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 33352
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1117588720
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-account",
-        "keyword": "Scenario",
-        "name": "navigate to account",
-        "description": "",
-        "line": 33,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@website_basics",
-            "line": 2
-          },
-          {
-            "name": "@navigation",
-            "line": 31
-          },
-          {
-            "name": "@links",
-            "line": 32
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to my account",
-            "line": 34,
-            "match": {
-              "location": "features/step_definitions/links.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1460552740
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the accountpage",
-            "line": 35,
-            "match": {
-              "location": "features/step_definitions/links.rb:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 288756106
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 422778
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 345067191
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 44083
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 28402
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1290998392
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-note",
-        "keyword": "Scenario",
-        "name": "navigate to note",
-        "description": "",
-        "line": 39,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@website_basics",
-            "line": 2
-          },
-          {
-            "name": "@navigation",
-            "line": 37
-          },
-          {
-            "name": "@links",
-            "line": 38
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to my notes",
-            "line": 40,
-            "match": {
-              "location": "features/step_definitions/links.rb:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2579398086
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the notepage",
-            "line": 41,
-            "match": {
-              "location": "features/step_definitions/links.rb:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 362800452
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23104
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 366995411
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17964
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 29998
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1096822531
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-cart",
-        "keyword": "Scenario",
-        "name": "navigate to cart",
-        "description": "",
-        "line": 45,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@website_basics",
-            "line": 2
-          },
-          {
-            "name": "@navigation",
-            "line": 43
-          },
-          {
-            "name": "@links",
-            "line": 44
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to the cart",
-            "line": 46,
-            "match": {
-              "location": "features/step_definitions/links.rb:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 485273316
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see the product_cart",
-            "line": 47,
-            "match": {
-              "location": "features/step_definitions/links.rb:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 173025271
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 55821
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 406018636
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 25344
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 34843
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1130333573
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-help",
-        "keyword": "Scenario",
-        "name": "navigate to help",
-        "description": "",
-        "line": 51,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@website_basics",
-            "line": 2
-          },
-          {
-            "name": "@navigation",
-            "line": 49
-          },
-          {
-            "name": "@links",
-            "line": 50
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link of help",
-            "line": 52,
-            "match": {
-              "location": "features/step_definitions/links.rb:55"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 388241124
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a contextmenu",
-            "line": 53,
-            "match": {
-              "location": "features/step_definitions/links.rb:63"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 150110451
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22302
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 315295880
+              "duration": 610660752
             }
           }
         ]
