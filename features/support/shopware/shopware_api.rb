@@ -41,7 +41,6 @@ class ShopwareApi
       p "Can not connect"
     end
   end
-
-
+  
 end
 

@@ -39,6 +39,6 @@ def block_css(csspath)
           element[0].style.display = 'none';
         }
       }
-      myAddToCartFunction();
+      blockCssElement();
       ")
 end

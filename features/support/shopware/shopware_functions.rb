@@ -1,5 +1,5 @@
 module ShopwareFunctions
-    #customers
+  #customers
   def getWholeData(data_of) #get all customers
     p connectAndGetData(data_of)
   end
@@ -186,7 +186,6 @@ module ShopwareFunctions
     setValue("Orders", 399, "orderStatusId", 4)
     #to avoid an export of this data i have to set "orderStatusId" of the order to 4
   end
-  
 
   def stringGetUrlPath(data_of)
     #decide which url have to be set
@@ -198,4 +197,20 @@ module ShopwareFunctions
         url = "/api/orders"
     end
   end
+  
+  def addArticleCartByAjax(sku, amount) #add an article to cart by a call of an ajax-function (https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBIJWHTXS&sQuantity=2)
+    #1. assemble url by sku, amount, settings.urlHttps and param
+    #2. send url to updateData
+    #1. set url (base_url+'checkout'+ajax_params_function+ajax_params_sku+ajax_params_amount)
+    base_url = 'int.chefworks.de'
+    ajax_params_function = "ajaxAddArticleCart?callback=jQuery"
+    ajax_params_sku = "&sAdd=#{sku}"
+    ajax_params_amount = "&sQuantity=#{sku}"
+    ajax_url = "#{base_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
+    p "ajax_url:#{ajax_url}"
+    #2. send string to url
+    options = {:digest_auth => @auth_digest}
+    updateData(ajax_url, options)
+  end
+  
 end
