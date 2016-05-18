@@ -7,7 +7,7 @@ class Settings
         when 'de' then 'http://int.chefworks.de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when 'de' then nil
+        when 'de' then 'http://int.chefworks.de/'
       end
       @urlBackend = 'http://int.chefworks.de/backend/'
     end

@@ -1,13 +1,23 @@
 #product_cart
 Given(/^the product cart contains an article$/) do
-  website_url = settings.urlHttps
-  url_part_product_cart = 'checkout/cart'
   product_cart_article_path = 'div.panel.has--border'
-  url = "#{website_url}#{url_part_product_cart}"
   
   step("I add an article to my cart by ajax")
+  step("I am on the product cart page")
   
-  visit(url)
+  #chech if cart contains an article
+  expect(page).to have_css(product_cart_article_path),
+    "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
+  
+end
+
+Given(/^the product cart includes an article$/) do
+  product_cart_article_path = 'div.panel.has--border'
+  
+  step("I add an article to my cart manually")
+  step("I am on the product cart page")
+  
+  #chech if cart contains an article
   expect(page).to have_css(product_cart_article_path),
     "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
   
@@ -27,9 +37,22 @@ And(/^I add an article to my cart by ajax$/) do
   ajax_params_sku = "&sAdd=#{sku}"
   ajax_params_amount = "&sQuantity=#{amount}"
   ajax_url = "#{website_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
-  
+  puts "add article: #{ajax_url}"
   visit(ajax_url)
 end
+
+When(/^I click on the button to continue shopping$/) do
+  product_cart_button_continue_path = "a.btn.btn--checkout-continue.is--secondary.left.continue-shopping--action.is--icon-left.is--large"
+  
+  element = page.find(product_cart_button_continue_path)
+  element.click
+  puts "clicked button for continue"
+end
+
+Then(/^I will see the back on the productsite$/) do
+  step("I should be on the detailsite of the related product")
+end
+
 
 Given(/^I am on the product cart page$/) do
   website_url = settings.urlHttps
@@ -37,7 +60,7 @@ Given(/^I am on the product cart page$/) do
   url = "#{website_url}#{url_part_product_cart}"
   
   visit(url)
-  
+  puts "went to #{url}"
   expect(current_url).to include(url_part_product_cart),
     "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
 end
@@ -47,6 +70,7 @@ When(/^I remove this article from the product cart$/) do
   
   element = page.find(product_cart_remove_article_path)
   element.click
+  puts "clicked icon"
 end
 
 Then(/^the cart should not contain this article$/) do
@@ -63,10 +87,13 @@ Then(/^I should see all necessary informations about this article within the pro
   
   expect(page).to have_css(product_cart_article_details_path),
      "expected to see here details to the article in my cart in the css (#{product_cart_article_details_path}), but it does not appear!"
+  puts "found product details"
   expect(page).to have_css(product_cart_article_price_path),
      "expected to see here about each costt of the price for the article on my cart in the css (#{product_cart_article_price_path}), but it does not appear!"
+  puts "found product prices"
   expect(page).to have_css(product_cart_article_voucher_path),
      "expected to have here the possibility to enter my code into a field on my cart in the css (#{product_cart_article_voucher_path}), but it does not appear!"
+  puts "found field for voucher"
 end
 
 When(/^I navigate to the checkout by clicking the button which navigates to the checkout$/) do
@@ -75,6 +102,7 @@ When(/^I navigate to the checkout by clicking the button which navigates to the 
   #check for first button
   element = page.find(product_cart_button_checkout_path, match: :first)
   element.click
+  puts "clicked button"
 end
 
 Then(/^I should be on the checkout\-page$/) do
@@ -87,25 +115,28 @@ Then(/^I should be on the checkout\-page$/) do
      "expected that the current_url contains #{url_checkout_confirm} but it is only #{current_url}"
 end
 
-When(/^I activate the funtion for voucher$/) do
+When(/^I activate the function for voucher$/) do
   product_cart_voucher_checkbox_path = "#add-voucher--trigger"
   
   element = page.find(product_cart_voucher_checkbox_path)
   element.click
+  puts "clicked checkbox"
 end
 
 When(/^I enter some code into the optional field$/) do
+  code_voucher = '266233'
   product_cart_voucher_input_path = "form.table--add-voucher.add-voucher--form > div > input"
   product_cart_voucher_button_path = "form.table--add-voucher.add-voucher--form > div > button"
   
   element = page.find(product_cart_voucher_input_path)
-  element.set('266233')
+  element.set(code_voucher)
+  puts "entered #{code_voucher}"
   element = page.find(product_cart_voucher_button_path)
   element.click
-  
+  puts "clicked add-button"
 end
 
-Then(/^there should be some actions$/) do
+Then(/^there should be the voucher-action in the url$/) do
   url_voucher = 'addVoucher/sTargetAction'
   
   expect(current_url).to include(url_voucher),
@@ -123,7 +154,7 @@ When(/^I enter a sku into the integrated field on the cart$/) do
   element.click
 end
 
-Then(/^I will see another url$/) do
+Then(/^I will see the add-action in the url$/) do
   url_add = 'addArticle/sTargetAction'
   
   expect(current_url).to include(url_add),

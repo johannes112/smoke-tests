@@ -27,7 +27,7 @@ export SAUCE_ACCESS_KEY
 #variables for cucumber
 parameter_config="$DRIVER $SYSTEM $SHOP $COUNTRY"
 sauce_config="$SAUCE_USERNAME $SAUCE_ACCESS_KEY"
-tag=" -t ${TAG}"
+#tag=" -t ${TAG}"
 features_folder_path="features/base_features/"
 #extension_features_folder_path="features/extension/special_features/${8}/"
 #support_folder_path="features/extension/shops/${8}/"
@@ -36,24 +36,29 @@ default_support_folder_path="features/support/"
 support_folder_path="features/extension/shops/$SHOP/"
 generate_output="-f pretty -f json -o output/output.json" 
 folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $support_folder_path -r $default_support_folder_path"
-
-if [[ -z "${TAG}" ]]; then
-  config_base="$generate_output $folder_structure_config" #$htaccess_access $magento_config 
-else
-  config_base="$generate_output $folder_structure_config $tag" #$htaccess_access $magento_config 
-fi
-
+#to set value of tag
 echo "DRIVER:"$DRIVER
 echo "SYSTEM:"$SYSTEM
 echo "SHOP:"$SHOP
 echo "COUNTRY:"$COUNTRY
 if [[ -z "${TAG}" ]]; then
-  echo "NO TAG!\n"
+  echo "NO TAG!"
+  if [[ "$SHOP" == "export" ]]; then
+    echo "use Export"
+    TAG="@export"
+  elif [[ "$SHOP" == "chefworks" ]]; then
+    echo "use chefworks"
+    TAG="@chefworks"
+  else
+    echo "No tag for this shop exists"
+  fi
 else
   echo "TAG:"$TAG
   echo ""
 fi
+tag=" -t ${TAG}"
 
+config_base="$generate_output $folder_structure_config $tag"
 cucumber $config_base 
 
 #bash run_cucumber.sh saucelabs <sauce_username> <sauce_access_key> <system> <shop> <country> @search

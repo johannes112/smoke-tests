@@ -14,6 +14,7 @@ When(/^I am for an product by entering the sku in the searchfield$/) do
   find(search_searchfield_path).set(sku)
   search_searchbutton = page.find(search_searchbutton_path)
   search_searchbutton.click()
+  puts "clicked button of search"
 end
 
 Then(/^I should be on the detailsite of the related product$/) do
@@ -22,13 +23,14 @@ Then(/^I should be on the detailsite of the related product$/) do
   search_product_name = name
   
   #variables:path
-  search_product_name_path='body > div.page-wrap > section > div > div.content--wrapper > div > header > div > h1'#div.product-name > h1'
+  search_product_name_path = "div.content--wrapper > div > header > div > h1"
   
   #actions
   element=page.find(search_product_name_path)
   
   #expections
   expect(element.text).to include(search_product_name),
-      "expected to find #{search_product_name} but it does not appears" 
+      "expected to find #{search_product_name} but it does not appears"
+  puts "found '#{search_product_name}'"
 end
         

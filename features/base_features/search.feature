@@ -1,4 +1,6 @@
 # language: en
+@export
+@chefworks
 @search
 Feature: search
 
