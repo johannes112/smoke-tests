@@ -1,4 +1,6 @@
 # language: en
+@export
+@chefworks
 @account
 Feature: account
 

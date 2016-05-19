@@ -8,8 +8,20 @@ Given(/^I am on the registration page$/) do
   visit(url)
 end
 
-Given(/^no user account with my data exists$/) do
-  
+And(/^no user account with my data exists$/) do
+  eMail = user.eMail
+  key = "email"
+  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+  puts shopware.deleteDataByKey("Customers", key, eMail)
+end
+
+Given(/^I already created an user account$/) do
+  #searchDataByKey
+  #if searchDataByKey == nil
+  # puts "no account exists"
+  #else
+  # puts shopware.deleteDataByKey("Customers", key, eMail)
+  #end
 end
 
 When(/^I create an new account with my data$/) do
@@ -139,5 +151,14 @@ When(/^I login with valid informations$/) do
   #click button
   element = page.find(account_loginform_registerbutton_path)
   element.click
+end
 
+Given(/^I am logged in$/) do
+  # step ("I login with valid informations")
+  # step ("I should be on my account page")
+end
+
+When(/^I modify my address$/) do
+  # define css pathes
+  # split this big step into 4 babysteps: And(I modify my userinfo), And(I change my payment), And(I change my billing address), And(I modify my deliveryadress)
 end

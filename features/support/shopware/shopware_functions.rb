@@ -1,5 +1,7 @@
 module ShopwareFunctions
   #customers
+  @shopwarestatus = 0
+  
   def getWholeData(data_of) #get all customers
     p connectAndGetData(data_of)
   end
@@ -7,9 +9,8 @@ module ShopwareFunctions
   def getData(data_of, id) #get one customer with id
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
-    p "URL: #{url_request}"
     response_data = readData(url_request)
-    p response_data
+    puts response_data
     return response_data
   end
   
@@ -17,7 +18,6 @@ module ShopwareFunctions
     # connect to url of given param and return its value
     url_data = stringGetUrlPath(url_of)
     url_request = url_data
-    p "URL: #{url_request}"
     response_data = readData(url_request)
     return response_data
   end
@@ -25,19 +25,23 @@ module ShopwareFunctions
   def deleteDataId(data_of, id) #delete customer by id
     url_data=  stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
-    p "Delete URL: #{url_request}"
-    deleteData(url)
+    #puts "Delete URL: #{url_request}"
+    deleteData(url_request)
   end
   
   def deleteDataByKey(data_of, key, value) #delete customer with key by value
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/"
-    p "URL: #{url_request}"
     response_data = readData(url_request)
     data = response_data
     data_to_remove = getDataByKey(data, key, value)
-    deleteCustomer("Customers", data_to_remove)
-    p data_to_remove
+    if data_to_remove == nil
+      return "no customer with #{key}:#{value} exists"
+    else
+      return "delete customer with id:#{data_to_remove}"
+      deleteDataId("Customers", data_to_remove)
+    end
+    #puts data_to_remove
   end
   
   #get all Data
@@ -85,14 +89,12 @@ module ShopwareFunctions
         data_to_delete = intSearchForValue(data, data_key, data_value, total)
         return data_to_delete
       else
-        p "!!!"
-        p "several(#{occur_frequency}) with #{data_key}:#{data_value} exist"
-        p "can not delete more than one ID"
+        puts "!!!"
+        puts "several(#{occur_frequency}) with #{data_key}:#{data_value} exist"
+        puts "can not delete more than one ID"
       end
     else
-      p ("no #{data_key} with this value (#{data_value}) exists")
-      p 
-      #p data
+      #puts ("no customer with #{data_key}:#{data_value} exists")
     end
   end
 

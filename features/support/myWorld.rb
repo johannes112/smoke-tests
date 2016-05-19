@@ -1,7 +1,7 @@
 module MyWorld
 
   def shopware
-    @shopware ||=ShopwareApi.new(settings.urlBackend,ENV['SHOPWARE_USERNAME'],ENV['SHOPWARE_PASSWORD'])
+    @shopware ||=ShopwareApi.new()
   end
   
   def jsfunctions
