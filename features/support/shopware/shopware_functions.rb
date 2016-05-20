@@ -14,6 +14,20 @@ module ShopwareFunctions
     return response_data
   end
   
+  def getDataByKey(data_of, key, value) #delete customer with key by value
+    url_data = stringGetUrlPath(data_of)
+    url_request = "#{url_data}/"
+    response_data = readData(url_request)
+    data = response_data
+    data_to_remove = searchForDataByKey(data, key, value)
+    if data_to_remove == nil
+      return "no customer with #{key}:#{value} exists"
+    else
+      return "delete customer with id:#{data_to_remove}"
+    end
+    #puts data_to_remove
+  end
+  
   def connectAndGetData(url_of)
     # connect to url of given param and return its value
     url_data = stringGetUrlPath(url_of)
@@ -34,12 +48,12 @@ module ShopwareFunctions
     url_request = "#{url_data}/"
     response_data = readData(url_request)
     data = response_data
-    data_to_remove = getDataByKey(data, key, value)
+    data_to_remove = searchForDataByKey(data, key, value)
     if data_to_remove == nil
       return "no customer with #{key}:#{value} exists"
     else
-      return "delete customer with id:#{data_to_remove}"
       deleteDataId("Customers", data_to_remove)
+      return "delete customer with id:#{data_to_remove}"
     end
     #puts data_to_remove
   end
@@ -72,8 +86,8 @@ module ShopwareFunctions
     end
   end
   
-  #get customer of id
-  def getDataByKey(given_response_httpParty, given_key, given_value)
+  #get customer with key and value
+  def searchForDataByKey(given_response_httpParty, given_key, given_value)
     #get whole data of api
     whole_response = given_response_httpParty
     whole_response = whole_response
@@ -176,10 +190,10 @@ module ShopwareFunctions
     data_customers = connectAndGetData('Customers')
     data_orders = connectAndGetData('Orders')
     #1. get customer_id by key
-    customer_id = getDataByKey(data_customers, key, value)
+    customer_id = searchForDataByKey(data_customers, key, value)
     p "UPDATE:customer_id:#{customer_id}"
     #2. get order_id by key
-    order_id = getDataByKey(data_orders, "customerId", customer_id)
+    order_id = searchForDataByKey(data_orders, "customerId", customer_id)
     #3. get orderStatusId
     order_orderStatus = getData("Orders", order_id)
     order_orderStatus_Id = getOrderByKey(order_orderStatus, "orderStatusId")
@@ -200,19 +214,19 @@ module ShopwareFunctions
     end
   end
   
-  def addArticleCartByAjax(sku, amount) #add an article to cart by a call of an ajax-function (https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBIJWHTXS&sQuantity=2)
-    #1. assemble url by sku, amount, settings.urlHttps and param
-    #2. send url to updateData
-    #1. set url (base_url+'checkout'+ajax_params_function+ajax_params_sku+ajax_params_amount)
-    base_url = 'int.chefworks.de'
-    ajax_params_function = "ajaxAddArticleCart?callback=jQuery"
-    ajax_params_sku = "&sAdd=#{sku}"
-    ajax_params_amount = "&sQuantity=#{sku}"
-    ajax_url = "#{base_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
-    p "ajax_url:#{ajax_url}"
-    #2. send string to url
-    options = {:digest_auth => @auth_digest}
-    updateData(ajax_url, options)
-  end
+  # def addArticleCartByAjax(sku, amount) #add an article to cart by a call of an ajax-function (https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBIJWHTXS&sQuantity=2)
+  #   #1. assemble url by sku, amount, settings.urlHttps and param
+  #   #2. send url to updateData
+  #   #1. set url (base_url+'checkout'+ajax_params_function+ajax_params_sku+ajax_params_amount)
+  #   base_url = 'int.chefworks.de'
+  #   ajax_params_function = "ajaxAddArticleCart?callback=jQuery"
+  #   ajax_params_sku = "&sAdd=#{sku}"
+  #   ajax_params_amount = "&sQuantity=#{sku}"
+  #   ajax_url = "#{base_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
+  #   p "ajax_url:#{ajax_url}"
+  #   #2. send string to url
+  #   options = {:digest_auth => @auth_digest}
+  #   updateData(ajax_url, options)
+  # end
   
 end

@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 64420
+              "duration": 28727
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 70549
+              "duration": 73957
             }
           }
         ],
@@ -53,24 +53,24 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "go to http://int.chefworks.de/account"
+              "go to https://www.chefworks.de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9123131071
+              "duration": 10817137062
             }
           }
         ]
       },
       {
-        "id": "account;modify-data-in-my-account",
+        "id": "account;create-new-account",
         "keyword": "Scenario",
-        "name": "modify data in my account",
+        "name": "create new account",
         "description": "",
-        "line": 27,
+        "line": 15,
         "type": "scenario",
         "tags": [
           {
@@ -86,53 +86,65 @@
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 26
+            "name": "@account_registration",
+            "line": 14
           }
         ],
         "steps": [
           {
             "keyword": "And ",
-            "name": "I am logged in",
-            "line": 28,
+            "name": "no user account with my data exists",
+            "line": 16,
+            "output": [
+              "delete customer with id:1338"
+            ],
             "match": {
-              "location": "features/base_features/account.feature:28"
+              "location": "features/step_definitions/account.rb:11"
             },
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 3352152554
             }
           },
           {
             "keyword": "When ",
-            "name": "I modify my address",
-            "line": 29,
+            "name": "I create an new account with my data",
+            "line": 17,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname = \"Vorname\"",
+              "- set lastname = \"Nachname\"",
+              "- set email = \"testmail_chefworks@test.de\"",
+              "- set password = \"Test1234\"",
+              "- set phone = \"01234567\"",
+              "- set company = \"Test_eBusiness\"",
+              "- set department = \"eBusiness\"",
+              "- set taxvat = \"DE999999999\"",
+              "- set street = \"Vegastr. 2\"",
+              "- set postcode = \"86637\"",
+              "- set city = \"Wertingen\""
+            ],
             "match": {
-              "location": "features/base_features/account.feature:29"
+              "location": "features/step_definitions/account.rb:27"
             },
             "result": {
-              "status": "undefined"
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 30,
-            "match": {
-              "location": "features/step_definitions/account.rb:123"
-            },
-            "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 13538597929
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
-            "line": 31,
+            "line": 18,
+            "output": [
+              "The page contains testmail_chefworks@test.de"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:110"
+              "location": "features/step_definitions/account.rb:119"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 390659390
             }
           }
         ],
@@ -143,7 +155,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21338
+              "duration": 25718
             }
           },
           {
@@ -152,7 +164,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 434764436
+              "duration": 325926886
             }
           }
         ]
