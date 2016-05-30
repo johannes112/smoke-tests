@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28727
+              "duration": 24745
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 73957
+              "duration": 73690
             }
           }
         ],
@@ -60,17 +60,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10817137062
+              "duration": 10611022347
             }
           }
         ]
       },
       {
-        "id": "account;create-new-account",
+        "id": "account;modify-data-in-my-account",
         "keyword": "Scenario",
-        "name": "create new account",
+        "name": "modify data in my account",
         "description": "",
-        "line": 15,
+        "line": 27,
         "type": "scenario",
         "tags": [
           {
@@ -86,65 +86,44 @@
             "line": 4
           },
           {
-            "name": "@account_registration",
-            "line": 14
+            "name": "@account_update",
+            "line": 26
           }
         ],
         "steps": [
           {
             "keyword": "And ",
-            "name": "no user account with my data exists",
-            "line": 16,
-            "output": [
-              "delete customer with id:1338"
-            ],
+            "name": "I am logged in",
+            "line": 28,
             "match": {
-              "location": "features/step_definitions/account.rb:11"
+              "location": "features/step_definitions/account.rb:167"
             },
             "result": {
-              "status": "passed",
-              "duration": 3352152554
+              "status": "failed",
+              "error_message": "Unable to find css \"div.account--welcome.panel\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:134:in `/^I should be on my account page$/'\n./features/step_definitions/account.rb:169:in `/^I am logged in$/'\nfeatures/base_features/account.feature:28:in `And I am logged in'",
+              "duration": 35138219325
             }
           },
           {
             "keyword": "When ",
-            "name": "I create an new account with my data",
-            "line": 17,
-            "output": [
-              "- set prefix = \"Herr\"",
-              "- set firstname = \"Vorname\"",
-              "- set lastname = \"Nachname\"",
-              "- set email = \"testmail_chefworks@test.de\"",
-              "- set password = \"Test1234\"",
-              "- set phone = \"01234567\"",
-              "- set company = \"Test_eBusiness\"",
-              "- set department = \"eBusiness\"",
-              "- set taxvat = \"DE999999999\"",
-              "- set street = \"Vegastr. 2\"",
-              "- set postcode = \"86637\"",
-              "- set city = \"Wertingen\""
-            ],
+            "name": "I modify my userinfo",
+            "line": 29,
             "match": {
-              "location": "features/step_definitions/account.rb:27"
+              "location": "features/step_definitions/account.rb:178"
             },
             "result": {
-              "status": "passed",
-              "duration": 13538597929
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 18,
-            "output": [
-              "The page contains testmail_chefworks@test.de"
-            ],
+            "name": "I should see a confirmation hint",
+            "line": 30,
             "match": {
-              "location": "features/step_definitions/account.rb:119"
+              "location": "features/step_definitions/account.rb:234"
             },
             "result": {
-              "status": "passed",
-              "duration": 390659390
+              "status": "skipped"
             }
           }
         ],
@@ -155,7 +134,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25718
+              "duration": 24904
             }
           },
           {
@@ -164,7 +143,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 325926886
+              "duration": 606758424
             }
           }
         ]

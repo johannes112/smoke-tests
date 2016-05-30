@@ -13,8 +13,8 @@ urlname = @urlname
 puts "urlname:#{urlname}"
 
 shopware_user1 = ShopwareApi.new()#husername, hapikey)
-shopware_user1.setBasic(husername, hapikey, urlname)
-shopware_user1.setDigest(username, apikey, urlname)
+#shopware_user1.setBasic(husername, hapikey, urlname)
+#shopware_user1.setDigest(username, apikey, urlname)
 #shopware_user1.deleteDataId("Customers", 85)
 #shopware_user1.getData('orders', 83)
 #shopware_user1.getWholeData('Customers')
@@ -23,4 +23,5 @@ shopware_user1.setDigest(username, apikey, urlname)
 #shopware_user1.getData('Orders', 399)
 #shopware_user1.updateDataBy("email", "test.test@test.de")
 #shopware_user1.getWholeData('Orders')
-#shopware_user1.addArticleCartByAjax('CBIJWHTXS', 2)
+#shopware_user1.getData('customers', 91)
+#shopware_user1.getDataByKey('customers', "email", "tobias.baumhauer@emmos.de")

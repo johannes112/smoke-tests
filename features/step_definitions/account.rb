@@ -16,7 +16,18 @@ And(/^no user account with my data exists$/) do
 end
 
 Given(/^I already created an user account$/) do
-  #searchDataByKey
+  eMail = user.eMail
+  key = "email"
+  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+  customer_id_determined = shopware.getDataByKey("customers", key, eMail)
+  if customer_id_determined.is_a?(String)
+    puts "no unique account with #{key}:#{eMail} exists"
+    puts "create an account"
+    step("I create an new account with my data")
+  else
+    puts "there exists an unique account"
+  end
+  #shopware_user1.getDataByKey('customers', "email", "tobias.baumhauer@emmos.de")
   #if searchDataByKey == nil
   # puts "no account exists"
   #else
@@ -154,11 +165,75 @@ When(/^I login with valid informations$/) do
 end
 
 Given(/^I am logged in$/) do
-  # step ("I login with valid informations")
-  # step ("I should be on my account page")
+  step ("I login with valid informations")
+  step ("I should be on my account page")
 end
 
 When(/^I modify my address$/) do
   # define css pathes
+  step("I modify my userinfo")
   # split this big step into 4 babysteps: And(I modify my userinfo), And(I change my payment), And(I change my billing address), And(I modify my deliveryadress)
+end
+
+When("I modify my userinfo") do
+  step("I change my password")
+  step("I change my emailaddress")
+end
+
+When(/^I change my password$/) do
+  password = user.password
+  password_sec = user.password_sec
+  # define css pathes
+  account_userinfo_passwordchange_button_appear_path = "a.btn.is--small.btn--password"
+  account_userinfo_passwordchange_currentpassword_path = "#currentPassword"
+  account_userinfo_passwordchange_newpassword_path = "#newpwd"
+  account_userinfo_passwordchange_repeatnewpassword_path = "#newpwdrepeat"
+  account_userinfo_passwordchange_button_path = "#account--password > form > div.panel--actions.is--wide > input"
+  
+  element = page.find(account_userinfo_passwordchange_button_appear_path)
+  element.click
+  page.find(account_userinfo_passwordchange_currentpassword_path)
+  element = page.find(account_userinfo_passwordchange_currentpassword_path)
+  element.set(password)
+  element = page.find(account_userinfo_passwordchange_newpassword_path)
+  element.set(password_sec)
+  element = page.find(account_userinfo_passwordchange_repeatnewpassword_path)
+  element.set(password_sec)
+  element = page.find(account_userinfo_passwordchange_button_path)
+  element.click
+  
+  puts "- changed password"
+end
+
+When(/^I change my emailaddress$/) do
+  eMail_sec = user.eMail_sec
+  password_sec = user.password_sec
+  # define css pathes
+  account_userinfo_emailchange_button_appear_path = "a.btn.is--small.btn--email"
+  
+  account_userinfo_emailchange_currentpassword_path = "#emailPassword"
+  account_userinfo_emailchange_newmail_path = "#newmail"
+  account_userinfo_emailchange_repeatnewmail_path = "#neweailrepeat"
+  account_userinfo_emailchange_button_path = "#account--email > form > div.panel--actions.is--wide > input"
+  
+  element = page.find(account_userinfo_emailchange_button_appear_path)
+  element.click
+  page.find(account_userinfo_emailchange_currentpassword_path)
+  element = page.find(account_userinfo_passwordchange_currentpassword_path)
+  element.set(password_sec)
+  element = page.find(account_userinfo_emailchange_newmail_path)
+  element.set(eMail_sec)
+  element = page.find(account_userinfo_emailchange_repeatnewmail_path)
+  element.set(eMail_sec)
+  element = page.find(account_userinfo_emailchange_button_path)
+  element.click
+  
+  puts "- changed emailaddress"
+end
+
+Then(/^I should see a confirmation hint$/) do
+  account_userinfo_success_hint_path = "div.account--success"
+  
+  page.find(account_userinfo_success_hint_path)
+  puts "found info for success"
 end

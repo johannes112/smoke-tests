@@ -26,6 +26,5 @@ Feature: account
   @account_update
 	Scenario: modify data in my account
 		And I am logged in
-		When I modify my address
-		When I login with valid informations
-		Then I should be on my account page
+		When I modify my userinfo
+		Then I should see a confirmation hint
