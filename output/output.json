@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24745
+              "duration": 26878
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 73690
+              "duration": 56950
             }
           }
         ],
@@ -53,24 +53,24 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "go to https://www.chefworks.de/account"
+              "--> go to http://int.chefworks.de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 10611022347
+              "duration": 7744268252
             }
           }
         ]
       },
       {
-        "id": "account;modify-data-in-my-account",
+        "id": "account;modify-adress-billing",
         "keyword": "Scenario",
-        "name": "modify data in my account",
+        "name": "modify adress billing",
         "description": "",
-        "line": 27,
+        "line": 42,
         "type": "scenario",
         "tags": [
           {
@@ -87,40 +87,52 @@
           },
           {
             "name": "@account_update",
-            "line": 26
+            "line": 40
+          },
+          {
+            "name": "@account_billing",
+            "line": 41
           }
         ],
         "steps": [
           {
-            "keyword": "And ",
+            "keyword": "Given ",
             "name": "I am logged in",
-            "line": 28,
+            "line": 43,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "I should be on my account page",
+              "> the page contains testmail_chefworks@test.de"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:167"
+              "location": "features/step_definitions/account.rb:175"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Unable to find css \"div.account--welcome.panel\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:134:in `/^I should be on my account page$/'\n./features/step_definitions/account.rb:169:in `/^I am logged in$/'\nfeatures/base_features/account.feature:28:in `And I am logged in'",
-              "duration": 35138219325
+              "status": "passed",
+              "duration": 5945220323
             }
           },
           {
             "keyword": "When ",
-            "name": "I modify my userinfo",
-            "line": 29,
+            "name": "I modify my address for my bill",
+            "line": 44,
             "match": {
-              "location": "features/step_definitions/account.rb:178"
+              "location": "features/step_definitions/account.rb:305"
             },
             "result": {
-              "status": "skipped"
+              "status": "failed",
+              "error_message": "Ambiguous match, found 2 elements matching css \".btn.is--small\" (Capybara::Ambiguous)\n./features/step_definitions/account.rb:311:in `/^I modify my address for my bill$/'\nfeatures/base_features/account.feature:44:in `When I modify my address for my bill'",
+              "duration": 30209643865
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
-            "line": 30,
+            "line": 45,
             "match": {
-              "location": "features/step_definitions/account.rb:234"
+              "location": "features/step_definitions/account.rb:250"
             },
             "result": {
               "status": "skipped"
@@ -134,7 +146,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24904
+              "duration": 41350
             }
           },
           {
@@ -143,7 +155,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 606758424
+              "duration": 377394313
             }
           }
         ]

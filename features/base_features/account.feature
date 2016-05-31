@@ -13,8 +13,8 @@ Feature: account
   
   @account_registration
 	Scenario: create new account
-		And no user account with my data exists
-		When I create an new account with my data
+		And no user account with my email exists
+		When I create a new account with my data
 		Then I should be on my account page
 
   @account_login
@@ -24,7 +24,22 @@ Feature: account
 		Then I should be on my account page
 
   @account_update
-	Scenario: modify data in my account
-		And I am logged in
+  @account_userinfo
+	Scenario: modify userinfo in my account
+		Given I am logged in
 		When I modify my userinfo
+		Then I should see a confirmation hint
+		
+  @account_update
+  @account_payment
+	Scenario: modify payment in my account
+		Given I am logged in
+		When I modify my paymentinfo
+		Then I should see a confirmation hint
+		
+	@account_update
+  @account_billing
+	Scenario: modify adress billing
+		Given I am logged in
+		When I modify my address for my bill
 		Then I should see a confirmation hint
