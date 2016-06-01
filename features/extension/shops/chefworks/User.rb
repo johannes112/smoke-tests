@@ -1,5 +1,5 @@
 class User
-  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :firstname, :lastname, :department, :prefix, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
+  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
   
   def initialize
     @customer_number = case ENV['COUNTRY']
@@ -46,6 +46,9 @@ class User
     end
     @prefix = case ENV['COUNTRY']
       when 'de' then 'Herr'
+    end
+    @prefix_sec = case ENV['COUNTRY']
+      when 'de' then 'Frau'
     end
     @street = case ENV['COUNTRY']
       when 'de' then 'Vegastr. 2'

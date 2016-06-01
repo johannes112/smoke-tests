@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26878
+              "duration": 28161
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 56950
+              "duration": 60733
             }
           }
         ],
@@ -60,17 +60,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7744268252
+              "duration": 8582302430
             }
           }
         ]
       },
       {
-        "id": "account;modify-adress-billing",
+        "id": "account;test-links-of-the-accountsite",
         "keyword": "Scenario",
-        "name": "modify adress billing",
+        "name": "test links of the accountsite",
         "description": "",
-        "line": 42,
+        "line": 62,
         "type": "scenario",
         "tags": [
           {
@@ -86,19 +86,15 @@
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 40
-          },
-          {
-            "name": "@account_billing",
-            "line": 41
+            "name": "@account_links",
+            "line": 61
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am logged in",
-            "line": 43,
+            "line": 63,
             "output": [
               "I already created an user account",
               "-> there exists an unique account",
@@ -111,31 +107,49 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5945220323
+              "duration": 5228839949
             }
           },
           {
             "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 44,
+            "name": "I click all items of the sidebar",
+            "line": 64,
+            "output": [
+              "> menuitems:8",
+              "http://int.chefworks.de/account",
+              "http://int.chefworks.de/account/orders",
+              "http://int.chefworks.de/account/downloads",
+              "http://int.chefworks.de/account/billing",
+              "http://int.chefworks.de/account/shipping",
+              "http://int.chefworks.de/account/payment",
+              "http://int.chefworks.de/note",
+              "http://int.chefworks.de/account/logout",
+              "navigation--link is--active",
+              "navigation--link",
+              "navigation--link",
+              "navigation--link",
+              "navigation--link",
+              "navigation--link",
+              "navigation--link",
+              "navigation--link link--logout"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:305"
+              "location": "features/step_definitions/account.rb:380"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Ambiguous match, found 2 elements matching css \".btn.is--small\" (Capybara::Ambiguous)\n./features/step_definitions/account.rb:311:in `/^I modify my address for my bill$/'\nfeatures/base_features/account.feature:44:in `When I modify my address for my bill'",
-              "duration": 30209643865
+              "status": "passed",
+              "duration": 2743533307
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 45,
+            "name": "I should see a hint",
+            "line": 65,
             "match": {
-              "location": "features/step_definitions/account.rb:250"
+              "location": "features/base_features/account.feature:65"
             },
             "result": {
-              "status": "skipped"
+              "status": "undefined"
             }
           }
         ],
@@ -146,7 +160,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41350
+              "duration": 75985
             }
           },
           {
@@ -155,7 +169,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 377394313
+              "duration": 369778218
             }
           }
         ]

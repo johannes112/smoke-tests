@@ -305,31 +305,85 @@ end
 When(/^I modify my address for my bill$/) do
   #css pathes
   account_accountinfo_billaddress_box_path = "div.account--billing.account--box"
-  account_accountinfo_billaddresschange_button_appear_path = ".btn.is--small"
+  account_accountinfo_billaddresschange_button_appear_path = "a:nth-child(2)"
   
   account_accountinfo_billaddresschange_box = page.find(account_accountinfo_billaddress_box_path)
   element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
   element.click
   puts "--> clicked button for change the adress of billing"
   
-  puts "I change prefix of my address"
-  step("I change prefix of my address")
+  puts "I change prefix of my address for invoice"
+  step("I change prefix of my address for invoice")
 end
 
-When(/^I change prefix of my address$/) do
-  prefix = "Frau"
+When(/^I change prefix of my address for invoice$/) do
+  prefix = user.prefix_sec
   
-  account_addresschange_form_path = "div.panel.has--border.is--rounded"
-  account_addresschange_form_prefix_path = "#salutation"
+  #account_invoiceadresschange_form_path = "div.panel.has--border.is--rounded > div > form"
+  account_invoiceadresschange_form_prefix_path = "div.panel.register--personal > div > div.register--salutation.field--select"
   
-  account_addresschange_button_path = "div.account--actions > input"
+  account_invoiceadresschange_button_path = "div.account--actions > input"
   
   #set value for prefix
-  account_addresschange_form_box = page.find(account_addresschange_form_path)
-  element = account_addresschange_form_box.find(account_addresschange_form_prefix_path)
+  page.find(account_invoiceadresschange_form_prefix_path)
+  element = page.find(account_invoiceadresschange_form_prefix_path)
   element.select(prefix)
   puts "--> select prefix:#{prefix}"
   
-  element = page.find(account_addresschange_button_path)
+  element = page.find(account_invoiceadresschange_button_path)
   element.click
+  puts "--> click change-button"
+end
+
+When(/^I modify my address for my delivery/) do
+  #css pathes
+  account_accountinfo_deliveraddress_box_path = "div.account--shipping.account--box"
+  account_accountinfo_deliveraddresschange_button_appear_path = "a:nth-child(2)"
+  
+  account_accountinfo_deliveraddresschange_box = page.find(account_accountinfo_deliveraddress_box_path)
+  element = account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path)
+  element.click
+  puts "--> clicked button for change the adress for delivery"
+  
+  puts "I change prefix of my address for delivery"
+  step("I change prefix of my address for delivery")
+end
+
+When(/^I change prefix of my address for delivery$/) do
+  prefix = user.prefix_sec
+  
+  #account_deliveradresschange_form_path = "div.panel.has--border.is--rounded > div > form"
+  account_deliveradresschange_form_prefix_path = "div.panel.register--shipping > div > div.register--salutation.field--select"
+  
+  account_deliveradresschange_button_path = "div.account--actions > input"
+  
+  #set value for prefix
+  page.find(account_deliveradresschange_form_prefix_path)
+  element = page.find(account_deliveradresschange_form_prefix_path)
+  element.select(prefix)
+  puts "--> select prefix:#{prefix}"
+  
+  element = page.find(account_deliveradresschange_button_path)
+  element.click
+  puts "--> click change-button"
+end
+
+When(/^I activate the newsletterbox$/) do
+  account_newsletter_box_path = "#newsletter"
+  
+  element = page.find(account_newsletter_box_path)
+  element.click
+  puts "--> activate the checkbox"
+end
+
+#it is not implemented
+When(/^I click all items of the sidebar$/) do
+  account_sidebar_path = "div.account--menu > div > ul"
+  
+  #account_sidebar_menuitems = page.find(account_sidebar_path).all('li')
+  account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
+  #account_sidebar_menuitems.all('li').map { |li| li.find('a')['href'] }
+  puts "> menuitems:#{account_sidebar_menuitems.size}"
+  account_sidebar_menuitems.each { |x| puts x[:href] }
+  account_sidebar_menuitems.each { |x| puts x[:class] }
 end

@@ -10,7 +10,8 @@ Feature: account
 
   Background:
     Given I am on the registration page
-  
+
+	
   @account_registration
 	Scenario: create new account
 		And no user account with my email exists
@@ -38,8 +39,28 @@ Feature: account
 		Then I should see a confirmation hint
 		
 	@account_update
-  @account_billing
-	Scenario: modify adress billing
+  @account_invoice
+	Scenario: modify adress of invoice
 		Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
+		
+	@account_update
+  @account_delivery
+	Scenario: modify adress of delivery
+		Given I am logged in
+		When I modify my address for my delivery
+		Then I should see a confirmation hint
+
+	@account_newsletter
+  Scenario: change settings of newsletter
+		Given I am logged in
+		When I activate the newsletterbox
+		Then I should see a confirmation hint
+		
+	@account_links
+  Scenario: test links of the accountsite
+		Given I am logged in
+		When I click all items of the sidebar
+		Then I should see a hint
+  
