@@ -377,13 +377,17 @@ When(/^I activate the newsletterbox$/) do
 end
 
 #it is not implemented
-When(/^I click all items of the sidebar$/) do
+When(/^I get all items of the sidebar$/) do
   account_sidebar_path = "div.account--menu > div > ul"
   
   #account_sidebar_menuitems = page.find(account_sidebar_path).all('li')
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
   #account_sidebar_menuitems.all('li').map { |li| li.find('a')['href'] }
   puts "> menuitems:#{account_sidebar_menuitems.size}"
-  account_sidebar_menuitems.each { |x| puts x[:href] }
-  account_sidebar_menuitems.each { |x| puts x[:class] }
+  account_sidebar_menuitems.each { 
+    |x| 
+    account_sidebar_menuitems_href = /\b[a-z]*\z\b/.match(x[:href]) 
+    puts "- #{account_sidebar_menuitems_href}"
+  }
 end
+

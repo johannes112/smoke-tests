@@ -61,6 +61,5 @@ Feature: account
 	@account_links
   Scenario: test links of the accountsite
 		Given I am logged in
-		When I click all items of the sidebar
-		Then I should see a hint
+		When I get all items of the sidebar
   
