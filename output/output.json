@@ -1,10 +1,10 @@
 [
   {
-    "uri": "features/base_features/account.feature",
-    "id": "account",
+    "uri": "features/base_features/checkout.feature",
+    "id": "checkout",
     "keyword": "Feature",
-    "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
+    "name": "checkout",
+    "description": "\tAs a customer,\n\tI want to be able to order my favorite products",
     "line": 5,
     "tags": [
       {
@@ -16,61 +16,17 @@
         "line": 3
       },
       {
-        "name": "@account",
+        "name": "@checkout",
         "line": 4
       }
     ],
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "checkout;checkout-with-existing-account",
+        "keyword": "Scenario",
+        "name": "checkout with existing account",
         "description": "",
         "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43582
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 105795
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "output": [
-              "--> go to http://int.chefworks.de/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 8889234915
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;create-new-account",
-        "keyword": "Scenario",
-        "name": "create new account",
-        "description": "",
-        "line": 16,
         "type": "scenario",
         "tags": [
           {
@@ -82,200 +38,117 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@checkout",
             "line": 4
           },
           {
-            "name": "@account_registration",
-            "line": 15
+            "name": "@checkout_with",
+            "line": 10
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29424
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 65504
+            }
           }
         ],
         "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 12,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "--> ups, go to http://int.chefworks.de/account",
+              "I should be on my account page",
+              "> the page contains testmail_chefworks@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19093231237
+            }
+          },
           {
             "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 17,
+            "name": "the product cart contains an article",
+            "line": 13,
             "output": [
-              "delete customer with id:123"
+              "add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "went to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:11"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 2056230492
+              "duration": 5425482083
             }
           },
-          {
-            "keyword": "When ",
-            "name": "I create a new account with my data",
-            "line": 18,
-            "output": [
-              "- set prefix = \"Herr\"",
-              "- set firstname = \"Vorname\"",
-              "- set lastname = \"Nachname\"",
-              "- set email = \"testmail_chefworks@test.de\"",
-              "- set password = \"Test2014\"",
-              "Unable to find css \"#phone\"",
-              "- set company = \"Test_eBusiness\"",
-              "- set department = \"eBusiness\"",
-              "- set taxvat = \"DE999999999\"",
-              "- set street = \"Vegastr. 2\"",
-              "- set postcode = \"86637\"",
-              "- set city = \"Wertingen\""
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:42"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 41871417090
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 19,
-            "output": [
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:138"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 404008741
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 54160
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 348961887
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 32760
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 68726
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2766815481
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;login-with-existing-account",
-        "keyword": "Scenario",
-        "name": "login with existing account",
-        "description": "",
-        "line": 22,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_login",
-            "line": 21
-          }
-        ],
-        "steps": [
           {
             "keyword": "And ",
-            "name": "I already created an user account",
-            "line": 23,
+            "name": "I am on the checkout page",
+            "line": 14,
             "output": [
-              "-> there exists an unique account"
+              "> ups, I am on http://int.chefworks.de/checkout/cart",
+              "--> go to http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:18"
+              "location": "features/step_definitions/checkout.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 868493964
+              "duration": 2957229011
             }
           },
           {
             "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 24,
+            "name": "I send my order with existing account",
+            "line": 15,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:151"
+              "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
               "status": "passed",
-              "duration": 3766034111
+              "duration": 5047659024
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 25,
-            "output": [
-              "> the page contains testmail_chefworks@test.de"
-            ],
+            "name": "Magento should have my order",
+            "line": 16,
             "match": {
-              "location": "features/step_definitions/account.rb:138"
+              "location": "features/base_features/checkout.feature:16"
             },
             "result": {
-              "status": "passed",
-              "duration": 393754154
+              "status": "undefined"
             }
           }
         ],
@@ -286,7 +159,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31440
+              "duration": 25305
             }
           },
           {
@@ -295,874 +168,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 334542430
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 42280
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 133800
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3204483593
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-userinfo-in-my-account",
-        "keyword": "Scenario",
-        "name": "modify userinfo in my account",
-        "description": "",
-        "line": 29,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_update",
-            "line": 27
-          },
-          {
-            "name": "@account_userinfo",
-            "line": 28
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 30,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6384697024
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my userinfo",
-            "line": 31,
-            "output": [
-              "I change my password",
-              "--> changed password",
-              "I change my emailaddress",
-              "--> changed emailaddress",
-              "I delete the account with the modified mailadress",
-              "delete customer with id:125"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:190"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12410932841
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 32,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:250"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 293747339
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36664
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 327060040
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 31894
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 69606
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1282144846
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-payment-in-my-account",
-        "keyword": "Scenario",
-        "name": "modify payment in my account",
-        "description": "",
-        "line": 36,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_update",
-            "line": 34
-          },
-          {
-            "name": "@account_payment",
-            "line": 35
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 37,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with email:testmail_chefworks@test.de exists",
-              "I create a new account with my data",
-              "- set prefix = \"Herr\"",
-              "- set firstname = \"Vorname\"",
-              "- set lastname = \"Nachname\"",
-              "- set email = \"testmail_chefworks@test.de\"",
-              "- set password = \"Test2014\"",
-              "Unable to find css \"#phone\"",
-              "- set company = \"Test_eBusiness\"",
-              "- set department = \"eBusiness\"",
-              "- set taxvat = \"DE999999999\"",
-              "- set street = \"Vegastr. 2\"",
-              "- set postcode = \"86637\"",
-              "- set city = \"Wertingen\"",
-              "I log me out",
-              "--> logged me out",
-              "I am on the registration page",
-              "--> go to http://int.chefworks.de/account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 52141122071
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 38,
-            "output": [
-              "--> clicked button for change of payment",
-              "I change option of payment",
-              "--> chose checkbox for cash on delivery"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:276"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7055932225
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 39,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:250"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 296115281
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 83814
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 307380697
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36109
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 130164
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2971652899
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-adress-of-invoice",
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "description": "",
-        "line": 43,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_update",
-            "line": 41
-          },
-          {
-            "name": "@account_invoice",
-            "line": 42
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 44,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6121544229
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 45,
-            "output": [
-              "--> clicked button for change the adress of billing",
-              "I change prefix of my address for invoice",
-              "--> select prefix:Frau",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:305"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5655324758
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 46,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:250"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 301113860
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 68724
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 309077945
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38283
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 107313
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2769321409
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-adress-of-delivery",
-        "keyword": "Scenario",
-        "name": "modify adress of delivery",
-        "description": "",
-        "line": 50,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_update",
-            "line": 48
-          },
-          {
-            "name": "@account_delivery",
-            "line": 49
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 51,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4958107534
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my delivery",
-            "line": 52,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "I change prefix of my address for delivery",
-              "--> select prefix:Frau",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:338"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4423932496
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 53,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:250"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 297947408
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 35828
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 304123124
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 29881
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 96238
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1217650864
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;change-settings-of-newsletter",
-        "keyword": "Scenario",
-        "name": "change settings of newsletter",
-        "description": "",
-        "line": 56,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_newsletter",
-            "line": 55
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 57,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6270134493
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 58,
-            "output": [
-              "--> activate the checkbox"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:371"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1931491598
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 59,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:250"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 304286818
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 37933
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 312657277
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 39287
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 104611
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1245088451
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;test-links-of-the-accountsite",
-        "keyword": "Scenario",
-        "name": "test links of the accountsite",
-        "description": "",
-        "line": 62,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_links",
-            "line": 61
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 63,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:175"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6006381734
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I get all items of the sidebar",
-            "line": 64,
-            "output": [
-              "> menuitems:8",
-              "- account",
-              "- orders",
-              "- downloads",
-              "- billing",
-              "- shipping",
-              "- payment",
-              "- note",
-              "- logout"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:380"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1434482410
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 27072
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 341345312
+              "duration": 316561608
             }
           }
         ]

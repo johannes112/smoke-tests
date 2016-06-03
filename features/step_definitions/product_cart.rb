@@ -8,20 +8,8 @@ Given(/^the product cart contains an article$/) do
   #chech if cart contains an article
   expect(page).to have_css(product_cart_article_path),
     "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
-  
 end
 
-Given(/^the product cart includes an article$/) do
-  product_cart_article_path = 'div.panel.has--border'
-  
-  step("I add an article to my cart manually")
-  step("I am on the product cart page")
-  
-  #chech if cart contains an article
-  expect(page).to have_css(product_cart_article_path),
-    "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
-  
-end
 
 And(/^I add an article to my cart manually$/) do
   step("I am on the product page of an article")

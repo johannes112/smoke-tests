@@ -152,12 +152,20 @@ When(/^I login with valid informations$/) do
   #var
   email = user.eMail
   password = user.password
+  url_account = settings.urlHttps+'account'
   
   #path
   account_loginform_emailfield_path = '#email'
   account_loginform_passwordfield_path = '#passwort'
   account_loginform_registerbutton_path = 'div.register--login-action > button'
   #account__loginform_error_path = 'div.account--error'
+  
+  if (current_url == url_account) 
+    puts "> ok, i am on #{current_url}"
+  else
+    puts "--> ups, go to #{url_account}"
+    visit(url_account)
+  end
   
   #search for field, so you know that we are on the right site
   page.find(account_loginform_emailfield_path)

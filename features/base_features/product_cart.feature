@@ -10,7 +10,7 @@ Feature: account
 
   @product_cart_continue
     Scenario: continue shopping
-      Given the product cart includes an article
+      Given the product cart contains an article
 	    When I click on the button to continue shopping
   	  Then I will see the back on the productsite
 	  
