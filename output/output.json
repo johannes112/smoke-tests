@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29424
+              "duration": 34503
             }
           },
           {
@@ -62,7 +62,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 65504
+              "duration": 123496
             }
           }
         ],
@@ -80,11 +80,11 @@
               "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:185"
             },
             "result": {
               "status": "passed",
-              "duration": 19093231237
+              "duration": 16228223201
             }
           },
           {
@@ -100,7 +100,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5425482083
+              "duration": 3364063578
             }
           },
           {
@@ -117,7 +117,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2957229011
+              "duration": 4477297937
             }
           },
           {
@@ -137,18 +137,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5047659024
+              "duration": 6136898685
             }
           },
           {
             "keyword": "Then ",
-            "name": "Magento should have my order",
+            "name": "Shopware should have my order",
             "line": 16,
             "match": {
-              "location": "features/base_features/checkout.feature:16"
+              "location": "features/step_definitions/checkout.rb:65"
             },
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 4031903380
             }
           }
         ],
@@ -159,7 +160,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25305
+              "duration": 49367
             }
           },
           {
@@ -168,7 +169,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 316561608
+              "duration": 342780972
             }
           }
         ]

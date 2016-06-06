@@ -22,6 +22,8 @@ Given(/^I already created an user account$/) do
   customer_id_determined = shopware.getDataByKey("customers", key, eMail)
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with #{key}:#{eMail} exists"
+    puts "I am on the registration page"
+    step("I am on the registration page")
     puts "I create a new account with my data"
     step("I create a new account with my data")
     puts "I log me out"

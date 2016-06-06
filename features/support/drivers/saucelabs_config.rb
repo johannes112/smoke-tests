@@ -8,7 +8,7 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.default_max_wait_time= 30
     
     Sauce.config do |config|
-      config[:name] = "Shopware tests:"
+      config[:name] = "Shopware tests: #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
       config['screen-resolution'] = "1280x960"
       config[:start_tunnel] = false
       config[:browsers] = [
