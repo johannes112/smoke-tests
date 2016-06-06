@@ -18,18 +18,15 @@ class ShopwareApi
     if response_data.success?
       response_data
     else
-      puts "Can not connect"
+      puts ">> Can not connect"
     end
     response_data_json = response_data.parsed_response
     return response_data_json
   end
   def updateData(url, options)
     response_data = self.class.put(url, options)
-    puts "Responsecode:#{response_data.code.to_i}"
-    if response_data.success?
-      puts "SUCCESS: update completed"
-    else
-      puts "ERROR: update failed"
+    if !response_data.success?
+      puts ">> ERROR: update failed"
     end
   end
   def deleteData(url)
@@ -38,7 +35,7 @@ class ShopwareApi
     if response_data.success?
       response_data
     else
-      puts "Can not connect"
+      puts ">> Can not connect"
     end
   end
   

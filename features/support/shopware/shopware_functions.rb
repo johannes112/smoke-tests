@@ -81,13 +81,13 @@ module ShopwareFunctions
   def printAllElements(data, key, last_element)  
   counter = 0
     while counter < last_element do
-      p "ID:#{data[counter]["id"]}"
-      p "#{key}:#{data[counter][key]}"
+      p ">> ID:#{data[counter]["id"]}"
+      p ">> #{key}:#{data[counter][key]}"
       counter += 1
     end
   end
   
-  #get customer with key and value
+  #get customerid with key and value
   def searchForDataByKey(given_response_httpParty, given_key, given_value)
     #get whole data of api
     whole_response = given_response_httpParty
@@ -104,9 +104,9 @@ module ShopwareFunctions
         data_to_delete = intSearchForValue(data, data_key, data_value, total)
         return data_to_delete
       else
-        puts "!!!"
-        puts "several(#{occur_frequency}) with #{data_key}:#{data_value} exist"
-        puts "can not delete more than one ID"
+        puts ">> !!!"
+        puts ">> several(#{occur_frequency}) with #{data_key}:#{data_value} exist"
+        puts ">>> can not delete more than one ID"
       end
     else
       #puts ("no customer with #{data_key}:#{data_value} exists")
@@ -139,7 +139,7 @@ module ShopwareFunctions
       #check var for value and then print the id of the received_data
       if received_data == (value)
         customer_id_determined = data[counter]["id"]
-        #p "customer_id:#{customer_id_determined}"
+        #p "id:#{customer_id_determined}"
         return customer_id_determined
       end
       counter += 1
@@ -177,11 +177,11 @@ module ShopwareFunctions
     url_data = stringGetUrlPath(data_of)
     #url_request = "#{url_data}/#{id}/#{key}/#{value}":query => { :email => "alan+thinkvitamin@carsonified.com" })
     url_request = "#{url_data}/#{id}"
-    p "PUT: #{url_request}"
+    #p "PUT: #{url_request}"
     updateData(url_request, options)
   end
   
-  def updateDataBy(key, value) #update statusOrderId to 4 of order with order_id 
+  def updateOrderStatusFor(key, value) #update statusOrderId to 4 of order with order_id 
     #get order_id of order with customer_id with key and value 
     #1. get customer_id of customer with mailaddress
     #2. get order_id of order with customer_id
@@ -192,16 +192,46 @@ module ShopwareFunctions
     data_orders = connectAndGetData('Orders')
     #1. get customer_id by key
     customer_id = searchForDataByKey(data_customers, key, value)
-    p "UPDATE:customer_id:#{customer_id}"
-    #2. get order_id by key
-    order_id = searchForDataByKey(data_orders, "customerId", customer_id)
-    #3. get orderStatusId
-    order_orderStatus = getData("Orders", order_id)
-    order_orderStatus_Id = getOrderByKey(order_orderStatus, "orderStatusId")
+    #p "UPDATE:customer_id:#{customer_id}"
+    #2. search and set order_id by key
+    searchForOrderById(data_orders, "customerId", customer_id)
     #set orderStatus_Id to 4 (Stoniert / Abgelehnt)
-    p "key:#{key}, value:#{value}"
-    setValue("Orders", 399, "orderStatusId", 4)
+    #puts ">> key:#{key}, value:#{value}"
     #to avoid an export of this data i have to set "orderStatusId" of the order to 4
+  end
+  
+  def searchForOrderById(given_response_httpParty, given_key, given_value)
+    #get whole data of api
+    whole_response = given_response_httpParty
+    whole_response = whole_response
+    #save part of keys and unique entities
+    data = whole_response.fetch("data")
+    total = whole_response.fetch("total")
+    data_key = given_key
+    data_value = given_value
+    #check for existence of value
+    occur_frequency = intCheckForValue(data, data_key, data_value, total)
+    if(occur_frequency > 0)
+      searchForOrder(data, data_key, data_value, total)
+    else
+      puts (">> no order with #{data_key}:#{data_value} exists")
+    end
+  end
+  
+  def searchForOrder(data, key, value, last_element)  
+    counter = 0
+    #loop over all elements
+    while counter < last_element do
+      #save each customer into overwritten variable received_data
+      received_data = data[counter][key]
+      #check var for value and then print the id of the received_data
+      if received_data == (value)
+        customer_id_determined = data[counter]["id"]
+        #puts "set status of customer:#{customer_id_determined}"
+        setValue("Orders", customer_id_determined, "orderStatusId", 4)
+      end
+      counter += 1
+    end
   end
 
   def stringGetUrlPath(data_of)
@@ -214,20 +244,5 @@ module ShopwareFunctions
         url = "/api/orders"
     end
   end
-  
-  # def addArticleCartByAjax(sku, amount) #add an article to cart by a call of an ajax-function (https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBIJWHTXS&sQuantity=2)
-  #   #1. assemble url by sku, amount, settings.urlHttps and param
-  #   #2. send url to updateData
-  #   #1. set url (base_url+'checkout'+ajax_params_function+ajax_params_sku+ajax_params_amount)
-  #   base_url = 'int.chefworks.de'
-  #   ajax_params_function = "ajaxAddArticleCart?callback=jQuery"
-  #   ajax_params_sku = "&sAdd=#{sku}"
-  #   ajax_params_amount = "&sQuantity=#{sku}"
-  #   ajax_url = "#{base_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
-  #   p "ajax_url:#{ajax_url}"
-  #   #2. send string to url
-  #   options = {:digest_auth => @auth_digest}
-  #   updateData(ajax_url, options)
-  # end
   
 end
