@@ -1,5 +1,6 @@
 #product_cart
 Given(/^the product cart contains an article$/) do
+  # with ajax'
   product_cart_article_path = 'div.panel.has--border'
   
   step("I add an article to my cart by ajax")
@@ -14,6 +15,7 @@ end
 And(/^I add an article to my cart manually$/) do
   step("I am on the product page of an article")
   step("I add an article to the product cart by clicking the button to push it into the cart")
+  step("I am on the product cart page")
 end
 
 And(/^I add an article to my cart by ajax$/) do
@@ -25,16 +27,16 @@ And(/^I add an article to my cart by ajax$/) do
   ajax_params_sku = "&sAdd=#{sku}"
   ajax_params_amount = "&sQuantity=#{amount}"
   ajax_url = "#{website_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
-  puts "add article: #{ajax_url}"
+  puts "-> add article: #{ajax_url}"
   visit(ajax_url)
 end
 
 When(/^I click on the button to continue shopping$/) do
-  product_cart_button_continue_path = "a.btn.btn--checkout-continue.is--secondary.left.continue-shopping--action.is--icon-left.is--large"
+  product_cart_button_continue_path = ".continue-shopping--action"
   
-  element = page.find(product_cart_button_continue_path)
+  element = page.find(product_cart_button_continue_path, match: :first)
   element.click
-  puts "clicked button for continue"
+  puts "--> clicked button for continue"
 end
 
 Then(/^I will see the back on the productsite$/) do
@@ -48,7 +50,7 @@ Given(/^I am on the product cart page$/) do
   url = "#{website_url}#{url_part_product_cart}"
   
   visit(url)
-  puts "went to #{url}"
+  puts "-> go to #{url}"
   expect(current_url).to include(url_part_product_cart),
     "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
 end
