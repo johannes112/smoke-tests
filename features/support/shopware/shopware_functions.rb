@@ -214,7 +214,7 @@ module ShopwareFunctions
     if(occur_frequency > 0)
       searchForOrder(data, data_key, data_value, total)
     else
-      puts (">> no order with #{data_key}:#{data_value} exists")
+      #puts (">> no order with #{data_key}:#{data_value} exists")
     end
   end
   
