@@ -12,7 +12,7 @@ Feature: checkout
 	  Given I am logged in
 	  And the product cart contains an article
 	  And I am on the checkout page
-	  When I send my order with existing account
+	  When I send my order
 	  Then Shopware should have my order
 
   @checkout_without
@@ -21,12 +21,15 @@ Feature: checkout
 	  And the product cart contains an article
 	  When I go to the checkout
 	  When I fill out a register form and send it without creating an account
+	  When I send my order
 	  Then Shopware should have my order
 
-  @checkout_create
-	Scenario: checkout without existing account and with creating an account
-	  Given the product cart contains an article
-	  And no user account with my data exists
-	  And I am on the checkout page
-	  When I send a correctly filled checkout formular without existing account and with creating an account
-	  Then Magento should have my order
+  @checkout_registration
+	Scenario: checkout without existing account and create an account
+	  Given no user account with my email exists
+	  And the product cart contains an article
+	  When I go to the checkout
+	  And I create a new account with my data
+	  And I set payment and shipping
+	  When I send my order
+	  Then Shopware should have my order

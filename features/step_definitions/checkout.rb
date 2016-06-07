@@ -41,7 +41,7 @@ And(/^the checkoutpage contains all elements/) do
     "expected to find #{checkout_orderbutton_path}, but the checkout_orderbutton is still missing on the page"
 end
 
-When(/^I send my order with existing account$/) do
+When(/^I send my order$/) do
   checkout_orderbutton_path = "button"
   
   puts "I am on the checkout page"
@@ -51,15 +51,17 @@ When(/^I send my order with existing account$/) do
   
   element = page.find(checkout_orderbutton_path)
   element.click
+  puts "--> click orderbutton"
 end
 
 And(/^I activate the box of agb$/) do
   checkout_agb_container_path = "#sAGB"
   
-  step("I am on the checkout page")
+  #step("I am on the checkout page")
   
   element = page.find(checkout_agb_container_path)
   element.click
+  puts "-> activate agb"
 end
 
 When(/^I go to the checkout$/) do
@@ -70,6 +72,7 @@ When(/^I go to the checkout$/) do
   
   element = page.find(product_cart_checkout_button_path, match: :first)
   element.click
+  puts "--> click button to continue"
 end
 
 When(/^I fill out a register form and send it without creating an account$/) do
@@ -164,13 +167,44 @@ When(/^I fill out a register form and send it without creating an account$/) do
   #click button
   element = page.find(account_registerform_button_path)
   element.click
+  puts "--> click button to continue"
+end
+
+When(/^I set payment and shipping$/) do
+  #css pathes
+  checkout_payment_form_path = ".shipping-payment--information"
+  checkout_paymentInAdvance_radio_path = "#payment_mean5"
+  checkout_payment_continue_path = ".table--actions.block > button"
+  checkout_payment_delivery_standard_radio_path = "#confirm_dispatch9"
+  
+  page.find(checkout_payment_form_path)
+  #set payment
+  element = page.find(checkout_paymentInAdvance_radio_path)
+  element.click
+  puts "-> choose payment"
+  #set delivery
+  element = page.find(checkout_payment_delivery_standard_radio_path)
+  element.click
+  puts "-> choose delivery"
+  element = find(checkout_payment_continue_path, match: :first)
+  element.click
+  puts "--> click button to continue"
 end
 
 Then(/^Shopware should have my order$/) do
   key = "email"
   eMail = user.eMail
+  url_part = 'finish'
+  
+  checkout_order_success_teaser = ".finish--teaser"
+  page.find(checkout_order_success_teaser)
+  puts "> found teaser for success"
+  
+  expect(current_url).to include(url_part),
+    "Expected to be at #{url_part} but i am on #{current_url}"
+    
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
-  puts "cancel orders of customer with #{key}:#{eMail}"
+  puts ">> cancel orders of customer with #{key}:#{eMail}"
   shopware.updateOrderStatusFor(key, eMail)
 end
 
