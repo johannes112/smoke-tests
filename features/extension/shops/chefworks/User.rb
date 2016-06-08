@@ -1,3 +1,4 @@
+#chefworks
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
   

@@ -1,3 +1,4 @@
+#export
 class Settings
   attr_accessor :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
   

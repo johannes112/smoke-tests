@@ -1,4 +1,4 @@
-#export
+#pulsiva
 class User
   attr_accessor :customer_number, :eMail, :password, :company, :firstname, :lastname, :prefix, :street, :streetnumber, :postcode, :city, :telephone, :store, :website_id, :store_id, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :backend_region_id, :registration_form_region_id
   

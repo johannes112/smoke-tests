@@ -33,12 +33,6 @@ Given(/^I already created an user account$/) do
   else
     puts   "-> there exists an unique account"
   end
-  #shopware_user1.getDataByKey('customers', "email", "tobias.baumhauer@emmos.de")
-  #if searchDataByKey == nil
-  # puts "no account exists"
-  #else
-  # puts shopware.deleteDataByKey("Customers", key, eMail)
-  #end
 end
 
 When(/^I create a new account with my data$/) do
@@ -135,6 +129,7 @@ When(/^I create a new account with my data$/) do
   #click button
   element = page.find(account_registerform_button_path)
   element.click
+  puts "clicked button to continue"
 end
 
 Then(/^I should be on my account page$/) do
@@ -165,7 +160,7 @@ When(/^I login with valid informations$/) do
   if (current_url == url_account) 
     puts "> ok, i am on #{current_url}"
   else
-    puts "--> ups, go to #{url_account}"
+    puts "--> go to #{url_account}"
     visit(url_account)
   end
   
@@ -174,12 +169,15 @@ When(/^I login with valid informations$/) do
   #set value for mail
   element = page.find(account_loginform_emailfield_path)
   element.set(email)
+  puts "-> set email"
   #set value for password
   element = page.find(account_loginform_passwordfield_path)
   element.set(password)
+  puts "-> set password"
   #click button
   element = page.find(account_loginform_registerbutton_path)
   element.click
+  puts "--> pushed button for registration"
 end
 
 Given(/^I am logged in$/) do

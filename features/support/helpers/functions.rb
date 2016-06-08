@@ -19,9 +19,9 @@ def disable_css
   begin
     jsDisStyle=jsfunctions.disableStylesheet
     page.driver.browser.execute_script(jsDisStyle)
-    puts "disable all styleSheets"
+    puts "> disable all styleSheets"
   rescue
-    puts "           can not disable_css"
+    puts "           > can not disable_css"
   end
 end  
 
@@ -31,7 +31,7 @@ def block_css(csspath)
     page.driver.browser.execute_script("
       function blockCssElement()
       {
-        if (matches = $"+csspath+".match(/^([.#])){
+        if (matches = $("+csspath+").match(/^([.#]))){
           var element = document.getElementById('"+csspath+"'); 
           element.style.display = 'none'; 
         } else {

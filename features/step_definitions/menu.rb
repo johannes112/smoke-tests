@@ -13,11 +13,13 @@ When(/^I navigate to the category by the hovermenu$/) do
   navigationmenu = page.find(navigation_path)
   element = navigationmenu.find_link(category)
   element.hover
+  puts "-> hovered menu"
   #hovermenu
   #page.find(filter_navigation_hovermenu_path)#.hover
   hovermenu = page.find(navigation_hovermenu_path)
   element = hovermenu.find_link(category, match: :first)
   element.click
+  puts "-> clicked on hovermenu"
   #check for success
   expect(current_url).not_to eq(url_start),
      "Expect url of category but it was still #{current_url}"
@@ -30,19 +32,26 @@ When(/^I navigate to the category by the menu$/) do
   
   #set pathes
   navigation_path = 'div.page-wrap > nav'
+  navigation_hovermenu_close_path = '.menu--is-active > div.button-container > span > i'
   navigation_sidebar_path = 'div.sidebar--categories-navigation'
   
   #main-menu
-  disable_css
   page.find(navigation_path)
   navigationmenu = page.find(navigation_path)
   element = navigationmenu.find_link(category)
   element.click
+  puts "-> clicked category on menu"
   #sidebar-menu
   page.find(navigation_sidebar_path)
+  puts "> found sidebar"
+  element = page.find(navigation_hovermenu_close_path)
+  element.click
+  puts "-> closed hovermenu"
   sidebar = page.find(navigation_sidebar_path)
   element = sidebar.find_link(category, match: :first)
+  
   element.click
+  puts "-> clicked category on sidebar"
   #check for success
   expect(current_url).not_to eq(url_start),
      "Expect url of category but it was still #{current_url}"

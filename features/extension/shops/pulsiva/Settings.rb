@@ -1,26 +1,26 @@
-#chefworks
+#pulsiva
 class Settings
   attr_accessor :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
   
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when 'de' then nil
+        when (/.*/) then 'http://int.pulsiva.com/de-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when 'de' then 'https://int.chefworks.de/'
-      end
-      @urlBackend = 'http://int.chefworks.de/backend/'
+        when (/de/) then 'https://int.pulsiva.com/de-de/'
+        end
+      @urlBackend = 'https://int.pulsiva.com/backend/'
     end
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when 'de' then nil
+        when (/.*/) then nil
       end
       @urlHttps = case ENV['COUNTRY']
-        when 'de' then 'https://www.chefworks.de/'
+        when (/de/) then 'https://www.pulsiva.com/de-de/'
       end
-      @urlBackend = 'https://www.chefworks.de/backend/'
+      @urlBackend = 'https://www.pulsiva.com/backend/'
     end
     
     @baby_steps = true

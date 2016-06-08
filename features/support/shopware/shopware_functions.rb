@@ -22,7 +22,7 @@ module ShopwareFunctions
     data_for_search = searchForDataByKey(data, key, value)
     if data_for_search == nil
       #p "several or no customer with #{key}:#{value} exist"
-      return "no unique customer with #{key}:#{value} exists"
+      return "> no unique customer with #{key}:#{value} exists"
     else
       return data_for_search
     end
@@ -54,7 +54,7 @@ module ShopwareFunctions
       return "no customer with #{key}:#{value} exists"
     else
       deleteDataId("Customers", data_to_remove)
-      return "delete customer with id:#{data_to_remove}"
+      return ">> delete customer with id:#{data_to_remove}"
     end
     #puts data_to_remove
   end

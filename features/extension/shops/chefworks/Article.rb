@@ -1,3 +1,4 @@
+#chefworks
 class Article
   attr_accessor :category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs
   def initialize

@@ -53,13 +53,13 @@ Feature: account
 		Then I should see a confirmation hint
 
 	@account_newsletter
-  Scenario: change settings of newsletter
+  Scenario: change settings for newsletter
 		Given I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
 		
 	@account_links
-  Scenario: test links of the accountsite
+  Scenario: test links on the accountsite
 		Given I am logged in
 		When I get all items of the sidebar
   

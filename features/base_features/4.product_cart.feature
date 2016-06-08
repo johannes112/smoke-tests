@@ -15,7 +15,7 @@ Feature: account
   	  Then I will see the back on the productsite
 	  
 	 @product_cart_add
-    Scenario: add article
+    Scenario: add article additionally
       Given the product cart contains an article
 	    When I enter a sku into the integrated field on the cart
   	  Then I will see the add-action in the url
