@@ -1,37 +1,38 @@
 #pulsiva
 class Article
-  attr_accessor :category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs
+  attr_accessor :sub_category, :category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs
   
   def initialize
+    @sub_category = 'Einzelbesteck'
     @category = case ENV['COUNTRY']
-      when (/.*/) then 'CUTLERY'
+      when (/de/) then 'Besteck'
     end
     @sku = case ENV['COUNTRY']
-      when (/.*/) then '21782'
+      when (/de/) then 'i20040131'
     end
     @amount = case ENV['COUNTRY']
-      when (/.*/) then 2
+      when (/de/) then 2
     end
     @name = case ENV['COUNTRY']
-      when (/.*/) then 'Fortuna'
+      when (/de/) then 'Kaffeelöffel'
     end
     @color = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/de/) then 'Chrom'
     end
     @size = case ENV['COUNTRY']
-      when (/.*/) then 'L=26,2 cm'
+      when (/de/) then '13.7 cm (L)'
     end
     @packagingUnit = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/de/) then nil
     end
     @deliveryState = case ENV['COUNTRY']
-      when (/.*/) then 'in stock'
+      when (/de/) then nil
     end
     @pricePerPiece = case ENV['COUNTRY']
-      when (/.*/) then 1.99
+      when (/de/) then 0.19
     end
     @packContent = case ENV['COUNTRY']
-      when (/.*/) then 2
+      when (/de/) then 12
     end
     @shipping_costs = case ENV['COUNTRY']
       when (/.*/) then nil

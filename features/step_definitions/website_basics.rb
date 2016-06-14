@@ -5,7 +5,7 @@ Then(/^I should be a basic elements$/) do
   homepage_content_searchfield = 'li.navigation--entry.entry--search'
   homepage_content_navi = 'body > div.page-wrap > nav'
   homepage_content_body_main = 'body > div.page-wrap > section > div'
-  homepage_content_footer = 'body > div.page-wrap > footer > div.container'
+  homepage_content_footer = 'footer'
 
   #check for existing css-elements
   expect(page).to have_css(homepage_content_header),

@@ -12,10 +12,12 @@ Feature: website_basics
     Background:
       Given I am on the website
 
+    @pulsiva
     @website_elements
     Scenario: check for elements
         Then I should be a basic elements
     
+    @pulsiva
     @navigation
     @menu
     @hovermenu    
@@ -23,6 +25,7 @@ Feature: website_basics
 		When I navigate to the category by the hovermenu
 		Then I should be on the categorysite
 		
+    @pulsiva
     @navigation
     @menu
     @standardmenu    
@@ -30,26 +33,30 @@ Feature: website_basics
 		When I navigate to the category by the menu
 		Then I should be on the categorysite
     
+    @pulsiva
     @navigation
     @links
     Scenario: navigate to account
         When I click the link to my account
         Then I should be on the accountpage
         
+    
     @navigation
     @links
     Scenario: navigate to note
         When I click the link to my notes
         Then I should be on the notepage
         
+    @pulsiva
     @navigation
     @links
-    Scenario: activate to cart
+    Scenario: activate the cart
         When I click the link of the cart
         Then I should see the sidebar of the product cart
         When I click the link to edit the cart
         Then I should be on the page of the productcart
 
+    @pulsiva
     @navigation
     @links
     Scenario: navigate to help

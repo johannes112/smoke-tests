@@ -1,10 +1,11 @@
 #chefworks
 class Article
-  attr_accessor :category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs
+  attr_accessor :category, :sub_category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs
   def initialize
     @sku = 'CBCCWHTXS'
     @amount = 2
     @category = 'Kochjacken'
+    @sub_category = 'Kochjacken'
     @name = 'Colmar'
     @color = 'weiss'
     @size = 'XS'

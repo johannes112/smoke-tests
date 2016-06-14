@@ -1,10 +1,10 @@
 [
   {
-    "uri": "features/base_features/2.search.feature",
-    "id": "search",
+    "uri": "features/base_features/1.website_basics.feature",
+    "id": "website_basics",
     "keyword": "Feature",
-    "name": "search",
-    "description": "    As a customer\n    i will be able to search for a specific product",
+    "name": "website_basics",
+    "description": "    As a customer\n    i will be able \n    to see all elements of the website and \n    to use all navigation elements",
     "line": 5,
     "tags": [
       {
@@ -16,17 +16,61 @@
         "line": 3
       },
       {
-        "name": "@search",
+        "name": "@website_basics",
         "line": 4
       }
     ],
     "elements": [
       {
-        "id": "search;search-with-sku",
-        "keyword": "Scenario",
-        "name": "search with sku",
+        "keyword": "Background",
+        "name": "",
         "description": "",
-        "line": 10,
+        "line": 12,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37689
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 59832
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 13,
+            "output": [
+              "go to https://www.chefworks.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9613860577
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;use-hovermenu-for-navigating",
+        "keyword": "Scenario",
+        "name": "use hovermenu for navigating",
+        "description": "",
+        "line": 24,
         "type": "scenario",
         "tags": [
           {
@@ -38,64 +82,53 @@
             "line": 3
           },
           {
-            "name": "@search",
+            "name": "@website_basics",
             "line": 4
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23613
-            }
           },
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 50889
-            }
+            "name": "@pulsiva",
+            "line": 20
+          },
+          {
+            "name": "@navigation",
+            "line": 21
+          },
+          {
+            "name": "@menu",
+            "line": 22
+          },
+          {
+            "name": "@hovermenu",
+            "line": 23
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "uninitialized constant MyWorld::Settings\nDid you mean?  String (NameError)\n./features/support/myWorld.rb:12:in `settings'\n./features/step_definitions/global.rb:4:in `/^I am on the website$/'\nfeatures/base_features/2.search.feature:11:in `Given I am on the website'",
-              "duration": 217499
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I am for an product by entering the sku in the searchfield",
-            "line": 12,
+            "name": "I navigate to the category by the hovermenu",
+            "line": 25,
+            "output": [
+              "-> hovered menu",
+              "-> clicked on hovermenu"
+            ],
             "match": {
-              "location": "features/step_definitions/search.rb:2"
+              "location": "features/step_definitions/menu.rb:2"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 2558018242
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the detailsite of the related product",
-            "line": 13,
+            "name": "I should be on the categorysite",
+            "line": 26,
             "match": {
-              "location": "features/step_definitions/search.rb:20"
+              "location": "features/step_definitions/menu.rb:61"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 466441493
             }
           }
         ],
@@ -106,7 +139,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12245
+              "duration": 22414
             }
           },
           {
@@ -115,7 +148,138 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23426
+              "duration": 338752600
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 12,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19631
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38977
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1092328634
+            }
+          }
+        ]
+      },
+      {
+        "id": "website_basics;use-menu-for-navigating",
+        "keyword": "Scenario",
+        "name": "use menu for navigating",
+        "description": "",
+        "line": 32,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@website_basics",
+            "line": 4
+          },
+          {
+            "name": "@pulsiva",
+            "line": 28
+          },
+          {
+            "name": "@navigation",
+            "line": 29
+          },
+          {
+            "name": "@menu",
+            "line": 30
+          },
+          {
+            "name": "@standardmenu",
+            "line": 31
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the menu",
+            "line": 33,
+            "output": [
+              "-> clicked category on menu",
+              "> found sidebar",
+              "-> closed hovermenu",
+              "-> clicked category on sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4258298982
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 598624477
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23290
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 341436783
             }
           }
         ]

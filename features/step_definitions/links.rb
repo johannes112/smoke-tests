@@ -54,8 +54,9 @@ end
 
 When(/^I click the link to edit the cart$/) do
   #pathes
-  link_cart_button_path = 'a.btn.button--open-basket.is--icon-right'
+  link_cart_button_path = 'a.btn.button--open-basket'
   #click button
+  page.find(link_cart_button_path)
   element = page.find(link_cart_button_path)
   element.click
 end

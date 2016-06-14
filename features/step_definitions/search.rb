@@ -23,7 +23,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   search_product_name = name
   
   #variables:path
-  search_product_name_path = "div.content--wrapper > div > header > div > h1"
+  search_product_name_path = "header > div > h1"
   
   #actions
   element=page.find(search_product_name_path)

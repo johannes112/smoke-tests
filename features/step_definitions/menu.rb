@@ -3,21 +3,22 @@ When(/^I navigate to the category by the hovermenu$/) do
   #var
   url_start = current_url
   category = article.category
+  sub_category = article.sub_category
   
   #set pathes
-  navigation_path = 'div.page-wrap > nav'
+  navigation_menu_path = 'div.page-wrap > nav'
   navigation_hovermenu_path = 'div.advanced-menu'
   
   #main-topmenu
-  page.find(navigation_path)
-  navigationmenu = page.find(navigation_path)
+  page.find(navigation_menu_path)
+  navigationmenu = page.find(navigation_menu_path)
   element = navigationmenu.find_link(category)
   element.hover
   puts "-> hovered menu"
   #hovermenu
   #page.find(filter_navigation_hovermenu_path)#.hover
   hovermenu = page.find(navigation_hovermenu_path)
-  element = hovermenu.find_link(category, match: :first)
+  element = hovermenu.find_link(sub_category, match: :first)
   element.click
   puts "-> clicked on hovermenu"
   #check for success
