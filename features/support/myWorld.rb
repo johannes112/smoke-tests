@@ -4,6 +4,10 @@ module MyWorld
     @shopware ||=ShopwareApi.new()
   end
   
+  def csspathes
+    @csspathes ||= Csspathes.new
+  end
+  
   def jsfunctions
     @jsfunctions ||= Jsfunctions.new
   end

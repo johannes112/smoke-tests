@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37689
+              "duration": 40438
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 59832
+              "duration": 95088
             }
           }
         ],
@@ -60,7 +60,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9613860577
+              "duration": 10432387791
             }
           }
         ]
@@ -109,6 +109,7 @@
             "line": 25,
             "output": [
               "-> hovered menu",
+              "SUBKochjacken",
               "-> clicked on hovermenu"
             ],
             "match": {
@@ -116,7 +117,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2558018242
+              "duration": 4118437586
             }
           },
           {
@@ -124,11 +125,11 @@
             "name": "I should be on the categorysite",
             "line": 26,
             "match": {
-              "location": "features/step_definitions/menu.rb:61"
+              "location": "features/step_definitions/menu.rb:62"
             },
             "result": {
               "status": "passed",
-              "duration": 466441493
+              "duration": 506026408
             }
           }
         ],
@@ -139,7 +140,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22414
+              "duration": 29268
             }
           },
           {
@@ -148,7 +149,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 338752600
+              "duration": 342937238
             }
           }
         ]
@@ -166,7 +167,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19631
+              "duration": 16952
             }
           },
           {
@@ -175,7 +176,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38977
+              "duration": 36955
             }
           }
         ],
@@ -189,7 +190,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1092328634
+              "duration": 1094336492
             }
           }
         ]
@@ -243,11 +244,11 @@
               "-> clicked category on sidebar"
             ],
             "match": {
-              "location": "features/step_definitions/menu.rb:29"
+              "location": "features/step_definitions/menu.rb:30"
             },
             "result": {
               "status": "passed",
-              "duration": 4258298982
+              "duration": 4099757698
             }
           },
           {
@@ -255,11 +256,11 @@
             "name": "I should be on the categorysite",
             "line": 34,
             "match": {
-              "location": "features/step_definitions/menu.rb:61"
+              "location": "features/step_definitions/menu.rb:62"
             },
             "result": {
               "status": "passed",
-              "duration": 598624477
+              "duration": 464952868
             }
           }
         ],
@@ -270,7 +271,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23290
+              "duration": 26160
             }
           },
           {
@@ -279,7 +280,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 341436783
+              "duration": 363263779
             }
           }
         ]

@@ -1,5 +1,5 @@
 class Csspathes
-  attr_accessor :filter_filterbar_path, :filter_categoryproducts_product_path, :hover_breadcrumb_path, 
+  attr_accessor :navigation_menu_path, :navigation_hovermenu_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path,
   :servicesites_header_path, :servicesites_help_path, :servicesites_textbox, 
   :searchfield_input_path, :searchfield_confirm_button_path, :search_table_accordeontab_path, :search_table_row_path, 
   :direct_ordering_formular_path, :direct_ordering_sku_input_path, :direct_ordering_amount_input_path, :direct_ordering_confirm_button_path, :direct_ordering_popup_path, :direct_ordering_css_name_path, :direct_ordering_css_amount_path, 
@@ -7,65 +7,36 @@ class Csspathes
   :product_page_article_table_path,  :product_page_let_box_appear_path, :product_page_appeared_button_path, :product_page_input_amount_path, :product_page_confirm_button_path, :product_page_confirm_box_path, :product_page_article_name_path, :product_page_article_sku_path, :product_page_article_color_path, :product_page_article_size_path, :product_page_article_pack_content_path, :product_page_article_price_piece_path, 
   :registration_create_account_button_path, :registration_confirm_formular_button_path, :registration_input_email_path, :registration_input_password_path, :registration_confirm_button_path, :registration_create_account_subtitle_path, :registration_form_customernumber_path, :registration_form_email_input_path, :registration_form_password_input_path, :registration_form_password_confirm_input_path, :registration_form_company_input_path, :registration_form_prefix_selector_path, :registration_form_owner_firstname_input_path, :registration_form_owner_lastname_input_path, :registration_form_firstname_input_path, :registration_form_lastname_input_path, :registration_form_street_input_path, :registration_form_postcode_input_path, :registration_form_city_input_path, :registration_form_telephone_input_path, :registration_form_streetnumber_input_path, :registration_form_organumber_input_path, :registration_form_region_selector_path, :registration_form_taxvat_input_path, 
   :company_input_path, :owner_firstname_input_path, :owner_lastname_input_path, :prefix_selector_path, :customernumber_path, :firstname_input_path, :lastname_input_path, :street_input_path, :postcode_input_path, :city_input_path, :telephone_input_path, :email_input_path, :password_input_path, :taxvat_input_path, :organumber_input_path, :confirm_password_input_path, :confirm_form_billing_button_path, :streetnumber_input_path, :region_selector_path, :agreement_checkbox_path, :confirm_form_shipping_button_path, :payment_selector_path, :confirm_form_button_path, :guest_login_selector_path, :confirm_selection_button_path, :confirm_checkout_form_button_path, :confirm_billing_button_path, :registration_selector_path, :confirm_registration_button_path, :success_button_path, :transaction_ID_path,
-  :filter_navigation_path, :filter_navigation_hovermenu_path
+  :filter_navigation_path
   
   def initialize
     #filter.rb
-    @filter_filterbar_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else '#narrow-by-list'
+    @navigation_menu_path = case
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then 'div.page-wrap > nav'
+      else 'div.page-wrap > nav'
     end
-    @filter_categoryproducts_product_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.category-products'
+    @navigation_hovermenu_path = case
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then 'div.advanced-menu'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.menu--list.menu--level-0'
     end
     #hover.rb
-    @hover_breadcrumb_path = case ENV['COUNTRY']
+    @navigation_path = case ENV['COUNTRY']
       when 'COUNTRY' then ''
-      else 'div.breadcrumbs'
+      else 'div.page-wrap > nav'
     end
     #servicesite
-    @servicesites_header_path = case 
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/de/) then               'body > div.wrapper > div > div.header-container > div.header > div.header-panel > div > div.footer-links'
+    @navigation_hovermenu_close_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.menu--is-active > div.button-container > span > i'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/at/) then               'body > div.wrapper > div > div.header-container > div.header > div.header-panel > div > div.footer-links'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/ch/) then               'body > div.wrapper > div > div.header-container > div.header > div.header-panel > div > div.footer-links'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         'body > div.wrapper > div > div.header-container > div.header-tabbed > div.header-panel-tabbed > div.footer-links'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/de/) then           'body > div.wrapper > div > div.header-container.jde-header-container > div.header-panel > div.top_links > div.footer-links'#div.footer-links > ul > li:nth-child(1) > a
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then           'body > div.wrapper > div > div.header-container.jde-header-container > div.header-panel > div.top_links > div.footer-links'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then           'div.top_links > div.footer-links'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     'body > div.wrapper > div > div.header-container > div.header-tabbed > div.header-panel-tabbed > div.footer-links'
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'body > div.wrapper > div > div.header-container > div.header-panel > div.top_links > div.footer-links'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'body > div.wrapper > div.page > div.header-container > div.header-tabbed > div.header-panel.header > div.footer-links'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'form > label'
     end
-    @servicesites_help_path = case 
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/ch/) then           ' > ul > li:nth-child(4) > a'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then           ' > ul > li:nth-child(6) > a'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/fr/) then           ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/be/) then           ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/lu/) then           ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/nl/) then           ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     ' > ul > li:nth-child(3) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/de/) then       ' > ul > li:nth-child(1) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then       ' > ul > li:nth-child(1) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then       ' > ul > li:nth-child(2) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/es/) then       ' > ul > li:nth-child(6) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/it/) then       ' > ul > li:nth-child(5) > a'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/fr/) then       ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/be/) then       ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/lu/) then       ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/nl/) then       ' > ul > li:nth-child(3) > a:nth-child(2)'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ' > ul > li:nth-child(3) > a'
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/ch/) then   ' > ul > li:nth-child(2) > a'
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ' > ul > li:nth-child(1) > a'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  ' > ul > li:nth-child(4) > a'
+    @navigation_sidebar_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.sidebar--categories-navigation'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.sidebar--categories-navigation'
     end
-    @servicesites_textbox = case 
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then               '#col3_content'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '#col3_innen'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '#col3_content'
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#col3_content'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then            'body > div.wrapper > div > div.cont > div.main.col1-layout > div'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '#oben'
+    @navigation_hover_breadcrumb_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'section > nav > ul' 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.content--breadcrumb'
     end
     #search.rb
     @searchfield_input_path = case ENV['COUNTRY']
@@ -529,12 +500,6 @@ class Csspathes
     @filter_navigation_path = case ENV['COUNTRY']
       when 'COUNTRY' then ''
       else '#nav'
-    end
-    @filter_navigation_hovermenu_path = case
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#nav > :hover > .level0.shown-sub > :first-child'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '#nav > :hover > .level0.shown-sub > :first-child'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '#nav > :hover > .level0.shown-sub > :first-child'
-      else '#nav > :hover > .level0.shown-sub'
     end
   end
 end

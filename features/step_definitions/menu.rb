@@ -6,8 +6,8 @@ When(/^I navigate to the category by the hovermenu$/) do
   sub_category = article.sub_category
   
   #set pathes
-  navigation_menu_path = 'div.page-wrap > nav'
-  navigation_hovermenu_path = 'div.advanced-menu'
+  navigation_menu_path = csspathes.navigation_menu_path
+  navigation_hovermenu_path = csspathes.navigation_hovermenu_path
   
   #main-topmenu
   page.find(navigation_menu_path)
@@ -32,9 +32,9 @@ When(/^I navigate to the category by the menu$/) do
   category = article.category
   
   #set pathes
-  navigation_path = 'div.page-wrap > nav'
-  navigation_hovermenu_close_path = '.menu--is-active > div.button-container > span > i'
-  navigation_sidebar_path = 'div.sidebar--categories-navigation'
+  navigation_path = csspathes.navigation_path
+  navigation_hovermenu_close_path = csspathes.navigation_hovermenu_close_path
+  navigation_sidebar_path = csspathes.navigation_sidebar_path
   
   #main-menu
   page.find(navigation_path)
@@ -63,11 +63,11 @@ Then(/^I should be on the categorysite$/) do
   category = article.category
   
   #css-pathes
-  hover_breadcrumb_path = 'section > nav > ul'
+  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
   
   #2 - looking for category in breadcrumb
-  page.find(hover_breadcrumb_path)
-  breadcrumb = page.find(hover_breadcrumb_path)
+  page.find(navigation_hover_breadcrumb_path)
+  breadcrumb = page.find(navigation_hover_breadcrumb_path)
   #check for correct category
   expect(breadcrumb.text).to include(category),
      "expect to find in breadcrumb #{category}, but the breadcrumb was #{breadcrumb.text}"
