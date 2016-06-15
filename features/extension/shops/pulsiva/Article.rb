@@ -8,13 +8,14 @@ class Article
       when (/de/) then 'Besteck'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then 'i20040131'
+      when (/de/) then 'i20040136'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
     end
+    #no umlauts
     @name = case ENV['COUNTRY']
-      when (/de/) then 'Kaffeelöffel'
+      when (/de/) then 'Steakgabel'
     end
     @color = case ENV['COUNTRY']
       when (/de/) then 'Chrom'

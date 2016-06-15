@@ -87,7 +87,7 @@ end
 
 When(/^I press the remember\-button$/) do
   #define path of button
-  product_page_rememberbutton_path = 'div.product--buybox.block > div > nav > a.action--link.link--notepad'
+  product_page_rememberbutton_path = 'div.product--buybox.block > div > nav > a.action--link.link--notepad' #pulsiva: .cart--add-to-list
   #find button
   element = page.find(product_page_rememberbutton_path)
   #click button
@@ -104,7 +104,7 @@ end
 
 When(/^I press the compare\-button$/) do
   #define path of button
-  product_page_comparebutton_path = 'div.product--buybox.block > div > nav > a.action--link.action--compare'
+  product_page_comparebutton_path = '.action--compare'
   #find button
   element = page.find(product_page_comparebutton_path)
   #click button

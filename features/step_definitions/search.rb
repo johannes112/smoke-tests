@@ -20,7 +20,7 @@ end
 Then(/^I should be on the detailsite of the related product$/) do
   #variables:value
   name = article.name
-  search_product_name = name
+  search_product_name = name.downcase!
   
   #variables:path
   search_product_name_path = "header > div > h1"
@@ -28,9 +28,13 @@ Then(/^I should be on the detailsite of the related product$/) do
   #actions
   element=page.find(search_product_name_path)
   
+  #convert string into downcase for comparing
+  element_text = element.text
+  element_text_down = element_text.downcase!
+  
   #expections
-  expect(element.text).to include(search_product_name),
-      "expected to find #{search_product_name} but it does not appears"
+  expect(element_text_down).to include(search_product_name),
+      "expected to find #{search_product_name} but just #{element_text_down} appears"
   puts "found '#{search_product_name}'"
 end
         
