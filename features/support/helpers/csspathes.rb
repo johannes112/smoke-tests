@@ -18,98 +18,117 @@ class Csspathes
     @homepage_content_header_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'body > div.page-wrap > header'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'body > div.page-wrap > header'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'body > div.page-wrap > header'
       else ''
     end
     @homepage_content_searchfield_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'li.navigation--entry.entry--search'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'li.navigation--entry.entry--search'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.navigation--entry.entry--search'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation--entry.entry--search'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation--entry.entry--search'
       else ''
     end
     @homepage_content_navi_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'body > div.page-wrap > nav'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'body > div.page-wrap > nav'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'body > div.page-wrap > nav'
       else ''
     end
     @homepage_content_body_main_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'body > div.page-wrap > section > div'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'body > div.page-wrap > section > div'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.page-wrap > section > div'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.page-wrap > section > div'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.page-wrap > section > div'
       else ''
     end
     @homepage_content_footer_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'footer'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'footer'
-      else ''
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'footer'
+      else 'footer'
     end
     #navigation
     @navigation_menu_path = case
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then 'div.page-wrap > nav'
-      else 'div.page-wrap > nav'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then '.page-wrap > nav'
+      else '.page-wrap > nav'
     end
     @navigation_hovermenu_path = case
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then 'div.advanced-menu'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then '.advanced-menu'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.menu--list.menu--level-0'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.advanced-menu'
     end
-    @navigation_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.page-wrap > nav'
+    @navigation_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.page-wrap > nav'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.page-wrap > nav'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.page-wrap > nav'
+      else '.page-wrap > nav'
     end
     @navigation_hovermenu_close_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.menu--is-active > div.button-container > span > i'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/at/) then               'body > div.wrapper > div > div.header-container > div.header > div.header-panel > div > div.footer-links'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.menu--container.menu--is-active > div > span > i'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'form > label'
     end
     @navigation_sidebar_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.sidebar--categories-navigation'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.sidebar--categories-navigation'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.sidebar--categories-navigation'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.sidebar--categories-navigation'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.sidebar--categories-navigation'
     end
     @navigation_hover_breadcrumb_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'section > nav > ul' 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.content--breadcrumb'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'section > nav > ul'
     end
     #links
     @links_account_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'li.navigation--entry.entry--account'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation--entry.entry--account'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.entry--account'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--account'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.entry--account'
       else ''
     end
     @links_registration_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '#registration'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '#registration'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '#registration'
       else ''
     end
     @links_notes_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'li.navigation--entry.entry--notepad'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'li.navigation--entry.entry--notepad'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.entry--notepad'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--wishlist'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.entry--notepad'
       else ''
     end
     @links_note_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.note--content'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.note--content'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.note--content'
       else ''
     end
     @links_cart_symbol_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'li.navigation--entry.entry--cart'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'li.navigation--entry.entry--cart'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.entry--cart'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--cart'
+        when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.entry--cart'
       else ''
     end
     @links_cart_button_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'a.btn.button--open-basket'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'a.btn.button--open-basket'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.button--open-basket'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.button--open-basket'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.button--open-basket'
       else ''
     end
     @links_cart_sidebar_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.container--ajax-cart.off-canvas.is--right.is--active.is--open'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.container--ajax-cart.off-canvas.is--right.is--active.is--open'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.container--ajax-cart.off-canvas.is--right.is--active.is--open'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.container--ajax-cart.off-canvas.is--right.is--active.is--open'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.container--ajax-cart.off-canvas.is--right.is--active.is--open'
       else ''
     end
     @links_service_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.navigation--entry.entry--service'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.navigation--entry.entry--service'
       else ''
     end
     @links_context_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       else ''
     end
     #search.rb

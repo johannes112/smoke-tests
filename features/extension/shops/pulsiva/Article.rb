@@ -21,7 +21,7 @@ class Article
       when (/de/) then 'Chrom'
     end
     @size = case ENV['COUNTRY']
-      when (/de/) then '13.7 cm (L)'
+      when (/de/) then '19.7 cm (L)'
     end
     @packagingUnit = case ENV['COUNTRY']
       when (/de/) then nil
@@ -30,7 +30,7 @@ class Article
       when (/de/) then nil
     end
     @pricePerPiece = case ENV['COUNTRY']
-      when (/de/) then 0.19
+      when (/de/) then 0.85
     end
     @packContent = case ENV['COUNTRY']
       when (/de/) then 12
@@ -39,7 +39,7 @@ class Article
       when (/.*/) then nil
     end
     @order_value_netto = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/.*/) then 10.20
     end
     @order_value_brutto = case ENV['COUNTRY']
       when (/.*/) then nil

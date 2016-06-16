@@ -33,7 +33,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   element_text_down = element_text.downcase!
   
   #expections
-  expect(element_text_down).to include(search_product_name),
+  expect(element_text).to include(search_product_name),
       "expected to find #{search_product_name} but just #{element_text_down} appears"
   puts "found '#{search_product_name}'"
 end
