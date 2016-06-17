@@ -15,8 +15,8 @@ Feature: product page
 	  When I press the remember-button
 	  Then there should see a hint on the note-button
 	
-	@export
-	@product_page_compare	
+  @export
+  @product_page_compare	
   Scenario: compare an article
 	  When I press the compare-button
 	  Then there should see the link to compare
@@ -25,7 +25,7 @@ Feature: product page
   @product_page_add
   Scenario: add an article to the product cart by clicking button 
     When I add an article to the product cart by clicking the button to push it into the cart
-	  Then I should see the cart on the right of the site
+    Then I should see the cart on the right of the site
 
   @export
   @product_page_data

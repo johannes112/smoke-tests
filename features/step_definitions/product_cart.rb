@@ -13,8 +13,11 @@ end
 
 
 And(/^I add an article to my cart manually$/) do
+  puts "I am on the product page of an article"
   step("I am on the product page of an article")
+  puts "I add an article to the product cart by clicking the button to push it into the cart"
   step("I add an article to the product cart by clicking the button to push it into the cart")
+  puts "I am on the product cart page"
   step("I am on the product cart page")
 end
 

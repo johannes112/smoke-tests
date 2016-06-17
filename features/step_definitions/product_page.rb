@@ -7,15 +7,16 @@ end
 
 When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do
   #var
-  product_page_buybutton_path = 'div.product--buybox.block > div > form > div > button'
+  product_page_buybutton_path = csspathes.product_page_buybutton_path
   
   page.find(product_page_buybutton_path)
   element = page.find(product_page_buybutton_path)
   element.click
+  puts "-> clicked buy button"
 end
 
 Then(/^I should see the cart on the right of the site$/) do
-  product_page_infobox_path = '.is--active.is--open'
+  product_page_infobox_path = csspathes.product_page_infobox_path
   
   page.find(product_page_infobox_path)
 end
@@ -31,7 +32,7 @@ Then(/^I should see this article in the product cart$/) do
   url_website = settings.urlHttps
   url_productcart = 'checkout/cart'
   url_cart = url_website+url_productcart
-  product_cart_productinfo_path = 'div.panel--td.table--content'
+  product_cart_productinfo_path = csspathes.product_cart_productinfo_path
   
   vistit(url_cart)
   page.find(product_cart_productinfo_path)
@@ -51,17 +52,17 @@ Then(/^I should see all necessary elememts for getting more informations about t
   name = article.name 
   
   # define path of name
-  product_page_productname_path = 'header > div > h1'
+  product_page_productname_path = csspathes.product_page_productname_path
   # define path of product_picture
-  product_page_productpicture_path = 'div.product--image-container.image-slider.product--image-zoom'
+  product_page_productpicture_path = csspathes.product_page_productpicture_path
   # define path of product_configuration
-  product_page_productconfig_path = 'div.product--buybox.block'
+  product_page_productconfig_path = csspathes.product_page_productconfig_path
   # define path of product_information
-  product_page_productinfo_path = 'div.tab-menu--product.js--tab-menu'
+  product_page_productinfo_path = csspathes.product_page_productinfo_path
   # define path of product_recommodations
-  product_page_productrecommodations_path = 'div.tab-menu--cross-selling.js--tab-menu'
+  product_page_productrecommodations_path = csspathes.product_page_productrecommodations_path
   # define path of product_information
-  product_page_productlast_path = 'div.last-seen-products'
+  product_page_productlast_path = csspathes.product_page_productlast_path
   
   # expect name_path include name
   productname_element = page.find(product_page_productname_path)
@@ -87,7 +88,7 @@ end
 
 When(/^I press the remember\-button$/) do
   #define path of button
-  product_page_rememberbutton_path = 'div.product--buybox.block > div > nav > a.action--link.link--notepad' #pulsiva: .cart--add-to-list
+  product_page_rememberbutton_path = csspathes.product_page_rememberbutton_path #pulsiva: .cart--add-to-list
   #find button
   element = page.find(product_page_rememberbutton_path)
   #click button
@@ -96,7 +97,7 @@ end
 
 Then(/^there should see a hint on the note\-button$/) do
   #define path of symbol
-  product_page_heart_badge_path = 'li.navigation--entry.entry--notepad > a > span'
+  product_page_heart_badge_path = csspathes.product_page_heart_badge_path
   #expect csspath of symbol
   expect(page).to have_css(product_page_heart_badge_path),
       "Expect to find the css-element (#{product_page_heart_badge_path}) but the page with the url #{current_url} has no such element"
@@ -104,7 +105,7 @@ end
 
 When(/^I press the compare\-button$/) do
   #define path of button
-  product_page_comparebutton_path = '.action--compare'
+  product_page_comparebutton_path = csspathes.product_page_comparebutton_path
   #find button
   element = page.find(product_page_comparebutton_path)
   #click button
@@ -113,7 +114,7 @@ end
 
 Then(/^there should see the link to compare$/) do
   #define path of symbol
-  product_page_compareicon_path = 'div.navigation--entry.entry--compare > i'
+  product_page_compareicon_path = csspathes.product_page_compareicon_path
   #expect csspath of symbol
   expect(page).to have_css(product_page_compareicon_path),
       "Expect to find the css-element (#{product_page_compareicon_path}) but the page with the url #{current_url} has no such element"
@@ -121,7 +122,7 @@ end
 
 When(/^I click the button to rate for the article$/) do
   #define path of symbol
-  product_page_rate_ratebutton_path = 'a.action--link.link--publish-comment'
+  product_page_rate_ratebutton_path = csspathes.product_page_rate_ratebutton_path
   #expect csspath of symbol
   element = page.find(product_page_rate_ratebutton_path)
   element.click
