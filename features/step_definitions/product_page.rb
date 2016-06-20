@@ -50,6 +50,7 @@ end
 Then(/^I should see all necessary elememts for getting more informations about this article$/) do
   # define name
   name = article.name 
+  name = name.upcase
   
   # define path of name
   product_page_productname_path = csspathes.product_page_productname_path
@@ -66,8 +67,9 @@ Then(/^I should see all necessary elememts for getting more informations about t
   
   # expect name_path include name
   productname_element = page.find(product_page_productname_path)
-  productname_txt = productname_element.text 
-  expect(productname_txt).to include(name),
+  productname_txt = productname_element.text
+  productname_txt_up = productname_txt.upcase
+  expect(productname_txt_up).to include(name),
       "Expect to find the name (#{name}) on the productsite but only found (#{productname_txt})"
   # expect page has css for productpicture
   expect(page).to have_css(product_page_productpicture_path),
@@ -95,7 +97,7 @@ When(/^I press the remember\-button$/) do
   element.click
 end
 
-Then(/^there should see a hint on the note\-button$/) do
+Then(/^there should see a hint$/) do
   #define path of symbol
   product_page_heart_badge_path = csspathes.product_page_heart_badge_path
   #expect csspath of symbol
@@ -139,28 +141,28 @@ end
 
 Then(/^there should be a form for rating the article$/) do
   #define path of form
-  product_page_rate_form = '#detail--product-reviews > div.review--form-container > form'
+  product_page_rate_form = csspathes.product_page_rate_form
   #find path
   page.find(product_page_rate_form)
   puts "found form to rate"
 end
 
-When(/^I change in the tab to the customer viewed articles$/) do
+When(/^I change to the tab of the customer viewed articles$/) do
   #define path of tab
-  product_page_viewed_tab_menu = case
-    when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
-    else                                                                      'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
-  end
+  product_page_viewed_tab_menu = csspathes.product_page_viewed_tab_menu
+  #  when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
+  #  else                                                                      'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+  #end
   
-  product_page_viewed_tab_otherCustomer = ':nth-child(3)'
+  product_page_viewed_tab_otherCustomer = csspathes.product_page_viewed_tab_otherCustomer
   #click tab for rate
   element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
   element.click
 end
 
 Then(/^there should be a box of some articles$/) do
-  product_page_rate_form = 'div.tab-menu--cross-selling.js--tab-menu > div.tab--container-list > div.tab--container.has--content.is--active > div.tab--content.content--also-viewed'
+  product_page_suggest_container = csspathes.product_page_suggest_container
   #find path
-  page.find(product_page_rate_form)
+  page.find(product_page_suggest_container)
   puts "found container list"
 end

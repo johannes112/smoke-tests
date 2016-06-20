@@ -7,7 +7,7 @@ class Csspathes
   #search
   :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, 
   #product_page
-  :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_rate_form, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, 
+  :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_rate_form, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container,
   :direct_ordering_formular_path, :direct_ordering_sku_input_path, :direct_ordering_amount_input_path, :direct_ordering_confirm_button_path, :direct_ordering_popup_path, :direct_ordering_css_name_path, :direct_ordering_css_amount_path, 
   :product_cart_table_path, :product_cart_delete_button_path, :product_cart_deleted_article_path, :product_cart_table_path2, :product_cart_product_attributes_path, :product_cart_delivery_path, :product_cart_pack_path, :product_cart_pack_price_color_path, :product_cart_pack_price_reduced_path, :product_cart_pack_price_not_reduced_path, :product_cart_pack_quantity_path, :product_cart_subtotal_path, :product_cart_button_path, :product_cart_worth_table_path, :product_cart_worth_subtotal_path, :product_cart_worth_text_path, :product_cart_worth_shipping_path, :product_cart_worth_netto_path, :product_cart_worth_text_strong_path, :product_cart_worth_mwst_path, :product_cart_worth_gross_path, 
   :product_page_article_table_path,  :product_page_let_box_appear_path, :product_page_appeared_button_path, :product_page_input_amount_path, :product_page_confirm_button_path, :product_page_confirm_box_path, :product_page_article_name_path, :product_page_article_sku_path, :product_page_article_color_path, :product_page_article_size_path, :product_page_article_pack_content_path, :product_page_article_price_piece_path, 
@@ -154,7 +154,7 @@ class Csspathes
     end
     #product_page.rb
     @product_page_buybutton_path = case
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.detail--block--value > form > button'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
       else 'div.product--buybox.block > div > form > div > button'
@@ -176,7 +176,7 @@ class Csspathes
       else 'header > div > h1'
     end
     @product_page_productpicture_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
       else 'div.product--image-container.image-slider.product--image-zoom'
@@ -197,30 +197,31 @@ class Csspathes
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
       when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.tab-menu--cross-selling.js--tab-menu'
+      else 'div.tab-menu--cross-selling'
     end
     @product_page_productlast_path = case ENV['COUNTRY']
       when 'COUNTRY' then ''
       else 'div.last-seen-products'
     end
-    @product_page_rememberbutton_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.product--buybox.block > div > nav > a.action--link.link--notepad'
+    @product_page_rememberbutton_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.cart--add-to-list'
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
+      else '.link--notepad'
     end
-    @product_page_heart_badge_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
+    @product_page_heart_badge_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.js--modal.sizing--content'
       else 'li.navigation--entry.entry--notepad > a > span'
     end
     @product_page_comparebutton_path = case ENV['COUNTRY']
       when 'COUNTRY' then ''
       else '.action--compare'
     end
-    @product_page_compareicon_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.navigation--entry.entry--compare > i'
+    @product_page_compareicon_path = case
+      when 'COUNTRY' then '.navigation--entry.entry--compare'
+      else '.entry--compare'
     end
-    @product_page_rate_ratebutton_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
+    @product_page_rate_ratebutton_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.tab--link.has--content.is--active'
       else 'a.action--link.link--publish-comment'
     end
     @product_page_rate_tab_menu = case ENV['COUNTRY']
@@ -231,21 +232,22 @@ class Csspathes
       when 'COUNTRY' then ''
       else ':nth-child(2)'
     end
-    @product_page_rate_form = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else '#detail--product-reviews > div.review--form-container > form'
+    @product_page_rate_form = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#detail--product-reviews > div.block-group'
+      else '#detail--product-reviews'
     end
     @product_page_viewed_tab_menu = case 
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
-      else                                                                      'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling > div > div:nth-child(2)'#.tab-menu--cross-selling > div > div:nth-child(2) > div.tab--header
+      else                                                                       'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
     end
-    @product_page_viewed_tab_otherCustomer = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
+    @product_page_viewed_tab_otherCustomer = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab--header'
       else ':nth-child(3)'
     end
-    @product_page_rate_form = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.tab-menu--cross-selling.js--tab-menu > div.tab--container-list > div.tab--container.has--content.is--active > div.tab--content.content--also-viewed'
+    @product_page_suggest_container = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling > div > div:nth-child(2)'
+      else ':.tab-menu--cross-selling > div'
     end
     #product_cart ###################################################################################################################################################################
     @product_cart_pack_price_reduced_path = case ENV['COUNTRY']

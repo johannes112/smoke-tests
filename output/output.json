@@ -1,51 +1,28 @@
 [
   {
-    "uri": "features/base_features/4.product_cart.feature",
-    "id": "account",
+    "uri": "features/base_features/3.product_page.feature",
+    "id": "product-page",
     "keyword": "Feature",
-    "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to put a product into my cart\n\tin order to manage my chosen products",
-    "line": 5,
+    "name": "product page",
+    "description": "\tAs a customer,\n\tI want to have the opportunity to use the feaatures of the product page",
+    "line": 4,
     "tags": [
       {
-        "name": "@export",
+        "name": "@chefworks",
         "line": 2
       },
       {
-        "name": "@chefworks",
+        "name": "@product_page",
         "line": 3
-      },
-      {
-        "name": "@product_cart",
-        "line": 4
       }
     ],
     "elements": [
       {
-        "id": "account;continue-shopping",
-        "keyword": "Scenario",
-        "name": "continue shopping",
+        "keyword": "Background",
+        "name": "",
         "description": "",
-        "line": 12,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_continue",
-            "line": 11
-          }
-        ],
+        "line": 9,
+        "type": "background",
         "before": [
           {
             "match": {
@@ -53,7 +30,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30168
+              "duration": 34810
             }
           },
           {
@@ -62,170 +39,76 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61951
+              "duration": 49083
             }
           }
         ],
         "steps": [
           {
-            "keyword": "When ",
-            "name": "I add an article to my cart manually",
-            "line": 13,
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 10,
             "output": [
-              "I am on the product page of an article",
               "go to https://int.chefworks.de/",
               "- set sku = \"CBCCWHTXS\"",
               "clicked button of search",
-              "found 'colmar'",
-              "I add an article to the product cart by clicking the button to push it into the cart",
-              "-> clicked buy button",
-              "I am on the product cart page",
-              "-> go to https://int.chefworks.de/checkout/cart"
+              "found 'COLMAR'"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:15"
+              "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 29170905695
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I click on the button to continue shopping",
-            "line": 14,
-            "output": [
-              "--> clicked button for continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3999937603
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I will see the back on the productsite",
-            "line": 15,
-            "output": [
-              "found 'colmar'"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:45"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 234791973
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38847
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 436984259
+              "duration": 14443259502
             }
           }
         ]
       },
       {
-        "id": "account;add-article-additionally",
+        "id": "product-page;customer-seen-article",
         "keyword": "Scenario",
-        "name": "add article additionally",
+        "name": "customer seen article",
         "description": "",
-        "line": 18,
+        "line": 48,
         "type": "scenario",
         "tags": [
           {
-            "name": "@export",
+            "name": "@chefworks",
             "line": 2
           },
           {
-            "name": "@chefworks",
+            "name": "@product_page",
             "line": 3
           },
           {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_add",
-            "line": 17
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24942
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 40616
-            }
+            "name": "@product_page_suggest",
+            "line": 47
           }
         ],
         "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 19,
-            "output": [
-              "-> add article: https://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://int.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2295223921
-            }
-          },
           {
             "keyword": "When ",
-            "name": "I enter a sku into the integrated field on the cart",
-            "line": 20,
+            "name": "I change to the tab of the customer viewed articles",
+            "line": 49,
             "match": {
-              "location": "features/step_definitions/product_cart.rb:139"
+              "location": "features/step_definitions/product_page.rb:150"
             },
             "result": {
               "status": "passed",
-              "duration": 2567318916
+              "duration": 413439562
             }
           },
           {
             "keyword": "Then ",
-            "name": "I will see the add-action in the url",
-            "line": 21,
+            "name": "there should be a box of some articles",
+            "line": 50,
             "match": {
-              "location": "features/step_definitions/product_cart.rb:150"
+              "location": "features/step_definitions/product_page.rb:163"
             },
             "result": {
-              "status": "passed",
-              "duration": 143714680
+              "status": "failed",
+              "error_message": "The given selector :.tab-menu--cross-selling > div is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: An invalid or illegal selector was specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.46.17', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException) (Selenium::WebDriver::Error::InvalidSelectorError)\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10744:in `FirefoxDriver.annotateInvalidSelectorError_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10802:in `FirefoxDriver.prototype.findElementsInternal_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10806:in `FirefoxDriver.prototype.findElements'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12661:in `DelayedCommand.prototype.executeInternal_/h'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12666:in `DelayedCommand.prototype.executeInternal_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12608:in `DelayedCommand.prototype.execute/<'\n./features/step_definitions/product_page.rb:166:in `/^there should be a box of some articles$/'\nfeatures/base_features/3.product_page.feature:50:in `Then there should be a box of some articles'",
+              "duration": 30054132318
             }
           }
         ],
@@ -236,7 +119,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20287
+              "duration": 21429
             }
           },
           {
@@ -245,457 +128,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 344781977
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;enter-a-code",
-        "keyword": "Scenario",
-        "name": "enter a code",
-        "description": "",
-        "line": 24,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_voucher",
-            "line": 23
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16234
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 34114
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 25,
-            "output": [
-              "-> add article: https://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://int.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4472574494
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the function for voucher",
-            "line": 26,
-            "output": [
-              "clicked checkbox"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:111"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 343335004
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I enter some code into the optional field",
-            "line": 27,
-            "output": [
-              "entered 266233",
-              "clicked add-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:119"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3581655766
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be the voucher-action in the url",
-            "line": 28,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:132"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 71946701
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21452
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 362506165
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;remove-an-article",
-        "keyword": "Scenario",
-        "name": "remove an article",
-        "description": "",
-        "line": 31,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_remove",
-            "line": 30
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22259
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 46976
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 32,
-            "output": [
-              "-> add article: https://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://int.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4239369729
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I remove this article from the product cart",
-            "line": 33,
-            "output": [
-              "clicked icon"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:61"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2897046302
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "the cart should not contain this article",
-            "line": 34,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:69"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 73365479
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24620
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 377430340
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;display-articles-with-data",
-        "keyword": "Scenario",
-        "name": "display articles with data",
-        "description": "",
-        "line": 37,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_data",
-            "line": 36
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22419
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 487794
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 38,
-            "output": [
-              "-> add article: https://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://int.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3202544133
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see all necessary informations about this article within the product list of the product cart",
-            "line": 39,
-            "output": [
-              "found product details",
-              "found product prices",
-              "found field for voucher"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:76"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 447642668
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24065
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 371109269
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;navigate-to-checkout",
-        "keyword": "Scenario",
-        "name": "navigate to checkout",
-        "description": "",
-        "line": 42,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
-          {
-            "name": "@product_cart_checkout",
-            "line": 41
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22283
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 44675
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 43,
-            "output": [
-              "-> add article: https://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://int.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3618332480
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
-            "line": 44,
-            "output": [
-              "clicked button"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:92"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3240370181
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the checkout-page",
-            "line": 45,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:101"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 293178112
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20600
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 321567064
+              "duration": 335555065
             }
           }
         ]

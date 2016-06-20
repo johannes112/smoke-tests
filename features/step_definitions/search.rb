@@ -20,7 +20,7 @@ end
 Then(/^I should be on the detailsite of the related product$/) do
   #variables:value
   name = article.name
-  search_product_name = name.downcase
+  search_product_name = name.upcase
   
   #variables:path
   search_product_name_path = csspathes.search_product_name_path
@@ -30,7 +30,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   
   #convert string into downcase for comparing
   element_text = element.text
-  element_text_down = element_text.downcase
+  element_text_down = element_text.upcase
   
   #expections
   expect(element_text_down).to include(search_product_name),

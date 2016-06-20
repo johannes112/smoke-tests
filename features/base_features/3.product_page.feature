@@ -13,7 +13,7 @@ Feature: product page
   @product_page_note
   Scenario: notice an article
 	  When I press the remember-button
-	  Then there should see a hint on the note-button
+	  Then there should see a hint
 	
   @export
   @product_page_compare	
@@ -46,5 +46,5 @@ Feature: product page
 	 
 	@product_page_suggest
   Scenario: customer seen article
-	  When I change in the tab to the customer viewed articles
+	  When I change to the tab of the customer viewed articles
 	  Then there should be a box of some articles
