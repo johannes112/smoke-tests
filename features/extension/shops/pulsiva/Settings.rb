@@ -1,6 +1,6 @@
 #pulsiva
 class Settings
-  attr_accessor :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
+  attr_accessor :url_checkout_confirm, :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
   
   def initialize
     if ENV['SYSTEM'] == "int"
@@ -22,7 +22,7 @@ class Settings
       end
       @urlBackend = 'https://www.pulsiva.com/backend/'
     end
-    
+    @url_checkout_confirm = "checkout/shippingPayment"
     @baby_steps = true
     @vat = 0.19
   end

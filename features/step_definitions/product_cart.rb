@@ -1,8 +1,8 @@
 #product_cart
 Given(/^the product cart contains an article$/) do
   # with ajax'
-  product_cart_article_path = 'div.panel.has--border'
-  
+  product_cart_article_path = csspathes.product_cart_article_path
+  step("I am on the website")
   step("I add an article to my cart by ajax")
   step("I am on the product cart page")
   
@@ -35,7 +35,7 @@ And(/^I add an article to my cart by ajax$/) do
 end
 
 When(/^I click on the button to continue shopping$/) do
-  product_cart_button_continue_path = ".continue-shopping--action"
+  product_cart_button_continue_path = csspathes.product_cart_button_continue_path
   
   element = page.find(product_cart_button_continue_path, match: :first)
   element.click
@@ -59,7 +59,7 @@ Given(/^I am on the product cart page$/) do
 end
 
 When(/^I remove this article from the product cart$/) do
-  product_cart_remove_article_path = "div.panel--td.column--actions > a"
+  product_cart_remove_article_path = csspathes.product_cart_remove_article_path
   
   element = page.find(product_cart_remove_article_path)
   element.click
@@ -67,16 +67,16 @@ When(/^I remove this article from the product cart$/) do
 end
 
 Then(/^the cart should not contain this article$/) do
-  product_cart_article_path = 'div.panel.has--border'
+  product_cart_article_path = csspathes.product_cart_article_path
   
   expect(page).to have_no_css(product_cart_article_path)
      "expected not to find css (#{product_cart_article_path}), but it is still not available"
 end
 
 Then(/^I should see all necessary informations about this article within the product list of the product cart$/) do
-  product_cart_article_details_path = "div.table--tr.block-group.row--product.is--last-row"
-  product_cart_article_price_path = "div.basket--footer > ul"
-  product_cart_article_voucher_path = "div.panel--td.column--quantity.is--align-right"
+  product_cart_article_details_path = csspathes.product_cart_article_details_path
+  product_cart_article_price_path = csspathes.product_cart_article_price_path
+  product_cart_article_voucher_path = csspathes.product_cart_article_voucher_path
   
   expect(page).to have_css(product_cart_article_details_path),
      "expected to see here details to the article in my cart in the css (#{product_cart_article_details_path}), but it does not appear!"
@@ -90,7 +90,7 @@ Then(/^I should see all necessary informations about this article within the pro
 end
 
 When(/^I navigate to the checkout by clicking the button which navigates to the checkout$/) do
-  product_cart_button_checkout_path = "a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large"#there are 2 buttons
+  product_cart_button_checkout_path = csspathes.product_cart_button_checkout_path#there are 2 buttons
   
   #check for first button
   element = page.find(product_cart_button_checkout_path, match: :first)
@@ -99,8 +99,8 @@ When(/^I navigate to the checkout by clicking the button which navigates to the 
 end
 
 Then(/^I should be on the checkout\-page$/) do
-  url_checkout_confirm = "checkout/confirm"
-  product_cart_checkout_steps_path = "div.steps--container.container"
+  url_checkout_confirm = settings.url_checkout_confirm
+  product_cart_checkout_steps_path = csspathes.product_cart_checkout_steps_path
   
   expect(page).to have_css(product_cart_checkout_steps_path),
      "expected to find here the icons of each step for checkout (#{product_cart_checkout_steps_path}), but they do not appear!"
@@ -109,7 +109,7 @@ Then(/^I should be on the checkout\-page$/) do
 end
 
 When(/^I activate the function for voucher$/) do
-  product_cart_voucher_checkbox_path = "#add-voucher--trigger"
+  product_cart_voucher_checkbox_path = csspathes.product_cart_voucher_checkbox_path
   
   element = page.find(product_cart_voucher_checkbox_path)
   element.click
@@ -118,8 +118,8 @@ end
 
 When(/^I enter some code into the optional field$/) do
   code_voucher = '266233'
-  product_cart_voucher_input_path = "form.table--add-voucher.add-voucher--form > div > input"
-  product_cart_voucher_button_path = "form.table--add-voucher.add-voucher--form > div > button"
+  product_cart_voucher_input_path = csspathes.product_cart_voucher_input_path
+  product_cart_voucher_button_path = csspathes.product_cart_voucher_button_path
   
   element = page.find(product_cart_voucher_input_path)
   element.set(code_voucher)
@@ -138,8 +138,8 @@ end
 
 When(/^I enter a sku into the integrated field on the cart$/) do
   sku = article.sku
-  product_cart_order_sku_path = "div.panel.has--border > div > form > input"
-  product_cart_order_button_path = "div.panel.has--border > div > form > button"
+  product_cart_order_sku_path = csspathes.product_cart_order_sku_path
+  product_cart_order_button_path = csspathes.product_cart_order_button_path
   
   element = page.find(product_cart_order_sku_path)
   element.set(sku)

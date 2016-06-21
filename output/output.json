@@ -1,14 +1,14 @@
 [
   {
-    "uri": "features/base_features/3.product_page.feature",
-    "id": "product-page",
+    "uri": "features/base_features/4.product_cart.feature",
+    "id": "account",
     "keyword": "Feature",
-    "name": "product page",
-    "description": "\tAs a customer,\n\tI want to have the opportunity to use the feaatures of the product page",
+    "name": "account",
+    "description": "\tAs a customer,\n\tI want to be able to put a product into my cart\n\tin order to manage my chosen products",
     "line": 5,
     "tags": [
       {
-        "name": "@pulsiva",
+        "name": "@export",
         "line": 2
       },
       {
@@ -16,17 +16,40 @@
         "line": 3
       },
       {
-        "name": "@product_page",
+        "name": "@product_cart",
         "line": 4
       }
     ],
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "account;continue-shopping",
+        "keyword": "Scenario",
+        "name": "continue shopping",
         "description": "",
-        "line": 10,
-        "type": "background",
+        "line": 13,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_cart",
+            "line": 4
+          },
+          {
+            "name": "@pulsiva",
+            "line": 11
+          },
+          {
+            "name": "@product_cart_continue",
+            "line": 12
+          }
+        ],
         "before": [
           {
             "match": {
@@ -34,7 +57,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32057
+              "duration": 27304
             }
           },
           {
@@ -43,83 +66,62 @@
             },
             "result": {
               "status": "passed",
-              "duration": 74540
+              "duration": 54693
             }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "output": [
-              "go to https://int.pulsiva.com/de-de/",
-              "- set sku = \"i20040136\"",
-              "clicked button of search",
-              "found 'STEAKGABEL'"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 14514811421
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;notice-an-article",
-        "keyword": "Scenario",
-        "name": "notice an article",
-        "description": "",
-        "line": 15,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
-          {
-            "name": "@export",
-            "line": 13
-          },
-          {
-            "name": "@product_page_note",
-            "line": 14
           }
         ],
         "steps": [
           {
             "keyword": "When ",
-            "name": "I press the remember-button",
-            "line": 16,
+            "name": "I add an article to my cart manually",
+            "line": 14,
+            "output": [
+              "I am on the product page of an article",
+              "go to https://www.em-group.com/",
+              "- set sku = \"21782\"",
+              "clicked button of search",
+              "found 'FORTUNA'",
+              "I add an article to the product cart by clicking the button to push it into the cart",
+              "-> clicked buy button",
+              "I am on the product cart page",
+              "-> go to https://www.em-group.com/checkout/cart"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:91"
+              "location": "features/step_definitions/product_cart.rb:15"
             },
             "result": {
               "status": "passed",
-              "duration": 350023362
+              "duration": 18539557623
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on the button to continue shopping",
+            "line": 15,
+            "output": [
+              "--> clicked button for continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3033162205
             }
           },
           {
             "keyword": "Then ",
-            "name": "there should see a hint",
-            "line": 17,
+            "name": "I will see the back on the productsite",
+            "line": 16,
+            "output": [
+              "found 'FORTUNA'"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:100"
+              "location": "features/step_definitions/product_cart.rb:45"
             },
             "result": {
               "status": "passed",
-              "duration": 902742879
+              "duration": 255746898
             }
           }
         ],
@@ -130,7 +132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37178
+              "duration": 24617
             }
           },
           {
@@ -139,17 +141,36 @@
             },
             "result": {
               "status": "passed",
-              "duration": 427953662
+              "duration": 365379195
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "account;add-article-additionally",
+        "keyword": "Scenario",
+        "name": "add article additionally",
         "description": "",
-        "line": 10,
-        "type": "background",
+        "line": 19,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_cart",
+            "line": 4
+          },
+          {
+            "name": "@product_cart_add",
+            "line": 18
+          }
+        ],
         "before": [
           {
             "match": {
@@ -157,7 +178,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44611
+              "duration": 16813
             }
           },
           {
@@ -166,77 +187,50 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34991
+              "duration": 33491
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 20,
+            "output": [
+              "go to https://www.em-group.com/",
+              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=21782&sQuantity=2",
+              "-> go to https://www.em-group.com/checkout/cart"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5802064511
+              "duration": 5877260387
             }
-          }
-        ]
-      },
-      {
-        "id": "product-page;compare-an-article",
-        "keyword": "Scenario",
-        "name": "compare an article",
-        "description": "",
-        "line": 21,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
           },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
-          {
-            "name": "@export",
-            "line": 19
-          },
-          {
-            "name": "@product_page_compare",
-            "line": 20
-          }
-        ],
-        "steps": [
           {
             "keyword": "When ",
-            "name": "I press the compare-button",
+            "name": "I enter a sku into the integrated field on the cart",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:139"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3754756529
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the add-action in the url",
             "line": 22,
             "match": {
-              "location": "features/step_definitions/product_page.rb:108"
+              "location": "features/step_definitions/product_cart.rb:150"
             },
             "result": {
               "status": "passed",
-              "duration": 488919476
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should see the icon to compare",
-            "line": 23,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:117"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 358993686
+              "duration": 162068108
             }
           }
         ],
@@ -247,7 +241,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21024
+              "duration": 24587
             }
           },
           {
@@ -256,17 +250,40 @@
             },
             "result": {
               "status": "passed",
-              "duration": 348346713
+              "duration": 360209750
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "account;enter-a-code",
+        "keyword": "Scenario",
+        "name": "enter a code",
         "description": "",
-        "line": 10,
-        "type": "background",
+        "line": 26,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_cart",
+            "line": 4
+          },
+          {
+            "name": "@pulsiva",
+            "line": 24
+          },
+          {
+            "name": "@product_cart_voucher",
+            "line": 25
+          }
+        ],
         "before": [
           {
             "match": {
@@ -274,7 +291,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15785
+              "duration": 18000
             }
           },
           {
@@ -283,80 +300,69 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34523
+              "duration": 284748
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 27,
+            "output": [
+              "go to https://www.em-group.com/",
+              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=21782&sQuantity=2",
+              "-> go to https://www.em-group.com/checkout/cart"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 11345420608
+              "duration": 6567789095
             }
-          }
-        ]
-      },
-      {
-        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
-        "keyword": "Scenario",
-        "name": "add an article to the product cart by clicking button",
-        "description": "",
-        "line": 27,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
           },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
-          {
-            "name": "@export",
-            "line": 25
-          },
-          {
-            "name": "@product_page_add",
-            "line": 26
-          }
-        ],
-        "steps": [
           {
             "keyword": "When ",
-            "name": "I add an article to the product cart by clicking the button to push it into the cart",
+            "name": "I activate the function for voucher",
             "line": 28,
             "output": [
-              "-> clicked buy button"
+              "clicked checkbox"
             ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:8"
+              "location": "features/step_definitions/product_cart.rb:111"
             },
             "result": {
               "status": "passed",
-              "duration": 1039483266
+              "duration": 370398652
             }
           },
           {
-            "keyword": "Then ",
-            "name": "I should see the cart on the right of the site",
+            "keyword": "And ",
+            "name": "I enter some code into the optional field",
             "line": 29,
+            "output": [
+              "entered 266233",
+              "clicked add-button"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:18"
+              "location": "features/step_definitions/product_cart.rb:119"
             },
             "result": {
               "status": "passed",
-              "duration": 237809055
+              "duration": 3520806107
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be the voucher-action in the url",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:132"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 67701587
             }
           }
         ],
@@ -367,7 +373,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20598
+              "duration": 18349
             }
           },
           {
@@ -376,62 +382,21 @@
             },
             "result": {
               "status": "passed",
-              "duration": 359756886
+              "duration": 405962184
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15273
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 34712
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6694363950
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;display-products-with-data",
+        "id": "account;remove-an-article",
         "keyword": "Scenario",
-        "name": "display products with data",
+        "name": "remove an article",
         "description": "",
-        "line": 33,
+        "line": 34,
         "type": "scenario",
         "tags": [
           {
-            "name": "@pulsiva",
+            "name": "@export",
             "line": 2
           },
           {
@@ -439,59 +404,18 @@
             "line": 3
           },
           {
-            "name": "@product_page",
+            "name": "@product_cart",
             "line": 4
           },
           {
-            "name": "@export",
-            "line": 31
-          },
-          {
-            "name": "@product_page_data",
+            "name": "@pulsiva",
             "line": 32
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Then ",
-            "name": "I should see all necessary elememts for getting more informations about this article",
-            "line": 34,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:50"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1447933859
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20225
-            }
           },
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 386234182
-            }
+            "name": "@product_cart_remove",
+            "line": 33
           }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
+        ],
         "before": [
           {
             "match": {
@@ -499,7 +423,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15271
+              "duration": 30925
             }
           },
           {
@@ -508,200 +432,53 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37852
+              "duration": 39500
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6027948113
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;rate-an-article-with-tab",
-        "keyword": "Scenario",
-        "name": "rate an article with tab",
-        "description": "",
-        "line": 38,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
-          {
-            "name": "@export",
-            "line": 36
-          },
-          {
-            "name": "@product_page_rate",
-            "line": 37
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I change in the tab to the rating",
-            "line": 39,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:133"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 443327674
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be a form for rating the article",
-            "line": 40,
+            "name": "the product cart contains an article",
+            "line": 35,
             "output": [
-              "found form to rate"
+              "go to https://www.em-group.com/",
+              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=21782&sQuantity=2",
+              "-> go to https://www.em-group.com/checkout/cart"
             ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:142"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 147172322
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20127
+              "duration": 5823579136
             }
           },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 330218727
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20473
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 33565
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5786189801
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;rate-an-article-with-button",
-        "keyword": "Scenario",
-        "name": "rate an article with button",
-        "description": "",
-        "line": 44,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
-          {
-            "name": "@export",
-            "line": 42
-          },
-          {
-            "name": "@product_page_rate",
-            "line": 43
-          }
-        ],
-        "steps": [
           {
             "keyword": "When ",
-            "name": "I click the button to rate for the article",
-            "line": 45,
+            "name": "I remove this article from the product cart",
+            "line": 36,
+            "output": [
+              "clicked icon"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:125"
+              "location": "features/step_definitions/product_cart.rb:61"
             },
             "result": {
               "status": "passed",
-              "duration": 415508059
+              "duration": 1986563736
             }
           },
           {
             "keyword": "Then ",
-            "name": "there should be a form for rating the article",
-            "line": 46,
-            "output": [
-              "found form to rate"
-            ],
+            "name": "the cart should not contain this article",
+            "line": 37,
             "match": {
-              "location": "features/step_definitions/product_page.rb:142"
+              "location": "features/step_definitions/product_cart.rb:69"
             },
             "result": {
               "status": "passed",
-              "duration": 146882607
+              "duration": 74060413
             }
           }
         ],
@@ -712,7 +489,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22864
+              "duration": 20057
             }
           },
           {
@@ -721,17 +498,40 @@
             },
             "result": {
               "status": "passed",
-              "duration": 344479203
+              "duration": 351817319
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "account;display-articles-with-data",
+        "keyword": "Scenario",
+        "name": "display articles with data",
         "description": "",
-        "line": 10,
-        "type": "background",
+        "line": 41,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_cart",
+            "line": 4
+          },
+          {
+            "name": "@pulsiva",
+            "line": 39
+          },
+          {
+            "name": "@product_cart_data",
+            "line": 40
+          }
+        ],
         "before": [
           {
             "match": {
@@ -739,7 +539,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13977
+              "duration": 17222
             }
           },
           {
@@ -748,35 +548,77 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29027
+              "duration": 31722
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
+            "name": "the product cart contains an article",
+            "line": 42,
+            "output": [
+              "go to https://www.em-group.com/",
+              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=21782&sQuantity=2",
+              "-> go to https://www.em-group.com/checkout/cart"
+            ],
             "match": {
-              "location": "features/step_definitions/product_page.rb:2"
+              "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6066147982
+              "duration": 5959287195
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary informations about this article within the product list of the product cart",
+            "line": 43,
+            "output": [
+              "found product details",
+              "found product prices",
+              "found field for voucher"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 475320125
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21299
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 440185680
             }
           }
         ]
       },
       {
-        "id": "product-page;customer-seen-article",
+        "id": "account;navigate-to-checkout",
         "keyword": "Scenario",
-        "name": "customer seen article",
+        "name": "navigate to checkout",
         "description": "",
-        "line": 49,
+        "line": 47,
         "type": "scenario",
         "tags": [
           {
-            "name": "@pulsiva",
+            "name": "@export",
             "line": 2
           },
           {
@@ -784,40 +626,81 @@
             "line": 3
           },
           {
-            "name": "@product_page",
+            "name": "@product_cart",
             "line": 4
           },
           {
-            "name": "@product_page_suggest",
-            "line": 48
+            "name": "@pulsiva",
+            "line": 45
+          },
+          {
+            "name": "@product_cart_checkout",
+            "line": 46
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15381
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31730
+            }
           }
         ],
         "steps": [
           {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 48,
+            "output": [
+              "go to https://www.em-group.com/",
+              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=21782&sQuantity=2",
+              "-> go to https://www.em-group.com/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5808471729
+            }
+          },
+          {
             "keyword": "When ",
-            "name": "I change to the tab of the customer viewed articles",
+            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
+            "line": 49,
+            "output": [
+              "clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:92"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1753383281
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the checkout-page",
             "line": 50,
             "match": {
-              "location": "features/step_definitions/product_page.rb:150"
+              "location": "features/step_definitions/product_cart.rb:101"
             },
             "result": {
               "status": "passed",
-              "duration": 371092927
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be a box of some articles",
-            "line": 51,
-            "output": [
-              "found container list"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:163"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 169801534
+              "duration": 297530574
             }
           }
         ],
@@ -828,7 +711,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21044
+              "duration": 74636
             }
           },
           {
@@ -837,7 +720,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 314964496
+              "duration": 343565725
             }
           }
         ]

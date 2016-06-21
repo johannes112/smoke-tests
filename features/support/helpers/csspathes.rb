@@ -8,6 +8,11 @@ class Csspathes
   :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, 
   #product_page
   :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_rate_form, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container,
+  #product_cart
+  :product_cart_article_path, :product_cart_button_continue_path, :product_cart_remove_article_path, :product_cart_article_path, :product_cart_article_details_path, :product_cart_article_price_path, :product_cart_article_voucher_path, :product_cart_button_checkout_path, 
+  :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path, 
+  
+  
   :direct_ordering_formular_path, :direct_ordering_sku_input_path, :direct_ordering_amount_input_path, :direct_ordering_confirm_button_path, :direct_ordering_popup_path, :direct_ordering_css_name_path, :direct_ordering_css_amount_path, 
   :product_cart_table_path, :product_cart_delete_button_path, :product_cart_deleted_article_path, :product_cart_table_path2, :product_cart_product_attributes_path, :product_cart_delivery_path, :product_cart_pack_path, :product_cart_pack_price_color_path, :product_cart_pack_price_reduced_path, :product_cart_pack_price_not_reduced_path, :product_cart_pack_quantity_path, :product_cart_subtotal_path, :product_cart_button_path, :product_cart_worth_table_path, :product_cart_worth_subtotal_path, :product_cart_worth_text_path, :product_cart_worth_shipping_path, :product_cart_worth_netto_path, :product_cart_worth_text_strong_path, :product_cart_worth_mwst_path, :product_cart_worth_gross_path, 
   :product_page_article_table_path,  :product_page_let_box_appear_path, :product_page_appeared_button_path, :product_page_input_amount_path, :product_page_confirm_button_path, :product_page_confirm_box_path, :product_page_article_name_path, :product_page_article_sku_path, :product_page_article_color_path, :product_page_article_size_path, :product_page_article_pack_content_path, :product_page_article_price_piece_path, 
@@ -154,111 +159,177 @@ class Csspathes
     end
     #product_page.rb
     @product_page_buybutton_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.detail--block--value > form > button'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.product--buybox.block > div > form > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.detail--block--value > form > button'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.product--buybox.block > div > form > div > button'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.product--buybox.block > div > form > div > button'
     end
-    @product_page_infobox_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else '.is--active.is--open'
+    @product_page_infobox_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.is--active.is--open'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.is--active.is--open'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.is--active.is--open'
     end
     @product_cart_productinfo_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.panel--td.table--content'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel--td.table--content'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.table--content'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel--td.table--content'
     end
     @product_page_productname_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'header > div > h1'
-      else 'header > div > h1'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'header > div > h1'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'header > div > h1'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'header > div > h1'
     end
     @product_page_productpicture_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.product--image-container.image-slider.product--image-zoom'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.product--image-container.image-slider.product--image-zoom'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.product--image-container.image-slider.product--image-zoom'
     end
     @product_page_productconfig_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.product--buybox.block'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.product--buybox.block'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.product--buybox.block'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.product--buybox.block'
     end
     @product_page_productinfo_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.tab-menu--product.js--tab-menu'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tab-menu--product.js--tab-menu'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.tab-menu--product.js--tab-menu'
     end
     @product_page_productrecommodations_path = case 
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/at/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/ch/) then 'span.direct-order'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else 'div.tab-menu--cross-selling'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tab-menu--cross-selling'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.tab-menu--cross-selling'
     end
-    @product_page_productlast_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.last-seen-products'
+    @product_page_productlast_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.last-seen-products'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.last-seen-products'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.last-seen-products'
     end
     @product_page_rememberbutton_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.cart--add-to-list'
-      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.header-panel.header > div > div > div > span'
-      else '.link--notepad'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.cart--add-to-list'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.link--notepad'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.link--notepad'
     end
     @product_page_heart_badge_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.js--modal.sizing--content'
-      else 'li.navigation--entry.entry--notepad > a > span'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.js--modal.sizing--content'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'li.navigation--entry.entry--notepad > a > span'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'li.navigation--entry.entry--notepad > a > span'
     end
-    @product_page_comparebutton_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else '.action--compare'
+    @product_page_comparebutton_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.action--compare'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.action--compare'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.action--compare'
     end
     @product_page_compareicon_path = case
+    when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '.compare--quantity'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.entry--compare > i'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.compare--quantity'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.entry--compare > i'#'.entry--compare'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.navigation--entry.entry--compare > i'
     end
     @product_page_rate_ratebutton_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
-      else 'a.action--link.link--publish-comment'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.action--link.link--publish-comment'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a.action--link.link--publish-comment'
     end
-    @product_page_rate_tab_menu = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
+    @product_page_rate_tab_menu = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
     end  
-    @product_page_rate_tab_rateflag = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else ':nth-child(2)'
+    @product_page_rate_tab_rateflag = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   ':nth-child(2)'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(2)'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    ':nth-child(2)'
     end
     @product_page_rate_form = case
-      when ENV['SHOP'].match(/Notpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#detail--product-reviews > div.block-group'
-      else '#detail--product-reviews'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#detail--product-reviews'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#detail--product-reviews'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#detail--product-reviews'
     end
     @product_page_viewed_tab_menu = case 
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling > div > div'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tab-menu--cross-selling > div > div'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
-        #body > div.page-wrap > section > div.content-main--inner > div.content--wrapper > div.content.product--details > div.tab-menu--cross-selling > div > div:nth-child(2)
-        #body > div.page-wrap > section > div.content-main--inner > div.content--wrapper > div.content.product--details > div.tab-menu--cross-selling > div > div:nth-child(1)
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
     end
     @product_page_viewed_tab_otherCustomer = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(2)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   ':nth-child(2)'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3)'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(2)'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    ':nth-child(2)'
     end
     @product_page_suggest_container = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling > div > div:nth-child(2)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tab-menu--cross-selling > div > div:nth-child(2)'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
     end
     #product_cart ###################################################################################################################################################################
-    @product_cart_pack_price_reduced_path = case ENV['COUNTRY']
-      when 'COUNTRY' then ''
-      else 'td:nth-child(4) > span > span > span > span'
+    @product_cart_article_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.compare--quantity'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.has--border'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.has--border'
     end
+    @product_cart_button_continue_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.table--content > a.content--title'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.continue-shopping--action'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.continue-shopping--action'
+    end
+    @product_cart_remove_article_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel--td.column--actions > a'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel--td.column--actions > a'
+    end
+    @product_cart_article_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.has--border'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.has--border'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.has--border'
+    end
+    @product_cart_article_details_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.table--tr.block-group.row--product.is--last-row'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.table--tr.block-group.row--product.is--last-row'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.table--tr.block-group.row--product.is--last-row'
+    end
+    @product_cart_article_price_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.basket--footer > ul'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.basket--footer > ul'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.basket--footer > ul'
+    end
+    @product_cart_article_voucher_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel--td.column--quantity.is--align-right'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--quantity.is--align-right'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel--td.column--quantity.is--align-right'
+    end
+    @product_cart_button_checkout_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
+    end
+    @product_cart_checkout_steps_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.steps--container.container'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.steps--container.container'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.steps--container.container'
+    end
+    @product_cart_voucher_checkbox_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#add-voucher--trigger'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#add-voucher--trigger'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#add-voucher--trigger'
+    end
+    @product_cart_voucher_input_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'form.table--add-voucher.add-voucher--form > div > input'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'form.table--add-voucher.add-voucher--form > div > input'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'form.table--add-voucher.add-voucher--form > div > input'
+    end
+    @product_cart_voucher_button_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'form.table--add-voucher.add-voucher--form > div > button'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'form.table--add-voucher.add-voucher--form > div > button'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'form.table--add-voucher.add-voucher--form > div > button'
+    end
+    @product_cart_order_sku_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.has--border > div > form > input'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.has--border > div > form > input'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.has--border > div > form > input'
+    end
+    @product_cart_order_button_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.has--border > div > form > button'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.has--border > div > form > button'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.has--border > div > form > button'
+    end
+    ####################################################################################################################################################
     @product_cart_pack_price_not_reduced_path = case ENV['COUNTRY']
       when 'COUNTRY' then ''
       else 'td:nth-child(4) > span > span > span'

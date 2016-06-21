@@ -8,7 +8,7 @@ class Article
       when (/de/) then 'Besteck'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then 'i20040136'
+      when (/de/) then '20040136'#without i!
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
