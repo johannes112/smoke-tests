@@ -5,15 +5,19 @@
     "keyword": "Feature",
     "name": "product page",
     "description": "\tAs a customer,\n\tI want to have the opportunity to use the feaatures of the product page",
-    "line": 4,
+    "line": 5,
     "tags": [
       {
-        "name": "@chefworks",
+        "name": "@pulsiva",
         "line": 2
       },
       {
-        "name": "@product_page",
+        "name": "@chefworks",
         "line": 3
+      },
+      {
+        "name": "@product_page",
+        "line": 4
       }
     ],
     "elements": [
@@ -21,7 +25,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 9,
+        "line": 10,
         "type": "background",
         "before": [
           {
@@ -30,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34810
+              "duration": 32057
             }
           },
           {
@@ -39,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49083
+              "duration": 74540
             }
           }
         ],
@@ -47,68 +51,75 @@
           {
             "keyword": "Given ",
             "name": "I am on the product page of an article",
-            "line": 10,
+            "line": 11,
             "output": [
-              "go to https://int.chefworks.de/",
-              "- set sku = \"CBCCWHTXS\"",
+              "go to https://int.pulsiva.com/de-de/",
+              "- set sku = \"i20040136\"",
               "clicked button of search",
-              "found 'COLMAR'"
+              "found 'STEAKGABEL'"
             ],
             "match": {
               "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 14443259502
+              "duration": 14514811421
             }
           }
         ]
       },
       {
-        "id": "product-page;customer-seen-article",
+        "id": "product-page;notice-an-article",
         "keyword": "Scenario",
-        "name": "customer seen article",
+        "name": "notice an article",
         "description": "",
-        "line": 48,
+        "line": 15,
         "type": "scenario",
         "tags": [
           {
-            "name": "@chefworks",
+            "name": "@pulsiva",
             "line": 2
           },
           {
-            "name": "@product_page",
+            "name": "@chefworks",
             "line": 3
           },
           {
-            "name": "@product_page_suggest",
-            "line": 47
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@product_page_note",
+            "line": 14
           }
         ],
         "steps": [
           {
             "keyword": "When ",
-            "name": "I change to the tab of the customer viewed articles",
-            "line": 49,
+            "name": "I press the remember-button",
+            "line": 16,
             "match": {
-              "location": "features/step_definitions/product_page.rb:150"
+              "location": "features/step_definitions/product_page.rb:91"
             },
             "result": {
               "status": "passed",
-              "duration": 413439562
+              "duration": 350023362
             }
           },
           {
             "keyword": "Then ",
-            "name": "there should be a box of some articles",
-            "line": 50,
+            "name": "there should see a hint",
+            "line": 17,
             "match": {
-              "location": "features/step_definitions/product_page.rb:163"
+              "location": "features/step_definitions/product_page.rb:100"
             },
             "result": {
-              "status": "failed",
-              "error_message": "The given selector :.tab-menu--cross-selling > div is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: An invalid or illegal selector was specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.46.17', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException) (Selenium::WebDriver::Error::InvalidSelectorError)\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10744:in `FirefoxDriver.annotateInvalidSelectorError_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10802:in `FirefoxDriver.prototype.findElementsInternal_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js):10806:in `FirefoxDriver.prototype.findElements'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12661:in `DelayedCommand.prototype.executeInternal_/h'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12666:in `DelayedCommand.prototype.executeInternal_'\n[remote server] <anonymous class>(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous2069350146672245721webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js):12608:in `DelayedCommand.prototype.execute/<'\n./features/step_definitions/product_page.rb:166:in `/^there should be a box of some articles$/'\nfeatures/base_features/3.product_page.feature:50:in `Then there should be a box of some articles'",
-              "duration": 30054132318
+              "status": "passed",
+              "duration": 902742879
             }
           }
         ],
@@ -119,7 +130,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21429
+              "duration": 37178
             }
           },
           {
@@ -128,7 +139,705 @@
             },
             "result": {
               "status": "passed",
-              "duration": 335555065
+              "duration": 427953662
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44611
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34991
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5802064511
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;compare-an-article",
+        "keyword": "Scenario",
+        "name": "compare an article",
+        "description": "",
+        "line": 21,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 19
+          },
+          {
+            "name": "@product_page_compare",
+            "line": 20
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the compare-button",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 488919476
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see the icon to compare",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 358993686
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21024
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 348346713
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15785
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34523
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11345420608
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "keyword": "Scenario",
+        "name": "add an article to the product cart by clicking button",
+        "description": "",
+        "line": 27,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 25
+          },
+          {
+            "name": "@product_page_add",
+            "line": 26
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to the product cart by clicking the button to push it into the cart",
+            "line": 28,
+            "output": [
+              "-> clicked buy button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1039483266
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the cart on the right of the site",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 237809055
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20598
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 359756886
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15273
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34712
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6694363950
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;display-products-with-data",
+        "keyword": "Scenario",
+        "name": "display products with data",
+        "description": "",
+        "line": 33,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 31
+          },
+          {
+            "name": "@product_page_data",
+            "line": 32
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary elememts for getting more informations about this article",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1447933859
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20225
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 386234182
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15271
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37852
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6027948113
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;rate-an-article-with-tab",
+        "keyword": "Scenario",
+        "name": "rate an article with tab",
+        "description": "",
+        "line": 38,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 36
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 37
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change in the tab to the rating",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 443327674
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 40,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147172322
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20127
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 330218727
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20473
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33565
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5786189801
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;rate-an-article-with-button",
+        "keyword": "Scenario",
+        "name": "rate an article with button",
+        "description": "",
+        "line": 44,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@export",
+            "line": 42
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 43
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the button to rate for the article",
+            "line": 45,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 415508059
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 46,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 146882607
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22864
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344479203
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Background",
+        "name": "",
+        "description": "",
+        "line": 10,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13977
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29027
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6066147982
+            }
+          }
+        ]
+      },
+      {
+        "id": "product-page;customer-seen-article",
+        "keyword": "Scenario",
+        "name": "customer seen article",
+        "description": "",
+        "line": 49,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@product_page",
+            "line": 4
+          },
+          {
+            "name": "@product_page_suggest",
+            "line": 48
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change to the tab of the customer viewed articles",
+            "line": 50,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:150"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 371092927
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a box of some articles",
+            "line": 51,
+            "output": [
+              "found container list"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 169801534
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21044
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 314964496
             }
           }
         ]

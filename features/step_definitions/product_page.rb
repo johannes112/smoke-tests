@@ -114,7 +114,7 @@ When(/^I press the compare\-button$/) do
   element.click
 end
 
-Then(/^there should see the link to compare$/) do
+Then(/^there should see the icon to compare$/) do
   #define path of symbol
   product_page_compareicon_path = csspathes.product_page_compareicon_path
   #expect csspath of symbol
@@ -132,8 +132,8 @@ end
 
 When(/^I change in the tab to the rating$/) do
   #define path of tab
-  product_page_rate_tab_menu = 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
-  product_page_rate_tab_rateflag = ':nth-child(2)'
+  product_page_rate_tab_menu = csspathes.product_page_rate_tab_menu
+  product_page_rate_tab_rateflag = csspathes.product_page_rate_tab_rateflag
   #click tab for rate
   element = page.find(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
   element.click

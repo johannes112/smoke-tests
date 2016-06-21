@@ -217,11 +217,12 @@ class Csspathes
       else '.action--compare'
     end
     @product_page_compareicon_path = case
-      when 'COUNTRY' then '.navigation--entry.entry--compare'
-      else '.entry--compare'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.entry--compare > i'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.compare--quantity'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.entry--compare > i'#'.entry--compare'
     end
     @product_page_rate_ratebutton_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.tab--link.has--content.is--active'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
       else 'a.action--link.link--publish-comment'
     end
     @product_page_rate_tab_menu = case ENV['COUNTRY']
@@ -233,21 +234,25 @@ class Csspathes
       else ':nth-child(2)'
     end
     @product_page_rate_form = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#detail--product-reviews > div.block-group'
+      when ENV['SHOP'].match(/Notpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#detail--product-reviews > div.block-group'
       else '#detail--product-reviews'
     end
     @product_page_viewed_tab_menu = case 
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling > div > div:nth-child(2)'#.tab-menu--cross-selling > div > div:nth-child(2) > div.tab--header
-      else                                                                       'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling > div > div'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
+        #body > div.page-wrap > section > div.content-main--inner > div.content--wrapper > div.content.product--details > div.tab-menu--cross-selling > div > div:nth-child(2)
+        #body > div.page-wrap > section > div.content-main--inner > div.content--wrapper > div.content.product--details > div.tab-menu--cross-selling > div > div:nth-child(1)
     end
     @product_page_viewed_tab_otherCustomer = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab--header'
-      else ':nth-child(3)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(2)'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3)'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(2)'
     end
     @product_page_suggest_container = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling > div > div:nth-child(2)'
-      else ':.tab-menu--cross-selling > div'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
     end
     #product_cart ###################################################################################################################################################################
     @product_cart_pack_price_reduced_path = case ENV['COUNTRY']

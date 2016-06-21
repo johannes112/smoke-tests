@@ -1,4 +1,5 @@
 # language: en
+@pulsiva
 @chefworks
 @product_page
 Feature: product page
@@ -19,7 +20,7 @@ Feature: product page
   @product_page_compare	
   Scenario: compare an article
 	  When I press the compare-button
-	  Then there should see the link to compare
+	  Then there should see the icon to compare
 
   @export
   @product_page_add
