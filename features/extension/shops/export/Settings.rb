@@ -1,6 +1,6 @@
 #export
 class Settings
-  attr_accessor :url_checkout_confirm, :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
+  attr_accessor :url_checkout_confirm, :url_add_comand, :urlHttp, :urlHttps, :urlBackend, :baby_steps, :vat
   
   def initialize
     if ENV['SYSTEM'] == "int"
@@ -23,6 +23,7 @@ class Settings
       @urlBackend = 'https://www.em-group.com/backend/'
     end
     @url_checkout_confirm = "checkout/confirm"
+    @url_add_comand = 'addArticle/sTargetAction'
     @baby_steps = true
     @vat = 0.19
   end

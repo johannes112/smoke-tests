@@ -148,8 +148,8 @@ When(/^I enter a sku into the integrated field on the cart$/) do
 end
 
 Then(/^I will see the add-action in the url$/) do
-  url_add = 'addArticle/sTargetAction'
+  url_add_comand = settings.url_add_comand
   
-  expect(current_url).to include(url_add),
-     "expected that the current_url contains #{url_add} but it is only #{current_url}"
+  expect(current_url).to include(url_add_comand),
+     "expected that the current_url contains #{url_add_comand} but it is only #{current_url}"
 end

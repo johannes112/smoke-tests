@@ -50,6 +50,7 @@ Then(/^I should see the sidebar of the product cart$/) do
   links_cart_sidebar_path = csspathes.links_cart_sidebar_path  
   #wait for path
   page.find(links_cart_sidebar_path)
+  puts "> found sidebar"
 end
 
 When(/^I click the link to edit the cart$/) do
