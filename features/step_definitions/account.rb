@@ -52,21 +52,21 @@ When(/^I create a new account with my data$/) do
   country = user.country
   
   #path
-  account_registerform_path = '#registration'
-  account_registerform_prefix_path = 'div.panel.register--personal > div > div.register--salutation.field--select'
-  account_registerform_firstname_path = '#firstname'
-  account_registerform_lastname_path = '#lastname'
-  account_registerform_department_path = '#register_billing_department'
-  account_registerform_taxvat_path = '#register_billing_ustid'
-  account_registerform_email_path = '#register_personal_email'
-  account_registerform_password_path = '#register_personal_password'
-  account_registerform_phone_path = '#phone'
-  account_registerform_company_path = '#register_billing_company'
-  account_registerform_street_path = '#street'
-  account_registerform_postcode_path = '#zipcode'
-  account_registerform_city_path = '#city'
-  account_registerform_country_path = 'div.panel.register--address > div > div.register--country.field--select'
-  account_registerform_button_path = 'div.register--action > button'
+  account_registerform_path = csspathes.account_registerform_path
+  account_registerform_prefix_path = csspathes.account_registerform_prefix_path
+  account_registerform_firstname_path = csspathes.account_registerform_firstname_path
+  account_registerform_lastname_path = csspathes.account_registerform_lastname_path
+  account_registerform_department_path = csspathes.account_registerform_department_path
+  account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  account_registerform_email_path = csspathes.account_registerform_email_path
+  account_registerform_password_path = csspathes.account_registerform_password_path
+  account_registerform_phone_path = csspathes.account_registerform_phone_path
+  account_registerform_company_path = csspathes.account_registerform_company_path
+  account_registerform_street_path = csspathes.account_registerform_street_path
+  account_registerform_postcode_path = csspathes.account_registerform_postcode_path
+  account_registerform_city_path = csspathes.account_registerform_city_path
+  account_registerform_country_path = csspathes.account_registerform_country_path
+  account_registerform_button_path = csspathes.account_registerform_button_path
   
   #search for field, so you know that we are on the right site
   page.find(account_registerform_path)
@@ -136,8 +136,11 @@ Then(/^I should be on my account page$/) do
   #var
   email = user.eMail
   
-  page.find('div.account--welcome.panel')
-  element = page.find('div.account--info')
+  account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
+  account_accountpage_info_path = csspathes.account_accountpage_info_path
+  
+  page.find(account_accountpage_welcome_path)
+  element = page.find(account_accountpage_info_path)
   infobox_txt = element.text
   
   expect(infobox_txt).to include(email),
@@ -152,10 +155,9 @@ When(/^I login with valid informations$/) do
   url_account = settings.urlHttps+'account'
   
   #path
-  account_loginform_emailfield_path = '#email'
-  account_loginform_passwordfield_path = '#passwort'
-  account_loginform_registerbutton_path = 'div.register--login-action > button'
-  #account__loginform_error_path = 'div.account--error'
+  account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
+  account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
+  account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
   
   if (current_url == url_account) 
     puts "> ok, i am on #{current_url}"
@@ -208,11 +210,11 @@ When(/^I change my password$/) do
   password = user.password
   password_sec = user.password_sec
   # define css pathes
-  account_userinfo_passwordchange_button_appear_path = "a.btn.is--small.btn--password"
-  account_userinfo_passwordchange_currentpassword_path = "#currentPassword"
-  account_userinfo_passwordchange_newpassword_path = "#newpwd"
-  account_userinfo_passwordchange_repeatnewpassword_path = "#newpwdrepeat"
-  account_userinfo_passwordchange_button_path = "#account--password > form > div.panel--actions.is--wide > input"
+  account_userinfo_passwordchange_button_appear_path = csspathes.account_userinfo_passwordchange_button_appear_path
+  account_userinfo_passwordchange_currentpassword_path = csspathes.account_userinfo_passwordchange_currentpassword_path
+  account_userinfo_passwordchange_newpassword_path = csspathes.account_userinfo_passwordchange_newpassword_path
+  account_userinfo_passwordchange_repeatnewpassword_path = csspathes.account_userinfo_passwordchange_repeatnewpassword_path
+  account_userinfo_passwordchange_button_path = csspathes.account_userinfo_passwordchange_button_path
   
   element = page.find(account_userinfo_passwordchange_button_appear_path)
   element.click
@@ -233,12 +235,12 @@ When(/^I change my emailaddress$/) do
   eMail_sec = user.eMail_sec
   password_sec = user.password_sec
   # define css pathes
-  account_userinfo_emailchange_button_appear_path = "a.btn.is--small.btn--email"
+  account_userinfo_emailchange_button_appear_path = csspathes.account_userinfo_emailchange_button_appear_path
   
-  account_userinfo_emailchange_currentpassword_path = "#emailPassword"
-  account_userinfo_emailchange_newmail_path = "#newmail"
-  account_userinfo_emailchange_repeatnewmail_path = "#neweailrepeat"
-  account_userinfo_emailchange_button_path = "#account--email > form > div.panel--actions.is--wide > input"
+  account_userinfo_emailchange_currentpassword_path = csspathEs.account_userinfo_emailchange_currentpassword_path
+  account_userinfo_emailchange_newmail_path = csspathes.account_userinfo_emailchange_newmail_path
+  account_userinfo_emailchange_repeatnewmail_path = csspathes.account_userinfo_emailchange_repeatnewmail_path
+  account_userinfo_emailchange_button_path = csspathes.account_userinfo_emailchange_button_path
   
   element = page.find(account_userinfo_emailchange_button_appear_path)
   element.click
@@ -256,7 +258,7 @@ When(/^I change my emailaddress$/) do
 end
 
 Then(/^I should see a confirmation hint$/) do
-  account_userinfo_success_hint_path = "div.account--success"
+  account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
   
   page.find(account_userinfo_success_hint_path)
   puts "> found info for success"
@@ -274,7 +276,7 @@ end
 
 When(/^I log me out$/) do
   #css pathes
-  account_accountinfo_menucontainer_logout_link_path = ".navigation--link.link--logout"
+  account_accountinfo_menucontainer_logout_link_path = csspathes.account_accountinfo_menucontainer_logout_link_path
   
   element = page.find(account_accountinfo_menucontainer_logout_link_path)
   element.click
@@ -283,8 +285,8 @@ end
 
 When(/^I modify my paymentinfo$/) do
   #css pathes
-  account_accountinfo_payment_box_path = "div.account--payment.account--box"
-  account_accountinfo_paymentchange_button_appear_path = ".btn.is--small"
+  account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
+  account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
   
   account_accountinfo_payment_box = page.find(account_accountinfo_payment_box_path)
   element = account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path)
@@ -296,10 +298,10 @@ When(/^I modify my paymentinfo$/) do
 end
 
 When(/^I change option of payment$/) do
-  account_payment_paymentoptions_path = "div.panel.register--payment"
-  account_payment_cashOnDelivery_path = "#payment_mean3"
+  account_payment_paymentoptions_path = csspathes.account_payment_paymentoptions_path
+  account_payment_cashOnDelivery_path = csspathes.account_payment_cashOnDelivery_path
   
-  account_payment_change_button_path = "div.account--actions > input"
+  account_payment_change_button_path = csspathes.account_payment_change_button_path
   
   page.find(account_payment_paymentoptions_path)
   element = page.find(account_payment_cashOnDelivery_path)
@@ -312,8 +314,8 @@ end
 
 When(/^I modify my address for my bill$/) do
   #css pathes
-  account_accountinfo_billaddress_box_path = "div.account--billing.account--box"
-  account_accountinfo_billaddresschange_button_appear_path = "a:nth-child(2)"
+  account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
+  account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
   
   account_accountinfo_billaddresschange_box = page.find(account_accountinfo_billaddress_box_path)
   element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
@@ -327,10 +329,9 @@ end
 When(/^I change prefix of my address for invoice$/) do
   prefix = user.prefix_sec
   
-  #account_invoiceadresschange_form_path = "div.panel.has--border.is--rounded > div > form"
-  account_invoiceadresschange_form_prefix_path = "div.panel.register--personal > div > div.register--salutation.field--select"
+  account_invoiceadresschange_form_prefix_path = csspathes.account_invoiceadresschange_form_prefix_path
   
-  account_invoiceadresschange_button_path = "div.account--actions > input"
+  account_invoiceadresschange_button_path = csspathes.account_invoiceadresschange_button_path
   
   #set value for prefix
   page.find(account_invoiceadresschange_form_prefix_path)
@@ -345,8 +346,8 @@ end
 
 When(/^I modify my address for my delivery/) do
   #css pathes
-  account_accountinfo_deliveraddress_box_path = "div.account--shipping.account--box"
-  account_accountinfo_deliveraddresschange_button_appear_path = "a:nth-child(2)"
+  account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
+  account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
   
   account_accountinfo_deliveraddresschange_box = page.find(account_accountinfo_deliveraddress_box_path)
   element = account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path)
@@ -360,10 +361,9 @@ end
 When(/^I change prefix of my address for delivery$/) do
   prefix = user.prefix_sec
   
-  #account_deliveradresschange_form_path = "div.panel.has--border.is--rounded > div > form"
-  account_deliveradresschange_form_prefix_path = "div.panel.register--shipping > div > div.register--salutation.field--select"
+  account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
   
-  account_deliveradresschange_button_path = "div.account--actions > input"
+  account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
   
   #set value for prefix
   page.find(account_deliveradresschange_form_prefix_path)
@@ -377,7 +377,7 @@ When(/^I change prefix of my address for delivery$/) do
 end
 
 When(/^I activate the newsletterbox$/) do
-  account_newsletter_box_path = "#newsletter"
+  account_newsletter_box_path = csspathes.account_newsletter_box_path
   
   element = page.find(account_newsletter_box_path)
   element.click
@@ -386,7 +386,7 @@ end
 
 #it is not implemented
 When(/^I get all items of the sidebar$/) do
-  account_sidebar_path = "div.account--menu > div > ul"
+  account_sidebar_path = csspathes.account_sidebar_path
   
   #account_sidebar_menuitems = page.find(account_sidebar_path).all('li')
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')

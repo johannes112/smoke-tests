@@ -1,10 +1,10 @@
 [
   {
-    "uri": "features/base_features/5.account.feature",
-    "id": "account",
+    "uri": "features/base_features/0.website_basics.feature",
+    "id": "website_basics",
     "keyword": "Feature",
-    "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
+    "name": "website_basics",
+    "description": "    As a customer\n    i will be able \n    to see all elements of the website and \n    to use all navigation elements",
     "line": 5,
     "tags": [
       {
@@ -16,7 +16,7 @@
         "line": 3
       },
       {
-        "name": "@account",
+        "name": "@website_basics",
         "line": 4
       }
     ],
@@ -25,7 +25,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25154
+              "duration": 31501
             }
           },
           {
@@ -43,34 +43,34 @@
             },
             "result": {
               "status": "passed",
-              "duration": 48581
+              "duration": 73432
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "output": [
-              "--> go to http://int.chefworks.de/account"
+              "go to http://int.chefworks.de/"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 10078007747
+              "duration": 9207592799
             }
           }
         ]
       },
       {
-        "id": "account;create-new-account",
+        "id": "website_basics;check-for-elements",
         "keyword": "Scenario",
-        "name": "create new account",
+        "name": "check for elements",
         "description": "",
-        "line": 16,
+        "line": 17,
         "type": "scenario",
         "tags": [
           {
@@ -82,70 +82,36 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_registration",
+            "name": "@pulsiva",
             "line": 15
+          },
+          {
+            "name": "@website_elements",
+            "line": 16
           }
         ],
         "steps": [
           {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 17,
-            "output": [
-              ">> delete customer with id:219"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2988965555
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I create a new account with my data",
+            "keyword": "Then ",
+            "name": "I should be a basic elements",
             "line": 18,
             "output": [
-              "- set prefix = \"Herr\"",
-              "- set firstname = \"Vorname\"",
-              "- set lastname = \"Nachname\"",
-              "- set email = \"testmail_chefworks@test.de\"",
-              "- set password = \"Test2014\"",
-              "Unable to find css \"#phone\"",
-              "- set company = \"Test_eBusiness\"",
-              "- set department = \"eBusiness\"",
-              "- set taxvat = \"DE999999999\"",
-              "- set street = \"Vegastr. 2\"",
-              "- set postcode = \"86637\"",
-              "- set city = \"Wertingen\"",
-              "clicked button to continue"
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:38"
+              "location": "features/step_definitions/website_basics.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 42867905426
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 19,
-            "output": [
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:135"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 394853624
+              "duration": 1222397999
             }
           }
         ],
@@ -156,7 +122,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50731
+              "duration": 17708
             }
           },
           {
@@ -165,7 +131,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 366224668
+              "duration": 397645875
             }
           }
         ]
@@ -174,7 +140,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -183,7 +149,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17195
+              "duration": 15690
             }
           },
           {
@@ -192,31 +158,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 69915
+              "duration": 37998
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 3043276010
+              "duration": 1369235893
             }
           }
         ]
       },
       {
-        "id": "account;login-with-existing-account",
+        "id": "website_basics;use-hovermenu-for-navigating",
         "keyword": "Scenario",
-        "name": "login with existing account",
+        "name": "use hovermenu for navigating",
         "description": "",
-        "line": 22,
+        "line": 24,
         "type": "scenario",
         "tags": [
           {
@@ -228,61 +194,53 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_login",
+            "name": "@pulsiva",
+            "line": 20
+          },
+          {
+            "name": "@navigation",
             "line": 21
+          },
+          {
+            "name": "@menu",
+            "line": 22
+          },
+          {
+            "name": "@hovermenu",
+            "line": 23
           }
         ],
         "steps": [
           {
-            "keyword": "And ",
-            "name": "I already created an user account",
-            "line": 23,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 723498427
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 24,
-            "output": [
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:148"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3930567241
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
+            "name": "I navigate to the category by the hovermenu",
             "line": 25,
             "output": [
-              "> the page contains testmail_chefworks@test.de"
+              "-> hovered menu",
+              "-> clicked on hovermenu"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:135"
+              "location": "features/step_definitions/menu.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 423709741
+              "duration": 6889811451
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 466122332
             }
           }
         ],
@@ -293,7 +251,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18208
+              "duration": 21121
             }
           },
           {
@@ -302,7 +260,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 326041770
+              "duration": 334709577
             }
           }
         ]
@@ -311,7 +269,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -320,7 +278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45471
+              "duration": 14537
             }
           },
           {
@@ -329,31 +287,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32551
+              "duration": 40482
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1144890875
+              "duration": 1241763669
             }
           }
         ]
       },
       {
-        "id": "account;modify-userinfo-in-my-account",
+        "id": "website_basics;use-menu-for-navigating",
         "keyword": "Scenario",
-        "name": "modify userinfo in my account",
+        "name": "use menu for navigating",
         "description": "",
-        "line": 29,
+        "line": 32,
         "type": "scenario",
         "tags": [
           {
@@ -365,75 +323,55 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 27
-          },
-          {
-            "name": "@account_userinfo",
+            "name": "@pulsiva",
             "line": 28
+          },
+          {
+            "name": "@navigation",
+            "line": 29
+          },
+          {
+            "name": "@menu",
+            "line": 30
+          },
+          {
+            "name": "@standardmenu",
+            "line": 31
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 30,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:183"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5311118721
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I modify my userinfo",
-            "line": 31,
+            "name": "I navigate to the category by the menu",
+            "line": 33,
             "output": [
-              "I change my password",
-              "--> changed password",
-              "I change my emailaddress",
-              "--> changed emailaddress",
-              "I delete the account with the modified mailadress",
-              ">> delete customer with id:221"
+              "-> clicked category on menu",
+              "> found sidebar",
+              "-> closed hovermenu",
+              "-> clicked category on sidebar"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:198"
+              "location": "features/step_definitions/menu.rb:29"
             },
             "result": {
               "status": "passed",
-              "duration": 10402616882
+              "duration": 3931262055
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 32,
-            "output": [
-              "> found info for success"
-            ],
+            "name": "I should be on the categorysite",
+            "line": 34,
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/menu.rb:61"
             },
             "result": {
               "status": "passed",
-              "duration": 279902715
+              "duration": 522879005
             }
           }
         ],
@@ -444,7 +382,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25389
+              "duration": 28200
             }
           },
           {
@@ -453,7 +391,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 313415580
+              "duration": 376506163
             }
           }
         ]
@@ -462,7 +400,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -471,7 +409,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14760
+              "duration": 15675
             }
           },
           {
@@ -480,31 +418,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41328
+              "duration": 37081
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1143044736
+              "duration": 1355704746
             }
           }
         ]
       },
       {
-        "id": "account;modify-payment-in-my-account",
+        "id": "website_basics;navigate-to-account",
         "keyword": "Scenario",
-        "name": "modify payment in my account",
+        "name": "navigate to account",
         "description": "",
-        "line": 36,
+        "line": 39,
         "type": "scenario",
         "tags": [
           {
@@ -516,92 +454,45 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 34
+            "name": "@pulsiva",
+            "line": 36
           },
           {
-            "name": "@account_payment",
-            "line": 35
+            "name": "@navigation",
+            "line": 37
+          },
+          {
+            "name": "@links",
+            "line": 38
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 37,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with email:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to http://int.chefworks.de/account",
-              "I create a new account with my data",
-              "- set prefix = \"Herr\"",
-              "- set firstname = \"Vorname\"",
-              "- set lastname = \"Nachname\"",
-              "- set email = \"testmail_chefworks@test.de\"",
-              "- set password = \"Test2014\"",
-              "Unable to find css \"#phone\"",
-              "- set company = \"Test_eBusiness\"",
-              "- set department = \"eBusiness\"",
-              "- set taxvat = \"DE999999999\"",
-              "- set street = \"Vegastr. 2\"",
-              "- set postcode = \"86637\"",
-              "- set city = \"Wertingen\"",
-              "clicked button to continue",
-              "I log me out",
-              "--> logged me out",
-              "I am on the registration page",
-              "--> go to http://int.chefworks.de/account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:183"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 52765455826
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 38,
-            "output": [
-              "--> clicked button for change of payment",
-              "I change option of payment",
-              "--> chose checkbox for cash on delivery"
-            ],
+            "name": "I click the link to my account",
+            "line": 40,
             "match": {
-              "location": "features/step_definitions/account.rb:284"
+              "location": "features/step_definitions/links.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4815770063
+              "duration": 3396483872
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 39,
-            "output": [
-              "> found info for success"
-            ],
+            "name": "I should be on the accountpage",
+            "line": 41,
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/links.rb:10"
             },
             "result": {
               "status": "passed",
-              "duration": 318298414
+              "duration": 361912316
             }
           }
         ],
@@ -612,7 +503,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 35905
+              "duration": 19333
             }
           },
           {
@@ -621,7 +512,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 329205731
+              "duration": 391666549
             }
           }
         ]
@@ -630,7 +521,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -639,7 +530,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16274
+              "duration": 14957
             }
           },
           {
@@ -648,31 +539,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 47317
+              "duration": 27743
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1150800534
+              "duration": 1235674489
             }
           }
         ]
       },
       {
-        "id": "account;modify-adress-of-invoice",
+        "id": "website_basics;navigate-to-note",
         "keyword": "Scenario",
-        "name": "modify adress of invoice",
+        "name": "navigate to note",
         "description": "",
-        "line": 43,
+        "line": 46,
         "type": "scenario",
         "tags": [
           {
@@ -684,73 +575,41 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 41
+            "name": "@navigation",
+            "line": 44
           },
           {
-            "name": "@account_invoice",
-            "line": 42
+            "name": "@links",
+            "line": 45
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 44,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:183"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4868311178
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 45,
-            "output": [
-              "--> clicked button for change the adress of billing",
-              "I change prefix of my address for invoice",
-              "--> select prefix:Frau",
-              "--> click change-button"
-            ],
+            "name": "I click the link to my notes",
+            "line": 47,
             "match": {
-              "location": "features/step_definitions/account.rb:313"
+              "location": "features/step_definitions/links.rb:21"
             },
             "result": {
               "status": "passed",
-              "duration": 4126754356
+              "duration": 1473496002
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 46,
-            "output": [
-              "> found info for success"
-            ],
+            "name": "I should be on the notepage",
+            "line": 48,
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/links.rb:29"
             },
             "result": {
               "status": "passed",
-              "duration": 304674027
+              "duration": 310815280
             }
           }
         ],
@@ -761,7 +620,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21476
+              "duration": 21091
             }
           },
           {
@@ -770,7 +629,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 362990777
+              "duration": 366698433
             }
           }
         ]
@@ -779,7 +638,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -788,7 +647,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17073
+              "duration": 14274
             }
           },
           {
@@ -797,31 +656,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36422
+              "duration": 26462
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1091601259
+              "duration": 1193001384
             }
           }
         ]
       },
       {
-        "id": "account;modify-adress-of-delivery",
+        "id": "website_basics;activate-the-cart",
         "keyword": "Scenario",
-        "name": "modify adress of delivery",
+        "name": "activate the cart",
         "description": "",
-        "line": 50,
+        "line": 53,
         "type": "scenario",
         "tags": [
           {
@@ -833,215 +692,72 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_update",
-            "line": 48
+            "name": "@pulsiva",
+            "line": 50
           },
           {
-            "name": "@account_delivery",
-            "line": 49
+            "name": "@navigation",
+            "line": 51
+          },
+          {
+            "name": "@links",
+            "line": 52
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 51,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:183"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4346405372
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I modify my address for my delivery",
-            "line": 52,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "I change prefix of my address for delivery",
-              "--> select prefix:Frau",
-              "--> click change-button"
-            ],
+            "name": "I click the link of the cart",
+            "line": 54,
             "match": {
-              "location": "features/step_definitions/account.rb:346"
+              "location": "features/step_definitions/links.rb:40"
             },
             "result": {
               "status": "passed",
-              "duration": 4656704712
+              "duration": 450941526
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 53,
+            "name": "I should see the sidebar of the product cart",
+            "line": 55,
             "output": [
-              "> found info for success"
+              "> found sidebar"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/links.rb:48"
             },
             "result": {
               "status": "passed",
-              "duration": 293560412
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 61904
+              "duration": 188075282
             }
           },
           {
+            "keyword": "When ",
+            "name": "I click the link to edit the cart",
+            "line": 56,
             "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+              "location": "features/step_definitions/links.rb:56"
             },
             "result": {
               "status": "passed",
-              "duration": 318091008
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16980
+              "duration": 1720241845
             }
           },
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 27851
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2482683413
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;change-settings-for-newsletter",
-        "keyword": "Scenario",
-        "name": "change settings for newsletter",
-        "description": "",
-        "line": 56,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
-          {
-            "name": "@account_newsletter",
-            "line": 55
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
+            "keyword": "Then ",
+            "name": "I should be on the page of the productcart",
             "line": 57,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/links.rb:65"
             },
             "result": {
               "status": "passed",
-              "duration": 5431342800
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 58,
-            "output": [
-              "--> activate the checkbox"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:379"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1487629620
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 59,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:258"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 349522774
+              "duration": 152312424
             }
           }
         ],
@@ -1052,7 +768,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20562
+              "duration": 22235
             }
           },
           {
@@ -1061,7 +777,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 334936973
+              "duration": 338629166
             }
           }
         ]
@@ -1070,7 +786,7 @@
         "keyword": "Background",
         "name": "",
         "description": "",
-        "line": 11,
+        "line": 12,
         "type": "background",
         "before": [
           {
@@ -1079,7 +795,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20839
+              "duration": 14574
             }
           },
           {
@@ -1088,29 +804,29 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39676
+              "duration": 26417
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 13,
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1105272864
+              "duration": 1257715830
             }
           }
         ]
       },
       {
-        "id": "account;test-links-on-the-accountsite",
+        "id": "website_basics;navigate-to-help",
         "keyword": "Scenario",
-        "name": "test links on the accountsite",
+        "name": "navigate to help",
         "description": "",
         "line": 62,
         "type": "scenario",
@@ -1124,59 +840,45 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@website_basics",
             "line": 4
           },
           {
-            "name": "@account_links",
+            "name": "@pulsiva",
+            "line": 59
+          },
+          {
+            "name": "@navigation",
+            "line": 60
+          },
+          {
+            "name": "@links",
             "line": 61
           }
         ],
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
+            "keyword": "When ",
+            "name": "I click the link of help",
             "line": 63,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on http://int.chefworks.de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_chefworks@test.de"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/links.rb:72"
             },
             "result": {
               "status": "passed",
-              "duration": 5607543208
+              "duration": 440374444
             }
           },
           {
-            "keyword": "When ",
-            "name": "I get all items of the sidebar",
+            "keyword": "Then ",
+            "name": "I should see a contextmenu",
             "line": 64,
-            "output": [
-              "> menuitems:8",
-              "- account",
-              "- orders",
-              "- downloads",
-              "- billing",
-              "- shipping",
-              "- payment",
-              "- note",
-              "- logout"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:388"
+              "location": "features/step_definitions/links.rb:80"
             },
             "result": {
               "status": "passed",
-              "duration": 1436586705
+              "duration": 151194378
             }
           }
         ],
@@ -1187,7 +889,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19817
+              "duration": 19552
             }
           },
           {
@@ -1196,7 +898,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 335864004
+              "duration": 329070802
             }
           }
         ]
