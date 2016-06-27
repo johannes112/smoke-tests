@@ -8,9 +8,9 @@ class Settings
         when (/.*/) then 'http://int.pulsiva.com/de-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.pulsiva.com/de-de/'
+        when (/de/) then 'http://int.pulsiva.com/de-de/'
         end
-      @urlBackend = 'https://int.pulsiva.com/backend/'
+      @urlBackend = 'http://int.pulsiva.com/backend/'
     end
     
     if ENV['SYSTEM'] == "live"

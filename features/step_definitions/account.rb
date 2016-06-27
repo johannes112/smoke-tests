@@ -237,7 +237,7 @@ When(/^I change my emailaddress$/) do
   # define css pathes
   account_userinfo_emailchange_button_appear_path = csspathes.account_userinfo_emailchange_button_appear_path
   
-  account_userinfo_emailchange_currentpassword_path = csspathEs.account_userinfo_emailchange_currentpassword_path
+  account_userinfo_emailchange_currentpassword_path = csspathes.account_userinfo_emailchange_currentpassword_path
   account_userinfo_emailchange_newmail_path = csspathes.account_userinfo_emailchange_newmail_path
   account_userinfo_emailchange_repeatnewmail_path = csspathes.account_userinfo_emailchange_repeatnewmail_path
   account_userinfo_emailchange_button_path = csspathes.account_userinfo_emailchange_button_path

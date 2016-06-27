@@ -38,16 +38,16 @@ class Article
       when (/de/) then 12
     end
     @shipping_costs = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/de/) then nil
     end
     @order_value_netto = case ENV['COUNTRY']
-      when (/.*/) then 10.20
+      when (/de/) then 10.20
     end
     @order_value_brutto = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/de/) then nil
     end
     @vat = case ENV['COUNTRY']
-      when (/.*/) then nil
+      when (/de/) then nil
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'direktbestellen'
