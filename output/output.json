@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36257
+              "duration": 21448
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58379
+              "duration": 133732
             }
           }
         ],
@@ -53,14 +53,14 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "--> go to http://int.pulsiva.com/de-de/account"
+              "--> go to http://int.chefworks.de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9890923061
+              "duration": 12126865757
             }
           }
         ]
@@ -95,35 +95,59 @@
             "keyword": "And ",
             "name": "no user account with my email exists",
             "line": 17,
+            "output": [
+              "UrlBackend:http://int.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de",
+              ">> delete customer with id:241"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `[]' for nil:NilClass (NoMethodError)\n./features/support/shopware/shopware_functions.rb:123:in `intCheckForValue'\n./features/support/shopware/shopware_functions.rb:101:in `searchForDataByKey'\n./features/support/shopware/shopware_functions.rb:52:in `deleteDataByKey'\n./features/step_definitions/account.rb:15:in `/^no user account with my email exists$/'\nfeatures/base_features/5.account.feature:17:in `And no user account with my email exists'",
-              "duration": 2395872347
+              "status": "passed",
+              "duration": 1363705380
             }
           },
           {
             "keyword": "When ",
             "name": "I create a new account with my data",
             "line": 18,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname = \"Vorname\"",
+              "- set lastname = \"Nachname\"",
+              "- set email = \"testmail_chefworks@test.de\"",
+              "- set password = \"Test2014\"",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.60.158', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company = \"Test_eBusiness\"",
+              "- set department = \"eBusiness\"",
+              "- set taxvat = \"DE999999999\"",
+              "- set street = \"Vegastr. 2\"",
+              "- set postcode = \"86637\"",
+              "- set city = \"Wertingen\"",
+              "clicked button to continue"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:38"
+              "location": "features/step_definitions/account.rb:40"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 42096469139
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
             "line": 19,
+            "output": [
+              "> the page contains testmail_chefworks@test.de"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:135"
+              "location": "features/step_definitions/account.rb:137"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 399144823
             }
           }
         ],
@@ -134,7 +158,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15057
+              "duration": 20246
             }
           },
           {
@@ -143,7 +167,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 376580048
+              "duration": 318036140
             }
           }
         ]

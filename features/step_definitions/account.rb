@@ -10,15 +10,17 @@ end
 
 And(/^no user account with my email exists$/) do
   eMail = user.eMail
+  puts "UrlBackend:#{settings.urlBackend}"
+  puts "user eMail:#{user.eMail}"
   key = "email"
-  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   puts shopware.deleteDataByKey("Customers", key, eMail)
 end
 
 Given(/^I already created an user account$/) do
   eMail = user.eMail
   key = "email"
-  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   customer_id_determined = shopware.getDataByKey("customers", key, eMail)
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with #{key}:#{eMail} exists"
@@ -270,7 +272,7 @@ end
 When(/^I delete the account with the modified mailadress$/) do
   eMail = user.eMail_sec
   key = "email"
-  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   puts shopware.deleteDataByKey("Customers", key, eMail)
 end
 

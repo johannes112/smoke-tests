@@ -10,7 +10,7 @@ class Settings
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when 'de' then 'http://int.chefworks.de/'
       end
-      @urlBackend = 'http://int.chefworks.de/backend/'
+      @urlBackend = 'http://int.chefworks.de/'
     end
     
     if ENV['SYSTEM'] == "live"

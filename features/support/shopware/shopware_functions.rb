@@ -114,6 +114,7 @@ module ShopwareFunctions
   end
 
   def intCheckForValue(data, key, value, last_element)  
+    puts "data: #{data} key: #{key}, value: #{value}, last: #{last_element}"
     #how often value exists
     counter_loop = 0
     value_counter_occurrence = 0
@@ -183,6 +184,8 @@ module ShopwareFunctions
   
   def updateOrderStatusFor(key, value) #update statusOrderId to 4 of order with order_id 
     #get order_id of order with customer_id with key and value 
+    puts "key: #{key}"
+    puts "value: #{value}"
     #1. get customer_id of customer with mailaddress
     #2. get order_id of order with customer_id
     #3. get orderStatusId of order

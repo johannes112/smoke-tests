@@ -14,22 +14,25 @@ class ShopwareApi
   #crud comands
   def readData(url)
     options = getDigest()
+    puts "readData:#{url}"
     response_data = self.class.get(url, options)
     if response_data.success?
       response_data
     else
-      puts ">> Can not connect"
+      puts ">>>>>>>>> Can not connect"
     end
     response_data_json = response_data.parsed_response
     return response_data_json
   end
   def updateData(url, options)
+    puts "updateData:#{url}"
     response_data = self.class.put(url, options)
     if !response_data.success?
       puts ">> ERROR: update failed"
     end
   end
   def deleteData(url)
+    puts "deleteData:#{url}"
     options = getDigest()
     response_data = self.class.delete(url, options)
     if response_data.success?
