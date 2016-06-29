@@ -38,7 +38,7 @@ class ShopwareApi
     if response_data.success?
       response_data
     else
-      puts ">> Can not connect"
+      puts ">>>>>>>>> Can not connect"
     end
   end
   

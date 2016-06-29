@@ -13,7 +13,7 @@ module ShopwareFunctions
     puts response_data
     return response_data
   end
-  
+  # <b>DEPRECATED:</b> It is done by manual comparison. Please use getDataByMail instead. 
   def getDataByKey(data_of, key, value) #delete customer with key by value
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/"
@@ -38,12 +38,13 @@ module ShopwareFunctions
   end
 
   def deleteDataId(data_of, id) #delete customer by id
-    url_data=  stringGetUrlPath(data_of)
+    url_data =  stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
     #puts "Delete URL: #{url_request}"
     deleteData(url_request)
   end
   
+  # <b>DEPRECATED:</b> It is done by manual comparison. Please use deleteDataByMail instead.
   def deleteDataByKey(data_of, key, value) #delete customer with key by value
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/"
@@ -57,6 +58,14 @@ module ShopwareFunctions
       return ">> delete customer with id:#{data_to_remove}"
     end
     #puts data_to_remove
+  end
+  
+  #delete customer with the given mail 
+  def deleteCustomerByMail(mailaddress)
+    #search for id of customer with help of the mail
+    determined_customer_id = getCustomerIdByMail(mailaddress)
+    #use filter function to find customer_id
+    deleteDataId("customers", determined_customer_id)
   end
   
   #get all Data
@@ -182,6 +191,7 @@ module ShopwareFunctions
     updateData(url_request, options)
   end
   
+  # <b>DEPRECATED:</b> It is done by manual comparison. Please use deleteDataByMail instead.
   def updateOrderStatusFor(key, value) #update statusOrderId to 4 of order with order_id 
     #get order_id of order with customer_id with key and value 
     puts "key: #{key}"
@@ -203,7 +213,48 @@ module ShopwareFunctions
     #to avoid an export of this data i have to set "orderStatusId" of the order to 4
   end
   
-  def searchForOrderById(given_response_httpParty, given_key, given_value)
+  def updateOrderStatusForMail(mail) #update statusOrderId to 4 of order with order_id 
+    #get order_id of order with customer_id with key and value 
+    puts "mail: #{mail}"
+    #1. get customer_id of customer with mailaddress
+    #2. get order_id of order with mailaddress
+    #3. get orderStatusId of order
+    #4. set orderStatusId of order
+    # looking for id of user which belongs to mailaddress
+    #1. get customer_id by key
+    customer_id = getCustomerIdByMail(mail)
+    p "UPDATE:customer_id:#{customer_id}"
+    #2. search order by mail
+    searchForOrderById(mail)
+    #set orderStatus_Id to 4 (Stoniert / Abgelehnt)
+    #puts ">> key:#{key}, value:#{value}"
+    #to avoid an export of this data i have to set "orderStatusId" of the order to 4
+  end
+  
+  def searchForOrderByMail(mail)
+    key = "id"
+    #value = mailaddress
+    url_data = "/api/customers"
+    filter = "?filter[email]=#{mailaddress}"
+    url_request = "#{url_data}/#{filter}"
+    response_data_customer = readData(url_request)
+    customer_id_by_mail = response_data_customer['data'][0][key]
+    return customer_id_by_mail
+  end
+  
+  def getCustomerIdByMail(mailaddress)#delete customer with key by value
+    key = "id"
+    #value = mailaddress
+    url_data = "/api/customers"
+    filter = "?filter[email]=#{mailaddress}"
+    url_request = "#{url_data}/#{filter}"
+    response_data_customer = readData(url_request)
+    customer_id_by_mail = response_data_customer['data'][0][key]
+    return customer_id_by_mail
+  end
+  
+  # <b>DEPRECATED:</b> It is done by manual comparison. Please use deleteDataByMail instead.
+  def orgSearchForOrderById(given_response_httpParty, given_key, given_value)
     #get whole data of api
     whole_response = given_response_httpParty
     whole_response = whole_response
