@@ -15,9 +15,9 @@ puts "urlname:#{urlname}"
 #shopware_user0 = ShopwareApi.new()#husername, hapikey)
 #shopware_user0.setBasic(husername, hapikey, urlname)
 #shopware_user0.getWholeData('Customers')
+#shopware_user1.getWholeData('Orders')
 shopware_user1 = ShopwareApi.new()#husername, hapikey)
 shopware_user1.setDigest(username, apikey, urlname)
 #api:
 #shopware_user1.deleteCustomerByMail("testmail_pde@test.de")
-shopware_user1.updateOrderStatusForMail("testmail_pde@test.de")
-#shopware_user1.getWholeData('Orders')
+#shopware_user1.updateOrderStatusForMail("testmail_pde@test.de")
