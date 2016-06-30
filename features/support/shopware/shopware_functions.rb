@@ -223,20 +223,28 @@ module ShopwareFunctions
     # looking for id of user which belongs to mailaddress
     #1. get customer_id by key
     customer_id = getCustomerIdByMail(mail)
-    p "UPDATE:customer_id:#{customer_id}"
-    #2. search order by mail
-    searchForOrderById(mail)
-    #set orderStatus_Id to 4 (Stoniert / Abgelehnt)
-    #puts ">> key:#{key}, value:#{value}"
-    #to avoid an export of this data i have to set "orderStatusId" of the order to 4
+    #puts "UPDATE:#{customer_id.class}"
+    if customer_id.is_a?(Fixnum)
+      #p "UPDATE:customer_id:#{customer_id}"
+      #2. search order by mail
+      order_id = getOrderIdByCustomerId(customer_id)
+      puts "UPDATE:order_id:#{order_id}"
+      #set orderStatus_Id to 4 (Stoniert / Abgelehnt)
+      setValue("Orders", order_id, "orderStatusId", 4)
+      #puts ">> key:#{key}, value:#{value}"
+      #to avoid an export of this data i have to set "orderStatusId" of the order to 4
+    else
+      puts "No User with #{mail} exists"
+    end
   end
   
-  def searchForOrderByMail(mail)
+  def getOrderIdByCustomerId(id)
     key = "id"
     #value = mailaddress
-    url_data = "/api/customers"
-    filter = "?filter[email]=#{mailaddress}"
+    url_data = "/api/orders"
+    filter = "?filter[customerId]=#{id}"
     url_request = "#{url_data}/#{filter}"
+    puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     customer_id_by_mail = response_data_customer['data'][0][key]
     return customer_id_by_mail
@@ -249,7 +257,11 @@ module ShopwareFunctions
     filter = "?filter[email]=#{mailaddress}"
     url_request = "#{url_data}/#{filter}"
     response_data_customer = readData(url_request)
-    customer_id_by_mail = response_data_customer['data'][0][key]
+    if response_data_customer['data'][0] != nil
+      customer_id_by_mail = response_data_customer['data'][0][key]
+    else
+      customer_id_by_mail = "no customer with #{mailaddress} exists"
+    end
     return customer_id_by_mail
   end
   
