@@ -1,10 +1,10 @@
 [
   {
-    "uri": "features/base_features/5.account.feature",
-    "id": "account",
+    "uri": "features/base_features/6.checkout.feature",
+    "id": "checkout",
     "keyword": "Feature",
-    "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
+    "name": "checkout",
+    "description": "\tAs a customer,\n\tI want to be able to order my favorite products",
     "line": 5,
     "tags": [
       {
@@ -16,61 +16,17 @@
         "line": 3
       },
       {
-        "name": "@account",
+        "name": "@checkout",
         "line": 4
       }
     ],
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
+        "id": "checkout;checkout-with-existing-account",
+        "keyword": "Scenario",
+        "name": "checkout with existing account",
         "description": "",
         "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21448
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 133732
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "output": [
-              "--> go to http://int.chefworks.de/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12126865757
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;create-new-account",
-        "keyword": "Scenario",
-        "name": "create new account",
-        "description": "",
-        "line": 16,
         "type": "scenario",
         "tags": [
           {
@@ -82,43 +38,434 @@
             "line": 3
           },
           {
-            "name": "@account",
+            "name": "@checkout",
             "line": 4
           },
           {
-            "name": "@account_registration",
-            "line": 15
+            "name": "@checkout_with",
+            "line": 10
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24502
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45308
+            }
           }
         ],
         "steps": [
           {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 12,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "--> go to http://int.chefworks.de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_chefworks@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:187"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14618793505
+            }
+          },
+          {
             "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 13,
+            "output": [
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6815418397
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the checkout page",
+            "line": 14,
+            "output": [
+              "> ups, I am on http://int.chefworks.de/checkout/cart",
+              "--> go to http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4632287045
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 15,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5102828849
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 16,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:194"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2425762325
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22946
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 375571419
+            }
+          }
+        ]
+      },
+      {
+        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
+        "keyword": "Scenario",
+        "name": "checkout without existing account and without creating an account",
+        "description": "",
+        "line": 19,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@checkout",
+            "line": 4
+          },
+          {
+            "name": "@checkout_without",
+            "line": 18
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15811
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33360
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
             "name": "no user account with my email exists",
-            "line": 17,
+            "line": 20,
             "output": [
               "UrlBackend:http://int.chefworks.de/",
-              "user eMail:testmail_chefworks@test.de",
-              ">> delete customer with id:241"
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 1363705380
+              "duration": 1281253864
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 21,
+            "output": [
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3679939646
             }
           },
           {
             "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 22,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1701084769
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill out a register form and send it without creating an account",
+            "line": 23,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname = \"Vorname\"",
+              "- set lastname = \"Nachname\"",
+              "- set email = \"testmail_chefworks@test.de\"",
+              "Unable to find css \"#phone\"",
+              "- set company = \"Test_eBusiness\"",
+              "- set department = \"eBusiness\"",
+              "- set taxvat = \"DE999999999\"",
+              "- set street = \"Vegastr. 2\"",
+              "- set postcode = \"86637\"",
+              "- set city = \"Wertingen\"",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40602454768
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 24,
+            "output": [
+              "I am on the checkout page",
+              "> ups, I am on http://int.chefworks.de/checkout/shippingPayment",
+              "--> go to http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6970689408
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 25,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:194"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2608708146
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22305
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 348652573
+            }
+          }
+        ]
+      },
+      {
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "keyword": "Scenario",
+        "name": "checkout without existing account and create an account",
+        "description": "",
+        "line": 28,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 2
+          },
+          {
+            "name": "@chefworks",
+            "line": 3
+          },
+          {
+            "name": "@checkout",
+            "line": 4
+          },
+          {
+            "name": "@checkout_registration",
+            "line": 27
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16550
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34288
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "no user account with my email exists",
+            "line": 29,
+            "output": [
+              "UrlBackend:http://int.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1269849528
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 30,
+            "output": [
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3790395455
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 31,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4966845277
+            }
+          },
+          {
+            "keyword": "And ",
             "name": "I create a new account with my data",
-            "line": 18,
+            "line": 32,
             "output": [
               "- set prefix = \"Herr\"",
               "- set firstname = \"Vorname\"",
               "- set lastname = \"Nachname\"",
               "- set email = \"testmail_chefworks@test.de\"",
               "- set password = \"Test2014\"",
-              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.60.158', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.42.150', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
               "- set company = \"Test_eBusiness\"",
               "- set department = \"eBusiness\"",
               "- set taxvat = \"DE999999999\"",
@@ -132,22 +479,60 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42096469139
+              "duration": 40531163915
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I set payment and shipping",
+            "line": 33,
+            "output": [
+              "-> choose payment",
+              "-> choose delivery",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4743014231
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 34,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3147833743
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 19,
+            "name": "Shopware should have my order",
+            "line": 35,
             "output": [
-              "> the page contains testmail_chefworks@test.de"
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:137"
+              "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 399144823
+              "duration": 2253789563
             }
           }
         ],
@@ -158,7 +543,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20246
+              "duration": 20170
             }
           },
           {
@@ -167,7 +552,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 318036140
+              "duration": 365206174
             }
           }
         ]

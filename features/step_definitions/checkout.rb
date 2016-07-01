@@ -205,6 +205,7 @@ Then(/^Shopware should have my order$/) do
     
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
   puts ">> cancel orders of customer with #{key}:#{eMail}"
-  shopware.updateOrderStatusFor(key, eMail)
+  shopware.updateOrderStatusForMail(eMail)
+  #shopware.updateOrderStatusFor(key, eMail)
 end
 

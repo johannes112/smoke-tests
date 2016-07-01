@@ -66,7 +66,7 @@ module ShopwareFunctions
     amount_total_orders = response_data_customer['total']
     counter=0
     while counter < amount_total_orders do
-      puts ">>>>>> There are #{counter} orders but I set take the last order only"
+      puts ">>>>>> There are #{counter+1} orders and I cancel the last order only"
       customer_id_by_mail = response_data_customer['data'][counter][key]
       counter += 1
     end
@@ -84,9 +84,15 @@ module ShopwareFunctions
   #delete customer with the given mailadress 
   def deleteCustomerByMail(mailaddress)
     #search for id of customer with help of the mail
-    determined_customer_id = getCustomerIdByMail(mailaddress)
     #use filter function to find customer_id
-    deleteDataId("customers", determined_customer_id)
+    determined_customer_id = getCustomerIdByMail(mailaddress)
+    #if no customer exists:
+
+    if determined_customer_id.is_a?(String)
+      puts ">>>>>> No customer exist"
+    else
+      deleteDataId("customers", determined_customer_id)
+    end
   end
 
   #update statusOrderId to 4 of order with order_id

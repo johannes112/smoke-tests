@@ -12,18 +12,18 @@ And(/^no user account with my email exists$/) do
   eMail = user.eMail
   puts "UrlBackend:#{settings.urlBackend}"
   puts "user eMail:#{user.eMail}"
-  key = "email"
+  #key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  puts shopware.deleteDataByKey("Customers", key, eMail)
+  #puts shopware.deleteDataByKey("Customers", key, eMail)
+  shopware.deleteCustomerByMail(eMail)
 end
 
 Given(/^I already created an user account$/) do
   eMail = user.eMail
-  key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  customer_id_determined = shopware.getDataByKey("customers", key, eMail)
+  customer_id_determined = shopware.getCustomerIdByMail(eMail) #shopware.getDataByKey("customers", key, eMail)
   if customer_id_determined.is_a?(String)
-    puts "-> no unique account with #{key}:#{eMail} exists"
+    puts "-> no unique account with customer:#{eMail} exists"
     puts "I am on the registration page"
     step("I am on the registration page")
     puts "I create a new account with my data"
@@ -271,9 +271,10 @@ end
 
 When(/^I delete the account with the modified mailadress$/) do
   eMail = user.eMail_sec
-  key = "email"
+  #key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  puts shopware.deleteDataByKey("Customers", key, eMail)
+  #puts shopware.deleteDataByKey("Customers", key, eMail)
+  shopware.deleteCustomerByMail(eMail)
 end
 
 When(/^I log me out$/) do
@@ -381,6 +382,7 @@ end
 When(/^I activate the newsletterbox$/) do
   account_newsletter_box_path = csspathes.account_newsletter_box_path
   
+  page.find(account_newsletter_box_path)
   element = page.find(account_newsletter_box_path)
   element.click
   puts "--> activate the checkbox"
@@ -390,9 +392,7 @@ end
 When(/^I get all items of the sidebar$/) do
   account_sidebar_path = csspathes.account_sidebar_path
   
-  #account_sidebar_menuitems = page.find(account_sidebar_path).all('li')
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
-  #account_sidebar_menuitems.all('li').map { |li| li.find('a')['href'] }
   puts "> menuitems:#{account_sidebar_menuitems.size}"
   account_sidebar_menuitems.each { 
     |x| 
