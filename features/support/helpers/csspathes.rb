@@ -22,7 +22,9 @@ class Csspathes
   :account_userinfo_emailchange_newmail_path, :account_userinfo_emailchange_repeatnewmail_path, :account_userinfo_emailchange_button_path, :account_userinfo_success_hint_path , :account_accountinfo_menucontainer_logout_link_path, 
   :account_accountinfo_payment_box_path, :account_accountinfo_paymentchange_button_appear_path, :account_payment_paymentoptions_path, :account_payment_cashOnDelivery_path, :account_payment_change_button_path, 
   :account_accountinfo_billaddress_box_path, :account_accountinfo_billaddresschange_button_appear_path, :account_invoiceadresschange_form_prefix_path, :account_invoiceadresschange_button_path, :account_accountinfo_deliveraddress_box_path, 
-  :account_accountinfo_deliveraddresschange_button_appear_path, :account_deliveradresschange_form_prefix_path, :account_deliveradresschange_button_path, :account_newsletter_box_path, :account_sidebar_path
+  :account_accountinfo_deliveraddresschange_button_appear_path, :account_deliveradresschange_form_prefix_path, :account_deliveradresschange_button_path, :account_newsletter_box_path, :account_sidebar_path, 
+  #checkout
+  :checkout_backbutton_path
  
   
   def initialize
@@ -595,6 +597,12 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--menu > div > ul'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--menu > div > ul'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--menu > div > ul'
+    end
+    #checkout
+    @checkout_backbutton_path  = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.block-group > a'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.block-group > a'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.block-group > a'
     end
   end
 end
