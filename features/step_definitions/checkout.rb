@@ -14,14 +14,14 @@ Given(/^I am on the checkout page$/) do
 end
 
 And(/^the checkoutpage contains all elements/) do
-  checkout_backbutton_path = ".block-group > a"
-  checkout_steps_container_path = ".steps--container.container"
-  checkout_agb_container_path = "div.tos--panel.panel"
-  checkout_billing_container_path = ".billing--panel"
-  checkout_shipping_container_path = ".shipping--panel"
-  checkout_payment_container_path = ".payment--panel"
-  checkout_product_container_path = ".product--table"
-  checkout_orderbutton_path = "button"
+  checkout_backbutton_path = csspathes.checkout_backbutton_path 
+  checkout_steps_container_path = csspathes.checkout_steps_container_path 
+  checkout_agb_container_path = csspathes.checkout_agb_container_path 
+  checkout_billing_container_path = csspathes.checkout_billing_container_path 
+  checkout_shipping_container_path = csspathes.checkout_shipping_container_path 
+  checkout_payment_container_path = csspathes.checkout_payment_container_path 
+  checkout_product_container_path = csspathes.checkout_product_container_path 
+  checkout_orderbutton_path = csspathes.checkout_orderbutton_path 
   
   expect(page).to have_css(checkout_backbutton_path),
     "expected to find #{checkout_backbutton_path}, but the checkout_backbutton is still missing on the page"
@@ -42,7 +42,7 @@ And(/^the checkoutpage contains all elements/) do
 end
 
 When(/^I send my order$/) do
-  checkout_orderbutton_path = "button"
+  checkout_orderbutton_path = csspathes.checkout_orderbutton_path 
   
   puts "I am on the checkout page"
   step("I am on the checkout page")
@@ -55,22 +55,23 @@ When(/^I send my order$/) do
 end
 
 And(/^I activate the box of agb$/) do
-  checkout_agb_container_path = "#sAGB"
+  checkout_agb_box_path = csspathes.checkout_agb_box_path 
   
   #step("I am on the checkout page")
   
-  element = page.find(checkout_agb_container_path)
+  element = page.find(checkout_agb_box_path)
   element.click
   puts "-> activate agb"
 end
 
 When(/^I go to the checkout$/) do
-  product_cart_panel_path = "div.panel"
-  product_cart_checkout_button_path = ".btn--checkout-proceed"
   
-  page.find(product_cart_panel_path)
+  checkout_panel_path = csspathes.checkout_panel_path 
+  checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path 
   
-  element = page.find(product_cart_checkout_button_path, match: :first)
+  page.find(checkout_panel_path)
+  
+  element = page.find(checkout_checkout_proceed_button_path, match: :first)
   element.click
   puts "--> click button to continue"
 end
@@ -91,92 +92,93 @@ When(/^I fill out a register form and send it without creating an account$/) do
   country = user.country
   
   #path
-  account_registerform_path = '#registration'
-  account_registerform_prefix_path = 'div.panel.register--personal > div > div.register--salutation.field--select'
-  account_registerform_firstname_path = '#firstname'
-  account_registerform_lastname_path = '#lastname'
-  account_registerform_department_path = '#register_billing_department'
-  account_registerform_taxvat_path = '#register_billing_ustid'
-  account_registerform_email_path = '#register_personal_email'
-  account_registerform_skip_path = '#register_personal_skipLogin'
-  account_registerform_phone_path = '#phone'
-  account_registerform_company_path = '#register_billing_company'
-  account_registerform_street_path = '#street'
-  account_registerform_postcode_path = '#zipcode'
-  account_registerform_city_path = '#city'
-  account_registerform_country_path = 'div.panel.register--address > div > div.register--country.field--select'
-  account_registerform_button_path = 'div.register--action > button'
-  
+  checkout_registerform_path = csspathes.checkout_registerform_path 
+  checkout_registerform_prefix_path = csspathes.checkout_registerform_prefix_path
+  checkout_registerform_firstname_path = csspathes.checkout_registerform_firstname_path
+  checkout_registerform_lastname_path = csspathes.checkout_registerform_lastname_path 
+  checkout_registerform_email_path = csspathes.checkout_registerform_email_path 
+  checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path 
+  checkout_registerform_phone_path = csspathes.checkout_registerform_phone_path 
+  checkout_registerform_company_path = csspathes.checkout_registerform_company_path 
+  checkout_registerform_department_path = csspathes.checkout_registerform_department_path 
+  checkout_registerform_taxvat_path = csspathes.checkout_registerform_taxvat_path 
+  checkout_registerform_street_path = csspathes.checkout_registerform_street_path 
+  checkout_registerform_postcode_path = csspathes.checkout_registerform_postcode_path 
+  checkout_registerform_city_path = csspathes.checkout_registerform_city_path 
+  checkout_registerform_country_path = csspathes.checkout_registerform_country_path 
+  checkout_registerform_button_path = csspathes.checkout_registerform_button_path 
+
   #search for field, so you know that we are on the right site
-  page.find(account_registerform_path)
+  page.find(checkout_registerform_path)
   #set value for prefix
-  element = page.find(account_registerform_prefix_path)
+  element = page.find(checkout_registerform_prefix_path)
   element.select(prefix)
   #output
   printValue(:prefix, binding)
   #set value for firstname
-  element = page.find(account_registerform_firstname_path)
+  element = page.find(checkout_registerform_firstname_path)
   element.set(firstname)
   printValue(:firstname, binding)
   #set value for lastname
-  element = page.find(account_registerform_lastname_path)
+  element = page.find(checkout_registerform_lastname_path)
   element.set(lastname)
   printValue(:lastname, binding)
   #set value for email
-  element = page.find(account_registerform_email_path)
+  element = page.find(checkout_registerform_email_path)
   element.set(email)
   printValue(:email, binding)
   #skip creation of an account
-  element = page.find(account_registerform_skip_path)
+  page.find(checkout_registerform_skip_path)
+  element = page.find(checkout_registerform_skip_path)
   element.click
   #set value for phone
   begin
-    element = page.find(account_registerform_phone_path)
+    element = page.find(checkout_registerform_phone_path)
     element.set(phone)
     printValue(:phone, binding)
   rescue Exception => e
     puts e.message
   end
   #set value for company
-  element = page.find(account_registerform_company_path)
+  element = page.find(checkout_registerform_company_path)
   element.set(company)
   printValue(:company, binding)
   #set value for department
-  element = page.find(account_registerform_department_path)
+  element = page.find(checkout_registerform_department_path)
   element.set(department)
   printValue(:department, binding)
   #set value for lastname
-  element = page.find(account_registerform_taxvat_path)
+  element = page.find(checkout_registerform_taxvat_path)
   element.set(taxvat)
   printValue(:taxvat, binding)
   #set value for password
-  element = page.find(account_registerform_street_path)
+  element = page.find(checkout_registerform_street_path)
   element.set(street)
   printValue(:street, binding)
   #set value for postcode
-  element = page.find(account_registerform_postcode_path)
+  element = page.find(checkout_registerform_postcode_path)
   element.set(postcode)
   printValue(:postcode, binding)
   #set value for city
-  element = page.find(account_registerform_city_path)
+  element = page.find(checkout_registerform_city_path)
   element.set(city)
   printValue(:city, binding)
   #set value for country
-  element = page.find(account_registerform_country_path)
+  element = page.find(checkout_registerform_country_path)
   element.select(country)
   #click button
-  element = page.find(account_registerform_button_path)
+  element = page.find(checkout_registerform_button_path)
   element.click
   puts "--> click button to continue"
 end
 
 When(/^I set payment and shipping$/) do
   #css pathes
-  checkout_payment_form_path = ".shipping-payment--information"
-  checkout_paymentInAdvance_radio_path = "#payment_mean5"
-  checkout_payment_continue_path = ".table--actions.block > button"
-  checkout_payment_delivery_standard_radio_path = "#confirm_dispatch9"
-  
+  checkout_payment_form_path = csspathes.checkout_payment_form_path 
+  checkout_paymentInAdvance_radio_path = csspathes.checkout_paymentInAdvance_radio_path 
+  checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
+  checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
+
   page.find(checkout_payment_form_path)
   #set payment
   element = page.find(checkout_paymentInAdvance_radio_path)
@@ -196,7 +198,7 @@ Then(/^Shopware should have my order$/) do
   eMail = user.eMail
   url_part = 'finish'
   
-  checkout_order_success_teaser = ".finish--teaser"
+  checkout_order_success_teaser = csspathes.checkout_order_success_teaser_path
   page.find(checkout_order_success_teaser)
   puts "> found teaser for success"
   

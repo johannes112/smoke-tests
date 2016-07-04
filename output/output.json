@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24502
+              "duration": 167253
             }
           },
           {
@@ -62,7 +62,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45308
+              "duration": 48436
             }
           }
         ],
@@ -73,9 +73,29 @@
             "line": 12,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
               "--> go to http://int.chefworks.de/account",
+              "I create a new account with my data",
+              "- set prefix = \"Herr\"",
+              "- set firstname = \"Vorname\"",
+              "- set lastname = \"Nachname\"",
+              "- set email = \"testmail_chefworks@test.de\"",
+              "- set password = \"Test2014\"",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.49.147', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company = \"Test_eBusiness\"",
+              "- set department = \"eBusiness\"",
+              "- set taxvat = \"DE999999999\"",
+              "- set street = \"Vegastr. 2\"",
+              "- set postcode = \"86637\"",
+              "- set city = \"Wertingen\"",
+              "clicked button to continue",
+              "I log me out",
+              "--> logged me out",
+              "I am on the registration page",
+              "--> go to http://int.chefworks.de/account",
+              "I login with valid informations",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
@@ -87,7 +107,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14618793505
+              "duration": 59548080621
             }
           },
           {
@@ -104,7 +124,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6815418397
+              "duration": 5119809085
             }
           },
           {
@@ -121,7 +141,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4632287045
+              "duration": 2761811093
             }
           },
           {
@@ -141,7 +161,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5102828849
+              "duration": 4574337994
             }
           },
           {
@@ -153,11 +173,11 @@
               ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:194"
+              "location": "features/step_definitions/checkout.rb:196"
             },
             "result": {
               "status": "passed",
-              "duration": 2425762325
+              "duration": 2217752859
             }
           }
         ],
@@ -168,7 +188,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22946
+              "duration": 27905
             }
           },
           {
@@ -177,7 +197,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 375571419
+              "duration": 326771781
             }
           }
         ]
@@ -214,7 +234,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15811
+              "duration": 15710
             }
           },
           {
@@ -223,7 +243,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33360
+              "duration": 35373
             }
           }
         ],
@@ -241,7 +261,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1281253864
+              "duration": 1266811721
             }
           },
           {
@@ -258,7 +278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3679939646
+              "duration": 3784025612
             }
           },
           {
@@ -273,7 +293,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1701084769
+              "duration": 1627780603
             }
           },
           {
@@ -295,11 +315,11 @@
               "--> click button to continue"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:78"
+              "location": "features/step_definitions/checkout.rb:79"
             },
             "result": {
               "status": "passed",
-              "duration": 40602454768
+              "duration": 39889438169
             }
           },
           {
@@ -320,7 +340,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6970689408
+              "duration": 5373470579
             }
           },
           {
@@ -332,11 +352,11 @@
               ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:194"
+              "location": "features/step_definitions/checkout.rb:196"
             },
             "result": {
               "status": "passed",
-              "duration": 2608708146
+              "duration": 2264097499
             }
           }
         ],
@@ -347,7 +367,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22305
+              "duration": 19088
             }
           },
           {
@@ -356,7 +376,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 348652573
+              "duration": 334622945
             }
           }
         ]
@@ -393,7 +413,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16550
+              "duration": 16306
             }
           },
           {
@@ -402,7 +422,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34288
+              "duration": 50222
             }
           }
         ],
@@ -420,7 +440,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1269849528
+              "duration": 1221814209
             }
           },
           {
@@ -437,7 +457,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3790395455
+              "duration": 5004062998
             }
           },
           {
@@ -452,7 +472,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4966845277
+              "duration": 2863385932
             }
           },
           {
@@ -465,7 +485,7 @@
               "- set lastname = \"Nachname\"",
               "- set email = \"testmail_chefworks@test.de\"",
               "- set password = \"Test2014\"",
-              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.42.150', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.49.147', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
               "- set company = \"Test_eBusiness\"",
               "- set department = \"eBusiness\"",
               "- set taxvat = \"DE999999999\"",
@@ -479,7 +499,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40531163915
+              "duration": 40512366990
             }
           },
           {
@@ -492,11 +512,11 @@
               "--> click button to continue"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:173"
+              "location": "features/step_definitions/checkout.rb:175"
             },
             "result": {
               "status": "passed",
-              "duration": 4743014231
+              "duration": 2900008612
             }
           },
           {
@@ -516,7 +536,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3147833743
+              "duration": 3144349079
             }
           },
           {
@@ -528,11 +548,11 @@
               ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:194"
+              "location": "features/step_definitions/checkout.rb:196"
             },
             "result": {
               "status": "passed",
-              "duration": 2253789563
+              "duration": 2250888259
             }
           }
         ],
@@ -543,7 +563,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20170
+              "duration": 22603
             }
           },
           {
@@ -552,7 +572,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 365206174
+              "duration": 323744098
             }
           }
         ]
