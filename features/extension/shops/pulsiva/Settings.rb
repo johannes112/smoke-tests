@@ -5,17 +5,17 @@ class Settings
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when (/.*/) then 'http://int.pulsiva.com/de-de/'
+        when (/de/) then 'http://int.pulsiva.com/de-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'http://int.pulsiva.com/de-de/'
         end
-      @urlBackend = 'http://int.pulsiva.com/de-de/'
+      @urlBackend = 'http://int.pulsiva.com/'#'http://int.chefworks.de/'
     end
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/.*/) then 'https://www.pulsiva.com/de-de/'
+        when (/de/) then 'https://www.pulsiva.com/de-de/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.pulsiva.com/de-de/'

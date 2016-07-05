@@ -42,3 +42,29 @@ def block_css(csspath)
       blockCssElement();
       ")
 end
+
+#check if a variable exists and set its value
+def setAtrributOfArticle(var_text, variable, var_path)
+  #var_value = article.variable
+  #variable exists?
+  if variable
+    #set location
+    item = page.find(var_path)
+    item_type = item.inspect
+      #check for type (Element=input or eelement=select)
+      if(item_type.include?"input")
+        #set value
+        item.set(variable)
+        puts "- set #{var_text}: #{variable}"
+        expect(item.value).to eq(variable),
+          "Could not insert variable #{var_text} with #{variable}"
+      elsif(item_type.include?"select")
+        item.select(variable)
+        puts "#{var_text}: #{variable}"
+      else
+        puts "Error Element isn't of type 'input' or 'select'"
+      end
+  else
+    puts "#{var_text} is not available in #{ENV['COUNTRY']}"
+  end
+end

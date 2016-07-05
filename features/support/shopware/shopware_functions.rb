@@ -61,7 +61,7 @@ module ShopwareFunctions
     url_data = "/api/orders"
     filter = "?filter[customerId]=#{id}"
     url_request = "#{url_data}/#{filter}"
-    #puts "url_request: #{url_request}"
+    puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     amount_total_orders = response_data_customer['total']
     counter=0

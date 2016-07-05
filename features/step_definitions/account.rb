@@ -73,58 +73,36 @@ When(/^I create a new account with my data$/) do
   #search for field, so you know that we are on the right site
   page.find(account_registerform_path)
   #set value for prefix
+  
   element = page.find(account_registerform_prefix_path)
   element.select(prefix)
-  #output
   printValue(:prefix, binding)
   #set value for firstname
-  element = page.find(account_registerform_firstname_path)
-  element.set(firstname)
-  printValue(:firstname, binding)
+  setAtrributOfArticle("firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
-  element = page.find(account_registerform_lastname_path)
-  element.set(lastname)
-  printValue(:lastname, binding)
+  setAtrributOfArticle("lastname", lastname, account_registerform_lastname_path)
   #set value for email
-  element = page.find(account_registerform_email_path)
-  element.set(email)
-  printValue(:email, binding)
+  setAtrributOfArticle("email", email, account_registerform_email_path)
   #set value for password
-  element = page.find(account_registerform_password_path)
-  element.set(password)
-  printValue(:password, binding)
+  setAtrributOfArticle("password", password, account_registerform_password_path)
   #set value for phone
-  begin
-    element = page.find(account_registerform_phone_path)
-    element.set(phone)
-    printValue(:phone, binding)
+  begin #rescuse in cause of the difference of live and int in chefworks
+    setAtrributOfArticle("phone", phone, account_registerform_phone_path)
   rescue Exception => e
     puts e.message
   end
   #set value for company
-  element = page.find(account_registerform_company_path)
-  element.set(company)
-  printValue(:company, binding)
+  setAtrributOfArticle("company", company, account_registerform_company_path)
   #set value for department
-  element = page.find(account_registerform_department_path)
-  element.set(department)
-  printValue(:department, binding)
-  #set value for lastname
-  element = page.find(account_registerform_taxvat_path)
-  element.set(taxvat)
-  printValue(:taxvat, binding)
-  #set value for password
-  element = page.find(account_registerform_street_path)
-  element.set(street)
-  printValue(:street, binding)
+  setAtrributOfArticle("department", department, account_registerform_department_path)
+  #set value for vat
+  setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
+  #set value for street
+  setAtrributOfArticle("street", street, account_registerform_street_path)
   #set value for postcode
-  element = page.find(account_registerform_postcode_path)
-  element.set(postcode)
-  printValue(:postcode, binding)
+  setAtrributOfArticle("postcode", postcode, account_registerform_postcode_path)
   #set value for city
-  element = page.find(account_registerform_city_path)
-  element.set(city)
-  printValue(:city, binding)
+  setAtrributOfArticle("city", city, account_registerform_city_path)
   #set value for country
   element = page.find(account_registerform_country_path)
   element.select(country)
