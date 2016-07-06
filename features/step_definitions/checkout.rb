@@ -90,7 +90,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   postcode = user.postcode
   city = user.city
   country = user.country
-  
+  company_kind = "true"
   #path
   checkout_registerform_path = csspathes.checkout_registerform_path 
   checkout_registerform_prefix_path = csspathes.checkout_registerform_prefix_path
@@ -100,6 +100,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path 
   checkout_registerform_phone_path = csspathes.checkout_registerform_phone_path 
   checkout_registerform_company_path = csspathes.checkout_registerform_company_path 
+  checkout_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
   checkout_registerform_department_path = csspathes.checkout_registerform_department_path 
   checkout_registerform_taxvat_path = csspathes.checkout_registerform_taxvat_path 
   checkout_registerform_street_path = csspathes.checkout_registerform_street_path 
@@ -143,6 +144,12 @@ When(/^I fill out a register form and send it without creating an account$/) do
   element = page.find(checkout_registerform_company_path)
   element.set(company)
   printValue(:company, binding)
+  #company kind
+  if company_kind
+    element = page.find(checkout_registerform_checkbox_company_path)
+    element.click
+    puts 'chose company'
+  end
   #set value for department
   element = page.find(checkout_registerform_department_path)
   element.set(department)
