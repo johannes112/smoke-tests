@@ -15,7 +15,7 @@ class Csspathes
   :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path,
   #account
   :account_registerform_path, :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, 
-  :account_registerform_taxvat_path, :account_registerform_email_path, :account_registerform_password_path, :account_registerform_phone_path, :account_registerform_company_path, :account_registerform_street_path, 
+  :account_registerform_taxvat_path, :account_registerform_email_path, :account_registerform_password_path, :account_registerform_phone_path, :account_registerform_company_path, :account_registerform_checkbox_company_path, :account_registerform_street_path, :account_registerform_streetnumber_path,
   :account_registerform_postcode_path, :account_registerform_city_path, :account_registerform_country_path, :account_registerform_button_path, :account_accountpage_welcome_path, :account_accountpage_info_path, :account_loginform_emailfield_path, :account_loginform_passwordfield_path, 
   :account_loginform_registerbutton_path, :account_userinfo_passwordchange_button_appear_path, :account_userinfo_passwordchange_currentpassword_path, :account_userinfo_passwordchange_newpassword_path, 
   :account_userinfo_passwordchange_repeatnewpassword_path, :account_userinfo_passwordchange_button_path, :account_userinfo_emailchange_button_appear_path, :account_userinfo_emailchange_currentpassword_path, 
@@ -27,7 +27,7 @@ class Csspathes
   :checkout_backbutton_path, :checkout_steps_container_path, :checkout_agb_container_path, :checkout_billing_container_path, :checkout_shipping_container_path, :checkout_payment_container_path, 
   :checkout_product_container_path, :checkout_orderbutton_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 
   :checkout_registerform_firstname_path, :checkout_registerform_lastname_path, :checkout_registerform_department_path, :checkout_registerform_taxvat_path, :checkout_registerform_email_path, 
-  :checkout_registerform_skip_path, :checkout_registerform_phone_path, :checkout_registerform_company_path, :checkout_registerform_street_path, :checkout_registerform_postcode_path, 
+  :checkout_registerform_skip_path, :checkout_registerform_phone_path, :checkout_registerform_company_path, :checkout_registerform_street_path, :checkout_registerform_streetnumber_path, :checkout_registerform_postcode_path, 
   :checkout_registerform_city_path, :checkout_registerform_country_path, :checkout_registerform_button_path, :checkout_payment_form_path, :checkout_paymentInAdvance_radio_path, 
   :checkout_payment_continue_path, :checkout_payment_delivery_standard_radio_path, :checkout_order_success_teaser_path
 
@@ -377,7 +377,7 @@ class Csspathes
     @account_registerform_firstname_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#firstname'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#firstname'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '##firstname'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#firstname'
     end 
     @account_registerform_lastname_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#lastname'
@@ -385,7 +385,7 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#lastname'
     end 
     @account_registerform_department_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_department'#nil
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_department'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_department'
     end     
@@ -410,15 +410,25 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#phone'
     end 
     @account_registerform_company_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.action--compare'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_company'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_company'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.action--compare'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_company'
+    end 
+    @account_registerform_checkbox_company_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_emgroup_business_form_other'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then nil
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    nil
     end 
     @account_registerform_street_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#street'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#street'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#street'
-    end     
+    end
+    @account_registerform_streetnumber_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#emgroup_house_number'#on int no live
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then nil
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    nil
+    end
     @account_registerform_postcode_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#zipcode'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#zipcode'
@@ -439,20 +449,15 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.register--action > button'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.register--action > button'
     end 
-    @account_registerform_button_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.register--action > button'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.register--action > button'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.register--action > button'
-    end     
     @account_accountpage_welcome_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--welcome.panel'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--welcome.panel'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--welcome.panel'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--welcome.panel'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--welcome.panel'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--welcome.panel'
     end 
     @account_accountpage_info_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--info'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--info'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--info'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--info'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--info'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--info'
     end 
     @account_loginform_emailfield_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#email'
@@ -465,14 +470,14 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#passwort'
     end     
     @account_loginform_registerbutton_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.register--login-action > button'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.register--login-action > button'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.register--login-action > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.register--login-action > button'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.register--login-action > button'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.register--login-action > button'
     end 
     @account_userinfo_passwordchange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.btn.is--small.btn--password'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.btn.is--small.btn--password'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a.btn.is--small.btn--password'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn--password'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.btn--password'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.btn--password'
     end 
     @account_userinfo_passwordchange_currentpassword_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#currentPassword'
@@ -495,9 +500,9 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#account--password > form > div.panel--actions.is--wide > input'
     end 
     @account_userinfo_emailchange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.btn.is--small.btn--email'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.btn.is--small.btn--email'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a.btn.is--small.btn--email'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn--email'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.btn--email'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.btn--email'
     end 
     @account_userinfo_emailchange_currentpassword_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#emailPassword'
@@ -520,29 +525,29 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#account--email > form > div.panel--actions.is--wide > input'
     end 
     @account_userinfo_success_hint_path  = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--success'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--success'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--success'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--success'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--success'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--success'
     end 
     @account_accountinfo_menucontainer_logout_link_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.navigation--link.link--logout'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--link.link--logout'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.navigation--link.link--logout'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.link--logout'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.link--logout'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.link--logout'
     end     
     @account_accountinfo_payment_box_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--payment.account--box'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--payment.account--box'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--payment.account--box'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--payment.account--box'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--payment.account--box'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--payment.account--box'
     end 
     @account_accountinfo_paymentchange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn.is--small'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.btn.is--small'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.btn.is--small'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.btn'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.btn'
     end 
     @account_payment_paymentoptions_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.register--payment'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.register--payment'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.register--payment'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.register--payment'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.register--payment'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.register--payment'
     end 
     @account_payment_cashOnDelivery_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#payment_mean3'
@@ -550,59 +555,59 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#payment_mean3'
     end 
     @account_payment_change_button_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--actions > input'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--actions > input'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--actions > input'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--actions > input'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--actions > input'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--actions > input'
     end     
     @account_accountinfo_billaddress_box_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--billing.account--box'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--billing.account--box'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--billing.account--box'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--billing.account--box'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--billing.account--box'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--billing.account--box'
     end 
     @account_accountinfo_billaddresschange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a:nth-child(2)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a:nth-child(2)'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a:nth-child(2)'
     end 
     @account_invoiceadresschange_form_prefix_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.register--personal > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.register--personal > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.register--personal > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel.register--personal > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.panel.register--personal > div > div.register--salutation.field--select'
     end 
     @account_invoiceadresschange_button_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--actions > input'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--actions > input'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--actions > input'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--actions > input'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--actions > input'
     end 
     @account_accountinfo_deliveraddress_box_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--shipping.account--box'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--shipping.account--box'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--shipping.account--box'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--shipping.account--box'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--shipping.account--box'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--shipping.account--box'
     end 
     @account_accountinfo_deliveraddresschange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a:nth-child(2)'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a:nth-child(1)'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'a:nth-child(2)'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     'a:nth-child(2)'
     end 
     @account_deliveradresschange_form_prefix_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.register--shipping > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.register--shipping > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.register--shipping > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel.register--shipping > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel.register--shipping > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.panel.register--shipping > div > div.register--salutation.field--select'
     end 
     @account_deliveradresschange_button_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--actions > input'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--actions > input'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--actions > input'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--actions > input'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--actions > input'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--actions > input'
     end 
     @account_newsletter_box_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#newsletter'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#newsletter'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#newsletter'
     end 
     @account_sidebar_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.account--menu > div > ul'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.account--menu > div > ul'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.account--menu > div > ul'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--menu > div > ul'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--menu > div > ul'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--menu > div > ul'
     end
     #checkout
     @checkout_backbutton_path  = case 
@@ -616,9 +621,9 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.steps--container.container'  
     end
     @checkout_agb_container_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tos--panel.panel'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tos--panel.panel'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.tos--panel.panel'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tos--box'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.tos--panel'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.tos--panel'
     end
     @checkout_billing_container_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.billing--panel'
@@ -641,7 +646,7 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.product--table'
     end
     @checkout_orderbutton_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.block-confirm--actions > div > div > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'button'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'button'
     end
@@ -651,9 +656,9 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#sAGB'
     end
     @checkout_panel_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.panel'
     end
     @checkout_checkout_proceed_button_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn--checkout-proceed'
@@ -666,9 +671,9 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#registration'
     end
     @checkout_registerform_prefix_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.register--personal > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.register--personal > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.register--personal > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.register--personal > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.register--personal > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.register--personal > div > div.register--salutation.field--select'
     end
     @checkout_registerform_firstname_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#firstname'
@@ -681,12 +686,12 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#lastname'
     end
     @checkout_registerform_department_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_department'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   nil
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_department'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_department'
     end
     @checkout_registerform_taxvat_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#ustid'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
     end
@@ -710,10 +715,15 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_company'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_company'
     end
-    @checkout_registerform_street_path = case 
+    @checkout_registerform_street_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#street'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#street'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#street'
+    end
+    @checkout_registerform_streetnumber_path = case  
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#emgroup_house_number'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then nil
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    nil
     end
     @checkout_registerform_postcode_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#zipcode'
@@ -751,7 +761,7 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.table--actions.block > button'
     end
     @checkout_payment_delivery_standard_radio_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#confirm_dispatch9'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#confirm_dispatch10'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch9'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#confirm_dispatch9'
     end

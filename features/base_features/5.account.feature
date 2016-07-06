@@ -11,19 +11,21 @@ Feature: account
   Background:
     Given I am on the registration page
 
-	
+  @pulsiva	
   @account_registration
 	Scenario: create new account
 		And no user account with my email exists
 		When I create a new account with my data
 		Then I should be on my account page
 
+  @pulsiva
   @account_login
 	Scenario: login with existing account
 		And I already created an user account
 		When I login with valid informations
 		Then I should be on my account page
 
+  @pulsiva
   @account_update
   @account_userinfo
 	Scenario: modify userinfo in my account
@@ -31,6 +33,7 @@ Feature: account
 		When I modify my userinfo
 		Then I should see a confirmation hint
 		
+  @pulsiva
   @account_update
   @account_payment
 	Scenario: modify payment in my account
@@ -45,6 +48,7 @@ Feature: account
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 		
+	@pulsiva
 	@account_update
   @account_delivery
 	Scenario: modify adress of delivery
@@ -58,6 +62,7 @@ Feature: account
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
 		
+	@pulsiva
 	@account_links
   Scenario: test links on the accountsite
 		Given I am logged in

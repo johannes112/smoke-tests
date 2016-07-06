@@ -10,7 +10,7 @@ class User
       when 'ex' then 'testmail_exp@test.de'
     end
     @password = case ENV['COUNTRY']
-      when 'ex' then '123456'
+      when 'ex' then 'Test2014'
     end
     @company = case ENV['COUNTRY']
       when 'ex' then 'ex_Test_eBusiness'

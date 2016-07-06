@@ -48,7 +48,9 @@ When(/^I create a new account with my data$/) do
   password = user.password
   phone = user.telephone
   company = user.company
+  company_kind = user.company_kind
   street = user.street
+  streetnumber = user.streetnumber
   postcode = user.postcode
   city = user.city
   country = user.country
@@ -64,7 +66,9 @@ When(/^I create a new account with my data$/) do
   account_registerform_password_path = csspathes.account_registerform_password_path
   account_registerform_phone_path = csspathes.account_registerform_phone_path
   account_registerform_company_path = csspathes.account_registerform_company_path
+  account_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
   account_registerform_street_path = csspathes.account_registerform_street_path
+  account_registerform_streetnumber_path = csspathes.account_registerform_streetnumber_path
   account_registerform_postcode_path = csspathes.account_registerform_postcode_path
   account_registerform_city_path = csspathes.account_registerform_city_path
   account_registerform_country_path = csspathes.account_registerform_country_path
@@ -93,12 +97,20 @@ When(/^I create a new account with my data$/) do
   end
   #set value for company
   setAtrributOfArticle("company", company, account_registerform_company_path)
+  #click on kind of company if the box should be visible
+  if company_kind
+    element = page.find(account_registerform_checkbox_company_path)
+    element.click
+    puts 'chose company'
+  end
   #set value for department
   setAtrributOfArticle("department", department, account_registerform_department_path)
   #set value for vat
   setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
   setAtrributOfArticle("street", street, account_registerform_street_path)
+  #set streetnumber 
+  setAtrributOfArticle("streetnumber", streetnumber, account_registerform_streetnumber_path)
   #set value for postcode
   setAtrributOfArticle("postcode", postcode, account_registerform_postcode_path)
   #set value for city
@@ -119,6 +131,8 @@ Then(/^I should be on my account page$/) do
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   account_accountpage_info_path = csspathes.account_accountpage_info_path
   
+  expect(page).to have_css(account_accountpage_welcome_path),
+     "expected to sse a welcome message but there is no #{account_accountpage_welcome_path}"
   page.find(account_accountpage_welcome_path)
   element = page.find(account_accountpage_info_path)
   infobox_txt = element.text

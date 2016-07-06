@@ -1,11 +1,11 @@
 if ENV['DRIVER'] == 'saucelabs'
-  require 'capybara/cucumber'
   require 'sauce/capybara'
+    require 'capybara/cucumber'
   module Saucelabs_config
     Capybara.default_selector = :css
     Capybara.default_driver = :sauce
     Capybara.ignore_hidden_elements = true
-    Capybara.default_max_wait_time= 30
+    Capybara.default_max_wait_time = 30
     
     Sauce.config do |config|
       config[:name] = "Shopware tests: #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"

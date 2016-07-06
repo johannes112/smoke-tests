@@ -32,7 +32,7 @@ module ShopwareFunctions
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
     response_data = readData(url_request)
-    puts response_data
+    #puts response_data
     return response_data
   end
   
@@ -44,6 +44,7 @@ module ShopwareFunctions
     url_data = "/api/customers"
     filter = "?filter[email]=#{mailaddress}"
     url_request = "#{url_data}/#{filter}"
+    #puts url_request
     response_data_customer = readData(url_request)
     if response_data_customer['data'][0] != nil
       customer_id_by_mail = response_data_customer['data'][0][key]
@@ -61,7 +62,7 @@ module ShopwareFunctions
     url_data = "/api/orders"
     filter = "?filter[customerId]=#{id}"
     url_request = "#{url_data}/#{filter}"
-    puts "url_request: #{url_request}"
+    #puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     amount_total_orders = response_data_customer['total']
     counter=0
