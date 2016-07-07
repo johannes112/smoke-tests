@@ -6,9 +6,11 @@ class Settings
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://int.pulsiva.com/de-de/'
+        when (/at/) then 'http://int.pulsiva.com/at-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.pulsiva.com/de-de/'
+        when (/at/) then 'https://int.pulsiva.com/at-de/'
         end
       @urlBackend = 'https://int.pulsiva.com/'#'http://int.chefworks.de/'
     end
@@ -16,9 +18,11 @@ class Settings
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'https://www.pulsiva.com/de-de/'
+        when (/at/) then 'https://int.pulsiva.com/at-de/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.pulsiva.com/de-de/'
+        when (/at/) then 'https://int.pulsiva.com/at-de/'
       end
       @urlBackend = 'https://www.pulsiva.com/'
     end

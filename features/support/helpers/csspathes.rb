@@ -761,7 +761,8 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.table--actions.block > button'
     end
     @checkout_payment_delivery_standard_radio_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#confirm_dispatch10'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#confirm_dispatch10'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#confirm_dispatch12'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch9'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#confirm_dispatch9'
     end
