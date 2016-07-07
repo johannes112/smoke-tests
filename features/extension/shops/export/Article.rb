@@ -1,6 +1,6 @@
 #export
 class Article
-  attr_accessor :sub_category, :category, :sku, :amount, :name, :color, :size, :packagingUnit, :deliveryState, :pricePerPiece, :packContent, :order_value_netto, :order_value_brutto, :vat, :shipping_costs, :url_add_comand
+  attr_accessor :sub_category, :category, :sku, :amount, :name, :url_add_comand
   
   def initialize
     @sub_category = 'CUTLERY'
@@ -15,36 +15,6 @@ class Article
     end
     @name = case ENV['COUNTRY']
       when (/.*/) then 'Fortuna'
-    end
-    @color = case ENV['COUNTRY']
-      when (/.*/) then nil
-    end
-    @size = case ENV['COUNTRY']
-      when (/.*/) then 'L=26,2 cm'
-    end
-    @packagingUnit = case ENV['COUNTRY']
-      when (/.*/) then nil
-    end
-    @deliveryState = case ENV['COUNTRY']
-      when (/.*/) then 'in stock'
-    end
-    @pricePerPiece = case ENV['COUNTRY']
-      when (/.*/) then 1.99
-    end
-    @packContent = case ENV['COUNTRY']
-      when (/.*/) then 2
-    end
-    @shipping_costs = case ENV['COUNTRY']
-      when (/.*/) then nil
-    end
-    @order_value_netto = case ENV['COUNTRY']
-      when (/.*/) then nil
-    end
-    @order_value_brutto = case ENV['COUNTRY']
-      when (/.*/) then nil
-    end
-    @vat = case ENV['COUNTRY']
-      when (/.*/) then nil
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/.*/) then 'addArticle/sTargetAction'

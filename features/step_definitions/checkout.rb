@@ -83,6 +83,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   lastname = user.lastname
   department = user.department
   taxvat = user.taxvat
+  customer_number = user.customer_number
   email = user.eMail
   skip = "true"
   phone = user.telephone
@@ -101,6 +102,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   checkout_registerform_lastname_path = csspathes.account_registerform_lastname_path
   checkout_registerform_department_path = csspathes.account_registerform_department_path
   checkout_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  checkout_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
   checkout_registerform_email_path = csspathes.account_registerform_email_path
   checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path ####################################################
   checkout_registerform_phone_path = csspathes.account_registerform_phone_path
@@ -124,6 +126,8 @@ When(/^I fill out a register form and send it without creating an account$/) do
   setAtrributOfArticle("firstname", firstname, checkout_registerform_firstname_path)
   #set value for lastname
   setAtrributOfArticle("lastname", lastname, checkout_registerform_lastname_path)
+  #set value for customernumber
+  setAtrributOfArticle("customernumber", customer_number, checkout_registerform_customernumber_path)
   #set value for email
   setAtrributOfArticle("email", email, checkout_registerform_email_path)
   #set value to skip registering

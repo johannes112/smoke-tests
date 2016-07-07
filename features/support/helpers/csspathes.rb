@@ -22,13 +22,13 @@ class Csspathes
   :account_userinfo_emailchange_newmail_path, :account_userinfo_emailchange_repeatnewmail_path, :account_userinfo_emailchange_button_path, :account_userinfo_success_hint_path , :account_accountinfo_menucontainer_logout_link_path, 
   :account_accountinfo_payment_box_path, :account_accountinfo_paymentchange_button_appear_path, :account_payment_paymentoptions_path, :account_payment_cashOnDelivery_path, :account_payment_change_button_path, 
   :account_accountinfo_billaddress_box_path, :account_accountinfo_billaddresschange_button_appear_path, :account_invoiceadresschange_form_prefix_path, :account_invoiceadresschange_button_path, :account_accountinfo_deliveraddress_box_path, 
-  :account_accountinfo_deliveraddresschange_button_appear_path, :account_deliveradresschange_form_prefix_path, :account_deliveradresschange_button_path, :account_newsletter_box_path, :account_sidebar_path, 
+  :account_accountinfo_deliveraddresschange_button_appear_path, :account_deliveradresschange_form_prefix_path, :account_deliveradresschange_button_path, :account_newsletter_box_path, :account_sidebar_path, :account_registerform_customernumber_path, 
   #checkout
   :checkout_backbutton_path, :checkout_steps_container_path, :checkout_agb_container_path, :checkout_billing_container_path, :checkout_shipping_container_path, :checkout_payment_container_path, 
   :checkout_product_container_path, :checkout_orderbutton_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 
   :checkout_registerform_firstname_path, :checkout_registerform_lastname_path, :checkout_registerform_department_path, :checkout_registerform_taxvat_path, :checkout_registerform_email_path, 
   :checkout_registerform_skip_path, :checkout_registerform_phone_path, :checkout_registerform_company_path, :checkout_registerform_street_path, :checkout_registerform_streetnumber_path, :checkout_registerform_postcode_path, 
-  :checkout_registerform_city_path, :checkout_registerform_country_path, :checkout_registerform_button_path, :checkout_payment_form_path, :checkout_paymentInAdvance_radio_path, 
+  :checkout_registerform_city_path, :checkout_registerform_country_path, :checkout_registerform_button_path, :checkout_payment_form_path, :checkout_paymentInAdvance_radio_path, :checkout_registerform_customernumber_path, 
   :checkout_payment_continue_path, :checkout_payment_delivery_standard_radio_path, :checkout_order_success_teaser_path
 
  
@@ -519,6 +519,11 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#neweailrepeat'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#neweailrepeat'
     end  
+    @account_registerform_customernumber_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_customernumber'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then nil
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    nil
+    end
     @account_userinfo_emailchange_button_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#account--email > form > div.panel--actions.is--wide > input'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#account--email > form > div.panel--actions.is--wide > input'
@@ -695,10 +700,10 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
     end
-    @checkout_registerform_customernumber_taxvat_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#ustid'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
+    @checkout_registerform_customernumber_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_customernumber'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then nil
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    nil
     end
     @checkout_registerform_email_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_personal_email'

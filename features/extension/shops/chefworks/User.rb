@@ -6,7 +6,7 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '593497053'
+      when 'de' then nil
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_chefworks@test.de'
