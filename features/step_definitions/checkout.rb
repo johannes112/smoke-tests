@@ -77,106 +77,93 @@ When(/^I go to the checkout$/) do
 end
 
 When(/^I fill out a register form and send it without creating an account$/) do
-  #var
+    #var
   prefix = user.prefix
   firstname = user.firstname
   lastname = user.lastname
   department = user.department
   taxvat = user.taxvat
   email = user.eMail
+  skip = "true"
   phone = user.telephone
   company = user.company
+  company_kind = user.company_kind
   street = user.street
+  streetnumber = user.streetnumber
   postcode = user.postcode
   city = user.city
   country = user.country
-  company_kind = "true"
-  #path
-  checkout_registerform_path = csspathes.checkout_registerform_path 
-  checkout_registerform_prefix_path = csspathes.checkout_registerform_prefix_path
-  checkout_registerform_firstname_path = csspathes.checkout_registerform_firstname_path
-  checkout_registerform_lastname_path = csspathes.checkout_registerform_lastname_path 
-  checkout_registerform_email_path = csspathes.checkout_registerform_email_path 
-  checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path 
-  checkout_registerform_phone_path = csspathes.checkout_registerform_phone_path 
-  checkout_registerform_company_path = csspathes.checkout_registerform_company_path 
-  checkout_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
-  checkout_registerform_department_path = csspathes.checkout_registerform_department_path 
-  checkout_registerform_taxvat_path = csspathes.checkout_registerform_taxvat_path 
-  checkout_registerform_street_path = csspathes.checkout_registerform_street_path 
-  checkout_registerform_postcode_path = csspathes.checkout_registerform_postcode_path 
-  checkout_registerform_city_path = csspathes.checkout_registerform_city_path 
-  checkout_registerform_country_path = csspathes.checkout_registerform_country_path 
-  checkout_registerform_button_path = csspathes.checkout_registerform_button_path 
 
+  #path
+  checkout_registerform_path = csspathes.account_registerform_path
+  checkout_registerform_prefix_path = csspathes.account_registerform_prefix_path
+  checkout_registerform_firstname_path = csspathes.account_registerform_firstname_path
+  checkout_registerform_lastname_path = csspathes.account_registerform_lastname_path
+  checkout_registerform_department_path = csspathes.account_registerform_department_path
+  checkout_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  checkout_registerform_email_path = csspathes.account_registerform_email_path
+  checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path ####################################################
+  checkout_registerform_phone_path = csspathes.account_registerform_phone_path
+  checkout_registerform_company_path = csspathes.account_registerform_company_path
+  checkout_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
+  checkout_registerform_street_path = csspathes.account_registerform_street_path
+  checkout_registerform_streetnumber_path = csspathes.account_registerform_streetnumber_path
+  checkout_registerform_postcode_path = csspathes.account_registerform_postcode_path
+  checkout_registerform_city_path = csspathes.account_registerform_city_path
+  checkout_registerform_country_path = csspathes.account_registerform_country_path
+  checkout_registerform_button_path = csspathes.account_registerform_button_path
+  
   #search for field, so you know that we are on the right site
   page.find(checkout_registerform_path)
   #set value for prefix
+  
   element = page.find(checkout_registerform_prefix_path)
   element.select(prefix)
-  #output
   printValue(:prefix, binding)
   #set value for firstname
-  element = page.find(checkout_registerform_firstname_path)
-  element.set(firstname)
-  printValue(:firstname, binding)
+  setAtrributOfArticle("firstname", firstname, checkout_registerform_firstname_path)
   #set value for lastname
-  element = page.find(checkout_registerform_lastname_path)
-  element.set(lastname)
-  printValue(:lastname, binding)
+  setAtrributOfArticle("lastname", lastname, checkout_registerform_lastname_path)
   #set value for email
-  element = page.find(checkout_registerform_email_path)
-  element.set(email)
-  printValue(:email, binding)
-  #skip creation of an account
-  page.find(checkout_registerform_skip_path)
-  element = page.find(checkout_registerform_skip_path)
-  element.click
+  setAtrributOfArticle("email", email, checkout_registerform_email_path)
+  #set value to skip registering
+  if skip
+    element = page.find(checkout_registerform_skip_path)
+    element.click
+  end
   #set value for phone
-  begin
-    element = page.find(checkout_registerform_phone_path)
-    element.set(phone)
-    printValue(:phone, binding)
+  begin #rescuse in cause of the difference of live and int in chefworks
+    setAtrributOfArticle("phone", phone, checkout_registerform_phone_path)
   rescue Exception => e
     puts e.message
   end
   #set value for company
-  element = page.find(checkout_registerform_company_path)
-  element.set(company)
-  printValue(:company, binding)
-  #company kind
+  setAtrributOfArticle("company", company, checkout_registerform_company_path)
+  #click on kind of company if the box should be visible
   if company_kind
     element = page.find(checkout_registerform_checkbox_company_path)
     element.click
     puts 'chose company'
   end
   #set value for department
-  element = page.find(checkout_registerform_department_path)
-  element.set(department)
-  printValue(:department, binding)
-  #set value for lastname
-  element = page.find(checkout_registerform_taxvat_path)
-  element.set(taxvat)
-  printValue(:taxvat, binding)
-  #set value for password
-  element = page.find(checkout_registerform_street_path)
-  element.set(street)
-  printValue(:street, binding)
+  setAtrributOfArticle("department", department, checkout_registerform_department_path) #############################################################
+  #set value for vat
+  setAtrributOfArticle("taxvat", taxvat, checkout_registerform_taxvat_path)
+  #set value for street
+  setAtrributOfArticle("street", street, checkout_registerform_street_path)
+  #set streetnumber 
+  setAtrributOfArticle("streetnumber", streetnumber, checkout_registerform_streetnumber_path)
   #set value for postcode
-  element = page.find(checkout_registerform_postcode_path)
-  element.set(postcode)
-  printValue(:postcode, binding)
+  setAtrributOfArticle("postcode", postcode, checkout_registerform_postcode_path)
   #set value for city
-  element = page.find(checkout_registerform_city_path)
-  element.set(city)
-  printValue(:city, binding)
+  setAtrributOfArticle("city", city, checkout_registerform_city_path)
   #set value for country
   element = page.find(checkout_registerform_country_path)
   element.select(country)
   #click button
   element = page.find(checkout_registerform_button_path)
   element.click
-  puts "--> click button to continue"
+  puts "clicked button to continue"
 end
 
 When(/^I set payment and shipping$/) do

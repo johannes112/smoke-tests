@@ -1,4 +1,5 @@
 # language: en
+@pulsiva
 @export
 @chefworks
 @checkout
@@ -21,6 +22,7 @@ Feature: checkout
 	  And the product cart contains an article
 	  When I go to the checkout
 	  When I fill out a register form and send it without creating an account
+	  When I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
 
