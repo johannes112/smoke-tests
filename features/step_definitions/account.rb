@@ -136,7 +136,7 @@ Then(/^I should be on my account page$/) do
   account_accountpage_info_path = csspathes.account_accountpage_info_path
   
   expect(page).to have_css(account_accountpage_welcome_path),
-     "expected to sse a welcome message but there is no #{account_accountpage_welcome_path}"
+     "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
   page.find(account_accountpage_welcome_path)
   element = page.find(account_accountpage_info_path)
   infobox_txt = element.text
@@ -375,6 +375,7 @@ When(/^I change prefix of my address for delivery$/) do
   puts "--> click change-button"
 end
 
+#it is not working on pulsiva
 When(/^I activate the newsletterbox$/) do
   account_newsletter_box_path = csspathes.account_newsletter_box_path
   

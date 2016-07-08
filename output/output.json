@@ -34,7 +34,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40866
+              "duration": 25940
             }
           },
           {
@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 80269
+              "duration": 54793
             }
           }
         ],
@@ -53,14 +53,14 @@
             "name": "I am on the website",
             "line": 13,
             "output": [
-              "go to https://int.pulsiva.com/at-de/"
+              "go to https://int.pulsiva.com/de-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9326976153
+              "duration": 11147643245
             }
           }
         ]
@@ -111,7 +111,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7380180636
+              "duration": 1283688031
             }
           }
         ],
@@ -122,7 +122,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17511
+              "duration": 30865
             }
           },
           {
@@ -131,7 +131,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 332742010
+              "duration": 384204592
             }
           }
         ]
@@ -149,7 +149,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16088
+              "duration": 28120
             }
           },
           {
@@ -158,7 +158,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 54758
+              "duration": 50640
             }
           }
         ],
@@ -172,7 +172,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1753228535
+              "duration": 1858426273
             }
           }
         ]
@@ -228,7 +228,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11066562657
+              "duration": 5988136291
             }
           },
           {
@@ -240,7 +240,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 534273542
+              "duration": 519382989
             }
           }
         ],
@@ -251,7 +251,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19120
+              "duration": 26324
             }
           },
           {
@@ -260,7 +260,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 355120640
+              "duration": 369389436
             }
           }
         ]
@@ -278,7 +278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36859
+              "duration": 65934
             }
           },
           {
@@ -287,7 +287,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 214690
+              "duration": 37572
             }
           }
         ],
@@ -301,7 +301,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1720820383
+              "duration": 2006447737
             }
           }
         ]
@@ -359,7 +359,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10839287435
+              "duration": 6568381630
             }
           },
           {
@@ -371,7 +371,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 497632169
+              "duration": 456685497
             }
           }
         ],
@@ -382,7 +382,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22354
+              "duration": 32663
             }
           },
           {
@@ -391,7 +391,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 383427701
+              "duration": 349465479
             }
           }
         ]
@@ -409,7 +409,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20503
+              "duration": 17300
             }
           },
           {
@@ -418,7 +418,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 54311
+              "duration": 52067
             }
           }
         ],
@@ -432,7 +432,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1828770796
+              "duration": 1683390215
             }
           }
         ]
@@ -480,7 +480,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5053756882
+              "duration": 4193085177
             }
           },
           {
@@ -492,7 +492,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 283730714
+              "duration": 286518598
             }
           }
         ],
@@ -503,7 +503,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17897
+              "duration": 21285
             }
           },
           {
@@ -512,7 +512,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 353351928
+              "duration": 353968640
             }
           }
         ]
@@ -530,7 +530,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40574
+              "duration": 18178
             }
           },
           {
@@ -539,7 +539,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 144387
+              "duration": 29508
             }
           }
         ],
@@ -553,7 +553,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1842133220
+              "duration": 1872188377
             }
           }
         ]
@@ -601,7 +601,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 631617689
+              "duration": 897639802
             }
           },
           {
@@ -616,7 +616,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 310332490
+              "duration": 154980909
             }
           },
           {
@@ -628,7 +628,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5554689819
+              "duration": 6126160285
             }
           },
           {
@@ -640,7 +640,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 153631746
+              "duration": 353013852
             }
           }
         ],
@@ -651,7 +651,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23458
+              "duration": 21328
             }
           },
           {
@@ -660,7 +660,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 332553577
+              "duration": 350619482
             }
           }
         ]
@@ -678,7 +678,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20696
+              "duration": 16836
             }
           },
           {
@@ -687,7 +687,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45652
+              "duration": 29773
             }
           }
         ],
@@ -701,7 +701,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1772816755
+              "duration": 1863177593
             }
           }
         ]
@@ -749,7 +749,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 368791697
+              "duration": 383622779
             }
           },
           {
@@ -761,7 +761,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 145432568
+              "duration": 142822093
             }
           }
         ],
@@ -772,7 +772,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23860
+              "duration": 20098
             }
           },
           {
@@ -781,7 +781,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 352364423
+              "duration": 352976256
             }
           }
         ]
@@ -846,7 +846,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19742
+              "duration": 17046
             }
           },
           {
@@ -855,7 +855,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 52629
+              "duration": 76156
             }
           }
         ],
@@ -865,14 +865,14 @@
             "name": "I am on the website",
             "line": 12,
             "output": [
-              "go to https://int.pulsiva.com/at-de/"
+              "go to https://int.pulsiva.com/de-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1772180914
+              "duration": 1788556906
             }
           },
           {
@@ -888,7 +888,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26057038761
+              "duration": 3801778641
             }
           },
           {
@@ -903,7 +903,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 232969485
+              "duration": 217104268
             }
           }
         ],
@@ -914,7 +914,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20074
+              "duration": 21029
             }
           },
           {
@@ -923,7 +923,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 339488935
+              "duration": 291397676
             }
           }
         ]
@@ -972,7 +972,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19666
+              "duration": 18826
             }
           },
           {
@@ -981,7 +981,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50730
+              "duration": 29993
             }
           }
         ],
@@ -991,14 +991,14 @@
             "name": "I am on the website",
             "line": 9,
             "output": [
-              "go to https://int.pulsiva.com/at-de/"
+              "go to https://int.pulsiva.com/de-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1729847682
+              "duration": 1692904800
             }
           },
           {
@@ -1013,7 +1013,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3032196908
+              "duration": 3010065484
             }
           },
           {
@@ -1029,7 +1029,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3034069448
+              "duration": 4002311849
             }
           },
           {
@@ -1044,7 +1044,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 150374913
+              "duration": 147776917
             }
           },
           {
@@ -1059,7 +1059,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 392543953
+              "duration": 1271490829
             }
           }
         ],
@@ -1070,7 +1070,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27007
+              "duration": 49289
             }
           },
           {
@@ -1079,7 +1079,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 354479143
+              "duration": 326626440
             }
           }
         ]
@@ -1121,7 +1121,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15832
+              "duration": 17383
             }
           },
           {
@@ -1130,7 +1130,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46942
+              "duration": 56043
             }
           }
         ],
@@ -1140,7 +1140,7 @@
             "name": "I am on the product page of an article",
             "line": 11,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
+              "go to https://int.pulsiva.com/de-de/",
               "- set sku = \"20040136\"",
               "clicked button of search",
               "found 'STEAKGABEL'"
@@ -1150,7 +1150,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5637120169
+              "duration": 5807878770
             }
           }
         ]
@@ -1194,7 +1194,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 396799432
+              "duration": 360969257
             }
           },
           {
@@ -1206,7 +1206,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 748446512
+              "duration": 677256779
             }
           }
         ],
@@ -1217,7 +1217,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44141
+              "duration": 35206
             }
           },
           {
@@ -1226,7 +1226,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 468494631
+              "duration": 669569413
             }
           }
         ]
@@ -1244,7 +1244,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21542
+              "duration": 24569
             }
           },
           {
@@ -1253,7 +1253,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 47955
+              "duration": 36998
             }
           }
         ],
@@ -1267,7 +1267,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5401179036
+              "duration": 5516597599
             }
           }
         ]
@@ -1311,7 +1311,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 376457352
+              "duration": 800188807
             }
           },
           {
@@ -1323,7 +1323,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 594440956
+              "duration": 251427367
             }
           }
         ],
@@ -1334,7 +1334,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26800
+              "duration": 22968
             }
           },
           {
@@ -1343,7 +1343,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 407201525
+              "duration": 365060914
             }
           }
         ]
@@ -1361,7 +1361,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20443
+              "duration": 33317
             }
           },
           {
@@ -1370,7 +1370,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 66544
+              "duration": 60244
             }
           }
         ],
@@ -1384,7 +1384,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5310379063
+              "duration": 5729422388
             }
           }
         ]
@@ -1431,7 +1431,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 706738360
+              "duration": 837633435
             }
           },
           {
@@ -1443,7 +1443,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 245294267
+              "duration": 205584888
             }
           }
         ],
@@ -1454,7 +1454,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18573
+              "duration": 25133
             }
           },
           {
@@ -1463,7 +1463,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 332088984
+              "duration": 343974194
             }
           }
         ]
@@ -1481,7 +1481,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17368
+              "duration": 16696
             }
           },
           {
@@ -1490,7 +1490,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40028
+              "duration": 32964
             }
           }
         ],
@@ -1504,7 +1504,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5547672388
+              "duration": 5550146052
             }
           }
         ]
@@ -1548,7 +1548,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1281805687
+              "duration": 1285309766
             }
           }
         ],
@@ -1559,7 +1559,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51194
+              "duration": 36029
             }
           },
           {
@@ -1568,7 +1568,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 346261652
+              "duration": 366458469
             }
           }
         ]
@@ -1586,7 +1586,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16820
+              "duration": 16318
             }
           },
           {
@@ -1595,7 +1595,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34011
+              "duration": 37326
             }
           }
         ],
@@ -1609,7 +1609,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5289272267
+              "duration": 6123173378
             }
           }
         ]
@@ -1653,7 +1653,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 433780768
+              "duration": 365164609
             }
           },
           {
@@ -1668,7 +1668,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 180289459
+              "duration": 145572544
             }
           }
         ],
@@ -1679,7 +1679,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25506
+              "duration": 26266
             }
           },
           {
@@ -1688,7 +1688,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 419883850
+              "duration": 340085612
             }
           }
         ]
@@ -1706,7 +1706,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16597
+              "duration": 22692
             }
           },
           {
@@ -1715,7 +1715,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30260
+              "duration": 45273
             }
           }
         ],
@@ -1729,7 +1729,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5737949057
+              "duration": 6043121066
             }
           }
         ]
@@ -1773,7 +1773,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 453412485
+              "duration": 378903376
             }
           },
           {
@@ -1788,7 +1788,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 155638747
+              "duration": 150157224
             }
           }
         ],
@@ -1799,7 +1799,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19630
+              "duration": 27187
             }
           },
           {
@@ -1808,7 +1808,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 345967886
+              "duration": 357873085
             }
           }
         ]
@@ -1826,7 +1826,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16252
+              "duration": 23600
             }
           },
           {
@@ -1835,7 +1835,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42648
+              "duration": 53719
             }
           }
         ],
@@ -1849,7 +1849,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5352428199
+              "duration": 5511800893
             }
           }
         ]
@@ -1889,7 +1889,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6759577683
+              "duration": 5152909265
             }
           },
           {
@@ -1904,7 +1904,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 175985637
+              "duration": 147890096
             }
           }
         ],
@@ -1915,7 +1915,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25810
+              "duration": 21406
             }
           },
           {
@@ -1924,7 +1924,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 423162895
+              "duration": 307755352
             }
           }
         ]
@@ -1989,7 +1989,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16880
+              "duration": 24447
             }
           },
           {
@@ -1998,7 +1998,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42296
+              "duration": 39702
             }
           }
         ],
@@ -2009,21 +2009,21 @@
             "line": 14,
             "output": [
               "I am on the product page of an article",
-              "go to https://int.pulsiva.com/at-de/",
+              "go to https://int.pulsiva.com/de-de/",
               "- set sku = \"20040136\"",
               "clicked button of search",
               "found 'STEAKGABEL'",
               "I add an article to the product cart by clicking the button to push it into the cart",
               "-> clicked buy button",
               "I am on the product cart page",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:15"
             },
             "result": {
               "status": "passed",
-              "duration": 11813695130
+              "duration": 10646361979
             }
           },
           {
@@ -2038,7 +2038,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3692608976
+              "duration": 3844702073
             }
           },
           {
@@ -2053,7 +2053,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 331620093
+              "duration": 230096333
             }
           }
         ],
@@ -2064,7 +2064,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20011
+              "duration": 20218
             }
           },
           {
@@ -2073,7 +2073,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 389263194
+              "duration": 353924459
             }
           }
         ]
@@ -2114,7 +2114,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20422
+              "duration": 17487
             }
           },
           {
@@ -2123,7 +2123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61260
+              "duration": 38430
             }
           }
         ],
@@ -2133,16 +2133,16 @@
             "name": "the product cart contains an article",
             "line": 27,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5372701723
+              "duration": 6136405992
             }
           },
           {
@@ -2157,7 +2157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 417741772
+              "duration": 377276800
             }
           },
           {
@@ -2173,7 +2173,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4087741278
+              "duration": 3368702430
             }
           },
           {
@@ -2185,7 +2185,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 70584979
+              "duration": 66720808
             }
           }
         ],
@@ -2196,7 +2196,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23557
+              "duration": 25883
             }
           },
           {
@@ -2205,7 +2205,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 350362153
+              "duration": 337204973
             }
           }
         ]
@@ -2246,7 +2246,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15547
+              "duration": 17606
             }
           },
           {
@@ -2255,7 +2255,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34002
+              "duration": 36214
             }
           }
         ],
@@ -2265,16 +2265,16 @@
             "name": "the product cart contains an article",
             "line": 35,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5332796360
+              "duration": 6081241091
             }
           },
           {
@@ -2289,7 +2289,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 391300023
+              "duration": 2205752505
             }
           },
           {
@@ -2301,7 +2301,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1757870002
+              "duration": 74307939
             }
           }
         ],
@@ -2312,7 +2312,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25809
+              "duration": 26280
             }
           },
           {
@@ -2321,7 +2321,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 329573390
+              "duration": 336426218
             }
           }
         ]
@@ -2362,7 +2362,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15459
+              "duration": 18883
             }
           },
           {
@@ -2371,7 +2371,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34845
+              "duration": 34627
             }
           }
         ],
@@ -2381,16 +2381,16 @@
             "name": "the product cart contains an article",
             "line": 42,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6810982764
+              "duration": 6099289263
             }
           },
           {
@@ -2407,7 +2407,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 455263229
+              "duration": 422301718
             }
           }
         ],
@@ -2418,7 +2418,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20134
+              "duration": 24237
             }
           },
           {
@@ -2427,7 +2427,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 398480373
+              "duration": 358781273
             }
           }
         ]
@@ -2468,7 +2468,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15394
+              "duration": 18211
             }
           },
           {
@@ -2477,7 +2477,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 67729
+              "duration": 36791
             }
           }
         ],
@@ -2487,16 +2487,16 @@
             "name": "the product cart contains an article",
             "line": 48,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5259367304
+              "duration": 5937363109
             }
           },
           {
@@ -2511,7 +2511,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4183860426
+              "duration": 2016824830
             }
           },
           {
@@ -2523,7 +2523,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 319554118
+              "duration": 289965711
             }
           }
         ],
@@ -2534,7 +2534,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25160
+              "duration": 28508
             }
           },
           {
@@ -2543,7 +2543,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 435766216
+              "duration": 305980758
             }
           }
         ]
@@ -2585,7 +2585,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21671
+              "duration": 22638
             }
           },
           {
@@ -2594,7 +2594,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53054
+              "duration": 46585
             }
           }
         ],
@@ -2604,14 +2604,14 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "--> go to https://int.pulsiva.com/at-de/account"
+              "--> go to https://int.pulsiva.com/de-de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1879923640
+              "duration": 1936615191
             }
           }
         ]
@@ -2652,14 +2652,14 @@
             "line": 17,
             "output": [
               "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pat@test.de"
+              "user eMail:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 2545086858
+              "duration": 2500008685
             }
           },
           {
@@ -2670,18 +2670,18 @@
               "- set prefix = \"Herr\"",
               "- set firstname: Vorname",
               "- set lastname: Nachname",
-              "- set customernumber: 20000021",
-              "- set email: testmail_pat@test.de",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
               "- set password: Test2014",
               "- set phone: 01234567",
-              "- set company: Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB",
+              "- set company: Pulsiva GmbH Test - eBusiness",
               "chose company",
-              "department is not available in at",
-              "taxvat is not available in at",
-              "- set street: Schloßgasse",
-              "- set streetnumber: 4",
-              "- set postcode: 4470",
-              "- set city: Enns",
+              "department is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
               "clicked button to continue"
             ],
             "match": {
@@ -2689,7 +2689,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42387643000
+              "duration": 40382323378
             }
           },
           {
@@ -2697,14 +2697,14 @@
             "name": "I should be on my account page",
             "line": 19,
             "output": [
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:131"
             },
             "result": {
               "status": "passed",
-              "duration": 6537706358
+              "duration": 6547768547
             }
           }
         ],
@@ -2715,7 +2715,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24665
+              "duration": 22228
             }
           },
           {
@@ -2724,7 +2724,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 350057785
+              "duration": 329938868
             }
           }
         ]
@@ -2742,7 +2742,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16279
+              "duration": 16847
             }
           },
           {
@@ -2751,7 +2751,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39722
+              "duration": 172219
             }
           }
         ],
@@ -2765,7 +2765,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1926851037
+              "duration": 1957159805
             }
           }
         ]
@@ -2812,7 +2812,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1176233383
+              "duration": 1166714375
             }
           },
           {
@@ -2820,7 +2820,7 @@
             "name": "I login with valid informations",
             "line": 25,
             "output": [
-              "> ok, i am on https://int.pulsiva.com/at-de/account",
+              "> ok, i am on https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration"
@@ -2830,7 +2830,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5192912469
+              "duration": 6313635895
             }
           },
           {
@@ -2838,14 +2838,14 @@
             "name": "I should be on my account page",
             "line": 26,
             "output": [
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:131"
             },
             "result": {
               "status": "passed",
-              "duration": 533384539
+              "duration": 534183192
             }
           }
         ],
@@ -2856,7 +2856,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23125
+              "duration": 20803
             }
           },
           {
@@ -2865,7 +2865,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 319438718
+              "duration": 363588544
             }
           }
         ]
@@ -2883,7 +2883,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15520
+              "duration": 16424
             }
           },
           {
@@ -2892,7 +2892,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42440
+              "duration": 39421
             }
           }
         ],
@@ -2906,7 +2906,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1980523579
+              "duration": 1927437428
             }
           }
         ]
@@ -2953,19 +2953,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/at-de/account",
+              "> ok, i am on https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 7005078942
+              "duration": 7041588544
             }
           },
           {
@@ -2984,7 +2984,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15369709029
+              "duration": 13042834419
             }
           },
           {
@@ -2999,7 +2999,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 304057166
+              "duration": 310992621
             }
           }
         ],
@@ -3010,7 +3010,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23699
+              "duration": 21409
             }
           },
           {
@@ -3019,7 +3019,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 352425307
+              "duration": 604652994
             }
           }
         ]
@@ -3037,7 +3037,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16512
+              "duration": 26402
             }
           },
           {
@@ -3046,7 +3046,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61890
+              "duration": 46480
             }
           }
         ],
@@ -3060,7 +3060,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1811738009
+              "duration": 1951121795
             }
           }
         ]
@@ -3105,44 +3105,44 @@
             "line": 40,
             "output": [
               "I already created an user account",
-              "-> no unique account with customer:testmail_pat@test.de exists",
+              "-> no unique account with customer:testmail_pde@test.de exists",
               "I am on the registration page",
-              "--> go to https://int.pulsiva.com/at-de/account",
+              "--> go to https://int.pulsiva.com/de-de/account",
               "I create a new account with my data",
               "- set prefix = \"Herr\"",
               "- set firstname: Vorname",
               "- set lastname: Nachname",
-              "- set customernumber: 20000021",
-              "- set email: testmail_pat@test.de",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
               "- set password: Test2014",
               "- set phone: 01234567",
-              "- set company: Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB",
+              "- set company: Pulsiva GmbH Test - eBusiness",
               "chose company",
-              "department is not available in at",
-              "taxvat is not available in at",
-              "- set street: Schloßgasse",
-              "- set streetnumber: 4",
-              "- set postcode: 4470",
-              "- set city: Enns",
+              "department is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
               "clicked button to continue",
               "I log me out",
               "--> logged me out",
               "I am on the registration page",
-              "--> go to https://int.pulsiva.com/at-de/account",
+              "--> go to https://int.pulsiva.com/de-de/account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/at-de/account",
+              "> ok, i am on https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 61572562654
+              "duration": 57033430508
             }
           },
           {
@@ -3159,7 +3159,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8241140173
+              "duration": 7665985952
             }
           },
           {
@@ -3174,7 +3174,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 306990560
+              "duration": 282644250
             }
           }
         ],
@@ -3185,7 +3185,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53337
+              "duration": 23186
             }
           },
           {
@@ -3194,7 +3194,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 351021996
+              "duration": 324238336
             }
           }
         ]
@@ -3212,7 +3212,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17224
+              "duration": 15762
             }
           },
           {
@@ -3221,7 +3221,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 71101
+              "duration": 48219
             }
           }
         ],
@@ -3235,7 +3235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2011578358
+              "duration": 1979638881
             }
           }
         ]
@@ -3282,19 +3282,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/at-de/account",
+              "> ok, i am on https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 7152862963
+              "duration": 6861114495
             }
           },
           {
@@ -3312,7 +3312,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8411601061
+              "duration": 8426580694
             }
           },
           {
@@ -3327,7 +3327,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 302409350
+              "duration": 304805893
             }
           }
         ],
@@ -3338,7 +3338,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26997
+              "duration": 33959
             }
           },
           {
@@ -3347,7 +3347,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 331855092
+              "duration": 332007779
             }
           }
         ]
@@ -3365,7 +3365,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46538
+              "duration": 17007
             }
           },
           {
@@ -3374,7 +3374,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 59706
+              "duration": 36154
             }
           }
         ],
@@ -3388,7 +3388,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1913564556
+              "duration": 1779189034
             }
           }
         ]
@@ -3431,19 +3431,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/at-de/account",
+              "> ok, i am on https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 7207357528
+              "duration": 6877390071
             }
           },
           {
@@ -3460,11 +3460,11 @@
               "- logout"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:388"
+              "location": "features/step_definitions/account.rb:389"
             },
             "result": {
               "status": "passed",
-              "duration": 1125042497
+              "duration": 1089875366
             }
           }
         ],
@@ -3475,7 +3475,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22567
+              "duration": 21110
             }
           },
           {
@@ -3484,7 +3484,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 343681713
+              "duration": 400506583
             }
           }
         ]
@@ -3553,7 +3553,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22537
+              "duration": 18211
             }
           },
           {
@@ -3562,7 +3562,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 56136
+              "duration": 39989
             }
           }
         ],
@@ -3575,19 +3575,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "--> go to https://int.pulsiva.com/at-de/account",
+              "--> go to https://int.pulsiva.com/de-de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pat@test.de"
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 8848327056
+              "duration": 8565154164
             }
           },
           {
@@ -3595,16 +3595,16 @@
             "name": "the product cart contains an article",
             "line": 14,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 8439164402
+              "duration": 11777140712
             }
           },
           {
@@ -3612,8 +3612,8 @@
             "name": "I am on the checkout page",
             "line": 15,
             "output": [
-              "> ups, I am on https://int.pulsiva.com/at-de/checkout/cart",
-              "--> go to https://int.pulsiva.com/at-de/checkout",
+              "> ups, I am on https://int.pulsiva.com/de-de/checkout/cart",
+              "--> go to https://int.pulsiva.com/de-de/checkout",
               "And the checkoutpage contains all elements"
             ],
             "match": {
@@ -3621,7 +3621,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8487233537
+              "duration": 5422587256
             }
           },
           {
@@ -3630,7 +3630,7 @@
             "line": 16,
             "output": [
               "I am on the checkout page",
-              "> ok, I am on https://int.pulsiva.com/at-de/checkout",
+              "> ok, I am on https://int.pulsiva.com/de-de/checkout",
               "And the checkoutpage contains all elements",
               "I activate the box of agb",
               "-> activate agb",
@@ -3641,7 +3641,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8437786209
+              "duration": 5790482566
             }
           },
           {
@@ -3650,14 +3650,14 @@
             "line": 17,
             "output": [
               "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pat@test.de"
+              ">> cancel orders of customer with email:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 4445689463
+              "duration": 4691358230
             }
           }
         ],
@@ -3668,7 +3668,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25740
+              "duration": 48738
             }
           },
           {
@@ -3677,7 +3677,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 351449912
+              "duration": 389300977
             }
           }
         ]
@@ -3718,7 +3718,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19852
+              "duration": 22211
             }
           },
           {
@@ -3727,7 +3727,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49141
+              "duration": 69945
             }
           }
         ],
@@ -3738,14 +3738,14 @@
             "line": 21,
             "output": [
               "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pat@test.de"
+              "user eMail:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 2428102516
+              "duration": 2354491464
             }
           },
           {
@@ -3753,16 +3753,16 @@
             "name": "the product cart contains an article",
             "line": 22,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5740463968
+              "duration": 5950121985
             }
           },
           {
@@ -3777,7 +3777,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2020661113
+              "duration": 2291691587
             }
           },
           {
@@ -3788,17 +3788,17 @@
               "- set prefix = \"Herr\"",
               "- set firstname: Vorname",
               "- set lastname: Nachname",
-              "- set customernumber: 20000021",
-              "- set email: testmail_pat@test.de",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
               "- set phone: 01234567",
-              "- set company: Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB",
+              "- set company: Pulsiva GmbH Test - eBusiness",
               "chose company",
-              "department is not available in at",
-              "taxvat is not available in at",
-              "- set street: Schloßgasse",
-              "- set streetnumber: 4",
-              "- set postcode: 4470",
-              "- set city: Enns",
+              "department is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
               "clicked button to continue"
             ],
             "match": {
@@ -3806,7 +3806,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38167233550
+              "duration": 36115452647
             }
           },
           {
@@ -3823,7 +3823,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11563544171
+              "duration": 13990938003
             }
           },
           {
@@ -3832,7 +3832,7 @@
             "line": 26,
             "output": [
               "I am on the checkout page",
-              "> ok, I am on https://int.pulsiva.com/at-de/checkout",
+              "> ok, I am on https://int.pulsiva.com/de-de/checkout",
               "And the checkoutpage contains all elements",
               "I activate the box of agb",
               "-> activate agb",
@@ -3843,7 +3843,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8426863311
+              "duration": 6451563916
             }
           },
           {
@@ -3852,14 +3852,14 @@
             "line": 27,
             "output": [
               "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pat@test.de"
+              ">> cancel orders of customer with email:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 4311625326
+              "duration": 4100041335
             }
           }
         ],
@@ -3870,7 +3870,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24189
+              "duration": 22171
             }
           },
           {
@@ -3879,7 +3879,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 336782317
+              "duration": 340584849
             }
           }
         ]
@@ -3920,7 +3920,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21993
+              "duration": 17514
             }
           },
           {
@@ -3929,7 +3929,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 48503
+              "duration": 42253
             }
           }
         ],
@@ -3940,14 +3940,14 @@
             "line": 31,
             "output": [
               "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pat@test.de"
+              "user eMail:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 2315046955
+              "duration": 2324303060
             }
           },
           {
@@ -3955,16 +3955,16 @@
             "name": "the product cart contains an article",
             "line": 32,
             "output": [
-              "go to https://int.pulsiva.com/at-de/",
-              "-> add article: https://int.pulsiva.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/at-de/checkout/cart"
+              "go to https://int.pulsiva.com/de-de/",
+              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5725681862
+              "duration": 5845577107
             }
           },
           {
@@ -3979,7 +3979,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2345250732
+              "duration": 2285275467
             }
           },
           {
@@ -3990,18 +3990,18 @@
               "- set prefix = \"Herr\"",
               "- set firstname: Vorname",
               "- set lastname: Nachname",
-              "- set customernumber: 20000021",
-              "- set email: testmail_pat@test.de",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
               "- set password: Test2014",
               "- set phone: 01234567",
-              "- set company: Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB",
+              "- set company: Pulsiva GmbH Test - eBusiness",
               "chose company",
-              "department is not available in at",
-              "taxvat is not available in at",
-              "- set street: Schloßgasse",
-              "- set streetnumber: 4",
-              "- set postcode: 4470",
-              "- set city: Enns",
+              "department is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
               "clicked button to continue"
             ],
             "match": {
@@ -4009,7 +4009,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40990389910
+              "duration": 39848919349
             }
           },
           {
@@ -4026,7 +4026,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9675517259
+              "duration": 9521638978
             }
           },
           {
@@ -4035,7 +4035,7 @@
             "line": 36,
             "output": [
               "I am on the checkout page",
-              "> ok, I am on https://int.pulsiva.com/at-de/checkout",
+              "> ok, I am on https://int.pulsiva.com/de-de/checkout",
               "And the checkoutpage contains all elements",
               "I activate the box of agb",
               "-> activate agb",
@@ -4046,7 +4046,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6096152259
+              "duration": 7979655806
             }
           },
           {
@@ -4055,14 +4055,14 @@
             "line": 37,
             "output": [
               "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pat@test.de"
+              ">> cancel orders of customer with email:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 4276890552
+              "duration": 4115975985
             }
           }
         ],
@@ -4073,7 +4073,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21679
+              "duration": 24786
             }
           },
           {
@@ -4082,7 +4082,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 341302638
+              "duration": 352242882
             }
           }
         ]

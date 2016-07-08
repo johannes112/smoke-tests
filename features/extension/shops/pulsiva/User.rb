@@ -42,7 +42,7 @@ class User
     @taxvat = case ENV['COUNTRY']
       when 'de' then nil
       when 'at' then nil
-      when 'it' then nil
+      when 'it' then 'PULPIT25J09F205Z'
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil
