@@ -8,11 +8,13 @@ class Settings
         when (/de/) then 'http://int.pulsiva.com/de-de/'
         when (/at/) then 'http://int.pulsiva.com/at-de/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
+        when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.pulsiva.com/de-de/'
         when (/at/) then 'https://int.pulsiva.com/at-de/'
         when (/it/) then 'https://int.pulsiva.com/it-it/'
+        when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
         end
       @urlBackend = 'https://int.pulsiva.com/'
     end
@@ -22,11 +24,13 @@ class Settings
         when (/de/) then 'http://www.pulsiva.com/de-de/'
         when (/at/) then 'http://int.pulsiva.com/at-de/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
+        when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.pulsiva.com/de-de/'
         when (/at/) then 'https://int.pulsiva.com/at-de/'
         when (/it/) then 'https://int.pulsiva.com/it-it/'
+        when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
       end
       @urlBackend = 'https://www.pulsiva.com/'
     end
