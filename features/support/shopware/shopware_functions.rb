@@ -15,15 +15,13 @@ module ShopwareFunctions
   end
   
   #update entity of id and set key to value
-  def setValue(data_of, id, key, value) 
+  def setValueToCancel(data_of, id, key) 
     options = { 
       :digest_auth => @auth_digest ,
-      :body => { :orderStatusId => 4}
+      :body => { :orderStatusId => -1}
     }
     url_data = stringGetUrlPath(data_of)
-    #url_request = "#{url_data}/#{id}/#{key}/#{value}":query => { :email => "alan+thinkvitamin@carsonified.com" })
     url_request = "#{url_data}/#{id}"
-    #p "PUT: #{url_request}"
     updateData(url_request, options)
   end
 
@@ -32,7 +30,6 @@ module ShopwareFunctions
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
     response_data = readData(url_request)
-    #puts response_data
     return response_data
   end
   
@@ -44,7 +41,6 @@ module ShopwareFunctions
     url_data = "/api/customers"
     filter = "?filter[email]=#{mailaddress}"
     url_request = "#{url_data}/#{filter}"
-    #puts url_request
     response_data_customer = readData(url_request)
     if response_data_customer['data'][0] != nil
       customer_id_by_mail = response_data_customer['data'][0][key]
@@ -56,19 +52,19 @@ module ShopwareFunctions
   
   #get orderid of order
   #usage: set status of order
-  def getOrderIdByCustomerId(id)
+  def getAndCancelOrderIdByCustomerId(id)
     key = "id"
     #value = mailaddress
     url_data = "/api/orders"
     filter = "?filter[customerId]=#{id}"
     url_request = "#{url_data}/#{filter}"
-    #puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     amount_total_orders = response_data_customer['total']
     counter=0
     while counter < amount_total_orders do
-      puts ">>>>>> There are #{counter+1} orders and I cancel the last order only"
       customer_id_by_mail = response_data_customer['data'][counter][key]
+      puts ">>>>>> cancel order with id:#{customer_id_by_mail}"
+      setValueToCancel("Orders", customer_id_by_mail, "orderStatusId")
       counter += 1
     end
     return customer_id_by_mail
@@ -100,23 +96,15 @@ module ShopwareFunctions
   def updateOrderStatusForMail(mail) 
     #get order_id of order with customer_id with key and value 
     puts "mail: #{mail}"
-    #1. get customer_id of customer with mailaddress
-    #2. get order_id of order with mailaddress
-    #3. get orderStatusId of order
-    #4. set orderStatusId of order
     # looking for id of user which belongs to mailaddress
     #1. get customer_id by key
     customer_id = getCustomerIdByMail(mail)
     #puts "UPDATE:#{customer_id.class}"
     if customer_id.is_a?(Fixnum)
-      #p "UPDATE:customer_id:#{customer_id}"
       #2. search order by mail
-      order_id = getOrderIdByCustomerId(customer_id)
-      #puts "UPDATE:order_id:#{order_id}"
-      #set orderStatus_Id to 4 (Stoniert / Abgelehnt)
-      setValue("Orders", order_id, "orderStatusId", 4)
-      #puts ">> key:#{key}, value:#{value}"
-      #to avoid an export of this data i have to set "orderStatusId" of the order to 4
+      getAndCancelOrderIdByCustomerId(customer_id)
+      #set orderStatus_Id to -1 (Stoniert / Abgelehnt)
+      #to avoid an export of this data i have to set "orderStatusId" of the order to -1
     else
       puts ">>>>>> No User with #{mail} exists"
     end
