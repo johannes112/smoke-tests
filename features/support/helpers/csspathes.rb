@@ -393,6 +393,7 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         nil
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#ustid'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
     end 
@@ -557,6 +558,7 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.register--payment'
     end 
     @account_payment_cashOnDelivery_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#payment_mean5'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#payment_mean3'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#payment_mean3'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#payment_mean3'
@@ -776,8 +778,10 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#confirm_dispatch10'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#confirm_dispatch12'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#confirm_dispatch9'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#confirm_dispatch16'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch9'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#confirm_dispatch9'
+      
     end
     @checkout_order_success_teaser_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.finish--teaser'
