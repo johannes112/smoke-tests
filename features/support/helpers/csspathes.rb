@@ -777,6 +777,7 @@ class Csspathes
     @checkout_payment_delivery_standard_radio_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#confirm_dispatch10'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#confirm_dispatch12'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/ch/) then         '#confirm_dispatch14'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#confirm_dispatch9'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#confirm_dispatch16'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch9'

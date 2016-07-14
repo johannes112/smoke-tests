@@ -6,13 +6,15 @@ class Settings
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://int.pulsiva.com/de-de/'
-        when (/at/) then 'http://int.pulsiva.com/at-de/'
+        when (/ch/) then 'http://int.pulsiva.com/at-de/'
+        when (/at/) then 'http://int.pulsiva.com/ch-de/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
         when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.pulsiva.com/de-de/'
         when (/at/) then 'https://int.pulsiva.com/at-de/'
+        when (/ch/) then 'https://int.pulsiva.com/ch-de/'
         when (/it/) then 'https://int.pulsiva.com/it-it/'
         when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
         end
@@ -23,12 +25,14 @@ class Settings
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://www.pulsiva.com/de-de/'
         when (/at/) then 'http://int.pulsiva.com/at-de/'
+        when (/ch/) then 'http://int.pulsiva.com/ch-de/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
         when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.pulsiva.com/de-de/'
         when (/at/) then 'https://int.pulsiva.com/at-de/'
+        when (/ch/) then 'https://int.pulsiva.com/ch-de/'
         when (/it/) then 'https://int.pulsiva.com/it-it/'
         when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
       end
