@@ -5,9 +5,9 @@ Given(/^the product cart contains an article$/) do
   step("I am on the website")
   step("I add an article to my cart by ajax")
   step("I am on the product cart page")
-  block_css('.navigation-main')
+  block_navi()
   
-  #chech if cart contains an article
+  #check if cart contains an article
   expect(page).to have_css(product_cart_article_path),
     "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
 end

@@ -25,6 +25,20 @@ def disable_css
   end
 end  
 
+#display:none for navigation
+def block_navi()
+  #check if element is class or id
+    page.driver.browser.execute_script("
+      function blockMainNavi()
+      {
+        var sheet = document.createElement('style');
+        sheet.innerHTML = '.navigation-main {display:none !important;}';
+        document.body.appendChild(sheet);
+      }
+      blockMainNavi();
+      ")
+end
+
 #display:none for given css element
 def block_css(csspath)
   #check if element is class or id
