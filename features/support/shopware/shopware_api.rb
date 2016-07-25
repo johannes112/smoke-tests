@@ -9,7 +9,7 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 2
+  default_timeout 5
 
   #crud comands
   def readData(url)
