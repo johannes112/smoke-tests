@@ -9,13 +9,13 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 30
+  default_timeout 5
 
   #crud comands
   def readData(url)
     options = getDigest()
     #puts "readData:#{url}"
-    sleep 5
+    sleep 1
     response_data = self.class.get(url, options)
     if response_data.success?
       response_data
@@ -27,8 +27,8 @@ class ShopwareApi
   end
   def updateData(url, options)
     #puts "updateData:#{url}"
+    sleep 1
     response_data = self.class.put(url, options)
-    sleep 5
     if !response_data.success?
       puts ">> ERROR: update failed"
     end
@@ -36,7 +36,7 @@ class ShopwareApi
   def deleteData(url)
     #puts "deleteData:#{url}"
     options = getDigest()
-    sleep 5
+    sleep 1
     response_data = self.class.delete(url, options)
     if response_data.success?
       response_data

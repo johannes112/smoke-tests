@@ -1,11 +1,15 @@
 [
   {
-    "uri": "features/base_features/0.website_basics.feature",
-    "id": "website_basics",
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
     "keyword": "Feature",
     "name": "website_basics",
-    "description": "    As a customer\n    i will be able \n    to see all elements of the website and \n    to use all navigation elements",
     "line": 5,
+    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
     "tags": [
       {
         "name": "@export",
@@ -20,71 +24,39 @@
         "line": 4
       }
     ],
+    "id": "website-basics",
+    "uri": "features/base_features/0.website_basics.feature",
     "elements": [
       {
         "keyword": "Background",
         "name": "",
-        "description": "",
         "line": 12,
+        "description": "",
         "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 26838
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 53243
-            }
-          }
-        ],
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the website",
             "line": 13,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/"
+              "go to http://int.chefworks.de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 34560124540
+              "duration": 13880591278
             }
           }
         ]
       },
       {
-        "id": "website_basics;check-for-elements",
         "keyword": "Scenario",
         "name": "check for elements",
-        "description": "",
         "line": 17,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@website_basics",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 15
@@ -94,6 +66,8 @@
             "line": 16
           }
         ],
+        "id": "website-basics;check-for-elements",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Then ",
@@ -111,92 +85,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10339361349
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16372
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 392258935
+              "duration": 5095151840
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 12,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18413
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43366
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1603128349
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;use-hovermenu-for-navigating",
         "keyword": "Scenario",
         "name": "use hovermenu for navigating",
-        "description": "",
         "line": 24,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@website_basics",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 20
@@ -214,6 +113,8 @@
             "line": 23
           }
         ],
+        "id": "website-basics;use-hovermenu-for-navigating",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -228,7 +129,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14030489762
+              "duration": 4201247458
             }
           },
           {
@@ -240,92 +141,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 495960979
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23460
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 317337786
+              "duration": 456860188
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 12,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16357
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 41161
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1700140986
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;use-menu-for-navigating",
         "keyword": "Scenario",
         "name": "use menu for navigating",
-        "description": "",
         "line": 32,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@website_basics",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 28
@@ -343,6 +169,8 @@
             "line": 31
           }
         ],
+        "id": "website-basics;use-menu-for-navigating",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -359,7 +187,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14523899683
+              "duration": 3650715131
             }
           },
           {
@@ -371,92 +199,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 542495003
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19340
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 416271923
+              "duration": 477636718
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 12,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18511
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36465
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1696041862
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-account",
         "keyword": "Scenario",
         "name": "navigate to account",
-        "description": "",
         "line": 39,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@website_basics",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 36
@@ -470,6 +223,8 @@
             "line": 38
           }
         ],
+        "id": "website-basics;navigate-to-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -480,7 +235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5603989618
+              "duration": 1624699053
             }
           },
           {
@@ -492,92 +247,61 @@
             },
             "result": {
               "status": "passed",
-              "duration": 289097416
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24770
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 319120554
+              "duration": 285888088
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 12,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15703
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 37174
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1668983130
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;activate-the-cart",
         "keyword": "Scenario",
-        "name": "activate the cart",
+        "name": "navigate to note",
+        "line": 46,
         "description": "",
-        "line": 53,
-        "type": "scenario",
         "tags": [
           {
-            "name": "@export",
-            "line": 2
+            "name": "@navigation",
+            "line": 44
           },
           {
-            "name": "@chefworks",
-            "line": 3
+            "name": "@links",
+            "line": 45
+          }
+        ],
+        "id": "website-basics;navigate-to-note",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my notes",
+            "line": 47,
+            "match": {
+              "location": "features/step_definitions/links.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2863966565
+            }
           },
           {
-            "name": "@website_basics",
-            "line": 4
-          },
+            "keyword": "Then ",
+            "name": "I should be on the notepage",
+            "line": 48,
+            "match": {
+              "location": "features/step_definitions/links.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 313047653
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "activate the cart",
+        "line": 53,
+        "description": "",
+        "tags": [
           {
             "name": "@pulsiva",
             "line": 50
@@ -591,6 +315,8 @@
             "line": 52
           }
         ],
+        "id": "website-basics;activate-the-cart",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -601,7 +327,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 674013529
+              "duration": 616477865
             }
           },
           {
@@ -616,7 +342,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 275992151
+              "duration": 183230134
             }
           },
           {
@@ -628,7 +354,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6924752325
+              "duration": 4855107139
             }
           },
           {
@@ -640,92 +366,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 144601550
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20325
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 332443687
+              "duration": 167080270
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 12,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16196
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 29841
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 13,
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1816833710
-            }
-          }
-        ]
-      },
-      {
-        "id": "website_basics;navigate-to-help",
         "keyword": "Scenario",
         "name": "navigate to help",
-        "description": "",
         "line": 62,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@website_basics",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 59
@@ -739,6 +390,8 @@
             "line": 61
           }
         ],
+        "id": "website-basics;navigate-to-help",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -749,7 +402,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 377683448
+              "duration": 450143383
             }
           },
           {
@@ -761,27 +414,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 145040172
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22975
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 312342600
+              "duration": 147323957
             }
           }
         ]
@@ -789,12 +422,16 @@
     ]
   },
   {
-    "uri": "features/base_features/1.search.feature",
-    "id": "search",
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
     "keyword": "Feature",
     "name": "search",
-    "description": "    As a customer\n    i will be able to search for a specific product",
     "line": 6,
+    "description": "\n  As a customer\n  i will be able to search for a specific product",
     "tags": [
       {
         "name": "@pulsiva",
@@ -813,66 +450,30 @@
         "line": 5
       }
     ],
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
     "elements": [
       {
-        "id": "search;search-with-sku",
         "keyword": "Scenario",
         "name": "search with sku",
-        "description": "",
         "line": 11,
+        "description": "",
+        "id": "search;search-with-sku",
         "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@export",
-            "line": 3
-          },
-          {
-            "name": "@chefworks",
-            "line": 4
-          },
-          {
-            "name": "@search",
-            "line": 5
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23625
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 29161
-            }
-          }
-        ],
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the website",
             "line": 12,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/"
+              "go to http://int.chefworks.de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1204234814
+              "duration": 1128088210
             }
           },
           {
@@ -880,7 +481,7 @@
             "name": "I am for an product by entering the sku in the searchfield",
             "line": 13,
             "output": [
-              "- set sku = \"20040136\"",
+              "- set sku = \"CBCCWHTXS\"",
               "clicked button of search"
             ],
             "match": {
@@ -888,7 +489,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26833484597
+              "duration": 3844713720
             }
           },
           {
@@ -896,34 +497,14 @@
             "name": "I should be on the detailsite of the related product",
             "line": 14,
             "output": [
-              "found 'FOURCHETTE'"
+              "found 'COLMAR'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:20"
             },
             "result": {
               "status": "passed",
-              "duration": 225090208
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24355
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 335222191
+              "duration": 212612298
             }
           }
         ]
@@ -931,168 +512,16 @@
     ]
   },
   {
-    "uri": "features/base_features/2.direct_ordering.feature",
-    "id": "direct-ordering",
-    "keyword": "Feature",
-    "name": "direct ordering",
-    "description": "\tAs a customer\n\tI want to have the opportunity to add an article to the cart, by simply opening a form and entering the sku and amount of this article",
-    "line": 3,
-    "tags": [
+    "comments": [
       {
-        "name": "@pulsiva",
+        "value": "# language: en",
         "line": 1
-      },
-      {
-        "name": "@direct_ordering",
-        "line": 2
       }
     ],
-    "elements": [
-      {
-        "id": "direct-ordering;add-an-article",
-        "keyword": "Scenario",
-        "name": "add an article",
-        "description": "",
-        "line": 8,
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 1
-          },
-          {
-            "name": "@direct_ordering",
-            "line": 2
-          }
-        ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19024
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 30847
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 9,
-            "output": [
-              "go to https://int.pulsiva.com/fr-fr/"
-            ],
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1606609153
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I click the button for direct ordering",
-            "line": 10,
-            "output": [
-              "-> clicked button"
-            ],
-            "match": {
-              "location": "features/step_definitions/direct_ordering.rb:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4078672959
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I send my inserted data with the form",
-            "line": 11,
-            "output": [
-              "-> inserted 20040136",
-              "-> clicked button"
-            ],
-            "match": {
-              "location": "features/step_definitions/direct_ordering.rb:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3253951387
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see the sidebar of the product cart",
-            "line": 12,
-            "output": [
-              "> found sidebar"
-            ],
-            "match": {
-              "location": "features/step_definitions/links.rb:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 256072573
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should find the article in the sidebar",
-            "line": 13,
-            "output": [
-              "> found item"
-            ],
-            "match": {
-              "location": "features/step_definitions/direct_ordering.rb:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 583893176
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 25693
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 353932792
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "uri": "features/base_features/3.product_page.feature",
-    "id": "product-page",
     "keyword": "Feature",
     "name": "product page",
-    "description": "\tAs a customer,\n\tI want to have the opportunity to use the feaatures of the product page",
     "line": 5,
+    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
     "tags": [
       {
         "name": "@pulsiva",
@@ -1107,74 +536,42 @@
         "line": 4
       }
     ],
+    "id": "product-page",
+    "uri": "features/base_features/3.product_page.feature",
     "elements": [
       {
         "keyword": "Background",
         "name": "",
-        "description": "",
         "line": 10,
+        "description": "",
         "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 33876
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 53686
-            }
-          }
-        ],
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the product page of an article",
             "line": 11,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "- set sku = \"20040136\"",
+              "go to http://int.chefworks.de/",
+              "- set sku = \"CBCCWHTXS\"",
               "clicked button of search",
-              "found 'FOURCHETTE'"
+              "found 'COLMAR'"
             ],
             "match": {
               "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4660584896
+              "duration": 3940062593
             }
           }
         ]
       },
       {
-        "id": "product-page;notice-an-article",
         "keyword": "Scenario",
         "name": "notice an article",
-        "description": "",
         "line": 15,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 13
@@ -1184,6 +581,8 @@
             "line": 14
           }
         ],
+        "id": "product-page;notice-an-article",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1194,7 +593,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 347384220
+              "duration": 362114093
             }
           },
           {
@@ -1206,92 +605,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 677118694
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 30182
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 597513072
+              "duration": 489542876
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18109
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 39511
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5243707108
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;compare-an-article",
         "keyword": "Scenario",
         "name": "compare an article",
-        "description": "",
         "line": 21,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 19
@@ -1301,6 +625,8 @@
             "line": 20
           }
         ],
+        "id": "product-page;compare-an-article",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1311,7 +637,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 501160311
+              "duration": 582974065
             }
           },
           {
@@ -1323,92 +649,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 484435127
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23780
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 405250590
+              "duration": 267275683
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 14497
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 31400
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5753533710
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
         "keyword": "Scenario",
         "name": "add an article to the product cart by clicking button",
-        "description": "",
         "line": 27,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 25
@@ -1418,6 +669,8 @@
             "line": 26
           }
         ],
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1431,7 +684,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 670992166
+              "duration": 882769403
             }
           },
           {
@@ -1443,92 +696,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 258385759
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20242
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 470655309
+              "duration": 181022214
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16134
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38373
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4984129929
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;display-products-with-data",
         "keyword": "Scenario",
         "name": "display products with data",
-        "description": "",
         "line": 33,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 31
@@ -1538,6 +716,8 @@
             "line": 32
           }
         ],
+        "id": "product-page;display-products-with-data",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Then ",
@@ -1548,92 +728,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1280315910
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19764
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 324940122
+              "duration": 1422538793
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16063
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 34604
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4930114106
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;rate-an-article-with-tab",
         "keyword": "Scenario",
         "name": "rate an article with tab",
-        "description": "",
         "line": 38,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 36
@@ -1643,6 +748,8 @@
             "line": 37
           }
         ],
+        "id": "product-page;rate-an-article-with-tab",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1653,7 +760,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 357708895
+              "duration": 362777423
             }
           },
           {
@@ -1668,92 +775,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 146814280
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23671
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 359904994
+              "duration": 155821338
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17959
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 47171
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4937887606
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;rate-an-article-with-button",
         "keyword": "Scenario",
         "name": "rate an article with button",
-        "description": "",
         "line": 44,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@export",
             "line": 42
@@ -1763,6 +795,8 @@
             "line": 43
           }
         ],
+        "id": "product-page;rate-an-article-with-button",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1773,7 +807,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 367321946
+              "duration": 511498896
             }
           },
           {
@@ -1788,97 +822,24 @@
             },
             "result": {
               "status": "passed",
-              "duration": 150552978
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22903
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 334174774
+              "duration": 213731482
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 10,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 30621
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 32574
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4972630388
-            }
-          }
-        ]
-      },
-      {
-        "id": "product-page;customer-seen-article",
         "keyword": "Scenario",
         "name": "customer seen article",
-        "description": "",
         "line": 49,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_page",
-            "line": 4
-          },
           {
             "name": "@product_page_suggest",
             "line": 48
           }
         ],
+        "id": "product-page;customer-seen-article",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -1889,7 +850,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24159863720
+              "duration": 433904953
             }
           },
           {
@@ -1904,27 +865,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 146154448
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23653
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 396472854
+              "duration": 144028067
             }
           }
         ]
@@ -1932,12 +873,16 @@
     ]
   },
   {
-    "uri": "features/base_features/4.product_cart.feature",
-    "id": "account",
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
     "keyword": "Feature",
     "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to put a product into my cart\n\tin order to manage my chosen products",
     "line": 5,
+    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
     "tags": [
       {
         "name": "@export",
@@ -1952,27 +897,15 @@
         "line": 4
       }
     ],
+    "id": "account",
+    "uri": "features/base_features/4.product_cart.feature",
     "elements": [
       {
-        "id": "account;continue-shopping",
         "keyword": "Scenario",
         "name": "continue shopping",
-        "description": "",
         "line": 13,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 11
@@ -1982,26 +915,8 @@
             "line": 12
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17920
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38437
-            }
-          }
-        ],
+        "id": "account;continue-shopping",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
@@ -2009,21 +924,21 @@
             "line": 14,
             "output": [
               "I am on the product page of an article",
-              "go to https://int.pulsiva.com/fr-fr/",
-              "- set sku = \"20040136\"",
+              "go to http://int.chefworks.de/",
+              "- set sku = \"CBCCWHTXS\"",
               "clicked button of search",
-              "found 'FOURCHETTE'",
+              "found 'COLMAR'",
               "I add an article to the product cart by clicking the button to push it into the cart",
               "-> clicked buy button",
               "I am on the product cart page",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:16"
             },
             "result": {
               "status": "passed",
-              "duration": 8887299033
+              "duration": 8576978914
             }
           },
           {
@@ -2038,7 +953,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7608406812
+              "duration": 9120164277
             }
           },
           {
@@ -2046,58 +961,81 @@
             "name": "I will see the back on the productsite",
             "line": 16,
             "output": [
-              "found 'FOURCHETTE'"
+              "found 'COLMAR'"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:46"
             },
             "result": {
               "status": "passed",
-              "duration": 244143081
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 25525
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 334136006
+              "duration": 225596949
             }
           }
         ]
       },
       {
-        "id": "account;enter-a-code",
         "keyword": "Scenario",
-        "name": "enter a code",
+        "name": "add article additionally",
+        "line": 19,
         "description": "",
-        "line": 26,
-        "type": "scenario",
         "tags": [
           {
-            "name": "@export",
-            "line": 2
+            "name": "@product_cart_add",
+            "line": 18
+          }
+        ],
+        "id": "account;add-article-additionally",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 20,
+            "output": [
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4337915086
+            }
           },
           {
-            "name": "@chefworks",
-            "line": 3
+            "keyword": "When ",
+            "name": "I enter a sku into the integrated field on the cart",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3061655053
+            }
           },
           {
-            "name": "@product_cart",
-            "line": 4
-          },
+            "keyword": "Then ",
+            "name": "I will see the add-action in the url",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:151"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136573295
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "enter a code",
+        "line": 26,
+        "description": "",
+        "tags": [
           {
             "name": "@pulsiva",
             "line": 24
@@ -2107,42 +1045,24 @@
             "line": 25
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18471
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 42800
-            }
-          }
-        ],
+        "id": "account;enter-a-code",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "the product cart contains an article",
             "line": 27,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9824148965
+              "duration": 4755866809
             }
           },
           {
@@ -2157,7 +1077,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 358435196
+              "duration": 342760292
             }
           },
           {
@@ -2173,7 +1093,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3210155615
+              "duration": 4583170809
             }
           },
           {
@@ -2185,51 +1105,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 73645578
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21557
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 332539066
+              "duration": 71996700
             }
           }
         ]
       },
       {
-        "id": "account;remove-an-article",
         "keyword": "Scenario",
         "name": "remove an article",
-        "description": "",
         "line": 34,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 32
@@ -2239,42 +1125,24 @@
             "line": 33
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16240
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 34879
-            }
-          }
-        ],
+        "id": "account;remove-an-article",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "the product cart contains an article",
             "line": 35,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5907382039
+              "duration": 5937494644
             }
           },
           {
@@ -2289,7 +1157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2087528047
+              "duration": 1772939119
             }
           },
           {
@@ -2301,51 +1169,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 70380679
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20490
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 389355204
+              "duration": 85746919
             }
           }
         ]
       },
       {
-        "id": "account;display-articles-with-data",
         "keyword": "Scenario",
         "name": "display articles with data",
-        "description": "",
         "line": 41,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 39
@@ -2355,42 +1189,24 @@
             "line": 40
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23650
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36548
-            }
-          }
-        ],
+        "id": "account;display-articles-with-data",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "the product cart contains an article",
             "line": 42,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5453417070
+              "duration": 6657805810
             }
           },
           {
@@ -2407,51 +1223,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 479902243
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 26584
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 612650254
+              "duration": 442990822
             }
           }
         ]
       },
       {
-        "id": "account;navigate-to-checkout",
         "keyword": "Scenario",
         "name": "navigate to checkout",
-        "description": "",
         "line": 47,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@product_cart",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 45
@@ -2461,42 +1243,24 @@
             "line": 46
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17086
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38900
-            }
-          }
-        ],
+        "id": "account;navigate-to-checkout",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "the product cart contains an article",
             "line": 48,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6091108995
+              "duration": 6312496942
             }
           },
           {
@@ -2511,7 +1275,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2223995041
+              "duration": 1509360825
             }
           },
           {
@@ -2523,27 +1287,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 291203118
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 26865
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 305797862
+              "duration": 292301102
             }
           }
         ]
@@ -2551,12 +1295,16 @@
     ]
   },
   {
-    "uri": "features/base_features/5.account.feature",
-    "id": "account",
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
     "keyword": "Feature",
     "name": "account",
-    "description": "\tAs a customer,\n\tI want to be able to use an account\n\tin order to manage my user data",
     "line": 5,
+    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
     "tags": [
       {
         "name": "@export",
@@ -2571,71 +1319,39 @@
         "line": 4
       }
     ],
+    "id": "account",
+    "uri": "features/base_features/5.account.feature",
     "elements": [
       {
         "keyword": "Background",
         "name": "",
-        "description": "",
         "line": 11,
+        "description": "",
         "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17027
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 31133
-            }
-          }
-        ],
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "--> go to https://int.pulsiva.com/fr-fr/account"
+              "--> go to http://int.chefworks.de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1770500506
+              "duration": 3555817974
             }
           }
         ]
       },
       {
-        "id": "account;create-new-account",
         "keyword": "Scenario",
         "name": "create new account",
-        "description": "",
         "line": 16,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 14
@@ -2645,21 +1361,23 @@
             "line": 15
           }
         ],
+        "id": "account;create-new-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "And ",
             "name": "no user account with my email exists",
             "line": 17,
             "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pfr@test.de"
+              "UrlBackend:http://int.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 12591386295
+              "duration": 6014854447
             }
           },
           {
@@ -2667,21 +1385,20 @@
             "name": "I create a new account with my data",
             "line": 18,
             "output": [
-              "- set prefix = \"Monsieur\"",
-              "- set firstname: Prénom",
-              "- set lastname: Nom",
-              "- set customernumber: ",
-              "- set email: testmail_pfr@test.de",
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "customernumber is not available in de",
+              "- set email: testmail_chefworks@test.de",
               "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva France",
-              "chose company",
-              "department is not available in fr",
-              "- set taxvat: FR14P422P876P383",
-              "- set street: Rue Icare",
-              "- set streetnumber: 4",
-              "- set postcode: 67960",
-              "- set city: Entzheim",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.32.195', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company: Test_eBusiness",
+              "- set department: eBusiness",
+              "taxvat is not available in de",
+              "- set street: Vegastr. 2",
+              "streetnumber is not available in de",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
               "clicked button to continue"
             ],
             "match": {
@@ -2689,7 +1406,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43166981971
+              "duration": 67759316302
             }
           },
           {
@@ -2697,99 +1414,24 @@
             "name": "I should be on my account page",
             "line": 19,
             "output": [
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:131"
             },
             "result": {
               "status": "passed",
-              "duration": 6838681438
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 28748
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 347690787
+              "duration": 523071882
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23508
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 92550
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5046017013
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;login-with-existing-account",
         "keyword": "Scenario",
         "name": "login with existing account",
-        "description": "",
         "line": 23,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 21
@@ -2799,6 +1441,8 @@
             "line": 22
           }
         ],
+        "id": "account;login-with-existing-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "And ",
@@ -2812,7 +1456,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6263639321
+              "duration": 2858391034
             }
           },
           {
@@ -2820,7 +1464,7 @@
             "name": "I login with valid informations",
             "line": 25,
             "output": [
-              "> ok, i am on https://int.pulsiva.com/fr-fr/account",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration"
@@ -2830,7 +1474,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7801434306
+              "duration": 3831852175
             }
           },
           {
@@ -2838,99 +1482,24 @@
             "name": "I should be on my account page",
             "line": 26,
             "output": [
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:131"
             },
             "result": {
               "status": "passed",
-              "duration": 524251026
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43714
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 337262841
+              "duration": 604153480
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23877
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 46264
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1713800914
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-userinfo-in-my-account",
         "keyword": "Scenario",
         "name": "modify userinfo in my account",
-        "description": "",
         "line": 31,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 28
@@ -2944,6 +1513,8 @@
             "line": 30
           }
         ],
+        "id": "account;modify-userinfo-in-my-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
@@ -2953,19 +1524,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/fr-fr/account",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 12004291617
+              "duration": 8540120104
             }
           },
           {
@@ -2984,7 +1555,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23043652236
+              "duration": 15544657922
             }
           },
           {
@@ -2999,92 +1570,17 @@
             },
             "result": {
               "status": "passed",
-              "duration": 396784294
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21964
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 313679313
+              "duration": 388450011
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
-        "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19501
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 37759
-            }
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1987444775
-            }
-          }
-        ]
-      },
-      {
-        "id": "account;modify-payment-in-my-account",
         "keyword": "Scenario",
         "name": "modify payment in my account",
-        "description": "",
         "line": 39,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 36
@@ -3098,6 +1594,8 @@
             "line": 38
           }
         ],
+        "id": "account;modify-payment-in-my-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
@@ -3105,44 +1603,43 @@
             "line": 40,
             "output": [
               "I already created an user account",
-              "-> no unique account with customer:testmail_pfr@test.de exists",
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
               "I am on the registration page",
-              "--> go to https://int.pulsiva.com/fr-fr/account",
+              "--> go to http://int.chefworks.de/account",
               "I create a new account with my data",
-              "- set prefix = \"Monsieur\"",
-              "- set firstname: Prénom",
-              "- set lastname: Nom",
-              "- set customernumber: ",
-              "- set email: testmail_pfr@test.de",
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "customernumber is not available in de",
+              "- set email: testmail_chefworks@test.de",
               "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva France",
-              "chose company",
-              "department is not available in fr",
-              "- set taxvat: FR14P422P876P383",
-              "- set street: Rue Icare",
-              "- set streetnumber: 4",
-              "- set postcode: 67960",
-              "- set city: Entzheim",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.32.195', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company: Test_eBusiness",
+              "- set department: eBusiness",
+              "taxvat is not available in de",
+              "- set street: Vegastr. 2",
+              "streetnumber is not available in de",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
               "clicked button to continue",
               "I log me out",
               "--> logged me out",
               "I am on the registration page",
-              "--> go to https://int.pulsiva.com/fr-fr/account",
+              "--> go to http://int.chefworks.de/account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/fr-fr/account",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 66289555509
+              "duration": 81334552428
             }
           },
           {
@@ -3159,7 +1656,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9411884823
+              "duration": 4500081932
             }
           },
           {
@@ -3174,92 +1671,93 @@
             },
             "result": {
               "status": "passed",
-              "duration": 287925478
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20390
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 345826278
+              "duration": 300054826
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
+        "keyword": "Scenario",
+        "name": "modify adress of invoice",
+        "line": 46,
         "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
+        "tags": [
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 17909
-            }
+            "name": "@account_update",
+            "line": 44
           },
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 51760
-            }
+            "name": "@account_invoice",
+            "line": 45
           }
         ],
+        "id": "account;modify-adress-of-invoice",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am logged in",
+            "line": 47,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on http://int.chefworks.de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_chefworks@test.de"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 1778669345
+              "duration": 7358614895
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my address for my bill",
+            "line": 48,
+            "output": [
+              "--> clicked button for change the adress of billing",
+              "I change prefix of my address for invoice",
+              "--> select prefix:Frau",
+              "--> click change-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:314"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5884376715
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 49,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 309856133
             }
           }
         ]
       },
       {
-        "id": "account;modify-adress-of-delivery",
         "keyword": "Scenario",
         "name": "modify adress of delivery",
-        "description": "",
         "line": 54,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 51
@@ -3273,6 +1771,8 @@
             "line": 53
           }
         ],
+        "id": "account;modify-adress-of-delivery",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
@@ -3282,19 +1782,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/fr-fr/account",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 12296750601
+              "duration": 8568250318
             }
           },
           {
@@ -3304,7 +1804,7 @@
             "output": [
               "--> clicked button for change the adress for delivery",
               "I change prefix of my address for delivery",
-              "--> select prefix:Madame",
+              "--> select prefix:Frau",
               "--> click change-button"
             ],
             "match": {
@@ -3312,7 +1812,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10079012650
+              "duration": 4446112673
             }
           },
           {
@@ -3327,92 +1827,86 @@
             },
             "result": {
               "status": "passed",
-              "duration": 294544725
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 35330
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 295646598
+              "duration": 314180139
             }
           }
         ]
       },
       {
-        "keyword": "Background",
-        "name": "",
+        "keyword": "Scenario",
+        "name": "change settings for newsletter",
+        "line": 60,
         "description": "",
-        "line": 11,
-        "type": "background",
-        "before": [
+        "tags": [
           {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18600
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36327
-            }
+            "name": "@account_newsletter",
+            "line": 59
           }
         ],
+        "id": "account;change-settings-for-newsletter",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
+            "name": "I am logged in",
+            "line": 61,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on http://int.chefworks.de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_chefworks@test.de"
+            ],
             "match": {
-              "location": "features/step_definitions/account.rb:2"
+              "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 1784994857
+              "duration": 7419019074
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I activate the newsletterbox",
+            "line": 62,
+            "output": [
+              "--> activate the checkbox"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:379"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2525624120
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 63,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 316677849
             }
           }
         ]
       },
       {
-        "id": "account;test-links-on-the-accountsite",
         "keyword": "Scenario",
         "name": "test links on the accountsite",
-        "description": "",
         "line": 67,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@export",
-            "line": 2
-          },
-          {
-            "name": "@chefworks",
-            "line": 3
-          },
-          {
-            "name": "@account",
-            "line": 4
-          },
           {
             "name": "@pulsiva",
             "line": 65
@@ -3422,6 +1916,8 @@
             "line": 66
           }
         ],
+        "id": "account;test-links-on-the-accountsite",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
@@ -3431,19 +1927,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "> ok, i am on https://int.pulsiva.com/fr-fr/account",
+              "> ok, i am on http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 12149191009
+              "duration": 7466417902
             }
           },
           {
@@ -3451,12 +1947,14 @@
             "name": "I get all items of the sidebar",
             "line": 69,
             "output": [
-              "> menuitems:6",
+              "> menuitems:8",
               "- account",
               "- orders",
+              "- downloads",
+              "- billing",
               "- shipping",
               "- payment",
-              "- wishlist",
+              "- note",
               "- logout"
             ],
             "match": {
@@ -3464,27 +1962,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1135289179
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24506
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 327529034
+              "duration": 1383110806
             }
           }
         ]
@@ -3492,12 +1970,16 @@
     ]
   },
   {
-    "uri": "features/base_features/6.checkout.feature",
-    "id": "checkout",
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
     "keyword": "Feature",
     "name": "checkout",
-    "description": "\tAs a customer,\n\tI want to be able to order my favorite products",
     "line": 6,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
     "tags": [
       {
         "name": "@pulsiva",
@@ -3516,56 +1998,22 @@
         "line": 5
       }
     ],
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
     "elements": [
       {
-        "id": "checkout;checkout-with-existing-account",
         "keyword": "Scenario",
         "name": "checkout with existing account",
-        "description": "",
         "line": 12,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@export",
-            "line": 3
-          },
-          {
-            "name": "@chefworks",
-            "line": 4
-          },
-          {
-            "name": "@checkout",
-            "line": 5
-          },
           {
             "name": "@checkout_with",
             "line": 11
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15684
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 32383
-            }
-          }
-        ],
+        "id": "checkout;checkout-with-existing-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
@@ -3575,19 +2023,19 @@
               "I already created an user account",
               "-> there exists an unique account",
               "I login with valid informations",
-              "--> go to https://int.pulsiva.com/fr-fr/account",
+              "--> go to http://int.chefworks.de/account",
               "-> set email",
               "-> set password",
               "--> pushed button for registration",
               "I should be on my account page",
-              "> the page contains testmail_pfr@test.de"
+              "> the page contains testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:183"
             },
             "result": {
               "status": "passed",
-              "duration": 13940460539
+              "duration": 9705780532
             }
           },
           {
@@ -3595,16 +2043,16 @@
             "name": "the product cart contains an article",
             "line": 14,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 11709031489
+              "duration": 5627596535
             }
           },
           {
@@ -3612,8 +2060,8 @@
             "name": "I am on the checkout page",
             "line": 15,
             "output": [
-              "> ups, I am on https://int.pulsiva.com/fr-fr/checkout/cart",
-              "--> go to https://int.pulsiva.com/fr-fr/checkout",
+              "> ups, I am on http://int.chefworks.de/checkout/cart",
+              "--> go to http://int.chefworks.de/checkout",
               "And the checkoutpage contains all elements"
             ],
             "match": {
@@ -3621,7 +2069,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7138267343
+              "duration": 3126640967
             }
           },
           {
@@ -3630,7 +2078,7 @@
             "line": 16,
             "output": [
               "I am on the checkout page",
-              "> ok, I am on https://int.pulsiva.com/fr-fr/checkout",
+              "> ok, I am on http://int.chefworks.de/checkout",
               "And the checkoutpage contains all elements",
               "I activate the box of agb",
               "-> activate agb",
@@ -3641,7 +2089,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8307076663
+              "duration": 5189962295
             }
           },
           {
@@ -3650,102 +2098,46 @@
             "line": 17,
             "output": [
               "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pfr@test.de"
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 19552845666
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20658
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 486824169
+              "duration": 8882508576
             }
           }
         ]
       },
       {
-        "id": "checkout;checkout-without-existing-account-and-create-an-account",
         "keyword": "Scenario",
         "name": "checkout without existing account and create an account",
-        "description": "",
         "line": 20,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@export",
-            "line": 3
-          },
-          {
-            "name": "@chefworks",
-            "line": 4
-          },
-          {
-            "name": "@checkout",
-            "line": 5
-          },
           {
             "name": "@checkout_registration",
             "line": 19
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16181
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38605
-            }
-          }
-        ],
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "no user account with my email exists",
             "line": 21,
             "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pfr@test.de"
+              "UrlBackend:http://int.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 12547860342
+              "duration": 5742607839
             }
           },
           {
@@ -3753,16 +2145,16 @@
             "name": "the product cart contains an article",
             "line": 22,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6208244273
+              "duration": 5338477283
             }
           },
           {
@@ -3777,7 +2169,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2034815080
+              "duration": 3775455804
             }
           },
           {
@@ -3785,21 +2177,20 @@
             "name": "I create a new account with my data",
             "line": 24,
             "output": [
-              "- set prefix = \"Monsieur\"",
-              "- set firstname: Prénom",
-              "- set lastname: Nom",
-              "- set customernumber: ",
-              "- set email: testmail_pfr@test.de",
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "customernumber is not available in de",
+              "- set email: testmail_chefworks@test.de",
               "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva France",
-              "chose company",
-              "department is not available in fr",
-              "- set taxvat: FR14P422P876P383",
-              "- set street: Rue Icare",
-              "- set streetnumber: 4",
-              "- set postcode: 67960",
-              "- set city: Entzheim",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.32.195', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company: Test_eBusiness",
+              "- set department: eBusiness",
+              "taxvat is not available in de",
+              "- set street: Vegastr. 2",
+              "streetnumber is not available in de",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
               "clicked button to continue"
             ],
             "match": {
@@ -3807,7 +2198,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45965504335
+              "duration": 67126734752
             }
           },
           {
@@ -3815,125 +2206,84 @@
             "name": "I set payment and shipping",
             "line": 25,
             "output": [
-              "-> choose payment"
+              "-> choose payment",
+              "-> choose delivery",
+              "--> click button to continue"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:173"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Unable to find css \"#confirm_dispatch16\" (Capybara::ElementNotFound)\n./features/step_definitions/checkout.rb:186:in `/^I set payment and shipping$/'\nfeatures/base_features/6.checkout.feature:25:in `And I set payment and shipping'",
-              "duration": 37138051689
+              "status": "passed",
+              "duration": 5373213701
             }
           },
           {
             "keyword": "When ",
             "name": "I send my order",
             "line": 26,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 5052973701
             }
           },
           {
             "keyword": "Then ",
             "name": "Shopware should have my order",
             "line": 27,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
-              "status": "skipped"
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
               "status": "passed",
-              "duration": 19954
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 340866987
+              "duration": 8844093974
             }
           }
         ]
       },
       {
-        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
         "keyword": "Scenario",
         "name": "checkout without existing account and without creating an account",
-        "description": "",
         "line": 30,
-        "type": "scenario",
+        "description": "",
         "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 2
-          },
-          {
-            "name": "@export",
-            "line": 3
-          },
-          {
-            "name": "@chefworks",
-            "line": 4
-          },
-          {
-            "name": "@checkout",
-            "line": 5
-          },
           {
             "name": "@checkout_without",
             "line": 29
           }
         ],
-        "before": [
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15527
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:19"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 42434
-            }
-          }
-        ],
+        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "no user account with my email exists",
             "line": 31,
             "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pfr@test.de"
+              "UrlBackend:http://int.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 12597358383
+              "duration": 5664531965
             }
           },
           {
@@ -3941,16 +2291,16 @@
             "name": "the product cart contains an article",
             "line": 32,
             "output": [
-              "go to https://int.pulsiva.com/fr-fr/",
-              "-> add article: https://int.pulsiva.com/fr-fr/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/fr-fr/checkout/cart"
+              "go to http://int.chefworks.de/",
+              "-> add article: http://int.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to http://int.chefworks.de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 7091153974
+              "duration": 5627541600
             }
           },
           {
@@ -3965,7 +2315,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2372934728
+              "duration": 1896192982
             }
           },
           {
@@ -3973,20 +2323,19 @@
             "name": "I fill out a register form and send it without creating an account",
             "line": 34,
             "output": [
-              "- set prefix = \"Monsieur\"",
-              "- set firstname: Prénom",
-              "- set lastname: Nom",
-              "- set customernumber: ",
-              "- set email: testmail_pfr@test.de",
-              "- set phone: 01234567",
-              "- set company: Pulsiva France",
-              "chose company",
-              "department is not available in fr",
-              "- set taxvat: FR14P422P876P383",
-              "- set street: Rue Icare",
-              "- set streetnumber: 4",
-              "- set postcode: 67960",
-              "- set city: Entzheim",
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "customernumber is not available in de",
+              "- set email: testmail_chefworks@test.de",
+              "The given selector  is either invalid or does not result in a WebElement. The following error occurred:\nInvalidSelectorError: No selector specified\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.32.195', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.InvalidSelectorException)",
+              "- set company: Test_eBusiness",
+              "- set department: eBusiness",
+              "taxvat is not available in de",
+              "- set street: Vegastr. 2",
+              "streetnumber is not available in de",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
               "clicked button to continue"
             ],
             "match": {
@@ -3994,7 +2343,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39637540200
+              "duration": 64005824544
             }
           },
           {
@@ -4002,96 +2351,52 @@
             "name": "I set payment and shipping",
             "line": 35,
             "output": [
-              "-> choose payment"
+              "-> choose payment",
+              "-> choose delivery",
+              "--> click button to continue"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:173"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Unable to find css \"#confirm_dispatch16\" (Capybara::ElementNotFound)\n./features/step_definitions/checkout.rb:186:in `/^I set payment and shipping$/'\nfeatures/base_features/6.checkout.feature:35:in `When I set payment and shipping'",
-              "duration": 36461207051
+              "status": "passed",
+              "duration": 3543912027
             }
           },
           {
             "keyword": "When ",
             "name": "I send my order",
             "line": 36,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on http://int.chefworks.de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 3781460492
             }
           },
           {
             "keyword": "Then ",
             "name": "Shopware should have my order",
             "line": 37,
-            "match": {
-              "location": "features/step_definitions/checkout.rb:194"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22612
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 310362080
-            }
-          }
-        ]
-      }
-    ]
-  }
-]     "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 37,
             "output": [
               "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pch@test.de"
+              ">> cancel orders of customer with email:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/checkout.rb:194"
             },
             "result": {
               "status": "passed",
-              "duration": 19728281353
-            }
-          }
-        ],
-        "after": [
-          {
-            "match": {
-              "location": "features/support/hooks.rb:1"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 23032
-            }
-          },
-          {
-            "match": {
-              "location": "capybara-2.6.0/lib/capybara/cucumber.rb:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 476553208
+              "duration": 8929914582
             }
           }
         ]
