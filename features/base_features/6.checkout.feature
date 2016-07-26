@@ -15,6 +15,7 @@ Feature: checkout
 	  And I am on the checkout page
 	  When I send my order
 	  Then Shopware should have my order
+	  And no user account with my email exists
 
   @checkout_registration
 	Scenario: checkout without existing account and create an account
@@ -25,6 +26,7 @@ Feature: checkout
 	  And I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
+	  And no user account with my email exists
 	  
   @checkout_without
 	Scenario: checkout without existing account and without creating an account
@@ -35,3 +37,4 @@ Feature: checkout
 	  When I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
+	  And no user account with my email exists

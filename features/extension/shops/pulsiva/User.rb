@@ -93,7 +93,7 @@ class User
       when 'at' then 'Vorname'
       when 'ch' then 'Vorname'
       when 'it' then 'Nome'
-      when 'fr' then 'Prénom'
+      when 'fr' then 'Prenom'
     end
     @lastname = case ENV['COUNTRY']
       when 'de' then 'Nachname'
