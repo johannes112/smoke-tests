@@ -74,7 +74,7 @@ module ShopwareFunctions
   def deleteDataId(data_of, id) 
     url_data =  stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
-    #puts "Delete URL: #{url_request}"
+    puts ">>>>>> delete customer with id:#{id}"
     deleteData(url_request)
   end
   
