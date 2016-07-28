@@ -9,6 +9,11 @@ class Article
       when (/ch/) then 'Einzelbesteck'
       when (/it/) then 'Posate singole'
       when (/fr/) then 'Couverts à l\'unité'
+      when (/no/) then 'Enkelt bestikk'
+      when (/se/) then 'Enskilda bestick'
+      when (/nl/) then 'Los bestek'
+      when (/be/) then 'Couverts à l\'unité'
+      when (/es/) then 'Piezas sueltas'
     end
     @category = case ENV['COUNTRY']
       when (/de/) then 'Besteck'
@@ -16,6 +21,11 @@ class Article
       when (/ch/) then 'Besteck'
       when (/it/) then 'Posate'
       when (/fr/) then 'Couverts'
+      when (/no/) then 'Bestikk'
+      when (/se/) then 'Bestick'
+      when (/nl/) then 'Bestek'
+      when (/be/) then 'Couverts'
+      when (/es/) then 'Cubiertos'
     end
     @sku = case ENV['COUNTRY']
       when (/de/) then '20040136'#without i!
@@ -23,6 +33,11 @@ class Article
       when (/ch/) then '20040136'
       when (/it/) then '20040136'
       when (/fr/) then '20040136'
+      when (/no/) then '20040136'
+      when (/se/) then '20040136'
+      when (/nl/) then '20040136'
+      when (/be/) then '20040136'
+      when (/es/) then '20040136'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -30,6 +45,11 @@ class Article
       when (/ch/) then 2
       when (/it/) then 2
       when (/fr/) then 2
+      when (/no/) then 2
+      when (/se/) then 2
+      when (/nl/) then 2
+      when (/be/) then 2
+      when (/es/) then 2
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
@@ -38,6 +58,11 @@ class Article
       when (/ch/) then 'Steakgabel'
       when (/it/) then 'FORCHETTA BISTECCA'
       when (/fr/) then 'Fourchette'
+      when (/no/) then 'TENEDOR PARA CARNE'
+      when (/se/) then 'GRILLGAFFEL'
+      when (/nl/) then 'STEAKVORK'
+      when (/be/) then 'Fourchette'
+      when (/es/) then 'TENEDOR PARA CARNE'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'direktbestellen'
@@ -45,6 +70,11 @@ class Article
       when (/ch/) then 'EMGroupDirectOrder'
       when (/it/) then 'acquistato'
       when (/fr/) then 'EMGroupDirectOrder'
+      when (/no/) then 'EMGroupDirectOrder'
+      when (/se/) then 'EMGroupDirectOrder'
+      when (/nl/) then 'EMGroupDirectOrder'
+      when (/be/) then 'EMGroupDirectOrder'
+      when (/es/) then 'EMGroupDirectOrder'
     end
   end
 end
