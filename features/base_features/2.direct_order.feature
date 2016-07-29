@@ -1,6 +1,6 @@
 @pulsiva
-@direct_ordering
-Feature: direct ordering
+@direct_order
+Feature: direct order
 
 	As a customer
 	I want to have the opportunity to add an article to the cart, by simply opening a form and entering the sku and amount of this article

@@ -33,7 +33,6 @@ Feature: account
 		When I modify my userinfo
 		Then I should see a confirmation hint
 		
-  @pulsiva
   @account_update
   @account_payment
 	Scenario: modify payment in my account

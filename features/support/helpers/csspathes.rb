@@ -391,9 +391,14 @@ class Csspathes
     end     
     @account_registerform_taxvat_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         nil
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/be/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#ustid'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
     end 
@@ -766,6 +771,7 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.shipping-payment--information'
     end
     @checkout_paymentInAdvance_radio_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#payment_mean3'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#payment_mean5'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#payment_mean5'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#payment_mean5'
@@ -781,9 +787,13 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/ch/) then         '#confirm_dispatch14'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#confirm_dispatch9'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#confirm_dispatch28'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#confirm_dispatch24'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#confirm_dispatch22'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#confirm_dispatch26'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/be/) then         '#confirm_dispatch18'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#confirm_dispatch20'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch9'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#confirm_dispatch9'
-      
     end
     @checkout_order_success_teaser_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.finish--teaser'

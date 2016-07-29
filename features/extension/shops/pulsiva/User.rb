@@ -192,7 +192,7 @@ class User
       when 'fr' then 'Monsieur'
       when 'no' then 'Herr'
       when 'se' then 'Herr'
-      when 'nl' then 'Ohr.'
+      when 'nl' then 'Dhr.'
       when 'be' then 'Monsieur'
       when 'es' then 'Sr.'
     end
