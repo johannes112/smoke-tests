@@ -41,6 +41,7 @@ module ShopwareFunctions
     url_data = "/api/customers"
     filter = "?filter[email]=#{mailaddress}"
     url_request = "#{url_data}/#{filter}"
+    puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     if response_data_customer['data'][0] != nil
       customer_id_by_mail = response_data_customer['data'][0][key]

@@ -24,14 +24,6 @@ Feature: account
 		And I already created an user account
 		When I login with valid informations
 		Then I should be on my account page
-
-  @pulsiva
-  @account_update
-  @account_userinfo
-	Scenario: modify userinfo in my account
-		Given I am logged in
-		When I modify my userinfo
-		Then I should see a confirmation hint
 		
   @account_update
   @account_payment

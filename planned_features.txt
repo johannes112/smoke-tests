@@ -1,0 +1,7 @@
+  @pulsiva
+  @account_update
+  @account_userinfo
+	Scenario: modify userinfo in my account
+		Given I am logged in
+		When I modify my userinfo
+		Then I should see a confirmation hint
