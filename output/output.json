@@ -1,0 +1,569 @@
+[
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@account",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/5.account.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the registration page",
+            "line": 12,
+            "output": [
+              "--> go to https://www.em-group.com/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9957304481
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "create new account",
+        "line": 16,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 14
+          },
+          {
+            "name": "@account_registration",
+            "line": 15
+          }
+        ],
+        "id": "account;create-new-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 17,
+            "output": [
+              "UrlBackend:https://www.em-group.com/",
+              "user eMail:testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7220436561
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I create a new account with my data",
+            "line": 18,
+            "output": [
+              "- set prefix = \"Mr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "customernumber is not available in de",
+              "- set email: testmail_emg@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: ex_Test_eBusiness",
+              "- set department: eBusiness",
+              "taxvat is not available in de",
+              "- set street: Vegastr. 2",
+              "streetnumber is not available in de",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40307844921
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on my account page",
+            "line": 19,
+            "output": [
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:131"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 530216951
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "login with existing account",
+        "line": 23,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 21
+          },
+          {
+            "name": "@account_login",
+            "line": 22
+          }
+        ],
+        "id": "account;login-with-existing-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "I already created an user account",
+            "line": 24,
+            "output": [
+              "-> there exists an unique account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3874318855
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I login with valid informations",
+            "line": 25,
+            "output": [
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:149"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4240520695
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on my account page",
+            "line": 26,
+            "output": [
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:131"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 579792387
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify payment in my account",
+        "line": 30,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account_update",
+            "line": 28
+          },
+          {
+            "name": "@account_payment",
+            "line": 29
+          }
+        ],
+        "id": "account;modify-payment-in-my-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 31,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8064203476
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my paymentinfo",
+            "line": 32,
+            "output": [
+              "--> clicked button for change of payment",
+              "I change option of payment",
+              "--> chose checkbox for cash on delivery"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:285"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4569233645
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 33,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 324277266
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify adress of invoice",
+        "line": 37,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account_update",
+            "line": 35
+          },
+          {
+            "name": "@account_invoice",
+            "line": 36
+          }
+        ],
+        "id": "account;modify-adress-of-invoice",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 38,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8203452293
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my address for my bill",
+            "line": 39,
+            "output": [
+              "--> clicked button for change the adress of billing",
+              "I change prefix of my address for invoice",
+              "--> select prefix:Mrs",
+              "--> click change-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:314"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4786728686
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 40,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 432715177
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify adress of delivery",
+        "line": 45,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 42
+          },
+          {
+            "name": "@account_update",
+            "line": 43
+          },
+          {
+            "name": "@account_delivery",
+            "line": 44
+          }
+        ],
+        "id": "account;modify-adress-of-delivery",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 46,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8672575577
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my address for my delivery",
+            "line": 47,
+            "output": [
+              "--> clicked button for change the adress for delivery",
+              "I change prefix of my address for delivery",
+              "--> select prefix:Mrs",
+              "--> click change-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:346"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5055019435
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 48,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 432328355
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "change settings for newsletter",
+        "line": 51,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account_newsletter",
+            "line": 50
+          }
+        ],
+        "id": "account;change-settings-for-newsletter",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 52,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8292841760
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I activate the newsletterbox",
+            "line": 53,
+            "output": [
+              "--> activate the checkbox"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:379"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1732709691
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 54,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:258"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 295481835
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "test links on the accountsite",
+        "line": 58,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 56
+          },
+          {
+            "name": "@account_links",
+            "line": 57
+          }
+        ],
+        "id": "account;test-links-on-the-accountsite",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 59,
+            "output": [
+              "I already created an user account",
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.em-group.com/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_emg@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8398302662
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I get all items of the sidebar",
+            "line": 60,
+            "output": [
+              "> menuitems:7",
+              "- account",
+              "- orders",
+              "- billing",
+              "- shipping",
+              "- payment",
+              "- note",
+              "- logout"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:389"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1214253953
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

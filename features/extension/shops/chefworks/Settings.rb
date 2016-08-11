@@ -5,7 +5,7 @@ class Settings
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when 'de' then nil
+        when 'de' then 'http://int.chefworks.de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when 'de' then 'http://int.chefworks.de/'
@@ -15,12 +15,12 @@ class Settings
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when 'de' then nil
+        when 'de' then 'http://www.chefworks.de/'
       end
       @urlHttps = case ENV['COUNTRY']
         when 'de' then 'https://www.chefworks.de/'
       end
-      @urlBackend = 'https://www.chefworks.de/backend/'
+      @urlBackend = 'https://www.chefworks.de/'
     end
     @url_checkout_confirm = "checkout/confirm"
     @url_add_comand = 'addArticle/sTargetAction'

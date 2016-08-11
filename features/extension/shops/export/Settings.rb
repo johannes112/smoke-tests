@@ -15,12 +15,12 @@ class Settings
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/.*/) then nil
+        when (/.*/) then 'http://www.em-group.com/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/.*/) then 'https://www.em-group.com/'
       end
-      @urlBackend = 'https://www.em-group.com/backend/'
+      @urlBackend = 'https://www.em-group.com/'
     end
     @url_checkout_confirm = "checkout/confirm"
     @url_add_comand = 'addArticle/sTargetAction'

@@ -8,13 +8,13 @@ class Article
       when (/.*/) then 'CUTLERY'
     end
     @sku = case ENV['COUNTRY']
-      when (/.*/) then '21782'
+      when (/.*/) then '22147'
     end
     @amount = case ENV['COUNTRY']
       when (/.*/) then 2
     end
     @name = case ENV['COUNTRY']
-      when (/.*/) then 'Fortuna'
+      when (/.*/) then 'Stockholm'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/.*/) then 'addArticle/sTargetAction'

@@ -11,7 +11,7 @@ end
 And(/^no user account with my email exists$/) do
   eMail = user.eMail
   puts "UrlBackend:#{settings.urlBackend}"
-  puts "user eMail:#{user.eMail}"
+  puts "user eMail:#{eMail}"
   #key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   #puts shopware.deleteDataByKey("Customers", key, eMail)
@@ -94,11 +94,11 @@ When(/^I create a new account with my data$/) do
   #set value for password
   setAtrributOfArticle("password", password, account_registerform_password_path)
   #set value for phone
-  begin #rescuse in cause of the difference of live and int in chefworks
+  #begin #rescue in cause of the difference of live and int in chefworks
     setAtrributOfArticle("phone", phone, account_registerform_phone_path)
-  rescue Exception => e
-    puts e.message
-  end
+  #rescue Exception => e
+  #  puts e.message
+  #end
   #set value for company
   setAtrributOfArticle("company", company, account_registerform_company_path)
   #click on kind of company if the box should be visible
