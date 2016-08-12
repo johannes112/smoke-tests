@@ -1,7 +1,7 @@
 #export
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
-                :postcode, :city, :telephone, :store, :store_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname
+                :postcode, :city, :telephone, :store, :store_id, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname
   
   def initialize
     @customer_number = case ENV['COUNTRY']
@@ -23,6 +23,9 @@ class User
       when 'de' then 'ex_Test_eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
+      when 'de' then nil
+    end
+    @taxid = case ENV['COUNTRY']
       when 'de' then nil
     end
    @taxvat = case ENV['COUNTRY']
