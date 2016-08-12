@@ -43,6 +43,7 @@ When(/^I create a new account with my data$/) do
   firstname = user.firstname
   lastname = user.lastname
   department = user.department
+  taxid = user.taxid
   taxvat = user.taxvat
   email = user.eMail
   customer_number = user.customer_number
@@ -62,6 +63,7 @@ When(/^I create a new account with my data$/) do
   account_registerform_firstname_path = csspathes.account_registerform_firstname_path
   account_registerform_lastname_path = csspathes.account_registerform_lastname_path
   account_registerform_department_path = csspathes.account_registerform_department_path
+  account_registerform_taxid_path = csspathes.account_registerform_taxid_path
   account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
   account_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
   account_registerform_email_path = csspathes.account_registerform_email_path
@@ -109,6 +111,8 @@ When(/^I create a new account with my data$/) do
   end
   #set value for department
   setAtrributOfArticle("department", department, account_registerform_department_path)
+  #set value of taxid
+  setAtrributOfArticle("taxid", taxid, account_registerform_taxid_path)
   #set value for vat
   setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
