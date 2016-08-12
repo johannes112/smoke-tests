@@ -39,14 +39,14 @@
             "name": "I am on the website",
             "line": 13,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://www.pulsiva.com/de-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 151388676330
+              "duration": 12243820981
             }
           }
         ]
@@ -85,7 +85,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1598534593
+              "duration": 1511341901
             }
           }
         ]
@@ -129,7 +129,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3312359835
+              "duration": 4879801108
             }
           },
           {
@@ -141,7 +141,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 457355227
+              "duration": 508845338
             }
           }
         ]
@@ -187,7 +187,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5013225477
+              "duration": 9452544540
             }
           },
           {
@@ -199,7 +199,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 473301849
+              "duration": 548264039
             }
           }
         ]
@@ -235,7 +235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1458178763
+              "duration": 2199333085
             }
           },
           {
@@ -247,51 +247,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 290509510
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "navigate to note",
-        "line": 46,
-        "description": "",
-        "tags": [
-          {
-            "name": "@navigation",
-            "line": 44
-          },
-          {
-            "name": "@links",
-            "line": 45
-          }
-        ],
-        "id": "website-basics;navigate-to-note",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to my notes",
-            "line": 47,
-            "match": {
-              "location": "features/step_definitions/links.rb:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1390076404
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the notepage",
-            "line": 48,
-            "match": {
-              "location": "features/step_definitions/links.rb:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 298730780
+              "duration": 285937087
             }
           }
         ]
@@ -327,7 +283,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 713625838
+              "duration": 1153088796
             }
           },
           {
@@ -342,7 +298,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 157421581
+              "duration": 166366195
             }
           },
           {
@@ -354,7 +310,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1793561708
+              "duration": 4427387493
             }
           },
           {
@@ -366,7 +322,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 149598273
+              "duration": 154387991
             }
           }
         ]
@@ -402,7 +358,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 515860051
+              "duration": 452198026
             }
           },
           {
@@ -414,7 +370,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 148183597
+              "duration": 199293797
             }
           }
         ]
@@ -466,14 +422,14 @@
             "name": "I am on the website",
             "line": 12,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://www.pulsiva.com/de-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1507646282
+              "duration": 2596498180
             }
           },
           {
@@ -481,7 +437,7 @@
             "name": "I am for an product by entering the sku in the searchfield",
             "line": 13,
             "output": [
-              "- set sku = \"CBCCWHTXS\"",
+              "- set sku = \"20040136\"",
               "clicked button of search"
             ],
             "match": {
@@ -489,7 +445,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3874238588
+              "duration": 4717411259
             }
           },
           {
@@ -497,14 +453,120 @@
             "name": "I should be on the detailsite of the related product",
             "line": 14,
             "output": [
-              "found 'COLMAR'"
+              "found 'STEAKGABEL'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:20"
             },
             "result": {
               "status": "passed",
-              "duration": 465744274
+              "duration": 582045345
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "direct order",
+    "line": 3,
+    "description": "\nAs a customer\nI want to have the opportunity to add an article to the cart, by simply opening a form and entering the sku and amount of this article",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 1
+      },
+      {
+        "name": "@direct_order",
+        "line": 2
+      }
+    ],
+    "id": "direct-order",
+    "uri": "features/base_features/2.direct_order.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "add an article",
+        "line": 8,
+        "description": "",
+        "id": "direct-order;add-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 9,
+            "output": [
+              "go to https://www.pulsiva.com/de-de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2274431797
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the button for direct ordering",
+            "line": 10,
+            "output": [
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2052405593
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I send my inserted data with the form",
+            "line": 11,
+            "output": [
+              "-> inserted 20040136",
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3259099110
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 12,
+            "output": [
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 219383286
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should find the article in the sidebar",
+            "line": 13,
+            "output": [
+              "> found item"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 491476508
             }
           }
         ]
@@ -551,17 +613,17 @@
             "name": "I am on the product page of an article",
             "line": 11,
             "output": [
-              "go to https://www.chefworks.de/",
-              "- set sku = \"CBCCWHTXS\"",
+              "go to https://www.pulsiva.com/de-de/",
+              "- set sku = \"20040136\"",
               "clicked button of search",
-              "found 'COLMAR'"
+              "found 'STEAKGABEL'"
             ],
             "match": {
               "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5410829545
+              "duration": 6851246166
             }
           }
         ]
@@ -593,7 +655,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 355408087
+              "duration": 587979026
             }
           },
           {
@@ -605,7 +667,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 649063041
+              "duration": 1264306741
             }
           }
         ]
@@ -637,7 +699,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 495654572
+              "duration": 812768229
             }
           },
           {
@@ -649,7 +711,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 755908320
+              "duration": 262726203
             }
           }
         ]
@@ -684,7 +746,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 647757688
+              "duration": 1242309818
             }
           },
           {
@@ -696,7 +758,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 254999292
+              "duration": 198963842
             }
           }
         ]
@@ -728,7 +790,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1447454135
+              "duration": 1620197616
             }
           }
         ]
@@ -760,7 +822,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 427940047
+              "duration": 621289686
             }
           },
           {
@@ -775,7 +837,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 149872125
+              "duration": 274345028
             }
           }
         ]
@@ -807,7 +869,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 517012977
+              "duration": 393463016
             }
           },
           {
@@ -822,7 +884,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 406073467
+              "duration": 163070268
             }
           }
         ]
@@ -850,7 +912,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 499316683
+              "duration": 2964371533
             }
           },
           {
@@ -865,7 +927,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 156444746
+              "duration": 250909630
             }
           }
         ]
@@ -924,108 +986,45 @@
             "line": 14,
             "output": [
               "I am on the product page of an article",
-              "go to https://www.chefworks.de/",
-              "- set sku = \"CBCCWHTXS\"",
+              "go to https://www.pulsiva.com/de-de/",
+              "- set sku = \"20040136\"",
               "clicked button of search",
-              "found 'COLMAR'",
+              "found 'STEAKGABEL'",
               "I add an article to the product cart by clicking the button to push it into the cart",
               "-> clicked buy button",
               "I am on the product cart page",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:16"
             },
             "result": {
               "status": "passed",
-              "duration": 7769444904
+              "duration": 11379593423
             }
           },
           {
             "keyword": "When ",
             "name": "I click on the button to continue shopping",
             "line": 15,
-            "output": [
-              "--> clicked button for continue"
-            ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:38"
             },
             "result": {
-              "status": "passed",
-              "duration": 2247885714
+              "status": "failed",
+              "error_message": "Unable to find css \".table--content > a.content--title\" (Capybara::ElementNotFound)\n./features/step_definitions/product_cart.rb:41:in `/^I click on the button to continue shopping$/'\nfeatures/base_features/4.product_cart.feature:15:in `When I click on the button to continue shopping'",
+              "duration": 30111977658
             }
           },
           {
             "keyword": "Then ",
             "name": "I will see the back on the productsite",
             "line": 16,
-            "output": [
-              "found 'COLMAR'"
-            ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:46"
             },
             "result": {
-              "status": "passed",
-              "duration": 266929925
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "add article additionally",
-        "line": 19,
-        "description": "",
-        "tags": [
-          {
-            "name": "@product_cart_add",
-            "line": 18
-          }
-        ],
-        "id": "account;add-article-additionally",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 20,
-            "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5560941696
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I enter a sku into the integrated field on the cart",
-            "line": 21,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:140"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2586122407
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I will see the add-action in the url",
-            "line": 22,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:151"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 143692095
+              "status": "skipped"
             }
           }
         ]
@@ -1053,16 +1052,16 @@
             "name": "the product cart contains an article",
             "line": 27,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5344478660
+              "duration": 7633559640
             }
           },
           {
@@ -1077,7 +1076,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 348729029
+              "duration": 370248557
             }
           },
           {
@@ -1093,7 +1092,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3170511021
+              "duration": 3736991291
             }
           },
           {
@@ -1105,7 +1104,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 76279456
+              "duration": 68637819
             }
           }
         ]
@@ -1133,16 +1132,16 @@
             "name": "the product cart contains an article",
             "line": 35,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4694967479
+              "duration": 7642039691
             }
           },
           {
@@ -1157,7 +1156,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 483576446
+              "duration": 380846058
             }
           },
           {
@@ -1169,7 +1168,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1043078199
+              "duration": 1596842461
             }
           }
         ]
@@ -1197,16 +1196,16 @@
             "name": "the product cart contains an article",
             "line": 42,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4168604410
+              "duration": 7771096010
             }
           },
           {
@@ -1223,7 +1222,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 461558334
+              "duration": 627085154
             }
           }
         ]
@@ -1251,16 +1250,16 @@
             "name": "the product cart contains an article",
             "line": 48,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 3964021435
+              "duration": 7813984074
             }
           },
           {
@@ -1275,7 +1274,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2025482804
+              "duration": 2657448065
             }
           },
           {
@@ -1287,7 +1286,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 434779989
+              "duration": 369224944
             }
           }
         ]
@@ -1334,14 +1333,14 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "--> go to https://www.chefworks.de/account"
+              "--> go to https://www.pulsiva.com/de-de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1397452946
+              "duration": 2208598147
             }
           }
         ]
@@ -1369,39 +1368,61 @@
             "name": "no user account with my email exists",
             "line": 17,
             "output": [
-              "UrlBackend:https://www.chefworks.de/",
-              "user eMail:testmail_chefworks@test.de"
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 3516242777
+              "duration": 3216072530
             }
           },
           {
             "keyword": "When ",
             "name": "I create a new account with my data",
             "line": 18,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva GmbH Test - eBusiness",
+              "chose company",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
+              "clicked button to continue"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:40"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x0000000370c5d0> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\nfeatures/base_features/5.account.feature:18:in `When I create a new account with my data'",
-              "duration": 281187
+              "status": "passed",
+              "duration": 45115448881
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
             "line": 19,
+            "output": [
+              "> the page contains testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:135"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 4826296082
             }
           }
         ]
@@ -1429,164 +1450,47 @@
             "name": "I already created an user account",
             "line": 24,
             "output": [
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
+              "-> there exists an unique account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:21"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x0000000358fd38> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\nfeatures/base_features/5.account.feature:24:in `And I already created an user account'",
-              "duration": 4591328021
+              "status": "passed",
+              "duration": 3253483897
             }
           },
           {
             "keyword": "When ",
             "name": "I login with valid informations",
             "line": 25,
+            "output": [
+              "> ok, i am on https://www.pulsiva.com/de-de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:153"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 5547966054
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
             "line": 26,
+            "output": [
+              "> the page contains testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:135"
             },
             "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify payment in my account",
-        "line": 30,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_update",
-            "line": 28
-          },
-          {
-            "name": "@account_payment",
-            "line": 29
-          }
-        ],
-        "id": "account;modify-payment-in-my-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 31,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:187"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x00000003457420> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:31:in `Given I am logged in'",
-              "duration": 4565989999
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 32,
-            "match": {
-              "location": "features/step_definitions/account.rb:289"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 33,
-            "match": {
-              "location": "features/step_definitions/account.rb:262"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "line": 37,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_update",
-            "line": 35
-          },
-          {
-            "name": "@account_invoice",
-            "line": 36
-          }
-        ],
-        "id": "account;modify-adress-of-invoice",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 38,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:187"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x000000032befa0> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:38:in `Given I am logged in'",
-              "duration": 4919052518
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 39,
-            "match": {
-              "location": "features/step_definitions/account.rb:318"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 40,
-            "match": {
-              "location": "features/step_definitions/account.rb:262"
-            },
-            "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 542153641
             }
           }
         ]
@@ -1619,98 +1523,54 @@
             "line": 46,
             "output": [
               "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.pulsiva.com/de-de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x000000031ea868> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:46:in `Given I am logged in'",
-              "duration": 4563718081
+              "status": "passed",
+              "duration": 8932406975
             }
           },
           {
             "keyword": "When ",
             "name": "I modify my address for my delivery",
             "line": 47,
+            "output": [
+              "--> clicked button for change the adress for delivery",
+              "I change prefix of my address for delivery",
+              "--> select prefix:Frau",
+              "--> click change-button"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:350"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 7028812976
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
             "line": 48,
-            "match": {
-              "location": "features/step_definitions/account.rb:262"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "change settings for newsletter",
-        "line": 51,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_newsletter",
-            "line": 50
-          }
-        ],
-        "id": "account;change-settings-for-newsletter",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 52,
             "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
+              "> found info for success"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:187"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x0000000312a158> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:52:in `Given I am logged in'",
-              "duration": 4712992665
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 53,
-            "match": {
-              "location": "features/step_definitions/account.rb:383"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 54,
-            "match": {
               "location": "features/step_definitions/account.rb:262"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 296704032
             }
           }
         ]
@@ -1739,29 +1599,42 @@
             "line": 59,
             "output": [
               "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
+              "-> there exists an unique account",
+              "I login with valid informations",
+              "> ok, i am on https://www.pulsiva.com/de-de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x00000002b20190> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:59:in `Given I am logged in'",
-              "duration": 4347921672
+              "status": "passed",
+              "duration": 10181278679
             }
           },
           {
             "keyword": "When ",
             "name": "I get all items of the sidebar",
             "line": 60,
+            "output": [
+              "> menuitems:6",
+              "- account",
+              "- orders",
+              "- shipping",
+              "- payment",
+              "- wishlist",
+              "- logout"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:393"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 1364358476
             }
           }
         ]
@@ -1812,15 +1685,15 @@
             "name": "no user account with my email exists",
             "line": 12,
             "output": [
-              "UrlBackend:https://www.chefworks.de/",
-              "user eMail:testmail_chefworks@test.de"
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 3367616524
+              "duration": 6586467321
             }
           }
         ]
@@ -1845,73 +1718,131 @@
             "line": 16,
             "output": [
               "I already created an user account",
-              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "-> no unique account with customer:testmail_pde@test.de exists",
               "I am on the registration page",
-              "--> go to https://www.chefworks.de/account",
-              "I create a new account with my data"
+              "--> go to https://www.pulsiva.com/de-de/account",
+              "I create a new account with my data",
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva GmbH Test - eBusiness",
+              "chose company",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
+              "clicked button to continue",
+              "I log me out",
+              "--> logged me out",
+              "I am on the registration page",
+              "--> go to https://www.pulsiva.com/de-de/account",
+              "I login with valid informations",
+              "> ok, i am on https://www.pulsiva.com/de-de/account",
+              "-> set email",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "> the page contains testmail_pde@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x00000002785850> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/6.checkout.feature:16:in `Given I am logged in'",
-              "duration": 4903371041
+              "status": "passed",
+              "duration": 66598043229
             }
           },
           {
             "keyword": "And ",
             "name": "the product cart contains an article",
             "line": 17,
+            "output": [
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
+            ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 10423396795
             }
           },
           {
             "keyword": "And ",
             "name": "I am on the checkout page",
             "line": 18,
+            "output": [
+              "> ups, I am on https://www.pulsiva.com/de-de/checkout/cart",
+              "--> go to https://www.pulsiva.com/de-de/checkout",
+              "And the checkoutpage contains all elements"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:2"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6040050930
             }
           },
           {
             "keyword": "When ",
             "name": "I send my order",
             "line": 19,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on https://www.pulsiva.com/de-de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 5816506912
             }
           },
           {
             "keyword": "Then ",
             "name": "Shopware should have my order",
             "line": 20,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:198"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 10208127098
             }
           },
           {
             "keyword": "And ",
             "name": "no user account with my email exists",
             "line": 21,
+            "output": [
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6670789101
             }
           }
         ]
@@ -1935,16 +1866,16 @@
             "name": "the product cart contains an article",
             "line": 25,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4747609993
+              "duration": 7043380352
             }
           },
           {
@@ -1959,64 +1890,107 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1617758301
+              "duration": 2309688346
             }
           },
           {
             "keyword": "And ",
             "name": "I create a new account with my data",
             "line": 27,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva GmbH Test - eBusiness",
+              "chose company",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
+              "clicked button to continue"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:40"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x0000000114d218> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\nfeatures/base_features/6.checkout.feature:27:in `And I create a new account with my data'",
-              "duration": 196523
+              "status": "passed",
+              "duration": 48639814109
             }
           },
           {
             "keyword": "And ",
             "name": "I set payment and shipping",
             "line": 28,
+            "output": [
+              "-> choose payment",
+              "-> choose delivery",
+              "--> click button to continue"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:177"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 11768857412
             }
           },
           {
             "keyword": "When ",
             "name": "I send my order",
             "line": 29,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on https://www.pulsiva.com/de-de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6245207075
             }
           },
           {
             "keyword": "Then ",
             "name": "Shopware should have my order",
             "line": 30,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:198"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 10299372606
             }
           },
           {
             "keyword": "And ",
             "name": "no user account with my email exists",
             "line": 31,
+            "output": [
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6487708657
             }
           }
         ]
@@ -2040,16 +2014,16 @@
             "name": "the product cart contains an article",
             "line": 35,
             "output": [
-              "go to https://www.chefworks.de/",
-              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
-              "-> go to https://www.chefworks.de/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/",
+              "-> add article: https://www.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://www.pulsiva.com/de-de/checkout/cart"
             ],
             "match": {
               "location": "features/step_definitions/product_cart.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4324120133
+              "duration": 7434758021
             }
           },
           {
@@ -2064,64 +2038,106 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1963959196
+              "duration": 2605675528
             }
           },
           {
             "keyword": "When ",
             "name": "I fill out a register form and send it without creating an account",
             "line": 37,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 20004906",
+              "- set email: testmail_pde@test.de",
+              "- set phone: 01234567",
+              "- set company: Pulsiva GmbH Test - eBusiness",
+              "chose company",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Südwestpark",
+              "- set streetnumber: 44",
+              "- set postcode: 90449",
+              "- set city: Nürnberg",
+              "clicked button to continue"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:79"
             },
             "result": {
-              "status": "failed",
-              "error_message": "undefined method `taxid' for #<User:0x00000003c46848> (NoMethodError)\n./features/step_definitions/checkout.rb:85:in `/^I fill out a register form and send it without creating an account$/'\nfeatures/base_features/6.checkout.feature:37:in `When I fill out a register form and send it without creating an account'",
-              "duration": 224008
+              "status": "passed",
+              "duration": 42928497136
             }
           },
           {
             "keyword": "When ",
             "name": "I set payment and shipping",
             "line": 38,
+            "output": [
+              "-> choose payment",
+              "-> choose delivery",
+              "--> click button to continue"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:177"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 10585063584
             }
           },
           {
             "keyword": "When ",
             "name": "I send my order",
             "line": 39,
+            "output": [
+              "I am on the checkout page",
+              "> ok, I am on https://www.pulsiva.com/de-de/checkout",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "-> activate agb",
+              "--> click orderbutton"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:44"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6468688166
             }
           },
           {
             "keyword": "Then ",
             "name": "Shopware should have my order",
             "line": 40,
+            "output": [
+              "> found teaser for success",
+              ">> cancel orders of customer with email:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/checkout.rb:198"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 10608952808
             }
           },
           {
             "keyword": "And ",
             "name": "no user account with my email exists",
             "line": 41,
+            "output": [
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pde@test.de"
+            ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6417726788
             }
           }
         ]

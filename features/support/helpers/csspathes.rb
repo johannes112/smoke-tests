@@ -391,6 +391,7 @@ class Csspathes
     end     
     @account_registerform_taxid_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'taxid_path_p'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'taxid_path'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'taxid_path'
@@ -398,7 +399,7 @@ class Csspathes
     @account_registerform_taxvat_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#ustid'#'#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#ustid'
