@@ -106,11 +106,11 @@ class User
       when 'ch' then nil
       when 'it' then 'IT 02531440218'
       when 'fr' then 'FR14P422P876P383'
-      when 'no' then nil
-      when 'se' then nil
+      when 'no' then '999 204 252 MVA'
+      when 'se' then '556695-9234'
       when 'nl' then nil
-      when 'be' then nil
-      when 'es' then nil
+      when 'be' then 'FR14 422 876 383'
+      when 'es' then 'B63679427'
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil
