@@ -1,7 +1,7 @@
 #pulsiva
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
-                :postcode, :city, :telephone, :country_id, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname
+                :postcode, :city, :telephone, :country_id, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname
   
   def initialize
     @customer_number = case ENV['COUNTRY']
@@ -88,17 +88,29 @@ class User
       when 'be' then 'other'
       when 'es' then 'other'
     end
+    @taxid = case ENV['COUNTRY']
+      when 'de' then nil
+      when 'at' then nil
+      when 'ch' then nil
+      when 'it' then 'IT99999999999'
+      when 'fr' then nil
+      when 'no' then nil
+      when 'se' then nil
+      when 'nl' then '22065260'
+      when 'be' then nil
+      when 'es' then nil
+    end
     @taxvat = case ENV['COUNTRY']
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
       when 'it' then 'IT 02531440218'
       when 'fr' then 'FR14P422P876P383'
-      when 'no' then ''
-      when 'se' then ''
-      when 'nl' then ''
-      when 'be' then ''
-      when 'es' then ''
+      when 'no' then nil
+      when 'se' then nil
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil

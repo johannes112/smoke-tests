@@ -7,6 +7,1301 @@
       }
     ],
     "keyword": "Feature",
+    "name": "website_basics",
+    "line": 5,
+    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@website_basics",
+        "line": 4
+      }
+    ],
+    "id": "website-basics",
+    "uri": "features/base_features/0.website_basics.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 12,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 13,
+            "output": [
+              "go to https://www.chefworks.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 151388676330
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "check for elements",
+        "line": 17,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 15
+          },
+          {
+            "name": "@website_elements",
+            "line": 16
+          }
+        ],
+        "id": "website-basics;check-for-elements",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should be a basic elements",
+            "line": 18,
+            "output": [
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1598534593
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use hovermenu for navigating",
+        "line": 24,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 20
+          },
+          {
+            "name": "@navigation",
+            "line": 21
+          },
+          {
+            "name": "@menu",
+            "line": 22
+          },
+          {
+            "name": "@hovermenu",
+            "line": 23
+          }
+        ],
+        "id": "website-basics;use-hovermenu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the hovermenu",
+            "line": 25,
+            "output": [
+              "-> hovered menu",
+              "-> clicked on hovermenu"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3312359835
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 457355227
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use menu for navigating",
+        "line": 32,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 28
+          },
+          {
+            "name": "@navigation",
+            "line": 29
+          },
+          {
+            "name": "@menu",
+            "line": 30
+          },
+          {
+            "name": "@standardmenu",
+            "line": 31
+          }
+        ],
+        "id": "website-basics;use-menu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the menu",
+            "line": 33,
+            "output": [
+              "-> clicked category on menu",
+              "> found sidebar",
+              "-> closed hovermenu",
+              "-> clicked category on sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5013225477
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 473301849
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to account",
+        "line": 39,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 36
+          },
+          {
+            "name": "@navigation",
+            "line": 37
+          },
+          {
+            "name": "@links",
+            "line": 38
+          }
+        ],
+        "id": "website-basics;navigate-to-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my account",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/links.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1458178763
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the accountpage",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/links.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 290509510
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to note",
+        "line": 46,
+        "description": "",
+        "tags": [
+          {
+            "name": "@navigation",
+            "line": 44
+          },
+          {
+            "name": "@links",
+            "line": 45
+          }
+        ],
+        "id": "website-basics;navigate-to-note",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my notes",
+            "line": 47,
+            "match": {
+              "location": "features/step_definitions/links.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1390076404
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the notepage",
+            "line": 48,
+            "match": {
+              "location": "features/step_definitions/links.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 298730780
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "activate the cart",
+        "line": 53,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 50
+          },
+          {
+            "name": "@navigation",
+            "line": 51
+          },
+          {
+            "name": "@links",
+            "line": 52
+          }
+        ],
+        "id": "website-basics;activate-the-cart",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of the cart",
+            "line": 54,
+            "match": {
+              "location": "features/step_definitions/links.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 713625838
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 55,
+            "output": [
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 157421581
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the link to edit the cart",
+            "line": 56,
+            "match": {
+              "location": "features/step_definitions/links.rb:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1793561708
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the page of the productcart",
+            "line": 57,
+            "match": {
+              "location": "features/step_definitions/links.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 149598273
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to help",
+        "line": 62,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 59
+          },
+          {
+            "name": "@navigation",
+            "line": 60
+          },
+          {
+            "name": "@links",
+            "line": 61
+          }
+        ],
+        "id": "website-basics;navigate-to-help",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of help",
+            "line": 63,
+            "match": {
+              "location": "features/step_definitions/links.rb:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 515860051
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a contextmenu",
+            "line": 64,
+            "match": {
+              "location": "features/step_definitions/links.rb:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 148183597
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "search",
+    "line": 6,
+    "description": "\n  As a customer\n  i will be able to search for a specific product",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@search",
+        "line": 5
+      }
+    ],
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "search with sku",
+        "line": 11,
+        "description": "",
+        "id": "search;search-with-sku",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 12,
+            "output": [
+              "go to https://www.chefworks.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1507646282
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am for an product by entering the sku in the searchfield",
+            "line": 13,
+            "output": [
+              "- set sku = \"CBCCWHTXS\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3874238588
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 14,
+            "output": [
+              "found 'COLMAR'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 465744274
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "product page",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_page",
+        "line": 4
+      }
+    ],
+    "id": "product-page",
+    "uri": "features/base_features/3.product_page.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 10,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBCCWHTXS\"",
+              "clicked button of search",
+              "found 'COLMAR'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5410829545
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "notice an article",
+        "line": 15,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@product_page_note",
+            "line": 14
+          }
+        ],
+        "id": "product-page;notice-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the remember-button",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 355408087
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see a hint",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 649063041
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "compare an article",
+        "line": 21,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 19
+          },
+          {
+            "name": "@product_page_compare",
+            "line": 20
+          }
+        ],
+        "id": "product-page;compare-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the compare-button",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 495654572
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see the icon to compare",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 755908320
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "add an article to the product cart by clicking button",
+        "line": 27,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 25
+          },
+          {
+            "name": "@product_page_add",
+            "line": 26
+          }
+        ],
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to the product cart by clicking the button to push it into the cart",
+            "line": 28,
+            "output": [
+              "-> clicked buy button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 647757688
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the cart on the right of the site",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254999292
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display products with data",
+        "line": 33,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 31
+          },
+          {
+            "name": "@product_page_data",
+            "line": 32
+          }
+        ],
+        "id": "product-page;display-products-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary elememts for getting more informations about this article",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1447454135
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "rate an article with tab",
+        "line": 38,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 36
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 37
+          }
+        ],
+        "id": "product-page;rate-an-article-with-tab",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change in the tab to the rating",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 427940047
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 40,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 149872125
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "rate an article with button",
+        "line": 44,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 42
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 43
+          }
+        ],
+        "id": "product-page;rate-an-article-with-button",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the button to rate for the article",
+            "line": 45,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 517012977
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 46,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 406073467
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "customer seen article",
+        "line": 49,
+        "description": "",
+        "tags": [
+          {
+            "name": "@product_page_suggest",
+            "line": 48
+          }
+        ],
+        "id": "product-page;customer-seen-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change to the tab of the customer viewed articles",
+            "line": 50,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:150"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 499316683
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a box of some articles",
+            "line": 51,
+            "output": [
+              "found container list"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 156444746
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_cart",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/4.product_cart.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "continue shopping",
+        "line": 13,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 11
+          },
+          {
+            "name": "@product_cart_continue",
+            "line": 12
+          }
+        ],
+        "id": "account;continue-shopping",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart manually",
+            "line": 14,
+            "output": [
+              "I am on the product page of an article",
+              "go to https://www.chefworks.de/",
+              "- set sku = \"CBCCWHTXS\"",
+              "clicked button of search",
+              "found 'COLMAR'",
+              "I add an article to the product cart by clicking the button to push it into the cart",
+              "-> clicked buy button",
+              "I am on the product cart page",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7769444904
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on the button to continue shopping",
+            "line": 15,
+            "output": [
+              "--> clicked button for continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2247885714
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the back on the productsite",
+            "line": 16,
+            "output": [
+              "found 'COLMAR'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 266929925
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "add article additionally",
+        "line": 19,
+        "description": "",
+        "tags": [
+          {
+            "name": "@product_cart_add",
+            "line": 18
+          }
+        ],
+        "id": "account;add-article-additionally",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 20,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5560941696
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter a sku into the integrated field on the cart",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2586122407
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the add-action in the url",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:151"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 143692095
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "enter a code",
+        "line": 26,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 24
+          },
+          {
+            "name": "@product_cart_voucher",
+            "line": 25
+          }
+        ],
+        "id": "account;enter-a-code",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 27,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5344478660
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I activate the function for voucher",
+            "line": 28,
+            "output": [
+              "clicked checkbox"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:112"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 348729029
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter some code into the optional field",
+            "line": 29,
+            "output": [
+              "entered 266233",
+              "clicked add-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3170511021
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be the voucher-action in the url",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76279456
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "remove an article",
+        "line": 34,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 32
+          },
+          {
+            "name": "@product_cart_remove",
+            "line": 33
+          }
+        ],
+        "id": "account;remove-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 35,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4694967479
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I remove this article from the product cart",
+            "line": 36,
+            "output": [
+              "clicked icon"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 483576446
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the cart should not contain this article",
+            "line": 37,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1043078199
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display articles with data",
+        "line": 41,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 39
+          },
+          {
+            "name": "@product_cart_data",
+            "line": 40
+          }
+        ],
+        "id": "account;display-articles-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 42,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4168604410
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary informations about this article within the product list of the product cart",
+            "line": 43,
+            "output": [
+              "found product details",
+              "found product prices",
+              "found field for voucher"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 461558334
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to checkout",
+        "line": 47,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 45
+          },
+          {
+            "name": "@product_cart_checkout",
+            "line": 46
+          }
+        ],
+        "id": "account;navigate-to-checkout",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 48,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3964021435
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
+            "line": 49,
+            "output": [
+              "clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2025482804
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the checkout-page",
+            "line": 50,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:102"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 434779989
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
     "name": "account",
     "line": 5,
     "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
@@ -39,14 +1334,14 @@
             "name": "I am on the registration page",
             "line": 12,
             "output": [
-              "--> go to https://www.em-group.com/account"
+              "--> go to https://www.chefworks.de/account"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9957304481
+              "duration": 1397452946
             }
           }
         ]
@@ -74,59 +1369,39 @@
             "name": "no user account with my email exists",
             "line": 17,
             "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
+              "UrlBackend:https://www.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 7220436561
+              "duration": 3516242777
             }
           },
           {
             "keyword": "When ",
             "name": "I create a new account with my data",
             "line": 18,
-            "output": [
-              "- set prefix = \"Mr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "customernumber is not available in de",
-              "- set email: testmail_emg@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: ex_Test_eBusiness",
-              "- set department: eBusiness",
-              "taxvat is not available in de",
-              "- set street: Vegastr. 2",
-              "streetnumber is not available in de",
-              "- set postcode: 86637",
-              "- set city: Wertingen",
-              "clicked button to continue"
-            ],
             "match": {
               "location": "features/step_definitions/account.rb:40"
             },
             "result": {
-              "status": "passed",
-              "duration": 40307844921
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x0000000370c5d0> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\nfeatures/base_features/5.account.feature:18:in `When I create a new account with my data'",
+              "duration": 281187
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
             "line": 19,
-            "output": [
-              "> the page contains testmail_emg@test.de"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:131"
+              "location": "features/step_definitions/account.rb:135"
             },
             "result": {
-              "status": "passed",
-              "duration": 530216951
+              "status": "skipped"
             }
           }
         ]
@@ -154,47 +1429,40 @@
             "name": "I already created an user account",
             "line": 24,
             "output": [
-              "-> there exists an unique account"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:21"
             },
             "result": {
-              "status": "passed",
-              "duration": 3874318855
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x0000000358fd38> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\nfeatures/base_features/5.account.feature:24:in `And I already created an user account'",
+              "duration": 4591328021
             }
           },
           {
             "keyword": "When ",
             "name": "I login with valid informations",
             "line": 25,
-            "output": [
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:149"
+              "location": "features/step_definitions/account.rb:153"
             },
             "result": {
-              "status": "passed",
-              "duration": 4240520695
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on my account page",
             "line": 26,
-            "output": [
-              "> the page contains testmail_emg@test.de"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:131"
+              "location": "features/step_definitions/account.rb:135"
             },
             "result": {
-              "status": "passed",
-              "duration": 579792387
+              "status": "skipped"
             }
           }
         ]
@@ -223,53 +1491,40 @@
             "line": 31,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "passed",
-              "duration": 8064203476
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x00000003457420> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:31:in `Given I am logged in'",
+              "duration": 4565989999
             }
           },
           {
             "keyword": "When ",
             "name": "I modify my paymentinfo",
             "line": 32,
-            "output": [
-              "--> clicked button for change of payment",
-              "I change option of payment",
-              "--> chose checkbox for cash on delivery"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:285"
+              "location": "features/step_definitions/account.rb:289"
             },
             "result": {
-              "status": "passed",
-              "duration": 4569233645
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
             "line": 33,
-            "output": [
-              "> found info for success"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/account.rb:262"
             },
             "result": {
-              "status": "passed",
-              "duration": 324277266
+              "status": "skipped"
             }
           }
         ]
@@ -298,54 +1553,40 @@
             "line": 38,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "passed",
-              "duration": 8203452293
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x000000032befa0> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:38:in `Given I am logged in'",
+              "duration": 4919052518
             }
           },
           {
             "keyword": "When ",
             "name": "I modify my address for my bill",
             "line": 39,
-            "output": [
-              "--> clicked button for change the adress of billing",
-              "I change prefix of my address for invoice",
-              "--> select prefix:Mrs",
-              "--> click change-button"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:314"
+              "location": "features/step_definitions/account.rb:318"
             },
             "result": {
-              "status": "passed",
-              "duration": 4786728686
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
             "line": 40,
-            "output": [
-              "> found info for success"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/account.rb:262"
             },
             "result": {
-              "status": "passed",
-              "duration": 432715177
+              "status": "skipped"
             }
           }
         ]
@@ -378,54 +1619,40 @@
             "line": 46,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "passed",
-              "duration": 8672575577
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x000000031ea868> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:46:in `Given I am logged in'",
+              "duration": 4563718081
             }
           },
           {
             "keyword": "When ",
             "name": "I modify my address for my delivery",
             "line": 47,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "I change prefix of my address for delivery",
-              "--> select prefix:Mrs",
-              "--> click change-button"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:346"
+              "location": "features/step_definitions/account.rb:350"
             },
             "result": {
-              "status": "passed",
-              "duration": 5055019435
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
             "line": 48,
-            "output": [
-              "> found info for success"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/account.rb:262"
             },
             "result": {
-              "status": "passed",
-              "duration": 432328355
+              "status": "skipped"
             }
           }
         ]
@@ -450,51 +1677,40 @@
             "line": 52,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "passed",
-              "duration": 8292841760
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x0000000312a158> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:52:in `Given I am logged in'",
+              "duration": 4712992665
             }
           },
           {
             "keyword": "When ",
             "name": "I activate the newsletterbox",
             "line": 53,
-            "output": [
-              "--> activate the checkbox"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:379"
+              "location": "features/step_definitions/account.rb:383"
             },
             "result": {
-              "status": "passed",
-              "duration": 1732709691
+              "status": "skipped"
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a confirmation hint",
             "line": 54,
-            "output": [
-              "> found info for success"
-            ],
             "match": {
-              "location": "features/step_definitions/account.rb:258"
+              "location": "features/step_definitions/account.rb:262"
             },
             "result": {
-              "status": "passed",
-              "duration": 295481835
+              "status": "skipped"
             }
           }
         ]
@@ -523,43 +1739,389 @@
             "line": 59,
             "output": [
               "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, i am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:183"
+              "location": "features/step_definitions/account.rb:187"
             },
             "result": {
-              "status": "passed",
-              "duration": 8398302662
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x00000002b20190> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:59:in `Given I am logged in'",
+              "duration": 4347921672
             }
           },
           {
             "keyword": "When ",
             "name": "I get all items of the sidebar",
             "line": 60,
+            "match": {
+              "location": "features/step_definitions/account.rb:393"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "checkout",
+    "line": 6,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@checkout",
+        "line": 5
+      }
+    ],
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "no user account with my email exists",
+            "line": 12,
             "output": [
-              "> menuitems:7",
-              "- account",
-              "- orders",
-              "- billing",
-              "- shipping",
-              "- payment",
-              "- note",
-              "- logout"
+              "UrlBackend:https://www.chefworks.de/",
+              "user eMail:testmail_chefworks@test.de"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:389"
+              "location": "features/step_definitions/account.rb:11"
             },
             "result": {
               "status": "passed",
-              "duration": 1214253953
+              "duration": 3367616524
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout with existing account",
+        "line": 15,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_with",
+            "line": 14
+          }
+        ],
+        "id": "checkout;checkout-with-existing-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 16,
+            "output": [
+              "I already created an user account",
+              "-> no unique account with customer:testmail_chefworks@test.de exists",
+              "I am on the registration page",
+              "--> go to https://www.chefworks.de/account",
+              "I create a new account with my data"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:187"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x00000002785850> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:189:in `/^I am logged in$/'\nfeatures/base_features/6.checkout.feature:16:in `Given I am logged in'",
+              "duration": 4903371041
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the checkout page",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:198"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout without existing account and create an account",
+        "line": 24,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_registration",
+            "line": 23
+          }
+        ],
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 25,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4747609993
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 26,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1617758301
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I create a new account with my data",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/account.rb:40"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x0000000114d218> (NoMethodError)\n./features/step_definitions/account.rb:46:in `/^I create a new account with my data$/'\nfeatures/base_features/6.checkout.feature:27:in `And I create a new account with my data'",
+              "duration": 196523
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I set payment and shipping",
+            "line": 28,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:177"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:198"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 31,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout without existing account and without creating an account",
+        "line": 34,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_without",
+            "line": 33
+          }
+        ],
+        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 35,
+            "output": [
+              "go to https://www.chefworks.de/",
+              "-> add article: https://www.chefworks.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=CBCCWHTXS&sQuantity=2",
+              "-> go to https://www.chefworks.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4324120133
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 36,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1963959196
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill out a register form and send it without creating an account",
+            "line": 37,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:79"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "undefined method `taxid' for #<User:0x00000003c46848> (NoMethodError)\n./features/step_definitions/checkout.rb:85:in `/^I fill out a register form and send it without creating an account$/'\nfeatures/base_features/6.checkout.feature:37:in `When I fill out a register form and send it without creating an account'",
+              "duration": 224008
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I set payment and shipping",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:177"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:44"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:198"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
             }
           }
         ]
