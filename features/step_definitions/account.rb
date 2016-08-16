@@ -160,28 +160,33 @@ When(/^I login with valid informations$/) do
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
+  account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   
   if (current_url == url_account) 
-    puts "> ok, i am on #{current_url}"
+    puts "> ok, I am on #{current_url}"
   else
     puts "--> go to #{url_account}"
     visit(url_account)
   end
   
-  #search for field, so you know that we are on the right site
-  page.find(account_loginform_emailfield_path)
-  #set value for mail
-  element = page.find(account_loginform_emailfield_path)
-  element.set(email)
-  puts "-> set email"
-  #set value for password
-  element = page.find(account_loginform_passwordfield_path)
-  element.set(password)
-  puts "-> set password"
-  #click button
-  element = page.find(account_loginform_registerbutton_path)
-  element.click
-  puts "--> pushed button for registration"
+  if (page.has_css?(account_accountpage_welcome_path))
+    puts "> and I am already be in my account"
+  else
+    #search for field, so you know that we are on the right site
+    page.find(account_loginform_emailfield_path)
+    #set value for mail
+    element = page.find(account_loginform_emailfield_path)
+    element.set(email)
+    puts "-> set email"
+    #set value for password
+    element = page.find(account_loginform_passwordfield_path)
+    element.set(password)
+    puts "-> set password"
+    #click button
+    element = page.find(account_loginform_registerbutton_path)
+    element.click
+    puts "--> pushed button for registration"
+  end
 end
 
 Given(/^I am logged in$/) do
