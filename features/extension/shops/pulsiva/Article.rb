@@ -1,6 +1,6 @@
 #pulsiva
 class Article
-  attr_accessor :sub_category, :category, :sku, :amount, :name, :url_add_comand
+  attr_accessor :sub_category, :category, :category_language_changed, :sku, :amount, :name, :url_add_comand
   
   def initialize
     @sub_category = case ENV['COUNTRY']
@@ -26,6 +26,11 @@ class Article
       when (/nl/) then 'Bestek'
       when (/be/) then 'Couverts'
       when (/es/) then 'Cubiertos'
+    end
+    @category_language_changed = case ENV['COUNTRY']
+      when (/ch/) then 'Couverts'
+      when (/be/) then 'Bestek'
+      
     end
     @sku = case ENV['COUNTRY']
       when (/de/) then '20040136'#without i!

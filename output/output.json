@@ -8,20 +8,12 @@
     ],
     "keyword": "Feature",
     "name": "website_basics",
-    "line": 5,
+    "line": 3,
     "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
     "tags": [
       {
-        "name": "@export",
-        "line": 2
-      },
-      {
-        "name": "@chefworks",
-        "line": 3
-      },
-      {
         "name": "@website_basics",
-        "line": 4
+        "line": 2
       }
     ],
     "id": "website-basics",
@@ -30,23 +22,23 @@
       {
         "keyword": "Background",
         "name": "",
-        "line": 12,
+        "line": 10,
         "description": "",
         "type": "background",
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the website",
-            "line": 13,
+            "line": 11,
             "output": [
-              "go to https://www.em-group.com/"
+              "go to https://www.pulsiva.com/ch-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9935681155
+              "duration": 11475102151
             }
           }
         ]
@@ -57,6 +49,14 @@
         "line": 17,
         "description": "",
         "tags": [
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@chefworks",
+            "line": 14
+          },
           {
             "name": "@pulsiva",
             "line": 15
@@ -85,7 +85,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1182167980
+              "duration": 1591208434
             }
           }
         ]
@@ -93,24 +93,32 @@
       {
         "keyword": "Scenario",
         "name": "use hovermenu for navigating",
-        "line": 24,
+        "line": 26,
         "description": "",
         "tags": [
           {
-            "name": "@pulsiva",
+            "name": "@export",
             "line": 20
           },
           {
-            "name": "@navigation",
+            "name": "@chefworks",
             "line": 21
           },
           {
-            "name": "@menu",
+            "name": "@pulsiva",
             "line": 22
           },
           {
-            "name": "@hovermenu",
+            "name": "@navigation",
             "line": 23
+          },
+          {
+            "name": "@menu",
+            "line": 24
+          },
+          {
+            "name": "@hovermenu",
+            "line": 25
           }
         ],
         "id": "website-basics;use-hovermenu-for-navigating",
@@ -119,7 +127,7 @@
           {
             "keyword": "When ",
             "name": "I navigate to the category by the hovermenu",
-            "line": 25,
+            "line": 27,
             "output": [
               "-> hovered menu",
               "-> clicked on hovermenu"
@@ -129,19 +137,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3282890400
+              "duration": 4238752300
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the categorysite",
-            "line": 26,
+            "line": 28,
             "match": {
               "location": "features/step_definitions/menu.rb:61"
             },
             "result": {
               "status": "passed",
-              "duration": 463830722
+              "duration": 521769934
             }
           }
         ]
@@ -149,24 +157,32 @@
       {
         "keyword": "Scenario",
         "name": "use menu for navigating",
-        "line": 32,
+        "line": 36,
         "description": "",
         "tags": [
           {
-            "name": "@pulsiva",
-            "line": 28
-          },
-          {
-            "name": "@navigation",
-            "line": 29
-          },
-          {
-            "name": "@menu",
+            "name": "@export",
             "line": 30
           },
           {
-            "name": "@standardmenu",
+            "name": "@chefworks",
             "line": 31
+          },
+          {
+            "name": "@pulsiva",
+            "line": 32
+          },
+          {
+            "name": "@navigation",
+            "line": 33
+          },
+          {
+            "name": "@menu",
+            "line": 34
+          },
+          {
+            "name": "@standardmenu",
+            "line": 35
           }
         ],
         "id": "website-basics;use-menu-for-navigating",
@@ -175,7 +191,7 @@
           {
             "keyword": "When ",
             "name": "I navigate to the category by the menu",
-            "line": 33,
+            "line": 37,
             "output": [
               "-> clicked category on menu",
               "> found sidebar",
@@ -187,19 +203,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4239123019
+              "duration": 8439609670
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the categorysite",
-            "line": 34,
+            "line": 38,
             "match": {
               "location": "features/step_definitions/menu.rb:61"
             },
             "result": {
               "status": "passed",
-              "duration": 469916203
+              "duration": 465211120
             }
           }
         ]
@@ -207,20 +223,28 @@
       {
         "keyword": "Scenario",
         "name": "navigate to account",
-        "line": 39,
+        "line": 46,
         "description": "",
         "tags": [
           {
+            "name": "@export",
+            "line": 41
+          },
+          {
+            "name": "@chefworks",
+            "line": 42
+          },
+          {
             "name": "@pulsiva",
-            "line": 36
+            "line": 43
           },
           {
             "name": "@navigation",
-            "line": 37
+            "line": 44
           },
           {
             "name": "@links",
-            "line": 38
+            "line": 45
           }
         ],
         "id": "website-basics;navigate-to-account",
@@ -229,25 +253,25 @@
           {
             "keyword": "When ",
             "name": "I click the link to my account",
-            "line": 40,
+            "line": 47,
             "match": {
               "location": "features/step_definitions/links.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1858700870
+              "duration": 2376201628
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the accountpage",
-            "line": 41,
+            "line": 48,
             "match": {
               "location": "features/step_definitions/links.rb:10"
             },
             "result": {
               "status": "passed",
-              "duration": 285986135
+              "duration": 307878218
             }
           }
         ]
@@ -255,16 +279,24 @@
       {
         "keyword": "Scenario",
         "name": "navigate to note",
-        "line": 46,
+        "line": 54,
         "description": "",
         "tags": [
           {
+            "name": "@export",
+            "line": 50
+          },
+          {
+            "name": "@chefworks",
+            "line": 51
+          },
+          {
             "name": "@navigation",
-            "line": 44
+            "line": 52
           },
           {
             "name": "@links",
-            "line": 45
+            "line": 53
           }
         ],
         "id": "website-basics;navigate-to-note",
@@ -273,25 +305,25 @@
           {
             "keyword": "When ",
             "name": "I click the link to my notes",
-            "line": 47,
+            "line": 55,
             "match": {
               "location": "features/step_definitions/links.rb:21"
             },
             "result": {
               "status": "passed",
-              "duration": 1667684035
+              "duration": 3931123636
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the notepage",
-            "line": 48,
+            "line": 56,
             "match": {
               "location": "features/step_definitions/links.rb:29"
             },
             "result": {
               "status": "passed",
-              "duration": 289017575
+              "duration": 318519056
             }
           }
         ]
@@ -299,20 +331,28 @@
       {
         "keyword": "Scenario",
         "name": "activate the cart",
-        "line": 53,
+        "line": 63,
         "description": "",
         "tags": [
           {
+            "name": "@export",
+            "line": 58
+          },
+          {
+            "name": "@chefworks",
+            "line": 59
+          },
+          {
             "name": "@pulsiva",
-            "line": 50
+            "line": 60
           },
           {
             "name": "@navigation",
-            "line": 51
+            "line": 61
           },
           {
             "name": "@links",
-            "line": 52
+            "line": 62
           }
         ],
         "id": "website-basics;activate-the-cart",
@@ -321,19 +361,19 @@
           {
             "keyword": "When ",
             "name": "I click the link of the cart",
-            "line": 54,
+            "line": 64,
             "match": {
               "location": "features/step_definitions/links.rb:40"
             },
             "result": {
               "status": "passed",
-              "duration": 599411180
+              "duration": 1314288651
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see the sidebar of the product cart",
-            "line": 55,
+            "line": 65,
             "output": [
               "> found sidebar"
             ],
@@ -342,31 +382,31 @@
             },
             "result": {
               "status": "passed",
-              "duration": 236314044
+              "duration": 168227501
             }
           },
           {
             "keyword": "When ",
             "name": "I click the link to edit the cart",
-            "line": 56,
+            "line": 66,
             "match": {
               "location": "features/step_definitions/links.rb:56"
             },
             "result": {
               "status": "passed",
-              "duration": 21061459384
+              "duration": 2381458274
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the page of the productcart",
-            "line": 57,
+            "line": 67,
             "match": {
               "location": "features/step_definitions/links.rb:65"
             },
             "result": {
               "status": "passed",
-              "duration": 157785055
+              "duration": 162501391
             }
           }
         ]
@@ -374,20 +414,28 @@
       {
         "keyword": "Scenario",
         "name": "navigate to help",
-        "line": 62,
+        "line": 74,
         "description": "",
         "tags": [
           {
+            "name": "@export",
+            "line": 69
+          },
+          {
+            "name": "@chefworks",
+            "line": 70
+          },
+          {
             "name": "@pulsiva",
-            "line": 59
+            "line": 71
           },
           {
             "name": "@navigation",
-            "line": 60
+            "line": 72
           },
           {
             "name": "@links",
-            "line": 61
+            "line": 73
           }
         ],
         "id": "website-basics;navigate-to-help",
@@ -396,1877 +444,91 @@
           {
             "keyword": "When ",
             "name": "I click the link of help",
-            "line": 63,
+            "line": 75,
             "match": {
               "location": "features/step_definitions/links.rb:72"
             },
             "result": {
               "status": "passed",
-              "duration": 368758371
+              "duration": 396018497
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see a contextmenu",
-            "line": 64,
+            "line": 76,
             "match": {
               "location": "features/step_definitions/links.rb:80"
             },
             "result": {
               "status": "passed",
-              "duration": 155578971
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "value": "# language: en",
-        "line": 1
-      }
-    ],
-    "keyword": "Feature",
-    "name": "search",
-    "line": 6,
-    "description": "\n  As a customer\n  i will be able to search for a specific product",
-    "tags": [
-      {
-        "name": "@pulsiva",
-        "line": 2
-      },
-      {
-        "name": "@export",
-        "line": 3
-      },
-      {
-        "name": "@chefworks",
-        "line": 4
-      },
-      {
-        "name": "@search",
-        "line": 5
-      }
-    ],
-    "id": "search",
-    "uri": "features/base_features/1.search.feature",
-    "elements": [
-      {
-        "keyword": "Scenario",
-        "name": "search with sku",
-        "line": 11,
-        "description": "",
-        "id": "search;search-with-sku",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 12,
-            "output": [
-              "go to https://www.em-group.com/"
-            ],
-            "match": {
-              "location": "features/step_definitions/global.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 13698378401
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I am for an product by entering the sku in the searchfield",
-            "line": 13,
-            "output": [
-              "- set sku = \"22147\"",
-              "clicked button of search"
-            ],
-            "match": {
-              "location": "features/step_definitions/search.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3737396821
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the detailsite of the related product",
-            "line": 14,
-            "output": [
-              "found 'STOCKHOLM'"
-            ],
-            "match": {
-              "location": "features/step_definitions/search.rb:20"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 251441048
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "value": "# language: en",
-        "line": 1
-      }
-    ],
-    "keyword": "Feature",
-    "name": "product page",
-    "line": 5,
-    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
-    "tags": [
-      {
-        "name": "@pulsiva",
-        "line": 2
-      },
-      {
-        "name": "@chefworks",
-        "line": 3
-      },
-      {
-        "name": "@product_page",
-        "line": 4
-      }
-    ],
-    "id": "product-page",
-    "uri": "features/base_features/3.product_page.feature",
-    "elements": [
-      {
-        "keyword": "Background",
-        "name": "",
-        "line": 10,
-        "description": "",
-        "type": "background",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the product page of an article",
-            "line": 11,
-            "output": [
-              "go to https://www.em-group.com/",
-              "- set sku = \"22147\"",
-              "clicked button of search",
-              "found 'STOCKHOLM'"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4995965585
+              "duration": 141012475
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "notice an article",
-        "line": 15,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 13
-          },
-          {
-            "name": "@product_page_note",
-            "line": 14
-          }
-        ],
-        "id": "product-page;notice-an-article",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I press the remember-button",
-            "line": 16,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:91"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 358357687
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should see a hint",
-            "line": 17,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:100"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 725956125
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "compare an article",
-        "line": 21,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 19
-          },
-          {
-            "name": "@product_page_compare",
-            "line": 20
-          }
-        ],
-        "id": "product-page;compare-an-article",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I press the compare-button",
-            "line": 22,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:108"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 511799527
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should see the icon to compare",
-            "line": 23,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:117"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 774045040
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "add an article to the product cart by clicking button",
-        "line": 27,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 25
-          },
-          {
-            "name": "@product_page_add",
-            "line": 26
-          }
-        ],
-        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I add an article to the product cart by clicking the button to push it into the cart",
-            "line": 28,
-            "output": [
-              "-> clicked buy button"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:8"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 640893242
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see the cart on the right of the site",
-            "line": 29,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 177096644
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "display products with data",
-        "line": 33,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 31
-          },
-          {
-            "name": "@product_page_data",
-            "line": 32
-          }
-        ],
-        "id": "product-page;display-products-with-data",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Then ",
-            "name": "I should see all necessary elememts for getting more informations about this article",
-            "line": 34,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:50"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1325259022
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "rate an article with tab",
-        "line": 38,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 36
-          },
-          {
-            "name": "@product_page_rate",
-            "line": 37
-          }
-        ],
-        "id": "product-page;rate-an-article-with-tab",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I change in the tab to the rating",
-            "line": 39,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:133"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 392750835
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be a form for rating the article",
-            "line": 40,
-            "output": [
-              "found form to rate"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:142"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 157962908
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "rate an article with button",
-        "line": 44,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 42
-          },
-          {
-            "name": "@product_page_rate",
-            "line": 43
-          }
-        ],
-        "id": "product-page;rate-an-article-with-button",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the button to rate for the article",
-            "line": 45,
-            "match": {
-              "location": "features/step_definitions/product_page.rb:125"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 449002427
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be a form for rating the article",
-            "line": 46,
-            "output": [
-              "found form to rate"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_page.rb:142"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 184173351
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "value": "# language: en",
-        "line": 1
-      }
-    ],
-    "keyword": "Feature",
-    "name": "account",
-    "line": 5,
-    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
-    "tags": [
-      {
-        "name": "@export",
-        "line": 2
-      },
-      {
-        "name": "@chefworks",
-        "line": 3
-      },
-      {
-        "name": "@product_cart",
-        "line": 4
-      }
-    ],
-    "id": "account",
-    "uri": "features/base_features/4.product_cart.feature",
-    "elements": [
-      {
-        "keyword": "Scenario",
-        "name": "continue shopping",
-        "line": 13,
+        "name": "change the language",
+        "line": 80,
         "description": "",
         "tags": [
           {
             "name": "@pulsiva",
-            "line": 11
+            "line": 78
           },
           {
-            "name": "@product_cart_continue",
-            "line": 12
+            "name": "@language_changer",
+            "line": 79
           }
         ],
-        "id": "account;continue-shopping",
+        "id": "website-basics;change-the-language",
         "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
-            "name": "I add an article to my cart manually",
-            "line": 14,
+            "name": "I change the language by clicking the button",
+            "line": 81,
             "output": [
-              "I am on the product page of an article",
-              "go to https://www.em-group.com/",
-              "- set sku = \"22147\"",
-              "clicked button of search",
-              "found 'STOCKHOLM'",
-              "I add an article to the product cart by clicking the button to push it into the cart",
-              "-> clicked buy button",
-              "I am on the product cart page",
-              "-> go to https://www.em-group.com/checkout/cart"
+              "> change language to Francais",
+              "> selected Francais"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:16"
+              "location": "features/step_definitions/website_basics.rb:28"
             },
             "result": {
               "status": "passed",
-              "duration": 8812741029
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I click on the button to continue shopping",
-            "line": 15,
-            "output": [
-              "--> clicked button for continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:38"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2521739360
+              "duration": 4141828851
             }
           },
           {
             "keyword": "Then ",
-            "name": "I will see the back on the productsite",
-            "line": 16,
+            "name": "the url should has changed",
+            "line": 82,
             "output": [
-              "found 'STOCKHOLM'"
+              "> current url: https://www.pulsiva.com/ch-fr"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:46"
+              "location": "features/step_definitions/website_basics.rb:51"
             },
             "result": {
               "status": "passed",
-              "duration": 219269165
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "add article additionally",
-        "line": 19,
-        "description": "",
-        "tags": [
-          {
-            "name": "@product_cart_add",
-            "line": 18
-          }
-        ],
-        "id": "account;add-article-additionally",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 20,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9606738294
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I enter a sku into the integrated field on the cart",
-            "line": 21,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:140"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3981157042
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I will see the add-action in the url",
-            "line": 22,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:151"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 138400890
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "enter a code",
-        "line": 26,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 24
-          },
-          {
-            "name": "@product_cart_voucher",
-            "line": 25
-          }
-        ],
-        "id": "account;enter-a-code",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 27,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 62150478900
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the function for voucher",
-            "line": 28,
-            "output": [
-              "clicked checkbox"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:112"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 373150188
+              "duration": 144527542
             }
           },
           {
             "keyword": "And ",
-            "name": "I enter some code into the optional field",
-            "line": 29,
+            "name": "the menu is in specific language",
+            "line": 83,
             "output": [
-              "entered 266233",
-              "clicked add-button"
+              "found category 'Couverts'"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:120"
+              "location": "features/step_definitions/website_basics.rb:64"
             },
             "result": {
               "status": "passed",
-              "duration": 3541065712
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "there should be the voucher-action in the url",
-            "line": 30,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:133"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 72374945
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "remove an article",
-        "line": 34,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 32
-          },
-          {
-            "name": "@product_cart_remove",
-            "line": 33
-          }
-        ],
-        "id": "account;remove-an-article",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 35,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6805422819
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I remove this article from the product cart",
-            "line": 36,
-            "output": [
-              "clicked icon"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:62"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1973330618
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "the cart should not contain this article",
-            "line": 37,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:70"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 78715818
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "display articles with data",
-        "line": 41,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 39
-          },
-          {
-            "name": "@product_cart_data",
-            "line": 40
-          }
-        ],
-        "id": "account;display-articles-with-data",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 42,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 8142733810
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see all necessary informations about this article within the product list of the product cart",
-            "line": 43,
-            "output": [
-              "found product details",
-              "found product prices",
-              "found field for voucher"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:77"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 507159441
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "navigate to checkout",
-        "line": 47,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 45
-          },
-          {
-            "name": "@product_cart_checkout",
-            "line": 46
-          }
-        ],
-        "id": "account;navigate-to-checkout",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "the product cart contains an article",
-            "line": 48,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7740149396
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
-            "line": 49,
-            "output": [
-              "clicked button"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:93"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1968872010
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the checkout-page",
-            "line": 50,
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:102"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 290151527
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "value": "# language: en",
-        "line": 1
-      }
-    ],
-    "keyword": "Feature",
-    "name": "account",
-    "line": 5,
-    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
-    "tags": [
-      {
-        "name": "@export",
-        "line": 2
-      },
-      {
-        "name": "@chefworks",
-        "line": 3
-      },
-      {
-        "name": "@account",
-        "line": 4
-      }
-    ],
-    "id": "account",
-    "uri": "features/base_features/5.account.feature",
-    "elements": [
-      {
-        "keyword": "Background",
-        "name": "",
-        "line": 11,
-        "description": "",
-        "type": "background",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 12,
-            "output": [
-              "--> go to https://www.em-group.com/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1535799163
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "create new account",
-        "line": 16,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 14
-          },
-          {
-            "name": "@account_registration",
-            "line": 15
-          }
-        ],
-        "id": "account;create-new-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 17,
-            "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 28116191840
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I create a new account with my data",
-            "line": 18,
-            "output": [
-              "- set prefix = \"Mr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "customernumber is not available in de",
-              "- set email: testmail_emg@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: ex_Test_eBusiness",
-              "- set department: eBusiness",
-              "taxid is not available in de",
-              "taxvat is not available in de",
-              "- set street: Vegastr. 2",
-              "streetnumber is not available in de",
-              "- set postcode: 86637",
-              "- set city: Wertingen",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43607431354
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 19,
-            "output": [
-              "> the page contains testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:135"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 541343983
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "login with existing account",
-        "line": 23,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 21
-          },
-          {
-            "name": "@account_login",
-            "line": 22
-          }
-        ],
-        "id": "account;login-with-existing-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "And ",
-            "name": "I already created an user account",
-            "line": 24,
-            "match": {
-              "location": "features/step_definitions/account.rb:21"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "Connection refused - connect(2) for \"www.em-group.com\" port 443 (Errno::ECONNREFUSED)\n./features/support/shopware/shopware_api.rb:19:in `readData'\n./features/support/shopware/shopware_functions.rb:45:in `getCustomerIdByMail'\n./features/step_definitions/account.rb:24:in `/^I already created an user account$/'\nfeatures/base_features/5.account.feature:24:in `And I already created an user account'",
-              "duration": 22518930109
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 25,
-            "match": {
-              "location": "features/step_definitions/account.rb:153"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 26,
-            "match": {
-              "location": "features/step_definitions/account.rb:135"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify payment in my account",
-        "line": 30,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_update",
-            "line": 28
-          },
-          {
-            "name": "@account_payment",
-            "line": 29
-          }
-        ],
-        "id": "account;modify-payment-in-my-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 31,
-            "output": [
-              "I already created an user account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "Connection refused - connect(2) for \"www.em-group.com\" port 443 (Errno::ECONNREFUSED)\n./features/support/shopware/shopware_api.rb:19:in `readData'\n./features/support/shopware/shopware_functions.rb:45:in `getCustomerIdByMail'\n./features/step_definitions/account.rb:24:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:194:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:31:in `Given I am logged in'",
-              "duration": 2132714434
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 32,
-            "match": {
-              "location": "features/step_definitions/account.rb:294"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 33,
-            "match": {
-              "location": "features/step_definitions/account.rb:267"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "line": 37,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_update",
-            "line": 35
-          },
-          {
-            "name": "@account_invoice",
-            "line": 36
-          }
-        ],
-        "id": "account;modify-adress-of-invoice",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 38,
-            "output": [
-              "I already created an user account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "Connection refused - connect(2) for \"www.em-group.com\" port 443 (Errno::ECONNREFUSED)\n./features/support/shopware/shopware_api.rb:19:in `readData'\n./features/support/shopware/shopware_functions.rb:45:in `getCustomerIdByMail'\n./features/step_definitions/account.rb:24:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:194:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:38:in `Given I am logged in'",
-              "duration": 2131934514
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 39,
-            "match": {
-              "location": "features/step_definitions/account.rb:323"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 40,
-            "match": {
-              "location": "features/step_definitions/account.rb:267"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of delivery",
-        "line": 45,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 42
-          },
-          {
-            "name": "@account_update",
-            "line": 43
-          },
-          {
-            "name": "@account_delivery",
-            "line": 44
-          }
-        ],
-        "id": "account;modify-adress-of-delivery",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 46,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38862200366
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my delivery",
-            "line": 47,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "I change prefix of my address for delivery",
-              "--> select prefix:Mrs",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:355"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9673150894
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 48,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:267"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 377903024
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "change settings for newsletter",
-        "line": 51,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account_newsletter",
-            "line": 50
-          }
-        ],
-        "id": "account;change-settings-for-newsletter",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 52,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 39158915285
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 53,
-            "output": [
-              "--> activate the checkbox"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:388"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1962046402
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 54,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:267"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 301764974
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "test links on the accountsite",
-        "line": 58,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 56
-          },
-          {
-            "name": "@account_links",
-            "line": 57
-          }
-        ],
-        "id": "account;test-links-on-the-accountsite",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 59,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 41647735874
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I get all items of the sidebar",
-            "line": 60,
-            "output": [
-              "> menuitems:7",
-              "- account",
-              "- orders",
-              "- billing",
-              "- shipping",
-              "- payment",
-              "- note",
-              "- logout"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:398"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1186472139
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "value": "# language: en",
-        "line": 1
-      }
-    ],
-    "keyword": "Feature",
-    "name": "checkout",
-    "line": 6,
-    "description": "\nAs a customer,\nI want to be able to order my favorite products",
-    "tags": [
-      {
-        "name": "@pulsiva",
-        "line": 2
-      },
-      {
-        "name": "@export",
-        "line": 3
-      },
-      {
-        "name": "@chefworks",
-        "line": 4
-      },
-      {
-        "name": "@checkout",
-        "line": 5
-      }
-    ],
-    "id": "checkout",
-    "uri": "features/base_features/6.checkout.feature",
-    "elements": [
-      {
-        "keyword": "Background",
-        "name": "",
-        "line": 11,
-        "description": "",
-        "type": "background",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "no user account with my email exists",
-            "line": 12,
-            "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7203034464
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "checkout with existing account",
-        "line": 15,
-        "description": "",
-        "tags": [
-          {
-            "name": "@checkout_with",
-            "line": 14
-          }
-        ],
-        "id": "checkout;checkout-with-existing-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 16,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_emg@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.em-group.com/account",
-              "I create a new account with my data",
-              "- set prefix = \"Mr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "customernumber is not available in de",
-              "- set email: testmail_emg@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: ex_Test_eBusiness",
-              "- set department: eBusiness",
-              "taxid is not available in de",
-              "taxvat is not available in de",
-              "- set street: Vegastr. 2",
-              "streetnumber is not available in de",
-              "- set postcode: 86637",
-              "- set city: Wertingen",
-              "clicked button to continue",
-              "I log me out",
-              "--> logged me out",
-              "I am on the registration page",
-              "--> go to https://www.em-group.com/account",
-              "I login with valid informations",
-              "> ok, I am on https://www.em-group.com/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 84922500877
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 17,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 32417897369
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am on the checkout page",
-            "line": 18,
-            "output": [
-              "> ups, I am on https://www.em-group.com/checkout/cart",
-              "--> go to https://www.em-group.com/checkout",
-              "And the checkoutpage contains all elements"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 9238640263
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 19,
-            "output": [
-              "I am on the checkout page",
-              "> ok, I am on https://www.em-group.com/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "--> click orderbutton"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:44"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3968099239
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 20,
-            "output": [
-              "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:198"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 11369688497
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 21,
-            "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7128051967
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "checkout without existing account and create an account",
-        "line": 24,
-        "description": "",
-        "tags": [
-          {
-            "name": "@checkout_registration",
-            "line": 23
-          }
-        ],
-        "id": "checkout;checkout-without-existing-account-and-create-an-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 25,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6771763222
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I go to the checkout",
-            "line": 26,
-            "output": [
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:67"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1924213192
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I create a new account with my data",
-            "line": 27,
-            "output": [
-              "- set prefix = \"Mr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "customernumber is not available in de",
-              "- set email: testmail_emg@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: ex_Test_eBusiness",
-              "- set department: eBusiness",
-              "taxid is not available in de",
-              "taxvat is not available in de",
-              "- set street: Vegastr. 2",
-              "streetnumber is not available in de",
-              "- set postcode: 86637",
-              "- set city: Wertingen",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43411285431
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I set payment and shipping",
-            "line": 28,
-            "output": [
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:177"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12316270165
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 29,
-            "output": [
-              "I am on the checkout page",
-              "> ups, I am on https://www.em-group.com/en/checkout",
-              "--> go to https://www.em-group.com/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "--> click orderbutton"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:44"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7864533894
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 30,
-            "output": [
-              "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:198"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 11781856408
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 31,
-            "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7595221857
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "checkout without existing account and without creating an account",
-        "line": 34,
-        "description": "",
-        "tags": [
-          {
-            "name": "@checkout_without",
-            "line": 33
-          }
-        ],
-        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 35,
-            "output": [
-              "go to https://www.em-group.com/",
-              "-> add article: https://www.em-group.com/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=22147&sQuantity=2",
-              "-> go to https://www.em-group.com/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7147584581
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I go to the checkout",
-            "line": 36,
-            "output": [
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:67"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2179987674
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I fill out a register form and send it without creating an account",
-            "line": 37,
-            "output": [
-              "- set prefix = \"Mr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "customernumber is not available in de",
-              "- set email: testmail_emg@test.de",
-              "- set phone: 01234567",
-              "- set company: ex_Test_eBusiness",
-              "- set department: eBusiness",
-              "taxid is not available in de",
-              "taxvat is not available in de",
-              "- set street: Vegastr. 2",
-              "streetnumber is not available in de",
-              "- set postcode: 86637",
-              "- set city: Wertingen",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:79"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38649759772
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I set payment and shipping",
-            "line": 38,
-            "output": [
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:177"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21437097675
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 39,
-            "output": [
-              "I am on the checkout page",
-              "> ups, I am on https://www.em-group.com/en/checkout",
-              "--> go to https://www.em-group.com/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "--> click orderbutton"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:44"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7657523393
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 40,
-            "output": [
-              "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:198"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 11750811355
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 41,
-            "output": [
-              "UrlBackend:https://www.em-group.com/",
-              "user eMail:testmail_emg@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7164541508
+              "duration": 357996954
             }
           }
         ]

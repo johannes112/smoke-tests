@@ -1,6 +1,4 @@
 # language: en
-@export
-@chefworks
 @website_basics
 Feature: website_basics
 
@@ -12,11 +10,15 @@ Feature: website_basics
     Background:
       Given I am on the website
 
+    @export
+    @chefworks
     @pulsiva
     @website_elements
     Scenario: check for elements
         Then I should be a basic elements
-    
+
+    @export
+    @chefworks
     @pulsiva
     @navigation
     @menu
@@ -24,7 +26,9 @@ Feature: website_basics
     Scenario: use hovermenu for navigating
 		When I navigate to the category by the hovermenu
 		Then I should be on the categorysite
-		
+
+    @export
+    @chefworks	
     @pulsiva
     @navigation
     @menu
@@ -33,6 +37,9 @@ Feature: website_basics
 		When I navigate to the category by the menu
 		Then I should be on the categorysite
     
+    
+    @export
+    @chefworks
     @pulsiva
     @navigation
     @links
@@ -40,13 +47,16 @@ Feature: website_basics
         When I click the link to my account
         Then I should be on the accountpage
         
-    
+    @export
+    @chefworks
     @navigation
     @links
     Scenario: navigate to note
         When I click the link to my notes
         Then I should be on the notepage
         
+    @export
+    @chefworks
     @pulsiva
     @navigation
     @links
@@ -56,9 +66,18 @@ Feature: website_basics
         When I click the link to edit the cart
         Then I should be on the page of the productcart
 
+    @export
+    @chefworks
     @pulsiva
     @navigation
     @links
     Scenario: navigate to help
         When I click the link of help
         Then I should see a contextmenu
+
+    @pulsiva
+    @language_changer
+    Scenario: change the language
+        When I change the language by clicking the button
+        Then the url should has changed
+        And the menu is in specific language

@@ -24,3 +24,56 @@ Then(/^I should be a basic elements$/) do
       "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
   puts "footer exists"
 end
+
+When(/^I change the language by clicking the button$/) do
+  #var
+  language_change_to = user.language_change_to
+  
+  #pathes
+  homepage_content_navi_language_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry'
+  homepage_content_navi_language_option_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select'
+  homepage_content_navi_language_options_selects_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > select > option'
+
+  if language_change_to
+    puts "> change language to #{language_change_to}"
+    page.find(homepage_content_navi_language_path)
+    element = page.find(homepage_content_navi_language_option_path)
+    element.click
+    #select language
+    element = find(homepage_content_navi_language_options_selects_path, :text => language_change_to)
+    element.click
+    puts "> selected #{language_change_to}"
+  else 
+    puts "> in the shop of this country I can not change the language"
+  end
+end
+
+Then(/^the url should has changed$/) do
+  #var
+  language_change_to = user.language_change_to
+  country_contraction_language_change_to = user.country_contraction_language_change_to
+  
+  if language_change_to
+    url = current_url
+    puts "> current url: #{url}"
+    expect(url).to include(country_contraction_language_change_to), 
+       "expected new url includes '#{country_contraction_language_change_to}' but it is '#{current_url}'"
+  end
+end
+
+Then(/^the menu is in specific language$/) do
+  #var
+  language_change_to = user.language_change_to
+  category_language_changed = article.category_language_changed
+  
+  #pathes
+  navigation_menu_path = csspathes.navigation_menu_path
+  
+  if language_change_to
+    navigation = page.find(navigation_menu_path)
+    navigation_txt = navigation.text
+    expect(navigation_txt).to include(category_language_changed),
+       "expected to find the category '#{category_language_changed}' but I only found #{navigation_txt}"
+    puts "found category '#{category_language_changed}'"
+  end
+end
