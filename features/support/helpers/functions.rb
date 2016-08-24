@@ -86,3 +86,17 @@ def setAtrributOfArticle(var_text, variable, var_path)
     puts "#{var_text} is not available in #{ENV['COUNTRY']}"
   end
 end
+
+#chech if all links go to the equal shop (of country)
+def look_for_string_in_array(array_source, string_content)
+  check = Array.new
+  array_source.each { |z| check << z.include?(string_content)}
+  # if array_source include string_content
+  check_value = check.all?{|x| x == true}
+  if (check_value==true)
+    puts "> All links include '#{string_content}'"
+  else
+    raise ("Smme links are bad!")
+    puts "ERROR some links are wrong"
+  end
+end

@@ -1,6 +1,6 @@
 if ENV['DRIVER'] == 'saucelabs'
   require 'sauce/capybara'
-    require 'capybara/cucumber'
+  require 'capybara/cucumber'
   module Saucelabs_config
     Capybara.default_selector = :css
     Capybara.default_driver = :sauce

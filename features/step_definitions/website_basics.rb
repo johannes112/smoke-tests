@@ -77,3 +77,14 @@ Then(/^the menu is in specific language$/) do
     puts "found category '#{category_language_changed}'"
   end
 end
+
+When(/^I check all links for correct country$/) do
+  country_contraction = ENV['COUNTRY']
+  #get links
+  puts "digital publishing: "
+  links_digital_publishing = page.all('.dig-pub > div > div > div > a', :visible => false).map { |a| a['href'] }
+  look_for_string_in_array(links_digital_publishing, country_contraction)
+  puts "product info links: "
+  links_products = page.all('.product--info > a', :visible => false).map { |a| a['href'] }
+  look_for_string_in_array(links_products, country_contraction)
+end

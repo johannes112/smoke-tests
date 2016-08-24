@@ -75,9 +75,19 @@ Feature: website_basics
         When I click the link of help
         Then I should see a contextmenu
 
+    @export
+    @chefworks
+    @pulsiva
+    @navigation
+    @link_checker
+    Scenario: find all links
+        When I check all links for correct country
+
+
     @pulsiva
     @language_changer
     Scenario: change the language
         When I change the language by clicking the button
         Then the url should has changed
         And the menu is in specific language
+
