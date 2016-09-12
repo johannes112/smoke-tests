@@ -96,7 +96,7 @@ def look_for_string_in_array(array_source, string_content)
   if (check_value==true)
     puts "> All links include '#{string_content}'"
   else
-    raise ("Smme links are bad!")
+    raise ("Some links are bad!")
     puts "ERROR some links are wrong"
   end
 end

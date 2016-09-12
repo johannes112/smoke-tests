@@ -75,7 +75,7 @@ Feature: website_basics
         When I click the link of help
         Then I should see a contextmenu
 
-    @export
+
     @chefworks
     @pulsiva
     @navigation

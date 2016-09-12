@@ -1,13 +1,19 @@
 #checkout
 Given(/^I am on the checkout page$/) do
   url_checkout = settings.urlHttps+'checkout'
+  checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path
   
   if (current_url == url_checkout) 
     puts "> ok, I am on #{current_url}"
   else
     puts "> ups, I am on #{current_url}"
-    puts "--> go to #{url_checkout}"
-    visit(url_checkout)
+    puts "--> click continue"
+    element = page.find(checkout_checkout_proceed_button_path, match: :first)
+    element.click
+    puts "-> set payment"
+    step("I set payment and shipping")
+    #puts "--> go to #{url_checkout}"
+    #visit(url_checkout)
   end
   puts "And the checkoutpage contains all elements"
   step("the checkoutpage contains all elements")
@@ -43,7 +49,6 @@ end
 
 When(/^I send my order$/) do
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path 
-  
   puts "I am on the checkout page"
   step("I am on the checkout page")
   puts "I activate the box of agb"
