@@ -7,17 +7,25 @@
       }
     ],
     "keyword": "Feature",
-    "name": "website_basics",
-    "line": 3,
-    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
+    "name": "product page",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
     "tags": [
       {
-        "name": "@website_basics",
+        "name": "@pulsiva",
         "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_page",
+        "line": 4
       }
     ],
-    "id": "website-basics",
-    "uri": "features/base_features/0.website_basics.feature",
+    "id": "product-page",
+    "uri": "features/base_features/3.product_page.feature",
     "elements": [
       {
         "keyword": "Background",
@@ -28,546 +36,67 @@
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
+            "name": "I am on the product page of an article",
             "line": 11,
             "output": [
-              "go to https://www.pulsiva.com/at-de/"
+              "go to https://www.pulsiva.com/de-de/",
+              "- set sku = \"20040136\"",
+              "clicked button of search",
+              "found 'STEAKGABEL'"
             ],
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/product_page.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 11396489237
+              "duration": 16341229028
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "check for elements",
-        "line": 17,
+        "name": "add an article to the product cart by clicking button",
+        "line": 27,
         "description": "",
         "tags": [
           {
             "name": "@export",
-            "line": 13
-          },
-          {
-            "name": "@chefworks",
-            "line": 14
-          },
-          {
-            "name": "@pulsiva",
-            "line": 15
-          },
-          {
-            "name": "@website_elements",
-            "line": 16
-          }
-        ],
-        "id": "website-basics;check-for-elements",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Then ",
-            "name": "I should be a basic elements",
-            "line": 18,
-            "output": [
-              "header exists",
-              "searchfield exists",
-              "navi exists",
-              "inner body exists",
-              "footer exists"
-            ],
-            "match": {
-              "location": "features/step_definitions/website_basics.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1403280759
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "use hovermenu for navigating",
-        "line": 26,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 20
-          },
-          {
-            "name": "@chefworks",
-            "line": 21
-          },
-          {
-            "name": "@pulsiva",
-            "line": 22
-          },
-          {
-            "name": "@navigation",
-            "line": 23
-          },
-          {
-            "name": "@menu",
-            "line": 24
-          },
-          {
-            "name": "@hovermenu",
             "line": 25
+          },
+          {
+            "name": "@product_page_add",
+            "line": 26
           }
         ],
-        "id": "website-basics;use-hovermenu-for-navigating",
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
         "type": "scenario",
         "steps": [
           {
             "keyword": "When ",
-            "name": "I navigate to the category by the hovermenu",
-            "line": 27,
-            "output": [
-              "-> hovered menu",
-              "-> clicked on hovermenu"
-            ],
-            "match": {
-              "location": "features/step_definitions/menu.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4782859859
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the categorysite",
+            "name": "I add an article to the product cart by clicking the button to push it into the cart",
             "line": 28,
-            "match": {
-              "location": "features/step_definitions/menu.rb:61"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 487286422
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "use menu for navigating",
-        "line": 36,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 30
-          },
-          {
-            "name": "@chefworks",
-            "line": 31
-          },
-          {
-            "name": "@pulsiva",
-            "line": 32
-          },
-          {
-            "name": "@navigation",
-            "line": 33
-          },
-          {
-            "name": "@menu",
-            "line": 34
-          },
-          {
-            "name": "@standardmenu",
-            "line": 35
-          }
-        ],
-        "id": "website-basics;use-menu-for-navigating",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I navigate to the category by the menu",
-            "line": 37,
             "output": [
-              "-> clicked category on menu",
-              "> found sidebar",
-              "-> closed hovermenu",
-              "-> clicked category on sidebar"
+              "-> clicked buy button"
             ],
             "match": {
-              "location": "features/step_definitions/menu.rb:29"
+              "location": "features/step_definitions/product_page.rb:8"
             },
             "result": {
               "status": "passed",
-              "duration": 7220520455
+              "duration": 1424069680
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the categorysite",
-            "line": 38,
+            "name": "I should see the cart on the right of the site",
+            "line": 29,
             "match": {
-              "location": "features/step_definitions/menu.rb:61"
+              "location": "features/step_definitions/product_page.rb:18"
             },
             "result": {
               "status": "passed",
-              "duration": 466347433
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "navigate to account",
-        "line": 46,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 41
-          },
-          {
-            "name": "@chefworks",
-            "line": 42
-          },
-          {
-            "name": "@pulsiva",
-            "line": 43
-          },
-          {
-            "name": "@navigation",
-            "line": 44
-          },
-          {
-            "name": "@links",
-            "line": 45
-          }
-        ],
-        "id": "website-basics;navigate-to-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to my account",
-            "line": 47,
-            "match": {
-              "location": "features/step_definitions/links.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2041791757
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the accountpage",
-            "line": 48,
-            "match": {
-              "location": "features/step_definitions/links.rb:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 293289238
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "navigate to note",
-        "line": 54,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 50
-          },
-          {
-            "name": "@chefworks",
-            "line": 51
-          },
-          {
-            "name": "@navigation",
-            "line": 52
-          },
-          {
-            "name": "@links",
-            "line": 53
-          }
-        ],
-        "id": "website-basics;navigate-to-note",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link to my notes",
-            "line": 55,
-            "match": {
-              "location": "features/step_definitions/links.rb:21"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2171255901
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the notepage",
-            "line": 56,
-            "match": {
-              "location": "features/step_definitions/links.rb:29"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 294360032
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "activate the cart",
-        "line": 63,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 58
-          },
-          {
-            "name": "@chefworks",
-            "line": 59
-          },
-          {
-            "name": "@pulsiva",
-            "line": 60
-          },
-          {
-            "name": "@navigation",
-            "line": 61
-          },
-          {
-            "name": "@links",
-            "line": 62
-          }
-        ],
-        "id": "website-basics;activate-the-cart",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link of the cart",
-            "line": 64,
-            "match": {
-              "location": "features/step_definitions/links.rb:40"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1008079478
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see the sidebar of the product cart",
-            "line": 65,
-            "output": [
-              "> found sidebar"
-            ],
-            "match": {
-              "location": "features/step_definitions/links.rb:48"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 166085252
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I click the link to edit the cart",
-            "line": 66,
-            "match": {
-              "location": "features/step_definitions/links.rb:56"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2409021803
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on the page of the productcart",
-            "line": 67,
-            "match": {
-              "location": "features/step_definitions/links.rb:65"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 140341951
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "navigate to help",
-        "line": 74,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 69
-          },
-          {
-            "name": "@chefworks",
-            "line": 70
-          },
-          {
-            "name": "@pulsiva",
-            "line": 71
-          },
-          {
-            "name": "@navigation",
-            "line": 72
-          },
-          {
-            "name": "@links",
-            "line": 73
-          }
-        ],
-        "id": "website-basics;navigate-to-help",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I click the link of help",
-            "line": 75,
-            "match": {
-              "location": "features/step_definitions/links.rb:72"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 360125692
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a contextmenu",
-            "line": 76,
-            "match": {
-              "location": "features/step_definitions/links.rb:80"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 139401583
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "find all links",
-        "line": 83,
-        "description": "",
-        "tags": [
-          {
-            "name": "@chefworks",
-            "line": 79
-          },
-          {
-            "name": "@pulsiva",
-            "line": 80
-          },
-          {
-            "name": "@navigation",
-            "line": 81
-          },
-          {
-            "name": "@link_checker",
-            "line": 82
-          }
-        ],
-        "id": "website-basics;find-all-links",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I check all links for correct country",
-            "line": 84,
-            "output": [
-              "digital publishing: ",
-              "> All links include 'at'",
-              "product info links: ",
-              "> All links include 'at'"
-            ],
-            "match": {
-              "location": "features/step_definitions/website_basics.rb:81"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4324380939
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "change the language",
-        "line": 89,
-        "description": "",
-        "tags": [
-          {
-            "name": "@pulsiva",
-            "line": 87
-          },
-          {
-            "name": "@language_changer",
-            "line": 88
-          }
-        ],
-        "id": "website-basics;change-the-language",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "When ",
-            "name": "I change the language by clicking the button",
-            "line": 90,
-            "output": [
-              "> in the shop of this country I can not change the language"
-            ],
-            "match": {
-              "location": "features/step_definitions/website_basics.rb:28"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 281990
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "the url should has changed",
-            "line": 91,
-            "match": {
-              "location": "features/step_definitions/website_basics.rb:51"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 72960
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "the menu is in specific language",
-            "line": 92,
-            "match": {
-              "location": "features/step_definitions/website_basics.rb:64"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2512948
+              "duration": 161797922
             }
           }
         ]

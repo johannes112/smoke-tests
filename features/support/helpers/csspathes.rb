@@ -193,7 +193,7 @@ class Csspathes
     end
     #product_page.rb
     @product_page_buybutton_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.detail--block--value > form > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.detail--block--value > form > div > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.product--buybox.block > div > form > div > button'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.product--buybox.block > div > form > div > button'
     end
