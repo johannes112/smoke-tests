@@ -3,17 +3,24 @@ Given(/^I am on the checkout page$/) do
   url_checkout = settings.urlHttps+'checkout'
   checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path
   
+  puts "url_checkout:#{url_checkout}"
   if (current_url == url_checkout) 
     puts "> ok, I am on #{current_url}"
   else
     puts "> ups, I am on #{current_url}"
-    puts "--> click continue"
-    element = page.find(checkout_checkout_proceed_button_path, match: :first)
-    element.click
-    puts "-> set payment"
-    step("I set payment and shipping")
-    #puts "--> go to #{url_checkout}"
-    #visit(url_checkout)
+    # first call in 'I am on the checkout page' and there the url does not include 'confirm' so click the button to continue and set payment
+    # second call in 'I send my order' and there the url includes 'confirm' so skip the rest
+    if (current_url.include?("confirm"))
+      puts "I am on the exportshop on the final checkout page"
+    else
+      puts "--> click continue"
+      element = page.find(checkout_checkout_proceed_button_path, match: :first)
+      element.click
+      puts "-> set payment"
+      step("I set payment and shipping")
+      #puts "--> go to #{url_checkout}"
+      #visit(url_checkout)
+    end
   end
   puts "And the checkoutpage contains all elements"
   step("the checkoutpage contains all elements")
@@ -186,18 +193,23 @@ When(/^I set payment and shipping$/) do
   checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
   checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
 
-  page.find(checkout_payment_form_path)
-  #set payment
-  element = page.find(checkout_paymentInAdvance_radio_path)
-  element.click
-  puts "-> choose payment"
-  #set delivery
-  element = page.find(checkout_payment_delivery_standard_radio_path)
-  element.click
-  puts "-> choose delivery"
-  element = find(checkout_payment_continue_path, match: :first)
-  element.click
-  puts "--> click button to continue"
+  puts "current_url:#{current_url}"
+  if (current_url.include?("confirm"))
+    puts "I am on the exportshop"
+  else
+    page.find(checkout_payment_form_path)
+    #set payment
+    element = page.find(checkout_paymentInAdvance_radio_path)
+    element.click
+    puts "-> choose payment"
+    #set delivery
+    element = page.find(checkout_payment_delivery_standard_radio_path)
+    element.click
+    puts "-> choose delivery"
+    element = find(checkout_payment_continue_path, match: :first)
+    element.click
+    puts "--> click button to continue"
+  end
 end
 
 Then(/^Shopware should have my order$/) do

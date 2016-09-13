@@ -15,10 +15,10 @@ class Settings
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/.*/) then 'http://www.em-group.com/'
+        when (/.*/) then 'http://www.em-group.com/en/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/.*/) then 'https://www.em-group.com/'
+        when (/.*/) then 'https://www.em-group.com/en/'
       end
       @urlBackend = 'https://www.em-group.com/'
     end
