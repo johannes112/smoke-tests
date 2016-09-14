@@ -15,8 +15,8 @@ When(/^I send my inserted data with the form$/) do
   direct_ordering_form_sku_path = csspathes.direct_ordering_form_sku_path 
   direct_ordering_form_button_path = csspathes.direct_ordering_form_button_path 
   
-  page.find(direct_ordering_form_sku_path)
-  element = page.find(direct_ordering_form_sku_path)
+  #page.find(direct_ordering_form_sku_path)
+  element = page.find(direct_ordering_form_sku_path, match: :first)
   element.set("#{sku}\t")
   puts "-> inserted #{sku}"
   
