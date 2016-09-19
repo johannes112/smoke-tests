@@ -122,8 +122,14 @@ To start different tests on each mandant navigate via tags:
 - @checkout_registration
 - @checkout_without
 
+##### Following options for browsers exist:
+- firefox
+- chrome
+- safari
+- ios
+
 ###### to start tests:
-Syntax (bash-shellaufruf): bash run_cucumber.sh <testenviroment-system> <apiuser> <apikey> <sauceuser> <saucekey> <test-system> <testshop> <country> <tag>
-bash run_cucumber.sh saucelabs <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
-bash run_cucumber.sh saucelabs <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
-bash run_cucumber.sh saucelabs <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int export de @export
+Syntax (bash-shellaufruf): bash run_cucumber.sh <testenviroment-system> <browser> <apiuser> <apikey> <sauceuser> <saucekey> <test-system> <testshop> <country> <tag>
+bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
+bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
+bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int export de @export

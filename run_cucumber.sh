@@ -2,20 +2,22 @@
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
-SHOPWARE_USERNAME=${2} 
-SHOPWARE_PASSWORD=${3}
-SAUCE_USERNAME=${4}
-SAUCE_ACCESS_KEY=${5}
-SYSTEM=${6}
-SHOP=${7}
-COUNTRY=${8}
+BROWSER=${2}
+SHOPWARE_USERNAME=${3} 
+SHOPWARE_PASSWORD=${4}
+SAUCE_USERNAME=${5}
+SAUCE_ACCESS_KEY=${6}
+SYSTEM=${7}
+SHOP=${8}
+COUNTRY=${9}
 
 #HTACCESS_USER=${7} 
 #HTACCESS_KEY=${8}
-TAG=${9}
+TAG=${10}
 
 #export (for saucelabs variables)
 export DRIVER
+export BROWSER
 export SHOPWARE_USERNAME
 export SHOPWARE_PASSWORD
 export SYSTEM
@@ -25,7 +27,7 @@ export SAUCE_USERNAME
 export SAUCE_ACCESS_KEY
 
 #variables for cucumber
-parameter_config="$DRIVER $SYSTEM $SHOP $COUNTRY"
+parameter_config="$DRIVER $BROWSER $SYSTEM $SHOP $COUNTRY"
 sauce_config="$SAUCE_USERNAME $SAUCE_ACCESS_KEY"
 #tag=" -t ${TAG}"
 features_folder_path="features/base_features/"
@@ -38,6 +40,7 @@ generate_output="-f pretty -f json -o output/output.json"
 folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $support_folder_path -r $default_support_folder_path"
 #to set value of tag
 echo "DRIVER:"$DRIVER
+echo "BROWSER:"$BROWSER
 echo "SYSTEM:"$SYSTEM
 echo "SHOP:"$SHOP
 echo "COUNTRY:"$COUNTRY
@@ -61,5 +64,5 @@ tag=" -t ${TAG}"
 config_base="$generate_output $folder_structure_config $tag"
 cucumber $config_base 
 
-#bash run_cucumber.sh saucelabs <sauce_username> <sauce_access_key> <system> <shop> <country> @search
-#DRIVER=headless cucumber -f pretty -f json -o output/output.json -r features/base_features/ -r features/step_definitions/ -r features/support/ -t @search   
+#bash run_cucumber.sh saucelabs <browser> <sauce_username> <sauce_access_key> <system> <shop> <country> @search
+#DRIVER=headless BROWSER=firefox cucumber -f pretty -f json -o output/output.json -r features/base_features/ -r features/step_definitions/ -r features/support/ -t @search   
