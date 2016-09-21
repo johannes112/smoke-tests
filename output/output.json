@@ -1,0 +1,88 @@
+[
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "search",
+    "line": 6,
+    "description": "\n  As a customer\n  i will be able to search for a specific product",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@search",
+        "line": 5
+      }
+    ],
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "search with sku",
+        "line": 11,
+        "description": "",
+        "id": "search;search-with-sku",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 12,
+            "output": [
+              "go to https://int.pulsiva.com/de-de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 158462823304
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am for an product by entering the sku in the searchfield",
+            "line": 13,
+            "output": [
+              "- set sku = \"20040136\""
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:2"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".entry--search > form > input\" (Capybara::ElementNotFound)\n./features/step_definitions/search.rb:14:in `/^I am for an product by entering the sku in the searchfield$/'\nfeatures/base_features/1.search.feature:13:in `When I am for an product by entering the sku in the searchfield'",
+              "duration": 30598244349
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/search.rb:20"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
