@@ -51,7 +51,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 158462823304
+              "duration": 10952126860
             }
           },
           {
@@ -59,26 +59,30 @@
             "name": "I am for an product by entering the sku in the searchfield",
             "line": 13,
             "output": [
-              "- set sku = \"20040136\""
+              "- set sku = \"20040136\"",
+              "clicked button of search"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:2"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Unable to find css \".entry--search > form > input\" (Capybara::ElementNotFound)\n./features/step_definitions/search.rb:14:in `/^I am for an product by entering the sku in the searchfield$/'\nfeatures/base_features/1.search.feature:13:in `When I am for an product by entering the sku in the searchfield'",
-              "duration": 30598244349
+              "status": "passed",
+              "duration": 5107582325
             }
           },
           {
             "keyword": "Then ",
             "name": "I should be on the detailsite of the related product",
             "line": 14,
+            "output": [
+              "found 'STEAKGABEL'"
+            ],
             "match": {
               "location": "features/step_definitions/search.rb:20"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 351533266
             }
           }
         ]
