@@ -7,6 +7,525 @@
       }
     ],
     "keyword": "Feature",
+    "name": "website_basics",
+    "line": 3,
+    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
+    "tags": [
+      {
+        "name": "@website_basics",
+        "line": 2
+      }
+    ],
+    "id": "website-basics",
+    "uri": "features/base_features/0.website_basics.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 10,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12498940657
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "check for elements",
+        "line": 17,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@chefworks",
+            "line": 14
+          },
+          {
+            "name": "@pulsiva",
+            "line": 15
+          },
+          {
+            "name": "@website_elements",
+            "line": 16
+          }
+        ],
+        "id": "website-basics;check-for-elements",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should be a basic elements",
+            "line": 18,
+            "output": [
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1657499957
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use hovermenu for navigating",
+        "line": 26,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 20
+          },
+          {
+            "name": "@chefworks",
+            "line": 21
+          },
+          {
+            "name": "@pulsiva",
+            "line": 22
+          },
+          {
+            "name": "@navigation",
+            "line": 23
+          },
+          {
+            "name": "@menu",
+            "line": 24
+          },
+          {
+            "name": "@hovermenu",
+            "line": 25
+          }
+        ],
+        "id": "website-basics;use-hovermenu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the hovermenu",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/menu.rb:2"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unknown command: {\"id\":\"yemjox90kye8\",\"name\":\"mouseMoveTo\",\"parameters\":{\"element\":\":wdc:1476109332306\"}} (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 4 milliseconds\nBuild info: version: '2.48.0', revision: 'b7b081a', time: '2015-10-07 15:48:56'\nSystem info: host: 'itako49242.prod.miso', ip: '172.20.49.242', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_74'\nDriver info: org.openqa.selenium.safari.SafariDriver\nCapabilities [{browserName=safari, takesScreenshot=true, javascriptEnabled=true, version=8.0.8, cssSelectorsEnabled=true, platform=MAC, secureSsl=true}]\nSession ID: null (org.openqa.selenium.WebDriverException) (Selenium::WebDriver::Error::UnknownError)\n[remote server] sun.reflect.GeneratedConstructorAccessor7():-1:in `newInstance'\n[remote server] sun.reflect.DelegatingConstructorAccessorImpl(DelegatingConstructorAccessorImpl.java):45:in `newInstance'\n[remote server] java.lang.reflect.Constructor(Constructor.java):423:in `newInstance'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):206:in `createThrowable'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):158:in `throwIfResponseFailed'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):647:in `execute'\n[remote server] org.openqa.selenium.remote.RemoteExecuteMethod(RemoteExecuteMethod.java):35:in `execute'\n[remote server] org.openqa.selenium.remote.RemoteMouse(RemoteMouse.java):89:in `mouseMove'\n[remote server] org.openqa.selenium.support.events.internal.EventFiringMouse(EventFiringMouse.java):58:in `mouseMove'\n[remote server] org.openqa.selenium.remote.server.handler.interactions.MouseMoveToLocation(MouseMoveToLocation.java):59:in `call'\n[remote server] org.openqa.selenium.remote.server.handler.interactions.MouseMoveToLocation(MouseMoveToLocation.java):1:in `call'\n[remote server] java.util.concurrent.FutureTask(FutureTask.java):266:in `run'\n[remote server] org.openqa.selenium.remote.server.DefaultSession$1(DefaultSession.java):176:in `run'\n[remote server] java.util.concurrent.ThreadPoolExecutor(ThreadPoolExecutor.java):1142:in `runWorker'\n[remote server] java.util.concurrent.ThreadPoolExecutor$Worker(ThreadPoolExecutor.java):617:in `run'\n[remote server] java.lang.Thread(Thread.java):745:in `run'\n./features/step_definitions/menu.rb:16:in `/^I navigate to the category by the hovermenu$/'\nfeatures/base_features/0.website_basics.feature:27:in `When I navigate to the category by the hovermenu'",
+              "duration": 30856533289
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 28,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use menu for navigating",
+        "line": 36,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 30
+          },
+          {
+            "name": "@chefworks",
+            "line": 31
+          },
+          {
+            "name": "@pulsiva",
+            "line": 32
+          },
+          {
+            "name": "@navigation",
+            "line": 33
+          },
+          {
+            "name": "@menu",
+            "line": 34
+          },
+          {
+            "name": "@standardmenu",
+            "line": 35
+          }
+        ],
+        "id": "website-basics;use-menu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to the category by the menu",
+            "line": 37,
+            "output": [
+              "-> clicked category on menu",
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:29"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \"form > label\" (Capybara::ElementNotFound)\n./features/step_definitions/menu.rb:48:in `/^I navigate to the category by the menu$/'\nfeatures/base_features/0.website_basics.feature:37:in `When I navigate to the category by the menu'",
+              "duration": 35027571122
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the categorysite",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/menu.rb:61"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to account",
+        "line": 46,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 41
+          },
+          {
+            "name": "@chefworks",
+            "line": 42
+          },
+          {
+            "name": "@pulsiva",
+            "line": 43
+          },
+          {
+            "name": "@navigation",
+            "line": 44
+          },
+          {
+            "name": "@links",
+            "line": 45
+          }
+        ],
+        "id": "website-basics;navigate-to-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my account",
+            "line": 47,
+            "match": {
+              "location": "features/step_definitions/links.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 371868319
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the accountpage",
+            "line": 48,
+            "match": {
+              "location": "features/step_definitions/links.rb:10"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \"#registration\" (Capybara::ElementNotFound)\n./features/step_definitions/links.rb:16:in `/^I should be on the accountpage$/'\nfeatures/base_features/0.website_basics.feature:48:in `Then I should be on the accountpage'",
+              "duration": 30153204013
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "activate the cart",
+        "line": 63,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 58
+          },
+          {
+            "name": "@chefworks",
+            "line": 59
+          },
+          {
+            "name": "@pulsiva",
+            "line": 60
+          },
+          {
+            "name": "@navigation",
+            "line": 61
+          },
+          {
+            "name": "@links",
+            "line": 62
+          }
+        ],
+        "id": "website-basics;activate-the-cart",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of the cart",
+            "line": 64,
+            "match": {
+              "location": "features/step_definitions/links.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 499771093
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 65,
+            "output": [
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140696218
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the link to edit the cart",
+            "line": 66,
+            "match": {
+              "location": "features/step_definitions/links.rb:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 747946806
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the page of the productcart",
+            "line": 67,
+            "match": {
+              "location": "features/step_definitions/links.rb:65"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Expected url contains checkout/cart but i am on https://int.pulsiva.com/it-it/ (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/links.rb:67:in `/^I should be on the page of the productcart$/'\nfeatures/base_features/0.website_basics.feature:67:in `Then I should be on the page of the productcart'",
+              "duration": 217775615
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to help",
+        "line": 74,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 69
+          },
+          {
+            "name": "@chefworks",
+            "line": 70
+          },
+          {
+            "name": "@pulsiva",
+            "line": 71
+          },
+          {
+            "name": "@navigation",
+            "line": 72
+          },
+          {
+            "name": "@links",
+            "line": 73
+          }
+        ],
+        "id": "website-basics;navigate-to-help",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of help",
+            "line": 75,
+            "match": {
+              "location": "features/step_definitions/links.rb:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344318422
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a contextmenu",
+            "line": 76,
+            "match": {
+              "location": "features/step_definitions/links.rb:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 145648858
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "find all links",
+        "line": 83,
+        "description": "",
+        "tags": [
+          {
+            "name": "@chefworks",
+            "line": 79
+          },
+          {
+            "name": "@pulsiva",
+            "line": 80
+          },
+          {
+            "name": "@navigation",
+            "line": 81
+          },
+          {
+            "name": "@link_checker",
+            "line": 82
+          }
+        ],
+        "id": "website-basics;find-all-links",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I check all links for correct country",
+            "line": 84,
+            "output": [
+              "digital publishing: ",
+              "> All links include 'it'",
+              "product info links: ",
+              "> All links include 'it'"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175672228
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "change the language",
+        "line": 89,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 87
+          },
+          {
+            "name": "@language_changer",
+            "line": 88
+          }
+        ],
+        "id": "website-basics;change-the-language",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change the language by clicking the button",
+            "line": 90,
+            "output": [
+              "> in the shop of this country I can not change the language"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 216621
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the url should has changed",
+            "line": 91,
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53477
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the menu is in specific language",
+            "line": 92,
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2373028
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
     "name": "search",
     "line": 6,
     "description": "\n  As a customer\n  i will be able to search for a specific product",
@@ -44,14 +563,14 @@
             "name": "I am on the website",
             "line": 12,
             "output": [
-              "go to https://int.pulsiva.com/de-de/"
+              "go to https://int.pulsiva.com/it-it/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 10952126860
+              "duration": 1812292313
             }
           },
           {
@@ -67,7 +586,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5107582325
+              "duration": 1600389237
             }
           },
           {
@@ -75,14 +594,1663 @@
             "name": "I should be on the detailsite of the related product",
             "line": 14,
             "output": [
-              "found 'STEAKGABEL'"
+              "found 'FORCHETTA BISTECCA'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:20"
             },
             "result": {
               "status": "passed",
-              "duration": 351533266
+              "duration": 3500935128
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "direct order",
+    "line": 3,
+    "description": "\nAs a customer\nI want to have the opportunity to add an article to the cart, by simply opening a form and entering the sku and amount of this article",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 1
+      },
+      {
+        "name": "@direct_order",
+        "line": 2
+      }
+    ],
+    "id": "direct-order",
+    "uri": "features/base_features/2.direct_order.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "add an article",
+        "line": 8,
+        "description": "",
+        "id": "direct-order;add-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 9,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1967618402
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the button for direct ordering",
+            "line": 10,
+            "output": [
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 525134942
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I send my inserted data with the form",
+            "line": 11,
+            "output": [
+              "-> inserted 20040136",
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6055808394
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/links.rb:48"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".container--ajax-cart.off-canvas.is--right.is--active.is--open\" (Capybara::ElementNotFound)\n./features/step_definitions/links.rb:52:in `/^I should see the sidebar of the product cart$/'\nfeatures/base_features/2.direct_order.feature:12:in `Then I should see the sidebar of the product cart'",
+              "duration": 30097139790
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should find the article in the sidebar",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:29"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "product page",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_page",
+        "line": 4
+      }
+    ],
+    "id": "product-page",
+    "uri": "features/base_features/3.product_page.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 10,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 11,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "- set sku = \"20040136\"",
+              "clicked button of search",
+              "found 'FORCHETTA BISTECCA'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5626466736
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "notice an article",
+        "line": 15,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@product_page_note",
+            "line": 14
+          }
+        ],
+        "id": "product-page;notice-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the remember-button",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 376594957
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see a hint",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:100"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Expect to find the css-element (.js--modal.sizing--content) but the page with the url https://int.pulsiva.com/it-it/forchetta-bistecca-20040136 has no such element (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/product_page.rb:104:in `/^there should see a hint$/'\nfeatures/base_features/3.product_page.feature:17:in `Then there should see a hint'",
+              "duration": 30143704416
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "compare an article",
+        "line": 21,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 19
+          },
+          {
+            "name": "@product_page_compare",
+            "line": 20
+          }
+        ],
+        "id": "product-page;compare-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the compare-button",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 512597675
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see the icon to compare",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 711019498
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "add an article to the product cart by clicking button",
+        "line": 27,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 25
+          },
+          {
+            "name": "@product_page_add",
+            "line": 26
+          }
+        ],
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to the product cart by clicking the button to push it into the cart",
+            "line": 28,
+            "output": [
+              "-> clicked buy button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 595712154
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the cart on the right of the site",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139423948
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display products with data",
+        "line": 33,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 31
+          },
+          {
+            "name": "@product_page_data",
+            "line": 32
+          }
+        ],
+        "id": "product-page;display-products-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary elememts for getting more informations about this article",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1352127009
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "rate an article with tab",
+        "line": 38,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 36
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 37
+          }
+        ],
+        "id": "product-page;rate-an-article-with-tab",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change in the tab to the rating",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 463912685
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 40,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 290459490
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "rate an article with button",
+        "line": 44,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 42
+          },
+          {
+            "name": "@product_page_rate",
+            "line": 43
+          }
+        ],
+        "id": "product-page;rate-an-article-with-button",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the button to rate for the article",
+            "line": 45,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 923330221
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a form for rating the article",
+            "line": 46,
+            "output": [
+              "found form to rate"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140656176
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "customer seen article",
+        "line": 49,
+        "description": "",
+        "tags": [
+          {
+            "name": "@product_page_suggest",
+            "line": 48
+          }
+        ],
+        "id": "product-page;customer-seen-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change to the tab of the customer viewed articles",
+            "line": 50,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:150"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 444706302
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be a box of some articles",
+            "line": 51,
+            "output": [
+              "found container list"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 174516237
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_cart",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/4.product_cart.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "continue shopping",
+        "line": 13,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 11
+          },
+          {
+            "name": "@product_cart_continue",
+            "line": 12
+          }
+        ],
+        "id": "account;continue-shopping",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart manually",
+            "line": 14,
+            "output": [
+              "I am on the product page of an article",
+              "go to https://int.pulsiva.com/it-it/",
+              "- set sku = \"20040136\"",
+              "clicked button of search",
+              "found 'FORCHETTA BISTECCA'",
+              "I add an article to the product cart by clicking the button to push it into the cart",
+              "-> clicked buy button",
+              "I am on the product cart page",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11622718021
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on the button to continue shopping",
+            "line": 15,
+            "output": [
+              "--> clicked button for continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 784414792
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the back on the productsite",
+            "line": 16,
+            "output": [
+              "found 'FORCHETTA BISTECCA'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1824536777
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "enter a code",
+        "line": 26,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 24
+          },
+          {
+            "name": "@product_cart_voucher",
+            "line": 25
+          }
+        ],
+        "id": "account;enter-a-code",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 27,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8472298251
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I activate the function for voucher",
+            "line": 28,
+            "output": [
+              "clicked checkbox"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:112"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 400907271
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter some code into the optional field",
+            "line": 29,
+            "output": [
+              "entered 266233",
+              "clicked add-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1267544321
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should be the voucher-action in the url",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:133"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "expected that the current url (current_url includes addVoucher/sTargetAction, but it isn't so (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/product_cart.rb:136:in `/^there should be the voucher-action in the url$/'\nfeatures/base_features/4.product_cart.feature:30:in `Then there should be the voucher-action in the url'",
+              "duration": 67843951
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "remove an article",
+        "line": 34,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 32
+          },
+          {
+            "name": "@product_cart_remove",
+            "line": 33
+          }
+        ],
+        "id": "account;remove-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 35,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8478273523
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I remove this article from the product cart",
+            "line": 36,
+            "output": [
+              "clicked icon"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 352148969
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the cart should not contain this article",
+            "line": 37,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2326854065
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display articles with data",
+        "line": 41,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 39
+          },
+          {
+            "name": "@product_cart_data",
+            "line": 40
+          }
+        ],
+        "id": "account;display-articles-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 42,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7646829008
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary informations about this article within the product list of the product cart",
+            "line": 43,
+            "output": [
+              "found product details",
+              "found product prices",
+              "found field for voucher"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 411544872
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to checkout",
+        "line": 47,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 45
+          },
+          {
+            "name": "@product_cart_checkout",
+            "line": 46
+          }
+        ],
+        "id": "account;navigate-to-checkout",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the product cart contains an article",
+            "line": 48,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7799769368
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
+            "line": 49,
+            "output": [
+              "clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 423321348
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the checkout-page",
+            "line": 50,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:102"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3135074543
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@account",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/5.account.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the registration page",
+            "line": 12,
+            "output": [
+              "--> go to https://int.pulsiva.com/it-it/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2214297949
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "create new account",
+        "line": 18,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 14
+          },
+          {
+            "name": "@chefworks",
+            "line": 15
+          },
+          {
+            "name": "@pulsiva",
+            "line": 16
+          },
+          {
+            "name": "@account_registration",
+            "line": 17
+          }
+        ],
+        "id": "account;create-new-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 19,
+            "output": [
+              "UrlBackend:https://int.pulsiva.com/",
+              "user eMail:testmail_pit@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3210363331
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I create a new account with my data",
+            "line": 20,
+            "output": [
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102132352888
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on my account page",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/account.rb:135"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "expected to see a welcome message but there is no .account--welcome.panel (RSpec::Expectations::ExpectationNotMetError)\n./features/step_definitions/account.rb:142:in `/^I should be on my account page$/'\nfeatures/base_features/5.account.feature:21:in `Then I should be on my account page'",
+              "duration": 30030007997
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "login with existing account",
+        "line": 27,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 23
+          },
+          {
+            "name": "@chefworks",
+            "line": 24
+          },
+          {
+            "name": "@pulsiva",
+            "line": 25
+          },
+          {
+            "name": "@account_login",
+            "line": 26
+          }
+        ],
+        "id": "account;login-with-existing-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "I already created an user account",
+            "line": 28,
+            "output": [
+              "-> no unique account with customer:testmail_pit@test.de exists",
+              "I am on the registration page",
+              "--> go to https://int.pulsiva.com/it-it/account",
+              "I create a new account with my data",
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue",
+              "I log me out"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:21"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".link--logout\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:293:in `/^I log me out$/'\n./features/step_definitions/account.rb:32:in `/^I already created an user account$/'\nfeatures/base_features/5.account.feature:28:in `And I already created an user account'",
+              "duration": 138484758850
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I login with valid informations",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/account.rb:153"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on my account page",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/account.rb:135"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify adress of delivery",
+        "line": 55,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 50
+          },
+          {
+            "name": "@chefworks",
+            "line": 51
+          },
+          {
+            "name": "@pulsiva",
+            "line": 52
+          },
+          {
+            "name": "@account_update",
+            "line": 53
+          },
+          {
+            "name": "@account_delivery",
+            "line": 54
+          }
+        ],
+        "id": "account;modify-adress-of-delivery",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 56,
+            "output": [
+              "I already created an user account",
+              "-> no unique account with customer:testmail_pit@test.de exists",
+              "I am on the registration page",
+              "--> go to https://int.pulsiva.com/it-it/account",
+              "I create a new account with my data",
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue",
+              "I log me out"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:192"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".link--logout\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:293:in `/^I log me out$/'\n./features/step_definitions/account.rb:32:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:194:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:56:in `Given I am logged in'",
+              "duration": 138830865603
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my address for my delivery",
+            "line": 57,
+            "match": {
+              "location": "features/step_definitions/account.rb:421"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see an alert for creating a new address",
+            "line": 58,
+            "match": {
+              "location": "features/step_definitions/account.rb:271"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "test links on the accountsite",
+        "line": 73,
+        "description": "",
+        "tags": [
+          {
+            "name": "@export",
+            "line": 69
+          },
+          {
+            "name": "@chefworks",
+            "line": 70
+          },
+          {
+            "name": "@pulsiva",
+            "line": 71
+          },
+          {
+            "name": "@account_links",
+            "line": 72
+          }
+        ],
+        "id": "account;test-links-on-the-accountsite",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 74,
+            "output": [
+              "I already created an user account",
+              "-> no unique account with customer:testmail_pit@test.de exists",
+              "I am on the registration page",
+              "--> go to https://int.pulsiva.com/it-it/account",
+              "I create a new account with my data",
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue",
+              "I log me out"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:192"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".link--logout\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:293:in `/^I log me out$/'\n./features/step_definitions/account.rb:32:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:194:in `/^I am logged in$/'\nfeatures/base_features/5.account.feature:74:in `Given I am logged in'",
+              "duration": 137747984575
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I get all items of the sidebar",
+            "line": 75,
+            "match": {
+              "location": "features/step_definitions/account.rb:471"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "checkout",
+    "line": 6,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@checkout",
+        "line": 5
+      }
+    ],
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "no user account with my email exists",
+            "line": 12,
+            "output": [
+              "UrlBackend:https://int.pulsiva.com/",
+              "user eMail:testmail_pit@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3222890751
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout with existing account",
+        "line": 15,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_with",
+            "line": 14
+          }
+        ],
+        "id": "checkout;checkout-with-existing-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 16,
+            "output": [
+              "I already created an user account",
+              "-> no unique account with customer:testmail_pit@test.de exists",
+              "I am on the registration page",
+              "--> go to https://int.pulsiva.com/it-it/account",
+              "I create a new account with my data",
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue",
+              "I log me out"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:192"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".link--logout\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:293:in `/^I log me out$/'\n./features/step_definitions/account.rb:32:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:194:in `/^I am logged in$/'\nfeatures/base_features/6.checkout.feature:16:in `Given I am logged in'",
+              "duration": 140177358082
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the checkout page",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:57"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:215"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout without existing account and create an account",
+        "line": 24,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_registration",
+            "line": 23
+          }
+        ],
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 25,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8219227804
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 26,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 593902092
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I create a new account with my data",
+            "line": 27,
+            "output": [
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 104539029351
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I set payment and shipping",
+            "line": 28,
+            "output": [
+              "current_url:https://int.pulsiva.com/it-it/checkout/shippingPayment"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:189"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".shipping-payment--information\" (Capybara::ElementNotFound)\n./features/step_definitions/checkout.rb:200:in `/^I set payment and shipping$/'\nfeatures/base_features/6.checkout.feature:28:in `And I set payment and shipping'",
+              "duration": 30301421519
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:57"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:215"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 31,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout without existing account and without creating an account",
+        "line": 34,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_without",
+            "line": 33
+          }
+        ],
+        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 35,
+            "output": [
+              "go to https://int.pulsiva.com/it-it/",
+              "-> add article: https://int.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
+              "-> go to https://int.pulsiva.com/it-it/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9076147637
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 36,
+            "output": [
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 616003945
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I fill out a register form and send it without creating an account",
+            "line": 37,
+            "output": [
+              "- set prefix = \"Sig\"",
+              "- set firstname: Nome",
+              "- set lastname: Cognome",
+              "Unable to find css \"#register_billing_customernumber\"",
+              "- set email: testmail_pit@test.de",
+              "- set phone: 01234567",
+              "- set company: Pulsiva Italy GmbH",
+              "chose company",
+              "department is not available in it",
+              "- set taxid: IT99999999999",
+              "Unable to find css \"#ustid\"",
+              "- set street: Via Luigi Galvani",
+              "- set streetnumber: 6/C",
+              "- set postcode: 39100",
+              "- set city: Bolzano",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 101178627028
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I set payment and shipping",
+            "line": 38,
+            "output": [
+              "current_url:https://int.pulsiva.com/it-it/checkout/shippingPayment"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:189"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "Unable to find css \".shipping-payment--information\" (Capybara::ElementNotFound)\n./features/step_definitions/checkout.rb:200:in `/^I set payment and shipping$/'\nfeatures/base_features/6.checkout.feature:38:in `When I set payment and shipping'",
+              "duration": 30265273177
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:57"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:215"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/account.rb:11"
+            },
+            "result": {
+              "status": "skipped"
             }
           }
         ]

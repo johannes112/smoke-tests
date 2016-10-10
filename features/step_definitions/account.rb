@@ -97,7 +97,7 @@ When(/^I create a new account with my data$/) do
   setAtrributOfArticle("password", password, account_registerform_password_path)
   #set value for phone
   #begin #rescue in cause of the difference of live and int in chefworks
-    setAtrributOfArticle("phone", phone, account_registerform_phone_path)
+  setAtrributOfArticle("phone", phone, account_registerform_phone_path)
   #rescue Exception => e
   #  puts e.message
   #end
@@ -151,7 +151,7 @@ Then(/^I should be on my account page$/) do
 end
 
 When(/^I login with valid informations$/) do
-  #var
+  #var1
   email = user.eMail
   password = user.password
   url_account = settings.urlHttps+'account'
@@ -196,12 +196,6 @@ Given(/^I am logged in$/) do
   step ("I login with valid informations")
   puts "I should be on my account page"
   step ("I should be on my account page")
-end
-
-When(/^I modify my address$/) do
-  # define css pathes
-  #step("I modify my userinfo")
-  # split this big step into 4 babysteps: And(I modify my userinfo), And(I change my payment), And(I change my billing address), And(I modify my deliveryadress)
 end
 
 When("I modify my userinfo") do
@@ -266,6 +260,16 @@ end
 
 Then(/^I should see a confirmation hint$/) do
   account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
+  
+  page.find(account_userinfo_success_hint_path)
+  puts "> found info for success"
+  
+  expect(page).to have_css(account_userinfo_success_hint_path), 
+     "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
+end
+
+Then(/^I should see an alert for creating a new address$/) do
+  account_userinfo_success_hint_path = ".alert--content"
   
   page.find(account_userinfo_success_hint_path)
   puts "> found info for success"
@@ -352,6 +356,66 @@ When(/^I change prefix of my address for invoice$/) do
   puts "--> click change-button"
 end
 
+When(/^I add a new address$/) do
+  # define variables
+  prefix = user.prefix_sec
+  firstname = user.firstname
+  lastname = user.lastname
+  department = user.department
+  password = user.password
+  phone = user.telephone
+  company = user.company
+  company_kind = user.company_kind
+  street = user.street
+  streetnumber = user.streetnumber
+  postcode = user.postcode
+  city = user.city
+  country = user.country
+  
+  # define css pathes
+  account_address_create_path = csspathes.account_address_create_path
+  account_address_prefix_path = csspathes.account_address_prefix_path
+  account_address_firstname_path = csspathes.account_address_firstname_path
+  account_address_lastname_path = csspathes.account_address_lastname_path
+  account_address_phone_path = csspathes.account_address_phone_path
+  account_address_company_path = csspathes.account_address_company_path
+  account_address_street_path = csspathes.account_address_street_path
+  account_address_streetnumber_path = csspathes.account_address_streetnumber_path
+  account_address_postcode_path = csspathes.account_address_postcode_path
+  account_address_city_path = csspathes.account_address_city_path
+  account_address_standard_path = csspathes.account_address_standard_path
+  account_address_savebutton_path = csspathes.account_address_savebutton_path
+  
+  page.find(account_address_create_path)
+  puts "> found formular to add a new address"
+  account_addressform = page.find(account_address_create_path)
+  #select prefix
+  puts "prefix:#{prefix}"
+  element = page.find(account_address_prefix_path)
+  element.select(prefix)
+  #set value for firstname
+  setAtrributOfArticle("firstname", firstname, account_address_firstname_path)
+  #set value for lastname
+  setAtrributOfArticle("lastname", lastname, account_address_lastname_path)
+  #set value for phone
+  setAtrributOfArticle("phone", phone, account_address_phone_path)
+  #set value for company
+  setAtrributOfArticle("company", company, account_address_company_path)
+    #set value for street
+  setAtrributOfArticle("street", street, account_address_street_path)
+  #set streetnumber 
+  setAtrributOfArticle("streetnumber", streetnumber, account_address_streetnumber_path)
+  #set value for postcode
+  setAtrributOfArticle("postcode", postcode, account_address_postcode_path)
+  #set value for city
+  setAtrributOfArticle("city", city, account_address_city_path)
+  #click button for taking action
+  element = account_addressform.find(account_address_savebutton_path)
+  element.click
+  puts "> clicked button to save address"
+  # split this big step into 4 babysteps: And(I modify my userinfo), And(I change my payment), And(I change my billing address), And(I modify my deliveryadress)
+end
+
 When(/^I modify my address for my delivery/) do
   #css pathes
   account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
@@ -362,8 +426,15 @@ When(/^I modify my address for my delivery/) do
   element.click
   puts "--> clicked button for change the adress for delivery"
   
-  puts "I change prefix of my address for delivery"
-  step("I change prefix of my address for delivery")
+  #puts "I change prefix of my address for delivery"
+  #step("I change prefix of my address for delivery")
+  page.find(".address--item-create > a")
+  puts "> found button to create a new address"
+  element = page.find(".address--item-create > a")
+  element.click
+  puts "--> clicked button to create a new address"
+  puts "I add a new address"
+  step("I add a new address")
 end
 
 When(/^I change prefix of my address for delivery$/) do
