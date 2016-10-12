@@ -361,11 +361,8 @@ When(/^I add a new address$/) do
   prefix = user.prefix_sec
   firstname = user.firstname
   lastname = user.lastname
-  department = user.department
-  password = user.password
   phone = user.telephone
   company = user.company
-  company_kind = user.company_kind
   street = user.street
   streetnumber = user.streetnumber
   postcode = user.postcode
@@ -413,7 +410,6 @@ When(/^I add a new address$/) do
   element = account_addressform.find(account_address_savebutton_path)
   element.click
   puts "> clicked button to save address"
-  # split this big step into 4 babysteps: And(I modify my userinfo), And(I change my payment), And(I change my billing address), And(I modify my deliveryadress)
 end
 
 When(/^I modify my address for my delivery/) do
