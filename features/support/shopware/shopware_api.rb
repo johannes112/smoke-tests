@@ -28,7 +28,7 @@ class ShopwareApi
   end
   def updateData(url, options)
     #puts "updateData:#{url}"
-    sleep 2
+    #sleep 2
     response_data = self.class.put(url, options)
     if !response_data.success?
       puts ">> ERROR: update failed"
