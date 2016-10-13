@@ -21,6 +21,7 @@ class ShopwareApi
       response_data
     else
       puts ">>>>>>>>> Can not connect"
+      raise(ScriptError, "Error: update failed!")
     end
     response_data_json = response_data.parsed_response
     return response_data_json
@@ -31,6 +32,9 @@ class ShopwareApi
     response_data = self.class.put(url, options)
     if !response_data.success?
       puts ">> ERROR: update failed"
+      puts "options: #{options}"
+      puts "Error Msg: #{response_data}"
+      raise(ScriptError, "Error: update failed!")
     end
   end
   def deleteData(url)
@@ -42,6 +46,7 @@ class ShopwareApi
       response_data
     else
       puts ">>>>>>>>> Can not connect"
+      raise(ScriptError, "Error: update failed!")
     end
   end
   

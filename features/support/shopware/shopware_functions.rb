@@ -16,12 +16,14 @@ module ShopwareFunctions
   
   #update entity of id and set key to value
   def setValueToCancel(data_of, id, key) 
+    @statusNumber = -1
     options = { 
       :digest_auth => @auth_digest ,
-      :body => { :orderStatusId => -1}
+      :body => { :orderStatusId => @statusNumber }.to_json
     }
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
+    #puts "url_request: #{url_request}"
     updateData(url_request, options)
   end
 
@@ -41,7 +43,7 @@ module ShopwareFunctions
     url_data = "/api/customers"
     filter = "?filter[email]=#{mailaddress}"
     url_request = "#{url_data}/#{filter}"
-    puts "url_request: #{url_request}"
+    #puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
     if response_data_customer['data'][0] != nil
       customer_id_by_mail = response_data_customer['data'][0][key]
@@ -60,6 +62,7 @@ module ShopwareFunctions
     filter = "?filter[customerId]=#{id}"
     url_request = "#{url_data}/#{filter}"
     response_data_customer = readData(url_request)
+    #puts "response_data_customer:#{response_data_customer}"
     amount_total_orders = response_data_customer['total']
     counter=0
     while counter < amount_total_orders do
@@ -100,9 +103,9 @@ module ShopwareFunctions
     # looking for id of user which belongs to mailaddress
     #1. get customer_id by key
     customer_id = getCustomerIdByMail(mail)
-    #puts "UPDATE:#{customer_id.class}"
     if customer_id.is_a?(Fixnum)
       #2. search order by mail
+      #puts "updateOrderStatusForMail customer_id:#{customer_id}"
       getAndCancelOrderIdByCustomerId(customer_id)
       #set orderStatus_Id to -1 (Stoniert / Abgelehnt)
       #to avoid an export of this data i have to set "orderStatusId" of the order to -1
