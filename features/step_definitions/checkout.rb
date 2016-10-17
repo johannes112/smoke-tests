@@ -62,8 +62,13 @@ When(/^I send my order$/) do
   step("I activate the box of agb")
   
   element = page.find(checkout_orderbutton_path)
-  element.click
-  puts "--> click orderbutton"
+  if ENV['SYSTEM'] == 'live'
+    puts "> found orderbutton but not press"
+    next
+  else
+    element.click
+    puts "--> click orderbutton"
+  end
 end
 
 And(/^I activate the box of agb$/) do
@@ -213,20 +218,25 @@ When(/^I set payment and shipping$/) do
 end
 
 Then(/^Shopware should have my order$/) do
-  key = "email"
-  eMail = user.eMail
-  url_part = 'finish'
-  
-  checkout_order_success_teaser = csspathes.checkout_order_success_teaser_path
-  page.find(checkout_order_success_teaser)
-  puts "> found teaser for success"
-  
-  expect(current_url).to include(url_part),
-    "Expected to be at #{url_part} but i am on #{current_url}"
+  if ENV['SYSTEM'] == 'live'
+    puts "> Shopware can not have my order because i have not pressed the orderbutton"
+    next
+  else
+    key = "email"
+    eMail = user.eMail
+    url_part = 'finish'
     
-  shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
-  puts ">> cancel orders of customer with #{key}:#{eMail}"
-  shopware.updateOrderStatusForMail(eMail)
-  #shopware.updateOrderStatusFor(key, eMail)
+    checkout_order_success_teaser = csspathes.checkout_order_success_teaser_path
+    page.find(checkout_order_success_teaser)
+    puts "> found teaser for success"
+    
+    expect(current_url).to include(url_part),
+      "Expected to be at #{url_part} but i am on #{current_url}"
+      
+    shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
+    puts ">> cancel orders of customer with #{key}:#{eMail}"
+    shopware.updateOrderStatusForMail(eMail)
+    #shopware.updateOrderStatusFor(key, eMail)
+  end
 end
 
