@@ -7,207 +7,96 @@
       }
     ],
     "keyword": "Feature",
-    "name": "checkout",
-    "line": 6,
-    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "name": "website_basics",
+    "line": 3,
+    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
     "tags": [
       {
-        "name": "@pulsiva",
+        "name": "@website_basics",
         "line": 2
-      },
-      {
-        "name": "@export",
-        "line": 3
-      },
-      {
-        "name": "@chefworks",
-        "line": 4
-      },
-      {
-        "name": "@checkout",
-        "line": 5
       }
     ],
-    "id": "checkout",
-    "uri": "features/base_features/6.checkout.feature",
+    "id": "website-basics",
+    "uri": "features/base_features/0.website_basics.feature",
     "elements": [
       {
         "keyword": "Background",
         "name": "",
-        "line": 11,
+        "line": 10,
         "description": "",
         "type": "background",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "no user account with my email exists",
-            "line": 12,
+            "name": "I am on the website",
+            "line": 11,
             "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pde@test.de"
+              "go to https://int.pulsiva.com/ch-de/"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:11"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6346069628
+              "duration": 12859968250
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "checkout with existing account",
-        "line": 15,
+        "name": "change the language",
+        "line": 89,
         "description": "",
         "tags": [
           {
-            "name": "@checkout_with",
-            "line": 14
+            "name": "@pulsiva",
+            "line": 87
+          },
+          {
+            "name": "@language_changer",
+            "line": 88
           }
         ],
-        "id": "checkout;checkout-with-existing-account",
+        "id": "website-basics;change-the-language",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 16,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_pde@test.de exists",
-              "I am on the registration page",
-              "--> go to https://int.pulsiva.com/de-de/account",
-              "I create a new account with my data",
-              "- set prefix = \"Herr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "Unable to find css \"#register_billing_customernumber\"",
-              "- set email: testmail_pde@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva GmbH Test - eBusiness",
-              "chose company",
-              "department is not available in de",
-              "taxid is not available in de",
-              "taxvat is not available in de",
-              "- set street: Südwestpark",
-              "- set streetnumber: 44",
-              "- set postcode: 90449",
-              "- set city: Nürnberg",
-              "clicked button to continue",
-              "I log me out",
-              "--> logged me out",
-              "I am on the registration page",
-              "--> go to https://int.pulsiva.com/de-de/account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/de-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "> the page contains testmail_pde@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:192"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 146335720292
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 17,
-            "output": [
-              "go to https://int.pulsiva.com/de-de/",
-              "-> add article: https://int.pulsiva.com/de-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://int.pulsiva.com/de-de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19718908532
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am on the checkout page",
-            "line": 18,
-            "output": [
-              "url_checkout:https://int.pulsiva.com/de-de/checkout",
-              "> ups, I am on https://int.pulsiva.com/de-de/checkout/cart",
-              "--> click continue",
-              "-> set payment",
-              "current_url:https://int.pulsiva.com/de-de/checkout/shippingPayment",
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue",
-              "And the checkoutpage contains all elements"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 25478701263
-            }
-          },
-          {
             "keyword": "When ",
-            "name": "I send my order",
-            "line": 19,
+            "name": "I change the language by clicking the button",
+            "line": 90,
             "output": [
-              "I am on the checkout page",
-              "url_checkout:https://int.pulsiva.com/de-de/checkout",
-              "> ok, I am on https://int.pulsiva.com/de-de/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "--> click orderbutton"
+              "> change language to Francais"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:57"
+              "location": "features/step_definitions/website_basics.rb:28"
             },
             "result": {
-              "status": "passed",
-              "duration": 12170442550
+              "status": "failed",
+              "error_message": "Unable to find css \".top-bar > div > nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > select > option\" with text \"Francais\" (Capybara::ElementNotFound)\n./features/step_definitions/website_basics.rb:43:in `/^I change the language by clicking the button$/'\nfeatures/base_features/0.website_basics.feature:90:in `When I change the language by clicking the button'",
+              "duration": 30995177542
             }
           },
           {
             "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 20,
-            "output": [
-              "> found teaser for success",
-              ">> cancel orders of customer with email:testmail_pde@test.de"
-            ],
+            "name": "the url should has changed",
+            "line": 91,
             "match": {
-              "location": "features/step_definitions/checkout.rb:220"
+              "location": "features/step_definitions/website_basics.rb:51"
             },
             "result": {
-              "status": "passed",
-              "duration": 9403479780
+              "status": "skipped"
             }
           },
           {
             "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 21,
-            "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pde@test.de"
-            ],
+            "name": "the menu is in specific language",
+            "line": 92,
             "match": {
-              "location": "features/step_definitions/account.rb:11"
+              "location": "features/step_definitions/website_basics.rb:64"
             },
             "result": {
-              "status": "passed",
-              "duration": 6346809197
+              "status": "skipped"
             }
           }
         ]

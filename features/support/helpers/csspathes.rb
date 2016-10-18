@@ -23,7 +23,7 @@ class Csspathes
   :account_accountinfo_payment_box_path, :account_accountinfo_paymentchange_button_appear_path, :account_payment_paymentoptions_path, :account_payment_cashOnDelivery_path, :account_payment_change_button_path, 
   :account_accountinfo_billaddress_box_path, :account_accountinfo_billaddresschange_button_appear_path, :account_invoiceadresschange_form_prefix_path, :account_invoiceadresschange_button_path, :account_accountinfo_deliveraddress_box_path, 
   :account_accountinfo_deliveraddresschange_button_appear_path, :account_deliveradresschange_form_prefix_path, :account_deliveradresschange_button_path, :account_newsletter_box_path, :account_sidebar_path, :account_registerform_customernumber_path,
-  :account_address_create_path,  :account_address_prefix_path, :account_address_firstname_path, :account_address_lastname_path, :account_address_phone_path, :account_address_company_path, :account_address_street_path, :account_address_streetnumber_path, :account_address_postcode_path, :account_address_city_path, :account_address_standard_path, :account_address_savebutton_path, 
+  :account_address_create_path,  :account_address_prefix_path, :account_address_firstname_path, :account_address_lastname_path, :account_address_phone_path, :account_address_company_path, :account_address_street_path, :account_address_streetnumber_path, :account_address_postcode_path, :account_address_city_path, :account_address_standard_path, :account_address_country_path, :account_address_savebutton_path, 
   #checkout
   :checkout_backbutton_path, :checkout_steps_container_path, :checkout_agb_container_path, :checkout_billing_container_path, :checkout_shipping_container_path, :checkout_payment_container_path, 
   :checkout_product_container_path, :checkout_orderbutton_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 
@@ -518,6 +518,11 @@ class Csspathes
     end
     @account_address_standard_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#set_default_shipping'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'xxx'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'xxx'
+    end
+    @account_address_country_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#country'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'xxx'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'xxx'
     end

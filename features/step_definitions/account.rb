@@ -139,9 +139,9 @@ Then(/^I should be on my account page$/) do
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   account_accountpage_info_path = csspathes.account_accountpage_info_path
   
-  expect(page).to have_css(account_accountpage_welcome_path),
-     "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
-  page.find(account_accountpage_welcome_path)
+  #page.find(account_accountpage_welcome_path)
+  #expect(page).to have_css(account_accountpage_welcome_path),
+  #   "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
   element = page.find(account_accountpage_info_path)
   infobox_txt = element.text
   
@@ -380,7 +380,7 @@ When(/^I add a new address$/) do
   account_address_streetnumber_path = csspathes.account_address_streetnumber_path
   account_address_postcode_path = csspathes.account_address_postcode_path
   account_address_city_path = csspathes.account_address_city_path
-  account_address_standard_path = csspathes.account_address_standard_path
+  account_address_country_path = csspathes.account_address_country_path
   account_address_savebutton_path = csspathes.account_address_savebutton_path
   
   page.find(account_address_create_path)
@@ -406,6 +406,8 @@ When(/^I add a new address$/) do
   setAtrributOfArticle("postcode", postcode, account_address_postcode_path)
   #set value for city
   setAtrributOfArticle("city", city, account_address_city_path)
+  #set value for country
+  set_dropdown_value("country", country, account_address_country_path)
   #click button for taking action
   element = account_addressform.find(account_address_savebutton_path)
   element.click

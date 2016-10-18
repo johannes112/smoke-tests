@@ -87,7 +87,7 @@ def setAtrributOfArticle(var_text, variable, var_path)
   end
 end
 
-#chech if all links go to the equal shop (of country)
+#check if all links go to the equal shop (of country)
 def look_for_string_in_array(array_source, string_content)
   check = Array.new
   array_source.each { |z| check << z.include?(string_content)}
@@ -99,4 +99,10 @@ def look_for_string_in_array(array_source, string_content)
     raise ("Some links are bad!")
     puts "ERROR some links are wrong"
   end
+end
+
+#select value by text on dropdown-menu
+def set_dropdown_value(var_text, option_value, dropdown_path)
+  puts "- set #{var_text}: #{option_value}"
+  page.find("#{dropdown_path} option", :text => option_value).click
 end
