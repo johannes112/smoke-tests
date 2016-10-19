@@ -4,12 +4,9 @@ When(/^I am for an product by entering the sku in the searchfield$/) do
   sku = article.sku
   printValue(:sku, binding)
   
-  #search_productsku='21782'#'93876'
-  
   #variables:path
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
-
   #actions
   find(search_searchfield_path).set(sku)
   search_searchbutton = page.find(search_searchbutton_path)

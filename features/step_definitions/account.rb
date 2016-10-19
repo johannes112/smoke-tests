@@ -1,4 +1,5 @@
 #account
+
 Given(/^I am on the registration page$/) do
   #var
   url = settings.urlHttps+'account'
@@ -138,10 +139,14 @@ Then(/^I should be on my account page$/) do
   
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   account_accountpage_info_path = csspathes.account_accountpage_info_path
+  #hide
+  block_css('.navigation-main')
   
-  #page.find(account_accountpage_welcome_path)
-  #expect(page).to have_css(account_accountpage_welcome_path),
-  #   "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
+  puts "current_url:#{current_url}"
+  page.find(account_accountpage_welcome_path)
+  expect(page).to have_css(account_accountpage_welcome_path),
+     "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
+  page.find(account_accountpage_info_path)
   element = page.find(account_accountpage_info_path)
   infobox_txt = element.text
   
@@ -156,6 +161,8 @@ When(/^I login with valid informations$/) do
   password = user.password
   url_account = settings.urlHttps+'account'
   
+  #hide
+  block_css('.navigation-main')
   #path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path

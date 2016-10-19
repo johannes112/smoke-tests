@@ -28,19 +28,15 @@ end
 When(/^I change the language by clicking the button$/) do
   #var
   language_change_to = user.language_change_to
-  
   #pathes
-  homepage_content_navi_language_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry'
-  homepage_content_navi_language_option_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select'
-  homepage_content_navi_language_options_selects_path = '.top-bar > div > nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > select > option'
+  homepage_content_navi_language_trigger_path = 'nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > div.js--fancy-select-trigger'
+  homepage_content_navi_language_option_path = 'nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > div.html-option-wrap > div'
 
   if language_change_to
-    puts "> change language to #{language_change_to}"
-    page.find(homepage_content_navi_language_path)
-    element = page.find(homepage_content_navi_language_option_path)
+    page.find(homepage_content_navi_language_trigger_path)
+    element = page.find(homepage_content_navi_language_trigger_path)
     element.click
-    #select language
-    element = find(homepage_content_navi_language_options_selects_path, :text => language_change_to)
+    element = find(homepage_content_navi_language_option_path, :text => language_change_to)
     element.click
     puts "> selected #{language_change_to}"
   else 
