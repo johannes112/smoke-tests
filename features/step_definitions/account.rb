@@ -4,6 +4,7 @@ Given(/^I am on the registration page$/) do
   #var
   url = settings.urlHttps+'account'
   puts "--> go to #{url}"
+  block_css('.navigation-main')  
   
   #got to url
   visit(url)

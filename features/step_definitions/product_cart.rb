@@ -3,9 +3,9 @@ Given(/^the product cart contains an article$/) do
   # with ajax'
   product_cart_article_path = csspathes.product_cart_article_path
   step("I am on the website")
+  block_css('.navigation-main')  
   step("I add an article to my cart by ajax")
   step("I am on the product cart page")
-  block_navi()
   
   #check if cart contains an article
   expect(page).to have_css(product_cart_article_path),
@@ -16,6 +16,7 @@ end
 And(/^I add an article to my cart manually$/) do
   puts "I am on the product page of an article"
   step("I am on the product page of an article")
+  block_css('.navigation-main')  
   puts "I add an article to the product cart by clicking the button to push it into the cart"
   step("I add an article to the product cart by clicking the button to push it into the cart")
   puts "I am on the product cart page"

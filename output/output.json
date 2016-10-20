@@ -1,0 +1,151 @@
+[
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "checkout",
+    "line": 6,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 2
+      },
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@checkout",
+        "line": 5
+      }
+    ],
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "no user account with my email exists",
+            "line": 12,
+            "output": [
+              "UrlBackend:https://int.pulsiva.com/",
+              "user eMail:testmail_pfr@test.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3332726814
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "checkout with existing account",
+        "line": 15,
+        "description": "",
+        "tags": [
+          {
+            "name": "@checkout_with",
+            "line": 14
+          }
+        ],
+        "id": "checkout;checkout-with-existing-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am logged in",
+            "line": 16,
+            "output": [
+              "I already created an user account",
+              "-> no unique account with customer:testmail_pfr@test.de exists",
+              "I am on the registration page",
+              "--> go to https://int.pulsiva.com/fr-fr/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:200"
+            },
+            "result": {
+              "status": "failed",
+              "error_message": "document.querySelector(...) is null\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-R1JBAO1CNPS', ip: '172.20.33.243', os.name: 'Windows Server 2008 R2', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'\nDriver info: driver.version: unknown (org.openqa.selenium.WebDriverException) (Selenium::WebDriver::Error::UnknownError)\n[remote server] <anonymous class>(about:blank line 69 > Function):2:in `anonymous'\n[remote server] <anonymous class>(about:blank):69:in `handleEvaluateEvent'\n./features/support/helpers/functions.rb:45:in `block_css'\n./features/step_definitions/account.rb:7:in `/^I am on the registration page$/'\n./features/step_definitions/account.rb:30:in `/^I already created an user account$/'\n./features/step_definitions/account.rb:202:in `/^I am logged in$/'\nfeatures/base_features/6.checkout.feature:16:in `Given I am logged in'",
+              "duration": 10265701712
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am on the checkout page",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:2"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:57"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Shopware should have my order",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/checkout.rb:220"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "no user account with my email exists",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/account.rb:13"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
