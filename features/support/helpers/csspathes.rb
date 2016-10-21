@@ -401,7 +401,7 @@ class Csspathes
     @account_registerform_taxvat_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_vatid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#ustid'

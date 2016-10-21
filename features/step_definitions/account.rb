@@ -4,10 +4,10 @@ Given(/^I am on the registration page$/) do
   #var
   url = settings.urlHttps+'account'
   puts "--> go to #{url}"
-  block_css('.navigation-main')  
   
   #got to url
   visit(url)
+  block_css('.navigation-main')  
 end
 
 And(/^no user account with my email exists$/) do
@@ -140,8 +140,6 @@ Then(/^I should be on my account page$/) do
   
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   account_accountpage_info_path = csspathes.account_accountpage_info_path
-  #hide
-  block_css('.navigation-main')
   
   puts "current_url:#{current_url}"
   page.find(account_accountpage_welcome_path)
@@ -162,8 +160,6 @@ When(/^I login with valid informations$/) do
   password = user.password
   url_account = settings.urlHttps+'account'
   
-  #hide
-  block_css('.navigation-main')
   #path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
@@ -175,6 +171,9 @@ When(/^I login with valid informations$/) do
   else
     puts "--> go to #{url_account}"
     visit(url_account)
+      
+    #hide
+    block_css('.navigation-main')
   end
   
   if (page.has_css?(account_accountpage_welcome_path))

@@ -4,7 +4,6 @@ Given(/^I am on the website$/) do
   website_url = settings.urlHttps
   puts "go to #{website_url}"
   
-  block_css('.navigation-main')  
   #actions
   visit(website_url)
   
