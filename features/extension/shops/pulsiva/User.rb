@@ -94,8 +94,8 @@ class User
       when 'ch' then nil
       when 'it' then 'IT99999999999'
       when 'fr' then nil
-      when 'no' then nil
-      when 'se' then nil
+      when 'no' then '999 204 252 MVA'
+      when 'se' then '556695-9234'
       when 'nl' then '22065260'
       when 'be' then nil
       when 'es' then nil

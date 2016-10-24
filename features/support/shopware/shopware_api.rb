@@ -21,7 +21,7 @@ class ShopwareApi
       response_data
     else
       puts ">>>>>>>>> Can not connect"
-      raise(ScriptError, "Error: update failed!")
+      raise(ScriptError, "Error: read failed!")
     end
     response_data_json = response_data.parsed_response
     return response_data_json
@@ -46,7 +46,7 @@ class ShopwareApi
       response_data
     else
       puts ">>>>>>>>> Can not connect"
-      raise(ScriptError, "Error: update failed!")
+      raise(ScriptError, "Error: delete failed!")
     end
   end
   

@@ -394,6 +394,8 @@ class Csspathes
     @account_registerform_taxid_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'taxid_path_p'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'taxid_path'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'taxid_path'
@@ -404,11 +406,12 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_vatid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_vatid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#ustid'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/be/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#ustid'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#register_billing_vatid'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
+        
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
     end 
     @account_registerform_email_path = case 
