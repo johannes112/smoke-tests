@@ -8,13 +8,13 @@ class User
       when 'de' then '20004906'
       when 'at' then '20000021'
       when 'ch' then '20000024'
-      when 'it' then ''
-      when 'fr' then ''
-      when 'no' then ''
+      when 'it' then nil
+      when 'fr' then nil
+      when 'no' then nil
       when 'se' then '20000041'
-      when 'nl' then ''
-      when 'be' then ''
-      when 'es' then ''
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_pde@test.de'
@@ -120,9 +120,9 @@ class User
       when 'fr' then nil
       when 'no' then nil
       when 'se' then '556695-9234'
-      when 'nl' then ''
-      when 'be' then ''
-      when 'es' then ''
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
     end
     @country = case ENV['COUNTRY']
       when 'de' then 'Deutschland'
@@ -142,11 +142,11 @@ class User
       when 'ch' then nil
       when 'it' then nil
       when 'fr' then nil
-      when 'no' then ''
-      when 'se' then ''
-      when 'nl' then ''
-      when 'be' then ''
-      when 'es' then ''
+      when 'no' then nil
+      when 'se' then nil
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
     end
     @owner_lastname = case ENV['COUNTRY']
       when 'de' then nil
@@ -154,11 +154,11 @@ class User
       when 'ch' then nil
       when 'it' then nil
       when 'fr' then nil
-      when 'no' then ''
-      when 'se' then ''
-      when 'nl' then ''
-      when 'be' then ''
-      when 'es' then ''
+      when 'no' then nil
+      when 'se' then nil
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
     end
     @firstname = case ENV['COUNTRY']
       when 'de' then 'Vorname'
