@@ -1,6 +1,6 @@
 #export
 class Article
-  attr_accessor :sub_category, :category, :sku, :amount, :name, :url_add_comand
+  attr_accessor :sub_category, :category, :sku, :amount, :name, :productnumber, :url_add_comand
   
   def initialize
     @sub_category = 'CUTLERY'
@@ -15,6 +15,9 @@ class Article
     end
     @name = case ENV['COUNTRY']
       when (/.*/) then 'Stockholm'
+    end
+    @productnumber = case ENV['COUNTRY']
+      when (/.*/) then @name #productnumber do not exist on emgroup
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/.*/) then 'addArticle/sTargetAction'
