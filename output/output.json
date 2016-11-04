@@ -44,14 +44,14 @@
             "name": "I am on the website",
             "line": 12,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://int.pulsiva.com/es-es/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 9628832766
+              "duration": 10353583718
             }
           },
           {
@@ -59,7 +59,7 @@
             "name": "I am searching for a product by entering the sku in the searchfield",
             "line": 13,
             "output": [
-              "- set sku = \"CBCCWHTXS\"",
+              "- set sku = \"20040136\"",
               "clicked button of search"
             ],
             "match": {
@@ -67,7 +67,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4445718833
+              "duration": 7475648306
             }
           },
           {
@@ -75,14 +75,14 @@
             "name": "I should be on the detailsite of the related product",
             "line": 14,
             "output": [
-              "found 'COLMAR'"
+              "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:17"
             },
             "result": {
               "status": "passed",
-              "duration": 240484922
+              "duration": 231503929
             }
           }
         ]
@@ -100,14 +100,14 @@
             "name": "I am on the website",
             "line": 17,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://int.pulsiva.com/es-es/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1164572032
+              "duration": 1889612061
             }
           },
           {
@@ -115,7 +115,7 @@
             "name": "I am searching for a product by entering the productnumber in the searchfield",
             "line": 18,
             "output": [
-              "- set productnumber = \"Colmar\"",
+              "- set productnumber = \"104105\"",
               "clicked button of search"
             ],
             "match": {
@@ -123,7 +123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2056203221
+              "duration": 2423119655
             }
           },
           {
@@ -131,14 +131,14 @@
             "name": "I should see my product on the results of my search",
             "line": 19,
             "output": [
-              "found 'Colmar'"
+              "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:53"
             },
             "result": {
               "status": "passed",
-              "duration": 573186168
+              "duration": 497998262
             }
           }
         ]
@@ -156,14 +156,14 @@
             "name": "I am on the website",
             "line": 22,
             "output": [
-              "go to https://www.chefworks.de/"
+              "go to https://int.pulsiva.com/es-es/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 1258476437
+              "duration": 1566970381
             }
           },
           {
@@ -171,7 +171,7 @@
             "name": "I am searching for products by entering the productname in the searchfield",
             "line": 23,
             "output": [
-              "- set name = \"Colmar\"",
+              "- set name = \"TENEDOR PARA CARNE\"",
               "clicked button of search"
             ],
             "match": {
@@ -179,7 +179,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2085118184
+              "duration": 2915440738
             }
           },
           {
@@ -187,14 +187,14 @@
             "name": "I should see my product on the results of my search",
             "line": 24,
             "output": [
-              "found 'Colmar'"
+              "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:53"
             },
             "result": {
               "status": "passed",
-              "duration": 567007789
+              "duration": 2300869706
             }
           }
         ]

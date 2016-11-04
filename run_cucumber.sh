@@ -1,4 +1,6 @@
 #!/bin/bash
+#clear existing text on output.json
+> output/output.json
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
