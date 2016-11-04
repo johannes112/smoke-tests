@@ -86,6 +86,8 @@ When(/^I go to the checkout$/) do
   checkout_panel_path = csspathes.checkout_panel_path 
   checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path 
   
+  block_css('.page-wrap > nav')
+  
   page.find(checkout_panel_path)
   
   element = page.find(checkout_checkout_proceed_button_path, match: :first)
