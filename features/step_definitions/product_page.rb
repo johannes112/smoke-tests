@@ -1,7 +1,7 @@
 #product_page
 Given(/^I am on the product page of an article$/) do
   step("I am on the website")
-  step("I am for an product by entering the sku in the searchfield")
+  step("I am searching for a product by entering the sku in the searchfield")#"I am searching for an product by entering the sku in the searchfield")
   step("I should be on the detailsite of the related product")
 end
 
