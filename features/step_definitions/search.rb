@@ -7,6 +7,7 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   #variables:path
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
+  
   #actions
   find(search_searchfield_path).set(sku)
   search_searchbutton = page.find(search_searchbutton_path)
