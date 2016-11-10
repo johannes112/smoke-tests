@@ -37,23 +37,31 @@ if ENV['DRIVER'] == 'saucelabs'
         @caps = {
           :browserName => 'Safari',
           :appiumVersion => '1.5.3',
-          :deviceName => "iPhone 6",
+          :deviceName => "iPhone Simulator",
           :deviceOrientation => "portrait",
           :platformName => 'iOS',
           :platformVersion => '9.2',
-          :name => "iPhone 6"
+          :name => "iPhone Simulator"
+        }
+    elsif ENV['BROWSER'] == 'iPad'
+        @caps = {
+          :browserName => 'Safari',
+          :appiumVersion => '1.5.3',
+          :deviceName => "iPad Simulator",
+          :deviceOrientation => "portrait",
+          :platformName => 'iOS',
+          :platformVersion => '9.2',
+          :name => "iPad Simulator"
         }
     end
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
-    puts "caps:#{@caps}"
-    puts "caps_browser:#{@caps[:browserName]}"
+    puts "Enviroment:#{@caps}"
+    
     @url_path = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub"
    
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    driver = Capybara.default_driver
-    puts "driver:#{driver}"
   end
 end

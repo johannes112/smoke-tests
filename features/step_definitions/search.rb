@@ -84,3 +84,10 @@ When(/^I am searching for products by entering the productname in the searchfiel
   puts "clicked button of search"
 end
 
+When(/^I click on the button of searching$/) do
+  search_searchbutton_mobile_path = ".entry--search > a > i"
+  
+  page.find(search_searchbutton_mobile_path)
+  element = page.find(search_searchbutton_mobile_path)
+  element.click
+end
