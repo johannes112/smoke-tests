@@ -83,4 +83,3 @@ When(/^I am searching for products by entering the productname in the searchfiel
   search_searchbutton.click()
   puts "clicked button of search"
 end
-
