@@ -32,6 +32,7 @@
     "uri": "features/base_features/1.search.feature",
     "elements": [
       {
+<<<<<<< HEAD
         "keyword": "Scenario",
         "name": "search with sku",
         "line": 12,
@@ -43,25 +44,99 @@
           }
         ],
         "id": "search;search-with-sku",
+=======
+        "keyword": "Scenario",
+        "name": "search with sku",
+        "line": 11,
+        "description": "",
+        "id": "search;search-with-sku",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the website",
-            "line": 13,
+            "line": 12,
             "output": [
-              "go to https://www.pulsiva.com/es-es/"
+              "go to https://int.pulsiva.com/es-es/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 10143032577
+              "duration": 10353583718
             }
           },
           {
             "keyword": "When ",
+            "name": "I am searching for a product by entering the sku in the searchfield",
+            "line": 13,
+            "output": [
+              "- set sku = \"20040136\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7475648306
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 14,
+            "output": [
+              "found 'TENEDOR PARA CARNE'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 231503929
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "search with productnumber",
+        "line": 16,
+        "description": "",
+        "id": "search;search-with-productnumber",
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+<<<<<<< HEAD
+            "line": 13,
+            "output": [
+              "go to https://www.pulsiva.com/es-es/"
+=======
+            "line": 17,
+            "output": [
+              "go to https://int.pulsiva.com/es-es/"
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 10143032577
+=======
+              "duration": 1889612061
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+            }
+          },
+          {
+            "keyword": "When ",
+<<<<<<< HEAD
             "name": "I am searching for a product by entering the sku in the searchfield",
             "line": 14,
             "output": [
@@ -136,21 +211,47 @@
             "result": {
               "status": "passed",
               "duration": 3300365913
+=======
+            "name": "I am searching for a product by entering the productnumber in the searchfield",
+            "line": 18,
+            "output": [
+              "- set productnumber = \"104105\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2423119655
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see my product on the results of my search",
+<<<<<<< HEAD
             "line": 21,
+=======
+            "line": 19,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
               "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
+<<<<<<< HEAD
               "location": "features/step_definitions/search.rb:54"
             },
             "result": {
               "status": "passed",
               "duration": 786666574
+=======
+              "location": "features/step_definitions/search.rb:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 497998262
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           }
         ]
@@ -158,6 +259,7 @@
       {
         "keyword": "Scenario",
         "name": "search with name",
+<<<<<<< HEAD
         "line": 24,
         "description": "",
         "tags": [
@@ -166,53 +268,91 @@
             "line": 23
           }
         ],
+=======
+        "line": 21,
+        "description": "",
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
         "id": "search;search-with-name",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
             "name": "I am on the website",
+<<<<<<< HEAD
             "line": 25,
             "output": [
               "go to https://www.pulsiva.com/es-es/"
+=======
+            "line": 22,
+            "output": [
+              "go to https://int.pulsiva.com/es-es/"
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
+<<<<<<< HEAD
               "duration": 1639243924
+=======
+              "duration": 1566970381
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "When ",
             "name": "I am searching for products by entering the productname in the searchfield",
+<<<<<<< HEAD
             "line": 26,
+=======
+            "line": 23,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
               "- set name = \"TENEDOR PARA CARNE\"",
               "clicked button of search"
             ],
             "match": {
+<<<<<<< HEAD
               "location": "features/step_definitions/search.rb:73"
             },
             "result": {
               "status": "passed",
               "duration": 3784864027
+=======
+              "location": "features/step_definitions/search.rb:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2915440738
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "Then ",
             "name": "I should see my product on the results of my search",
+<<<<<<< HEAD
             "line": 27,
+=======
+            "line": 24,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
               "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
+<<<<<<< HEAD
               "location": "features/step_definitions/search.rb:54"
             },
             "result": {
               "status": "passed",
               "duration": 2621484593
+=======
+              "location": "features/step_definitions/search.rb:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2300869706
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           }
         ]
