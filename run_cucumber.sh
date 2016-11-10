@@ -61,6 +61,8 @@ else
   echo "TAG:"$TAG
   echo ""
 fi
+
+
 tag=" -t ${TAG}"
 
 config_base="$generate_output $folder_structure_config $tag"

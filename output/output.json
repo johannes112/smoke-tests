@@ -7,617 +7,352 @@
       }
     ],
     "keyword": "Feature",
-    "name": "account",
-    "line": 5,
-    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
+    "name": "search",
+    "line": 6,
+    "description": "\n  As a customer\n  i will be able to search for a specific product",
     "tags": [
       {
-        "name": "@export",
+        "name": "@pulsiva",
         "line": 2
       },
       {
-        "name": "@chefworks",
+        "name": "@export",
         "line": 3
       },
       {
-        "name": "@account",
+        "name": "@chefworks",
         "line": 4
+      },
+      {
+        "name": "@search",
+        "line": 5
       }
     ],
-    "id": "account",
-    "uri": "features/base_features/5.account.feature",
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
+<<<<<<< HEAD
+        "keyword": "Scenario",
+        "name": "search with sku",
+        "line": 12,
+        "description": "",
+        "tags": [
+          {
+            "name": "@search_sku",
+            "line": 11
+          }
+        ],
+        "id": "search;search-with-sku",
+=======
+        "keyword": "Scenario",
+        "name": "search with sku",
         "line": 11,
         "description": "",
-        "type": "background",
+        "id": "search;search-with-sku",
+        "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the registration page",
+            "name": "I am on the website",
             "line": 12,
             "output": [
-              "--> go to https://int.pulsiva.com/ch-de/account"
+              "go to https://int.pulsiva.com/es-es/"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:3"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 18820352944
+              "duration": 10353583718
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am searching for a product by entering the sku in the searchfield",
+            "line": 13,
+            "output": [
+              "- set sku = \"20040136\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7475648306
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 14,
+            "output": [
+              "found 'TENEDOR PARA CARNE'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 231503929
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "create new account",
+        "name": "search with productnumber",
+        "line": 16,
+        "description": "",
+        "id": "search;search-with-productnumber",
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+<<<<<<< HEAD
+            "line": 13,
+            "output": [
+              "go to https://www.pulsiva.com/es-es/"
+=======
+            "line": 17,
+            "output": [
+              "go to https://int.pulsiva.com/es-es/"
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+<<<<<<< HEAD
+              "duration": 10143032577
+=======
+              "duration": 1889612061
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+            }
+          },
+          {
+            "keyword": "When ",
+<<<<<<< HEAD
+            "name": "I am searching for a product by entering the sku in the searchfield",
+            "line": 14,
+            "output": [
+              "- set sku = \"20040136\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4389623575
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the detailsite of the related product",
+            "line": 15,
+            "output": [
+              "found 'TENEDOR PARA CARNE'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 379985057
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "search with productnumber",
         "line": 18,
         "description": "",
         "tags": [
           {
-            "name": "@export",
-            "line": 14
-          },
-          {
-            "name": "@chefworks",
-            "line": 15
-          },
-          {
-            "name": "@pulsiva",
-            "line": 16
-          },
-          {
-            "name": "@account_registration",
+            "name": "@search_number",
             "line": 17
           }
         ],
-        "id": "account;create-new-account",
+        "id": "search;search-with-productnumber",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
+            "keyword": "Given ",
+            "name": "I am on the website",
             "line": 19,
             "output": [
-              "UrlBackend:https://int.pulsiva.com/",
-              "user eMail:testmail_pch@test.de"
+              "go to https://www.pulsiva.com/es-es/"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:13"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 3303216462
+              "duration": 1576885235
             }
           },
           {
             "keyword": "When ",
-            "name": "I create a new account with my data",
+            "name": "I am searching for a product by entering the productnumber in the searchfield",
             "line": 20,
             "output": [
-              "- set prefix = \"Herr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "Unable to find css \"#register_billing_customernumber\"",
-              "- set email: testmail_pch@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva GmbH Test - eBusiness",
-              "chose company",
-              "department is not available in ch",
-              "taxid is not available in ch",
-              "taxvat is not available in ch",
-              "- set street: Tramstrasse",
-              "- set streetnumber: 7",
-              "- set postcode: 9444",
-              "- set city: Diepoldsau",
-              "clicked button to continue"
+              "- set productnumber = \"104105\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:42"
+              "location": "features/step_definitions/search.rb:39"
             },
             "result": {
               "status": "passed",
-              "duration": 104908108156
+              "duration": 3300365913
+=======
+            "name": "I am searching for a product by entering the productnumber in the searchfield",
+            "line": 18,
+            "output": [
+              "- set productnumber = \"104105\"",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2423119655
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on my account page",
+            "name": "I should see my product on the results of my search",
+<<<<<<< HEAD
             "line": 21,
+=======
+            "line": 19,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
+              "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:137"
+<<<<<<< HEAD
+              "location": "features/step_definitions/search.rb:54"
             },
             "result": {
               "status": "passed",
-              "duration": 7874917654
+              "duration": 786666574
+=======
+              "location": "features/step_definitions/search.rb:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 497998262
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "login with existing account",
-        "line": 27,
+        "name": "search with name",
+<<<<<<< HEAD
+        "line": 24,
         "description": "",
         "tags": [
           {
-            "name": "@export",
+            "name": "@search_name",
             "line": 23
-          },
-          {
-            "name": "@chefworks",
-            "line": 24
-          },
-          {
-            "name": "@pulsiva",
-            "line": 25
-          },
-          {
-            "name": "@account_login",
-            "line": 26
           }
         ],
-        "id": "account;login-with-existing-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "And ",
-            "name": "I already created an user account",
-            "line": 28,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:23"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3162435441
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 29,
-            "output": [
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:157"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 38911741314
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 30,
-            "output": [
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:137"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1567470214
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify payment in my account",
-        "line": 36,
+=======
+        "line": 21,
         "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 32
-          },
-          {
-            "name": "@chefworks",
-            "line": 33
-          },
-          {
-            "name": "@account_update",
-            "line": 34
-          },
-          {
-            "name": "@account_payment",
-            "line": 35
-          }
-        ],
-        "id": "account;modify-payment-in-my-account",
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
+        "id": "search;search-with-name",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 37,
+            "name": "I am on the website",
+<<<<<<< HEAD
+            "line": 25,
             "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
+              "go to https://www.pulsiva.com/es-es/"
+=======
+            "line": 22,
+            "output": [
+              "go to https://int.pulsiva.com/es-es/"
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:199"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 43261717350
+<<<<<<< HEAD
+              "duration": 1639243924
+=======
+              "duration": 1566970381
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 38,
+            "name": "I am searching for products by entering the productname in the searchfield",
+<<<<<<< HEAD
+            "line": 26,
+=======
+            "line": 23,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
-              "--> clicked button for change of payment",
-              "I change option of payment"
+              "- set name = \"TENEDOR PARA CARNE\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:305"
+<<<<<<< HEAD
+              "location": "features/step_definitions/search.rb:73"
             },
             "result": {
-              "status": "failed",
-              "error_message": "Unable to find css \"#payment_mean3\" (Capybara::ElementNotFound)\n./features/step_definitions/account.rb:326:in `/^I change option of payment$/'\n./features/step_definitions/account.rb:316:in `/^I modify my paymentinfo$/'\nfeatures/base_features/5.account.feature:38:in `When I modify my paymentinfo'",
-              "duration": 34504017855
+              "status": "passed",
+              "duration": 3784864027
+=======
+              "location": "features/step_definitions/search.rb:72"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2915440738
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 39,
-            "match": {
-              "location": "features/step_definitions/account.rb:268"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "line": 45,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 41
-          },
-          {
-            "name": "@chefworks",
-            "line": 42
-          },
-          {
-            "name": "@account_update",
-            "line": 43
-          },
-          {
-            "name": "@account_invoice",
-            "line": 44
-          }
-        ],
-        "id": "account;modify-adress-of-invoice",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 46,
+            "name": "I should see my product on the results of my search",
+<<<<<<< HEAD
+            "line": 27,
+=======
+            "line": 24,
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
+              "found 'TENEDOR PARA CARNE'"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:199"
+<<<<<<< HEAD
+              "location": "features/step_definitions/search.rb:54"
             },
             "result": {
               "status": "passed",
-              "duration": 43657296937
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 47,
-            "match": {
-              "location": "features/step_definitions/account.rb:334"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "No selector specified (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 60 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-HLEK05V71GA', ip: '172.20.115.82', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.8.0_91'\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=10, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=about:blank, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]\nSession ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXdd6e4eec\n*** Element info: {Using=css selector, value=} (org.openqa.selenium.InvalidSelectorException) (Selenium::WebDriver::Error::InvalidSelectorError)\n[remote server] sun.reflect.GeneratedConstructorAccessor17():-1:in `newInstance'\n[remote server] sun.reflect.DelegatingConstructorAccessorImpl():-1:in `newInstance'\n[remote server] java.lang.reflect.Constructor():-1:in `newInstance'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):206:in `createThrowable'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):158:in `throwIfResponseFailed'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):678:in `execute'\n[remote server] org.openqa.selenium.remote.RemoteWebElement(RemoteWebElement.java):327:in `execute'\n[remote server] org.openqa.selenium.remote.RemoteWebElement(RemoteWebElement.java):214:in `findElements'\n[remote server] org.openqa.selenium.remote.RemoteWebElement(RemoteWebElement.java):291:in `findElementsByCssSelector'\n[remote server] org.openqa.selenium.By$ByCssSelector(By.java):441:in `findElements'\n[remote server] org.openqa.selenium.remote.RemoteWebElement(RemoteWebElement.java):190:in `findElements'\n[remote server] sun.reflect.GeneratedMethodAccessor9():-1:in `invoke'\n[remote server] sun.reflect.DelegatingMethodAccessorImpl():-1:in `invoke'\n[remote server] java.lang.reflect.Method():-1:in `invoke'\n[remote server] org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement$1(EventFiringWebDriver.java):335:in `invoke'\n[remote server] com.sun.proxy.$Proxy2():-1:in `findElements'\n[remote server] org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement(EventFiringWebDriver.java):417:in `findElements'\n[remote server] sun.reflect.GeneratedMethodAccessor9():-1:in `invoke'\n[remote server] sun.reflect.DelegatingMethodAccessorImpl():-1:in `invoke'\n[remote server] java.lang.reflect.Method():-1:in `invoke'\n[remote server] org.openqa.selenium.remote.server.KnownElements$1(KnownElements.java):64:in `invoke'\n[remote server] com.sun.proxy.$Proxy3():-1:in `findElements'\n[remote server] org.openqa.selenium.remote.server.handler.FindChildElements(FindChildElements.java):49:in `call'\n[remote server] org.openqa.selenium.remote.server.handler.FindChildElements(FindChildElements.java):1:in `call'\n[remote server] java.util.concurrent.FutureTask():-1:in `run'\n[remote server] org.openqa.selenium.remote.server.DefaultSession$1(DefaultSession.java):176:in `run'\n[remote server] java.util.concurrent.ThreadPoolExecutor():-1:in `runWorker'\n[remote server] java.util.concurrent.ThreadPoolExecutor$Worker():-1:in `run'\n[remote server] java.lang.Thread():-1:in `run'\n./features/step_definitions/account.rb:340:in `/^I modify my address for my bill$/'\nfeatures/base_features/5.account.feature:47:in `When I modify my address for my bill'",
-              "duration": 30850575335
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 48,
-            "match": {
-              "location": "features/step_definitions/account.rb:268"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of delivery",
-        "line": 55,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 50
-          },
-          {
-            "name": "@chefworks",
-            "line": 51
-          },
-          {
-            "name": "@pulsiva",
-            "line": 52
-          },
-          {
-            "name": "@account_update",
-            "line": 53
-          },
-          {
-            "name": "@account_delivery",
-            "line": 54
-          }
-        ],
-        "id": "account;modify-adress-of-delivery",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 56,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:199"
+              "duration": 2621484593
+=======
+              "location": "features/step_definitions/search.rb:53"
             },
             "result": {
               "status": "passed",
-              "duration": 43089025796
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my delivery",
-            "line": 57,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "> found button to create a new address",
-              "--> clicked button to create a new address",
-              "I add a new address",
-              "> found formular to add a new address",
-              "prefix:Frau",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "- set phone: 01234567",
-              "- set company: Pulsiva GmbH Test - eBusiness",
-              "- set street: Tramstrasse",
-              "- set streetnumber: 7",
-              "- set postcode: 9444",
-              "- set city: Diepoldsau",
-              "- set country: Schweiz",
-              "> clicked button to save address"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:424"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 71550190041
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see an alert for creating a new address",
-            "line": 58,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:278"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 944208087
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "change settings for newsletter",
-        "line": 63,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 60
-          },
-          {
-            "name": "@chefworks",
-            "line": 61
-          },
-          {
-            "name": "@account_newsletter",
-            "line": 62
-          }
-        ],
-        "id": "account;change-settings-for-newsletter",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 64,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:199"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 43140839981
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 65,
-            "match": {
-              "location": "features/step_definitions/account.rb:466"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "No selector specified (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 48 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'\nSystem info: host: 'WIN-HLEK05V71GA', ip: '172.20.115.82', os.name: 'Windows Server 2012', os.arch: 'x86', os.version: '6.2', java.version: '1.8.0_91'\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=10, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=about:blank, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]\nSession ID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXdd6e4eec\n*** Element info: {Using=css selector, value=} (org.openqa.selenium.InvalidSelectorException) (Selenium::WebDriver::Error::InvalidSelectorError)\n[remote server] sun.reflect.GeneratedConstructorAccessor17():-1:in `newInstance'\n[remote server] sun.reflect.DelegatingConstructorAccessorImpl():-1:in `newInstance'\n[remote server] java.lang.reflect.Constructor():-1:in `newInstance'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):206:in `createThrowable'\n[remote server] org.openqa.selenium.remote.ErrorHandler(ErrorHandler.java):158:in `throwIfResponseFailed'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):678:in `execute'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):388:in `findElements'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):496:in `findElementsByCssSelector'\n[remote server] org.openqa.selenium.By$ByCssSelector(By.java):441:in `findElements'\n[remote server] org.openqa.selenium.remote.RemoteWebDriver(RemoteWebDriver.java):351:in `findElements'\n[remote server] sun.reflect.GeneratedMethodAccessor10():-1:in `invoke'\n[remote server] sun.reflect.DelegatingMethodAccessorImpl():-1:in `invoke'\n[remote server] java.lang.reflect.Method():-1:in `invoke'\n[remote server] org.openqa.selenium.support.events.EventFiringWebDriver$2(EventFiringWebDriver.java):103:in `invoke'\n[remote server] com.sun.proxy.$Proxy1():-1:in `findElements'\n[remote server] org.openqa.selenium.support.events.EventFiringWebDriver(EventFiringWebDriver.java):177:in `findElements'\n[remote server] org.openqa.selenium.remote.server.handler.FindElements(FindElements.java):50:in `call'\n[remote server] org.openqa.selenium.remote.server.handler.FindElements(FindElements.java):1:in `call'\n[remote server] java.util.concurrent.FutureTask():-1:in `run'\n[remote server] org.openqa.selenium.remote.server.DefaultSession$1(DefaultSession.java):176:in `run'\n[remote server] java.util.concurrent.ThreadPoolExecutor():-1:in `runWorker'\n[remote server] java.util.concurrent.ThreadPoolExecutor$Worker():-1:in `run'\n[remote server] java.lang.Thread():-1:in `run'\n./features/step_definitions/account.rb:469:in `/^I activate the newsletterbox$/'\nfeatures/base_features/5.account.feature:65:in `When I activate the newsletterbox'",
-              "duration": 30087092818
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 66,
-            "match": {
-              "location": "features/step_definitions/account.rb:268"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "test links on the accountsite",
-        "line": 73,
-        "description": "",
-        "tags": [
-          {
-            "name": "@export",
-            "line": 69
-          },
-          {
-            "name": "@chefworks",
-            "line": 70
-          },
-          {
-            "name": "@pulsiva",
-            "line": 71
-          },
-          {
-            "name": "@account_links",
-            "line": 72
-          }
-        ],
-        "id": "account;test-links-on-the-accountsite",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 74,
-            "output": [
-              "I already created an user account",
-              "-> there exists an unique account",
-              "I login with valid informations",
-              "> ok, I am on https://int.pulsiva.com/ch-de/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://int.pulsiva.com/ch-de/account",
-              "> the page contains testmail_pch@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:199"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 42856543446
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I get all items of the sidebar",
-            "line": 75,
-            "output": [
-              "> menuitems:7",
-              "- account",
-              "- profile",
-              "- address",
-              "- payment",
-              "- orders",
-              "- wishlist",
-              "- logout"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:476"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2598164718
+              "duration": 2300869706
+>>>>>>> parent of 65ac91f... fix: use ruby logic for saucelabs_config.rb, problem was the newest version of firefox use a webdriver that not supports all actions
             }
           }
         ]
