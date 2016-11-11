@@ -134,7 +134,7 @@ class User
       when 'se' then 'Sverige'
       when 'nl' then 'Nederland'
       when 'be' then 'Belgique'
-      when 'es' then 'Espana'
+      when 'es' then nil
     end
     @owner_firstname = case ENV['COUNTRY']
       when 'de' then nil
