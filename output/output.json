@@ -1,0 +1,105 @@
+[
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 2
+      },
+      {
+        "name": "@chefworks",
+        "line": 3
+      },
+      {
+        "name": "@product_cart",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/4.product_cart.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "continue shopping",
+        "line": 13,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 11
+          },
+          {
+            "name": "@product_cart_continue",
+            "line": 12
+          }
+        ],
+        "id": "account;continue-shopping",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart manually",
+            "line": 14,
+            "output": [
+              "I am on the product page of an article",
+              "go to https://www.em-group.com/en/",
+              "- set sku = \"22147\"",
+              "clicked button of search",
+              "found 'STOCKHOLM'",
+              "I add an article to the product cart by clicking the button to push it into the cart",
+              "-> clicked buy button",
+              "I am on the product cart page",
+              "-> go to https://www.em-group.com/en/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23630208145
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on the button to continue shopping",
+            "line": 15,
+            "output": [
+              "--> clicked button for continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2293057556
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the back on the productsite",
+            "line": 16,
+            "output": [
+              "found 'STOCKHOLM'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 383333775
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
