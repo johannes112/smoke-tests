@@ -1,10 +1,7 @@
 if ENV['DRIVER'] == 'saucelabs'
   require 'capybara/cucumber'
   module Saucelabs_config
-    Capybara.default_selector = :css
-    Capybara.ignore_hidden_elements = true
     Capybara.default_max_wait_time = 30
-    
     if ENV['BROWSER'] == 'firefox'
       @caps = {
         :platform => "Windows 7",
@@ -35,22 +32,22 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     elsif ENV['BROWSER'] == 'iPhone'
         @caps = {
-          :browserName => 'Safari',
-          :appiumVersion => '1.5.3',
-          :deviceName => "iPhone Simulator",
+          :appiumVersion => '1.6.0', #'1.5.3',
+          :deviceName => 'iPhone 7 Simulator',#"iPhone Simulator",
           :deviceOrientation => "portrait",
+          :platformVersion => '10.0',#'9.2',
           :platformName => 'iOS',
-          :platformVersion => '9.2',
+          :browserName => 'Safari',
           :name => "iPhone Simulator"
         }
     elsif ENV['BROWSER'] == 'iPad'
         @caps = {
-          :browserName => 'Safari',
           :appiumVersion => '1.5.3',
           :deviceName => "iPad Simulator",
           :deviceOrientation => "portrait",
-          :platformName => 'iOS',
           :platformVersion => '9.2',
+          :platformName => 'iOS',
+          :browserName => 'Safari',
           :name => "iPad Simulator"
         }
     end
@@ -63,5 +60,7 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
+    Capybara.default_selector = :css
+    Capybara.ignore_hidden_elements = true
   end
 end

@@ -16,7 +16,7 @@ class ShopwareApi
     options = getDigest()
     #puts "readData:#{url}"
     sleep 2
-    response_data = self.class.get(url, options)
+    response_data = with_http_retries{self.class.get(url, options)}
     if response_data.success?
       response_data
     else
@@ -30,7 +30,7 @@ class ShopwareApi
   def updateData(url, options)
     #puts "updateData:#{url}"
     #sleep 2
-    response_data = self.class.put(url, options)
+    response_data = with_http_retries{self.class.put(url, options)}
     if !response_data.success?
       puts ">> ERROR: update failed"
       puts "options: #{options}"
@@ -42,7 +42,7 @@ class ShopwareApi
     #puts "deleteData:#{url}"
     options = getDigest()
     sleep 2
-    response_data = self.class.delete(url, options)
+    response_data = with_http_retries{self.class.delete(url, options)}
     if response_data.success?
       response_data
     else
@@ -51,6 +51,23 @@ class ShopwareApi
       raise(ScriptError, "Error: delete failed!")
     end
   end
+
+# Simple wrapper to allow retries for HTTP requests - prolongs daemon life.
+  def with_http_retries(&block)
+    max_retries = 3
+    times_retried = 0
+    begin
+      yield
+    rescue Net::ReadTimeout => error
+      if times_retried < max_retries
+        times_retried += 1
+        puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
+        retry
+      else
+        puts "Exiting script. <explanation of why this is unlikely to recover>"
+        exit(1)
+      end
+    end
+  end
   
 end
-
