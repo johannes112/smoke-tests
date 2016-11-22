@@ -7,28 +7,28 @@ if ENV['DRIVER'] == 'saucelabs'
         :platform => "Windows 7",
         :browserName => "Firefox",
         :version => "40", 
-        :screenResolution => "1440x900"
+        :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'ie'
       @caps = {
         :platform => "Windows 8",
         :browserName => "Internet Explorer",
         :version => "latest",
-        :screenResolution => "1440x900"
+        :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'chrome'
       @caps = {
         :platform => "Windows 7",
         :browserName => "Chrome",
         :version => "latest-1",
-        :screenResolution => "1440x900"
+        :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'safari'
       @caps = {
         :platform => "OS X 10.10",
         :browserName => "Safari",
         :version => "latest",
-        :screenResolution => "1440x900"
+        :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'iPhone'
         @caps = {
