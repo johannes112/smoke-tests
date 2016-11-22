@@ -52,16 +52,23 @@ class ShopwareApi
     end
   end
 
+
 # Simple wrapper to allow retries for HTTP requests - prolongs daemon life.
   def with_http_retries(&block)
+    max_retries = 3
+    times_retried = 0
     begin
       yield
-    rescue Errno::ECONNREFUSED, SocketError, Net::ReadTimeout
-      DaemonKit.logger.error "Cannot reach. Retrying in 2 seconds."
-      sleep 2
-      retry
+    rescue Net::ReadTimeout => error
+      if times_retried < max_retries
+        times_retried += 1
+        puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
+        retry
+      else
+        puts "Exiting script. <explanation of why this is unlikely to recover>"
+        exit(1)
+      end
     end
   end
   
 end
-
