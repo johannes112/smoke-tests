@@ -63,10 +63,10 @@ class ShopwareApi
       if times_retried < max_retries
         times_retried += 1
         puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
+        sleep 9
         retry
       else
         puts "Exiting script. <explanation of why this is unlikely to recover>"
-        exit(1)
       end
     end
   end
