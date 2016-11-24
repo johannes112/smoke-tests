@@ -42,9 +42,7 @@ end
 #display:none for given css element
 def block_css(csspath)
   #check if element is class or id
-    page.driver.browser.execute_script("
-      document.querySelector('"+csspath+"').style.display = 'none'
-      ")
+  catch_error{page.driver.browser.execute_script("document.querySelector('"+csspath+"').style.display = 'none'")}
 end
 
 #check if a variable exists and set its value
@@ -95,4 +93,12 @@ end
 def set_dropdown_value(var_text, option_value, dropdown_path)
   puts "- set #{var_text}: #{option_value}"
   page.find("#{dropdown_path} option", :text => option_value).click
+end
+
+def catch_error(&block)
+  begin
+    yield
+  rescue Exception => e
+    puts "\033[35m#{e.message} (35)\033[0m\n"
+  end
 end

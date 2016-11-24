@@ -60,6 +60,7 @@ class ShopwareApi
     begin
       yield
     rescue Net::ReadTimeout => error
+    puts "CustomErrorNet: #{error}"
       if times_retried < max_retries
         times_retried += 1
         puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
