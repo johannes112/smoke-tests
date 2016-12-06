@@ -63,7 +63,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
-    @vega
+    
     @navigation
     @links
     Scenario: activate the cart
