@@ -56,7 +56,7 @@ class Settings
         when (/be/) then 'https://www.vega-direct.com/be-fr/'
         when (/es/) then 'https://www.vega-direct.com/es-es/'
       end
-      @urlBackend = 'https://www.vega-direct.com/'
+      @urlBackend = 'http://test.vega-direct.com/'
     end
     @url_checkout_confirm = "checkout/shippingPayment"
     @url_add_comand = 'direktbestellen'

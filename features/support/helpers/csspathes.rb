@@ -854,7 +854,7 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/ch/) then         '#payment_mean5'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#payment_mean5'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#payment_mean3'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then         '#payment_mean3'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '#payment_mean3'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#payment_mean3'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#payment_mean5'
       else 'is not defined' 

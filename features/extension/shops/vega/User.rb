@@ -70,17 +70,17 @@ class User
       when 'lu' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Pulsiva GmbH Test - eBusiness'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB'
-      when 'ch' then 'Pulsiva GmbH Test - eBusiness'
-      when 'it' then 'Pulsiva Italy GmbH'
-      when 'fr' then 'Pulsiva France'
-      when 'no' then 'Pulsiva Norge'
-      when 'se' then 'Pulsiva Scandinavia - eBusiness '
-      when 'nl' then 'Pulsiva Nederland'
-      when 'be' then 'Pulsiva Belgium'
-      when 'es' then 'Pulsiva Espana'
-      when 'lu' then 'Vega Luxembourg - eBusiness'
+      when 'de' then 'Test Vega DE eBusiness'
+      when 'at' then 'Test Vega AT eBusiness'
+      when 'ch' then 'Test Vega CH eBusiness'
+      when 'it' then 'Test Vega DE eBusiness'
+      when 'fr' then 'Test Vega DE eBusiness'
+      when 'no' then 'Test Vega DE eBusiness'
+      when 'se' then 'Test Vega DE eBusiness'
+      when 'nl' then 'Test Vega DE eBusiness'
+      when 'be' then 'Test Vega DE eBusiness'
+      when 'es' then 'Test Vega DE eBusiness'
+      when 'lu' then 'Test Vega DE eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then 'other'
