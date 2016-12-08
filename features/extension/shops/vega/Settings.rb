@@ -5,7 +5,7 @@ class Settings
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when (/de/) then 'http://int.vega-direct.com/'
+        when (/de/) then 'http://int.vega-direct.com/de-de/'
         when (/ch/) then 'http://int.vega-direct.com/at-de/'
         when (/at/) then 'http://int.vega-direct.com/ch-de/'
         when (/it/) then 'http://int.vega-direct.com/it-it/'
@@ -17,7 +17,7 @@ class Settings
         when (/es/) then 'http://int.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.vega-direct.com/'
+        when (/de/) then 'https://int.vega-direct.com/de-de/'
         when (/at/) then 'https://int.vega-direct.com/at-de/'
         when (/ch/) then 'https://int.vega-direct.com/ch-de/'
         when (/it/) then 'https://int.vega-direct.com/it-it/'
@@ -33,7 +33,7 @@ class Settings
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/de/) then 'http://test.vega-direct.com/'
+        when (/de/) then 'http://test.vega-direct.com/de-de/'
         when (/at/) then 'http://www.vega-direct.com/at-de/'
         when (/ch/) then 'http://www.vega-direct.com/ch-de/'
         when (/it/) then 'http://www.vega-direct.com/it-it/'
@@ -45,7 +45,7 @@ class Settings
         when (/es/) then 'http://www.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'http://test.vega-direct.com/'
+        when (/de/) then 'http://test.vega-direct.com/de-de/'
         when (/at/) then 'https://www.vega-direct.com/at-de/'
         when (/ch/) then 'https://www.vega-direct.com/ch-de/'
         when (/it/) then 'https://www.vega-direct.com/it-it/'
