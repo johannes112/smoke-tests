@@ -8,6 +8,7 @@ Feature: account
 	I want to be able to put a product into my cart
 	in order to manage my chosen products
 
+  @vega
   @pulsiva
   @product_cart_continue
     Scenario: continue shopping
@@ -21,6 +22,7 @@ Feature: account
 	    When I enter a sku into the integrated field on the cart
   	  Then I will see the add-action in the url
 	 
+	@vega
   @pulsiva
   @product_cart_voucher
     Scenario: enter a code
@@ -29,6 +31,7 @@ Feature: account
 	    And I enter some code into the optional field
   	  Then there should be the voucher-action in the url
 	
+	@vega
 	@pulsiva 
   @product_cart_remove
     Scenario: remove an article
@@ -36,13 +39,14 @@ Feature: account
 	    When I remove this article from the product cart
   	  Then the cart should not contain this article 
 
+  @vega
   @pulsiva
   @product_cart_data
     Scenario: display articles with data
       Given the product cart contains an article
       Then I should see all necessary informations about this article within the product list of the product cart
 
-  @pulsiva
+  @vega
   @product_cart_checkout
 	  Scenario: navigate to checkout
 	    Given the product cart contains an article

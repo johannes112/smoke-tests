@@ -1,5 +1,10 @@
 #!/bin/bash
+<<<<<<< HEAD
 
+=======
+echo "IP of this machine:"
+curl ipecho.net/plain ; echo
+>>>>>>> vega
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}

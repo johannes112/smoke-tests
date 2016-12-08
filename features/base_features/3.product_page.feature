@@ -10,24 +10,28 @@ Feature: product page
   Background: 
     Given I am on the product page of an article
   
+  @vega
   @export
   @product_page_note
   Scenario: notice an article
 	  When I press the remember-button
 	  Then there should see a hint
 	
+	@vega
   @export
   @product_page_compare	
   Scenario: compare an article
 	  When I press the compare-button
 	  Then there should see the icon to compare
 
+  @vega
   @export
   @product_page_add
   Scenario: add an article to the product cart by clicking button 
     When I add an article to the product cart by clicking the button to push it into the cart
     Then I should see the cart on the right of the site
 
+  @vega
   @export
   @product_page_data
   Scenario: display products with data
@@ -44,7 +48,8 @@ Feature: product page
   Scenario: rate an article with button
 	  When I click the button to rate for the article
 	  Then there should be a form for rating the article
-	 
+	
+	@vega 
 	@product_page_suggest
   Scenario: customer seen article
 	  When I change to the tab of the customer viewed articles

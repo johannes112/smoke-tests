@@ -13,6 +13,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    @vega
     @website_elements
     Scenario: check for elements
         Then I should be a basic elements
@@ -20,6 +21,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    @vega
     @navigation
     @menu
     @hovermenu    
@@ -41,6 +43,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    @vega
     @navigation
     @links
     Scenario: navigate to account
@@ -49,6 +52,8 @@ Feature: website_basics
         
     @export
     @chefworks
+    @pulsiva
+    @vega
     @navigation
     @links
     Scenario: navigate to note
@@ -58,6 +63,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    
     @navigation
     @links
     Scenario: activate the cart
@@ -69,6 +75,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    
     @navigation
     @links
     Scenario: navigate to help
@@ -78,6 +85,7 @@ Feature: website_basics
 
     @chefworks
     @pulsiva
+    @vega
     @navigation
     @link_checker
     Scenario: find all links

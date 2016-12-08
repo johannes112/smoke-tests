@@ -1,4 +1,4 @@
-#pulsiva
+#vega
 class Article
   attr_accessor :sub_category, :category, :category_language_changed, :productnumber, :sku, :amount, :name, :url_add_comand
   
@@ -32,28 +32,28 @@ class Article
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '104105'#without i!
-      when (/at/) then '104105'
-      when (/ch/) then '104105'
-      when (/it/) then '104105'
-      when (/fr/) then '104105'
-      when (/no/) then '104065'#other product
-      when (/se/) then '104105'
-      when (/nl/) then '104105'
-      when (/be/) then '104105'
-      when (/es/) then '104105'
+      when (/de/) then '106743'#without i!
+      when (/at/) then '106743'
+      when (/ch/) then '106743'
+      when (/it/) then '106743'
+      when (/fr/) then '106743'
+      when (/no/) then '106743'#other product
+      when (/se/) then '106743'
+      when (/nl/) then '106743'
+      when (/be/) then '106743'
+      when (/es/) then '106743'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '20040136'#without i!
-      when (/at/) then '20040136'
-      when (/ch/) then '20040136'
-      when (/it/) then '20040136'
-      when (/fr/) then '20040136'
+      when (/de/) then '10022469'#without i!
+      when (/at/) then '10022469'
+      when (/ch/) then '10022469'
+      when (/it/) then '10022469'
+      when (/fr/) then '10022469'
       when (/no/) then '20060940'#other product
-      when (/se/) then '20040136'
-      when (/nl/) then '20040136'
-      when (/be/) then '20040136'
-      when (/es/) then '20040136'
+      when (/se/) then '10022469'
+      when (/nl/) then '10022469'
+      when (/be/) then '10022469'
+      when (/es/) then '10022469'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -81,7 +81,7 @@ class Article
       when (/es/) then 'TENEDOR PARA CARNE'
     end
     @url_add_comand = case ENV['COUNTRY']
-      when (/de/) then 'direktbestellen'
+      when (/de/) then 'EMGroupDirectOrder'
       when (/at/) then 'EMGroupDirectOrder'
       when (/ch/) then 'EMGroupDirectOrder'
       when (/it/) then 'acquistato'

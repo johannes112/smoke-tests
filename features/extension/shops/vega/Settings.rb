@@ -1,62 +1,62 @@
-#pulsiva
+#vega-direct
 class Settings
   attr_accessor :url_checkout_confirm, :url_add_comand, :urlHttp, :urlHttps, :urlBackend, :baby_steps
   
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
-        when (/de/) then 'http://int.pulsiva.com/de-de/'
-        when (/ch/) then 'http://int.pulsiva.com/at-de/'
-        when (/at/) then 'http://int.pulsiva.com/ch-de/'
-        when (/it/) then 'http://int.pulsiva.com/it-it/'
-        when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
-        when (/no/) then 'http://int.pulsiva.com/no-no/'
-        when (/se/) then 'http://int.pulsiva.com/se-se/'
-        when (/nl/) then 'http://int.pulsiva.com/nl-nl/'
-        when (/be/) then 'http://int.pulsiva.com/be-fr/'
-        when (/es/) then 'http://int.pulsiva.com/es-es/'
+        when (/de/) then 'http://int.vega-direct.com/de-de/'
+        when (/ch/) then 'http://int.vega-direct.com/at-de/'
+        when (/at/) then 'http://int.vega-direct.com/ch-de/'
+        when (/it/) then 'http://int.vega-direct.com/it-it/'
+        when (/fr/) then 'http://int.vega-direct.com/fr-fr/'
+        when (/no/) then 'http://int.vega-direct.com/no-no/'
+        when (/se/) then 'http://int.vega-direct.com/se-se/'
+        when (/nl/) then 'http://int.vega-direct.com/nl-nl/'
+        when (/be/) then 'http://int.vega-direct.com/be-fr/'
+        when (/es/) then 'http://int.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.pulsiva.com/de-de/'
-        when (/at/) then 'https://int.pulsiva.com/at-de/'
-        when (/ch/) then 'https://int.pulsiva.com/ch-de/'
-        when (/it/) then 'https://int.pulsiva.com/it-it/'
-        when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
-        when (/no/) then 'https://int.pulsiva.com/no-no/'
-        when (/se/) then 'https://int.pulsiva.com/se-se/'
-        when (/nl/) then 'https://int.pulsiva.com/nl-nl/'
-        when (/be/) then 'https://int.pulsiva.com/be-fr/'
-        when (/es/) then 'https://int.pulsiva.com/es-es/'
+        when (/de/) then 'https://int.vega-direct.com/de-de/'
+        when (/at/) then 'https://int.vega-direct.com/at-de/'
+        when (/ch/) then 'https://int.vega-direct.com/ch-de/'
+        when (/it/) then 'https://int.vega-direct.com/it-it/'
+        when (/fr/) then 'https://int.vega-direct.com/fr-fr/'
+        when (/no/) then 'https://int.vega-direct.com/no-no/'
+        when (/se/) then 'https://int.vega-direct.com/se-se/'
+        when (/nl/) then 'https://int.vega-direct.com/nl-nl/'
+        when (/be/) then 'https://int.vega-direct.com/be-fr/'
+        when (/es/) then 'https://int.vega-direct.com/es-es/'
         end
-      @urlBackend = 'https://int.pulsiva.com/'
+      @urlBackend = 'https://int.vega-direct.com/'
     end
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/de/) then 'http://www.pulsiva.com/de-de/'
-        when (/at/) then 'http://www.pulsiva.com/at-de/'
-        when (/ch/) then 'http://www.pulsiva.com/ch-de/'
-        when (/it/) then 'http://www.pulsiva.com/it-it/'
-        when (/fr/) then 'http://www.pulsiva.com/fr-fr/'
-        when (/no/) then 'http://www.pulsiva.com/no-no/'
-        when (/se/) then 'http://www.pulsiva.com/se-se/'
-        when (/nl/) then 'http://www.pulsiva.com/nl-nl/'
-        when (/be/) then 'http://www.pulsiva.com/be-fr/'
-        when (/es/) then 'http://www.pulsiva.com/es-es/'
+        when (/de/) then 'http://test.vega-direct.com/de-de/'
+        when (/at/) then 'http://www.vega-direct.com/at-de/'
+        when (/ch/) then 'http://www.vega-direct.com/ch-de/'
+        when (/it/) then 'http://www.vega-direct.com/it-it/'
+        when (/fr/) then 'http://www.vega-direct.com/fr-fr/'
+        when (/no/) then 'http://www.vega-direct.com/no-no/'
+        when (/se/) then 'http://www.vega-direct.com/se-se/'
+        when (/nl/) then 'http://www.vega-direct.com/nl-nl/'
+        when (/be/) then 'http://www.vega-direct.com/be-fr/'
+        when (/es/) then 'http://www.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'https://www.pulsiva.com/de-de/'
-        when (/at/) then 'https://www.pulsiva.com/at-de/'
-        when (/ch/) then 'https://www.pulsiva.com/ch-de/'
-        when (/it/) then 'https://www.pulsiva.com/it-it/'
-        when (/fr/) then 'https://www.pulsiva.com/fr-fr/'
-        when (/no/) then 'https://www.pulsiva.com/no-no/'
-        when (/se/) then 'https://www.pulsiva.com/se-se/'
-        when (/nl/) then 'https://www.pulsiva.com/nl-nl/'
-        when (/be/) then 'https://www.pulsiva.com/be-fr/'
-        when (/es/) then 'https://www.pulsiva.com/es-es/'
+        when (/de/) then 'http://test.vega-direct.com/de-de/'
+        when (/at/) then 'https://www.vega-direct.com/at-de/'
+        when (/ch/) then 'https://www.vega-direct.com/ch-de/'
+        when (/it/) then 'https://www.vega-direct.com/it-it/'
+        when (/fr/) then 'https://www.vega-direct.com/fr-fr/'
+        when (/no/) then 'https://www.vega-direct.com/no-no/'
+        when (/se/) then 'https://www.vega-direct.com/se-se/'
+        when (/nl/) then 'https://www.vega-direct.com/nl-nl/'
+        when (/be/) then 'https://www.vega-direct.com/be-fr/'
+        when (/es/) then 'https://www.vega-direct.com/es-es/'
       end
-      @urlBackend = 'https://www.pulsiva.com/'
+      @urlBackend = 'http://test.vega-direct.com/'
     end
     @url_checkout_confirm = "checkout/shippingPayment"
     @url_add_comand = 'direktbestellen'
