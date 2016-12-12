@@ -165,17 +165,19 @@ class Csspathes
       else '.container--ajax-cart'
     end
     @links_service_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.navigation--entry.entry--service'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.navigation--entry.entry--service'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div.navigation--entry.entry--service'
       else 'div.navigation--entry.entry--service' 
     end
     @links_context_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '.navigation--entry.is--active.has--sub-categories'        
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '.navigation--entry.is--active.has--sub-categories'        
+      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.is--active.has--sub-categories'        
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       else '.navigation--entry.is--active.has--sub-categories' 
     end
     #search.rb
@@ -209,7 +211,7 @@ class Csspathes
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.header--directOrder'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'not available'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'not available'
-      else 'a.topbar-directOrder' 
+      else '.header--directOrder' 
     end
     @direct_ordering_form_sku_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.emgroup-direct-order-searchterm-column > input'
@@ -280,7 +282,7 @@ class Csspathes
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tab-menu--product'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.tab-menu--product.js--tab-menu'
-      else 'is not defined' 
+      else '.tab-menu--product' 
     end
     @product_page_productrecommodations_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tab-menu--cross-selling'
@@ -390,10 +392,10 @@ class Csspathes
     end
     @product_cart_remove_article_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel--td.column--actions > a'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.panel--td.column--actions > form > button > i'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.column--actions > form > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel--td.column--actions > a'
-      else 'div.panel--td.column--actions > a'
+      else '.column--actions > form > button'
     end
     @product_cart_article_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.has--border'
@@ -1150,7 +1152,7 @@ class Csspathes
     end
     @checkout_checkout_buy_button_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.btn--checkout-proceed'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.confirm--actions.table--actions.block > button'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.confirm--actions.table--actions.block > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.btn--checkout-proceed'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.btn--checkout-proceed'
       else '.btn--checkout-proceed'

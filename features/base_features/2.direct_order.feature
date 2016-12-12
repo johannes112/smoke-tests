@@ -1,4 +1,6 @@
 @pulsiva
+@vega
+@hotelwaesche
 @direct_order
 Feature: direct order
 

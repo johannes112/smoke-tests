@@ -1,4 +1,4 @@
-#vega-direct
+#vega
 class Settings
   attr_accessor :url_checkout_confirm, :url_add_comand, :urlHttp, :urlHttps, :urlBackend, :baby_steps
   

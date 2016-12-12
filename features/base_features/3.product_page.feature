@@ -11,6 +11,7 @@ Feature: product page
     Given I am on the product page of an article
   
   @vega
+  @hotelwaesche
   @export
   @product_page_note
   Scenario: notice an article
@@ -18,6 +19,7 @@ Feature: product page
 	  Then there should see a hint
 	
 	@vega
+	@hotelwaesche
   @export
   @product_page_compare	
   Scenario: compare an article
@@ -25,6 +27,7 @@ Feature: product page
 	  Then there should see the icon to compare
 
   @vega
+  @hotelwaesche
   @export
   @product_page_add
   Scenario: add an article to the product cart by clicking button 
@@ -32,6 +35,7 @@ Feature: product page
     Then I should see the cart on the right of the site
 
   @vega
+  @hotelwaesche
   @export
   @product_page_data
   Scenario: display products with data
