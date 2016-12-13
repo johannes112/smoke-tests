@@ -28,7 +28,7 @@ class Settings
         when (/at/) then 'https://test.hotelwaesche.at/'
         when (/ch/) then 'https://test.erwinmueller.ch/'
       end
-      @urlBackend = 'https://test.hotelwaesche.de/'
+      @urlBackend = 'http://test.hotelwaesche.de/'
     end
     @url_checkout_confirm = "checkout/shippingPayment"
     @url_add_comand = 'direktbestellen'

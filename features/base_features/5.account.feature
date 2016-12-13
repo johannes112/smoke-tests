@@ -15,6 +15,7 @@ Feature: account
   @chefworks
   @pulsiva	
   @vega
+  @hotelwaesche
   @account_registration
 	Scenario: create new account
 		And no user account with my email exists
@@ -25,6 +26,7 @@ Feature: account
   @chefworks
   @pulsiva
   @vega
+  @hotelwaesche
   @account_login
 	Scenario: login with existing account
 		And I already created an user account
@@ -34,6 +36,7 @@ Feature: account
   @export
   @chefworks
   @vega
+  @hotelwaesche
   @account_update
   @account_payment
 	Scenario: modify payment in my account
@@ -54,6 +57,7 @@ Feature: account
   @chefworks
 	@pulsiva
 	@vega
+	@hotelwaesche
 	@account_update
   @account_delivery
 	Scenario: modify adress of delivery
@@ -74,6 +78,7 @@ Feature: account
   @chefworks
   @pulsiva
   @vega
+  @hotelwaesche
 	@account_links
   Scenario: test links on the accountsite
 		Given I am logged in
