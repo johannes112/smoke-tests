@@ -1,4 +1,4 @@
-#pulsiva
+#hwjobeline
 class Article
   attr_accessor :sub_category, :category, :category_language_changed, :productnumber, :sku, :amount, :name, :url_add_comand
   
