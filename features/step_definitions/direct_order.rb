@@ -29,6 +29,8 @@ end
 Then(/^I should find the article in the sidebar$/) do
   direct_ordering_sidebar_item_path = csspathes.direct_ordering_sidebar_item_path 
   
+  page.find(direct_ordering_sidebar_item_path)
+  
   expect(page).to have_css(direct_ordering_sidebar_item_path),
      "expected that i can see the product on the cart of my sidebar, but i can not find #{direct_ordering_sidebar_item_path}"
   puts "> found item"

@@ -12,6 +12,7 @@ Feature: product page
   
   @vega
   @hotelwaesche
+  @hw_jobeline
   @export
   @product_page_note
   Scenario: notice an article
@@ -20,6 +21,7 @@ Feature: product page
 	
 	@vega
 	@hotelwaesche
+	@hw_jobeline
   @export
   @product_page_compare	
   Scenario: compare an article
@@ -28,6 +30,7 @@ Feature: product page
 
   @vega
   @hotelwaesche
+  @hw_jobeline
   @export
   @product_page_add
   Scenario: add an article to the product cart by clicking button 
@@ -36,6 +39,7 @@ Feature: product page
 
   @vega
   @hotelwaesche
+  @hw_jobeline
   @export
   @product_page_data
   Scenario: display products with data
@@ -54,6 +58,7 @@ Feature: product page
 	  Then there should be a form for rating the article
 	
 	@vega 
+	@hw_jobeline
 	@product_page_suggest
   Scenario: customer seen article
 	  When I change to the tab of the customer viewed articles

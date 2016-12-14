@@ -7,12 +7,12 @@ class Settings
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://int.jobeline.de/'
         when (/at/) then 'http://int.jobeline.at/'
-        when (/ch/) then 'http://int.jobeline.ch/'
+        when (/ch/) then 'http://int.jobeline.ch/ch-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.jobeline.de/'
         when (/at/) then 'https://int.jobeline.at/'
-        when (/ch/) then 'https://int.jobeline.ch/'
+        when (/ch/) then 'https://int.jobeline.ch/ch-de/'
       end
       @urlBackend = 'https://int.jobeline.de/'
     end
@@ -30,7 +30,7 @@ class Settings
       end
       @urlBackend = 'http://test.jobeline.de/'
     end
-    @url_checkout_confirm = "checkout/shippingPayment"
+    @url_checkout_confirm = "checkout/confirm"
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
   end
