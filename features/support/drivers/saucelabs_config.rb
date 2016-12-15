@@ -3,7 +3,7 @@ if ENV['DRIVER'] == 'saucelabs'
   module Saucelabs_config
     Capybara.default_selector = :css
     Capybara.ignore_hidden_elements = true
-    Capybara.default_max_wait_time = 30
+    Capybara.default_max_wait_time = 40
     if ENV['BROWSER'] == 'firefox'
       @caps = {
         :platform => "Windows 7",

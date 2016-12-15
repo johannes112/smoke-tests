@@ -170,7 +170,7 @@ class Csspathes
       when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div.navigation--entry.entry--service'
-      else 'div.navigation--entry.entry--service' 
+      else ':nth-child(3) > nav > ul > li:nth-child(1) > a'
     end
     @links_context_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
