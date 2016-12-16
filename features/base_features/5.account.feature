@@ -16,6 +16,7 @@ Feature: account
   @pulsiva	
   @vega
   @hotelwaesche
+  @hw_jobeline
   @account_registration
 	Scenario: create new account
 		And no user account with my email exists
@@ -27,6 +28,7 @@ Feature: account
   @pulsiva
   @vega
   @hotelwaesche
+  @hw_jobeline
   @account_login
 	Scenario: login with existing account
 		And I already created an user account
@@ -37,6 +39,7 @@ Feature: account
   @chefworks
   @vega
   @hotelwaesche
+  @hw_jobeline
   @account_update
   @account_payment
 	Scenario: modify payment in my account
@@ -58,6 +61,7 @@ Feature: account
 	@pulsiva
 	@vega
 	@hotelwaesche
+	@hw_jobeline
 	@account_update
   @account_delivery
 	Scenario: modify adress of delivery
