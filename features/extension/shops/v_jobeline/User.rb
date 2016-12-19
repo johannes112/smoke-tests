@@ -1,13 +1,13 @@
-#pulsiva
+#v_jobeline
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '20004906'
-      when 'at' then '20000021'
-      when 'ch' then '20000024'
+      when 'de' then nil
+      when 'at' then nil
+      when 'ch' then nil
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
@@ -17,28 +17,28 @@ class User
       when 'es' then nil
     end
     @eMail = case ENV['COUNTRY']
-      when 'de' then 'testmail_pde@test.de'
-      when 'at' then 'testmail_pat@test.de'
-      when 'ch' then 'testmail_pch@test.de'
-      when 'it' then 'testmail_pit@test.de'
-      when 'fr' then 'testmail_pfr@test.de'
-      when 'no' then 'testmail_pno@test.de'
-      when 'se' then 'testmail_pse@test.de'
-      when 'nl' then 'testmail_pnl@test.de'
-      when 'be' then 'testmail_pbe@test.de'
-      when 'es' then 'testmail_pes@test.de'
+      when 'de' then 'testmail_vjde@test.de'
+      when 'at' then 'testmail_vjat@test.de'
+      when 'ch' then 'testmail_vjch@test.de'
+      when 'it' then 'testmail_vjit@test.de'
+      when 'fr' then 'testmail_vjfr@test.de'
+      when 'no' then 'testmail_vjno@test.de'
+      when 'se' then 'testmail_vjse@test.de'
+      when 'nl' then 'testmail_vjnl@test.de'
+      when 'be' then 'testmail_vjbe@test.de'
+      when 'es' then 'testmail_vjes@test.de'
     end
     @eMail_sec = case ENV['COUNTRY']
-      when 'de' then 'testmail@pde.de'
-      when 'at' then 'testmail@pat.de'
-      when 'ch' then 'testmail@pch.de'
-      when 'it' then 'testmail@pit.de'
-      when 'fr' then 'testmail@pfr.de'
-      when 'no' then 'testmail@pno.de'
-      when 'se' then 'testmail@pse.de'
-      when 'nl' then 'testmail@pnl.de'
-      when 'be' then 'testmail@pbe.de'
-      when 'es' then 'testmail@pes.de'
+      when 'de' then 'testmail@vjde.de'
+      when 'at' then 'testmail@vjat.de'
+      when 'ch' then 'testmail@vjch.de'
+      when 'it' then 'testmail@vjit.de'
+      when 'fr' then 'testmail@vjfr.de'
+      when 'no' then 'testmail@vjno.de'
+      when 'se' then 'testmail@vjse.de'
+      when 'nl' then 'testmail@vjnl.de'
+      when 'be' then 'testmail@vjbe.de'
+      when 'es' then 'testmail@vjes.de'
     end
     @password = case ENV['COUNTRY']
       when 'de' then 'Test2014'

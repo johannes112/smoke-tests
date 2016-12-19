@@ -11,6 +11,7 @@ Feature: search
     As a customer
     i will be able to search for a specific product
 
+    @hw_jobeline
     @search_sku
     Scenario: search with sku
         Given I am on the website

@@ -13,6 +13,7 @@ Feature: product page
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @export
   @product_page_note
   Scenario: notice an article
@@ -22,6 +23,7 @@ Feature: product page
 	@vega
 	@hotelwaesche
 	@hw_jobeline
+	@v_jobeline
   @export
   @product_page_compare	
   Scenario: compare an article
@@ -31,6 +33,7 @@ Feature: product page
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @export
   @product_page_add
   Scenario: add an article to the product cart by clicking button 
@@ -40,6 +43,7 @@ Feature: product page
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @export
   @product_page_data
   Scenario: display products with data
@@ -59,6 +63,7 @@ Feature: product page
 	
 	@vega 
 	@hw_jobeline
+	@v_jobeline
 	@product_page_suggest
   Scenario: customer seen article
 	  When I change to the tab of the customer viewed articles

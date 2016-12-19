@@ -1,12 +1,12 @@
-#hwjobeline
+#v_jobeline
 class Article
   attr_accessor :sub_category, :category, :category_language_changed, :productnumber, :sku, :amount, :name, :url_add_comand
   
   def initialize
     @sub_category = case ENV['COUNTRY']
-      when (/de/) then 'Einzelbesteck'
-      when (/at/) then 'Einzelbesteck'
-      when (/ch/) then 'Einzelbesteck'
+      when (/de/) then 'Kochhosen'
+      when (/at/) then 'Kochhosen'
+      when (/ch/) then 'Kochhosen'
       when (/it/) then 'Posate singole'
       when (/fr/) then 'Couverts à l\'unité'
       when (/no/) then 'Vinglass'
@@ -16,9 +16,9 @@ class Article
       when (/es/) then 'Piezas sueltas'
     end
     @category = case ENV['COUNTRY']
-      when (/de/) then 'Besteck'
-      when (/at/) then 'Besteck'
-      when (/ch/) then 'Besteck'
+      when (/de/) then 'Kochbekleidung'
+      when (/at/) then 'Kochbekleidung'
+      when (/ch/) then 'Kochbekleidung'
       when (/it/) then 'Posate'
       when (/fr/) then 'Couverts'
       when (/no/) then 'Glass'
@@ -32,9 +32,9 @@ class Article
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '104105'#without i!
-      when (/at/) then '104105'
-      when (/ch/) then '104105'
+      when (/de/) then '110321'
+      when (/at/) then '110321'
+      when (/ch/) then '110321'
       when (/it/) then '104105'
       when (/fr/) then '104105'
       when (/no/) then '104065'#other product
@@ -44,9 +44,9 @@ class Article
       when (/es/) then '104105'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '20040136'#without i!
-      when (/at/) then '20040136'
-      when (/ch/) then '20040136'
+      when (/de/) then '30000303'
+      when (/at/) then '30000303'
+      when (/ch/) then '30000303'
       when (/it/) then '20040136'
       when (/fr/) then '20040136'
       when (/no/) then '20060940'#other product
@@ -69,9 +69,9 @@ class Article
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
-      when (/de/) then 'Steakgabel'
-      when (/at/) then 'Steakgabel'
-      when (/ch/) then 'Steakgabel'
+      when (/de/) then 'KOCHHOSE FRANK'
+      when (/at/) then 'KOCHHOSE FRANK'
+      when (/ch/) then 'KOCHHOSE FRANK'
       when (/it/) then 'FORCHETTA BISTECCA'
       when (/fr/) then 'Fourchette'
       when (/no/) then 'BOUQUET'
@@ -81,7 +81,7 @@ class Article
       when (/es/) then 'TENEDOR PARA CARNE'
     end
     @url_add_comand = case ENV['COUNTRY']
-      when (/de/) then 'direktbestellen'
+      when (/de/) then 'EMGroupDirectOrder'
       when (/at/) then 'EMGroupDirectOrder'
       when (/ch/) then 'EMGroupDirectOrder'
       when (/it/) then 'acquistato'

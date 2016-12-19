@@ -16,6 +16,7 @@ Feature: website_basics
     @vega
     @hotelwaesche
     @hw_jobeline
+    @v_jobeline
     @website_elements
     Scenario: check for elements
         Then I should be a basic elements
@@ -25,6 +26,7 @@ Feature: website_basics
     @pulsiva
     @vega
     @hw_jobeline
+    @v_jobeline
     @navigation
     @menu
     @hovermenu    
@@ -50,6 +52,7 @@ Feature: website_basics
     @vega
     @hotelwaesche
     @hw_jobeline
+    @v_jobeline
     @navigation
     @links
     Scenario: navigate to account
@@ -62,6 +65,7 @@ Feature: website_basics
     @vega
     @hotelwaesche
     @hw_jobeline
+    @v_jobeline
     @navigation
     @links
     Scenario: navigate to note
@@ -85,6 +89,7 @@ Feature: website_basics
     @chefworks
     @pulsiva
     @hotelwaesche
+    @v_jobeline
     @navigation
     @links
     Scenario: navigate to help
@@ -97,6 +102,7 @@ Feature: website_basics
     @vega
     @hotelwaesche
     @hw_jobeline
+    @v_jobeline
     @navigation
     @link_checker
     Scenario: find all links

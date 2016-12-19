@@ -12,6 +12,7 @@ Feature: account
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @product_cart_continue
     Scenario: continue shopping
       When I add an article to my cart manually
@@ -28,6 +29,7 @@ Feature: account
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @product_cart_voucher
     Scenario: enter a code
       Given the product cart contains an article
@@ -39,6 +41,7 @@ Feature: account
 	@vega
 	@hotelwaesche
 	@hw_jobeline
+	@v_jobeline
   @product_cart_remove
     Scenario: remove an article
       Given the product cart contains an article
@@ -49,6 +52,7 @@ Feature: account
   @vega
   @hotelwaesche
   @hw_jobeline
+  @v_jobeline
   @product_cart_data
     Scenario: display articles with data
       Given the product cart contains an article
@@ -56,6 +60,7 @@ Feature: account
 
   @vega
   @hw_jobeline
+  @v_jobeline
   @product_cart_checkout
 	  Scenario: navigate to checkout
 	    Given the product cart contains an article
