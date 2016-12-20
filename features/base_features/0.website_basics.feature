@@ -76,7 +76,6 @@ Feature: website_basics
     @chefworks
     @pulsiva
 
-    @hotelwaesche
     @navigation
     @links
     Scenario: activate the cart

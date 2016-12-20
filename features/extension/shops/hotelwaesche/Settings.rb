@@ -7,12 +7,12 @@ class Settings
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://int.hotelwaesche.de/'
         when (/at/) then 'http://int.hotelwaesche.at/'
-        when (/ch/) then 'http://int.erwinmueller.ch/'
+        when (/ch/) then 'http://int.erwinmueller.ch/ch-de/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.hotelwaesche.de/'
         when (/at/) then 'https://int.hotelwaesche.at/'
-        when (/ch/) then 'https://int.erwinmueller.ch/'
+        when (/ch/) then 'https://int.erwinmueller.ch/ch-de/'
       end
       @urlBackend = 'https://int.hotelwaesche.de/'
     end
@@ -21,12 +21,12 @@ class Settings
       @urlHttp = case ENV['COUNTRY']        
         when (/de/) then 'http://test.hotelwaesche.de/'
         when (/at/) then 'http://test.hotelwaesche.at/'
-        when (/ch/) then 'http://test.erwinmueller.ch/'
+        when (/ch/) then 'http://test.erwinmueller.ch/ch-de/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'https://test.hotelwaesche.de/'
-        when (/at/) then 'https://test.hotelwaesche.at/'
-        when (/ch/) then 'https://test.erwinmueller.ch/'
+        when (/de/) then 'http://test.hotelwaesche.de/'
+        when (/at/) then 'http://test.hotelwaesche.at/'
+        when (/ch/) then 'http://test.erwinmueller.ch/ch-de/'
       end
       @urlBackend = 'http://test.hotelwaesche.de/'
     end
