@@ -13,14 +13,17 @@ When(/^I send my inserted data with the form$/) do
   sku = article.sku
 
   direct_ordering_form_sku_path = csspathes.direct_ordering_form_sku_path 
+  direct_ordering_form_quantity_path = csspathes.direct_ordering_form_quantity_path
   direct_ordering_form_button_path = csspathes.direct_ordering_form_button_path 
   
   #page.find(direct_ordering_form_sku_path)
   element = page.find(direct_ordering_form_sku_path, match: :first)
-  element.set("#{sku}\t")
+  element.set("#{sku}\t")#\t to tab 
   puts "-> inserted #{sku}"
   
-  page.find(direct_ordering_form_button_path)
+  #wait for ajax
+  page.find(direct_ordering_form_quantity_path)
+  
   element = page.find(direct_ordering_form_button_path)
   element.click
   puts "-> clicked button"
