@@ -7,7 +7,7 @@ class Csspathes
   #search
   :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, :search_results_path, 
   #direct_ordering
-  :direct_ordering_button_path, :direct_ordering_form_sku_path, :direct_ordering_form_button_path, :direct_ordering_sidebar_item_path, 
+  :direct_ordering_button_path, :direct_ordering_form_sku_path, :direct_ordering_form_quantity_path, :direct_ordering_form_button_path, :direct_ordering_sidebar_item_path, 
   #product_page
   :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_rate_form, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container,
   #product_cart
@@ -220,12 +220,17 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'not available'
       else '.emgroup-direct-order-searchterm-column > input' 
     end
-    @direct_ordering_form_button_path = case 
+    @direct_ordering_form_quantity_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'not available'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'not available'
+      else '.emgroup-direct-order-quantity-column > div' 
+    end
+      @direct_ordering_form_button_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'form > button.emgroup-direct-order-submit.btn.right.is--icon-left'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'form > button.emgroup-direct-order-submit.btn.right.is--icon-left'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'not available'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'not available'
-      else 'form > button.emgroup-direct-order-submit.btn.right.is--icon-left'
+      else '.emgroup-direct-order-submit'
     end
     @direct_ordering_sidebar_item_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.item--container > div > a'

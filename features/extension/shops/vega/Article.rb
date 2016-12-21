@@ -32,28 +32,28 @@ class Article
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '104105'#without i!
-      when (/at/) then '104105'
-      when (/ch/) then '104105'
-      when (/it/) then '104105'
-      when (/fr/) then '104105'
+      when (/de/) then '108286'#without i!
+      when (/at/) then '108286'
+      when (/ch/) then '108286'
+      when (/it/) then '108286'
+      when (/fr/) then '108286'
       when (/no/) then '104065'#other product
-      when (/se/) then '104105'
-      when (/nl/) then '104105'
-      when (/be/) then '104105'
-      when (/es/) then '104105'
+      when (/se/) then '108286'
+      when (/nl/) then '108286'
+      when (/be/) then '108286'
+      when (/es/) then '108286'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '20040136'#without i!
-      when (/at/) then '20040136'
-      when (/ch/) then '20040136'
-      when (/it/) then '20040136'
-      when (/fr/) then '20040136'
+      when (/de/) then '10020666'#without i!
+      when (/at/) then '10020666'
+      when (/ch/) then '10020666'
+      when (/it/) then '10020666'
+      when (/fr/) then '10020666'
       when (/no/) then '20060940'#other product
-      when (/se/) then '20040136'
-      when (/nl/) then '20040136'
-      when (/be/) then '20040136'
-      when (/es/) then '20040136'
+      when (/se/) then '10020666'
+      when (/nl/) then '10020666'
+      when (/be/) then '10020666'
+      when (/es/) then '10020666'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -69,9 +69,9 @@ class Article
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
-      when (/de/) then 'Steakgabel'
-      when (/at/) then 'Steakgabel'
-      when (/ch/) then 'Steakgabel'
+      when (/de/) then 'Kuchengabel Milano'
+      when (/at/) then 'Kuchengabel Milano'
+      when (/ch/) then 'Kuchengabel Milano'
       when (/it/) then 'FORCHETTA BISTECCA'
       when (/fr/) then 'Fourchette'
       when (/no/) then 'BOUQUET'
