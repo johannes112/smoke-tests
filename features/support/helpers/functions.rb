@@ -102,3 +102,17 @@ def catch_error(&block)
     puts "\033[35m#{e.message} (35)\033[0m\n"
   end
 end
+
+def set_user_and_pass_string(user, pass)
+  htaccess_part = "#{user}:#{pass}@"
+  return htaccess_part
+end
+
+def modify_url(url, htaccess)
+  if (ENV['SYSTEM'] == 'int')
+    new_url = url.gsub("//", "//#{htaccess}")
+    return new_url
+  else
+    return url
+  end
+end
