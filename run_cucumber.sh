@@ -5,21 +5,22 @@ curl ipecho.net/plain ; echo
 #Variables
 DRIVER=${1}
 BROWSER=${2}
-SHOPWARE_USERNAME=${3} 
-SHOPWARE_PASSWORD=${4}
-SAUCE_USERNAME=${5}
-SAUCE_ACCESS_KEY=${6}
-SYSTEM=${7}
-SHOP=${8}
-COUNTRY=${9}
-
-#HTACCESS_USER=${7} 
-#HTACCESS_KEY=${8}
-TAG=${10}
+HTACCESS_USERNAME=${3} 
+HTACCESS_PASSWORD=${4} 
+SHOPWARE_USERNAME=${5} 
+SHOPWARE_PASSWORD=${6}
+SAUCE_USERNAME=${7}
+SAUCE_ACCESS_KEY=${8}
+SYSTEM=${9}
+SHOP=${10}
+COUNTRY=${11}
+TAG=${12}
 
 #export (for saucelabs variables)
 export DRIVER
 export BROWSER
+export HTACCESS_USERNAME
+export HTACCESS_PASSWORD
 export SHOPWARE_USERNAME
 export SHOPWARE_PASSWORD
 export SYSTEM
@@ -46,23 +47,26 @@ echo "BROWSER:"$BROWSER
 echo "SYSTEM:"$SYSTEM
 echo "SHOP:"$SHOP
 echo "COUNTRY:"$COUNTRY
-if [[ -z "${TAG}" ]]; then
-  echo "NO TAG!"
-  if [[ "$SHOP" == "export" ]]; then
-    echo "use Export"
-    TAG="@export"
-  elif [[ "$SHOP" == "chefworks" ]]; then
-    echo "use chefworks"
-    TAG="@chefworks"
-  else
-    echo "No tag for this shop exists"
-  fi
+echo "Number of args:"$#
+if [[ $# -lt 11 ]]; then
+  echo "Wrong number of arguments!"
 else
-  echo "TAG:"$TAG
-  echo ""
+  if [[ -z "${TAG}" ]]; then
+    echo "NO TAG!"
+    if [[ "$SHOP" == "export" ]]; then
+      echo "use Export"
+      TAG="@export"
+    elif [[ "$SHOP" == "chefworks" ]]; then
+      echo "use chefworks"
+      TAG="@chefworks"
+    else
+      echo "Please set a tag:@"
+    fi
+  else
+    echo "TAG:"$TAG
+    echo ""
+  fi
 fi
-
-
 tag=" -t ${TAG}"
 
 config_base="$generate_output $folder_structure_config $tag"
