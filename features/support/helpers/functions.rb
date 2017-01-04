@@ -99,6 +99,7 @@ def catch_error(&block)
   begin
     yield
   rescue Exception => e
+    puts "catched error"
     puts "\033[35m#{e.message} (35)\033[0m\n"
   end
 end
@@ -117,3 +118,14 @@ def modify_url(url, htaccess)
   #  return url
   #end
 end
+
+  def find_secure(path)
+    begin
+      find(path)
+    rescue Capybara::ElementNotFound => e
+      content_path = page.find(".page-wrap > section")
+      existing_pathes = content_path.inspect
+      puts "\033[35m#{e.message}\033[0m\n"
+      puts "\033[35mbut the are: #{existing_pathes}\033[0m\n"
+    end
+  end

@@ -58,7 +58,7 @@ class Settings
       end
       @urlBackend = 'https://www.vega-direct.com/'
     end
-    @url_checkout_confirm = "checkout/shippingPayment"
+    @url_checkout_confirm = "checkout/confirm"
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
   end
