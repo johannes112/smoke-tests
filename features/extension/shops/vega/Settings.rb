@@ -33,32 +33,32 @@ class Settings
     
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
-        when (/de/) then 'http://prod.vega-direct.com/de-de/'
-        when (/at/) then 'http://prod.vega-direct.com/at-de/'
-        when (/ch/) then 'http://prod.vega-direct.com/ch-de/'
-        when (/it/) then 'http://prod.vega-direct.com/it-it/'
-        when (/fr/) then 'http://prod.vega-direct.com/fr-fr/'
-        when (/no/) then 'http://prod.vega-direct.com/no-no/'
-        when (/se/) then 'http://prod.vega-direct.com/se-se/'
-        when (/nl/) then 'http://prod.vega-direct.com/nl-nl/'
-        when (/be/) then 'http://prod.vega-direct.com/be-fr/'
-        when (/es/) then 'http://prod.vega-direct.com/es-es/'
+        when (/de/) then 'http://www.vega-direct.com/de-de/'
+        when (/at/) then 'http://www.vega-direct.com/at-de/'
+        when (/ch/) then 'http://www.vega-direct.com/ch-de/'
+        when (/it/) then 'http://www.vega-direct.com/it-it/'
+        when (/fr/) then 'http://www.vega-direct.com/fr-fr/'
+        when (/no/) then 'http://www.vega-direct.com/no-no/'
+        when (/se/) then 'http://www.vega-direct.com/se-se/'
+        when (/nl/) then 'http://www.vega-direct.com/nl-nl/'
+        when (/be/) then 'http://www.vega-direct.com/be-fr/'
+        when (/es/) then 'http://www.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'https://prod.vega-direct.com/de-de/'
-        when (/at/) then 'https://prod.vega-direct.com/at-de/'
-        when (/ch/) then 'https://prod.vega-direct.com/ch-de/'
-        when (/it/) then 'https://prod.vega-direct.com/it-it/'
-        when (/fr/) then 'https://prod.vega-direct.com/fr-fr/'
-        when (/no/) then 'https://prod.vega-direct.com/no-no/'
-        when (/se/) then 'https://prod.vega-direct.com/se-se/'
-        when (/nl/) then 'https://prod.vega-direct.com/nl-nl/'
-        when (/be/) then 'https://prod.vega-direct.com/be-fr/'
-        when (/es/) then 'https://prod.vega-direct.com/es-es/'
+        when (/de/) then 'https://www.vega-direct.com/de-de/'
+        when (/at/) then 'https://www.vega-direct.com/at-de/'
+        when (/ch/) then 'https://www.vega-direct.com/ch-de/'
+        when (/it/) then 'https://www.vega-direct.com/it-it/'
+        when (/fr/) then 'https://www.vega-direct.com/fr-fr/'
+        when (/no/) then 'https://www.vega-direct.com/no-no/'
+        when (/se/) then 'https://www.vega-direct.com/se-se/'
+        when (/nl/) then 'https://www.vega-direct.com/nl-nl/'
+        when (/be/) then 'https://www.vega-direct.com/be-fr/'
+        when (/es/) then 'https://www.vega-direct.com/es-es/'
       end
-      @urlBackend = 'https://prod.vega-direct.com/'
+      @urlBackend = 'https://www.vega-direct.com/'
     end
-    @url_checkout_confirm = "checkout/confirm"
+    @url_checkout_confirm = "checkout/shippingPayment"
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
   end
