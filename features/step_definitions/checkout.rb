@@ -2,6 +2,7 @@
 Given(/^I am on the checkout page$/) do
   url_checkout = settings.urlHttps+'checkout'
   checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path
+  checkout_orderbutton_path = csspathes.checkout_orderbutton_path
   
   puts "url_checkout:#{url_checkout}"
   if (current_url == url_checkout) 
@@ -10,8 +11,8 @@ Given(/^I am on the checkout page$/) do
     puts "> ups, I am on #{current_url}"
     # first call in 'I am on the checkout page' and there the url does not include 'confirm' so click the button to continue and set payment
     # second call in 'I send my order' and there the url includes 'confirm' so skip the rest
-    if (current_url.include?("confirm"))
-      puts "I am on the exportshop on the final checkout page"
+    if (page.has_css?(checkout_orderbutton_path)) 
+      puts "I am already on the final checkout page"
     else
       puts "--> click continue"
       element = page.find(checkout_checkout_proceed_button_path, match: :first)
@@ -105,7 +106,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   taxvat = user.taxvat
   customer_number = user.customer_number
   email = user.eMail
-  skip = "true"
+  skip = nil
   phone = user.telephone
   company = user.company
   company_kind = user.company_kind
