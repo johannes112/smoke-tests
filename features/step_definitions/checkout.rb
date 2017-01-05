@@ -211,6 +211,7 @@ When(/^I set payment and shipping$/) do
     element.click
     puts "-> choose payment"
     #set delivery
+    #puts page.html
     element = page.find(checkout_payment_delivery_standard_radio_path)
     element.click
     puts "-> choose delivery"

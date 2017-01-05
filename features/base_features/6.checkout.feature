@@ -12,7 +12,9 @@ Feature: checkout
 	As a customer,
 	I want to be able to order my favorite products
   
-  
+  Background:
+    Given no user account with my email exists
+
   @checkout_with
 	Scenario: checkout with existing account
 	  Given I am logged in
