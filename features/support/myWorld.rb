@@ -34,4 +34,3 @@ end
 
 
 World(MyWorld)
-#World(Capybarasecure)

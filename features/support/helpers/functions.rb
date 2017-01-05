@@ -101,6 +101,9 @@ def catch_error(&block)
   rescue Exception => e
     puts "catched error"
     puts "\033[35m#{e.message} (35)\033[0m\n"
+  rescue Capybara::ElementNotFound => e
+    write_to_file("ElementNotFound_src", page.html)
+    puts "\033[35m#{e.inspect}\033[0m\n"
   end
 end
 
@@ -119,13 +122,18 @@ def modify_url(url, htaccess)
   #end
 end
 
-  def find_secure(path)
-    begin
-      find(path)
-    rescue Capybara::ElementNotFound => e
-      content_path = page.find(".page-wrap > section")
-      existing_pathes = content_path.inspect
-      puts "\033[35m#{e.message}\033[0m\n"
-      puts "\033[35mbut the are: #{existing_pathes}\033[0m\n"
-    end
+def find_secure(path)
+  begin
+    find(path)
+  rescue Capybara::ElementNotFound => e
+    write_to_file("ElementNotFound_src", page.html)
+    puts "\033[35m#{e.inspect}\033[0m\n"
   end
+end
+  
+def write_to_file(filename, content)  
+  open("#{filename}.txt", 'w') { |f|
+    f.puts content
+  }
+  puts ("written to #{filename}.txt")
+end
