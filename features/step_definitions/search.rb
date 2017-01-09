@@ -9,7 +9,7 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   search_searchbutton_path = csspathes.search_searchbutton_path
   #actions
   find(search_searchfield_path).set(sku)
-  search_searchbutton = find_secure(search_searchbutton_path)
+  search_searchbutton = find(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
 end

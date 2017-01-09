@@ -99,25 +99,26 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
-      when 'it' then 'IT99999999999'
+      when 'it' then 'IT02531440218'
       when 'fr' then nil
-      when 'no' then '9ID 204 252 MVA'
+      when 'no' then 'NO 999 204 252 MVA'
       when 'se' then '556695-9234'
       when 'nl' then '22065260'
       when 'be' then nil
+      when 'es' then '0123456789'
       when 'lu' then nil
     end
     @taxvat = case ENV['COUNTRY']
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
-      when 'it' then 'IT 02531440218'
+      when 'it' then '02531440218'
       when 'fr' then 'FR14P422P876P383'
       when 'no' then '999 204 252 MVA'
-      when 'se' then '556695-9234'
+      when 'se' then 'SE 556695923401'
       when 'nl' then nil
       when 'be' then 'FR14 422 876 383'
-      when 'es' then 'B63679427'
+      when 'es' then 'ES B63679427'
       when 'lu' then nil
     end
     @organumber = case ENV['COUNTRY']
@@ -126,7 +127,7 @@ class User
       when 'ch' then nil
       when 'it' then nil
       when 'fr' then nil
-      when 'no' then nil
+      when 'no' then '999 204 252'
       when 'se' then '556695-9234'
       when 'nl' then nil
       when 'be' then nil

@@ -211,8 +211,8 @@ When(/^I set payment and shipping$/) do
     element.click
     puts "-> choose payment"
     #set delivery
-    #puts page.html
-    element = page.find(checkout_payment_delivery_standard_radio_path)
+    #puts page.html > "error.txt"
+    element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
     element.click
     puts "-> choose delivery"
     element = find(checkout_payment_continue_path, match: :first)
