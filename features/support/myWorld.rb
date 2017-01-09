@@ -30,6 +30,22 @@ module MyWorld
     puts "- set #{var_name} = #{var_value.inspect}"
   end
   
+  def find_secure(path, string)
+    begin
+      page.find(path)
+    rescue Capybara::ElementNotFound => e
+      write_to_file("ElementNotFound_src", string)
+      puts "\033[35mfind_secure\033[0m\n"
+      puts "\033[35m#{e.inspect}\033[0m\n"
+    end
+  end
+    
+  def write_to_file(filename, content)  
+    open("#{filename}.txt", 'w') { |f|
+      f.puts content
+    }
+    puts ("written to #{filename}.txt")
+  end
 end
 
 

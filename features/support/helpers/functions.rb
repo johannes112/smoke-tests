@@ -121,19 +121,3 @@ def modify_url(url, htaccess)
   #  return url
   #end
 end
-
-def find_secure(path)
-  begin
-    find(path)
-  rescue Capybara::ElementNotFound => e
-    write_to_file("ElementNotFound_src", page.html)
-    puts "\033[35m#{e.inspect}\033[0m\n"
-  end
-end
-  
-def write_to_file(filename, content)  
-  open("#{filename}.txt", 'w') { |f|
-    f.puts content
-  }
-  puts ("written to #{filename}.txt")
-end
