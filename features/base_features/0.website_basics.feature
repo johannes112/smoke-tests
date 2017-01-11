@@ -25,6 +25,7 @@ Feature: website_basics
     @chefworks
     @pulsiva
     @vega
+    @hotelwaesche
     @hw_jobeline
     @v_jobeline
     @navigation

@@ -10,10 +10,10 @@ class Article
       when (/it/) then 'Posate singole'
       when (/fr/) then 'Couverts à l\'unité'
       when (/no/) then 'Vinglass'
-      when (/se/) then 'Enskilda bestick'
+      when (/se/) then 'Bestickdelar'
       when (/nl/) then 'Los bestek'
       when (/be/) then 'Couverts à l\'unité'
-      when (/es/) then 'Piezas sueltas'
+      when (/es/) then 'Cubiertos sueltos'
     end
     @category = case ENV['COUNTRY']
       when (/de/) then 'Besteck'

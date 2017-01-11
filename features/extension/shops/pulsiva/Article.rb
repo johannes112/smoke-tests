@@ -37,7 +37,7 @@ class Article
       when (/ch/) then '104105'
       when (/it/) then '104105'
       when (/fr/) then '104105'
-      when (/no/) then '104065'#other product
+      when (/no/) then '20060940'#other product
       when (/se/) then '104105'
       when (/nl/) then '104105'
       when (/be/) then '104105'

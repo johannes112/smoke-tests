@@ -323,7 +323,7 @@ When(/^I change option of payment$/) do
   account_payment_change_button_path = csspathes.account_payment_change_button_path
   
   page.find(account_payment_paymentoptions_path)
-  element = page.find(account_payment_cashOnDelivery_path)
+  element = find_secure(account_payment_cashOnDelivery_path, page.html)
   element.click
   puts "--> chose checkbox for cash on delivery"
   

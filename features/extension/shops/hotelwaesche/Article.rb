@@ -4,9 +4,9 @@ class Article
   
   def initialize
     @sub_category = case ENV['COUNTRY']
-      when (/de/) then 'Handtuch'
-      when (/at/) then 'Handtuch'
-      when (/ch/) then 'Handtuch'
+      when (/de/) then 'Badematten'
+      when (/at/) then 'Badematten'
+      when (/ch/) then 'Badematten'
     end
     @category = case ENV['COUNTRY']
       when (/de/) then 'Frottier & Bad'
@@ -18,14 +18,14 @@ class Article
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '101291'
-      when (/at/) then '101291'
-      when (/ch/) then '101291'
+      when (/de/) then '100898'
+      when (/at/) then '100898'
+      when (/ch/) then '100898'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '10088338'
-      when (/at/) then '10088338'
-      when (/ch/) then '10088338'
+      when (/de/) then '10001015'
+      when (/at/) then '10001015'
+      when (/ch/) then '10001015'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -33,9 +33,9 @@ class Article
       when (/ch/) then 2
     end
     @name = case ENV['COUNTRY'] 
-      when (/de/) then 'HANDTUCH ROSAS'
-      when (/at/) then 'HANDTUCH ROSAS'
-      when (/ch/) then 'HANDTUCH ROSAS'
+      when (/de/) then 'Badematte Boston'
+      when (/at/) then 'Badematte Boston'
+      when (/ch/) then 'Badematte Boston'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'EMGroupDirectOrder'
