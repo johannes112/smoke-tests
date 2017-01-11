@@ -68,7 +68,7 @@ def setAtrributOfArticle(var_text, variable, var_path)
           puts "Error Element isn't of type 'input' or 'select'"
         end
           rescue Exception => e
-          puts e.message
+          puts "\033[35m#{e.message}\033[0m\n"
     end
   else
     puts "#{var_text} is not available in #{ENV['COUNTRY']}"
