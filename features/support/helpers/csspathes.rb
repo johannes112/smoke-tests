@@ -516,39 +516,31 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_department'
       else '#register_billing_department'
     end     
-    @account_registerform_taxid_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_emgroup_commercial_register_nr'
+    @account_registerform_taxid_path = case #umsatzsteuernummer (UID)
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
+      else '#register_billing_vatid' 
+    end 
+    @account_registerform_customernumber_path = case 
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'account_registerform_customernumber is not available'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'account_registerform_customernumber is not available'
+      else '#register_personal_number'
+    end
+    @account_registerform_taxvat_path = case #handelsregister
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/it/) then            '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/fr/) then            '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/no/) then            '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/se/) then            '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/nl/) then            '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then            '#register_personal_number'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'taxid_path_p'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'taxid_path'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'taxid_path'
-      else 'account_registerform_taxid_path is not defined' 
-    end 
-    @account_registerform_taxvat_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/at/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/fr/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/be/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/be/) then         '#ustid'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#register_billing_vatid'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/de/) then            '#ustid'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/it/) then            '#register_billing_vatid'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/be/) then            '#register_billing_vatid'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then            '#register_billing_vatid'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
-      else '#ustid' 
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/be/) then        '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/fr/) then        '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/no/) then        '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/se/) then        '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/jobeline/) && ENV['COUNTRY'].match(/nl/) then        '#register_billing_emgroup_commercial_register_nr'
+      else 'account_registerform_taxvat_path is not defined'
     end 
     @account_registerform_email_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_personal_email'
@@ -816,16 +808,9 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#neweailrepeat'
       else '#neweailrepeat'
     end  
-    @account_registerform_customernumber_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_customernumber'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '#register_billing_customernumber'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'account_registerform_customernumber is not available'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'account_registerform_customernumber is not available'
-      else '#register_billing_customernumber'
-    end
     @account_userinfo_emailchange_button_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#account--email > form > div.panel--actions.is--wide > input'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#account--email > form > div.panel--actions.is--wide > input'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '#account--email > form > div.panel--actions.is--wide > input'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#account--email > form > div.panel--actions.is--wide > input'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#account--email > form > div.panel--actions.is--wide > input'
       else '#account--email > form > div.panel--actions.is--wide > input'
@@ -1049,16 +1034,14 @@ class Csspathes
       else '#lastname'
     end
     @checkout_registerform_department_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'checkout_registerform_department is not available'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_department'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_department'
       else 'checkout_registerform_department is not defined' 
     end
     @checkout_registerform_taxvat_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#ustid'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
-      else '#ustid'
+      else 'checkout_registerform_taxvat_path is not defined'
     end
     @checkout_registerform_customernumber_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_customernumber'

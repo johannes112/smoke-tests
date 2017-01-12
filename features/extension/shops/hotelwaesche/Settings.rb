@@ -8,11 +8,13 @@ class Settings
         when (/de/) then 'http://int.hotelwaesche.de/'
         when (/at/) then 'http://int.hotelwaesche.at/'
         when (/ch/) then 'http://int.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'http://int.erwinmueller.ch/ch-fr/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'https://int.hotelwaesche.de/'
         when (/at/) then 'https://int.hotelwaesche.at/'
         when (/ch/) then 'https://int.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'https://int.erwinmueller.ch/ch-fr/'
       end
       @urlBackend = 'https://int.hotelwaesche.de/'
     end
@@ -22,11 +24,13 @@ class Settings
         when (/de/) then 'http://www.hotelwaesche.de/'
         when (/at/) then 'http://www.hotelwaesche.at/'
         when (/ch/) then 'http://www.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'http://www.erwinmueller.ch/ch-fr/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'http://www.hotelwaesche.de/'
         when (/at/) then 'http://www.hotelwaesche.at/'
         when (/ch/) then 'http://www.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'http://www.erwinmueller.ch/ch-fr/'
       end
       @urlBackend = 'http://www.hotelwaesche.de/'
     end

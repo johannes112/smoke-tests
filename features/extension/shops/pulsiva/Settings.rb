@@ -6,8 +6,9 @@ class Settings
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://int.pulsiva.com/de-de/'
-        when (/ch/) then 'http://int.pulsiva.com/at-de/'
-        when (/at/) then 'http://int.pulsiva.com/ch-de/'
+        when (/at/) then 'http://int.pulsiva.com/at-de/'
+        when (/ch/) then 'http://int.pulsiva.com/ch-de/'
+        when (/ch-fr/) then 'http://int.pulsiva.com/ch-fr/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
         when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
         when (/no/) then 'http://int.pulsiva.com/no-no/'
@@ -20,6 +21,7 @@ class Settings
         when (/de/) then 'https://int.pulsiva.com/de-de/'
         when (/at/) then 'https://int.pulsiva.com/at-de/'
         when (/ch/) then 'https://int.pulsiva.com/ch-de/'
+        when (/ch-fr/) then 'https://int.pulsiva.com/ch-fr/'
         when (/it/) then 'https://int.pulsiva.com/it-it/'
         when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
         when (/no/) then 'https://int.pulsiva.com/no-no/'
@@ -36,6 +38,7 @@ class Settings
         when (/de/) then 'http://www.pulsiva.com/de-de/'
         when (/at/) then 'http://www.pulsiva.com/at-de/'
         when (/ch/) then 'http://www.pulsiva.com/ch-de/'
+        when (/ch-fr/) then 'http://www.pulsiva.com/ch-fr/'
         when (/it/) then 'http://www.pulsiva.com/it-it/'
         when (/fr/) then 'http://www.pulsiva.com/fr-fr/'
         when (/no/) then 'http://www.pulsiva.com/no-no/'
@@ -48,6 +51,7 @@ class Settings
         when (/de/) then 'https://www.pulsiva.com/de-de/'
         when (/at/) then 'https://www.pulsiva.com/at-de/'
         when (/ch/) then 'https://www.pulsiva.com/ch-de/'
+        when (/ch-fr/) then 'https://www.pulsiva.com/ch-fr/'
         when (/it/) then 'https://www.pulsiva.com/it-it/'
         when (/fr/) then 'https://www.pulsiva.com/fr-fr/'
         when (/no/) then 'https://www.pulsiva.com/no-no/'
@@ -58,7 +62,6 @@ class Settings
       end
       @urlBackend = 'https://www.pulsiva.com/'
     end
-    @url_checkout_confirm = "checkout/shippingPayment"
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
   end

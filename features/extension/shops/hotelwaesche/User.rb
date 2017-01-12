@@ -4,10 +4,10 @@ class User
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
-    @customer_number = case ENV['COUNTRY']
-      when 'de' then nil
-      when 'at' then nil
-      when 'ch' then nil
+    @customer_number = case ENV['COUNTRY'] #kundennummer
+      when 'de' then '493444351'
+      when 'at' then '495078249'
+      when 'ch' then '211608920'
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_hde@test.de'
@@ -30,16 +30,16 @@ class User
       when 'ch' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Test Hotelwäsche Deutschland - eBusiness'
-      when 'at' then 'Test Hotelwäsche Österreich - eBusiness'
-      when 'ch' then 'Test Hotelwäsche Schweiz - eBusiness'
+      when 'de' then 'Hotelwäsche Erwin Müller GmbH Test - eBusiness'
+      when 'at' then 'Hotelwäsche Erwin Müller GmbH & Co. KG Test-eBusiness'
+      when 'ch' then 'Hotelwäsche Erwin Müller GmbH Test - eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then 'other'
       when 'at' then 'other'
       when 'ch' then 'other'
     end
-    @taxid = case ENV['COUNTRY']
+    @taxid = case ENV['COUNTRY'] #Steuernummer vom Unternehmen
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
@@ -95,22 +95,22 @@ class User
       when 'ch' then 'Frau'
     end
     @street = case ENV['COUNTRY']
-      when 'de' then 'Südwestpark'
+      when 'de' then 'Hettlinger Str.'
       when 'at' then 'Schloßgasse'
       when 'ch' then 'Tramstrasse'
     end
     @streetnumber = case ENV['COUNTRY']
-      when 'de' then '44'
+      when 'de' then '9'
       when 'at' then '4'
       when 'ch' then '7'
     end
     @postcode = case ENV['COUNTRY']
-      when 'de' then '90449'
+      when 'de' then '86637'
       when 'at' then '4470'
       when 'ch' then '9444'
     end
     @city = case ENV['COUNTRY']
-      when 'de' then 'Nürnberg'
+      when 'de' then 'Wertingen'
       when 'at' then 'Enns'
       when 'ch' then 'Diepoldsau'
     end

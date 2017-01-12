@@ -4,19 +4,6 @@ class User
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
-    @customer_number = case ENV['COUNTRY']
-      when 'de' then nil
-      when 'at' then nil
-      when 'ch' then nil
-      when 'it' then nil
-      when 'fr' then nil
-      when 'no' then nil
-      when 'se' then nil
-      when 'nl' then nil
-      when 'be' then nil
-      when 'es' then nil
-      when 'lu' then nil
-    end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_vde@test.de'
       when 'at' then 'testmail_vat@test.de'
@@ -95,7 +82,7 @@ class User
       when 'es' then 'other'
       when 'lu' then 'other'
     end
-    @taxid = case ENV['COUNTRY']
+    @taxid = case ENV['COUNTRY'] # steuernummer
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil

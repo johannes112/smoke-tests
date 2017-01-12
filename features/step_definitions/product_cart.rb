@@ -101,7 +101,7 @@ When(/^I navigate to the checkout by clicking the button which navigates to the 
 end
 
 Then(/^I should be on the checkout\-page$/) do
-  url_checkout_confirm = settings.url_checkout_confirm
+  url_checkout_confirm = 'checkout'
   product_cart_checkout_steps_path = csspathes.product_cart_checkout_steps_path
   
   expect(page).to have_css(product_cart_checkout_steps_path),
