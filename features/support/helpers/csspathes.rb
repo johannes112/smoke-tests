@@ -1151,6 +1151,8 @@ class Csspathes
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/es/) then       '#confirm_dispatch35'
       when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/at/) then       '#confirm_dispatch11'
       when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/ch/) then       '#confirm_dispatch13'
+      when ENV['SHOP'].match(/hw_jobeline/) && ENV['COUNTRY'].match(/de/) then       '#confirm_dispatch18'
+      when ENV['SHOP'].match(/hw_jobeline/) && ENV['COUNTRY'].match(/ch/) then       '#confirm_dispatch30'
       when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#confirm_dispatch23'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ' #confirm_dispatch9'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '#confirm_dispatch63'

@@ -90,7 +90,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   lastname = user.lastname
   department = user.department
   taxid = user.taxid
-  #taxvat = user.taxvat
+  taxvat = user.taxvat
   customer_number = user.customer_number
   email = user.eMail
   skip = nil
@@ -110,7 +110,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   checkout_registerform_lastname_path = csspathes.account_registerform_lastname_path
   checkout_registerform_department_path = csspathes.account_registerform_department_path
   checkout_registerform_taxid_path = csspathes.account_registerform_taxid_path
-  #checkout_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  checkout_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
   checkout_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
   checkout_registerform_email_path = csspathes.account_registerform_email_path
   checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path ####################################################
@@ -163,7 +163,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   #set value for id
   setAtrributOfArticle("taxid", taxid, checkout_registerform_taxid_path)
   #set value for vat
-  #setAtrributOfArticle("taxvat", taxvat, checkout_registerform_taxvat_path)
+  setAtrributOfArticle("taxvat", taxvat, checkout_registerform_taxvat_path)
   #set value for street
   setAtrributOfArticle("street", street, checkout_registerform_street_path)
   #set streetnumber 

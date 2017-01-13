@@ -5,9 +5,9 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then nil
-      when 'at' then nil
-      when 'ch' then nil
+      when 'de' then '493444604'
+      when 'at' then '495078701'
+      when 'ch' then '211609597'
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_hwjde@test.de'
@@ -94,10 +94,10 @@ class User
       when 'at' then 'Frau'
       when 'ch' then 'Frau'
     end
-    @street = case ENV['COUNTRY']
-      when 'de' then 'Südwestpark'
-      when 'at' then 'Schloßgasse'
-      when 'ch' then 'Tramstrasse'
+    @street = case ENV['COUNTRY']      
+      when 'de' then 'Hotelwäsche Erwin Müller GmbH Jobeline-Test-eBus.'
+      when 'at' then 'Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB'
+      when 'ch' then 'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
     end
     @streetnumber = case ENV['COUNTRY']
       when 'de' then '44'

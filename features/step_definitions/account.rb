@@ -2,7 +2,7 @@
 
 Given(/^I am on the registration page$/) do
   #var
-  url = settings.urlHttps+'account'
+  url = "#{settings.urlHttps}account"
   puts "--> go to #{url}"
   
   #got to url
@@ -46,7 +46,7 @@ When(/^I create a new account with my data$/) do
   lastname = user.lastname
   department = user.department
   taxid = user.taxid
-  #taxvat = user.taxvat
+  taxvat = user.taxvat
   email = user.eMail
   customer_number = user.customer_number
   password = user.password
@@ -66,7 +66,7 @@ When(/^I create a new account with my data$/) do
   account_registerform_lastname_path = csspathes.account_registerform_lastname_path
   account_registerform_department_path = csspathes.account_registerform_department_path
   account_registerform_taxid_path = csspathes.account_registerform_taxid_path
-  #account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
   account_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
   account_registerform_email_path = csspathes.account_registerform_email_path
   account_registerform_password_path = csspathes.account_registerform_password_path
@@ -116,7 +116,7 @@ When(/^I create a new account with my data$/) do
   #set value of taxid
   setAtrributOfArticle("taxid", taxid, account_registerform_taxid_path)
   #set value for vat
-  #setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
+  setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
   setAtrributOfArticle("street", street, account_registerform_street_path)
   #set streetnumber 

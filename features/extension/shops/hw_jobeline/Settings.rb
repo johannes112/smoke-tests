@@ -29,8 +29,8 @@ class Settings
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.jobeline.de/'
         when (/at/) then 'https://www.jobeline.at/'
-        when (/ch/) then 'https://www.jobeline.ch/ch-de'
-        when (/ch-fr/) then 'https://www.jobeline.ch/ch-fr'
+        when (/ch/) then 'https://www.jobeline.ch/ch-de/'
+        when (/ch-fr/) then 'https://www.jobeline.ch/ch-fr/'
       end
       @urlBackend = 'http://www.jobeline.de/'
     end

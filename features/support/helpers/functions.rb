@@ -113,11 +113,11 @@ def set_user_and_pass_string(user, pass)
 end
 
 def modify_url(url, htaccess)
-  #if (ENV['SYSTEM'] == 'int')
+  if (ENV['SYSTEM'] == 'int')
     new_url = url.gsub("//", "//#{htaccess}")
     puts "set htaccess"
     return new_url
-  #else
-  #  return url
-  #end
+  else
+    return url
+  end
 end
