@@ -27,12 +27,12 @@ class Settings
         when (/ch-fr/) then 'http://www.erwinmueller.ch/ch-fr/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'http://www.hotelwaesche.de/'
-        when (/at/) then 'http://www.hotelwaesche.at/'
-        when (/ch/) then 'http://www.erwinmueller.ch/ch-de/'
-        when (/ch-fr/) then 'http://www.erwinmueller.ch/ch-fr/'
+        when (/de/) then 'https://www.hotelwaesche.de/'
+        when (/at/) then 'https://www.hotelwaesche.at/'
+        when (/ch/) then 'https://www.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'https://www.erwinmueller.ch/ch-fr/'
       end
-      @urlBackend = 'http://www.hotelwaesche.de/'
+      @urlBackend = 'https://www.hotelwaesche.de/'
     end
     @url_add_comand = 'direktbestellen'
     @baby_steps = true

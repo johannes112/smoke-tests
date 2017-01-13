@@ -32,7 +32,7 @@ class Settings
         when (/ch/) then 'https://www.jobeline.ch/ch-de/'
         when (/ch-fr/) then 'https://www.jobeline.ch/ch-fr/'
       end
-      @urlBackend = 'http://www.jobeline.de/'
+      @urlBackend = 'https://www.jobeline.de/'
     end
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
