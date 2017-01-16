@@ -16,7 +16,7 @@ class Settings
         when (/ch/) then 'https://int.erwinmueller.ch/ch-de/'
         when (/ch-fr/) then 'https://int.erwinmueller.ch/ch-fr/'
       end
-      @urlBackend = 'https://int.hotelwaesche.de/'
+      @urlBackend = 'http://int.hotelwaesche.de/'
     end
     
     if ENV['SYSTEM'] == "live"

@@ -16,7 +16,7 @@ class Settings
         when (/ch/) then 'https://int.jobeline.ch/ch-de/'
         when (/fr/) then 'https://int.jobeline.ch/ch-fr/'
       end
-      @urlBackend = 'https://int.jobeline.de/'
+      @urlBackend = 'http://int.jobeline.de/'
     end
     
     if ENV['SYSTEM'] == "live"

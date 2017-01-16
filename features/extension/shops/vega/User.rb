@@ -4,6 +4,18 @@ class User
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
+    @customer_number = case ENV['COUNTRY']
+      when 'de' then '593497053'
+      when 'at' then '595067365'
+      when 'ch' then '311607643'
+      when 'it' then nil
+      when 'fr' then nil
+      when 'no' then nil
+      when 'se' then '20000041'
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
+    end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_vde@test.de'
       when 'at' then 'testmail_vat@test.de'
@@ -57,9 +69,9 @@ class User
       when 'lu' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Test Vega DE eBusiness'
-      when 'at' then 'Test Vega AT eBusiness'
-      when 'ch' then 'Test Vega CH eBusiness'
+      when 'de' then 'VEGA GmbH	Test - eBusiness'
+      when 'at' then 'Vega Vetriebs GmbH & Co. KG	Test - eBusiness'
+      when 'ch' then 'Vega Vetrieb von 	Gastronomiebedarf GmbH'
       when 'it' then 'Test Vega IT eBusiness'
       when 'fr' then 'Test Vega FR eBusiness'
       when 'no' then 'Test Vega NO eBusiness'
@@ -131,7 +143,7 @@ class User
       when 'se' then 'Sverige'
       when 'nl' then 'Nederland'
       when 'be' then 'Belgique'
-      when 'es' then nil
+      when 'es' then 'Espana'
       when 'lu' then nil
     end
     @owner_firstname = case ENV['COUNTRY']
@@ -226,7 +238,7 @@ class User
       when 'lu' then nil
     end
     @street = case ENV['COUNTRY']
-      when 'de' then 'Südwestpark'
+      when 'de' then 'Vegastr.'
       when 'at' then 'Schloßgasse'
       when 'ch' then 'Tramstrasse'
       when 'it' then 'Via Luigi Galvani'
@@ -239,7 +251,7 @@ class User
       when 'lu' then nil
     end
     @streetnumber = case ENV['COUNTRY']
-      when 'de' then '44'
+      when 'de' then '2'
       when 'at' then '4'
       when 'ch' then '7'
       when 'it' then '6/C'
@@ -252,7 +264,7 @@ class User
       when 'lu' then nil
     end
     @postcode = case ENV['COUNTRY']
-      when 'de' then '90449'
+      when 'de' then '86637'
       when 'at' then '4470'
       when 'ch' then '9444'
       when 'it' then '39100'
@@ -265,7 +277,7 @@ class User
       when 'lu' then nil
     end
     @city = case ENV['COUNTRY']
-      when 'de' then 'Nürnberg'
+      when 'de' then 'Wertingen'
       when 'at' then 'Enns'
       when 'ch' then 'Diepoldsau'
       when 'it' then 'Bolzano'

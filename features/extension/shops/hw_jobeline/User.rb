@@ -30,9 +30,9 @@ class User
       when 'ch' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Test DE Hotelwäsche Jobeline - eBusiness'
-      when 'at' then 'Test AT Hotelwäsche Jobeline - eBusiness'
-      when 'ch' then 'Test CH Hotelwäsche Jobeline - eBusiness'
+      when 'de' then 'Hotelwäsche Erwin Müller GmbH	Jobeline-Test-eBus.'
+      when 'at' then 'Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB'
+      when 'ch' then 'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then 'other'
@@ -56,7 +56,7 @@ class User
     end
     @country = case ENV['COUNTRY']
       when 'de' then 'Deutschland'
-      when 'at' then 'Österreich'
+      when 'at' then 'Österreich'  
       when 'ch' then 'Schweiz'
     end
     @owner_firstname = case ENV['COUNTRY']
@@ -95,9 +95,9 @@ class User
       when 'ch' then 'Frau'
     end
     @street = case ENV['COUNTRY']      
-      when 'de' then 'Hotelwäsche Erwin Müller GmbH Jobeline-Test-eBus.'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB'
-      when 'ch' then 'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
+      when 'de' then 'Hettlinger Str.'
+      when 'at' then 'Tramstrasse'
+      when 'ch' then 'Schlossgasse'
     end
     @streetnumber = case ENV['COUNTRY']
       when 'de' then '44'

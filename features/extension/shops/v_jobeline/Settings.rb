@@ -30,7 +30,7 @@ class Settings
         when (/be/) then 'https://int.jobeline.com/be-fr/'
         when (/es/) then 'https://int.jobeline.com/es-es/'
         end
-      @urlBackend = 'https://int.jobeline.com/'
+      @urlBackend = 'http://int.jobeline.com/'
     end
     
     if ENV['SYSTEM'] == "live"
@@ -48,19 +48,19 @@ class Settings
         when (/es/) then 'http://www.jobeline.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']
-        when (/de/) then 'http://www.jobeline.com/de-de/'
-        when (/at/) then 'http://www.jobeline.com/at-de/'
-        when (/ch/) then 'http://www.jobeline.com/ch-de/'
-        when (/ch-fr/) then 'http://www.jobeline.com/ch-fr/'
-        when (/it/) then 'http://www.jobeline.com/it-it/'
-        when (/fr/) then 'http://www.jobeline.com/fr-fr/'
-        when (/no/) then 'http://www.jobeline.com/no-no/'
-        when (/se/) then 'http://www.jobeline.com/se-se/'
-        when (/nl/) then 'http://www.jobeline.com/nl-nl/'
-        when (/be/) then 'http://www.jobeline.com/be-fr/'
-        when (/es/) then 'http://www.jobeline.com/es-es/'
+        when (/de/) then 'https://www.jobeline.com/de-de/'
+        when (/at/) then 'https://www.jobeline.com/at-de/'
+        when (/ch/) then 'https://www.jobeline.com/ch-de/'
+        when (/ch-fr/) then 'https://www.jobeline.com/ch-fr/'
+        when (/it/) then 'https://www.jobeline.com/it-it/'
+        when (/fr/) then 'https://www.jobeline.com/fr-fr/'
+        when (/no/) then 'https://www.jobeline.com/no-no/'
+        when (/se/) then 'https://www.jobeline.com/se-se/'
+        when (/nl/) then 'https://www.jobeline.com/nl-nl/'
+        when (/be/) then 'https://www.jobeline.com/be-fr/'
+        when (/es/) then 'https://www.jobeline.com/es-es/'
       end
-      @urlBackend = 'http://www.jobeline.com/'
+      @urlBackend = 'https://www.jobeline.com/'
     end
     @url_add_comand = 'direktbestellen'
     @baby_steps = true

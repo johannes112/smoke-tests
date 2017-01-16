@@ -29,8 +29,8 @@ class Settings
         when (/nl/) then 'https://int.pulsiva.com/nl-nl/'
         when (/be/) then 'https://int.pulsiva.com/be-fr/'
         when (/es/) then 'https://int.pulsiva.com/es-es/'
-        end
-      @urlBackend = 'https://int.pulsiva.com/'
+      end
+      @urlBackend = 'http://int.pulsiva.com/'
     end
     
     if ENV['SYSTEM'] == "live"
@@ -61,8 +61,8 @@ class Settings
         when (/es/) then 'https://www.pulsiva.com/es-es/'
       end
       @urlBackend = 'https://www.pulsiva.com/'
+      @url_add_comand = 'direktbestellen'
+      @baby_steps = true
     end
-    @url_add_comand = 'direktbestellen'
-    @baby_steps = true
   end
 end

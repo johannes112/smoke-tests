@@ -11,7 +11,7 @@ class User
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
-      when 'se' then '20000041'
+      when 'se' then nil
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
@@ -65,16 +65,16 @@ class User
       when 'es' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Pulsiva GmbH Test - eBusiness'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB'
-      when 'ch' then 'Pulsiva GmbH Test - eBusiness'
-      when 'it' then 'Pulsiva Italy GmbH'
-      when 'fr' then 'Pulsiva France'
-      when 'no' then 'Pulsiva Norge'
-      when 'se' then 'Pulsiva Scandinavia - eBusiness '
-      when 'nl' then 'Pulsiva Nederland'
-      when 'be' then 'Pulsiva Belgium'
-      when 'es' then 'Pulsiva Espana'
+      when 'de' then 'Test DE Jobeline - eBusiness'
+      when 'at' then 'Test AT Jobeline - eBusiness'
+      when 'ch' then 'Test CH Jobeline - eBusiness'      
+      when 'it' then 'Test IT Jobeline - eBusiness'
+      when 'fr' then 'Test FR Jobeline - eBusiness'
+      when 'no' then 'Test NO Jobeline - eBusiness'
+      when 'se' then 'Test SE Jobeline - eBusiness'
+      when 'nl' then 'Test NL Jobeline - eBusiness'
+      when 'be' then 'Test BE Jobeline - eBusiness'
+      when 'es' then 'Test ES Jobeline - eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then 'other'
