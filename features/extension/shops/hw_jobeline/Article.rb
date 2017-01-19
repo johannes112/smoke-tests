@@ -18,14 +18,14 @@ class Article
       when (/be/) then nil
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '110321'
-      when (/at/) then '110321'
-      when (/ch/) then '110321'
+      when (/de/) then '100710'
+      when (/at/) then '100710'
+      when (/ch/) then '100710'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '30000303'#without i!
-      when (/at/) then '30000303'
-      when (/ch/) then '30000303'
+      when (/de/) then '10041838'#without i!
+      when (/at/) then '10041838'
+      when (/ch/) then '10041838'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -41,9 +41,9 @@ class Article
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
-      when (/de/) then 'KOCHHOSE FRANK'
-      when (/at/) then 'KOCHHOSE FRANK'
-      when (/ch/) then 'KOCHHOSE FRANK'
+      when (/de/) then 'HERRENKOCHHOSE NICK'
+      when (/at/) then 'HERRENKOcHHOSE NICK'
+      when (/ch/) then 'HERRENKOcHHOSE NICK'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'EMGroupDirectOrder'
