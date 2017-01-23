@@ -7,7 +7,7 @@ class Article
       when (/de/) then 'Kochhosen'
       when (/at/) then 'Kochhosen'
       when (/ch/) then 'Kochhosen'
-      when (/it/) then ''
+      when (/it/) then 'Pantaloni da cuoco'
       when (/fr/) then 'Couverts à l\'unité'
       when (/no/) then 'Vinglass'
       when (/se/) then 'Enskilda bestick'

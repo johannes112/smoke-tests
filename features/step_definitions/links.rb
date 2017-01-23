@@ -57,8 +57,8 @@ When(/^I click the link to edit the cart$/) do
   #pathes
   links_cart_button_path = csspathes.links_cart_button_path  
   #click button
-  page.find(links_cart_button_path)
-  element = page.find(links_cart_button_path)
+  #page.find(links_cart_button_path)
+  element = page.find(links_cart_button_path, match: :first)
   element.click
 end
 
@@ -74,7 +74,9 @@ When(/^I click the link of help$/) do
   links_service_path = csspathes.links_service_path  
   #click button
   element = page.find(links_service_path)
+  link_text = element.text
   element.click
+  puts "--> clicked on #{link_text}"
 end
 
 Then(/^I should see a contextmenu$/) do

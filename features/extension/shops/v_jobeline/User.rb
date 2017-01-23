@@ -98,7 +98,7 @@ class User
       when 'se' then '556695-9234'
       when 'nl' then '22065260'
       when 'be' then nil
-      when 'es' then nil
+      when 'es' then 'B63679427'
     end
     @taxvat = case ENV['COUNTRY']
       when 'de' then nil
@@ -110,7 +110,7 @@ class User
       when 'se' then '556695-9234'
       when 'nl' then nil
       when 'be' then 'FR14 422 876 383'
-      when 'es' then 'B63679427'
+      when 'es' then nil #''
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil

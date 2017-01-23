@@ -93,7 +93,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   taxvat = user.taxvat
   customer_number = user.customer_number
   email = user.eMail
-  skip = nil
+  skip = "skip only export and chefworks because this field has different meaning on all other templates of our shops"
   phone = user.telephone
   company = user.company
   company_kind = user.company_kind
@@ -140,7 +140,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   #set value for email
   setAtrributOfArticle("email", email, checkout_registerform_email_path)
   #set value to skip registering
-  if skip
+  if (ENV['SHOP'] == 'export' || ENV['SHOP'] == 'chefworks')
     element = page.find(checkout_registerform_skip_path)
     element.click
   end

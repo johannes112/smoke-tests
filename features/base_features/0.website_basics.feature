@@ -76,7 +76,8 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
-
+    @hotelwaesche
+    @hw_jobeline
     @navigation
     @links
     Scenario: activate the cart
@@ -89,6 +90,7 @@ Feature: website_basics
     @chefworks
     @pulsiva
     @hotelwaesche
+    @hw_jobeline
     @v_jobeline
     @navigation
     @links

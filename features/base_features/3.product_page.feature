@@ -61,7 +61,6 @@ Feature: product page
 	  When I click the button to rate for the article
 	  Then there should be a form for rating the article
 	
-	@v_jobeline
 	@product_page_suggest
   Scenario: customer seen article
 	  When I change to the tab of the customer viewed articles

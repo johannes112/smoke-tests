@@ -430,27 +430,16 @@ When(/^I modify my address for my delivery/) do
   element = account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path)
   element.click
   puts "--> clicked button for change the adress for delivery"
-  if (ENV['SHOP'] == 'export' || ENV['SHOP'] == 'chefworks') 
-    puts "I change prefix of my address for delivery"
-    step("I change prefix of my address for delivery")
-  else
-    page.find(".address--item-create > a")
-    puts "> found button to create a new address"
-    element = page.find(".address--item-create > a")
-    element.click
-    puts "--> clicked button to create a new address"
-    puts "I add a new address"
-    step("I add a new address")
-  end
+  puts "I change prefix of my address for delivery"
+  step("I change prefix of my address for delivery")
 end
 
 When(/^I change prefix of my address for delivery$/) do
   prefix = user.prefix_sec
   
   account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
-  
   account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
-  
+
   #set value for prefix
   page.find(account_deliveradresschange_form_prefix_path)
   element = page.find(account_deliveradresschange_form_prefix_path)

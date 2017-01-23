@@ -173,9 +173,11 @@ class Csspathes
       else ':nth-child(3) > nav > ul > li:nth-child(1) > a'
     end
     @links_context_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '.navigation--entry.is--active.has--sub-categories'        
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.navigation--entry.is--active.has--sub-categories'        
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         '.listing-header-container'        
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.listing-header-container'        
+      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.listing-header-container'        
+      when ENV['SHOP'].match(/hw_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.listing-header-container'        
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       else '.navigation--entry.is--active.has--sub-categories' 
@@ -270,11 +272,9 @@ class Csspathes
       else 'header > div > h1' 
     end
     @product_page_productpicture_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.product--image-container.image-slider.product--image-zoom'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.product--image-container.image-slider.product--image-zoom'
-      else '.product--image-container.image-slider.no--thumbnails > div > div > div > span > span > img'
+      else '.image-slider--container'
     end
     @product_page_productconfig_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.product--buybox.block'
@@ -906,25 +906,24 @@ class Csspathes
       else '.account--shipping.account--box'
     end 
     @account_accountinfo_deliveraddresschange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div > a'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div > a'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.account--shipping.account--box.panel > div > a'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'a:nth-child(2)'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     'a:nth-child(2)'
-      else 'div > a'
+      else '.account--shipping.account--box.panel > div > a'
     end 
     @account_deliveradresschange_form_prefix_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel.register--shipping > div > div.register--salutation.field--select'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.panel.register--shipping > div > div.register--salutation.field--select'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.address-form--panel > div > div.address--salutation.field--select > div'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.address-form--panel > div > div.address--salutation.field--select > div'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel.register--shipping > div > div.register--salutation.field--select'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.panel.register--shipping > div > div.register--salutation.field--select'
-      else '.panel.register--shipping > div > div.register--salutation.field--select'
+      else '.address-form--panel > div > div.address--salutation.field--select > div'
     end 
     @account_deliveradresschange_button_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--actions > input'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.account--actions > input'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.address--form-actions > input'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.address--form-actions > input'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--actions > input'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--actions > input'
-      else '.account--actions > input'
+      else '.address--form-actions > input'
     end 
     @account_newsletter_box_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_newsletter_box_path is not available'
