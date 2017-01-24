@@ -9,14 +9,14 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 20
+  default_timeout 1
 
   #crud comands
   def readData(url)
     options = getDigest()
     #puts "readData:#{url}"
     sleep 2
-    response_data = with_http_retries{self.class.get(url, options)}
+    response_data = handle_timeouts{self.class.get(url, options)}
     if response_data.success?
       response_data
     else
@@ -30,7 +30,7 @@ class ShopwareApi
   def updateData(url, options)
     #puts "updateData:#{url}"
     #sleep 2
-    response_data = with_http_retries{self.class.put(url, options)}
+    response_data = handle_timeouts{self.class.put(url, options)}
     if !response_data.success?
       puts ">> ERROR: update failed"
       puts "options: #{options}"
@@ -42,13 +42,22 @@ class ShopwareApi
     #puts "deleteData:#{url}"
     options = getDigest()
     sleep 2
-    response_data = with_http_retries{self.class.delete(url, options)}
+    response_data = handle_timeouts{self.class.delete(url, options)}
     if response_data.success?
       response_data
     else
       puts ">>>>>>>>> Can not connect"
       puts "Errortxt: #{response_data}"
       raise(ScriptError, "Error: delete failed!")
+    end
+  end
+
+  def handle_timeouts(&block)
+    begin
+      yield
+    rescue Net::OpenTimeout, Net::ReadTimeout
+      puts "handle timeouts"
+      {}
     end
   end
 
