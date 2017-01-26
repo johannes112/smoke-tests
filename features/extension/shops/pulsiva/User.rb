@@ -104,7 +104,7 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
-      when 'it' then nil
+      when 'it' then "CodiceFiscale56"
       when 'fr' then 'FR14P422P876P383'
       when 'no' then '999 204 252 MVA'
       when 'se' then '556695-9234'
