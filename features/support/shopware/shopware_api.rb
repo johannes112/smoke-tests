@@ -75,31 +75,8 @@ class ShopwareApi
         sleep 9
         retry
       end
-    rescue Exception => e
-      puts "An Error"
-      puts "#{e}"
-      exit
     end
   end
 
 
-# Simple wrapper to allow retries for HTTP requests - prolongs daemon life.
-  def with_http_retries(&block)
-    max_retries = 3
-    times_retried = 0
-    begin
-      yield
-    rescue Net::ReadTimeout => error
-    puts "CustomErrorNet: #{error}"
-      if times_retried < max_retries
-        times_retried += 1
-        puts "Failed to connect wir api, retry #{times_retried}/#{max_retries}"
-        sleep 9
-        retry
-      else
-        puts "Exiting script."
-      end
-    end
-  end
-  
 end
