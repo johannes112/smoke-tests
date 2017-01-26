@@ -9,8 +9,13 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 1
+  default_timeout 60
 
+  #file
+  #out_file = File.new("httpactions.log", "w")
+  #logger
+  #debug_output out_file
+  
   #crud comands
   def readData(url)
     options = getDigest()
@@ -51,13 +56,29 @@ class ShopwareApi
       raise(ScriptError, "Error: delete failed!")
     end
   end
-
+  
   def handle_timeouts(&block)
+    max_retries = 3
+    times_retried = 0
     begin
       yield
-    rescue Net::OpenTimeout, Net::ReadTimeout
-      puts "handle timeouts"
-      {}
+    rescue Net::OpenTimeout, Net::ReadTimeout => e
+      puts "Timeout"
+      puts "#{e}"
+      exit
+    rescue SocketError => e
+      puts "incorrect URL"
+      puts "#{e}"
+      if times_retried < max_retries
+        times_retried += 1
+        puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
+        sleep 9
+        retry
+      end
+    rescue Exception => e
+      puts "An Error"
+      puts "#{e}"
+      exit
     end
   end
 
@@ -72,11 +93,11 @@ class ShopwareApi
     puts "CustomErrorNet: #{error}"
       if times_retried < max_retries
         times_retried += 1
-        puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
+        puts "Failed to connect wir api, retry #{times_retried}/#{max_retries}"
         sleep 9
         retry
       else
-        puts "Exiting script. <explanation of why this is unlikely to recover>"
+        puts "Exiting script."
       end
     end
   end
