@@ -3,7 +3,7 @@
 #end
 
   at_exit() do
-    Capybara.current_session.driver.quit
+    Capybara.current_session.driver.quit()
   end
 
 After do |s| 
