@@ -56,13 +56,11 @@ if ENV['DRIVER'] == 'saucelabs'
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
     puts "Enviroment:#{@caps}"
     
-    @url_path = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub"
-   
+    @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    session = Capybara::Session.new(:saucelabs_driver)
     Capybara.default_max_wait_time = 30
     #ip = Capybara.current_session.driver.host
     #puts "IP:#{ip}"
