@@ -1,3 +1,4 @@
+@content
 @jobeline
 @product_configurator
 Feature: product_configurator

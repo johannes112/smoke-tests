@@ -5,6 +5,7 @@ This is functional testing for webshops of pulsiva, export, chefworks.
 ###Following **test-cases/features** exists:
 - website basics (website_elements, navigation, )
 - search
+- direct_order
 - product_page
 - product_cart
 - account (contains registration)
@@ -84,6 +85,10 @@ TODO:  - search by name
 ##### Following tags exist:
 To start different tests on each mandant navigate via tags:
 - @pulsiva
+- @vega
+- @v_jobeline
+- @hotelwaesche
+- @hw_jobeline
 - @export
 - @chefworks
 - @website_basics
@@ -124,12 +129,15 @@ To start different tests on each mandant navigate via tags:
 
 ##### Following options for browsers exist:
 - firefox
+- ie
 - chrome
 - safari
-- ios
+- iPad
+- iPhone
 
 ###### to start tests:
 Syntax (bash-shellaufruf): bash run_cucumber.sh <testenviroment-system> <browser> <apiuser> <apikey> <sauceuser> <saucekey> <test-system> <testshop> <country> <tag>
-bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
-bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
-bash run_cucumber.sh saucelabs <browser> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int export de @export
+bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> live vega de @vega
+bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
+bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
+bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int export de @export

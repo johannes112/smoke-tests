@@ -9,7 +9,7 @@
 Feature: search
 
     As a customer
-    i will be able to search for a specific product
+    I will be able to search for a specific product
 
     @hw_jobeline
     @search_sku

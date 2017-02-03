@@ -31,7 +31,7 @@ Feature: account
   @hw_jobeline
   @v_jobeline
   @product_cart_voucher
-    Scenario: enter a code
+    Scenario: enter a code of a voucher
       Given the product cart contains an article
 	    When I activate the function for voucher
 	    And I enter some code into the optional field
