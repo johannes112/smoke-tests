@@ -9,7 +9,7 @@ class Article
       when (/ch/) then 'Gabeln'
       when (/it/) then 'Posate singole'
       when (/fr/) then 'Couverts à l\'unité'
-      when (/no/) then 'Vinglass'
+      when (/no/) then 'Enkelt bestikk'
       when (/se/) then 'Enskilda bestick'
       when (/nl/) then 'Los bestek'
       when (/be/) then 'Couverts à l\'unité'
@@ -21,7 +21,7 @@ class Article
       when (/ch/) then 'Besteck'
       when (/it/) then 'Posate'
       when (/fr/) then 'Couverts'
-      when (/no/) then 'Glass'
+      when (/no/) then 'Bestikk'
       when (/se/) then 'Bestick'
       when (/nl/) then 'Bestek'
       when (/be/) then 'Couverts'
@@ -37,7 +37,7 @@ class Article
       when (/ch/) then '104105'
       when (/it/) then '104105'
       when (/fr/) then '104105'
-      when (/no/) then '20060940'#other product
+      when (/no/) then '104105'#other product
       when (/se/) then '104105'
       when (/nl/) then '104105'
       when (/be/) then '104105'
@@ -49,7 +49,7 @@ class Article
       when (/ch/) then '20040136'
       when (/it/) then '20040136'
       when (/fr/) then '20040136'
-      when (/no/) then '20060940'#other product
+      when (/no/) then '20040136'#other product
       when (/se/) then '20040136'
       when (/nl/) then '20040136'
       when (/be/) then '20040136'
@@ -74,7 +74,7 @@ class Article
       when (/ch/) then 'Steakgabel'
       when (/it/) then 'FORCHETTA BISTECCA'
       when (/fr/) then 'Fourchette'
-      when (/no/) then 'BOUQUET'
+      when (/no/) then 'Grillgaffel'
       when (/se/) then 'GRILLGAFFEL'
       when (/nl/) then 'STEAKVORK'
       when (/be/) then 'Fourchette'
