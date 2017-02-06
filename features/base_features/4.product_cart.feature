@@ -26,10 +26,6 @@ Feature: account
   	  Then I will see the add-action in the url
 	 
   @pulsiva
-  @vega
-  @hotelwaesche
-  @hw_jobeline
-  @v_jobeline
   @product_cart_voucher
     Scenario: enter a code of a voucher
       Given the product cart contains an article

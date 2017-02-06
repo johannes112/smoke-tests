@@ -132,6 +132,7 @@ When(/^I create a new account with my data$/) do
   element = page.find(account_registerform_button_path)
   element.click
   puts "clicked button to continue"
+  
 end
 
 Then(/^I should be on my account page$/) do
@@ -140,7 +141,14 @@ Then(/^I should be on my account page$/) do
   
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   account_accountpage_info_path = csspathes.account_accountpage_info_path
+  account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+  account_registerform_vallidation_ignore_path = '.modal-ignore'
   
+  
+  if (page.has_css?(account_registerform_vallidation_modal_path))
+    element = page.find(account_registerform_vallidation_ignore_path)
+    element.click
+  end
   puts "current_url:#{current_url}"
   page.find(account_accountpage_welcome_path)
   expect(page).to have_css(account_accountpage_welcome_path),

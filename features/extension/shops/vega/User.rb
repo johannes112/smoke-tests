@@ -82,17 +82,17 @@ class User
       when 'lu' then 'Test Vega LU eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
-      when 'de' then 'other'
-      when 'at' then 'other'
-      when 'ch' then 'other'
-      when 'it' then 'other'
-      when 'fr' then 'other'
-      when 'no' then 'other'
-      when 'se' then 'other'
-      when 'nl' then 'other'
-      when 'be' then 'other'
-      when 'es' then 'other'
-      when 'lu' then 'other'
+      when 'de' then nil
+      when 'at' then nil
+      when 'ch' then nil
+      when 'it' then nil
+      when 'fr' then nil
+      when 'no' then nil
+      when 'se' then nil
+      when 'nl' then nil
+      when 'be' then nil
+      when 'es' then nil
+      when 'lu' then nil
     end
     @taxid = case ENV['COUNTRY'] # steuernummer
       when 'de' then nil

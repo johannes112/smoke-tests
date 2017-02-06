@@ -35,9 +35,9 @@ class User
       when 'ch' then 'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
     end
     @company_kind = case ENV['COUNTRY']
-      when 'de' then 'other'
-      when 'at' then 'other'
-      when 'ch' then 'other'
+      when 'de' then nil
+      when 'at' then nil
+      when 'ch' then nil
     end
     @taxid = case ENV['COUNTRY']
       when 'de' then nil
