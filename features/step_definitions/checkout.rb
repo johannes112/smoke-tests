@@ -188,9 +188,10 @@ When(/^I set payment and shipping$/) do
   checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
   checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path
+  checkout_step_confirm_path = csspathes.checkout_step_confirm_path
 
   puts "current_url:#{current_url}"
-  if (page.has_css?(checkout_orderbutton_path)) 
+  if (page.has_css?(checkout_step_confirm_path)) 
     puts "I am already on the final checkoutpage"
   else
     puts "I am here: #{current_url}"

@@ -61,7 +61,8 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    Capybara.default_max_wait_time = 30
+    Capybara.default_max_wait_time = 60
+    
     #ip = Capybara.current_session.driver.host
     #puts "IP:#{ip}"
   end
