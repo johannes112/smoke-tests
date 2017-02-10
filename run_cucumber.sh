@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "IP of this machine:"
-curl ipecho.net/plain ; echo
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}

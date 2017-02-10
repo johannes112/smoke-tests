@@ -54,6 +54,8 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     end
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
+    @caps[:idleTimeout] = '90'
+    
     puts "Enviroment:#{@caps}"
     
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
