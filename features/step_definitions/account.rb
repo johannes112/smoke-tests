@@ -22,18 +22,22 @@ end
 
 Given(/^I already created an user account$/) do
   eMail = user.eMail
+  firstname = user.firstname
+  lastname = user.lastname
+  password = user.password
+  street = user.street
+  streetnumber = user.streetnumber
+  city = user.city
+  postcode = user.postcode
+  string_country = user.country
+  id_country = convert_countryname_to_id(string_country)
+  
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  customer_id_determined = shopware.getCustomerIdByMail(eMail) #shopware.getDataByKey("customers", key, eMail)
+  customer_id_determined = shopware.getCustomerIdByMail(eMail)
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with customer:#{eMail} exists"
-    puts "I am on the registration page"
-    step("I am on the registration page")
-    puts "I create a new account with my data"
-    step("I create a new account with my data")
-    puts "I log me out"
-    step("I log me out")
-    puts "I am on the registration page"
-    step("I am on the registration page")
+    shopware.setCustomerAttributes(eMail, firstname, lastname, password, street, streetnumber, city, postcode, id_country)
+    puts ">api -> created User"
   else
     puts   "-> there exists an unique account"
   end

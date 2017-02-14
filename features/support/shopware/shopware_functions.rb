@@ -1,6 +1,42 @@
 module ShopwareFunctions
   #customers
   @shopwarestatus = 0
+
+  #set properties of user and call creation
+  def setCustomerAttributes(email, firstname, lastname, password, street, streetnumber, city, postcode, country)
+    #if string_country
+    customer_properties = {
+      :email => email,
+      :firstname => firstname,
+      :lastname => lastname,
+      :salutation => 'mr', 
+      :Password => password,
+      :billing => {
+          :firstname => firstname,
+          :lastname => lastname,
+          :salutation => 'mr',
+          :street => street,
+          :streetNumber => streetnumber,
+          :city => city,
+          :zipcode => postcode,
+          :country => country
+          }
+      }
+   createCustomer(customer_properties)
+  end
+
+  
+  #create new customer
+  def createCustomer(customer_properties)
+    url_data = "/api/customers/"
+    @json_customer_properties = customer_properties.to_json
+      options = { 
+      :digest_auth => @auth_digest,
+      :body => @json_customer_properties
+      } 
+    url_request = "#{url_data}"
+    postData(url_request, options)
+  end
   
   #set suburl
   def stringGetUrlPath(data_of)

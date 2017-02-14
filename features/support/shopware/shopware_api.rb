@@ -16,10 +16,22 @@ class ShopwareApi
   #logger
   #debug_output out_file
   
-  #crud comands
+  #crud comands ----------------------------------------------------
+  #create
+  def postData(url, options)
+    response_data = handle_timeouts{self.class.post(url, options)}
+    if !response_data.success? || !response_data
+      puts ">> ERROR: post-action failed"
+      puts "data: #{options}"
+      puts "Error Msg: #{response_data}"
+      raise(ScriptError, "Error: post failed!")
+      exit
+    end
+  end
+
+  #read
   def readData(url)
     options = getDigest()
-    #puts "readData:#{url}"
     sleep 2
     response_data = handle_timeouts{self.class.get(url, options)}
     if response_data.success?
@@ -32,9 +44,8 @@ class ShopwareApi
     response_data_json = response_data.parsed_response
     return response_data_json
   end
+  #update
   def updateData(url, options)
-    #puts "updateData:#{url}"
-    #sleep 2
     response_data = handle_timeouts{self.class.put(url, options)}
     if !response_data.success?
       puts ">> ERROR: update failed"
@@ -43,8 +54,8 @@ class ShopwareApi
       raise(ScriptError, "Error: update failed!")
     end
   end
+  #delete
   def deleteData(url)
-    #puts "deleteData:#{url}"
     options = getDigest()
     sleep 2
     response_data = handle_timeouts{self.class.delete(url, options)}
@@ -57,6 +68,7 @@ class ShopwareApi
     end
   end
   
+  #catch exception
   def handle_timeouts(&block)
     max_retries = 3
     times_retried = 0
@@ -76,6 +88,5 @@ class ShopwareApi
       end
     end
   end
-
 
 end

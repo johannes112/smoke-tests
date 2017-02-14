@@ -121,3 +121,42 @@ def modify_url(url, htaccess)
     return url
   end
 end
+
+#convert string of country into ID (to post with api-call)
+def convert_countryname_to_id(string_country)
+  id_country = 2
+  case string_country
+    when "Deutschland"
+      puts "Germany"
+      id_country = 2
+    when "Österreich" 
+      puts "Austria"
+      id_country = 23
+    when "Schweiz"
+      puts "Switzerland"
+      id_country = 26
+    when "Italia"
+      puts "Italy"
+      id_country = 14
+    when "France"
+      puts "France"
+      id_country = 9
+    when "Norge"
+      puts "Norway"
+      id_country = 22
+    when "Sverige"
+      puts "Sweden"
+      id_country = 25
+    when "Nederland"
+      puts "Nederland"
+      id_country = 21
+    when "Belgique"
+      puts "Begium"
+      id_country = 5
+    when "Espana"
+      puts "Spain"
+      id_country = 27
+    end
+  return id_country
+  puts id_country
+end

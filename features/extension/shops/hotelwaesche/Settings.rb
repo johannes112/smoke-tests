@@ -16,7 +16,7 @@ class Settings
         when (/ch/) then 'https://int.erwinmueller.ch/ch-de/'
         when (/ch-fr/) then 'https://int.erwinmueller.ch/ch-fr/'
       end
-      @urlBackend = 'http://int.hotelwaesche.de/'
+      @urlBackend = 'http://int.hotelwaesche.de'
     end
     
     if ENV['SYSTEM'] == "live"
@@ -32,7 +32,7 @@ class Settings
         when (/ch/) then 'https://www.erwinmueller.ch/ch-de/'
         when (/ch-fr/) then 'https://www.erwinmueller.ch/ch-fr/'
       end
-      @urlBackend = 'https://www.hotelwaesche.de/'
+      @urlBackend = 'https://www.hotelwaesche.de'
     end
     @url_add_comand = 'direktbestellen'
     @baby_steps = true
