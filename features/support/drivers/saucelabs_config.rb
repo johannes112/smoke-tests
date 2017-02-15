@@ -54,7 +54,9 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     end
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
-    @caps[:idleTimeout] = '90'
+    @caps[:maxDuration] = '2700' #max Duration of Tests is set to 45 min
+    @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 5 min
+    @caps[:idleTimeout] = '90' #max Duration between any command
     
     puts "Enviroment:#{@caps}"
     
@@ -63,7 +65,7 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    Capybara.default_max_wait_time = 40
+    Capybara.default_max_wait_time = 20
     
     #ip = Capybara.current_session.driver.host
     #puts "IP:#{ip}"
