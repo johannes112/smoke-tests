@@ -1,9 +1,9 @@
 #checkout
 Given(/^I am on the checkout page$/) do
   checkout_checkout_proceed_button_path = csspathes.checkout_checkout_proceed_button_path
-  checkout_orderbutton_path = csspathes.checkout_orderbutton_path
+  checkout_step_confirm_path = csspathes.checkout_step_confirm_path
   
-  if (page.has_css?(checkout_orderbutton_path)) 
+  if (page.has_css?(checkout_step_confirm_path)) 
     puts "I am already on the final checkout page"
   else
     puts "--> click continue"
@@ -183,31 +183,46 @@ end
 
 When(/^I set payment and shipping$/) do
   #css pathes
+  checkout_step_payment_path = csspathes.checkout_step_payment_path
   checkout_payment_form_path = csspathes.checkout_payment_form_path 
+  checkout_payment_options_path = csspathes.checkout_payment_options_path
+  checkout_delivery_options_path = csspathes.checkout_delivery_options_path
   checkout_paymentInAdvance_radio_path = csspathes.checkout_paymentInAdvance_radio_path 
   checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
   checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path
   checkout_step_confirm_path = csspathes.checkout_step_confirm_path
 
-  puts "current_url:#{current_url}"
-  if (page.has_css?(checkout_step_confirm_path)) 
-    puts "I am already on the final checkoutpage"
-  else
+  if (page.has_css?(checkout_step_payment_path)) 
     puts "I am here: #{current_url}"
     page.find(checkout_payment_form_path)
+    
     #set payment
-    element = page.find(checkout_paymentInAdvance_radio_path)
-    element.click
-    puts "-> choose payment"
+    if (page.has_css?(checkout_payment_options_path))
+      element = page.find(checkout_paymentInAdvance_radio_path)
+      element.click
+      puts "-> choose payment"
+    else
+      puts "----> there are no options to choose for payment"
+    end
+    
     #set delivery
-    #puts page.html > "error.txt"
-    element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
-    element.click
-    puts "-> choose delivery"
+    if (page.has_css?(checkout_delivery_options_path))
+      #element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
+      element = find(checkout_payment_delivery_standard_radio_path)
+      element.click
+      puts "-> choose delivery"
+    else
+      puts "----> there are no options to choose for delivery"
+    end
+    
     element = find(checkout_payment_continue_path, match: :first)
     element.click
     puts "--> click button to continue"
+  elsif (page.has_css?(checkout_step_confirm_path))
+    puts "I am already on the final checkoutpage"
+  else
+    puts "current_url:#{current_url}"
   end
 end
 

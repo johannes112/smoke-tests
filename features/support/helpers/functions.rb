@@ -156,7 +156,6 @@ def convert_countryname_to_id(string_country)
     when "Espana"
       puts "Spain"
       id_country = 27
-    end
+  end
   return id_country
-  puts id_country
 end

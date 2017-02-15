@@ -9,7 +9,7 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 180
+  default_timeout 10
 
   #file
   #out_file = File.new("httpactions.log", "w")

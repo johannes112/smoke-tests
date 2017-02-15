@@ -26,7 +26,7 @@ class Csspathes
   :account_address_create_path,  :account_address_prefix_path, :account_address_firstname_path, :account_address_lastname_path, :account_address_phone_path, :account_address_company_path, :account_address_street_path, :account_address_streetnumber_path, :account_address_postcode_path, :account_address_city_path, :account_address_standard_path, :account_address_country_path, :account_address_savebutton_path, 
   #checkout
   :checkout_backbutton_path, :checkout_steps_container_path, :checkout_agb_container_path, :checkout_billing_container_path, :checkout_shipping_container_path, :checkout_payment_container_path, 
-  :checkout_product_container_path, :checkout_orderbutton_path, :checkout_step_confirm_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 
+  :checkout_product_container_path, :checkout_orderbutton_path, :checkout_step_payment_path, :checkout_payment_options_path, :checkout_delivery_options_path, :checkout_step_confirm_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 
   :checkout_registerform_firstname_path, :checkout_registerform_lastname_path, :checkout_registerform_department_path, :checkout_registerform_taxvat_path, :checkout_registerform_email_path, 
   :checkout_registerform_skip_path, :checkout_registerform_phone_path, :checkout_registerform_company_path, :checkout_registerform_street_path, :checkout_registerform_streetnumber_path, :checkout_registerform_postcode_path, 
   :checkout_registerform_city_path, :checkout_registerform_country_path, :checkout_registerform_button_path, :checkout_payment_form_path, :checkout_paymentInAdvance_radio_path, :checkout_registerform_customernumber_path, 
@@ -990,6 +990,10 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'button'
       else '.actions--bottom > div > button' 
     end
+    @checkout_step_payment_path = case 
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.step--register.is--active'
+      else '.step--register.is--active' 
+    end
     @checkout_step_confirm_path = case 
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.step--confirm.is--active'
       else '.step--confirm.is--active' 
@@ -1118,6 +1122,14 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.shipping-payment--information'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.shipping-payment--information'
       else '.shipping-payment--information'
+    end
+    @checkout_payment_options_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.shipping-payment--information > div:nth-child(1) > div > div'
+      else '.shipping-payment--information > div:nth-child(1) > div > div'
+    end
+    @checkout_delivery_options_path = case 
+      when ENV['SHOP'].match(/xxx/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.shipping-payment--information > div:nth-child(2) > div > div'
+      else '.shipping-payment--information > div:nth-child(2) > div > div'
     end
     @checkout_paymentInAdvance_radio_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then         '#payment_mean3'
