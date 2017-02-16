@@ -55,7 +55,7 @@ if ENV['DRIVER'] == 'saucelabs'
     end
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
     @caps[:maxDuration] = '2700' #max Duration of Tests is set to 45 min
-    @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 5 min
+    @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 5 min
     @caps[:idleTimeout] = '90' #max Duration between any command
     
     puts "Enviroment:#{@caps}"
