@@ -104,7 +104,7 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
-      when 'it' then 'IT 02531440218'
+      when 'it' then 'IT 02531440218' #Codice fiscale
       when 'fr' then 'FR14P422P876P383'
       when 'no' then '999 204 252 MVA'
       when 'se' then '556695-9234'
@@ -200,7 +200,7 @@ class User
       when 'de' then 'Herr'
       when 'at' then 'Herr'
       when 'ch' then 'Herr'
-      when 'it' then 'Sig'
+      when 'it' then 'Sig.ra'
       when 'fr' then 'Monsieur'
       when 'no' then 'Herr'
       when 'se' then 'Herr'
@@ -212,7 +212,7 @@ class User
       when 'de' then 'Frau'
       when 'at' then 'Frau'
       when 'ch' then 'Frau'
-      when 'it' then 'Sig.ra'
+      when 'it' then 'Sig.'
       when 'fr' then 'Madame'
       when 'no' then 'Fru'
       when 'se' then 'Fru'

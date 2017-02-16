@@ -208,8 +208,8 @@ When(/^I set payment and shipping$/) do
     
     #set delivery
     if (page.has_css?(checkout_delivery_options_path))
-      #element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
-      element = find(checkout_payment_delivery_standard_radio_path)
+      element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
+      #element = find(checkout_payment_delivery_standard_radio_path)
       element.click
       puts "-> choose delivery"
     else
