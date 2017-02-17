@@ -517,6 +517,11 @@ class Csspathes
       else '#register_billing_department'
     end     
     @account_registerform_taxid_path = case #umsatzsteuernummer (UID)
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/nl/) then       '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/no/) then       '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/nl/) then            '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/no/) then            '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/se/) then            '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_ustid'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#register_billing_ustid'
       else '#register_billing_vatid' 
@@ -531,16 +536,17 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/fr/) then            '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/no/) then            '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/se/) then            '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/nl/) then            '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/be/) then        '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/fr/) then        '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/no/) then        '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/se/) then        '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/nl/) then        '#register_billing_emgroup_commercial_register_nr'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then        '#register_billing_emgroup_commercial_register_nr'
+      
+      
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/be/) then       '#register_billing_emgroup_commercial_register_nr'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/fr/) then       '#register_billing_emgroup_commercial_register_nr'
+      
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/se/) then       '#register_billing_emgroup_commercial_register_nr'
+      
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#register_billing_emgroup_commercial_register_nr'
       else 'account_registerform_taxvat_path is not defined'
     end 
     @account_registerform_email_path = case 
