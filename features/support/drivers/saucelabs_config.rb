@@ -8,7 +8,7 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps = {
         :platform => "Windows 7",
         :browserName => "Firefox",
-        :version => "40", 
+        :version => "latest-1", 
         :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'ie'
