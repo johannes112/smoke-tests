@@ -8,7 +8,7 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps = {
         :platform => "Windows 7",
         :browserName => "Firefox",
-        :version => "latest-1", 
+        :version => "47", 
         :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'ie'
@@ -54,6 +54,8 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     end
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
+    @caps[:autoAcceptAlerts] = true
+    @caps[:unexpectedAlertBehaviour] = "dismiss"
     @caps[:maxDuration] = '2700' #max Duration of Tests is set to 45 min
     @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 5 min
     @caps[:idleTimeout] = '90' #max Duration between any command
@@ -65,6 +67,8 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
+    @driver = Capybara.default_driver
+    Capybara.current_session
     Capybara.default_max_wait_time = 20
     
     #ip = Capybara.current_session.driver.host

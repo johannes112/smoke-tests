@@ -3,7 +3,6 @@ Before do
   if !$start
     Capybara.reset_sessions!
     puts "\033[44mReset sessions\033[0m\n\n"
-    @driver = Capybara.current_driver
     page.driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1920, 1200)#1280x1024
     #puts "current_driver:#{@driver}"
     $start = true
