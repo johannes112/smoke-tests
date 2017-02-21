@@ -103,11 +103,7 @@ When(/^I create a new account with my data$/) do
   #set value for password
   setAtrributOfArticle("password", password, account_registerform_password_path)
   #set value for phone
-  #begin #rescue in cause of the difference of live and int in chefworks
   setAtrributOfArticle("phone", phone, account_registerform_phone_path)
-  #rescue Exception => e
-  #  puts e.message
-  #end
   #set value for company
   setAtrributOfArticle("company", company, account_registerform_company_path)
   #click on kind of company if the box should be visible
@@ -155,9 +151,9 @@ Then(/^I should be on my account page$/) do
     element.click
   end
   puts "current_url:#{current_url}"
-  page.find(account_accountpage_welcome_path)
+  
   expect(page).to have_css(account_accountpage_welcome_path),
-     "expected to see a welcome message but there is no #{account_accountpage_welcome_path}"
+     "expected to see a welcome message but there is no #{account_accountpage_welcome_path} I am not logged in"
   page.find(account_accountpage_info_path)
   element = page.find(account_accountpage_info_path)
   infobox_txt = element.text
@@ -210,8 +206,8 @@ When(/^I login with valid informations$/) do
 end
 
 Given(/^I am logged in$/) do
-  puts "I already created an user account"
-  step ("I already created an user account")
+  #puts "I already created an user account"
+  #step ("I already created an user account")
   puts "I login with valid informations"
   step ("I login with valid informations")
   puts "I should be on my account page"

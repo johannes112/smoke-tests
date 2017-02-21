@@ -33,7 +33,7 @@ Feature: account
   @v_jobeline
   @account_login
 	Scenario: login with existing account
-		And I already created an user account
+		Given I already created an user account
 		When I login with valid informations
 		Then I should be on my account page
 		
@@ -46,7 +46,8 @@ Feature: account
   @account_update
   @account_payment
 	Scenario: modify payment in my account
-		Given I am logged in
+		Given I already created an user account
+		And I am logged in
 		When I modify my paymentinfo
 		Then I should see a confirmation hint
 		
@@ -55,7 +56,8 @@ Feature: account
 	@account_update
   @account_invoice
 	Scenario: modify adress of invoice
-		Given I am logged in
+	  Given I already created an user account
+		And I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 		
@@ -69,7 +71,8 @@ Feature: account
 	@account_update
   @account_delivery
 	Scenario: modify adress of delivery
-		Given I am logged in
+	  Given I already created an user account
+		And I am logged in
 		When I modify my address for my delivery
 		Then I should see an alert for creating a new address
 
@@ -77,7 +80,8 @@ Feature: account
   @chefworks
 	@account_newsletter
   Scenario: change settings for newsletter
-		Given I am logged in
+    Given I already created an user account
+		And I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
 		
@@ -90,6 +94,7 @@ Feature: account
   @v_jobeline
 	@account_links
   Scenario: test links on the accountsite
-		Given I am logged in
+		Given I already created an user account
+		And I am logged in
 		When I get all items of the sidebar
   

@@ -10,6 +10,7 @@ Feature: checkout
 
   @checkout_with
 	Scenario: checkout with existing account
+	  Given I already created an user account
 	  Given I am logged in
 	  And the product cart contains an article
 	  And I am on the checkout page
@@ -21,7 +22,7 @@ Feature: checkout
 	Scenario: checkout without existing account and create an account
 	  And the product cart contains an article
 	  When I go to the checkout
-	  And I create a new account with my data
+	  And I register a new account with my data
 	  And I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
