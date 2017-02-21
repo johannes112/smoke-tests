@@ -18,7 +18,7 @@ end
 After do |s| 
   # Tell Cucumber to quit after this scenario is done - if it failed.
   #Cucumber.wants_to_quit = true if s.failed?
-  #if s.failed 
-  #  step s
-  #end
+  if s.failed? 
+    puts "\033[35mfolowwing scenario failed: ==> #{s.name}"#step s
+  end
 end

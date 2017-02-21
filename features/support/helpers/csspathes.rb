@@ -887,7 +887,9 @@ class Csspathes
     end 
     @account_accountinfo_billaddresschange_button_appear_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_accountinfo_billaddresschange_button_appear is not available'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_accountinfo_billaddresschange_button_appear is not available'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_accountinfo_billaddresschange_button_appear is not available'
+      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_accountinfo_billaddresschange_button_appear is not available'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a:nth-child(2)'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a:nth-child(2)'
       else 'account_accountinfo_billaddresschange_button_appear_path is not defined' 
@@ -995,7 +997,7 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.actions--bottom > div > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.actions--bottom > div > button'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'button'
-      else '.actions--bottom > div > button' 
+      else '.actions--bottom > div > button' #p > button
     end
     @checkout_step_payment_path = case 
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.step--register.is--active'
