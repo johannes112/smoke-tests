@@ -21,13 +21,6 @@ Feature: website_basics
     Scenario: check for elements
         Then I should be a basic elements
 
-    @export
-    @chefworks
-    @pulsiva
-    @vega
-    @hotelwaesche
-    @hw_jobeline
-    @v_jobeline
     @navigation
     @menu
     @hovermenu    
