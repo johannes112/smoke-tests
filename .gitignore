@@ -2,3 +2,5 @@
 Gemfile.lock
 ElementNotFound_src.txt
 httpactions.log
+features/support/drivers/poltergeist_config.rb
+webdriver*
