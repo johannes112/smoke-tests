@@ -44,6 +44,103 @@ And(/^the checkoutpage contains all elements/) do
     "expected to find #{checkout_orderbutton_path}, but the checkout_orderbutton is still missing on the page"
 end
 
+When(/^I register a new account with my data$/) do
+  #var
+  prefix = user.prefix
+  firstname = user.firstname
+  lastname = user.lastname
+  department = user.department
+  taxid = user.taxid
+  taxvat = user.taxvat
+  email = user.eMail
+  customer_number = user.customer_number
+  password = user.password
+  phone = user.telephone
+  company = user.company
+  company_kind = user.company_kind
+  street = user.street
+  streetnumber = user.streetnumber
+  postcode = user.postcode
+  city = user.city
+  country = user.country
+  
+  #path
+  account_registerform_path = csspathes.account_registerform_path
+  account_registerform_prefix_path = csspathes.account_registerform_prefix_path
+  account_registerform_firstname_path = csspathes.account_registerform_firstname_path
+  account_registerform_lastname_path = csspathes.account_registerform_lastname_path
+  account_registerform_department_path = csspathes.account_registerform_department_path
+  account_registerform_taxid_path = csspathes.account_registerform_taxid_path
+  account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
+  account_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
+  account_registerform_email_path = csspathes.account_registerform_email_path
+  checkout_registerform_skip_path = csspathes.checkout_registerform_skip_path
+  account_registerform_password_path = csspathes.account_registerform_password_path
+  account_registerform_phone_path = csspathes.account_registerform_phone_path
+  account_registerform_company_path = csspathes.account_registerform_company_path
+  account_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
+  account_registerform_street_path = csspathes.account_registerform_street_path
+  account_registerform_streetnumber_path = csspathes.account_registerform_streetnumber_path
+  account_registerform_postcode_path = csspathes.account_registerform_postcode_path
+  account_registerform_city_path = csspathes.account_registerform_city_path
+  account_registerform_country_path = csspathes.account_registerform_country_path
+  account_registerform_button_path = csspathes.account_registerform_button_path
+  
+  #search for field, so you know that we are on the right site
+  page.find(account_registerform_path)
+  #set value for prefix
+  
+  element = page.find(account_registerform_prefix_path)
+  element.select(prefix)
+  printValue(:prefix, binding)
+  #set value for firstname
+  setAtrributOfArticle("firstname", firstname, account_registerform_firstname_path)
+  #set value for lastname
+  setAtrributOfArticle("lastname", lastname, account_registerform_lastname_path)
+  #set value for customernumber
+  setAtrributOfArticle("customernumber", customer_number, account_registerform_customernumber_path)
+  #set value for email
+  setAtrributOfArticle("email", email, account_registerform_email_path)
+  #activate checkbox to create an account
+  element = page.find(checkout_registerform_skip_path)
+  element.click
+  #set value for password
+  setAtrributOfArticle("password", password, account_registerform_password_path)
+  #set value for phone
+  setAtrributOfArticle("phone", phone, account_registerform_phone_path)
+  #set value for company
+  setAtrributOfArticle("company", company, account_registerform_company_path)
+  #click on kind of company if the box should be visible
+  if company_kind
+    element = page.find(account_registerform_checkbox_company_path)
+    element.click
+    puts 'chose company'
+  end
+  #set value for department
+  setAtrributOfArticle("department", department, account_registerform_department_path)
+  #set value of taxid
+  setAtrributOfArticle("taxid", taxid, account_registerform_taxid_path)
+  #set value for vat
+  setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
+  #set value for street
+  setAtrributOfArticle("street", street, account_registerform_street_path)
+  #set streetnumber 
+  setAtrributOfArticle("streetnumber", streetnumber, account_registerform_streetnumber_path)
+  #set value for postcode
+  setAtrributOfArticle("postcode", postcode, account_registerform_postcode_path)
+  #set value for city
+  setAtrributOfArticle("city", city, account_registerform_city_path)
+  #set value for country
+  element = page.find(account_registerform_country_path)
+  element.select(country)
+  #click button
+  element = page.find(account_registerform_button_path)
+  element.click
+  puts "clicked button to continue"
+  
+end
+
+
 When(/^I send my order$/) do
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path 
   puts "I am on the checkout page"
