@@ -69,7 +69,7 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.default_driver = :saucelabs_driver
     @driver = Capybara.default_driver
     Capybara.current_session
-    Capybara.default_max_wait_time = 20
+    Capybara.default_max_wait_time = 30
     
     #ip = Capybara.current_session.driver.host
     #puts "IP:#{ip}"
