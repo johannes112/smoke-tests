@@ -28,9 +28,4 @@ Feature: search
         Given I am on the website
         When I am searching for products by entering the productname in the searchfield
         Then I should see my product on the results of my search
-    
-    @search_fail
-    Scenario: search with name
-        Given I am on the website
-        Then I should see my product on the results of my search
-    
+  
