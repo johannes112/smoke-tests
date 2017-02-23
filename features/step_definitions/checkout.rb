@@ -161,7 +161,8 @@ end
 And(/^I activate the box of agb$/) do
   checkout_agb_box_path = csspathes.checkout_agb_box_path 
   
-  element = page.find(checkout_agb_box_path)
+  #element = page.find(checkout_agb_box_path)
+  element = page.find(checkout_agb_box_path, match: :first)
   element.click
   puts "-> activate agb"
 end
