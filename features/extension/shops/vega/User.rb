@@ -69,7 +69,7 @@ class User
       when 'lu' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'VEGA GmbH	Test - eBusiness'
+      when 'de' then "VEGA GmbH	Test - eBusiness"
       when 'at' then 'Vega Vetriebs GmbH & Co. KG	Test - eBusiness'
       when 'ch' then 'Vega Vetrieb von 	Gastronomiebedarf GmbH'
       when 'it' then 'Test Vega IT eBusiness'
