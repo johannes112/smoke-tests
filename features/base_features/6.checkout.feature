@@ -1,4 +1,10 @@
 # language: en
+@pulsiva
+@vega
+@hotelwaesche
+@hw_jobeline
+@export
+@chefworks
 @checkout
 Feature: checkout
 
