@@ -159,12 +159,16 @@ When(/^I send my order$/) do
 end
 
 And(/^I activate the box of agb$/) do
-  checkout_agb_box_path = csspathes.checkout_agb_box_path 
-  
-  #element = page.find(checkout_agb_box_path)
-  element = page.find(checkout_agb_box_path, match: :first)
-  element.click
-  puts "-> activate agb"
+  if ENV['SHOP'] == 'pulsiva'
+    checkout_agb_box_path = csspathes.checkout_agb_box_path 
+    
+    element = page.find(checkout_agb_box_path)
+    #element = page.find(checkout_agb_box_path, match: :first)
+    element.click
+    puts "-> activate agb"
+  else
+    puts "> no agbbox is here "
+  end
 end
 
 When(/^I go to the checkout$/) do
