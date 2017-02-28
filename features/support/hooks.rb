@@ -22,5 +22,5 @@ After do |s|
   #if s.failed?
   #  $failed_scenarios = Array.new
   #  $failed_scenarios << s.name
-  end
+  #end
 end
