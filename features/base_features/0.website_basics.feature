@@ -10,6 +10,7 @@ Feature: website_basics
     Background:
       Given I am on the website
 
+    @quickies
     @export
     @chefworks
     @pulsiva
@@ -31,7 +32,6 @@ Feature: website_basics
     @export
     @chefworks	
     @pulsiva
-    
     @navigation
     @menu
     @standardmenu    

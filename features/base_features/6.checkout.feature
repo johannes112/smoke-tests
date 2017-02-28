@@ -14,6 +14,7 @@ Feature: checkout
   Background:
     Given no user account with my email exists
 
+  @quickies
   @checkout_with
 	Scenario: checkout with existing account
 	  Given I already created an user account
@@ -24,6 +25,7 @@ Feature: checkout
 	  Then Shopware should have my order
 	  And no user account with my email exists
 
+  
   @checkout_registration
 	Scenario: checkout without existing account and create an account
 	  And the product cart contains an article

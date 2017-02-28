@@ -30,6 +30,7 @@ Feature: product page
 	  When I press the compare-button
 	  Then there should see the icon to compare
 
+  @quickies
   @vega
   @hotelwaesche
   @hw_jobeline

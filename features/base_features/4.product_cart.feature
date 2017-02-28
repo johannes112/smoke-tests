@@ -61,6 +61,8 @@ Feature: account
   @vega
   @hw_jobeline
   @v_jobeline
+  @hotelwaesche
+  @quickies
   @product_cart_checkout
 	  Scenario: navigate to checkout
 	    Given the product cart contains an article

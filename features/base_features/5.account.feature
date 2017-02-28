@@ -11,6 +11,7 @@ Feature: account
   Background:
     Given I am on the registration page
 
+  @quickies
   @export
   @chefworks
   @pulsiva	
