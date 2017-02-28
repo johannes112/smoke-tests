@@ -59,8 +59,8 @@ def setAtrributOfArticle(var_text, variable, var_path)
           #set value
           item.set(variable)
           puts "- set #{var_text}: #{variable}"
-          expect(item.value).to eq(variable),
-            "Could not insert variable #{var_text} with #{variable}"
+          #expect(item.value).to eq(variable),
+          #  "Could not insert variable #{var_text} with #{variable}"
         elsif(item_type.include?"select")
           item.select(variable)
           puts "#{var_text}: #{variable}"

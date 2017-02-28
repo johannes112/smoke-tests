@@ -72,7 +72,7 @@ config_base="$generate_error_file $generate_output $folder_structure_config $tag
 config_base_rerun="$folder_structure_config"
 cucumber $config_base 
 #to run the failed scenarios ust rerun.txt as source
-tag=" @rerun.txt"
+#tag=" @rerun.txt"
 #config_rerun="$config_base_rerun $tag"
 #echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
 #cucumber $config_rerun
