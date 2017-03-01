@@ -37,7 +37,7 @@ Given(/^I already created an user account$/) do
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with customer:#{eMail} exists"
     shopware.setCustomerAttributes(eMail, firstname, lastname, password, street, streetnumber, city, postcode, id_country)
-    puts ">api -> created User"
+    puts ">api -> created User: #{eMail}"
     sleep 2
   else
     puts   "-> there exists an unique account"

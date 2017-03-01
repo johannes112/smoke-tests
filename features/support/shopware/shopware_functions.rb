@@ -10,7 +10,8 @@ module ShopwareFunctions
       :firstname => firstname,
       :lastname => lastname,
       :salutation => 'mr', 
-      :Password => password,
+      :password => password,
+      :shopId => country, 
       :billing => {
           :firstname => firstname,
           :lastname => lastname,

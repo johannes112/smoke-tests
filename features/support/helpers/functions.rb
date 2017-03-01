@@ -124,38 +124,38 @@ end
 
 #convert string of country into ID (to post with api-call)
 def convert_countryname_to_id(string_country)
-  id_country = 2
+  id_country = 1
   case string_country
     when "Deutschland"
       puts "Germany"
-      id_country = 2
+      id_country = 1
     when "Österreich" 
       puts "Austria"
-      id_country = 23
+      id_country = 12
     when "Schweiz"
       puts "Switzerland"
-      id_country = 26
+      id_country = 8
     when "Italia"
       puts "Italy"
-      id_country = 14
+      id_country = 3
     when "France"
       puts "France"
-      id_country = 9
+      id_country = 6
     when "Norge"
       puts "Norway"
-      id_country = 22
+      id_country = 16
     when "Sverige"
       puts "Sweden"
-      id_country = 25
+      id_country = 14
     when "Nederland"
       puts "Nederland"
-      id_country = 21
+      id_country = 20
     when "Belgique"
       puts "Begium"
-      id_country = 5
+      id_country = 22
     when "Espana"
       puts "Spain"
-      id_country = 27
+      id_country = 18
   end
   return id_country
 end
