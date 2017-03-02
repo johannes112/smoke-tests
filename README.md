@@ -3,7 +3,8 @@
 This is functional testing for webshops of pulsiva, export, chefworks.
 
 ###Following **test-cases/features** exists:
-- website basics (website_elements, navigation, )
+- quickies
+- website basics 
 - search
 - direct_order
 - product_page

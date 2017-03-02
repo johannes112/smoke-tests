@@ -1,4 +1,9 @@
 module MyWorld
+  
+  def mechanize
+    @url_functions ||=UrlFunctions.new
+  end
+  
   def shopware
     @shopware ||=ShopwareApi.new()
   end
