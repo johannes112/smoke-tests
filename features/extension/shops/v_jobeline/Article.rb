@@ -78,7 +78,7 @@ class Article
       when (/se/) then 'KOCKBYXOR NICK'
       when (/nl/) then 'HERENBROEK NICK'
       when (/be/) then 'PANTALON HOMME NICK'
-      when (/es/) then 'PANTALÓN DE COCINA NICK'
+      when (/es/) then 'PANTALóN DE COCINA NICK'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'EMGroupDirectOrder'
