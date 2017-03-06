@@ -1,6 +1,6 @@
 module MyWorld
   
-  def mechanize
+  def url_functions
     @url_functions ||=UrlFunctions.new
   end
   
