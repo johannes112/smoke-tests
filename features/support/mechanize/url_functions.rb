@@ -76,7 +76,7 @@ class UrlFunctions
           unless unique_visited_server.include?(visited_server[counter])
             unique_visited_server = unique_visited_server << (visited_server[counter]) 
           end
-          server_status = "#{unique_visited_server.size} webservers are working"
+          server_status = "#{unique_visited_server.size}"# webservers are working
         end
         counter = counter + 1
       end
@@ -97,10 +97,6 @@ class UrlFunctions
       #visit destination
       puts " -> #{link.href}"
       visit_url(link)
-      #exit after 10 links
-      if counter==20
-        break
-      end
     end
     puts "Es wurden #{counter} Seiten geprüft."
   end

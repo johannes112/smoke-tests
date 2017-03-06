@@ -1,4 +1,5 @@
 # language: en
+@quickies
 @content
 Feature: content
 
