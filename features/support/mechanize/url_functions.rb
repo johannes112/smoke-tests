@@ -9,6 +9,7 @@ class UrlFunctions
   
   def set_url(base_url)
     @page = @mechanize.get(base_url)
+    @mechanize_base_url = base_url
   end
   
   def set_url_and_get_page(base_url)
@@ -95,7 +96,6 @@ class UrlFunctions
     url_links.each do |link|
       counter = counter + 1
       #visit destination
-      puts " -> #{link.href}"
       visit_url(link)
     end
     puts "Es wurden #{counter} Seiten geprüft."
@@ -104,19 +104,19 @@ class UrlFunctions
   #visit url of link
   def visit_url(url)
     url_link = url
-    linked_page = url_link.click
-
-    #initialize vars for return
-    server_status_delivery = true
-    server_status_string = true
-    determined_server = "determined_server_default"
-    server_status = "server_status_default"
-    
-    determined_server = check_header(linked_page)
-    server_status_delivery = get_status(linked_page)
-
-    server_status = "#{determined_server}:#{server_status_delivery}"
-    #puts server_status
+    begin
+      linked_page = url_link.click
+    rescue Exception => e
+      puts "#{e.message}"
+      linked_page = @page
+    end
+      #initialize vars for return
+      server_status_delivery = true
+      determined_server = "determined_server_default"
+      server_status = "server_status_default"
+      determined_server = check_header(linked_page)
+      server_status_delivery = get_status(linked_page)
+      server_status = "#{determined_server}:#{server_status_delivery}"  
     return server_status
   end
   

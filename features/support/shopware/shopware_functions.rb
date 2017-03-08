@@ -27,7 +27,7 @@ module ShopwareFunctions
   end
 
   
-  #create new customer
+#create new customer !!!IS NOT WORKING
   def createCustomer(customer_properties)
     url_data = "/api/customers/"
     @json_customer_properties = customer_properties.to_json
