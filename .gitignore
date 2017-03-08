@@ -4,3 +4,4 @@ ElementNotFound_src.txt
 httpactions.log
 features/support/drivers/poltergeist_config.rb
 webdriver*
+demo_mechanize.rb
