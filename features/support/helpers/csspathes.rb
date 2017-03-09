@@ -994,9 +994,10 @@ class Csspathes
       else '.product--table'
     end
     @checkout_orderbutton_path = case 
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.actions--bottom > div > button'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.actions--bottom > div > button'
-      else 'p > button'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.actions--bottom > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.actions--bottom > div > button'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tos--top > div > div > button'
+      else '.tos--top > div > div > button'
     end
     @checkout_step_payment_path = case 
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.step--register.is--active'
