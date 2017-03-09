@@ -3,7 +3,7 @@ module ShopwareFunctions
   @shopwarestatus = 0
 
   #set properties of user and call creation
-  def setCustomerAttributes(email, firstname, lastname, password, street, streetnumber, city, postcode, country)
+  def setCustomerAttributes(email, firstname, lastname, password, street, streetnumber, city, postcode, country, shopId)
     #if string_country
     customer_properties = {
       :email => email,
@@ -11,7 +11,7 @@ module ShopwareFunctions
       :lastname => lastname,
       :salutation => 'mr', 
       :password => password,
-      :shopId => country, 
+      :shopId => shopId, 
       :billing => {
           :firstname => firstname,
           :lastname => lastname,

@@ -122,8 +122,8 @@ def modify_url(url, htaccess)
   end
 end
 
-#convert string of country into ID (to post with api-call)
-def convert_countryname_to_id(string_country)
+#convert string of country into ID (s_core_shops)
+def convert_countryname_to_shopId(string_country)
   id_country = 1
   case string_country
     when "Deutschland"
@@ -131,31 +131,69 @@ def convert_countryname_to_id(string_country)
       id_country = 1
     when "Österreich" 
       puts "Austria"
-      id_country = 12
+      id_country = 3
     when "Schweiz"
       puts "Switzerland"
-      id_country = 8
+      id_country = 4
     when "Italia"
       puts "Italy"
-      id_country = 3
+      id_country = 8
     when "France"
       puts "France"
       id_country = 6
     when "Norge"
       puts "Norway"
-      id_country = 16
+      id_country = 11
     when "Sverige"
       puts "Sweden"
-      id_country = 14
+      id_country = 7
     when "Nederland"
       puts "Nederland"
-      id_country = 20
+      id_country = 10
     when "Belgique"
       puts "Begium"
-      id_country = 22
+      id_country = 12
     when "Espana"
       puts "Spain"
-      id_country = 18
+      id_country = 9
+  end
+  return id_country
+end
+
+#convert string of country into ID (to s_core_countries): it is not possible to use for each shop because each shop have different ids
+def convert_countryname_to_countryid(string_country)
+  id_country = 2
+  case string_country
+    when "Deutschland"
+      puts "Germany"
+      id_country = 2
+    when "Österreich" 
+      puts "Austria"
+      id_country = 23
+    when "Schweiz"
+      puts "Switzerland"
+      id_country = 26
+    when "Italia"
+      puts "Italy"
+      id_country = 14
+    when "France"
+      puts "France"
+      id_country = 9
+    when "Norge"
+      puts "Norway"
+      id_country = 22
+    when "Sverige"
+      puts "Sweden"
+      id_country = 25
+    when "Nederland"
+      puts "Nederland"
+      id_country = 21
+    when "Belgique"
+      puts "Begium"
+      id_country = 5
+    when "Espana"
+      puts "Spain"
+      id_country = 27
   end
   return id_country
 end
