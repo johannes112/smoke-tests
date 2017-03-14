@@ -103,7 +103,7 @@ class User
       when 'no' then 'NO 999 204 252 MVA'
       when 'se' then '556695-9234'
       when 'nl' then '22065260'
-      when 'be' then nil
+      when 'be' then '0123456789'
       when 'es' then '0123456789'
       when 'lu' then nil
     end
