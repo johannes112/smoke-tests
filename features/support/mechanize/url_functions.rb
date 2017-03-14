@@ -114,8 +114,14 @@ class UrlFunctions
       server_status_delivery = true
       determined_server = "determined_server_default"
       server_status = "server_status_default"
+      check_for_key = "page-wrap"
       determined_server = check_header(linked_page)
-      server_status_delivery = get_status(linked_page)
+      # check if page contain something
+      if linked_page.body.include?(check_for_key)
+        server_status_delivery = get_status(linked_page)
+      else 
+        raise ("page of #{linked_page.uri.to_s} do not include #{check_for_key}")
+      end
       server_status = "#{determined_server}:#{server_status_delivery}"  
     return server_status
   end
@@ -128,7 +134,6 @@ class UrlFunctions
     code4 = 400..449
     code5 = 500..511
     code9 = 900..999
-    
     status_code = url.code.to_i
     case status_code
     when code1
