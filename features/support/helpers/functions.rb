@@ -77,6 +77,7 @@ end
 
 #check if all links go to the equal shop (of country)
 def look_for_string_in_array(array_source, string_content)
+  counter = 0
   check = Array.new
   array_source.each { |z| check << z.include?(string_content)}
   # if array_source include string_content
@@ -84,8 +85,8 @@ def look_for_string_in_array(array_source, string_content)
   if (check_value==true)
     puts "> All links include '#{string_content}'"
   else
+    puts "All checked links: #{array_source}"
     raise ("Some links are bad!")
-    puts "ERROR some links are wrong"
   end
 end
 
