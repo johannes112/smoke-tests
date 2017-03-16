@@ -37,7 +37,7 @@ class User
       when 'no' then 'testmail@vjno.de'
       when 'se' then 'testmail@vjse.de'
       when 'nl' then 'testmail@vjnl.de'
-      when 'be' then 'testmail@vje.de'
+      when 'be' then 'testmail@vjbe.de'
       when 'es' then 'testmail@vjes.de'
     end
     @password = case ENV['COUNTRY']
@@ -110,7 +110,7 @@ class User
       when 'se' then '556695-9234'
       when 'nl' then nil
       when 'be' then 'FR14 422 876 383'
-      when 'es' then nil #''
+      when 'es' then nil 
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil
