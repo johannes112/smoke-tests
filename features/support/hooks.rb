@@ -1,7 +1,12 @@
 Before do
   $start ||= false
-  if !$start
-    page.driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1920, 1200)#1280x1024
+  if !$start 
+    # if browser is for a desktop then resize dimension otherwise some windows could distrub the flow
+    if ENV['BROWSER'] == 'iPad' || ENV['BROWSER'] == 'iPhone'
+      puts "Test mobile"
+    else
+      page.driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1920, 1200)#1280x1024
+    end
     #puts "current_driver:#{@driver}"
     $start = true 
   end
