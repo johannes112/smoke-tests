@@ -17,8 +17,11 @@ at_exit() do
   #if $failed_scenarios
   #  puts "\033[35m#{$failed_scenarios.size} scenario failed: ==> #{$failed_scenarios}"
   #end
-  puts "\033[42mReset whole session \033[0m\n"
+  puts "\033[42mReset whole session and quit driver\033[0m\n"
   Capybara.reset_sessions!
+  Capybara.current_session.driver.quit
+  
+  #Environment.debug?
 end
 
 After do |s| 
