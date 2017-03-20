@@ -32,28 +32,28 @@ class Article
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
-      when (/de/) then '106098'#without i!
-      when (/at/) then '106098'
-      when (/ch/) then '106098'
-      when (/it/) then '106098'
-      when (/fr/) then '106098'
-      when (/no/) then '106098'#other product
-      when (/se/) then '106098'
-      when (/nl/) then '106098'
-      when (/be/) then '106098'
-      when (/es/) then '106098'
+      when (/de/) then '116366'#without i!
+      when (/at/) then '116366'
+      when (/ch/) then '116366'
+      when (/it/) then '116366'
+      when (/fr/) then '116366'
+      when (/no/) then '116366'#other product
+      when (/se/) then '116366'
+      when (/nl/) then '116366'
+      when (/be/) then '116366'
+      when (/es/) then '116366'
     end
     @sku = case ENV['COUNTRY']
-      when (/de/) then '10030247'#without i!
-      when (/at/) then '10030247'
-      when (/ch/) then '10030247'
-      when (/it/) then '10030247'
-      when (/fr/) then '10030247'
-      when (/no/) then '10030247'
-      when (/se/) then '10030247'
-      when (/nl/) then '10030247'
-      when (/be/) then '10030247'
-      when (/es/) then '10030247'
+      when (/de/) then '10082961'#without i!
+      when (/at/) then '10082961'
+      when (/ch/) then '10082961'
+      when (/it/) then '10082961'
+      when (/fr/) then '10082961'
+      when (/no/) then '10082961'
+      when (/se/) then '10082961'
+      when (/nl/) then '10082961'
+      when (/be/) then '10082961'
+      when (/es/) then '10082961'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -69,16 +69,16 @@ class Article
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
-      when (/de/) then 'Kuchengabel Destino'
-      when (/at/) then 'Kuchengabel Destino'
-      when (/ch/) then 'Kuchengabel Destino'
-      when (/it/) then 'Forchetta dolce Destino'
-      when (/fr/) then 'Fourchette à gâteau Eméo'
-      when (/no/) then 'Kakegaffel Destino'
-      when (/se/) then 'Tårtgaffel Destino'
-      when (/nl/) then 'Taartvork Destino'
-      when (/be/) then 'Fourchette à gâteau Eméo'
-      when (/es/) then 'Tenedor para pastel Destino'
+      when (/de/) then 'Teller flach Base'
+      when (/at/) then 'Teller flach Base'
+      when (/ch/) then 'Teller flach Base'
+      when (/it/) then 'Piatto piano Base'
+      when (/fr/) then 'Assiette plate Reims'
+      when (/no/) then 'Mattallerken Base'
+      when (/se/) then 'Mattallrik Base'
+      when (/nl/) then 'Vlak bord Base'
+      when (/be/) then 'Assiette plate Reims'
+      when (/es/) then 'Plato llano Base'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'direktbestellen'
