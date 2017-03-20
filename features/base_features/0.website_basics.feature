@@ -26,8 +26,8 @@ Feature: website_basics
     @menu
     @hovermenu    
     Scenario: use hovermenu for navigating
-		When I navigate to the category by the hovermenu
-		Then I should be on the categorysite
+		When I navigate to an category by the hovermenu
+		Then I should be on a subcategorysite
 
     @export
     @chefworks	
@@ -36,8 +36,8 @@ Feature: website_basics
     @menu
     @standardmenu    
     Scenario: use menu for navigating
-		When I navigate to the category by the menu
-		Then I should be on the categorysite
+		When I navigate to a subcategory by the menu
+		Then I should be on a subcategorysite
     
     
     @export

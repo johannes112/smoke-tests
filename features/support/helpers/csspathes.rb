@@ -1,7 +1,7 @@
 class Csspathes
   attr_accessor :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_body_main_path, :homepage_content_footer_path,
   #navigation
-  :navigation_menu_path, :navigation_hovermenu_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path,
+  :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path, 
   #links
   :links_account_path, :links_registration_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path,
   #search
@@ -73,18 +73,21 @@ class Csspathes
     end
     #navigation
     @navigation_menu_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation-main'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '.navigation-main'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.page-wrap > nav'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.page-wrap > nav'
-      else '.navigation-main' 
+      else '.navigation--list-wrapper > ul > li:first-child > a'#'.navigation-main' 
+    end
+    @navigation_menu_title_path = case
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.page-wrap > nav'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.page-wrap > nav'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'nav.navigation-main > div > div > ul > li.navigation--entry > ul > li:first-child > a'
+      else '.advanced-menu > div.menu--container.menu--is-active > div.button-container > a' 
     end
     @navigation_hovermenu_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.menu--list.menu--level-0'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/de/) then          '.menu--list.menu--level-0'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     'nav > div > div > ul > li:nth-child(1) > ul > li:first-child'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then     '.advanced-menu'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.advanced-menu'
-      else '.menu--list.menu--level-0' 
+      else '.advanced-menu > div.menu--container.menu--is-active > div.content--wrapper.has--content.has--teaser > div.menu--container-flyout > ul > li:first-child' 
     end
     @navigation_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation-main'
@@ -99,6 +102,12 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.menu--is-active > div.button-container > span > i'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.menu--container.menu--is-active > div > span > i'
       else 'form > label'
+    end
+    @navigation_sidebar_sub_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.sidebar--categories-navigation > ul > div.sidebar--navigation-screen > ul > div.sidebar--navigation-screen > li:first-child > a'
+      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
+      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
+      else '.navigation--entry.is--active.has--sub-categories.has--sub-children > ul > li:first-child > a '#
     end
     @navigation_sidebar_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.sidebar--categories-navigation'
