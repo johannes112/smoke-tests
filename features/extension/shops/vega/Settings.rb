@@ -18,17 +18,17 @@ class Settings
         when (/es/) then 'http://int.vega-direct.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.vega-direct.com/de-de/'
-        when (/at/) then 'https://int.vega-direct.com/at-de/'
-        when (/ch/) then 'https://int.vega-direct.com/ch-de/'
-        when (/ch-fr/) then 'https://int.vega-direct.com/ch-fr/'
-        when (/it/) then 'https://int.vega-direct.com/it-it/'
-        when (/fr/) then 'https://int.vega-direct.com/fr-fr/'
-        when (/no/) then 'https://int.vega-direct.com/no-no/'
-        when (/se/) then 'https://int.vega-direct.com/se-se/'
-        when (/nl/) then 'https://int.vega-direct.com/nl-nl/'
-        when (/be/) then 'https://int.vega-direct.com/be-fr/'
-        when (/es/) then 'https://int.vega-direct.com/es-es/'
+        when (/de/) then 'http://int.vega-direct.com/de-de/'
+        when (/at/) then 'http://int.vega-direct.com/at-de/'
+        when (/ch/) then 'http://int.vega-direct.com/ch-de/'
+        when (/ch-fr/) then 'http://int.vega-direct.com/ch-fr/'
+        when (/it/) then 'http://int.vega-direct.com/it-it/'
+        when (/fr/) then 'http://int.vega-direct.com/fr-fr/'
+        when (/no/) then 'http://int.vega-direct.com/no-no/'
+        when (/se/) then 'http://int.vega-direct.com/se-se/'
+        when (/nl/) then 'http://int.vega-direct.com/nl-nl/'
+        when (/be/) then 'http://int.vega-direct.com/be-fr/'
+        when (/es/) then 'http://int.vega-direct.com/es-es/'
         end
       @urlBackend = 'http://int.vega-direct.com/'
     end

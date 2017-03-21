@@ -18,17 +18,17 @@ class Settings
         when (/es/) then 'http://int.jobeline.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.jobeline.com/de-de/'
-        when (/at/) then 'https://int.jobeline.com/at-de/'
-        when (/ch/) then 'https://int.jobeline.com/ch-de/'
-        when (/ch-fr/) then 'https://int.jobeline.com/ch-fr/'
-        when (/it/) then 'https://int.jobeline.com/it-it/'
-        when (/fr/) then 'https://int.jobeline.com/fr-fr/'
-        when (/no/) then 'https://int.jobeline.com/no-no/'
-        when (/se/) then 'https://int.jobeline.com/se-se/'
-        when (/nl/) then 'https://int.jobeline.com/nl-nl/'
-        when (/be/) then 'https://int.jobeline.com/be-fr/'
-        when (/es/) then 'https://int.jobeline.com/es-es/'
+        when (/de/) then 'http://int.jobeline.com/de-de/'
+        when (/at/) then 'http://int.jobeline.com/at-de/'
+        when (/ch/) then 'http://int.jobeline.com/ch-de/'
+        when (/ch-fr/) then 'http://int.jobeline.com/ch-fr/'
+        when (/it/) then 'http://int.jobeline.com/it-it/'
+        when (/fr/) then 'http://int.jobeline.com/fr-fr/'
+        when (/no/) then 'http://int.jobeline.com/no-no/'
+        when (/se/) then 'http://int.jobeline.com/se-se/'
+        when (/nl/) then 'http://int.jobeline.com/nl-nl/'
+        when (/be/) then 'http://int.jobeline.com/be-fr/'
+        when (/es/) then 'http://int.jobeline.com/es-es/'
         end
       @urlBackend = 'http://int.jobeline.com/'
     end

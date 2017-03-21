@@ -11,10 +11,10 @@ class Settings
         when (/ch-fr/) then 'http://int.erwinmueller.ch/ch-fr/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'https://int.hotelwaesche.de/'
-        when (/at/) then 'https://int.hotelwaesche.at/'
-        when (/ch/) then 'https://int.erwinmueller.ch/ch-de/'
-        when (/ch-fr/) then 'https://int.erwinmueller.ch/ch-fr/'
+        when (/de/) then 'http://int.hotelwaesche.de/'
+        when (/at/) then 'http://int.hotelwaesche.at/'
+        when (/ch/) then 'http://int.erwinmueller.ch/ch-de/'
+        when (/ch-fr/) then 'http://int.erwinmueller.ch/ch-fr/'
       end
       @urlBackend = 'http://int.hotelwaesche.de'
     end
