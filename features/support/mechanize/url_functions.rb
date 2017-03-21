@@ -58,6 +58,7 @@ class UrlFunctions
     #looking for all servers and check their status
     #looking for all elements 'a' with https part in url
     url_links = @page.links_with(:href => /https/)
+    #puts "url_links:#{url_links}"
     counter = 0
     #follow each link
     url_links.each do |link|
