@@ -79,9 +79,9 @@ When(/^I check all links for correct country$/) do
   #get links
   if ENV['SYSTEM'] == 'live'
     puts "digital publishing: "
-    links_digital_publishing = page.all('.dig-pub > div > div > div > a', :visible => false).map { |a| a['href'] }
+    links_digital_publishing = page.all('.dig-pub > div > div > div > a', :visible => true).map { |a| a['href'] }
     look_for_string_in_array(links_digital_publishing, country_contraction)
-    puts "product info links: "
+    puts "product info Links: "
     links_products = page.all('.product--info > a', :visible => false).map { |a| a['href'] }
     look_for_string_in_array(links_products, country_contraction)
   else
