@@ -56,7 +56,7 @@ if ENV['DRIVER'] == 'saucelabs'
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
     @caps[:autoAcceptAlerts] = true
     @caps[:unexpectedAlertBehaviour] = "dismiss"
-    @caps[:maxDuration] = '3600' #max Duration of Tests is set to 60 min
+    @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
     @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 5 min
     @caps[:idleTimeout] = '90' #max Duration between any command
     
