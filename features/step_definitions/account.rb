@@ -21,21 +21,28 @@ And(/^no user account with my email exists$/) do
 end
 
 Given(/^I already created an user account$/) do
+  #puts Time.now
   eMail = user.eMail
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   customer_id_determined = shopware.getCustomerIdByMail(eMail)
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with customer:#{eMail} exists"
+   # puts Time.now
     puts "I am on the registration page"
     step("I am on the registration page")
+    #puts Time.now
     puts "I create a new account with my data"
     step("I create a new account with my data")
+    #puts Time.now
     puts "I log me out"
     step("I log me out")
+    #puts Time.now
     puts "I am on the registration page"
-    step("I am on the registration page")
+    #step("I am on the registration page")
+    puts Time.now
   else
     puts   "-> there exists an unique account"
+    #puts Time.now
   end
 end
 
@@ -162,10 +169,13 @@ Then(/^I should be on my account page$/) do
 end
 
 When(/^I login with valid informations$/) do
+  puts "I LOGIN WITH VALID IMFO"
   #var1
   email = user.eMail
   password = user.password
   url_account = settings.urlHttps+'account'
+  puts Time.now
+
   
   #path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
@@ -173,33 +183,50 @@ When(/^I login with valid informations$/) do
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   
+  puts "WHICH URL"
+  puts Time.now
   if (current_url == url_account) 
     puts "> ok, I am on #{current_url}"
+    puts Time.now
   else
     puts "--> go to #{url_account}"
+    puts Time.now
     visit(url_account)
       
     #hide
     block_css('.navigation-main')
   end
-  
+  puts "HAS CSS?"
+  puts Time.now
   if (page.has_css?(account_accountpage_welcome_path))
     puts "> and I am already be in my account"
+    puts Time.now
   else
+    puts "NO CSS"
+    puts Time.now
     #search for field, so you know that we are on the right site
-    page.find(account_loginform_emailfield_path)
+    page.find('.register--existing-customer')
+    puts "FOUND FORM"
+    puts Time.now
+    login_form = page.find('.register--existing-customer')
+    puts "DEFINED FORM"
+    puts Time.now
     #set value for mail
-    element = page.find(account_loginform_emailfield_path)
-    element.set(email)
+    form_set_value(login_form, "email", email, account_loginform_emailfield_path)
+    #element = page.find(account_loginform_emailfield_path)
+    #element.set(email)
     puts "-> set email"
+    puts Time.now
     #set value for password
-    element = page.find(account_loginform_passwordfield_path)
-    element.set(password)
+    form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
+    #element = page.find(account_loginform_passwordfield_path)
+    #element.set(password)
     puts "-> set password"
+    puts Time.now
     #click button
-    element = page.find(account_loginform_registerbutton_path)
-    element.click
+    page.find(account_loginform_registerbutton_path).click
     puts "--> pushed button for registration"
+    puts Time.now
   end
 end
 
