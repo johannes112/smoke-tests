@@ -69,4 +69,5 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.default_driver = :saucelabs_driver
     Capybara.default_max_wait_time = 90
   end
+  
 end

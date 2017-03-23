@@ -88,28 +88,29 @@ When(/^I register a new account with my data$/) do
   
   #search for field, so you know that we are on the right site
   page.find(account_registerform_path)
+  account_registerform = page.find(account_registerform_path)
   #set value for prefix
   
   element = page.find(account_registerform_prefix_path)
   element.select(prefix)
   printValue(:prefix, binding)
   #set value for firstname
-  setAtrributOfArticle("firstname", firstname, account_registerform_firstname_path)
+  form_set_value(account_registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
-  setAtrributOfArticle("lastname", lastname, account_registerform_lastname_path)
+  form_set_value(account_registerform, "lastname", lastname, account_registerform_lastname_path)
   #set value for customernumber
-  setAtrributOfArticle("customernumber", customer_number, account_registerform_customernumber_path)
+  form_set_value(account_registerform, "customernumber", customer_number, account_registerform_customernumber_path)
   #set value for email
-  setAtrributOfArticle("email", email, account_registerform_email_path)
+  form_set_value(account_registerform, "email", email, account_registerform_email_path)
   #activate checkbox to create an account
   element = page.find(checkout_registerform_skip_path)
   element.click
   #set value for password
-  setAtrributOfArticle("password", password, account_registerform_password_path)
+  form_set_value(account_registerform, "password", password, account_registerform_password_path)
   #set value for phone
-  setAtrributOfArticle("phone", phone, account_registerform_phone_path)
+  form_set_value(account_registerform, "phone", phone, account_registerform_phone_path)
   #set value for company
-  setAtrributOfArticle("company", company, account_registerform_company_path)
+  form_set_value(account_registerform, "company", company, account_registerform_company_path)
   #click on kind of company if the box should be visible
   if company_kind
     element = page.find(account_registerform_checkbox_company_path)
@@ -117,19 +118,19 @@ When(/^I register a new account with my data$/) do
     puts 'chose company'
   end
   #set value for department
-  setAtrributOfArticle("department", department, account_registerform_department_path)
+  form_set_value(account_registerform, "department", department, account_registerform_department_path)
   #set value of taxid
-  setAtrributOfArticle("taxid", taxid, account_registerform_taxid_path)
+  form_set_value(account_registerform, "taxid", taxid, account_registerform_taxid_path)
   #set value for vat
-  setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
+  form_set_value(account_registerform, "taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
-  setAtrributOfArticle("street", street, account_registerform_street_path)
+  form_set_value(account_registerform, "street", street, account_registerform_street_path)
   #set streetnumber 
-  setAtrributOfArticle("streetnumber", streetnumber, account_registerform_streetnumber_path)
+  form_set_value(account_registerform, "streetnumber", streetnumber, account_registerform_streetnumber_path)
   #set value for postcode
-  setAtrributOfArticle("postcode", postcode, account_registerform_postcode_path)
+  form_set_value(account_registerform, "postcode", postcode, account_registerform_postcode_path)
   #set value for city
-  setAtrributOfArticle("city", city, account_registerform_city_path)
+  form_set_value(account_registerform, "city", city, account_registerform_city_path)
   #set value for country
   element = page.find(account_registerform_country_path)
   element.select(country)
@@ -228,19 +229,20 @@ When(/^I fill out a register form and send it without creating an account$/) do
   
   #search for field, so you know that we are on the right site
   page.find(checkout_registerform_path)
+  checkout_registerform = page.find(checkout_registerform_path)
   #set value for prefix
   
   element = page.find(checkout_registerform_prefix_path)
   element.select(prefix)
   printValue(:prefix, binding)
   #set value for firstname
-  setAtrributOfArticle("firstname", firstname, checkout_registerform_firstname_path)
+  form_set_value(checkout_registerform, "firstname", firstname, checkout_registerform_firstname_path)
   #set value for lastname
-  setAtrributOfArticle("lastname", lastname, checkout_registerform_lastname_path)
+  form_set_value(checkout_registerform, "lastname", lastname, checkout_registerform_lastname_path)
   #set value for customernumber
-  setAtrributOfArticle("customernumber", customer_number, checkout_registerform_customernumber_path)
+  form_set_value(checkout_registerform, "customernumber", customer_number, checkout_registerform_customernumber_path)
   #set value for email
-  setAtrributOfArticle("email", email, checkout_registerform_email_path)
+  form_set_value(checkout_registerform, "email", email, checkout_registerform_email_path)
   #set value to skip registering
   if (ENV['SHOP'] == 'export' || ENV['SHOP'] == 'chefworks')
     element = page.find(checkout_registerform_skip_path)
@@ -248,12 +250,12 @@ When(/^I fill out a register form and send it without creating an account$/) do
   end
   #set value for phone
   begin #rescuse in cause of the difference of live and int in chefworks
-    setAtrributOfArticle("phone", phone, checkout_registerform_phone_path)
+    form_set_value(checkout_registerform, "phone", phone, checkout_registerform_phone_path)
   rescue Exception => e
     puts e.message
   end
   #set value for company
-  setAtrributOfArticle("company", company, checkout_registerform_company_path)
+  form_set_value(checkout_registerform, "company", company, checkout_registerform_company_path)
   #click on kind of company if the box should be visible
   if company_kind
     element = page.find(checkout_registerform_checkbox_company_path)
@@ -261,19 +263,19 @@ When(/^I fill out a register form and send it without creating an account$/) do
     puts 'chose company'
   end
   #set value for department
-  setAtrributOfArticle("department", department, checkout_registerform_department_path) #############################################################
+  form_set_value(checkout_registerform, "department", department, checkout_registerform_department_path) #############################################################
   #set value for id
-  setAtrributOfArticle("taxid", taxid, checkout_registerform_taxid_path)
+  form_set_value(checkout_registerform, "taxid", taxid, checkout_registerform_taxid_path)
   #set value for vat
-  setAtrributOfArticle("taxvat", taxvat, checkout_registerform_taxvat_path)
+  form_set_value(checkout_registerform, "taxvat", taxvat, checkout_registerform_taxvat_path)
   #set value for street
-  setAtrributOfArticle("street", street, checkout_registerform_street_path)
+  form_set_value(checkout_registerform, "street", street, checkout_registerform_street_path)
   #set streetnumber 
-  setAtrributOfArticle("streetnumber", streetnumber, checkout_registerform_streetnumber_path)
+  form_set_value(checkout_registerform, "streetnumber", streetnumber, checkout_registerform_streetnumber_path)
   #set value for postcode
-  setAtrributOfArticle("postcode", postcode, checkout_registerform_postcode_path)
+  form_set_value(checkout_registerform, "postcode", postcode, checkout_registerform_postcode_path)
   #set value for city
-  setAtrributOfArticle("city", city, checkout_registerform_city_path)
+  form_set_value(checkout_registerform, "city", city, checkout_registerform_city_path)
   #set value for country
   element = page.find(checkout_registerform_country_path)
   element.select(country)

@@ -82,25 +82,28 @@ When(/^I create a new account with my data$/) do
   
   #search for field, so you know that we are on the right site
   page.find(account_registerform_path)
-  #set value for prefix
+  registerform = page.find(account_registerform_path)
   
-  element = page.find(account_registerform_prefix_path)
-  element.select(prefix)
-  printValue(:prefix, binding)
+  #set value for prefix
+  #page.find(account_registerform_prefix_path).select(prefix)
+  registerform.find(account_registerform_prefix_path).select(prefix)
+  #printValue(:prefix, binding)
   #set value for firstname
-  setAtrributOfArticle("firstname", firstname, account_registerform_firstname_path)
+  #registerform.find(account_registerform_firstname_path).set(firstname)
+  form_set_value(registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
-  setAtrributOfArticle("lastname", lastname, account_registerform_lastname_path)
+  #registerform.find(account_registerform_lastname_path).set(lastname)
+  form_set_value(registerform, "lastname", lastname, account_registerform_lastname_path)
   #set value for customernumber
-  setAtrributOfArticle("customernumber", customer_number, account_registerform_customernumber_path)
+  form_set_value(registerform, "customernumber", customer_number, account_registerform_customernumber_path)
   #set value for email
-  setAtrributOfArticle("email", email, account_registerform_email_path)
+  form_set_value(registerform, "email", email, account_registerform_email_path)
   #set value for password
-  setAtrributOfArticle("password", password, account_registerform_password_path)
+  form_set_value(registerform, "password", password, account_registerform_password_path)
   #set value for phone
-  setAtrributOfArticle("phone", phone, account_registerform_phone_path)
+  form_set_value(registerform, "phone", phone, account_registerform_phone_path)
   #set value for company
-  setAtrributOfArticle("company", company, account_registerform_company_path)
+  form_set_value(registerform, "company", company, account_registerform_company_path)
   #click on kind of company if the box should be visible
   if company_kind
     element = page.find(account_registerform_checkbox_company_path)
@@ -108,19 +111,19 @@ When(/^I create a new account with my data$/) do
     puts 'chose company'
   end
   #set value for department
-  setAtrributOfArticle("department", department, account_registerform_department_path)
+  form_set_value(registerform, "department", department, account_registerform_department_path)
   #set value of taxid
-  setAtrributOfArticle("taxid", taxid, account_registerform_taxid_path)
+  form_set_value(registerform, "taxid", taxid, account_registerform_taxid_path)
   #set value for vat
-  setAtrributOfArticle("taxvat", taxvat, account_registerform_taxvat_path)
+  form_set_value(registerform, "taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
-  setAtrributOfArticle("street", street, account_registerform_street_path)
+  form_set_value(registerform, "street", street, account_registerform_street_path)
   #set streetnumber 
-  setAtrributOfArticle("streetnumber", streetnumber, account_registerform_streetnumber_path)
+  form_set_value(registerform, "streetnumber", streetnumber, account_registerform_streetnumber_path)
   #set value for postcode
-  setAtrributOfArticle("postcode", postcode, account_registerform_postcode_path)
+  form_set_value(registerform, "postcode", postcode, account_registerform_postcode_path)
   #set value for city
-  setAtrributOfArticle("city", city, account_registerform_city_path)
+  form_set_value(registerform, "city", city, account_registerform_city_path)
   #set value for country
   element = page.find(account_registerform_country_path)
   element.select(country)
@@ -402,23 +405,23 @@ When(/^I add a new address$/) do
   element = page.find(account_address_prefix_path)
   element.select(prefix)
   #set value for firstname
-  setAtrributOfArticle("firstname", firstname, account_address_firstname_path)
+  form_set_value(account_addressform, "firstname", firstname, account_address_firstname_path)
   #set value for lastname
-  setAtrributOfArticle("lastname", lastname, account_address_lastname_path)
+  form_set_value(account_addressform, "lastname", lastname, account_address_lastname_path)
   #set value for phone
-  setAtrributOfArticle("phone", phone, account_address_phone_path)
+  form_set_value(account_addressform, "phone", phone, account_address_phone_path)
   #set value for company
-  setAtrributOfArticle("company", company, account_address_company_path)
+  form_set_value(account_addressform, "company", company, account_address_company_path)
     #set value for street
-  setAtrributOfArticle("street", street, account_address_street_path)
+  form_set_value(account_addressform, "street", street, account_address_street_path)
   #set streetnumber 
-  setAtrributOfArticle("streetnumber", streetnumber, account_address_streetnumber_path)
+  form_set_value(account_addressform, "streetnumber", streetnumber, account_address_streetnumber_path)
   #set value for postcode
-  setAtrributOfArticle("postcode", postcode, account_address_postcode_path)
+  form_set_value(account_addressform, "postcode", postcode, account_address_postcode_path)
   #set value for city
-  setAtrributOfArticle("city", city, account_address_city_path)
+  form_set_value(account_addressform, "city", city, account_address_city_path)
   #set value for country
-  set_dropdown_value("country", country, account_address_country_path)
+  form_set_dropdown(account_addressform, "country", country, account_address_country_path)
   #click button for taking action
   element = account_addressform.find(account_address_savebutton_path)
   element.click

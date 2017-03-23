@@ -20,7 +20,7 @@ at_exit() do
   puts "\033[42mReset whole session and quit driver\033[0m\n"
   Capybara.reset_sessions!
   Capybara.current_session.driver.quit
-  
+  Capybara.use_default_driver
   #Environment.debug?
 end
 

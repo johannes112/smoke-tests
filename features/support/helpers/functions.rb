@@ -45,30 +45,23 @@ def block_css(csspath)
   catch_error{page.driver.browser.execute_script("document.querySelector('"+csspath+"').style.display = 'none'")}
 end
 
+#select value by text on dropdown-menu
+def form_set_dropdown(var_text, option_value, dropdown_path)
+  puts "- set #{var_text}: #{option_value}"
+  page.find("#{dropdown_path} option", :text => option_value).click
+end
+
 #check if a variable exists and set its value
-def setAtrributOfArticle(var_text, variable, var_path)
+def form_set_value(page_part, var_text, variable, var_path)
   #var_value = article.variable
   #variable exists?
   if variable
     #set location
     begin
-      item = page.find(var_path)
-      item_type = item.inspect
-        #check for type (Element=input or eelement=select)
-        if(item_type.include?"input")
-          #set value
-          item.set(variable)
-          puts "- set #{var_text}: #{variable}"
-          #expect(item.value).to eq(variable),
-          #  "Could not insert variable #{var_text} with #{variable}"
-        elsif(item_type.include?"select")
-          item.select(variable)
-          puts "#{var_text}: #{variable}"
-        else
-          puts "Error Element isn't of type 'input' or 'select'"
-        end
-          rescue Exception => e
-          puts "\033[35m#{e.message}\033[0m\n"
+      page_part.find(var_path).set(variable)
+      puts "- set #{var_text}: #{variable}"
+    rescue Exception => e
+      puts "\033[35m#{e.message}\033[0m\n"
     end
   else
     puts "#{var_text} is not available in #{ENV['COUNTRY']}"
@@ -77,7 +70,6 @@ end
 
 #check if all links go to the equal shop (of country)
 def look_for_string_in_array(array_source, string_content)
-  counter = 0
   check = Array.new
   array_source.each { |z| check << z.include?(string_content)}
   # if array_source include string_content
@@ -88,12 +80,6 @@ def look_for_string_in_array(array_source, string_content)
     puts "All checked links: #{array_source}"
     raise ("Some links are bad!")
   end
-end
-
-#select value by text on dropdown-menu
-def set_dropdown_value(var_text, option_value, dropdown_path)
-  puts "- set #{var_text}: #{option_value}"
-  page.find("#{dropdown_path} option", :text => option_value).click
 end
 
 def catch_error(&block)
