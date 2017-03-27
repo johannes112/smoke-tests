@@ -57,8 +57,8 @@ if ENV['DRIVER'] == 'saucelabs'
     @caps[:autoAcceptAlerts] = true
     @caps[:unexpectedAlertBehaviour] = "dismiss"
     @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
-    @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 5 min
-    @caps[:idleTimeout] = '90' #max Duration between any command
+    @caps[:commandTimeout] = '30' #max Duration of seleniumcommand is set to 5 min
+    @caps[:idleTimeout] = '30' #max Duration between any command
     
     puts "Enviroment:#{@caps}"
     
@@ -67,7 +67,7 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    Capybara.default_max_wait_time = 90
+    Capybara.default_max_wait_time = 30
   end
   
 end
