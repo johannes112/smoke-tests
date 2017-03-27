@@ -11,6 +11,7 @@ Given(/^I am on the registration page$/) do
 end
 
 And(/^no user account with my email exists$/) do
+  
   eMail = user.eMail
   puts "UrlBackend:#{settings.urlBackend}"
   puts "user eMail:#{eMail}"
@@ -18,31 +19,26 @@ And(/^no user account with my email exists$/) do
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   #puts shopware.deleteDataByKey("Customers", key, eMail)
   shopware.deleteCustomerByMail(eMail)
+  puts "delete"
+  
 end
 
 Given(/^I already created an user account$/) do
-  #puts Time.now
   eMail = user.eMail
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   customer_id_determined = shopware.getCustomerIdByMail(eMail)
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with customer:#{eMail} exists"
-   # puts Time.now
     puts "I am on the registration page"
     step("I am on the registration page")
-    #puts Time.now
     puts "I create a new account with my data"
     step("I create a new account with my data")
-    #puts Time.now
     puts "I log me out"
     step("I log me out")
-    #puts Time.now
     puts "I am on the registration page"
-    #step("I am on the registration page")
-    puts Time.now
+    step("I am on the registration page")
   else
     puts   "-> there exists an unique account"
-    #puts Time.now
   end
 end
 
@@ -92,11 +88,8 @@ When(/^I create a new account with my data$/) do
   registerform = page.find(account_registerform_path)
   
   #set value for prefix
-  #page.find(account_registerform_prefix_path).select(prefix)
   registerform.find(account_registerform_prefix_path).select(prefix)
-  #printValue(:prefix, binding)
   #set value for firstname
-  #registerform.find(account_registerform_firstname_path).set(firstname)
   form_set_value(registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
   #registerform.find(account_registerform_lastname_path).set(lastname)
@@ -132,13 +125,13 @@ When(/^I create a new account with my data$/) do
   #set value for city
   form_set_value(registerform, "city", city, account_registerform_city_path)
   #set value for country
-  element = page.find(account_registerform_country_path)
-  element.select(country)
-  #click button
-  element = page.find(account_registerform_button_path)
-  element.click
-  puts "clicked button to continue"
+  #element = page.find(account_registerform_country_path)
+  #element.select(country)
+  form_set_dropdown("country", country, account_registerform_country_path)
   
+  #click button
+  page.find(account_registerform_button_path).click
+  puts "clicked button to continue"
 end
 
 Then(/^I should be on my account page$/) do
@@ -150,89 +143,59 @@ Then(/^I should be on my account page$/) do
   account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
   account_registerform_vallidation_ignore_path = '.modal-ignore'
   
-  
-  if (page.has_css?(account_registerform_vallidation_modal_path))
-    element = page.find(account_registerform_vallidation_ignore_path)
-    element.click
+  if (page.has_no_css?(account_registerform_vallidation_modal_path))
+    puts "current_url:#{current_url}"
+    page.find(account_accountpage_welcome_path)
+    page.find(account_accountpage_info_path)
+    element = page.find(account_accountpage_info_path)
+    infobox_txt = element.text
+    expect(infobox_txt).to include(email),
+        "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
+    puts "> the page contains #{email}"
+  else
+    page.find(account_registerform_vallidation_ignore_path).click
   end
-  puts "current_url:#{current_url}"
-  
-  expect(page).to have_css(account_accountpage_welcome_path),
-     "expected to see a welcome message but there is no #{account_accountpage_welcome_path} I am not logged in"
-  page.find(account_accountpage_info_path)
-  element = page.find(account_accountpage_info_path)
-  infobox_txt = element.text
-  
-  expect(infobox_txt).to include(email),
-      "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
-  puts "> the page contains #{email}"
 end
 
 When(/^I login with valid informations$/) do
-  puts "I LOGIN WITH VALID IMFO"
   #var1
   email = user.eMail
   password = user.password
   url_account = settings.urlHttps+'account'
-  puts Time.now
-
   
   #path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
-  
-  puts "WHICH URL"
-  puts Time.now
+
   if (current_url == url_account) 
     puts "> ok, I am on #{current_url}"
-    puts Time.now
   else
     puts "--> go to #{url_account}"
-    puts Time.now
     visit(url_account)
-      
     #hide
     block_css('.navigation-main')
   end
-  puts "HAS CSS?"
-  puts Time.now
-  if (page.has_css?(account_accountpage_welcome_path))
-    puts "> and I am already be in my account"
-    puts Time.now
-  else
-    puts "NO CSS"
-    puts Time.now
+  if (page.has_no_css?(account_accountpage_welcome_path))
     #search for field, so you know that we are on the right site
     page.find('.register--existing-customer')
-    puts "FOUND FORM"
-    puts Time.now
     login_form = page.find('.register--existing-customer')
-    puts "DEFINED FORM"
-    puts Time.now
     #set value for mail
     form_set_value(login_form, "email", email, account_loginform_emailfield_path)
-    #element = page.find(account_loginform_emailfield_path)
-    #element.set(email)
     puts "-> set email"
-    puts Time.now
     #set value for password
     form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
-    #element = page.find(account_loginform_passwordfield_path)
-    #element.set(password)
     puts "-> set password"
-    puts Time.now
     #click button
     page.find(account_loginform_registerbutton_path).click
     puts "--> pushed button for registration"
-    puts Time.now
+  else
+    puts "> and I am already be in my account"
   end
 end
 
 Given(/^I am logged in$/) do
-  #puts "I already created an user account"
-  #step ("I already created an user account")
   puts "I login with valid informations"
   step ("I login with valid informations")
   puts "I should be on my account page"
@@ -321,29 +284,29 @@ end
 
 When(/^I delete the account with the modified mailadress$/) do
   eMail = user.eMail_sec
+  
   #key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  #puts shopware.deleteDataByKey("Customers", key, eMail)
   shopware.deleteCustomerByMail(eMail)
+  
 end
 
 When(/^I log me out$/) do
+  
   #css pathes
   account_accountinfo_menucontainer_logout_link_path = csspathes.account_accountinfo_menucontainer_logout_link_path
   
-  element = page.find(account_accountinfo_menucontainer_logout_link_path)
-  element.click
+  page.find(account_accountinfo_menucontainer_logout_link_path).click
   puts "--> logged me out"
+  
 end
 
 When(/^I modify my paymentinfo$/) do
   #css pathes
   account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
   account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
-  
   account_accountinfo_payment_box = page.find(account_accountinfo_payment_box_path)
-  element = account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path)
-  element.click
+  account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path).click
   puts "--> clicked button for change of payment"
   
   puts "I change option of payment"
@@ -353,7 +316,6 @@ end
 When(/^I change option of payment$/) do
   account_payment_paymentoptions_path = csspathes.account_payment_paymentoptions_path
   account_payment_cashOnDelivery_path = csspathes.account_payment_cashOnDelivery_path
-  
   account_payment_change_button_path = csspathes.account_payment_change_button_path
   
   page.find(account_payment_paymentoptions_path)
@@ -361,15 +323,13 @@ When(/^I change option of payment$/) do
   element.click
   puts "--> chose checkbox for cash on delivery"
   
-  element = page.find(account_payment_change_button_path)
-  element.click
+  page.find(account_payment_change_button_path).click
 end
 
 When(/^I modify my address for my bill$/) do
   #css pathes
   account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
   account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
-  
   account_accountinfo_billaddresschange_box = page.find(account_accountinfo_billaddress_box_path)
   element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
   element.click
@@ -383,17 +343,12 @@ When(/^I change prefix of my address for invoice$/) do
   prefix = user.prefix_sec
   
   account_invoiceadresschange_form_prefix_path = csspathes.account_invoiceadresschange_form_prefix_path
-  
   account_invoiceadresschange_button_path = csspathes.account_invoiceadresschange_button_path
   
   #set value for prefix
   page.find(account_invoiceadresschange_form_prefix_path)
-  element = page.find(account_invoiceadresschange_form_prefix_path)
-  element.select(prefix)
-  puts "--> select prefix:#{prefix}"
-  
-  element = page.find(account_invoiceadresschange_button_path)
-  element.click
+  form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
+  page.find(account_invoiceadresschange_button_path).click
   puts "--> click change-button"
 end
 
@@ -428,9 +383,7 @@ When(/^I add a new address$/) do
   puts "> found formular to add a new address"
   account_addressform = page.find(account_address_create_path)
   #select prefix
-  puts "prefix:#{prefix}"
-  element = page.find(account_address_prefix_path)
-  element.select(prefix)
+  form_set_dropdown("prefix", prefix, account_prefix_path)
   #set value for firstname
   form_set_value(account_addressform, "firstname", firstname, account_address_firstname_path)
   #set value for lastname
@@ -450,8 +403,7 @@ When(/^I add a new address$/) do
   #set value for country
   form_set_dropdown(account_addressform, "country", country, account_address_country_path)
   #click button for taking action
-  element = account_addressform.find(account_address_savebutton_path)
-  element.click
+  account_addressform.find(account_address_savebutton_path).click
   puts "> clicked button to save address"
 end
 
@@ -461,8 +413,7 @@ When(/^I modify my address for my delivery/) do
   account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
   
   account_accountinfo_deliveraddresschange_box = page.find(account_accountinfo_deliveraddress_box_path)
-  element = account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path)
-  element.click
+  account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path).click
   puts "--> clicked button for change the adress for delivery"
   puts "I change prefix of my address for delivery"
   step("I change prefix of my address for delivery")
@@ -476,12 +427,10 @@ When(/^I change prefix of my address for delivery$/) do
 
   #set value for prefix
   page.find(account_deliveradresschange_form_prefix_path)
-  element = page.find(account_deliveradresschange_form_prefix_path)
-  element.select(prefix)
+  form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
   puts "--> select prefix:#{prefix}"
   
-  element = page.find(account_deliveradresschange_button_path)
-  element.click
+  page.find(account_deliveradresschange_button_path).click
   puts "--> click change-button"
 end
 
@@ -489,14 +438,13 @@ end
 When(/^I activate the newsletterbox$/) do
   account_newsletter_box_path = csspathes.account_newsletter_box_path
   
-  page.find(account_newsletter_box_path)
-  element = page.find(account_newsletter_box_path)
-  element.click
+  page.find(account_newsletter_box_path).click
   puts "--> activate the checkbox"
 end
 
 #it is not implemented
 When(/^I get all items of the sidebar$/) do
+  
   account_sidebar_path = csspathes.account_sidebar_path
   
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
