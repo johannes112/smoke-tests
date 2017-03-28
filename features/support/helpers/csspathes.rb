@@ -547,8 +547,7 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then         '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/fr/) then            '#register_billing_emgroup_commercial_register_nr'
-      
-      
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/be/) then            '#register_billing_vatid'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/be/) then       '#register_billing_emgroup_commercial_register_nr'
       when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/fr/) then       '#register_billing_emgroup_commercial_register_nr'
