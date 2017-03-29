@@ -296,7 +296,20 @@ When(/^I set payment and shipping$/) do
   checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path
   checkout_step_confirm_path = csspathes.checkout_step_confirm_path
+  
+  account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+  account_registerform_vallidation_ignore_path = '.modal-ignore'
 
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    if (page.has_css?(account_registerform_vallidation_modal_path))
+      puts "found popup"
+      page.find(account_registerform_vallidation_ignore_path).click
+      puts "--> closed popup"
+    else
+      puts "In #{ENV['COUNTRY']} is no popup"
+    end
+  end
+  
   if (page.has_css?(checkout_step_payment_path)) 
     puts "I am here: #{current_url}"
     page.find(checkout_payment_form_path)

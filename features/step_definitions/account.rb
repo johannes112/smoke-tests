@@ -33,6 +33,8 @@ Given(/^I already created an user account$/) do
     step("I am on the registration page")
     puts "I create a new account with my data"
     step("I create a new account with my data")
+    puts "I should be on my account page"
+    step("I should be on my account page")
     puts "I log me out"
     step("I log me out")
     puts "I am on the registration page"
@@ -143,18 +145,23 @@ Then(/^I should be on my account page$/) do
   account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
   account_registerform_vallidation_ignore_path = '.modal-ignore'
   
-  if (page.has_no_css?(account_registerform_vallidation_modal_path))
-    puts "current_url:#{current_url}"
-    page.find(account_accountpage_welcome_path)
-    page.find(account_accountpage_info_path)
-    element = page.find(account_accountpage_info_path)
-    infobox_txt = element.text
-    expect(infobox_txt).to include(email),
-        "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
-    puts "> the page contains #{email}"
-  else
-    page.find(account_registerform_vallidation_ignore_path).click
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    if (page.has_css?(account_registerform_vallidation_modal_path))
+      puts "found popup"
+      page.find(account_registerform_vallidation_ignore_path).click
+      puts "--> closed popup"
+    else
+      puts "In #{ENV['COUNTRY']} is no popup"
+    end
   end
+  puts "current_url:#{current_url}"
+  page.find(account_accountpage_welcome_path)
+  page.find(account_accountpage_info_path)
+  element = page.find(account_accountpage_info_path)
+  infobox_txt = element.text
+  expect(infobox_txt).to include(email),
+      "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
+  puts "> the page contains #{email}"
 end
 
 When(/^I login with valid informations$/) do

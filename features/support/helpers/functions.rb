@@ -185,6 +185,7 @@ def convert_countryname_to_countryid(string_country)
   return id_country
 end
 
+# for debugging
 def puts_time_elapsed
   time_now = Time.now
   seconds = sprintf("%0.02f", (time_now - @start_time) % 60).to_i
