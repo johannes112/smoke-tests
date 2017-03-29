@@ -228,7 +228,7 @@ class User
       when 'de' then 'Frau'
       when 'at' then 'Frau'
       when 'ch' then 'Frau'
-      when 'it' then 'Sig.'
+      when 'it' then 'Sig.ra'
       when 'fr' then 'Madame'
       when 'no' then 'Fru'
       when 'se' then 'Fru'
