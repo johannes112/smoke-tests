@@ -130,6 +130,7 @@ module ShopwareFunctions
       puts ">>>>>> No customer exist"
     else
       deleteDataId("customers", determined_customer_id)
+      puts ">>>>>> deleted: #{determined_customer_id}"
     end
   end
 

@@ -1,5 +1,5 @@
 Before do
-  #@start_time = Time.now
+  @start_time = Time.now
   $start ||= false
   if !$start 
     #puts "Time: #{@start_time.hour.to_s}:#{@start_time.min.to_s}:#{@start_time.sec.to_s}"

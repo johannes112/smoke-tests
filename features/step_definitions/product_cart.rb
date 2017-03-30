@@ -1,11 +1,21 @@
 #product_cart
+Given(/^I am on the product cart page$/) do
+  website_url = settings.urlHttps
+  url_part_product_cart = 'checkout/cart'
+  url = "#{website_url}#{url_part_product_cart}"
+  
+  visit(url)
+  puts "-> go to #{url}"
+  expect(current_url).to include(url_part_product_cart),
+    "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
+end
+
 Given(/^the product cart contains an article$/) do
+  puts "I am on the product cart page"
+  step("I am on the product cart page")
+  
   # with ajax'
   product_cart_article_path = csspathes.product_cart_article_path
-  step("I am on the website")
-  block_css('.navigation-main')  
-  step("I add an article to my cart by ajax")
-  step("I am on the product cart page")
   
   #check if cart contains an article
   expect(page).to have_css(product_cart_article_path),
@@ -46,18 +56,6 @@ end
 
 Then(/^I will see the back on the productsite$/) do
   step("I should be on the detailsite of the related product")
-end
-
-
-Given(/^I am on the product cart page$/) do
-  website_url = settings.urlHttps
-  url_part_product_cart = 'checkout/cart'
-  url = "#{website_url}#{url_part_product_cart}"
-  
-  visit(url)
-  puts "-> go to #{url}"
-  expect(current_url).to include(url_part_product_cart),
-    "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
 end
 
 When(/^I remove this article from the product cart$/) do
