@@ -878,6 +878,8 @@ class Csspathes
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '#payment_mean3'
       when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/fr/) then      '#payment_mean4'
       when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/be/) then      '#payment_mean4'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/no/) then      '#payment_mean4'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/se/) then            '#payment_mean4'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#payment_mean3'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#payment_mean5'
       else '#payment_mean3'

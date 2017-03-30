@@ -28,8 +28,8 @@ class Article
       when (/es/) then 'Cubiertos'
     end
     @category_language_changed = case ENV['COUNTRY']
-      when (/ch/) then 'Couverts'
-      when (/be/) then 'Bestek'
+      when (/ch/) then 'Vaisselle'
+      when (/be/) then 'Servies'
     end
     @productnumber = case ENV['COUNTRY']
       when (/de/) then '104105'#without i!
