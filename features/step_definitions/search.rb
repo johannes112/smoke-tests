@@ -23,7 +23,6 @@ Then(/^I should be on the detailsite of the related product$/) do
   search_product_name_path = csspathes.search_product_name_path
   
   #actions
-  page.find(search_product_name_path)
   element=page.find(search_product_name_path)
   
   #convert string into downcase for comparing

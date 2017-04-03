@@ -39,18 +39,43 @@ module MyWorld
     begin
       page.find(path)
     rescue Capybara::ElementNotFound => e
-      write_to_file("ElementNotFound_src", string)
+      write_to_new_file("ElementNotFound_src", string)
       puts "\033[35mfind_secure\033[0m\n"
       puts "\033[35m#{e.inspect}\033[0m\n"
     end
   end
     
-  def write_to_file(filename, content)  
+  def write_to_new_file(filename, content)  
     open("#{filename}.txt", 'w') { |f|
       f.puts content
     }
     puts ("written to #{filename}.txt")
   end
+  
+  def write_to_existing_file(filename, content)  
+    #puts "file:#{@file}"
+    if File.exists?(filename+'.txt')
+      open("#{filename}.txt", 'a') { |f|
+      f.puts content
+      }
+    else  
+      @file ||= File.new("#{filename}.txt", 'w')
+      open(@file, 'a'){ |f|
+      f.puts content
+      }
+    end
+    puts ("written to existing #{filename}.txt")
+  end
+  
+  def write_to_file(*args)
+    case args.size
+    when 2
+      write_to_new_file(*args)
+    when 3
+      write_to_existing_file(*args)
+    end
+  end 
+  
 end
 
 

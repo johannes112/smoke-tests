@@ -1,4 +1,5 @@
 #!/bin/bash
+> failed_scenarios.txt
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
