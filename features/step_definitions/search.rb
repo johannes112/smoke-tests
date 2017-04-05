@@ -1,6 +1,7 @@
 #search
 When(/^I am searching for a product by entering the sku in the searchfield$/) do
-  #variables:values  
+  start_url = current_url
+  #variables:value
   sku = article.sku
   printValue(:sku, binding)
   
@@ -12,6 +13,8 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   search_searchbutton = find(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should be on the detailsite of the related product$/) do
@@ -36,6 +39,7 @@ Then(/^I should be on the detailsite of the related product$/) do
 end
 
 When(/^I am searching for a product by entering the productnumber in the searchfield$/) do
+  start_url = current_url
   #variables:values  
   productnumber = article.productnumber
   printValue(:productnumber, binding)
@@ -48,6 +52,8 @@ When(/^I am searching for a product by entering the productnumber in the searchf
   search_searchbutton = page.find(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should see my product on the results of my search$/) do
@@ -70,6 +76,7 @@ Then(/^I should see my product on the results of my search$/) do
 end
 
 When(/^I am searching for products by entering the productname in the searchfield$/) do
+  start_url = current_url
   name = article.name
   printValue(:name, binding)
   
@@ -81,13 +88,18 @@ When(/^I am searching for products by entering the productname in the searchfiel
   search_searchbutton = page.find(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 
 When(/^I click on the button of searching$/) do
+  start_url = current_url
   search_searchbutton_mobile_path = ".entry--search > a > i"
   
   page.find(search_searchbutton_mobile_path)
   element = page.find(search_searchbutton_mobile_path)
   element.click
+  #check for success
+  check_for_url_change(start_url)
 end
