@@ -1,9 +1,7 @@
 #navigation_menu
 When(/^I navigate to an category by the hovermenu$/) do
   #var
-  url_start = current_url
-  category = article.category
-  sub_category = article.sub_category
+  start_url = current_url
   
   #set pathes
   navigation_menu_path = csspathes.navigation_menu_path
@@ -18,14 +16,12 @@ When(/^I navigate to an category by the hovermenu$/) do
   element.click
   puts "-> clicked on hovermenu"
   #check for success
-  expect(current_url).not_to eq(url_start),
-     "Expect url of category but it was still #{current_url}"
+  check_for_url_change(start_url)
 end
 
 When(/^I navigate to a subcategory by the menu$/) do
   #var
-  url_start = current_url
-  category = article.category
+  start_url = current_url
   
   #set pathes
   navigation_path = csspathes.navigation_path
@@ -33,9 +29,6 @@ When(/^I navigate to a subcategory by the menu$/) do
   navigation_menu_title_path = csspathes.navigation_menu_title_path
   navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
   navigation_sidebar_sub_path = csspathes.navigation_sidebar_sub_path
-  navigation_hovermenu_close_path = csspathes.navigation_hovermenu_close_path
-  navigation_sidebar_path = csspathes.navigation_sidebar_path
-  
   
   #main-menu
   page.find(navigation_path)
@@ -52,8 +45,7 @@ When(/^I navigate to a subcategory by the menu$/) do
   puts "> found sidebar"
   
   #check for success
-  expect(current_url).not_to eq(url_start),
-     "Expect url of category but it was still #{current_url}"
+  check_for_url_change(start_url)
 end
 
 Then(/^I should be on a subcategorysite$/) do

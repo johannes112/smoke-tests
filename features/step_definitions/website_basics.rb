@@ -1,5 +1,5 @@
 #website_elements
-Then(/^I should be a basic elements$/) do
+Then(/^I should see all basic elements$/) do
   #define path of header
   homepage_content_header_path = csspathes.homepage_content_header_path
   homepage_content_searchfield_path = csspathes.homepage_content_searchfield_path

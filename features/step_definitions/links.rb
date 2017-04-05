@@ -1,10 +1,14 @@
 #links
 When(/^I click the link to my account$/) do
+  #var
+  start_url = current_url
   #pathes
   links_account_path = csspathes.links_account_path  
   #click button
   element = page.find(links_account_path)
   element.click
+  #success?
+  check_for_url_change(start_url)
 end
 
 Then(/^I should be on the accountpage$/) do
@@ -19,11 +23,15 @@ Then(/^I should be on the accountpage$/) do
 end
 
 When(/^I click the link to my notes$/) do
+  #var
+  start_url = current_url
   #pathes
   links_notes_path = csspathes.links_notes_path  
   #click button
   element = page.find(links_notes_path)
   element.click
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should be on the notepage$/) do
@@ -38,6 +46,8 @@ Then(/^I should be on the notepage$/) do
 end
 
 When(/^I click the link of the cart$/) do
+  #var
+  start_url = current_url
   #pathes
   links_cart_symbol_path = csspathes.links_cart_symbol_path  
   #click button
@@ -57,7 +67,6 @@ When(/^I click the link to edit the cart$/) do
   #pathes
   links_cart_button_path = csspathes.links_cart_button_path  
   #click button
-  #page.find(links_cart_button_path)
   element = page.find(links_cart_button_path, match: :first)
   element.click
 end
@@ -70,6 +79,8 @@ end
 
 
 When(/^I click the link of help$/) do
+  #var
+  start_url = current_url
   #pathes
   links_service_path = csspathes.links_service_path  
   #click button
@@ -77,6 +88,8 @@ When(/^I click the link of help$/) do
   link_text = element.text
   element.click
   puts "--> clicked on #{link_text}"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should see a contextmenu$/) do

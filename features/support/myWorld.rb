@@ -76,6 +76,14 @@ module MyWorld
     end
   end 
   
+  #check if url has changed
+  def check_for_url_change(start_url)
+  #check for success
+  end_url = current_url
+  expect(end_url).not_to eq(start_url),
+     "Expect url of category but it was still #{end_url}"
+  end
+  
 end
 
 

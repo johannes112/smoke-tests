@@ -20,8 +20,15 @@ Feature: website_basics
     @v_jobeline
     @website_elements
     Scenario: check for elements
-        Then I should be a basic elements
+        Then I should see all basic elements
 
+    @export
+    @chefworks
+    @pulsiva
+    @vega
+    @hotelwaesche
+    @hw_jobeline
+    @v_jobeline
     @navigation
     @menu
     @hovermenu    
@@ -30,8 +37,12 @@ Feature: website_basics
 		Then I should be on a subcategorysite
 
     @export
-    @chefworks	
+    @chefworks
     @pulsiva
+    @vega
+    @hotelwaesche
+    @hw_jobeline
+    @v_jobeline
     @navigation
     @menu
     @standardmenu    
@@ -69,8 +80,10 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    @vega
     @hotelwaesche
     @hw_jobeline
+    @v_jobeline
     @navigation
     @links
     Scenario: activate the cart
@@ -82,6 +95,7 @@ Feature: website_basics
     @export
     @chefworks
     @pulsiva
+    @vega
     @hotelwaesche
     @hw_jobeline
     @v_jobeline
@@ -92,6 +106,7 @@ Feature: website_basics
         Then I should see a contextmenu
 
 
+    @export
     @chefworks
     @pulsiva
     @vega
@@ -105,6 +120,10 @@ Feature: website_basics
 
 
     @pulsiva
+    @vega
+    @v_jobeline
+    @hw_jobeline
+    @hotelwaesche
     @language_changer
     Scenario: change the language
         When I change the language by clicking the button
