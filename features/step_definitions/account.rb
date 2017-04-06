@@ -1,6 +1,7 @@
 #account
 
 Given(/^I am on the registration page$/) do
+  start_url = current_url
   #var
   url = "#{settings.urlHttps}account"
   puts "--> go to #{url}"
@@ -8,10 +9,11 @@ Given(/^I am on the registration page$/) do
   #got to url
   visit(url)
   block_css('.navigation-main')  
+  #check for success
+  check_for_url_change(start_url)
 end
 
 And(/^no user account with my email exists$/) do
-  
   eMail = user.eMail
   puts "UrlBackend:#{settings.urlBackend}"
   puts "user eMail:#{eMail}"
@@ -83,6 +85,7 @@ When(/^I create a new account with my data$/) do
   account_registerform_city_path = csspathes.account_registerform_city_path
   account_registerform_country_path = csspathes.account_registerform_country_path
   account_registerform_button_path = csspathes.account_registerform_button_path
+  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
   
   #search for field, so you know that we are on the right site
   page.find(account_registerform_path)
@@ -133,14 +136,13 @@ When(/^I create a new account with my data$/) do
   #click button
   page.find(account_registerform_button_path).click
   puts "clicked button to continue"
+  #check for success
+  page.find(navigation_hover_breadcrumb_path)
 end
 
 Then(/^I should be on my account page$/) do
   #var
-  email = user.eMail
-  
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
-  account_accountpage_info_path = csspathes.account_accountpage_info_path
   account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
   account_registerform_vallidation_ignore_path = '.modal-ignore'
   
@@ -174,6 +176,7 @@ When(/^I login with valid informations$/) do
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
+  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
 
   if (current_url == url_account) 
     puts "> ok, I am on #{current_url}"
@@ -199,6 +202,8 @@ When(/^I login with valid informations$/) do
   else
     puts "> and I am already be in my account"
   end
+  #check for success
+  page.find(navigation_hover_breadcrumb_path)
 end
 
 Given(/^I am logged in$/) do
@@ -218,6 +223,7 @@ When("I modify my userinfo") do
 end
 
 When(/^I change my password$/) do
+  start_url = current_url
   password = user.password
   password_sec = user.password_sec
   # define css pathes
@@ -240,14 +246,16 @@ When(/^I change my password$/) do
   element.click
   
   puts "--> changed password"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I change my emailaddress$/) do
+  start_url = current_url
   eMail_sec = user.eMail_sec
   password_sec = user.password_sec
   # define css pathes
   account_userinfo_emailchange_button_appear_path = csspathes.account_userinfo_emailchange_button_appear_path
-  
   account_userinfo_emailchange_currentpassword_path = csspathes.account_userinfo_emailchange_currentpassword_path
   account_userinfo_emailchange_newmail_path = csspathes.account_userinfo_emailchange_newmail_path
   account_userinfo_emailchange_repeatnewmail_path = csspathes.account_userinfo_emailchange_repeatnewmail_path
@@ -264,8 +272,9 @@ When(/^I change my emailaddress$/) do
   element.set(eMail_sec)
   element = page.find(account_userinfo_emailchange_button_path)
   element.click
-  
   puts "--> changed emailaddress"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should see a confirmation hint$/) do
@@ -298,17 +307,19 @@ When(/^I delete the account with the modified mailadress$/) do
 end
 
 When(/^I log me out$/) do
-  
+  start_url = current_url
   #css pathes
   account_accountinfo_menucontainer_logout_link_path = csspathes.account_accountinfo_menucontainer_logout_link_path
   
   page.find(account_accountinfo_menucontainer_logout_link_path).click
   puts "--> logged me out"
-  
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I modify my paymentinfo$/) do
   #css pathes
+  start_url = current_url
   account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
   account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
   account_accountinfo_payment_box = page.find(account_accountinfo_payment_box_path)
@@ -317,6 +328,8 @@ When(/^I modify my paymentinfo$/) do
   
   puts "I change option of payment"
   step("I change option of payment")
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I change option of payment$/) do
@@ -333,6 +346,7 @@ When(/^I change option of payment$/) do
 end
 
 When(/^I modify my address for my bill$/) do
+  start_url = current_url
   #css pathes
   account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
   account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
@@ -340,12 +354,14 @@ When(/^I modify my address for my bill$/) do
   element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
   element.click
   puts "--> clicked button for change the adress of billing"
-  
   puts "I change prefix of my address for invoice"
   step("I change prefix of my address for invoice")
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I change prefix of my address for invoice$/) do
+  start_url = current_url
   prefix = user.prefix_sec
   
   account_invoiceadresschange_form_prefix_path = csspathes.account_invoiceadresschange_form_prefix_path
@@ -356,9 +372,12 @@ When(/^I change prefix of my address for invoice$/) do
   form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
   page.find(account_invoiceadresschange_button_path).click
   puts "--> click change-button"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I add a new address$/) do
+  start_url = current_url
   # define variables
   prefix = user.prefix_sec
   firstname = user.firstname
@@ -411,9 +430,12 @@ When(/^I add a new address$/) do
   #click button for taking action
   account_addressform.find(account_address_savebutton_path).click
   puts "> clicked button to save address"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I modify my address for my delivery/) do
+  start_url = current_url
   #css pathes
   account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
   account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
@@ -423,9 +445,12 @@ When(/^I modify my address for my delivery/) do
   puts "--> clicked button for change the adress for delivery"
   puts "I change prefix of my address for delivery"
   step("I change prefix of my address for delivery")
+  #check for success
+  check_for_url_change(start_url)
 end
 
 When(/^I change prefix of my address for delivery$/) do
+  start_url = current_url
   prefix = user.prefix_sec
   
   account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
@@ -435,22 +460,25 @@ When(/^I change prefix of my address for delivery$/) do
   page.find(account_deliveradresschange_form_prefix_path)
   form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
   puts "--> select prefix:#{prefix}"
-  
   page.find(account_deliveradresschange_button_path).click
   puts "--> click change-button"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 #it is not working on pulsiva
 When(/^I activate the newsletterbox$/) do
-  account_newsletter_box_path = csspathes.account_newsletter_box_path
-  
-  page.find(account_newsletter_box_path).click
-  puts "--> activate the checkbox"
+  if (ENV['SHOP'] == 'chefworks')
+    account_newsletter_box_path = csspathes.account_newsletter_box_path
+    page.find(account_newsletter_box_path).click
+    puts "--> activate the checkbox"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 #it is not implemented
 When(/^I get all items of the sidebar$/) do
-  
   account_sidebar_path = csspathes.account_sidebar_path
   
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')

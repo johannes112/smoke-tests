@@ -900,27 +900,27 @@ class Csspathes
       else '.account--billing.account--box'
     end 
     @account_accountinfo_billaddresschange_button_appear_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_accountinfo_billaddresschange_button_appear is not available'
-      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_accountinfo_billaddresschange_button_appear is not available'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_accountinfo_billaddresschange_button_appear is not available'
-      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_accountinfo_billaddresschange_button_appear is not available'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel--actions > a'
+      when ENV['SHOP'].match(/v_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel--actions > a'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.panel--actions > a'
+      when ENV['SHOP'].match(/hotelwaesche/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.panel--actions > a'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a:nth-child(2)'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a:nth-child(2)'
       else 'account_accountinfo_billaddresschange_button_appear_path is not defined' 
     end 
     @account_invoiceadresschange_form_prefix_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_accountinfo_billaddresschange_button_appear is not available'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_invoiceadresschange_form_prefix is not available'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.address-form--panel > div > div.address--salutation.field--select > div'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.address-form--panel > div > div.address--salutation.field--select > div'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel.register--personal > div > div.register--salutation.field--select'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.panel.register--personal > div > div.register--salutation.field--select'
-      else 'account_invoiceadresschange_form_prefix_path is not defined' 
+      else '.address-form--panel > div > div.address--salutation.field--select > div' 
     end 
     @account_invoiceadresschange_button_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_invoiceadresschange_button is not available'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_invoiceadresschange_button is not available'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.address--form-actions > input'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.address--form-actions > input'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.account--actions > input'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.account--actions > input'
-      else 'account_invoiceadresschange_button is not defined' 
+      else '.address--form-actions > input' 
     end 
     @account_accountinfo_deliveraddress_box_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--shipping.account--box'

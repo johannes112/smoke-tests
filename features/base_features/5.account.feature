@@ -39,6 +39,7 @@ Feature: account
 		
   @export
   @chefworks
+  @pulsiva
   @vega
   @hotelwaesche
   @hw_jobeline
@@ -64,7 +65,7 @@ Feature: account
   @export
   @chefworks
 	@pulsiva
-	@vega
+	@vegaaa
 	@hotelwaesche
 	@hw_jobeline
 	@v_jobeline
