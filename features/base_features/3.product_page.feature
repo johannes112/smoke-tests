@@ -50,18 +50,21 @@ Feature: product page
   Scenario: display products with data
 	  Then I should see all necessary elememts for getting more informations about this article
 
+  @chefworks
   @export
   @product_page_rate
   Scenario: rate an article with tab
 	  When I change in the tab to the rating
 	  Then there should be a form for rating the article
 	  
+	@chefworks
 	@export
 	@product_page_rate
   Scenario: rate an article with button
 	  When I click the button to rate for the article
 	  Then there should be a form for rating the article
 	
+	@chefworks
 	@product_page_suggest
   Scenario: customer seen article
 	  When I change to the tab of the customer viewed articles

@@ -47,11 +47,14 @@ And(/^I add an article to my cart by ajax$/) do
 end
 
 When(/^I click on the button to continue shopping$/) do
+  start_url = current_url
   product_cart_button_continue_path = csspathes.product_cart_button_continue_path
   
   element = page.find(product_cart_button_continue_path, match: :first)
   element.click
   puts "--> clicked button for continue"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I will see the back on the productsite$/) do
@@ -61,6 +64,7 @@ end
 When(/^I remove this article from the product cart$/) do
   product_cart_remove_article_path = csspathes.product_cart_remove_article_path
   
+  page.find(product_cart_remove_article_path)
   element = page.find(product_cart_remove_article_path)
   element.click
   puts "clicked icon"
@@ -90,12 +94,15 @@ Then(/^I should see all necessary informations about this article within the pro
 end
 
 When(/^I navigate to the checkout by clicking the button which navigates to the checkout$/) do
+  start_url = current_url
   product_cart_button_checkout_path = csspathes.product_cart_button_checkout_path#there are 2 buttons
   
   #check for first button
   element = page.find(product_cart_button_checkout_path, match: :first)
   element.click
   puts "clicked button"
+  #check for success
+  check_for_url_change(start_url)
 end
 
 Then(/^I should be on the checkout\-page$/) do
@@ -109,47 +116,69 @@ Then(/^I should be on the checkout\-page$/) do
 end
 
 When(/^I activate the function for voucher$/) do
-  product_cart_voucher_checkbox_path = csspathes.product_cart_voucher_checkbox_path
-  
-  element = page.find(product_cart_voucher_checkbox_path)
-  element.click
-  puts "clicked checkbox"
+  if (ENV['SHOP'] == 'chefworks')
+    product_cart_voucher_checkbox_path = csspathes.product_cart_voucher_checkbox_path
+    
+    page.find(product_cart_voucher_checkbox_path)
+    element = page.find(product_cart_voucher_checkbox_path)
+    element.click
+    puts "clicked checkbox"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 When(/^I enter some code into the optional field$/) do
-  code_voucher = '266233'
-  product_cart_voucher_input_path = csspathes.product_cart_voucher_input_path
-  product_cart_voucher_button_path = csspathes.product_cart_voucher_button_path
-  
-  element = page.find(product_cart_voucher_input_path)
-  element.set(code_voucher)
-  puts "entered #{code_voucher}"
-  element = page.find(product_cart_voucher_button_path)
-  element.click
-  puts "clicked add-button"
+  if (ENV['SHOP'] == 'chefworks')
+    code_voucher = '266233'
+    product_cart_voucher_input_path = csspathes.product_cart_voucher_input_path
+    product_cart_voucher_button_path = csspathes.product_cart_voucher_button_path
+    
+    element = page.find(product_cart_voucher_input_path)
+    element.set(code_voucher)
+    puts "entered #{code_voucher}"
+    element = page.find(product_cart_voucher_button_path)
+    element.click
+    puts "clicked add-button"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 Then(/^there should be the voucher-action in the url$/) do
-  url_voucher = 'addVoucher/sTargetAction'
-  
-  expect(current_url).to include(url_voucher),
-     "expected that the current url (current_url includes #{url_voucher}, but it isn't so"
+  if (ENV['SHOP'] == 'chefworks')
+    url_voucher = 'addVoucher/sTargetAction'
+    
+    expect(current_url).to include(url_voucher),
+       "expected that the current url (current_url includes #{url_voucher}, but it isn't so"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 When(/^I enter a sku into the integrated field on the cart$/) do
-  sku = article.sku
-  product_cart_order_sku_path = csspathes.product_cart_order_sku_path
-  product_cart_order_button_path = csspathes.product_cart_order_button_path
-  
-  element = page.find(product_cart_order_sku_path)
-  element.set(sku)
-  element = page.find(product_cart_order_button_path)
-  element.click
+  if (ENV['SHOP'] == 'chefworks')
+    sku = article.sku
+    product_cart_order_sku_path = csspathes.product_cart_order_sku_path
+    product_cart_order_button_path = csspathes.product_cart_order_button_path
+    
+    page.find(product_cart_order_sku_path)
+    element = page.find(product_cart_order_sku_path)
+    element.set(sku)
+    element = page.find(product_cart_order_button_path)
+    element.click
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 Then(/^I will see the add-action in the url$/) do
-  url_add_comand = settings.url_add_comand
-  
-  expect(current_url).to include(url_add_comand),
-     "expected that the current_url contains #{url_add_comand} but it is only #{current_url}"
+  if (ENV['SHOP'] == 'chefworks')
+    url_add_comand = settings.url_add_comand
+    
+    expect(current_url).to include(url_add_comand),
+       "expected that the current_url contains #{url_add_comand} but it is only #{current_url}"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end

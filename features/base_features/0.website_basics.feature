@@ -23,7 +23,6 @@ Feature: website_basics
         Then I should see all basic elements
 
     @export
-    @chefworks
     @pulsiva
     @vega
     @hotelwaesche
@@ -37,7 +36,6 @@ Feature: website_basics
 		Then I should be on a subcategorysite
 
     @export
-    @chefworks
     @pulsiva
     @vega
     @hotelwaesche

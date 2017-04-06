@@ -123,46 +123,62 @@ Then(/^there should see the icon to compare$/) do
 end
 
 When(/^I click the button to rate for the article$/) do
-  #define path of symbol
-  product_page_rate_ratebutton_path = csspathes.product_page_rate_ratebutton_path
-  #expect csspath of symbol
-  element = page.find(product_page_rate_ratebutton_path)
-  element.click
+  if (ENV['SHOP'] == 'chefworks')
+    #define path of symbol
+    product_page_rate_ratebutton_path = csspathes.product_page_rate_ratebutton_path
+    #expect csspath of symbol
+    element = page.find(product_page_rate_ratebutton_path)
+    element.click
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 When(/^I change in the tab to the rating$/) do
-  #define path of tab
-  product_page_rate_tab_menu = csspathes.product_page_rate_tab_menu
-  product_page_rate_tab_rateflag = csspathes.product_page_rate_tab_rateflag
-  #click tab for rate
-  element = page.find(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
-  element.click
+  if (ENV['SHOP'] == 'chefworks')
+    #define path of tab
+    product_page_rate_tab_menu = csspathes.product_page_rate_tab_menu
+    product_page_rate_tab_rateflag = csspathes.product_page_rate_tab_rateflag
+    #click tab for rate
+    element = page.find(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
+    element.click
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 Then(/^there should be a form for rating the article$/) do
-  #define path of form
-  product_page_rate_form = csspathes.product_page_rate_form
-  #find path
-  page.find(product_page_rate_form)
-  puts "found form to rate"
+  if (ENV['SHOP'] == 'chefworks')
+    #define path of form
+    product_page_rate_form = csspathes.product_page_rate_form
+    #find path
+    page.find(product_page_rate_form)
+    puts "found form to rate"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 When(/^I change to the tab of the customer viewed articles$/) do
-  #define path of tab
-  product_page_viewed_tab_menu = csspathes.product_page_viewed_tab_menu
-  #  when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--cross-selling.js--tab-menu > ul > a:nth-child(3)'
-  #  else                                                                      'div.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
-  #end
-  
-  product_page_viewed_tab_otherCustomer = csspathes.product_page_viewed_tab_otherCustomer
-  #click tab for rate
-  element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
-  element.click
+  if (ENV['SHOP'] == 'chefworks')
+    #define path 
+    product_page_viewed_tab_menu = csspathes.product_page_viewed_tab_menu
+    product_page_viewed_tab_otherCustomer = csspathes.product_page_viewed_tab_otherCustomer
+    #click tab for rate
+    element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
+    element.click
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
 
 Then(/^there should be a box of some articles$/) do
-  product_page_suggest_container = csspathes.product_page_suggest_container
-  #find path
-  page.find(product_page_suggest_container)
-  puts "found container list"
+  if (ENV['SHOP'] == 'chefworks')
+    product_page_suggest_container = csspathes.product_page_suggest_container
+    #find path
+    page.find(product_page_suggest_container)
+    puts "found container list"
+  else
+    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+  end
 end
