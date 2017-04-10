@@ -14,7 +14,7 @@ class Article
       when (/ch/) then 'Frottier & Bad'
     end
     @category_language_changed = case ENV['COUNTRY']
-      when (/ch/) then 'Couverts'
+      when (/ch/) then 'Linge de table'
       when (/be/) then 'Bestek'
     end
     @productnumber = case ENV['COUNTRY']
