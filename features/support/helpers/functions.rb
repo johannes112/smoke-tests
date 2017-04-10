@@ -193,3 +193,16 @@ def puts_time_elapsed
   puts ">> elapsed time -> #{minutes}:#{seconds}"
 end
 
+def write_to_existing_file(filename, content)  
+  puts "file:#{@file}"
+  @file = File.new("#{filename}.txt")
+  puts "file:#{@file}"
+  #puts "existing_error:#{§existing_error}"
+  #open("#{filename}.txt", 'a') { |f|
+  #  f.puts content
+  #  @test_lap = 1
+  #  puts "Test_lap:#{@test_lap}"
+  #}
+  
+  puts ("written to existing #{filename}.txt")
+end

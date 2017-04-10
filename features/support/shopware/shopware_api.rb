@@ -77,6 +77,8 @@ class ShopwareApi
     rescue Net::OpenTimeout, Net::ReadTimeout => e
       puts "Timeout"
       puts "#{e}"
+      puts "----> exit"
+      exit
     rescue SocketError => e
       puts "incorrect URL"
       puts "#{e}"
