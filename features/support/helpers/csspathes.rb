@@ -212,7 +212,7 @@ class Csspathes
     end
     @search_results_path = case 
       when ENV['SHOP'].match(/Hchefworks/) && ENV['COUNTRY'].match(/de/) then      ''
-      when ENV['SHOP'].match(/hpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  ''
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.content-main--inner > .content--wrapper'
       when ENV['SHOP'].match(/hexport/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   ''
       when ENV['SHOP'].match(/hw_jobeline/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.content-main--inner > .content--wrapper'
       else '.search--results'

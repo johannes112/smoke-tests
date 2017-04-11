@@ -89,7 +89,7 @@ When(/^I click the link of help$/) do
   element.click
   puts "--> clicked on #{link_text}"
   #check for success
-  check_for_url_change(start_url)
+  #check_for_url_change(start_url)
 end
 
 Then(/^I should see a contextmenu$/) do
