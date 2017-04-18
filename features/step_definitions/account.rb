@@ -136,8 +136,17 @@ When(/^I create a new account with my data$/) do
   #click button
   page.find(account_registerform_button_path).click
   puts "clicked button to continue"
+  
   #check for success
-  page.find(navigation_hover_breadcrumb_path)
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+    if (page.has_css?(account_registerform_vallidation_modal_path))
+      puts "There is a popup!"
+    else
+      page.find(navigation_hover_breadcrumb_path)
+    end
+  end
+  
 end
 
 Then(/^I should be on my account page$/) do
@@ -280,8 +289,15 @@ end
 Then(/^I should see a confirmation hint$/) do
   account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
   
-  page.find(account_userinfo_success_hint_path)
-  puts "> found info for success"
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+    if (page.has_css?(account_registerform_vallidation_modal_path))
+      puts "There is a popup!"
+    else
+      page.find(account_userinfo_success_hint_path)
+      puts "> found info for success"
+    end
+  end
   
   expect(page).to have_css(account_userinfo_success_hint_path), 
      "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"

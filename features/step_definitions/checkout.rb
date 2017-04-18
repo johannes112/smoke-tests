@@ -138,9 +138,16 @@ When(/^I register a new account with my data$/) do
   element = page.find(account_registerform_button_path)
   element.click
   puts "clicked button to continue"
-  #!page.find(checkout_registerform_skip_path)
-  expect(page).to have_no_css(checkout_registerform_skip_path)
-     "expected not find '#{checkout_registerform_skip_path}' but it is here"
+  
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+    if (page.has_css?(account_registerform_vallidation_modal_path))
+      puts "There is a popup!"
+    else
+      expect(page).to have_no_css(checkout_registerform_skip_path)
+        "expected not find '#{checkout_registerform_skip_path}' but it is here"
+    end
+  end
 end
 
 
