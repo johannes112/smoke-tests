@@ -64,15 +64,31 @@ Then(/^I should see my product on the results of my search$/) do
   #variables:path
   search_results_path = csspathes.search_results_path
   
-  #actions
-  page.find(search_results_path)
-  element = page.find(search_results_path)
-  element_text = element.text.upcase
-  
-  #expections
-  expect(element_text).to include(search_name),
-      "expected to find #{name} in my results but just #{element_text} appears"
-  puts "found '#{name}'"
+  if ENV['SHOP'] == 'v_jobeline'
+    if (page.has_no_css?(search_results_path))
+      step('I should be on the detailsite of the related product')
+    else
+      #actions
+      page.find(search_results_path)
+      element = page.find(search_results_path)
+      element_text = element.text.upcase
+      
+      #expections
+      expect(element_text).to include(search_name),
+          "expected to find #{name} in my results but just #{element_text} appears"
+      puts "found '#{name}'"
+    end
+  else
+    #actions
+    page.find(search_results_path)
+    element = page.find(search_results_path)
+    element_text = element.text.upcase
+    
+    #expections
+    expect(element_text).to include(search_name),
+        "expected to find #{name} in my results but just #{element_text} appears"
+    puts "found '#{name}'"
+  end
 end
 
 When(/^I am searching for products by entering the productname in the searchfield$/) do
