@@ -5,9 +5,9 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then nil
-      when 'at' then nil
-      when 'ch' then nil
+      when 'de' then '493444604'
+      when 'at' then '495078701'
+      when 'ch' then '211609597'
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
