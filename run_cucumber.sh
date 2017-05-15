@@ -38,7 +38,7 @@ features_folder_path="features/base_features/"
 step_definitions_folder_path="features/step_definitions/"
 default_support_folder_path="features/support/"
 support_folder_path="features/extension/shops/$SHOP/"
-generate_error_file="-f rerun -o rerun.txt"
+#generate_error_file="-f rerun -o rerun.txt"
 generate_output="-f html -o output/html_reports.html -f pretty -f json -o output/output.json" 
 folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $support_folder_path -r $default_support_folder_path"
 #to set value of tag
@@ -65,13 +65,17 @@ else
   else
     echo "TAG:"$TAG
     echo ""
+    if [[ "$TAG" == "@checkout" ]]; then
+      echo "do not generate output"
+      generate_output="" 
+    fi
+    tag=" -t ${TAG}"
+    config_base="$generate_output $folder_structure_config $tag"
   fi
 fi
-tag=" -t ${TAG}"
 
-config_base="$generate_error_file $generate_output $folder_structure_config $tag"
-config_base_rerun="$folder_structure_config"
-cucumber $config_base 
+
+cucumber $config_base
 #to run the failed scenarios ust rerun.txt as source
 #tag=" @rerun.txt"
 #config_rerun="$config_base_rerun $tag"
