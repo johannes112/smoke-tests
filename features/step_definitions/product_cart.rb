@@ -16,6 +16,7 @@ Given(/^the product cart contains an article$/) do
   
   # with ajax'
   product_cart_article_path = csspathes.product_cart_article_path
+  page.find(product_cart_article_path)
   
   #check if cart contains an article
   expect(page).to have_css(product_cart_article_path),
