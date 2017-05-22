@@ -414,11 +414,8 @@ class Csspathes
       else '.column--actions > form > button'
     end
     @product_cart_article_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel.has--border'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.panel.has--border'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel.has--border'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div.panel.has--border'
-      else 'div.panel.has--border'
+      else '.row--product'
     end
     @product_cart_article_details_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.table--tr.block-group.row--product.is--last-row'
