@@ -62,6 +62,7 @@ def form_set_value(page_part, var_text, variable, var_path)
       puts "- set #{var_text}: #{variable}"
     rescue Exception => e
       puts "\033[35m#{e.message}\033[0m\n"
+      puts "status:failed"
     end
   else
     puts "#{var_text} is not available in #{ENV['COUNTRY']}"
@@ -91,6 +92,7 @@ def catch_error(&block)
   rescue Capybara::ElementNotFound => e
     write_to_file("ElementNotFound_src", page.html)
     puts "\033[35m#{e.inspect}\033[0m\n"
+    puts "status:failed"
   end
 end
 
@@ -196,7 +198,7 @@ end
 def write_to_existing_file(filename, content)  
   puts "file:#{@file}"
   @file = File.new("#{filename}.txt")
-  puts "file:#{@file}"
+  puts ("status:pending")
   #puts "existing_error:#{§existing_error}"
   #open("#{filename}.txt", 'a') { |f|
   #  f.puts content

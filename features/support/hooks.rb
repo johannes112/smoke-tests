@@ -3,6 +3,7 @@ Before('@ignore') do | s |
   @skipped_scenarios = Array.new
   @skipped_scenarios << s.name
   output_string = "skipped_scenarios Tests: #{ENV['SHOP']} #{ENV['COUNTRY']} --> #{@skipped_scenarios}"
+  puts "status: pending"
   write_to_existing_file("skipped_scenarios", output_string)
   s.skip_invoke!
   
