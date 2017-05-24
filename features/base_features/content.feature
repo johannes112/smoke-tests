@@ -1,4 +1,10 @@
 # language: en
+@chefworks
+@pulsiva
+@vega
+@hotelwaesche
+@hw_jobeline
+@v_jobeline
 @quickies
 @content
 Feature: content
