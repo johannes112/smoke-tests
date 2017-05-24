@@ -28,7 +28,7 @@ class Article
       when (/es/) then 'Ropa de cocina'
     end
     @category_language_changed = case ENV['COUNTRY']
-      when (/ch/) then 'Kochbekleidung'
+      when (/ch/) then 'Tenues de cuisine'
       when (/fr/) then 'Tenues de cuisine'
     end
     @productnumber = case ENV['COUNTRY']
