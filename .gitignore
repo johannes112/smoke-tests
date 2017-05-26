@@ -7,3 +7,4 @@ webdriver*
 demo_mechanize.rb
 failed_scenarios.txt
 output/html_reports.html
+skipped_scenarios.txt
