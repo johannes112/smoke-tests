@@ -9,7 +9,7 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 20
+  default_timeout 3#20
 
   #file
   #out_file = File.new("httpactions.log", "w")
@@ -33,7 +33,7 @@ class ShopwareApi
   def readData(url)
     options = getDigest()
     sleep 2
-    response_data = handle_timeouts{self.class.get(url, options)}
+    response_data = self.class.get(url, options)#handle_timeouts{self.class.get(url, options)}
     if response_data.success?
       response_data
     else
@@ -46,7 +46,7 @@ class ShopwareApi
   end
   #update
   def updateData(url, options)
-    response_data = handle_timeouts{self.class.put(url, options)}
+    response_data = self.class.put(url, options)#handle_timeouts{self.class.put(url, options)}
     if !response_data.success?
       puts ">> ERROR: update failed"
       puts "options: #{options}"
@@ -58,7 +58,7 @@ class ShopwareApi
   def deleteData(url)
     options = getDigest()
     sleep 2
-    response_data = handle_timeouts{self.class.delete(url, options)}
+    response_data = self.class.delete(url, options)#handle_timeouts{self.class.delete(url, options)}
     if response_data.success?
       response_data
     else
