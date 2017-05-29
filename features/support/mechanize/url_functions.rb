@@ -28,8 +28,10 @@ class UrlFunctions
       header_value_x_made_on = page[header_x_made_on]
       push_to_server_arr(header_value_x_made_on)
     else
-      puts "There is no key '#{header_x_made_on}"
+      puts "I am on #{page.href}"
+      puts "There is no key '#{header_x_made_on}'"
       puts "Header all keys: #{page.header.keys}"
+      header_value_x_made_on = 0
     end
     return header_value_x_made_on
   end
