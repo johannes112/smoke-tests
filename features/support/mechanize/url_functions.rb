@@ -30,7 +30,6 @@ class UrlFunctions
     else
       puts "There is no key '#{header_x_made_on}'"
       puts "Header all keys: #{page.header.keys}"
-      header_value_x_made_on = 0
     end
     return header_value_x_made_on
   end
@@ -40,7 +39,7 @@ class UrlFunctions
     @stack_of_server ||= Array.new
     stack_of_server = @stack_of_server
     #end if all servers are found
-    if (stack_of_server.size==5)
+    if (stack_of_server.size==4)
       @full_stack_of_server = true
     else
       #to prevent duplicate values
@@ -52,45 +51,95 @@ class UrlFunctions
 
   #check headers of linked pages
   def check_all_server
-    server_status = "server_status_default"
-    visited_server = Array.new
-    unique_visited_server = Array.new
-    value_false = 'false'
+    # server_status = "server_status_default"
+    # visited_server = Array.new
+    # unique_visited_server = Array.new
+    # value_false = 'false'
     #looking for all servers and check their status
     #looking for all elements 'a' with https part in url
     url_links = @page.links_with(:href => /https/)
-    #puts "url_links:#{url_links}"
+    check_state_of_server(url_links)
+    #puts "@page.methods:#{@page.methods}"
+    #url_links = @page.at_css('.navigation--list-wrapper')
+    #puts "url_links.class:#{url_links.class}"
+  end
+  
+  def check_if_element_is_part_of_navi(page)
+    #puts page
+    #puts page.inspect
+    p#uts page.class
+    #nav_elements = page.search('.navigation--list-wrapper').at('a')['href']
+    #puts "p:#{nav_elements}"
+    #page.each do |ele|
+    #  puts ele.sssearch('.navigation--list-wrapper').at('a')['href']
+    #end
+    #page.search('//a').class # => Nokogiri::XML::NodeSet
+    #noko_page = page.search("//a").map(&:class)
+    #puts page.class
+    #puts noko_page.inspect
+    #doc.search("//a").map(&:class)
+    #nokogiri_navi_path = page.search('.navigation--list-wrapper').each { |link| puts "nokogiri_links: #{link["href"]}" }
+    #puts nokogiri_navi_path.class
+    #nokogiri_navi_links = nokogiri_navi_path.map { |link| puts "nokogiri_links: #{link["href"]}" }
+    #puts "Noko: #{nokogiri_navi_path}"
+    #puts "NEW"
+    #array_links = page.links_with(:href => /https/)
+    #links_of_navi = url_links.search('.navigation--list-wrapper')
+    #puts "links_of_navi:#{links_of_navi.class}"
+    #array_links.each do |link|
+      #puts "link:#{link.uri}"
+    #   puts "link.methods:#{link.methods}"
+    #end
+    #puts "NOKO:#{noko_page.at('a')['.navigation--list-wrapper']}"
+  end
+  
+  def check_state_of_server(url_links)
+    #looking for all servers and check their status
+    server_status ||= "server_status_default"
+    visited_server ||= Array.new
+    unique_visited_server ||= Array.new
+    value_false ||= 'false'
     counter = 0
     #follow each link
     url_links.each do |link|
+      # if @full_stack_of_server == true then break the loop
       if (@full_stack_of_server == false)
-        #visit destination
-        visited_server << visit_url(link)
-        # check if server have a bad(false) status
-        if (visited_server[counter].include?(value_false))
-          #to prevent duplicate content (server) in array
-          unless unique_visited_server.include?(visited_server[counter])
-            unique_visited_server = unique_visited_server.push(visited_server[counter]) 
+        # with help of regex look for the main part and the sub-part of the url to avoid the visit of an external url
+        url_main = @page.uri.to_s
+        url_path = link.uri.to_s
+        if (url_path.include? url_main)
+          #visit destination
+          visited_server << visit_url(link)
+          # check if server have a bad(false) status
+          if (visited_server[counter].include?(value_false))
+            #to prevent duplicate content (server) in array
+            unless unique_visited_server.include?(visited_server[counter])
+              unique_visited_server = unique_visited_server.push(visited_server[counter]) 
+            end
+            #failed_servers = "Error on #{visited_server[counter]}\n"
+            failed_servers = "Error on #{unique_visited_server}\n"
+            server_status << failed_servers
+          else
+            unless unique_visited_server.include?(visited_server[counter])
+              unique_visited_server = unique_visited_server << (visited_server[counter]) 
+            end
+            server_status = "#{unique_visited_server.size}"# webservers are working
           end
-          #failed_servers = "Error on #{visited_server[counter]}\n"
-          failed_servers = "Error on #{unique_visited_server}\n"
-          server_status << failed_servers
-        else
-          unless unique_visited_server.include?(visited_server[counter])
-            unique_visited_server = unique_visited_server << (visited_server[counter]) 
-          end
-          server_status = "#{unique_visited_server.size}"# webservers are working
+          counter = counter + 1
         end
-        counter = counter + 1
       end
     end
+    # puts "checked urls: #{counter}"
+    # if (server_status.to_i == 4)
+    #   puts "checked all servers"
+    # else
+    #   puts "Have not checked all servers"
+    # end
     return server_status
   end
   
-  
   #links
   def get_all_links()
-    puts 'All links: '
     # looking for all elements 'a' with https part in url
     url_links = @page.links_with(:href => /https/)
     counter = 0
@@ -112,19 +161,19 @@ class UrlFunctions
       puts "#{e.message}"
       linked_page = @page
     end
-      #initialize vars for return
-      server_status_delivery = true
-      determined_server = "determined_server_default"
-      server_status = "server_status_default"
-      check_for_key = "page-wrap"
-      determined_server = check_header(linked_page)
-      # check if page contain something
-      if linked_page.body.include?(check_for_key)
-        server_status_delivery = get_status(linked_page)
-      else 
-        raise ("page of #{linked_page.uri.to_s} do not include #{check_for_key}")
-      end
-      server_status = "#{determined_server}:#{server_status_delivery}"  
+    #initialize vars for return
+    server_status_delivery = true
+    determined_server = "determined_server_default"
+    server_status = "server_status_default"
+    check_for_key = "page-wrap"
+    determined_server = check_header(linked_page)
+    # check if page contain something
+    if linked_page.body.include?(check_for_key)
+      server_status_delivery = get_status(linked_page)
+    else 
+      raise ("page of #{linked_page.uri.to_s} do not include #{check_for_key}")
+    end
+    server_status = "#{determined_server}:#{server_status_delivery}"
     return server_status
   end
   
