@@ -80,10 +80,12 @@ class Csspathes
     @navigation_menu_title_path = case
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.page-wrap > nav'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.page-wrap > nav'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then  'nav.navigation-main > div > div > ul > li.navigation--entry > ul > li:first-child > a'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  'nav.navigation-main > div > div > ul > li.navigation--entry > ul > li:first-child > a'
       else '.advanced-menu > div.menu--container.menu--is-active > div.button-container > a' 
     end
     @navigation_hovermenu_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then       'nav > div > div > ul > li:nth-child(1) > ul > li:first-child'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     'nav > div > div > ul > li:nth-child(1) > ul > li:first-child'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then     '.advanced-menu'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.advanced-menu'
@@ -219,6 +221,7 @@ class Csspathes
     end
     #direct_ordering
     @direct_ordering_button_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.header--directOrder'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.topbar-directOrder'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.header--directOrder'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'not available'
@@ -254,7 +257,7 @@ class Csspathes
     end
     #product_page.rb
     @product_page_buybutton_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.detail--block--value > form > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'form > div > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'form > div > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.product--buybox.block > div > form > div > button'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'div > div > button'
@@ -294,6 +297,7 @@ class Csspathes
       else 'div.product--buybox.block' 
     end
     @product_page_productinfo_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.content.product--details > div.tab-menu--cross-selling.position--upper.js--tab-menu > div > div > div.tab--header'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.tab-menu--product.js--tab-menu'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tab-menu--product'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu'
@@ -407,6 +411,7 @@ class Csspathes
       else '.table--content > a.content--title'
     end
     @product_cart_remove_article_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.row--product.is--last-row > div.panel--td.column--actions > form > button > i'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'div.panel--td.column--actions > a'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.column--actions > form > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
@@ -439,6 +444,7 @@ class Csspathes
       else 'div.panel--td.column--quantity.is--align-right'
     end
     @product_cart_button_checkout_path = case
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.btn--checkout-proceed'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.btn--checkout-proceed'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
@@ -1009,6 +1015,7 @@ class Csspathes
     end
     @checkout_orderbutton_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.actions--bottom > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.tos--top > div > div > button'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.actions--bottom > div > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tos--top > div > div > button'
       else '.tos--top > div > div > button'
@@ -1028,6 +1035,7 @@ class Csspathes
       else '#sAGB'
     end
     @checkout_panel_path = case 
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.panel.has--border > div > .table--header'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.panel.has--border'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'section > div > div > div > div > div.panel.has--border'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.panel.has--border'
