@@ -39,7 +39,7 @@ class UrlFunctions
     @stack_of_server ||= Array.new
     stack_of_server = @stack_of_server
     #end if all servers are found
-    if (stack_of_server.size==4)
+    if (stack_of_server.size==3)
       @full_stack_of_server = true
     else
       #to prevent duplicate values
