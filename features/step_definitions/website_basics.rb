@@ -7,6 +7,7 @@ Then(/^I should see all basic elements$/) do
   homepage_content_body_main_path = csspathes.homepage_content_body_main_path
   homepage_content_footer_path = csspathes.homepage_content_footer_path
 
+  page.find(homepage_content_searchfield_path)
   #check for existing css-elements
   expect(page).to have_css(homepage_content_header_path),
       "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
