@@ -8,6 +8,7 @@ When(/^I navigate to an category by the hovermenu$/) do
   navigation_hovermenu_path = csspathes.navigation_hovermenu_path
   
   #main-topmenu
+  page.find(navigation_menu_path)
   navigationmenu = page.find(navigation_menu_path, match: :first)
   navigationmenu.hover
   puts "-> hovered menu"
@@ -36,6 +37,7 @@ When(/^I navigate to a subcategory by the menu$/) do
   element.hover
   puts "hovered navi"
   #click headline of category
+  page.find(navigation_menu_title_path)
   element = page.find(navigation_menu_title_path)
   element.click
   puts "-> clicked category on menu"
