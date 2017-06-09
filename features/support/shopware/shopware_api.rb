@@ -85,7 +85,7 @@ class ShopwareApi
       if times_retried < max_retries
         times_retried += 1
         puts "Failed to <do the thing>, retry #{times_retried}/#{max_retries}"
-        sleep 9
+        sleep rand (1..8) 
         retry
       end
     end

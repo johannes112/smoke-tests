@@ -96,6 +96,7 @@ def catch_error(&block)
   end
 end
 
+
 def set_user_and_pass_string(user, pass)
   htaccess_part = "#{user}:#{pass}@"
   return htaccess_part

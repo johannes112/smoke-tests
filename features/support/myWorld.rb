@@ -1,4 +1,5 @@
 module MyWorld
+  require 'logger'
   
   def url_functions
     @url_functions ||=UrlFunctions.new
@@ -26,6 +27,10 @@ module MyWorld
   
   def user
     @user ||= User.new
+  end
+  
+  def logger
+    @logger ||= Logger.new(STDOUT)
   end
   
   def printValue(sym, value)
