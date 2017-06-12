@@ -76,7 +76,7 @@ class Article
       when (/fr/) then 'Assiette plate Reims'
       when (/no/) then 'Mattallerken Base'
       when (/se/) then 'Mattallrik Base'
-      when (/nl/) then 'Vlak bord Base'
+      when (/nl/) then 'PLAT bord Base'
       when (/be/) then 'Assiette plate Reims'
       when (/es/) then 'Plato llano Base'
     end

@@ -125,7 +125,7 @@ When(/^I activate the function for voucher$/) do
     element.click
     puts "clicked checkbox"
   else
-    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+    puts "On the shop of #{ENV['SHOP']} this feature does not exist"
   end
 end
 
@@ -169,7 +169,7 @@ When(/^I enter a sku into the integrated field on the cart$/) do
     element = page.find(product_cart_order_button_path)
     element.click
   else
-    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+    puts "On the shop of #{ENV['SHOP']} this feature does not exist"
   end
 end
 
