@@ -1,5 +1,5 @@
 class Csspathes
-  attr_accessor :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_body_main_path, :homepage_content_footer_path,
+  attr_accessor :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_body_main_path, :homepage_content_footer_path, :homepage_content_logo_path, 
   #navigation
   :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path, 
   #links
@@ -48,6 +48,10 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '.navigation--entry.entry--search'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.navigation--entry.entry--search'
       else '.navigation--entry.entry--search'
+    end
+    @homepage_content_logo_path = case 
+      when ENV['SHOP'].match(/something/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  ''
+      else '.logo-main'
     end
     @homepage_content_navi_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.navigation-main'

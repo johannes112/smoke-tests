@@ -181,15 +181,12 @@ When(/^I login with valid informations$/) do
   url_account = settings.urlHttps+'account'
   
   #path
-  search_searchbutton_icon_path = csspathes.search_searchbutton_icon_path
+  homepage_content_logo_path = csspathes.homepage_content_logo_path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
-
-  # ensure that page is loaded completely
-  page.find(search_searchbutton_icon_path)
   
   if (current_url == url_account) 
     puts "> ok, I am on #{current_url}"
@@ -198,8 +195,12 @@ When(/^I login with valid informations$/) do
     visit(url_account)
     #hide
     block_css('.navigation-main')
+    # ensure that page is loaded completely
+    page.find(homepage_content_logo_path)
   end
   if (page.has_no_css?(account_accountpage_welcome_path))
+    # ensure that page is loaded completely
+    page.find(homepage_content_logo_path)
     #search for field, so you know that we are on the right site
     page.find('.register--existing-customer')
     login_form = page.find('.register--existing-customer')
