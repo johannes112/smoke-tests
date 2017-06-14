@@ -51,6 +51,10 @@ echo "Number of args:"$#
 if [[ $# -lt 11 ]]; then
   echo "Wrong number of arguments!"
 else
+  if [[ "$BROWSER" == "iPhone" ]]; then
+      echo "Mobile"
+      TAG="$TAG""_mobile"
+    fi
   if [[ -z "${TAG}" ]]; then
     echo "NO TAG!"
     if [[ "$SHOP" == "export" ]]; then
@@ -73,7 +77,6 @@ else
     config_base="$generate_output $folder_structure_config $tag"
   fi
 fi
-
 
 cucumber $config_base
 #to run the failed scenarios ust rerun.txt as source
