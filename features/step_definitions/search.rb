@@ -51,7 +51,7 @@ When(/^I am searching for a product by entering the productnumber in the searchf
   search_searchbutton.click()
   puts "clicked button of search"
   #check for success
-  check_for_url_change(start_url)
+  #check_for_url_change(start_url)
 end
 
 Then(/^I should see my product on the results of my search$/) do
@@ -103,7 +103,7 @@ When(/^I am searching for products by entering the productname in the searchfiel
   search_searchbutton.click()
   puts "clicked button of search"
   #check for success
-  check_for_url_change(start_url)
+  #check_for_url_change(start_url)
 end
 
 

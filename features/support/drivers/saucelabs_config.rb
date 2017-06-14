@@ -47,7 +47,7 @@ if ENV['DRIVER'] == 'saucelabs'
           :appiumVersion => '1.6.5',
           :deviceName => "iPad Simulator",
           :deviceOrientation => "portrait",
-          :platformVersion => '10.3',
+          :platformVersion => '9.3',
           :platformName => 'iOS',
           :browserName => 'Safari',
           :name => "iPad Simulator"

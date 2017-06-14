@@ -15,8 +15,8 @@ Before do
   if !$start 
     #puts "Time: #{@start_time.hour.to_s}:#{@start_time.min.to_s}:#{@start_time.sec.to_s}"
     # if browser is for a desktop then resize dimension otherwise some windows could distrub the flow
-    if ENV['BROWSER'] == 'iPhone'
-      puts "Test mobile iPhone"
+    if ENV['BROWSER'] == 'iPad' || ENV['BROWSER'] == 'iPhone'
+      puts "Test mobile. So i can not set any size of browser"
     else
       page.driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1920, 1200)#1280x1024
     end
