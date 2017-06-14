@@ -34,20 +34,20 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     elsif ENV['BROWSER'] == 'iPhone'
         @caps = {
-          :appiumVersion => '1.6.0', #'1.5.3',
-          :deviceName => 'iPhone 7 Simulator',#"iPhone Simulator",
+          :appiumVersion => "1.6.5", #'1.5.3',
+          :deviceName => 'iPhone 6 Simulator',#"iPhone Simulator",
           :deviceOrientation => "portrait",
-          :platformVersion => '10.0',#'9.2',
+          :platformVersion => "9.3",#9'3 is the newest Version which works
           :platformName => 'iOS',
           :browserName => 'Safari',
           :name => "iPhone Simulator"
         }
     elsif ENV['BROWSER'] == 'iPad'
         @caps = {
-          :appiumVersion => '1.5.3',
+          :appiumVersion => '1.6.5',
           :deviceName => "iPad Simulator",
           :deviceOrientation => "portrait",
-          :platformVersion => '9.2',
+          :platformVersion => '10.3',
           :platformName => 'iOS',
           :browserName => 'Safari',
           :name => "iPad Simulator"
