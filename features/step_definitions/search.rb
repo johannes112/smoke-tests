@@ -13,8 +13,6 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   search_searchbutton = find(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
-  #check for success
-  check_for_url_change(start_url)
 end
 
 Then(/^I should be on the detailsite of the related product$/) do
@@ -109,13 +107,11 @@ When(/^I am searching for products by entering the productname in the searchfiel
 end
 
 
-When(/^I click on the button of searching$/) do
+When(/^I touch the button of searching$/) do
   start_url = current_url
   search_searchbutton_mobile_path = ".entry--search > a > i"
   
   page.find(search_searchbutton_mobile_path)
   element = page.find(search_searchbutton_mobile_path)
   element.click
-  #check for success
-  check_for_url_change(start_url)
 end
