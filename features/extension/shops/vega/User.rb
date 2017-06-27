@@ -17,17 +17,17 @@ class User
       when 'es' then nil
     end
     @eMail = case ENV['COUNTRY']
-      when 'de' then 'testmail_vde@test.de'
-      when 'at' then 'testmail_vat@test.de'
-      when 'ch' then 'testmail_vch@test.de'
-      when 'it' then 'testmail_vit@test.de'
-      when 'fr' then 'testmail_vfr@test.de'
-      when 'no' then 'testmail_vno@test.de'
-      when 'se' then 'testmail_vse@test.de'
-      when 'nl' then 'testmail_vnl@test.de'
-      when 'be' then 'testmail_vbe@test.de'
-      when 'es' then 'testmail_ves@test.de'
-      when 'lu' then 'testmail_vlu@test.de'
+      when 'de' then 'testmail_vde@emmos.de'
+      when 'at' then 'testmail_vat@emmos.de'
+      when 'ch' then 'testmail_vch@emmos.de'
+      when 'it' then 'testmail_vit@emmos.de'
+      when 'fr' then 'testmail_vfr@emmos.de'
+      when 'no' then 'testmail_vno@emmos.de'
+      when 'se' then 'testmail_vse@emmos.de'
+      when 'nl' then 'testmail_vnl@emmos.de'
+      when 'be' then 'testmail_vbe@emmos.de'
+      when 'es' then 'testmail_ves@emmos.de'
+      when 'lu' then 'testmail_vlu@emmos.de'
     end
     @eMail_sec = case ENV['COUNTRY']
       when 'de' then 'testmail@vde.de'

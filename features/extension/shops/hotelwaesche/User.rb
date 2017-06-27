@@ -10,9 +10,9 @@ class User
       when 'ch' then '211608920'
     end
     @eMail = case ENV['COUNTRY']
-      when 'de' then 'testmail_hde@test.de'
-      when 'at' then 'testmail_hat@test.de'
-      when 'ch' then 'testmail_hch@test.de'
+      when 'de' then 'testmail_hde@emmos.de'
+      when 'at' then 'testmail_hat@emmos.de'
+      when 'ch' then 'testmail_hch@emmos.de'
     end
     @eMail_sec = case ENV['COUNTRY']
       when 'de' then 'testmail@hde.de'
