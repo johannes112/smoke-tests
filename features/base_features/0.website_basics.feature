@@ -70,7 +70,7 @@ Feature: website_basics
     @menu_mobile
     @standardmenu_mobile    
     Scenario: use menu for navigating
-		When I navigate to a subcategory by the menu
+		When I navigate to a subcategory by touching the burgermenu
 		Then I should be on a subcategorysite
     
     

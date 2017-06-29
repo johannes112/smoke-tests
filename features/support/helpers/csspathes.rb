@@ -118,7 +118,7 @@ class Csspathes
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.sidebar--categories-navigation > ul > div.sidebar--navigation-screen > ul > div.sidebar--navigation-screen > li:first-child > a'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then          '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
-      else '.navigation--entry.is--active.has--sub-categories.has--sub-children > ul > li:first-child > a '#
+      else 'git '#
     end
     @navigation_sidebar_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.sidebar--categories-navigation'
