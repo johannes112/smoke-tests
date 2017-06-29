@@ -9,22 +9,58 @@ Then(/^I should see all basic elements$/) do
 
   page.find(homepage_content_searchfield_path)
   #check for existing css-elements
+  page.find(homepage_content_header_path)
   expect(page).to have_css(homepage_content_header_path),
       "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
   puts "header exists"
   expect(page).to have_css(homepage_content_searchfield_path),
       "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
   puts "searchfield exists"  
+  page.find(homepage_content_navi_path)
   expect(page).to have_css(homepage_content_navi_path),
       "Expect to find the css-element (#{homepage_content_navi_path}) but the page with the url #{current_url} has no such element"
   puts "navi exists"
+  page.find(homepage_content_body_main_path)
   expect(page).to have_css(homepage_content_body_main_path),
       "Expect to find the css-element (#{homepage_content_body_main_path}) but the page with the url #{current_url} has no such element"
   puts "inner body exists"
+  page.find(homepage_content_footer_path)
   expect(page).to have_css(homepage_content_footer_path),
       "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
   puts "footer exists"
 end
+
+Then(/^I should see all basic mobile elements$/) do
+  #define path of header
+  homepage_content_header_path = csspathes.homepage_content_header_path
+  homepage_content_searchfield_path = csspathes.homepage_content_searchfield_path
+  homepage_content_navi_burger_path = csspathes.homepage_content_navi_burger_path
+  homepage_content_body_main_path = csspathes.homepage_content_body_main_path
+  homepage_content_footer_path = csspathes.homepage_content_footer_path
+
+  page.find(homepage_content_searchfield_path)
+  #check for existing css-elements
+  page.find(homepage_content_header_path)
+  expect(page).to have_css(homepage_content_header_path),
+      "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
+  puts "header exists"
+  expect(page).to have_css(homepage_content_searchfield_path),
+      "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
+  puts "searchfield exists"  
+  page.find(homepage_content_navi_burger_path)
+  expect(page).to have_css(homepage_content_navi_burger_path),
+      "Expect to find the css-element (#{homepage_content_navi_burger_path}) but the page with the url #{current_url} has no such element"
+  puts "navi exists"
+  page.find(homepage_content_body_main_path)
+  expect(page).to have_css(homepage_content_body_main_path),
+      "Expect to find the css-element (#{homepage_content_body_main_path}) but the page with the url #{current_url} has no such element"
+  puts "inner body exists"
+  page.find(homepage_content_footer_path)
+  expect(page).to have_css(homepage_content_footer_path),
+      "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
+  puts "footer exists"
+end
+
 
 When(/^I change the language by clicking the button$/) do
   #var

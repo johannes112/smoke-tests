@@ -21,6 +21,18 @@ Feature: website_basics
     @website_elements
     Scenario: check for elements
         Then I should see all basic elements
+        
+    @export_mobile
+    @chefworks_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @website_elements_mobile
+    Scenario: check for elements
+        Then I should see all basic mobile elements
+        
 
     @export
     @pulsiva
@@ -44,6 +56,19 @@ Feature: website_basics
     @navigation
     @menu
     @standardmenu    
+    Scenario: use menu for navigating
+		When I navigate to a subcategory by the menu
+		Then I should be on a subcategorysite
+    
+    @export_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @navigation_mobile
+    @menu_mobile
+    @standardmenu_mobile    
     Scenario: use menu for navigating
 		When I navigate to a subcategory by the menu
 		Then I should be on a subcategorysite

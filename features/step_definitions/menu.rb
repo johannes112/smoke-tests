@@ -50,6 +50,39 @@ When(/^I navigate to a subcategory by the menu$/) do
   check_for_url_change(start_url)
 end
 
+When(/^I navigate to a subcategory by touching the burgermenu$/) do
+  #var
+  start_url = current_url
+  
+  #set pathes
+  # burgermenu
+  # category
+  # subcategory
+  navigation_path = csspathes.navigation_path
+  navigation_menu_path = csspathes.navigation_menu_path
+  navigation_menu_title_path = csspathes.navigation_menu_title_path
+  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+  navigation_sidebar_sub_path = csspathes.navigation_sidebar_sub_path
+  
+  #main-menu
+  page.find(navigation_path)
+  element = page.find(navigation_menu_path)
+  element.hover
+  puts "hovered navi"
+  #click headline of category
+  page.find(navigation_menu_title_path)
+  element = page.find(navigation_menu_title_path)
+  element.click
+  puts "-> clicked category on menu"
+  #sidebar-menu
+  page.find(navigation_hover_breadcrumb_path)
+  element = page.find(navigation_sidebar_sub_path)
+  puts "> found sidebar"
+  
+  #check for success
+  check_for_url_change(start_url)
+end
+
 Then(/^I should be on a subcategorysite$/) do
   #1 - pathe
   navigation_sidebar_sub_path = csspathes.navigation_sidebar_sub_path
