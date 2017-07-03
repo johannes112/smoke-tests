@@ -48,7 +48,6 @@ Feature: website_basics
 		Then I should be on a subcategorysite
 
     @export
-    @pulsiva
     @vega
     @hotelwaesche
     @hw_jobeline
