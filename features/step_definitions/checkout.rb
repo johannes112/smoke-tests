@@ -169,7 +169,7 @@ When(/^I send my order$/) do
 end
 
 And(/^I activate the box of agb$/) do
-  if ENV['SHOP'] == 'pulsiva'
+  if ENV['SHOP'] == 'pulsiva' && ENV['SYSTEM'] == 'live'
     checkout_agb_box_path = csspathes.checkout_agb_box_path 
     
     element = page.find(checkout_agb_box_path)
