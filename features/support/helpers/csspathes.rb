@@ -469,8 +469,6 @@ class Csspathes
       else 'div.panel--td.column--quantity.is--align-right'
     end
     @product_cart_button_checkout_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.btn--checkout-proceed'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.btn--checkout-proceed'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
