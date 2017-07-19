@@ -82,10 +82,11 @@ module ShopwareFunctions
     url_request = "#{url_data}/#{filter}"
     #puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
-    if response_data_customer['data'][0] != nil
+    # looking for customerid and kind of account-registration (accountMode) because an buyer with no useraccount can not log in 
+    if response_data_customer['data'][0] != nil &&  response_data_customer['data'][0]["accountMode"] == 0
       customer_id_by_mail = response_data_customer['data'][0][key]
     else
-      customer_id_by_mail = "no customer with #{mailaddress} exists"
+      customer_id_by_mail = "no customer with #{mailaddress} and password exists"
     end
     return customer_id_by_mail
   end
