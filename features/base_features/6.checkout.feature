@@ -26,7 +26,8 @@ Feature: checkout
 	  
   @checkout_with
 	Scenario: checkout with existing account
-	  Given I already created an user account
+	  Given no user account with my email exists
+	  And I already created an user account
 	  Given I am logged in
 	  When I add an article to my cart by ajax
 	  Then the product cart contains an article
