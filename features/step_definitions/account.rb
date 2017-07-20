@@ -91,8 +91,23 @@ When(/^I create a new account with my data$/) do
   page.find(account_registerform_path)
   registerform = page.find(account_registerform_path)
   
+  page.find(account_registerform_path)
+  account_registerform = page.find(account_registerform_path)
   #set value for prefix
-  registerform.find(account_registerform_prefix_path).select(prefix)
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    if (page.has_no_css?(account_registerform_prefix_path))
+      puts "There is no prefix"
+    else
+      element = page.find(account_registerform_prefix_path)
+      element.select(prefix)
+      printValue(:prefix, binding)
+    end
+  else
+    element = page.find(account_registerform_prefix_path)
+    element.select(prefix)
+    printValue(:prefix, binding)
+  end 
+  
   #set value for firstname
   form_set_value(registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname

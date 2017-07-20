@@ -90,10 +90,19 @@ When(/^I register a new account with my data$/) do
   page.find(account_registerform_path)
   account_registerform = page.find(account_registerform_path)
   #set value for prefix
-  
-  element = page.find(account_registerform_prefix_path)
-  element.select(prefix)
-  printValue(:prefix, binding)
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    if (page.has_no_css?(account_registerform_prefix_path))
+      puts "There is no prefix"
+    else
+      element = page.find(account_registerform_prefix_path)
+      element.select(prefix)
+      printValue(:prefix, binding)
+    end
+  else
+    element = page.find(account_registerform_prefix_path)
+    element.select(prefix)
+    printValue(:prefix, binding)
+  end 
   #set value for firstname
   form_set_value(account_registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
@@ -169,7 +178,7 @@ When(/^I send my order$/) do
 end
 
 And(/^I activate the box of agb$/) do
-  if ENV['SHOP'] == 'pulsiva' && ENV['SYSTEM'] == 'live'
+  if ENV['SHOP'] == 'chefworks'
     checkout_agb_box_path = csspathes.checkout_agb_box_path 
     
     element = page.find(checkout_agb_box_path)
@@ -240,10 +249,20 @@ When(/^I fill out a register form and send it without creating an account$/) do
   page.find(checkout_registerform_path)
   checkout_registerform = page.find(checkout_registerform_path)
   #set value for prefix
-  
-  element = page.find(checkout_registerform_prefix_path)
-  element.select(prefix)
-  printValue(:prefix, binding)
+  #set value for prefix
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    if (page.has_no_css?(checkout_registerform_prefix_path))
+      puts "There is no prefix"
+    else
+      element = page.find(checkout_registerform_prefix_path)
+      element.select(prefix)
+      printValue(:prefix, binding)
+    end
+  else
+    element = page.find(checkout_registerform_prefix_path)
+    element.select(prefix)
+    printValue(:prefix, binding)
+  end 
   #set value for firstname
   form_set_value(checkout_registerform, "firstname", firstname, checkout_registerform_firstname_path)
   #set value for lastname
