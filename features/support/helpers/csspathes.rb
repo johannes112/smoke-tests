@@ -105,6 +105,10 @@ class Csspathes
     end
     @navigation_hovermenu_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then       '.menu--container.menu--is-active > div.content--wrapper.has--content > div > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then       '.menu--list-item'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then       '.menu--list-item'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/nl/) then       '.menu--list-item'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then       '.menu--list-item'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '.advanced-menu'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then     '.advanced-menu'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.advanced-menu'
@@ -437,6 +441,9 @@ class Csspathes
     end
     @product_cart_remove_article_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.row--product.is--last-row > div.panel--td.column--actions > form > button > i'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then   '.column--actions > a > i'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then   '.column--actions > a > i'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then   '.column--actions > a > i'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.column--actions > form > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.column--actions > form > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
@@ -1038,7 +1045,9 @@ class Csspathes
     end
     @checkout_orderbutton_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.actions--bottom > div > button'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.tos--top > div > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then   '.actions--bottom > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then   '.actions--bottom > div > button'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then   '.actions--bottom > div > button'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tos--top > div > div > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tos--top > div > div > button'
       else '.tos--top > div > div > button'
