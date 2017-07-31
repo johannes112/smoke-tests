@@ -66,7 +66,7 @@ Feature: account
   @export
   @chefworks
 	@pulsiva
-	@vegaaa
+	@vega
 	@hotelwaesche
 	@hw_jobeline
 	@v_jobeline

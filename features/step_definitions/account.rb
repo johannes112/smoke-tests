@@ -326,11 +326,15 @@ end
 Then(/^I should see an alert for creating a new address$/) do
   account_userinfo_success_hint_path = ".alert--content"
   
-  page.find(account_userinfo_success_hint_path)
-  puts "> found info for success"
-  
-  expect(page).to have_css(account_userinfo_success_hint_path), 
-     "Expect to find an hint for success, but account_userinfo_success_hint_path is not available"
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    puts "in #{ENV['COUNTRY']} there is no prefix"
+  else
+    page.find(account_userinfo_success_hint_path)
+    puts "> found info for success"
+    
+    expect(page).to have_css(account_userinfo_success_hint_path), 
+       "Expect to find an hint for success, but account_userinfo_success_hint_path is not available"
+  end
 end
 
 When(/^I delete the account with the modified mailadress$/) do
@@ -403,13 +407,17 @@ When(/^I change prefix of my address for invoice$/) do
   account_invoiceadresschange_form_prefix_path = csspathes.account_invoiceadresschange_form_prefix_path
   account_invoiceadresschange_button_path = csspathes.account_invoiceadresschange_button_path
   
-  #set value for prefix
-  page.find(account_invoiceadresschange_form_prefix_path)
-  form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
-  page.find(account_invoiceadresschange_button_path).click
-  puts "--> click change-button"
-  #check for success
-  check_for_url_change(start_url)
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    puts "in #{ENV['COUNTRY']} there is no prefix"
+  else
+    #set value for prefix
+    page.find(account_invoiceadresschange_form_prefix_path)
+    form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
+    page.find(account_invoiceadresschange_button_path).click
+    puts "--> click change-button"
+    #check for success
+    check_for_url_change(start_url)
+  end
 end
 
 When(/^I add a new address$/) do
@@ -489,17 +497,20 @@ When(/^I change prefix of my address for delivery$/) do
   start_url = current_url
   prefix = user.prefix_sec
   
-  account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
-  account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
-
-  #set value for prefix
-  page.find(account_deliveradresschange_form_prefix_path)
-  form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
-  puts "--> select prefix:#{prefix}"
-  page.find(account_deliveradresschange_button_path).click
-  puts "--> click change-button"
-  #check for success
-  check_for_url_change(start_url)
+  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    puts "in #{ENV['COUNTRY']} there is no prefix"
+  else
+    account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
+    account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
+    #set value for prefix
+    page.find(account_deliveradresschange_form_prefix_path)
+    form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
+    puts "--> select prefix:#{prefix}"
+    page.find(account_deliveradresschange_button_path).click
+    puts "--> click change-button"
+    #check for success
+    check_for_url_change(start_url)
+  end
 end
 
 #it is not working on pulsiva
@@ -509,7 +520,7 @@ When(/^I activate the newsletterbox$/) do
     page.find(account_newsletter_box_path).click
     puts "--> activate the checkbox"
   else
-    puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
+    puts "On the shop of #{ENV['SHOP']} this feature does not exist"
   end
 end
 
