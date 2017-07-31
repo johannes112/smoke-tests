@@ -326,7 +326,6 @@ class Csspathes
       else 'div.product--buybox.block' 
     end
     @product_page_productinfo_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.content.product--details > div.tab-menu--cross-selling.position--upper.js--tab-menu > div > div > div.tab--header'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tab-menu--product'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tab-menu--product'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu'
