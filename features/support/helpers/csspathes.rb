@@ -440,9 +440,6 @@ class Csspathes
     end
     @product_cart_remove_article_path = case
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/it/) then   '.row--product.is--last-row > div.panel--td.column--actions > form > button > i'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then   '.column--actions > a > i'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then   '.column--actions > a > i'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then   '.column--actions > a > i'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.column--actions > form > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.column--actions > form > button'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
