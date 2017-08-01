@@ -89,6 +89,35 @@ module MyWorld
      "Expect url of category but it was still #{end_url}"
   end
   
+  # content
+  def get_canonical(header)
+    # get canonical url
+    canonical_url = "xxx"
+    canonical_link = header.all('link', :visible => false).map { |a| a['rel'] 
+    if a['rel']=="canonical" 
+      canonical_url = "#{a['href']}"
+    end }
+    return canonical_url
+  end
+  
+  # get all alternate
+  def get_alternate(header)
+    alternate_url = "xxx"
+    alternate_array = Array.new
+    alternate_link = header.all('link', :visible => false).map { |a| 
+    if a['rel']=="alternate"
+      alternate_url = "#{a['href']}"
+    end }
+    alternate_array = alternate_link.compact
+    return alternate_array
+  end
+
+  # get shopurl out of canonical
+  def get_mainpart_of_url(whole_url)
+    url = URI.parse(whole_url)
+    return url.host
+  end
+
 end
 
 
