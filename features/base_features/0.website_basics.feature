@@ -141,6 +141,13 @@ Feature: website_basics
     Scenario: find all links
         When I check all links for correct country
 
+    @pulsiva
+    @vega
+    @v_jobeline
+    @navigation
+    @href_checker
+    Scenario: find all hrefs
+        When I check all hreflang for correct url
 
     @pulsiva
     @vega
