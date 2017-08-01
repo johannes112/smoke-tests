@@ -125,3 +125,20 @@ When(/^I check all links for correct country$/) do
     puts "I am on the #{ENV['SYSTEM']} and there the links are not uptodate"
   end
 end
+
+When(/^I check all hreflang for correct url$/) do
+  # get header of page
+  header = page.find('head', :visible => false)
+  header.all('link', :visible => false).map { |a| a['rel'] }
+
+  url_canonical = get_canonical(header)
+  url_alternate = get_alternate(header)  
+  
+  # only get main url without shortcuts of countries
+  shop_url = get_mainpart_of_url(url_canonical)
+  !shop_url.to_s
+  # check alternates including canonical
+  puts "Compare: #{url_alternate} <-> #{shop_url}}"
+  look_for_string_in_array(url_alternate, shop_url.to_s)
+  
+end
