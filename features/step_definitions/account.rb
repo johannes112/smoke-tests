@@ -308,19 +308,19 @@ end
 
 Then(/^I should see a confirmation hint$/) do
   account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
-  
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
-    if (page.has_css?(account_registerform_vallidation_modal_path))
-      puts "There is a popup!"
-    else
-      page.find(account_userinfo_success_hint_path)
-      puts "> found info for success"
-    end
+    puts "There is no hint"
+  else
+      account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+      if (page.has_css?(account_registerform_vallidation_modal_path))
+        puts "There is a popup!"
+      else
+        page.find(account_userinfo_success_hint_path)
+        puts "> found info for success"
+        expect(page).to have_css(account_userinfo_success_hint_path), 
+              "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
+      end
   end
-  
-  expect(page).to have_css(account_userinfo_success_hint_path), 
-     "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
 end
 
 Then(/^I should see an alert for creating a new address$/) do
