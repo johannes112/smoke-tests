@@ -1041,9 +1041,9 @@ class Csspathes
     end
     @checkout_orderbutton_path = case 
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.actions--bottom > div > button'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then   '.actions--bottom > div > button'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then   '.actions--bottom > div > button'
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then   '.actions--bottom > div > button'
+      #when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/no/) then   '.actions--bottom > div > button'
+      #when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/se/) then   '.actions--bottom > div > button'
+      #when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/es/) then   '.actions--bottom > div > button'
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.tos--top > div > div > button'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.tos--top > div > div > button'
       else '.tos--top > div > div > button'
