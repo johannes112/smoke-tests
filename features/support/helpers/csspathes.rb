@@ -3,7 +3,7 @@ class Csspathes
   #navigation
   :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path, 
   #links
-  :links_account_path, :links_registration_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path,
+  :links_account_path, :links_account_icon_path, :links_registration_path, :links_accordion_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path,
   #search
   :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, :search_results_path, :search_searchbutton_icon_path,
   #direct_ordering
@@ -157,12 +157,20 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.entry--account'
       else '.entry--account' 
     end
+    @links_account_icon_path = case 
+      when ENV['SHOP'].match(/xxx/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--account'
+      else '.entry--account > a > i' 
+    end
     @links_registration_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '#registration'
       when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then     '#registration'  
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/de/) then      '#registration'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
       else '#registration' 
+    end
+    @links_accordion_path = case 
+      when ENV['SHOP'].match(/xxx/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--cart'
+      else 'body > div.page-wrap > section > div > div > div.accordion-container > div.css-accordion-head.btn > label >.css-accordion-head-content'
     end
     @links_notes_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then  '.entry--wishlist > a'

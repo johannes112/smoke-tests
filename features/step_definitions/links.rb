@@ -11,6 +11,16 @@ When(/^I click the link to my account$/) do
   check_for_url_change(start_url)
 end
 
+When(/^I touch the link to my account$/) do
+  #pathes
+  links_account_icon_path = csspathes.links_account_icon_path  
+  #click button
+  element = page.find(links_account_icon_path)
+  element.click
+
+end
+
+
 Then(/^I should be on the accountpage$/) do
   #var
   url_part = 'account'
@@ -18,6 +28,17 @@ Then(/^I should be on the accountpage$/) do
   links_registration_path = csspathes.links_registration_path  
   #wait for path
   page.find(links_registration_path)
+  expect(current_url).to include(url_part),
+    "Expected url contains #{url_part} but i am on #{current_url}"
+end
+
+Then(/^I should be on the accountpage for mobile$/) do
+  #var
+  url_part = 'account'
+  #pathes
+  links_accordion_path = csspathes.links_registration_path  
+  #wait for path
+  page.find(links_accordion_path)
   expect(current_url).to include(url_part),
     "Expected url contains #{url_part} but i am on #{current_url}"
 end

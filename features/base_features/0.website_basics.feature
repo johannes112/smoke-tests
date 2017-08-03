@@ -85,6 +85,19 @@ Feature: website_basics
     Scenario: navigate to account
         When I click the link to my account
         Then I should be on the accountpage
+
+    @chefworks_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @navigation_mobile
+    @links_a_mobile
+    Scenario: navigate to account
+        When I touch the link to my account
+        Then I should be on the accountpage for mobile 
+        
         
     @export
     @chefworks
@@ -99,6 +112,19 @@ Feature: website_basics
         When I click the link to my notes
         Then I should be on the notepage
         
+    @chefworks_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @navigation_mobile
+    @links_mobile
+    Scenario: navigate to note
+        When I click the link to my notes
+        Then I should be on the notepage
+        
+
     @export
     @chefworks
     @pulsiva
@@ -113,6 +139,21 @@ Feature: website_basics
         Then I should see the sidebar of the product cart
         When I click the link to edit the cart
         Then I should be on the page of the productcart
+        
+    @chefworks_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @navigation_mobile
+    @links_mobile    
+    Scenario: activate the cart
+        When I click the link of the cart
+        Then I should see the sidebar of the product cart
+        When I click the link to edit the cart
+        Then I should be on the page of the productcart
+
 
     @export
     @chefworks
@@ -127,7 +168,19 @@ Feature: website_basics
         When I click the link of help
         Then I should see a contextmenu
 
-
+    @chefworks_mobile
+    @pulsiva_mobile
+    @vega_mobile
+    @hotelwaesche_mobile
+    @hw_jobeline_mobile
+    @v_jobeline_mobile
+    @navigation_mobile
+    @links_mobile
+    Scenario: navigate to help
+        When I click the link of help
+        Then I should see a contextmenu
+        
+    
     @export
     @chefworks
     @pulsiva
