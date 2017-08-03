@@ -56,10 +56,16 @@ if ENV['DRIVER'] == 'saucelabs'
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']}"
     @caps[:autoAcceptAlerts] = true
     @caps[:unexpectedAlertBehaviour] = "dismiss"
-    @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
-    @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 1:30min
-    @caps[:idleTimeout] = '30' #max Duration between any command
-    
+    if (ENV['SYSTEM'] == 'int')
+      puts "Timeout is set to 120"
+      @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
+      @caps[:commandTimeout] = '180' #max Duration of seleniumcommand is set to 1:30min
+      @caps[:idleTimeout] = '120' #max Duration between any command
+    else
+      @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
+      @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 1:30min
+      @caps[:idleTimeout] = '30' #max Duration between any command
+    end    
     puts "Enviroment:#{@caps}"
     
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
@@ -67,7 +73,11 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    Capybara.default_max_wait_time = 30
+    if (ENV['SYSTEM'] == 'int')
+      puts "Timeout of capybara is set to 120"
+      Capybara.default_max_wait_time = 120
+    else
+      Capybara.default_max_wait_time = 30
+    end
   end
-  
 end
