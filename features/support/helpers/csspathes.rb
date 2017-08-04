@@ -384,11 +384,11 @@ class Csspathes
       else '.cart--add-to-list'
     end
     @product_page_heart_badge_path = case
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.js--modal.sizing--content'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.js--modal.sizing--content'
+      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.js--modal'
+      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '.js--modal'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then 'li.navigation--entry.entry--notepad > a > span'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    'li.navigation--entry.entry--notepad > a > span'
-      else '.js--modal.sizing--content'
+      else '.js--modal'
     end
     @product_page_comparebutton_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.action--compare'

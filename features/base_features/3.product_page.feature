@@ -20,6 +20,16 @@ Feature: product page
 	  When I press the remember-button
 	  Then there should see a hint
 	
+	@vega_mobile
+  @hotelwaesche_mobile
+  @hw_jobeline_mobile
+  @v_jobeline_mobile
+  @product_page_note_mobile
+  @product_page_mobile
+  Scenario: notice an article
+	  When I press the remember-button
+	  Then there should see a hint
+	
 	@vega
 	@hotelwaesche
 	@hw_jobeline
@@ -41,12 +51,31 @@ Feature: product page
     When I add an article to the product cart by clicking the button to push it into the cart
     Then I should see the cart on the right of the site
 
+  @vega_mobile
+  @hotelwaesche_mobile
+  @hw_jobeline_mobile
+  @v_jobeline_mobile
+  @product_page_add_mobile
+  @product_page_mobile
+  Scenario: add an article to the product cart by clicking button 
+    When I add an article to the product cart by clicking the button to push it into the cart
+    Then I should see the cart on the right of the site
+
   @vega
   @hotelwaesche
   @hw_jobeline
   @v_jobeline
   @export
   @product_page_data
+  Scenario: display products with data
+	  Then I should see all necessary elememts for getting more informations about this article
+
+  @vega_mobile
+  @hotelwaesche_mobile
+  @hw_jobeline_mobile
+  @v_jobeline_mobile
+  @product_page_data_mobile
+  @product_page_mobile
   Scenario: display products with data
 	  Then I should see all necessary elememts for getting more informations about this article
 
