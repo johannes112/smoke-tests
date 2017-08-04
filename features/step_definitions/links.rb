@@ -55,6 +55,14 @@ When(/^I click the link to my notes$/) do
   check_for_url_change(start_url)
 end
 
+When(/^I touch the link to my notes$/) do
+  #pathes
+  links_notes_path = csspathes.links_notes_path  
+  #click button
+  element = page.find(links_notes_path)
+  element.click
+end
+
 Then(/^I should be on the notepage$/) do
   #var
   url_part = 'note'
@@ -64,6 +72,13 @@ Then(/^I should be on the notepage$/) do
   page.find(links_notes_path)
   expect(current_url).to include(url_part),
     "Expected to be at #{url_part} but i am on #{current_url}"
+end
+
+Then(/^I should be on the notepage of mobile$/) do
+  #pathes
+  links_notes_path = csspathes.links_notes_path
+  #wait for path
+  page.find(links_notes_path)
 end
 
 When(/^I click the link of the cart$/) do
@@ -118,4 +133,23 @@ Then(/^I should see a contextmenu$/) do
   links_context_path = csspathes.links_context_path
   #wait for path
   page.find(links_context_path)
+end
+
+When(/^I touch the link for infos of the company$/) do
+  links_about_path = csspathes.links_about_path
+  links_imprint_path = csspathes.links_imprint_path
+  #click about
+  page.find(links_about_path)
+  about = page.find(links_about_path)
+  about.click
+  #click imprint
+  page.find(links_imprint_path)
+  element = page.find(links_imprint_path)
+  element.click
+end
+
+Then(/^I should see the infosite$/) do
+  links_info_headline = csspathes.links_info_headline
+  
+  page.find(links_info_headline)
 end

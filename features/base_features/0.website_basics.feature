@@ -93,7 +93,7 @@ Feature: website_basics
     @hw_jobeline_mobile
     @v_jobeline_mobile
     @navigation_mobile
-    @links_a_mobile
+    @links_mobile
     Scenario: navigate to account
         When I touch the link to my account
         Then I should be on the accountpage for mobile 
@@ -121,8 +121,8 @@ Feature: website_basics
     @navigation_mobile
     @links_mobile
     Scenario: navigate to note
-        When I click the link to my notes
-        Then I should be on the notepage
+        When I touch the link to my notes
+        Then I should be on the notepage of mobile
         
 
     @export
@@ -176,9 +176,9 @@ Feature: website_basics
     @v_jobeline_mobile
     @navigation_mobile
     @links_mobile
-    Scenario: navigate to help
-        When I click the link of help
-        Then I should see a contextmenu
+    Scenario: navigate to imprint
+        When I touch the link for infos of the company
+        Then I should see the infosite
         
     
     @export

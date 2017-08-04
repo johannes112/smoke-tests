@@ -3,7 +3,7 @@ class Csspathes
   #navigation
   :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path, 
   #links
-  :links_account_path, :links_account_icon_path, :links_registration_path, :links_accordion_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path,
+  :links_account_path, :links_account_icon_path, :links_registration_path, :links_accordion_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path, :links_about_path, :links_imprint_path, :links_info_headline, 
   #search
   :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, :search_results_path, :search_searchbutton_icon_path,
   #direct_ordering
@@ -225,6 +225,28 @@ class Csspathes
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then       'div.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul'
       else '.navigation--entry.is--active.has--sub-categories' 
     end
+    @links_about_path = case 
+      when ENV['SHOP'].match(/xpulsiv/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/xveg/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/xhotelwaesch/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/chefwork/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service'
+      else 'footer > div:nth-child(3) > div > div:nth-child(3) > div'
+    end
+    @links_imprint_path = case 
+      when ENV['SHOP'].match(/xpulsiv/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/xveg/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/xhotelwaesch/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/xchefwork/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service'
+      else ':nth-child(3) > nav > ul > li:nth-child(5) > a'
+    end
+    @links_info_headline = case 
+      when ENV['SHOP'].match(/xpulsiv/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
+      when ENV['SHOP'].match(/xveg/) && ENV['COUNTRY'].match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/xhotelwaesc/) && ENV['COUNTRY'].match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
+      when ENV['SHOP'].match(/xchefwor/) && ENV['COUNTRY'].match(/de/) then          'div.navigation--entry.entry--service'
+      else '.emotion--row > div > h1'
+    end
+    
     #search.rb
     @search_searchfield_path = case 
       when ENV['SHOP'].match(/Hchefworks/) && ENV['COUNTRY'].match(/de/) then      ''
