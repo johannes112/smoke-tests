@@ -73,7 +73,10 @@ end
 
 Then(/^the cart should not contain this article$/) do
   product_cart_article_path = csspathes.product_cart_article_path
+  product_cart_hint_content_path = csspathes.product_cart_hint_content_path
   
+  #wait until page is fully loaded
+  page.find(product_cart_hint_content_path)
   expect(page).to have_no_css(product_cart_article_path)
      "expected not to find css (#{product_cart_article_path}), but it is still not available"
 end
