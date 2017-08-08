@@ -45,6 +45,15 @@ Given(/^I already created an user account$/) do
   end
 end
 
+When(/^I touch the box to create an new account$/) do
+  #csspathes
+  account_registerform_accordion_new_path = "section > div > div > div.accordion-container > div.css-accordion-head.btn > label"
+  
+  page.find(account_registerform_accordion_new_path)
+  element = page.find(account_registerform_accordion_new_path)
+  element.click
+end
+
 When(/^I create a new account with my data$/) do
   #var
   prefix = user.prefix
