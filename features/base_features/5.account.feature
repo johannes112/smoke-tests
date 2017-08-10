@@ -65,6 +65,8 @@ Feature: account
   @account_login_mobile
 	Scenario: login with existing account on mobile
 		Given I already created an user account
+		When I log me out
+		And I am on the registration page
 		When I touch the box for login
 		When I login with valid informations
 		Then I should be on my account page

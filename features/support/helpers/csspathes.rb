@@ -1017,11 +1017,11 @@ class Csspathes
       else '.address--form-actions > input'
     end 
     @account_newsletter_box_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_newsletter_box_path is not available'
-      when ENV['SHOP'].match(/vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_newsletter_box_path is not available'
+      when ENV['SHOP'].match(/xxx_pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   'account_newsletter_box_path is not available'
+      when ENV['SHOP'].match(/xxx_vega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      'account_newsletter_box_path is not available'
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#newsletter'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#newsletter'
-      else 'account_newsletter_box_path is not defined' 
+      else '#newsletter' 
     end 
     @account_sidebar_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--menu > div > ul'
