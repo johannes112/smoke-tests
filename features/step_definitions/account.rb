@@ -47,7 +47,7 @@ end
 
 When(/^I touch the box to create an new account$/) do
   #csspathes
-  account_registerform_accordion_new_path = "section > div > div > div.accordion-container > div.css-accordion-head.btn > label"
+  account_registerform_accordion_new_path = csspathes.account_registerform_accordion_new_path
   
   page.find(account_registerform_accordion_new_path)
   element = page.find(account_registerform_accordion_new_path)
@@ -55,7 +55,7 @@ When(/^I touch the box to create an new account$/) do
 end
 
 When(/^I touch the box for login$/) do
-  account_registerform_accordion_login_path = ".content > div > .css-accordion-head.btn > label"
+  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
   
   page.find(account_registerform_accordion_login_path)
   element = page.find(account_registerform_accordion_login_path)
@@ -214,6 +214,8 @@ When(/^I login with valid informations$/) do
   
   #path
   homepage_content_logo_path = csspathes.homepage_content_logo_path
+  account_registerform_login_path = csspathes.account_registerform_login_path
+  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
   account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
   account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
   account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
@@ -227,7 +229,7 @@ When(/^I login with valid informations$/) do
     visit(url_account)
     #mobile 
     if (ENV['BROWSER'] == 'iPhone') 
-      if (page.has_css?(".content > div > .css-accordion-head.btn > label"))
+      if (page.has_css?(account_registerform_accordion_login_path))
         puts "I touch the box for login"
         step("I touch the box for login")
       else
@@ -244,8 +246,8 @@ When(/^I login with valid informations$/) do
     # ensure that page is loaded completely
     page.find(homepage_content_logo_path)
     #search for field, so you know that we are on the right site
-    page.find('.register--existing-customer')
-    login_form = page.find('.register--existing-customer')
+    page.find(account_registerform_login_path)
+    login_form = page.find(account_registerform_login_path)
     #set value for mail
     form_set_value(login_form, "email", email, account_loginform_emailfield_path)
     puts "-> set email"
@@ -263,8 +265,11 @@ When(/^I login with valid informations$/) do
 end
 
 Given(/^I am logged in$/) do
+  #pathes
+  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
+  
   if (ENV['BROWSER'] == 'iPhone') 
-    if (page.has_css?(".content > div > .css-accordion-head.btn > label"))
+    if (page.has_css?(account_registerform_accordion_login_path))
       puts "I touch the box for login"
       step("I touch the box for login")
     else
@@ -298,6 +303,7 @@ When(/^I change my password$/) do
   account_userinfo_passwordchange_repeatnewpassword_path = csspathes.account_userinfo_passwordchange_repeatnewpassword_path
   account_userinfo_passwordchange_button_path = csspathes.account_userinfo_passwordchange_button_path
   
+  page.find(account_userinfo_passwordchange_button_appear_path)
   element = page.find(account_userinfo_passwordchange_button_appear_path)
   element.click
   page.find(account_userinfo_passwordchange_currentpassword_path)
@@ -360,7 +366,7 @@ Then(/^I should see a confirmation hint$/) do
 end
 
 Then(/^I should see an alert for creating a new address$/) do
-  account_userinfo_success_hint_path = ".alert--content"
+  account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "in #{ENV['COUNTRY']} there is no prefix"
@@ -369,7 +375,7 @@ Then(/^I should see an alert for creating a new address$/) do
     puts "> found info for success"
     
     expect(page).to have_css(account_userinfo_success_hint_path), 
-       "Expect to find an hint for success, but account_userinfo_success_hint_path is not available"
+       "Expect to fi++nd an hint for success, but account_userinfo_success_hint_path is not available"
   end
 end
 
@@ -398,6 +404,8 @@ When(/^I modify my paymentinfo$/) do
   start_url = current_url
   account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
   account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
+
+  page.find(account_accountinfo_payment_box_path)
   account_accountinfo_payment_box = page.find(account_accountinfo_payment_box_path)
   account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path).click
   puts "--> clicked button for change of payment"
@@ -426,6 +434,7 @@ When(/^I modify my address for my bill$/) do
   #css pathes
   account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
   account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
+  page.find(account_accountinfo_billaddress_box_path)
   account_accountinfo_billaddresschange_box = page.find(account_accountinfo_billaddress_box_path)
   element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
   element.click
@@ -520,6 +529,7 @@ When(/^I modify my address for my delivery/) do
   account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
   account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
   
+  page.find(account_accountinfo_deliveraddress_box_path)
   account_accountinfo_deliveraddresschange_box = page.find(account_accountinfo_deliveraddress_box_path)
   account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path).click
   puts "--> clicked button for change the adress for delivery"
@@ -553,6 +563,7 @@ end
 When(/^I activate the newsletterbox$/) do
   #if (ENV['SHOP'] == 'chefworks')
     account_newsletter_box_path = csspathes.account_newsletter_box_path
+    page.find(account_newsletter_box_path)
     page.find(account_newsletter_box_path).click
     puts "--> activate the checkbox"
   #else
@@ -564,6 +575,7 @@ end
 When(/^I get all items of the sidebar$/) do
   account_sidebar_path = csspathes.account_sidebar_path
   
+  page.find(account_sidebar_path)
   account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
   puts "> menuitems:#{account_sidebar_menuitems.size}"
   account_sidebar_menuitems.each { 

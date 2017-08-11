@@ -14,7 +14,7 @@ class Csspathes
   :product_cart_article_path, :product_cart_hint_content_path, :product_cart_button_continue_path, :product_cart_remove_article_path, :product_cart_article_path, :product_cart_article_details_path, :product_cart_article_price_path, :product_cart_article_voucher_path, :product_cart_button_checkout_path, 
   :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path,
   #account
-  :account_registerform_path, :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, :account_registerform_taxid_path,
+  :account_registerform_path, :account_registerform_accordion_new_path, :account_registerform_accordion_login_path, :account_registerform_login_path, :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, :account_registerform_taxid_path,
   :account_registerform_taxvat_path, :account_registerform_email_path, :account_registerform_password_path, :account_registerform_phone_path, :account_registerform_company_path, :account_registerform_checkbox_company_path, :account_registerform_street_path, :account_registerform_streetnumber_path,
   :account_registerform_postcode_path, :account_registerform_city_path, :account_registerform_country_path, :account_registerform_button_path, :account_accountpage_welcome_path, :account_accountpage_info_path, :account_loginform_emailfield_path, :account_loginform_passwordfield_path, 
   :account_loginform_registerbutton_path, :account_userinfo_passwordchange_button_appear_path, :account_userinfo_passwordchange_currentpassword_path, :account_userinfo_passwordchange_newpassword_path, 
@@ -561,6 +561,27 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#registration'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#registration'
       else '#registration'
+    end 
+    @account_registerform_accordion_new_path = case 
+      when ENV['SHOP'].match(/xxxpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxvega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxchefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#registration'
+      when ENV['SHOP'].match(/xexport/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#registration'
+      else "section > div > div > div.accordion-container > div.css-accordion-head.btn > label"
+    end 
+    @account_registerform_accordion_login_path = case 
+      when ENV['SHOP'].match(/xxxpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxvega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxchefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#registration'
+      when ENV['SHOP'].match(/xexport/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#registration'
+      else ".content > div > .css-accordion-head.btn > label"
+    end 
+    @account_registerform_login_path = case 
+      when ENV['SHOP'].match(/xxxpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxvega/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '#registration'
+      when ENV['SHOP'].match(/xxxchefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#registration'
+      when ENV['SHOP'].match(/xexport/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#registration'
+      else ".register--existing-customer"
     end 
     @account_registerform_prefix_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.register--personal > div > div.register--salutation.field--select'
