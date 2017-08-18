@@ -6,5 +6,6 @@ class Jsfunctions
     
     @disableStylesheet="document.styleSheets[0].disabled = !document.styleSheets[0].disabled;"
   
+    @refreshPage="driver.navigate.refresh"    
   end
 end

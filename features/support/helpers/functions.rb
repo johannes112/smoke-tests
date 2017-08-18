@@ -25,6 +25,11 @@ def disable_css
   end
 end  
 
+def refreshPage
+  jsReload=jsfunctions.refreshPage
+  page.driver.browser.execute_script(jsReload)
+end
+
 #display:none for navigation
 def block_navi()
   #check if element is class or id

@@ -48,10 +48,17 @@ end
 When(/^I touch the box to create an new account$/) do
   #csspathes
   account_registerform_accordion_new_path = csspathes.account_registerform_accordion_new_path
+  checkout_registerform_firstname_path = csspathes.checkout_registerform_firstname_path
   
-  page.find(account_registerform_accordion_new_path)
-  element = page.find(account_registerform_accordion_new_path)
-  element.click
+  # check if path accordion is already clicked
+  if (page.has_no_css?(checkout_registerform_firstname_path))
+    puts "-> click Accordion"
+    page.find(account_registerform_accordion_new_path)
+    element = page.find(account_registerform_accordion_new_path)
+    element.click
+  else
+    puts "> Accordion is already open"
+  end
 end
 
 When(/^I touch the box for login$/) do
@@ -110,6 +117,10 @@ When(/^I create a new account with my data$/) do
   
   page.find(account_registerform_path)
   account_registerform = page.find(account_registerform_path)
+  #if mobile
+  if (ENV['BROWSER'] == 'iPhone') 
+    step("I touch the box to create an new account")
+  end
   #set value for prefix
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     if (page.has_no_css?(account_registerform_prefix_path))
@@ -176,6 +187,7 @@ When(/^I create a new account with my data$/) do
       puts "There is a popup!"
     else
       page.find(navigation_hover_breadcrumb_path)
+      puts "I am on #{current_url}"
     end
   end
   

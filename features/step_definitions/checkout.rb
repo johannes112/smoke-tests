@@ -10,7 +10,13 @@ Given(/^I am on the checkout page$/) do
     element = page.find(checkout_checkout_proceed_button_path, match: :first)
     element.click
     puts "-> set payment and shipping"
-    step("I set payment and shipping")
+    if (ENV['BROWSER'] == 'iPhone') 
+      step("I set payment")
+      step("I set shipping")
+      step("I click the button to go to the final page on mobile")
+    else
+      step("I set payment and shipping")
+    end
   end
   puts "And the checkoutpage contains all elements"
   step("the checkoutpage contains all elements")
@@ -327,8 +333,6 @@ end
 When(/^I set payment and shipping$/) do
   #css pathes
   checkout_step_payment_path = csspathes.checkout_step_payment_path
-  checkout_payment_form_path = csspathes.checkout_payment_form_path 
-  checkout_payment_options_path = csspathes.checkout_payment_options_path
   checkout_delivery_options_path = csspathes.checkout_delivery_options_path
   checkout_paymentInAdvance_radio_path = csspathes.checkout_paymentInAdvance_radio_path 
   checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
@@ -351,27 +355,12 @@ When(/^I set payment and shipping$/) do
   
   if (page.has_css?(checkout_step_payment_path)) 
     puts "I am here: #{current_url}"
-    page.find(checkout_payment_form_path)
-    
     #set payment
-    if (page.has_css?(checkout_payment_options_path))
-      element = page.find(checkout_paymentInAdvance_radio_path)
-      element.click
-      puts "-> choose payment"
-    else
-      puts "----> there are no options to choose for payment"
-    end
-    
+    step("I set payment")
     #set delivery
-    if (page.has_css?(checkout_delivery_options_path))
-      element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
-      element.click
-      puts "-> choose delivery"
-    else
-      puts "----> there are no options to choose for delivery"
-    end
+    step("I set shipping")
     
-    element = find(checkout_payment_continue_path, match: :first)
+    element = find(checkout_payment_continue_path)
     element.click
     puts "--> click button to continue"
     expect(page).to have_no_css(checkout_step_payment_path)
@@ -381,6 +370,59 @@ When(/^I set payment and shipping$/) do
   else
     puts "current_url:#{current_url}"
   end
+end
+
+When(/^I click the button to go to the final page on mobile$/) do
+  #css pathes
+  checkout_payment_continue_path = csspathes.checkout_payment_continue_path 
+  
+  page.find(checkout_payment_continue_path)
+  element = find(checkout_payment_continue_path)
+  element.click
+  puts "--> click button to continue"
+end
+
+When(/^I set payment$/) do
+  checkout_payment_form_path = csspathes.checkout_payment_form_path 
+  checkout_payment_options_path = csspathes.checkout_payment_options_path
+  checkout_paymentInAdvance_radio_path = csspathes.checkout_paymentInAdvance_radio_path 
+  
+  expect(page).not_to have_css('.js--loading-indicator')
+  
+  page.find(checkout_payment_form_path)
+  #set payment
+  if (page.has_css?(checkout_payment_options_path))
+    element = page.find(checkout_paymentInAdvance_radio_path)
+    element.click
+    puts "-> choose payment"
+  else
+    puts "----> there are no options to choose for payment"
+  end
+  expect(page).not_to have_selector(".js--loading-indicator", visible: true)
+  #expect(find(:css, checkout_paymentInAdvance_radio_path)).to be_checked
+  puts "> payment is chosen"
+end
+
+When(/^I set shipping$/) do
+  checkout_delivery_options_path = csspathes.checkout_delivery_options_path
+  checkout_payment_delivery_standard_radio_path = csspathes.checkout_payment_delivery_standard_radio_path
+  checkout_payment_form_path = csspathes.checkout_payment_form_path 
+
+  expect(page).not_to have_css('.js--loading-indicator')
+  page.find(checkout_payment_form_path)
+  if (page.has_css?(checkout_delivery_options_path))
+    #puts "if"
+    #visit(current_url)
+    page.find(checkout_delivery_options_path)
+    #page.find(checkout_payment_delivery_standard_radio_path).click  
+    element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
+    element.click
+    puts "-> choose delivery"
+  else
+    puts "----> there are no options to choose for delivery"
+  end
+  expect(page).not_to have_selector(".js--loading-indicator", visible: true)
+  puts "> shipping is chosen"
 end
 
 Then(/^Shopware should have my order$/) do
@@ -405,4 +447,3 @@ Then(/^Shopware should have my order$/) do
     #shopware.updateOrderStatusFor(key, eMail)
   end
 end
-

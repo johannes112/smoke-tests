@@ -26,7 +26,6 @@ When(/^I send my inserted data with the form$/) do
   
   #wait for ajax
   page.find(direct_ordering_form_quantity_path)
-  
   element = page.find(direct_ordering_form_button_path)
   element.click
   puts "-> clicked button"

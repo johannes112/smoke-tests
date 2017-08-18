@@ -1254,10 +1254,10 @@ class Csspathes
       else '#payment_mean5'
     end
     @checkout_payment_continue_path = case 
-      when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.table--actions.block > button'
-      when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.table--actions.block > button'
-      when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.table--actions.block > button'
-      else '.table--actions.block > button'
+      when ENV['SHOP'].match(/xpulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.table--actions.block > button'
+      when ENV['SHOP'].match(/xchefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '.table--actions.block > button'
+      when ENV['SHOP'].match(/xexport/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '.table--actions.block > button'
+      else 'div > div.confirm--actions.table--actions.block > button'
     end
     @checkout_payment_delivery_standard_radio_path = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/de/) then          ".dispatch--method > div > .radio.auto_submit"
