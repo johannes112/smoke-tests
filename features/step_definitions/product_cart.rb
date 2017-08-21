@@ -11,6 +11,8 @@ Given(/^I am on the product cart page$/) do
 end
 
 Given(/^the product cart contains an article$/) do
+  homepage_content_logo_path = csspathes.homepage_content_logo_path
+  
   puts "I am on the product cart page"
   step("I am on the product cart page")
   
@@ -19,10 +21,10 @@ Given(/^the product cart contains an article$/) do
   page.find(product_cart_article_path)
   
   #check if cart contains an article
+  page.find(homepage_content_logo_path)
   expect(page).to have_css(product_cart_article_path),
     "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
 end
-
 
 And(/^I add an article to my cart manually$/) do
   puts "I am on the product page of an article"
@@ -73,10 +75,8 @@ end
 
 Then(/^the cart should not contain this article$/) do
   product_cart_article_path = csspathes.product_cart_article_path
-  product_cart_hint_content_path = csspathes.product_cart_hint_content_path
-  
-  #wait until page is fully loaded
-  page.find(product_cart_hint_content_path)
+  #because ajax wait for element
+  sleep 3
   expect(page).to have_no_css(product_cart_article_path)
      "expected not to find css (#{product_cart_article_path}), but it is still not available"
 end
@@ -106,7 +106,7 @@ When(/^I navigate to the checkout by clicking the button which navigates to the 
   element.click
   puts "clicked button"
   #check for success
-  check_for_url_change(start_url)
+  #check_for_url_change(start_url)
 end
 
 Then(/^I should be on the checkout\-page$/) do

@@ -1,17 +1,8 @@
 #product_page
 Given(/^I am on the product page of an article$/) do
-  # differentiate between mobile and regular
-  if (ENV['BROWSER'] == 'iPhone')
-    puts "Use mobile feaatures"
-    step("I am on the website")
-    step("I touch the button of searching")
-    step("I am searching for a product by entering the sku in the searchfield")
-    step("I should be on the detailsite of the related product")
-  else
-    step("I am on the website")
-    step("I am searching for a product by entering the sku in the searchfield")#"I am searching for an product by entering the sku in the searchfield")
-    step("I should be on the detailsite of the related product")
-  end
+  step("I am on the website")
+  step("I am searching for a product by entering the sku in the searchfield")#"I am searching for an product by entering the sku in the searchfield")
+  step("I should be on the detailsite of the related product")
 end
 
 When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do

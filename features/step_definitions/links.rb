@@ -76,9 +76,9 @@ end
 
 Then(/^I should be on the notepage of mobile$/) do
   #pathes
-  links_notes_path = csspathes.links_notes_path
+  account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   #wait for path
-  page.find(links_notes_path)
+  page.find(account_accountpage_welcome_path)
 end
 
 When(/^I click the link of the cart$/) do

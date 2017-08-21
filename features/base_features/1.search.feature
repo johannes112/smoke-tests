@@ -45,6 +45,5 @@ Feature: search
     @search_sku_mobile
     Scenario: search with sku
         Given I am on the website
-        When I touch the button of searching
         When I am searching for a product by entering the sku in the searchfield
         Then I should be on the detailsite of the related product

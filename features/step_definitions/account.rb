@@ -405,8 +405,14 @@ When(/^I log me out$/) do
   #css pathes
   account_accountinfo_menucontainer_logout_link_path = csspathes.account_accountinfo_menucontainer_logout_link_path
   
-  page.find(account_accountinfo_menucontainer_logout_link_path).click
-  puts "--> logged me out"
+  if (ENV['BROWSER'] == 'iPhone')
+    puts 'With mobile device use a trick to logout because the way of the menu is too complex'
+    url = start_url + '/logout'
+    visit(url)
+  else
+    page.find(account_accountinfo_menucontainer_logout_link_path).click
+    puts "--> logged me out"
+  end
   #check for success
   ##check_for_url_change(start_url)
 end

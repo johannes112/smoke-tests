@@ -120,11 +120,11 @@ Feature: website_basics
     @v_jobeline_mobile
     @navigation_mobile
     @links_mobile
+    @note_mobile
     Scenario: navigate to note
         When I touch the link to my notes
         Then I should be on the notepage of mobile
         
-
     @export
     @chefworks
     @pulsiva
@@ -168,19 +168,6 @@ Feature: website_basics
         When I click the link of help
         Then I should see a contextmenu
 
-    @chefworks_mobile
-    @pulsiva_mobile
-    @vega_mobile
-    @hotelwaesche_mobile
-    @hw_jobeline_mobile
-    @v_jobeline_mobile
-    @navigation_mobile
-    @links_mobile
-    Scenario: navigate to imprint
-        When I touch the link for infos of the company
-        Then I should see the infosite
-        
-    
     @export
     @chefworks
     @pulsiva
