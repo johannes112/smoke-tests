@@ -32,6 +32,8 @@ And(/^the checkoutpage contains all elements/) do
   checkout_product_container_path = csspathes.checkout_product_container_path 
   checkout_orderbutton_path = csspathes.checkout_orderbutton_path 
   
+  page.find(checkout_orderbutton_path)
+  
   expect(page).to have_css(checkout_backbutton_path),
     "expected to find #{checkout_backbutton_path}, but the checkout_backbutton is still missing on the page"
   expect(page).to have_css(checkout_steps_container_path),
