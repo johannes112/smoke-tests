@@ -15,9 +15,9 @@ When(/^I touch the link to my account$/) do
   #pathes
   links_account_icon_path = csspathes.links_account_icon_path  
   #click button
+  page.find(links_account_icon_path)
   element = page.find(links_account_icon_path)
   element.click
-
 end
 
 
@@ -59,6 +59,7 @@ When(/^I touch the link to my notes$/) do
   #pathes
   links_notes_path = csspathes.links_notes_path  
   #click button
+  page.find(links_notes_path)
   element = page.find(links_notes_path)
   element.click
 end
@@ -79,6 +80,7 @@ Then(/^I should be on the notepage of mobile$/) do
   account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
   #wait for path
   page.find(account_accountpage_welcome_path)
+  #expect(page).not_to have_selector(account_accountpage_welcome_path, visible: true)
 end
 
 When(/^I click the link of the cart$/) do
