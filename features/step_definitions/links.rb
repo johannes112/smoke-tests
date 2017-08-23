@@ -110,9 +110,11 @@ When(/^I click the link to edit the cart$/) do
 end
 
 Then(/^I should be on the page of the productcart$/) do
-  url_part_cart = 'checkout/cart'
-  expect(current_url).to include(url_part_cart),
-    "Expected url contains #{url_part_cart} but i am on #{current_url}"
+  product_cart_hint_content_path = csspathes.product_cart_hint_content_path
+  #url_part_cart = 'checkout/cart'
+  #expect(current_url).to include(url_part_cart),
+  #  "Expected url contains #{url_part_cart} but i am on #{current_url}"
+  page.find(product_cart_hint_content_path)
 end
 
 
