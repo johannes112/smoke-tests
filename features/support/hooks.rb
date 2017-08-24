@@ -32,14 +32,18 @@ at_exit() do
   #Environment.debug?
 end
 
-After do |s| 
+# After do |s| 
   #puts_time_elapsed
   # Tell Cucumber to quit after this scenario is done - if it failed.
   #Cucumber.wants_to_quit = true if s.failed?
-  if s.failed?
-    @failed_scenarios = Array.new
-    @failed_scenarios << s.name
-    output_string = "Failed Tests: #{ENV['SHOP']} #{ENV['COUNTRY']} --> #{@failed_scenarios}"
-    write_to_existing_file("failed_scenarios", output_string)
-  end
-end
+  # if s.failed?
+  #   error_execution_counter = 0
+  #   @failed_scenarios = Array.new
+  #   @failed_scenarios_tags = Array.new
+  #   @failed_scenarios << s.name
+  #   @failed_scenarios_tags << s.source_tag_names.last
+  #   output_string = "Failed Tests: #{ENV['SHOP']} #{ENV['COUNTRY']} --> #{@failed_scenarios} -> #{@failed_scenarios_tags} "
+  #   write_to_existing_file("failed_scenarios", output_string)
+    #run each failed scenarios again with command rerun this is useless / dreprecated
+#   end
+# end
