@@ -38,7 +38,7 @@ features_folder_path="features/base_features/"
 step_definitions_folder_path="features/step_definitions/"
 default_support_folder_path="features/support/"
 support_folder_path="features/extension/shops/$SHOP/"
-#generate_error_file="-f rerun -o rerun.txt"
+generate_error_file="-f rerun -o rerun.txt"
 generate_output="-f html -o output/html_reports.html -f pretty -f json -o output/output.json" 
 folder_structure_config="-r $features_folder_path -r $step_definitions_folder_path -r $support_folder_path -r $default_support_folder_path"
 #to set value of tag
@@ -74,17 +74,22 @@ else
       generate_output="" 
     fi
     tag=" -t ${TAG}"
-    config_base="$generate_output $folder_structure_config $tag"
+    #config_base="$generate_output $folder_structure_config $tag"
+    config_base="$generate_error_file $generate_output $folder_structure_config $tag"
+    config_base_rerun="$generate_output $folder_structure_config"
+    
   fi
 fi
 
 cucumber $config_base
 #to run the failed scenarios ust rerun.txt as source
-#tag=" @rerun.txt"
-#config_rerun="$config_base_rerun $tag"
-#echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
-#cucumber $config_rerun
-
+if [[ "$BROWSER" == "iPhone" ]] || [[ $# == 13 ]]; then
+    echo "Mobile and RERUN"
+    tag=" @rerun.txt"
+    config_rerun="$config_base_rerun $tag"
+    echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
+    cucumber $config_rerun
+fi
 
 
 #bash run_cucumber.sh saucelabs <browser> <sauce_username> <sauce_access_key> <system> <shop> <country> @search
