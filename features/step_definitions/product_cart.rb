@@ -57,7 +57,11 @@ When(/^I click on the button to continue shopping$/) do
   element.click
   puts "--> clicked button for continue"
   #check for success
-  check_for_url_change(start_url)
+  if (ENV['BROWSER'] == 'iPhone')
+    puts "i am on mobile -> move on"
+  else
+    check_for_url_change(start_url)
+  end
 end
 
 Then(/^I will see the back on the productsite$/) do
