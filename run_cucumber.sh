@@ -74,21 +74,28 @@ else
       generate_output="" 
     fi
     tag=" -t ${TAG}"
-    #config_base="$generate_output $folder_structure_config $tag"
-    config_base="$generate_error_file $generate_output $folder_structure_config $tag"
-    config_base_rerun="$generate_output $folder_structure_config"
-    
+    #config_base= to run tests on pc once
+    config_base="$generate_output $folder_structure_config $tag"
+    #config_base_generate_rerun_with_tag= to generate a file for error-reporting
+    config_base_generate_rerun_with_tag="$generate_error_file $generate_output $folder_structure_config $tag"
+    #config_base_rerun_errors: to run failed tests of generated errorfile
+    config_base_rerun_errors="$generate_output $folder_structure_config "@rerun.txt""
   fi
 fi
 
-cucumber $config_base
-#to run the failed scenarios ust rerun.txt as source
+#only run failed scenarios on mobile again or if there is an additional arg
 if [[ "$BROWSER" == "iPhone" ]] || [[ $# == 13 ]]; then
-    echo "Mobile and RERUN"
-    tag=" @rerun.txt"
-    config_rerun="$config_base_rerun $tag"
-    echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
-    cucumber $config_rerun
+    echo ""
+    echo 'Mobile and RERUN'
+    cucumber $config_base_generate_rerun_with_tag
+    if [[ -s rerun.txt ]]; then 
+      echo "" 
+      echo "" 
+      echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
+      cucumber $config_base_rerun_errors
+    fi
+else
+    cucumber $config_base
 fi
 
 
