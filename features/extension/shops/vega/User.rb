@@ -305,7 +305,7 @@ class User
     @language_change_to = case ENV['COUNTRY']
       when 'de' then nil
       when 'at' then nil
-      when 'ch' then 'Français'
+      when 'ch' then 'Französisch'#'Français'
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
