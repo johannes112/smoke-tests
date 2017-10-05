@@ -1,7 +1,7 @@
 # language: en
 @export
 @product_cart
-Feature: account
+Feature: product_cart
 
 	As a customer,
 	I want to be able to put a product into my cart
