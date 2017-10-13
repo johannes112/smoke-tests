@@ -5,7 +5,7 @@ Given(/^I am on the website$/) do
   puts "go to #{settings.urlHttps}"
   
   #actions
-  visit(website_url)
+  visit_secure(website_url)
   
   #expections
   #expect(current_url).to eq(website_url),

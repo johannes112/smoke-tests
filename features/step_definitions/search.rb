@@ -1,5 +1,6 @@
 #search
 When(/^I am searching for a product by entering the sku in the searchfield$/) do
+  page_content = page.html
   start_url = current_url
   #variables:value
   sku = article.sku
@@ -9,8 +10,10 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
   #actions
-  find(search_searchfield_path).set(sku)
-  search_searchbutton = find(search_searchbutton_path)
+  #find(search_searchfield_path).set(sku)
+  element = find_secure(search_searchfield_path, page_content)
+  element.set(sku)
+  search_searchbutton = find_secure(search_searchbutton_path, page_content)
   search_searchbutton.click()
   puts "clicked button of search"
 end
