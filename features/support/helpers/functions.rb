@@ -47,7 +47,7 @@ end
 #display:none for given css element
 def block_css(csspath)
   #check if element is class or id
-  catch_error{page.driver.browser.execute_script("document.querySelector('"+csspath+"').style.display = 'none'")}
+  catch_error_in_block{page.driver.browser.execute_script("document.querySelector('"+csspath+"').style.display = 'none'")}
 end
 
 #select value by text on dropdown-menu
@@ -88,19 +88,22 @@ def look_for_string_in_array(array_source, string_content)
   end
 end
 
-def catch_error(&block)
+def catch_error_in_block(&block)
+  @counter_error = 0
+  puts "CATCH ERROR"
   begin
+    @counter_error++
     yield
   rescue Exception => e
     puts "catched error"
     puts "\033[35m#{e.message} (35)\033[0m\n"
   rescue Capybara::ElementNotFound => e
+    puts "counter_error:"+counter_error
     write_to_file("ElementNotFound_src", page.html)
     puts "\033[35m#{e.inspect}\033[0m\n"
     puts "status:failed"
   end
 end
-
 
 def set_user_and_pass_string(user, pass)
   htaccess_part = "#{user}:#{pass}@"
@@ -211,8 +214,20 @@ def write_to_existing_file(filename, content)
   #  @test_lap = 1
   #  puts "Test_lap:#{@test_lap}"
   #}
-  
   puts ("written to existing #{filename}.txt")
-  
+end
 
+#search in whole htmlcode for an other value similar like path
+def search_path_in_whole_html(path, html)
+  path_output = ''
+  path_searchterm = path
+  path_searchterm_identifier = path_searchterm.scan(/[#|.]/)
+  path_searchterm_without_number_and_identifier = path_searchterm.gsub(/[#|.]*[0-9]*/, "")
+  content = html
+  searchterm_in_content = content.scan(/#{path_searchterm_without_number_and_identifier}[0-9]*/)
+  searchterm_in_content.uniq!
+  path_output = "#{path_searchterm_identifier}#{searchterm_in_content}"
+  output_string = path_output.to_s.gsub(/\"/, '\'').gsub(/[\[\]]/, '').gsub(/'/, "")
+  puts "OUTPUT:#{output_string}"
+  return output_string
 end
