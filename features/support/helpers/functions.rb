@@ -90,13 +90,11 @@ end
 
 def catch_error_in_block(&block)
   @counter_error = 0
-  puts "CATCH ERROR"
   begin
     @counter_error++
     yield
   rescue Exception => e
-    puts "catched error"
-    puts "\033[35m#{e.message} (35)\033[0m\n"
+    puts "\033[35mcstch_error_in_block -> #{e.message} (35)\033[0m\n"
   rescue Capybara::ElementNotFound => e
     puts "counter_error:"+counter_error
     write_to_file("ElementNotFound_src", page.html)
