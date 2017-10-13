@@ -40,13 +40,61 @@ module MyWorld
     puts "- set #{var_name} = #{var_value.inspect}"
   end
   
+  # find: catch Errors 
   def find_secure(path, string)
+    path_to_search = path
+    find_secure_counter ||= 0
+    found = ''
     begin
-      page.find(path)
+      find_secure_counter = find_secure_counter + 1
+      found = page.find(path_to_search)
     rescue Capybara::ElementNotFound => e
+      #wrong path
+      puts "\033[35m#{e.inspect}\033[0m\n"    
       write_to_new_file("ElementNotFound_src", string)
-      puts "\033[35mfind_secure\033[0m\n"
-      puts "\033[35m#{e.inspect}\033[0m\n"
+      # search for similar path and rerun with new path given of function
+      path_to_search = search_path_in_whole_html(path, string)
+      puts "\033[35m#instead of #{path} i have to look for #{path_to_search}\033[0m\n"    
+      find_secure_counter < 3 ? retry : raise
+    rescue Net::ReadTimeout => e
+      puts "#{e.message}"
+      puts "Do it again"
+      # do it threetimes
+      sleep 1
+      find_secure_counter <= 3 ? retry : raise
+    rescue Exception => e
+      puts "#{e}"
+      puts "#{e.inspect}"
+      raise "An exception is raised"
+    end
+    return found
+  end
+    
+  # find: catch Errors 
+  def visit_secure(url)
+    visit_secure_counter = 0
+    begin
+      visit(url)
+      visit_secure_counter += 1
+      if (ENV['SYSTEM']=='live')
+        url_functions.set_url_and_get_page(url)
+      end
+    rescue Net::HTTP::Persistent::Error => e
+      puts "#{e.message}"
+      raise "Connection to #{url} failed"
+    rescue Net::HTTPGatewayTimeOut => e
+      puts "#{e.message}"
+      # do it threetimes
+      sleep 1
+      #visit_secure_counter <= 3 ? retry : raise
+    rescue Net::ReadTimeout => e
+      puts "#{e.message}"
+      sleep 1
+      #visit_secure_counter <= 3 ? retry : raise
+    rescue Exception => e
+      puts "#{e}"
+      puts "#{e.inspect}"
+      raise "An exception is raised"
     end
   end
     
