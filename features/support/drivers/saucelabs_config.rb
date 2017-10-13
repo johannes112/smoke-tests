@@ -60,14 +60,14 @@ if ENV['DRIVER'] == 'saucelabs'
       puts "Timeout is set to 120"
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '180' #max Duration of seleniumcommand is set to 1:30min
-      @caps[:idleTimeout] = '120' #max Duration between any command
+      @caps[:idleTimeout] = '120' #120max Duration between any command
     else
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '90' #max Duration of seleniumcommand is set to 1:30min
-      @caps[:idleTimeout] = '30' #max Duration between any command
+      @caps[:idleTimeout] = '100' #30max Duration between any command
     end    
     puts "Enviroment:#{@caps}"
-    
+    puts "browser:#{@caps[:browserName]}"
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
