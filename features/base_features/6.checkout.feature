@@ -1,4 +1,5 @@
 # language: en
+
 Feature: checkout
 
 	As a customer,

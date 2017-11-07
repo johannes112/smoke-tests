@@ -1,5 +1,5 @@
 # language: en
-@website_basics
+
 Feature: website_basics
 
     As a customer
@@ -10,6 +10,7 @@ Feature: website_basics
     Background:
       Given I am on the website
 
+    @website_basics
     @quickies
     @export
     @chefworks
@@ -33,7 +34,7 @@ Feature: website_basics
     Scenario: check for elements
         Then I should see all basic mobile elements
         
-
+    @website_basics
     @export
     @pulsiva
     @vega
@@ -47,6 +48,7 @@ Feature: website_basics
 		When I navigate to an category by the hovermenu
 		Then I should be on a subcategorysite
 
+    @website_basics
     @export
     @vega
     @hotelwaesche
@@ -72,7 +74,7 @@ Feature: website_basics
 		When I navigate to a subcategory by touching the burgermenu
 		Then I should be on a subcategorysite
     
-    
+    @website_basics
     @export
     @chefworks
     @pulsiva
@@ -98,7 +100,7 @@ Feature: website_basics
         When I touch the link to my account
         Then I should be on the accountpage for mobile 
         
-        
+    @website_basics        
     @export
     @chefworks
     @pulsiva
@@ -124,7 +126,8 @@ Feature: website_basics
     Scenario: navigate to note
         When I touch the link to my notes
         Then I should be on the notepage of mobile
-        
+
+    @website_basics
     @export
     @chefworks
     @pulsiva
@@ -154,7 +157,7 @@ Feature: website_basics
         When I click the link to edit the cart
         Then I should be on the page of the productcart
 
-
+    @website_basics
     @export
     @chefworks
     @pulsiva
@@ -168,6 +171,7 @@ Feature: website_basics
         When I click the link of help
         Then I should see a contextmenu
 
+    @website_basics
     @export
     @chefworks
     @pulsiva
@@ -180,6 +184,7 @@ Feature: website_basics
     Scenario: find all links
         When I check all links for correct country
 
+    @website_basics
     @pulsiva
     @vega
     @v_jobeline
@@ -188,6 +193,7 @@ Feature: website_basics
     Scenario: find all hrefs
         When I check all hreflang for correct url
 
+    @website_basics
     @pulsiva
     @vega
     @v_jobeline
