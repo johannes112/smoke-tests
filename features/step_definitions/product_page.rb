@@ -9,8 +9,8 @@ When(/^I add an article to the product cart by clicking the button to push it in
   #var
   product_page_buybutton_path = csspathes.product_page_buybutton_path
   
-  page.find(product_page_buybutton_path)
-  element = page.find(product_page_buybutton_path)
+  find_secure(product_page_buybutton_path)
+  element = find_secure(product_page_buybutton_path)
   element.click
   puts "-> clicked buy button"
 end
@@ -18,7 +18,7 @@ end
 Then(/^I should see the cart on the right of the site$/) do
   product_page_infobox_path = csspathes.product_page_infobox_path
   
-  page.find(product_page_infobox_path)
+  find_secure(product_page_infobox_path)
 end
 
 Then(/^I should see this article in the product cart$/) do
@@ -35,8 +35,8 @@ Then(/^I should see this article in the product cart$/) do
   product_cart_productinfo_path = csspathes.product_cart_productinfo_path
   
   vistit(url_cart)
-  page.find(product_cart_productinfo_path)
-  element = page.find(product_cart_productinfo_path)
+  find_secure(product_cart_productinfo_path)
+  element = find_secure(product_cart_productinfo_path)
   productinfo_txt = element.text 
   
   #check for success
@@ -66,7 +66,7 @@ Then(/^I should see all necessary elememts for getting more informations about t
   product_page_productlast_path = csspathes.product_page_productlast_path
   
   # expect name_path include name
-  productname_element = page.find(product_page_productname_path)
+  productname_element = find_secure(product_page_productname_path)
   productname_txt = productname_element.text
   productname_txt_up = productname_txt.upcase
   expect(productname_txt_up).to include(name),
@@ -92,7 +92,7 @@ When(/^I press the remember\-button$/) do
   #define path of button
   product_page_rememberbutton_path = csspathes.product_page_rememberbutton_path #pulsiva: .cart--add-to-list
   #find button
-  element = page.find(product_page_rememberbutton_path)
+  element = find_secure(product_page_rememberbutton_path)
   #click button
   element.click
 end
@@ -109,7 +109,7 @@ When(/^I press the compare\-button$/) do
   #define path of button
   product_page_comparebutton_path = csspathes.product_page_comparebutton_path
   #find button
-  element = page.find(product_page_comparebutton_path)
+  element = find_secure(product_page_comparebutton_path)
   #click button
   element.click
 end
@@ -127,7 +127,7 @@ When(/^I click the button to rate for the article$/) do
     #define path of symbol
     product_page_rate_ratebutton_path = csspathes.product_page_rate_ratebutton_path
     #expect csspath of symbol
-    element = page.find(product_page_rate_ratebutton_path)
+    element = find_secure(product_page_rate_ratebutton_path)
     element.click
   else
     puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
@@ -140,7 +140,7 @@ When(/^I change in the tab to the rating$/) do
     product_page_rate_tab_menu = csspathes.product_page_rate_tab_menu
     product_page_rate_tab_rateflag = csspathes.product_page_rate_tab_rateflag
     #click tab for rate
-    element = page.find(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
+    element = find_secure(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
     element.click
   else
     puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
@@ -152,7 +152,7 @@ Then(/^there should be a form for rating the article$/) do
     #define path of form
     product_page_rate_form = csspathes.product_page_rate_form
     #find path
-    page.find(product_page_rate_form)
+    find_secure(product_page_rate_form)
     puts "found form to rate"
   else
     puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
@@ -165,7 +165,7 @@ When(/^I change to the tab of the customer viewed articles$/) do
     product_page_viewed_tab_menu = csspathes.product_page_viewed_tab_menu
     product_page_viewed_tab_otherCustomer = csspathes.product_page_viewed_tab_otherCustomer
     #click tab for rate
-    element = page.find(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
+    element = find_secure(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
     element.click
   else
     puts "On the shop of #{ENV['SHOP']} this feaature does not exist"
@@ -176,7 +176,7 @@ Then(/^there should be a box of some articles$/) do
   if (ENV['SHOP'] == 'chefworks')
     product_page_suggest_container = csspathes.product_page_suggest_container
     #find path
-    page.find(product_page_suggest_container)
+    find_secure(product_page_suggest_container)
     puts "found container list"
   else
     puts "On the shop of #{ENV['SHOP']} this feaature does not exist"

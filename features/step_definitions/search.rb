@@ -10,7 +10,7 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
   #actions
-  #find(search_searchfield_path).set(sku)
+  #find_secure(search_searchfield_path).set(sku)
   element = find_secure(search_searchfield_path, page_content)
   element.set(sku)
   search_searchbutton = find_secure(search_searchbutton_path, page_content)
@@ -27,7 +27,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   search_product_name_path = csspathes.search_product_name_path
   
   #actions
-  element=page.find(search_product_name_path)
+  element=find_secure(search_product_name_path)
   
   #convert string into downcase for comparing
   element_text = element.text
@@ -40,7 +40,6 @@ Then(/^I should be on the detailsite of the related product$/) do
 end
 
 When(/^I am searching for a product by entering the productnumber in the searchfield$/) do
-  start_url = current_url
   #variables:values  
   productnumber = article.productnumber
   printValue(:productnumber, binding)
@@ -49,12 +48,10 @@ When(/^I am searching for a product by entering the productnumber in the searchf
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
   #actions
-  find(search_searchfield_path).set(productnumber)
-  search_searchbutton = page.find(search_searchbutton_path)
+  find_secure(search_searchfield_path).set(productnumber)
+  search_searchbutton = find_secure(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 Then(/^I should see my product on the results of my search$/) do
@@ -70,8 +67,8 @@ Then(/^I should see my product on the results of my search$/) do
       step('I should be on the detailsite of the related product')
     else
       #actions
-      page.find(search_results_path)
-      element = page.find(search_results_path)
+      find_secure(search_results_path)
+      element = find_secure(search_results_path)
       element_text = element.text.upcase
       
       #expections
@@ -81,8 +78,8 @@ Then(/^I should see my product on the results of my search$/) do
     end
   else
     #actions
-    page.find(search_results_path)
-    element = page.find(search_results_path)
+    find_secure(search_results_path)
+    element = find_secure(search_results_path)
     element_text = element.text.upcase
     
     #expections
@@ -101,8 +98,8 @@ When(/^I am searching for products by entering the productname in the searchfiel
   search_searchfield_path = csspathes.search_searchfield_path
   search_searchbutton_path = csspathes.search_searchbutton_path
   #actions
-  find(search_searchfield_path).set(name)
-  search_searchbutton = page.find(search_searchbutton_path)
+  find_secure(search_searchfield_path).set(name)
+  search_searchbutton = find_secure(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
   #check for success
@@ -114,7 +111,7 @@ When(/^I touch the button of searching$/) do
   start_url = current_url
   search_searchbutton_mobile_path = ".entry--search > a > i"
   
-  page.find(search_searchbutton_mobile_path)
-  element = page.find(search_searchbutton_mobile_path)
+  find_secure(search_searchbutton_mobile_path)
+  element = find_secure(search_searchbutton_mobile_path)
   element.click
 end

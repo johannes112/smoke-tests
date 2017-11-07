@@ -7,7 +7,7 @@ Given(/^I am on the registration page$/) do
   puts "--> go to #{url}"
   
   #got to url
-  visit(url)
+  visit_secure(url)
   block_css('.navigation-main')  
   #check for success
   #check_for_url_change(start_url)
@@ -53,8 +53,8 @@ When(/^I touch the box to create an new account$/) do
   # check if path accordion is already clicked
   if (page.has_no_css?(checkout_registerform_firstname_path))
     puts "-> click Accordion"
-    page.find(account_registerform_accordion_new_path)
-    element = page.find(account_registerform_accordion_new_path)
+    find_secure(account_registerform_accordion_new_path)
+    element = find_secure(account_registerform_accordion_new_path)
     element.click
   else
     puts "> Accordion is already open"
@@ -64,8 +64,8 @@ end
 When(/^I touch the box for login$/) do
   account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
   
-  page.find(account_registerform_accordion_login_path)
-  element = page.find(account_registerform_accordion_login_path)
+  find_secure(account_registerform_accordion_login_path)
+  element = find_secure(account_registerform_accordion_login_path)
   element.click
 end
 
@@ -112,11 +112,11 @@ When(/^I create a new account with my data$/) do
   navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
   
   #search for field, so you know that we are on the right site
-  page.find(account_registerform_path)
-  registerform = page.find(account_registerform_path)
+  find_secure(account_registerform_path)
+  registerform = find_secure(account_registerform_path)
   
-  page.find(account_registerform_path)
-  account_registerform = page.find(account_registerform_path)
+  find_secure(account_registerform_path)
+  account_registerform = find_secure(account_registerform_path)
   #if mobile
   if (ENV['BROWSER'] == 'iPhone') 
     step("I touch the box to create an new account")
@@ -126,12 +126,12 @@ When(/^I create a new account with my data$/) do
     if (page.has_no_css?(account_registerform_prefix_path))
       puts "There is no prefix"
     else
-      element = page.find(account_registerform_prefix_path)
+      element = find_secure(account_registerform_prefix_path)
       element.select(prefix)
       printValue(:prefix, binding)
     end
   else
-    element = page.find(account_registerform_prefix_path)
+    element = find_secure(account_registerform_prefix_path)
     element.select(prefix)
     printValue(:prefix, binding)
   end 
@@ -139,7 +139,7 @@ When(/^I create a new account with my data$/) do
   #set value for firstname
   form_set_value(registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
-  #registerform.find(account_registerform_lastname_path).set(lastname)
+  #registerform.find_secure(account_registerform_lastname_path).set(lastname)
   form_set_value(registerform, "lastname", lastname, account_registerform_lastname_path)
   #set value for customernumber
   form_set_value(registerform, "customernumber", customer_number, account_registerform_customernumber_path)
@@ -153,7 +153,7 @@ When(/^I create a new account with my data$/) do
   form_set_value(registerform, "company", company, account_registerform_company_path)
   #click on kind of company if the box should be visible
   if company_kind
-    element = page.find(account_registerform_checkbox_company_path)
+    element = find_secure(account_registerform_checkbox_company_path)
     element.click
     puts 'chose company'
   end
@@ -172,12 +172,12 @@ When(/^I create a new account with my data$/) do
   #set value for city
   form_set_value(registerform, "city", city, account_registerform_city_path)
   #set value for country
-  #element = page.find(account_registerform_country_path)
+  #element = find_secure(account_registerform_country_path)
   #element.select(country)
   form_set_dropdown("country", country, account_registerform_country_path)
   
   #click button
-  page.find(account_registerform_button_path).click
+  find_secure(account_registerform_button_path).click
   puts "clicked button to continue"
   
   #check for success
@@ -186,7 +186,7 @@ When(/^I create a new account with my data$/) do
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "There is a popup!"
     else
-      page.find(navigation_hover_breadcrumb_path)
+      find_secure(navigation_hover_breadcrumb_path)
       puts "I am on #{current_url}"
     end
   end
@@ -202,16 +202,16 @@ Then(/^I should be on my account page$/) do
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "found popup"
-      page.find(account_registerform_vallidation_ignore_path).click
+      find_secure(account_registerform_vallidation_ignore_path).click
       puts "--> closed popup"
     else
       puts "In #{ENV['COUNTRY']} is no popup"
     end
   end
   puts "current_url:#{current_url}"
-  page.find(account_accountpage_welcome_path)
-  #page.find(account_accountpage_info_path)
-  #element = page.find(account_accountpage_info_path)
+  find_secure(account_accountpage_welcome_path)
+  #find_secure(account_accountpage_info_path)
+  #element = find_secure(account_accountpage_info_path)
   #infobox_txt = element.text
   #expect(infobox_txt).to include(email),
   #    "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
@@ -238,7 +238,7 @@ When(/^I login with valid informations$/) do
     puts "> ok, I am on #{current_url}"
   else
     puts "--> go to #{url_account}"
-    visit(url_account)
+    visit_secure(url_account)
     #mobile 
     if (ENV['BROWSER'] == 'iPhone') 
       if (page.has_css?(account_registerform_accordion_login_path))
@@ -252,14 +252,14 @@ When(/^I login with valid informations$/) do
     #hide
     block_css('.navigation-main')
     # ensure that page is loaded completely
-    page.find(homepage_content_logo_path)
+    find_secure(homepage_content_logo_path)
   end
   if (page.has_no_css?(account_accountpage_welcome_path))
     # ensure that page is loaded completely
-    page.find(homepage_content_logo_path)
+    find_secure(homepage_content_logo_path)
     #search for field, so you know that we are on the right site
-    page.find(account_registerform_login_path)
-    login_form = page.find(account_registerform_login_path)
+    find_secure(account_registerform_login_path)
+    login_form = find_secure(account_registerform_login_path)
     #set value for mail
     form_set_value(login_form, "email", email, account_loginform_emailfield_path)
     puts "-> set email"
@@ -267,13 +267,13 @@ When(/^I login with valid informations$/) do
     form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
     puts "-> set password"
     #click button
-    page.find(account_loginform_registerbutton_path).click
+    find_secure(account_loginform_registerbutton_path).click
     puts "--> pushed button for registration"
   else
     puts "> and I am already be in my account"
   end
   #check for success
-  page.find(navigation_hover_breadcrumb_path)
+  find_secure(navigation_hover_breadcrumb_path)
 end
 
 Given(/^I am logged in$/) do
@@ -315,17 +315,17 @@ When(/^I change my password$/) do
   account_userinfo_passwordchange_repeatnewpassword_path = csspathes.account_userinfo_passwordchange_repeatnewpassword_path
   account_userinfo_passwordchange_button_path = csspathes.account_userinfo_passwordchange_button_path
   
-  page.find(account_userinfo_passwordchange_button_appear_path)
-  element = page.find(account_userinfo_passwordchange_button_appear_path)
+  find_secure(account_userinfo_passwordchange_button_appear_path)
+  element = find_secure(account_userinfo_passwordchange_button_appear_path)
   element.click
-  page.find(account_userinfo_passwordchange_currentpassword_path)
-  element = page.find(account_userinfo_passwordchange_currentpassword_path)
+  find_secure(account_userinfo_passwordchange_currentpassword_path)
+  element = find_secure(account_userinfo_passwordchange_currentpassword_path)
   element.set(password)
-  element = page.find(account_userinfo_passwordchange_newpassword_path)
+  element = find_secure(account_userinfo_passwordchange_newpassword_path)
   element.set(password_sec)
-  element = page.find(account_userinfo_passwordchange_repeatnewpassword_path)
+  element = find_secure(account_userinfo_passwordchange_repeatnewpassword_path)
   element.set(password_sec)
-  element = page.find(account_userinfo_passwordchange_button_path)
+  element = find_secure(account_userinfo_passwordchange_button_path)
   element.click
   
   puts "--> changed password"
@@ -344,16 +344,16 @@ When(/^I change my emailaddress$/) do
   account_userinfo_emailchange_repeatnewmail_path = csspathes.account_userinfo_emailchange_repeatnewmail_path
   account_userinfo_emailchange_button_path = csspathes.account_userinfo_emailchange_button_path
   
-  element = page.find(account_userinfo_emailchange_button_appear_path)
+  element = find_secure(account_userinfo_emailchange_button_appear_path)
   element.click
-  page.find(account_userinfo_emailchange_currentpassword_path)
-  element = page.find(account_userinfo_emailchange_currentpassword_path)
+  find_secure(account_userinfo_emailchange_currentpassword_path)
+  element = find_secure(account_userinfo_emailchange_currentpassword_path)
   element.set(password_sec)
-  element = page.find(account_userinfo_emailchange_newmail_path)
+  element = find_secure(account_userinfo_emailchange_newmail_path)
   element.set(eMail_sec)
-  element = page.find(account_userinfo_emailchange_repeatnewmail_path)
+  element = find_secure(account_userinfo_emailchange_repeatnewmail_path)
   element.set(eMail_sec)
-  element = page.find(account_userinfo_emailchange_button_path)
+  element = find_secure(account_userinfo_emailchange_button_path)
   element.click
   puts "--> changed emailaddress"
   #check for success
@@ -369,7 +369,7 @@ Then(/^I should see a confirmation hint$/) do
       if (page.has_css?(account_registerform_vallidation_modal_path))
         puts "There is a popup!"
       else
-        page.find(account_userinfo_success_hint_path)
+        find_secure(account_userinfo_success_hint_path)
         puts "> found info for success"
         expect(page).to have_css(account_userinfo_success_hint_path), 
               "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
@@ -383,11 +383,11 @@ Then(/^I should see an alert for creating a new address$/) do
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "in #{ENV['COUNTRY']} there is no prefix"
   else
-    page.find(account_userinfo_success_hint_path)
+    find_secure(account_userinfo_success_hint_path)
     puts "> found info for success"
     
     expect(page).to have_css(account_userinfo_success_hint_path), 
-       "Expect to fi++nd an hint for success, but account_userinfo_success_hint_path is not available"
+       "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
   end
 end
 
@@ -408,9 +408,9 @@ When(/^I log me out$/) do
   if (ENV['BROWSER'] == 'iPhone')
     puts 'With mobile device use a trick to logout because the way of the menu is too complex'
     url = start_url + '/logout'
-    visit(url)
+    visit_secure(url)
   else
-    page.find(account_accountinfo_menucontainer_logout_link_path).click
+    find_secure(account_accountinfo_menucontainer_logout_link_path).click
     puts "--> logged me out"
   end
   #check for success
@@ -419,19 +419,31 @@ end
 
 When(/^I modify my paymentinfo$/) do
   #css pathes
-  start_url = current_url
   account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
   account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
 
-  page.find(account_accountinfo_payment_box_path)
-  account_accountinfo_payment_box = page.find(account_accountinfo_payment_box_path)
-  account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path).click
+  find_secure(account_accountinfo_payment_box_path)
+  account_accountinfo_payment_box = find_secure(account_accountinfo_payment_box_path)
+  # on the next step i can not use find_secure because i do not search on the page but on the paymentbox -> net::ReadTimeout can appear
+  # solution build a rescue block around the step
+  find_secure_counter ||= 0
+  begin
+    find_secure_counter = find_secure_counter + 1
+    element = account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path)
+  rescue Net::ReadTimeout => e
+    puts "\033[35m#{e.inspect}\033[0m\n"    
+    sleep 1
+    puts "visit_secure"
+    Capybara.default_max_wait_time = 120
+    puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+    find_secure_counter <= 3 ? retry : raise
+  end
+  element.click
   puts "--> clicked button for change of payment"
   
   puts "I change option of payment"
   step("I change option of payment")
-  #check for success
-  #check_for_url_change(start_url)
+  
 end
 
 When(/^I change option of payment$/) do
@@ -439,12 +451,11 @@ When(/^I change option of payment$/) do
   account_payment_cashOnDelivery_path = csspathes.account_payment_cashOnDelivery_path
   account_payment_change_button_path = csspathes.account_payment_change_button_path
   
-  page.find(account_payment_paymentoptions_path)
+  find_secure(account_payment_paymentoptions_path)
   element = find_secure(account_payment_cashOnDelivery_path, page.html)
   element.click
-  puts "--> chose checkbox for cash on delivery"
-  
-  page.find(account_payment_change_button_path).click
+  puts "--> choose checkbox for cash on delivery"
+  find_secure(account_payment_change_button_path).click
 end
 
 When(/^I modify my address for my bill$/) do
@@ -452,15 +463,26 @@ When(/^I modify my address for my bill$/) do
   #css pathes
   account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
   account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
-  page.find(account_accountinfo_billaddress_box_path)
-  account_accountinfo_billaddresschange_box = page.find(account_accountinfo_billaddress_box_path)
-  element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
+  
+  find_secure(account_accountinfo_billaddress_box_path)
+  account_accountinfo_billaddresschange_box = find_secure(account_accountinfo_billaddress_box_path)
+  find_secure_counter ||= 0
+  begin
+    find_secure_counter = find_secure_counter + 1
+    element = account_accountinfo_billaddresschange_box.find(account_accountinfo_billaddresschange_button_appear_path)
+  rescue Net::ReadTimeout => e
+    puts "\033[35m#{e.inspect}\033[0m\n"    
+    sleep 1
+    puts "visit_secure"
+    Capybara.default_max_wait_time = 120
+    puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+    find_secure_counter <= 3 ? retry : raise
+  end
+  
   element.click
-  puts "--> clicked button for change the adress of billing"
+
   puts "I change prefix of my address for invoice"
   step("I change prefix of my address for invoice")
-  #check for success
-#  #check_for_url_change(start_url)
 end
 
 When(/^I change prefix of my address for invoice$/) do
@@ -474,9 +496,9 @@ When(/^I change prefix of my address for invoice$/) do
     puts "in #{ENV['COUNTRY']} there is no prefix"
   else
     #set value for prefix
-    page.find(account_invoiceadresschange_form_prefix_path)
+    find_secure(account_invoiceadresschange_form_prefix_path)
     form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
-    page.find(account_invoiceadresschange_button_path).click
+    find_secure(account_invoiceadresschange_button_path).click
     puts "--> click change-button"
     #check for success
     ##check_for_url_change(start_url)
@@ -511,9 +533,9 @@ When(/^I add a new address$/) do
   account_address_country_path = csspathes.account_address_country_path
   account_address_savebutton_path = csspathes.account_address_savebutton_path
   
-  page.find(account_address_create_path)
+  find_secure(account_address_create_path)
   puts "> found formular to add a new address"
-  account_addressform = page.find(account_address_create_path)
+  account_addressform = find_secure(account_address_create_path)
   #select prefix
   form_set_dropdown("prefix", prefix, account_prefix_path)
   #set value for firstname
@@ -535,21 +557,33 @@ When(/^I add a new address$/) do
   #set value for country
   form_set_dropdown(account_addressform, "country", country, account_address_country_path)
   #click button for taking action
-  account_addressform.find(account_address_savebutton_path).click
+  account_addressform.find_secure(account_address_savebutton_path).click
   puts "> clicked button to save address"
   #check for success
   #check_for_url_change(start_url)
 end
 
 When(/^I modify my address for my delivery/) do
-  start_url = current_url
   #css pathes
   account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
   account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
   
-  page.find(account_accountinfo_deliveraddress_box_path)
-  account_accountinfo_deliveraddresschange_box = page.find(account_accountinfo_deliveraddress_box_path)
-  account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path).click
+  find_secure(account_accountinfo_deliveraddress_box_path)
+  account_accountinfo_deliveraddresschange_box = find_secure(account_accountinfo_deliveraddress_box_path)
+  find_secure_counter ||= 0
+  begin
+    find_secure_counter = find_secure_counter + 1
+    element = account_accountinfo_deliveraddresschange_box.find(account_accountinfo_deliveraddresschange_button_appear_path)
+  rescue Net::ReadTimeout => e
+    puts "\033[35m#{e.inspect}\033[0m\n"    
+    sleep 1
+    puts "visit_secure"
+    Capybara.default_max_wait_time = 120
+    puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+    find_secure_counter <= 3 ? retry : raise
+  end
+
+  element.click
   puts "--> clicked button for change the adress for delivery"
   puts "I change prefix of my address for delivery"
   step("I change prefix of my address for delivery")
@@ -567,10 +601,10 @@ When(/^I change prefix of my address for delivery$/) do
     account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
     account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
     #set value for prefix
-    page.find(account_deliveradresschange_form_prefix_path)
+    find_secure(account_deliveradresschange_form_prefix_path)
     form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
     puts "--> select prefix:#{prefix}"
-    page.find(account_deliveradresschange_button_path).click
+    find_secure(account_deliveradresschange_button_path).click
     puts "--> click change-button"
     #check for success
     ##check_for_url_change(start_url)
@@ -581,8 +615,8 @@ end
 When(/^I activate the newsletterbox$/) do
   #if (ENV['SHOP'] == 'chefworks')
     account_newsletter_box_path = csspathes.account_newsletter_box_path
-    page.find(account_newsletter_box_path)
-    page.find(account_newsletter_box_path).click
+    find_secure(account_newsletter_box_path)
+    find_secure(account_newsletter_box_path).click
     puts "--> activate the checkbox"
   #else
     puts "On the shop of #{ENV['SHOP']} this feature does not exist"
@@ -593,8 +627,8 @@ end
 When(/^I get all items of the sidebar$/) do
   account_sidebar_path = csspathes.account_sidebar_path
   
-  page.find(account_sidebar_path)
-  account_sidebar_menuitems = page.find(account_sidebar_path).all('li a')
+  find_secure(account_sidebar_path)
+  account_sidebar_menuitems = find_secure(account_sidebar_path).all('li a')
   puts "> menuitems:#{account_sidebar_menuitems.size}"
   account_sidebar_menuitems.each { 
     |x| 

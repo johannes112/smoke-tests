@@ -4,8 +4,8 @@ When(/^I click the button for direct ordering$/) do
   start_url = current_url
   direct_ordering_button_path = csspathes.direct_ordering_button_path 
   
-  page.find(direct_ordering_button_path)
-  element = page.find(direct_ordering_button_path)
+  find_secure(direct_ordering_button_path)
+  element = find_secure(direct_ordering_button_path)
   element.click
   puts "-> clicked button"
   #check for success
@@ -19,14 +19,14 @@ When(/^I send my inserted data with the form$/) do
   direct_ordering_form_quantity_path = csspathes.direct_ordering_form_quantity_path
   direct_ordering_form_button_path = csspathes.direct_ordering_form_button_path 
   
-  #page.find(direct_ordering_form_sku_path)
-  element = page.find(direct_ordering_form_sku_path, match: :first)
+  #find_secure(direct_ordering_form_sku_path)
+  element = find_secure(direct_ordering_form_sku_path, match: :first)
   element.set("#{sku}\t")#\t to tab 
   puts "-> inserted #{sku}"
   
   #wait for ajax
-  page.find(direct_ordering_form_quantity_path)
-  element = page.find(direct_ordering_form_button_path)
+  find_secure(direct_ordering_form_quantity_path)
+  element = find_secure(direct_ordering_form_button_path)
   element.click
   puts "-> clicked button"
 end
@@ -34,7 +34,7 @@ end
 Then(/^I should find the article in the sidebar$/) do
   direct_ordering_sidebar_item_path = csspathes.direct_ordering_sidebar_item_path 
   
-  page.find(direct_ordering_sidebar_item_path)
+  find_secure(direct_ordering_sidebar_item_path)
   
   expect(page).to have_css(direct_ordering_sidebar_item_path),
      "expected that i can see the product on the cart of my sidebar, but i can not find #{direct_ordering_sidebar_item_path}"

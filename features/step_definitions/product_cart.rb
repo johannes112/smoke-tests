@@ -4,7 +4,7 @@ Given(/^I am on the product cart page$/) do
   url_part_product_cart = 'checkout/cart'
   url = "#{website_url}#{url_part_product_cart}"
   
-  visit(url)
+  visit_secure(url)
   puts "-> go to #{url}"
   expect(current_url).to include(url_part_product_cart),
     "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
@@ -18,10 +18,10 @@ Given(/^the product cart contains an article$/) do
   
   # with ajax'
   product_cart_article_path = csspathes.product_cart_article_path
-  page.find(product_cart_article_path)
+  find_secure(product_cart_article_path)
   
   #check if cart contains an article
-  page.find(homepage_content_logo_path)
+  find_secure(homepage_content_logo_path)
   expect(page).to have_css(product_cart_article_path),
     "Expected find an article in my cart but there is no csspath of #{product_cart_article_path}"
 end
@@ -46,14 +46,14 @@ And(/^I add an article to my cart by ajax$/) do
   ajax_params_amount = "&sQuantity=#{amount}"
   ajax_url = "#{website_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
   puts "-> add article: #{ajax_url}"
-  visit(ajax_url)
+  visit_secure(ajax_url)
 end
 
 When(/^I click on the button to continue shopping$/) do
   start_url = current_url
   product_cart_button_continue_path = csspathes.product_cart_button_continue_path
   
-  element = page.find(product_cart_button_continue_path, match: :first)
+  element = find_secure(product_cart_button_continue_path, match: :first)
   element.click
   puts "--> clicked button for continue"
   #check for success
@@ -71,8 +71,8 @@ end
 When(/^I remove this article from the product cart$/) do
   product_cart_remove_article_path = csspathes.product_cart_remove_article_path
   
-  page.find(product_cart_remove_article_path)
-  element = page.find(product_cart_remove_article_path)
+  find_secure(product_cart_remove_article_path)
+  element = find_secure(product_cart_remove_article_path)
   element.click
   puts "clicked icon"
 end
@@ -106,7 +106,7 @@ When(/^I navigate to the checkout by clicking the button which navigates to the 
   product_cart_button_checkout_path = csspathes.product_cart_button_checkout_path#there are 2 buttons
   
   #check for first button
-  element = page.find(product_cart_button_checkout_path, match: :first)
+  element = find_secure(product_cart_button_checkout_path, match: :first)
   element.click
   puts "clicked button"
   #check for success
@@ -127,8 +127,8 @@ When(/^I activate the function for voucher$/) do
   if (ENV['SHOP'] == 'chefworks')
     product_cart_voucher_checkbox_path = csspathes.product_cart_voucher_checkbox_path
     
-    page.find(product_cart_voucher_checkbox_path)
-    element = page.find(product_cart_voucher_checkbox_path)
+    find_secure(product_cart_voucher_checkbox_path)
+    element = find_secure(product_cart_voucher_checkbox_path)
     element.click
     puts "clicked checkbox"
   else
@@ -142,10 +142,10 @@ When(/^I enter some code into the optional field$/) do
     product_cart_voucher_input_path = csspathes.product_cart_voucher_input_path
     product_cart_voucher_button_path = csspathes.product_cart_voucher_button_path
     
-    element = page.find(product_cart_voucher_input_path)
+    element = find_secure(product_cart_voucher_input_path)
     element.set(code_voucher)
     puts "entered #{code_voucher}"
-    element = page.find(product_cart_voucher_button_path)
+    element = find_secure(product_cart_voucher_button_path)
     element.click
     puts "clicked add-button"
   else
@@ -170,10 +170,10 @@ When(/^I enter a sku into the integrated field on the cart$/) do
     product_cart_order_sku_path = csspathes.product_cart_order_sku_path
     product_cart_order_button_path = csspathes.product_cart_order_button_path
     
-    page.find(product_cart_order_sku_path)
-    element = page.find(product_cart_order_sku_path)
+    find_secure(product_cart_order_sku_path)
+    element = find_secure(product_cart_order_sku_path)
     element.set(sku)
-    element = page.find(product_cart_order_button_path)
+    element = find_secure(product_cart_order_button_path)
     element.click
   else
     puts "On the shop of #{ENV['SHOP']} this feature does not exist"

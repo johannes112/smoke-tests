@@ -7,24 +7,24 @@ Then(/^I should see all basic elements$/) do
   homepage_content_body_main_path = csspathes.homepage_content_body_main_path
   homepage_content_footer_path = csspathes.homepage_content_footer_path
 
-  page.find(homepage_content_searchfield_path)
+  find_secure(homepage_content_searchfield_path)
   #check for existing css-elements
-  page.find(homepage_content_header_path)
+  find_secure(homepage_content_header_path)
   expect(page).to have_css(homepage_content_header_path),
       "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
   puts "header exists"
   expect(page).to have_css(homepage_content_searchfield_path),
       "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
   puts "searchfield exists"  
-  page.find(homepage_content_navi_path)
+  find_secure(homepage_content_navi_path)
   expect(page).to have_css(homepage_content_navi_path),
       "Expect to find the css-element (#{homepage_content_navi_path}) but the page with the url #{current_url} has no such element"
   puts "navi exists"
-  page.find(homepage_content_body_main_path)
+  find_secure(homepage_content_body_main_path)
   expect(page).to have_css(homepage_content_body_main_path),
       "Expect to find the css-element (#{homepage_content_body_main_path}) but the page with the url #{current_url} has no such element"
   puts "inner body exists"
-  page.find(homepage_content_footer_path)
+  find_secure(homepage_content_footer_path)
   expect(page).to have_css(homepage_content_footer_path),
       "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
   puts "footer exists"
@@ -38,24 +38,24 @@ Then(/^I should see all basic mobile elements$/) do
   homepage_content_body_main_path = csspathes.homepage_content_body_main_path
   homepage_content_footer_path = csspathes.homepage_content_footer_path
 
-  page.find(homepage_content_searchfield_path)
+  find_secure(homepage_content_searchfield_path)
   #check for existing css-elements
-  page.find(homepage_content_header_path)
+  find_secure(homepage_content_header_path)
   expect(page).to have_css(homepage_content_header_path),
       "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
   puts "header exists"
   expect(page).to have_css(homepage_content_searchfield_path),
       "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
   puts "searchfield exists"  
-  page.find(homepage_content_navi_burger_path)
+  find_secure(homepage_content_navi_burger_path)
   expect(page).to have_css(homepage_content_navi_burger_path),
       "Expect to find the css-element (#{homepage_content_navi_burger_path}) but the page with the url #{current_url} has no such element"
   puts "navi exists"
-  page.find(homepage_content_body_main_path)
+  find_secure(homepage_content_body_main_path)
   expect(page).to have_css(homepage_content_body_main_path),
       "Expect to find the css-element (#{homepage_content_body_main_path}) but the page with the url #{current_url} has no such element"
   puts "inner body exists"
-  page.find(homepage_content_footer_path)
+  find_secure(homepage_content_footer_path)
   expect(page).to have_css(homepage_content_footer_path),
       "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
   puts "footer exists"
@@ -70,10 +70,10 @@ When(/^I change the language by clicking the button$/) do
   homepage_content_navi_language_option_path = 'nav > div.top-bar--language.navigation--entry > form > div > div.js--fancy-select.field--select > div.html-option-wrap > div'
 
   if language_change_to
-    page.find(homepage_content_navi_language_trigger_path)
-    element = page.find(homepage_content_navi_language_trigger_path)
+    find_secure(homepage_content_navi_language_trigger_path)
+    element = find_secure(homepage_content_navi_language_trigger_path)
     element.click
-    element = find(homepage_content_navi_language_option_path, :text => language_change_to)
+    element = find_secure(homepage_content_navi_language_option_path, :text => language_change_to)
     element.click
     puts "> selected #{language_change_to}"
   else 
@@ -103,7 +103,7 @@ Then(/^the menu is in specific language$/) do
   navigation_menu_path = csspathes.navigation_menu_path
   
   if language_change_to
-    navigation = page.find(navigation_menu_path)
+    navigation = find_secure(navigation_menu_path)
     navigation_txt = navigation.text
     expect(navigation_txt).to include(category_language_changed),
        "expected to find the category '#{category_language_changed}' but I only found #{navigation_txt}"
@@ -140,5 +140,4 @@ When(/^I check all hreflang for correct url$/) do
   # check alternates including canonical
   puts "Compare: #{url_alternate} <-> #{shop_url}}"
   look_for_string_in_array(url_alternate, shop_url.to_s)
-  
 end
