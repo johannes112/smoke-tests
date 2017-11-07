@@ -40,8 +40,27 @@ module MyWorld
     puts "- set #{var_name} = #{var_value.inspect}"
   end
   
-  # find: catch Errors 
-  def find_secure(path, string)
+  # find_secure: workaround -> in ruby overlaoding functions are not possible
+  # warning: 
+  #         do not use .page in front of this function
+  #         do not use this function if there is the attribut ':visible'
+  #         do not use this function if there is a specific element of the page given to find
+  def find_secure(*args)
+    #puts "find_secure:#{args.size}"
+    if args.size == 1
+      #puts "find_secure_with_one_arg:#{args}"
+      element = find_secure_with_one_arg(*args)
+    elsif args.size == 2
+      #puts "find_secure_with_two_args:#{args[0]}"
+      element = find_secure_with_two_args(*args)
+    else
+      puts "Error there are too much or less args"
+    end
+    return element
+  end
+
+# find: catch Errors 
+  def find_secure_with_one_arg(path)
     path_to_search = path
     find_secure_counter ||= 0
     found = ''
@@ -51,50 +70,121 @@ module MyWorld
     rescue Capybara::ElementNotFound => e
       #wrong path
       puts "\033[35m#{e.inspect}\033[0m\n"    
+      # search for similar path and rerun with new path given of function
+      find_secure_counter < 2 ? retry : raise
+    rescue Net::ReadTimeout => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      sleep 1
+      puts "find_secure_with_one_arg"
+      Capybara.default_max_wait_time = 120
+      if current_url
+        puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+      else
+        puts "no URL IS Defined"
+      end
+      find_secure_counter <= 3 ? retry : raise
+    rescue Selenium::WebDriver::Error::UnhandledAlertError
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      sleep 1
+      puts "find_secure"
+      puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+      find_secure_counter <= 3 ? retry : raise
+    rescue Exception => e
+      puts "#{e}"
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      raise "UNKNOWN ERROR in find_secure_with_one_arg"
+    end
+    return found
+  end
+
+  # find: catch Errors 
+  def find_secure_with_two_args(path, string)
+    path_to_search = path
+    find_secure_counter ||= 0
+    found = ''
+    begin
+      find_secure_counter = find_secure_counter + 1
+      found = page.find(path_to_search)
+    rescue Capybara::Ambiguous => e
+      #more than one matches
+      puts "\033[35m#{e.inspect}\033[0m\n"  
+      found = page.find(path, match: :first)
+    rescue Capybara::ElementNotFound => e
+      #wrong path
+      puts "\033[35m#{e.inspect}\033[0m\n"    
       write_to_new_file("ElementNotFound_src", string)
       # search for similar path and rerun with new path given of function
       path_to_search = search_path_in_whole_html(path, string)
       puts "\033[35m#instead of #{path} i have to look for #{path_to_search}\033[0m\n"    
-      find_secure_counter < 3 ? retry : raise
+      find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
-      puts "#{e.message}"
-      puts "Do it again"
-      # do it threetimes
+      puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
+      puts "find_secure_with_two_args"
+      Capybara.default_max_wait_time = 120
+      if current_url
+        puts "Failed to find css, retry #{find_secure_counter}"
+      else
+        puts "no URL IS Defined"
+      end
       find_secure_counter <= 3 ? retry : raise
+    rescue UnhandledAlertException => e
+      puts "#{e}"
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      raise "Uuhandled modal Dialog"
     rescue Exception => e
       puts "#{e}"
-      puts "#{e.inspect}"
-      raise "An exception is raised"
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      raise "UNKNOWN ERROR in find_secure_with_two_args"
     end
     return found
   end
-    
-  # find: catch Errors 
+
+  # visit: catch Errors 
   def visit_secure(url)
     visit_secure_counter = 0
-    begin
-      visit(url)
-      visit_secure_counter += 1
-      if (ENV['SYSTEM']=='live')
-        url_functions.set_url_and_get_page(url)
+    #puts "is_url_valid:#{is_url_valid(url)}"
+    if is_url_valid(url)
+      begin
+        puts "visit_secure"
+        visit_secure_counter += 1
+        visit(url)
+      rescue Net::ReadTimeout => e
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        sleep 1
+        Capybara.default_max_wait_time = 120
+        visit_secure_counter <= 2 ? retry : raise
+      rescue Net::HTTP::Persistent::Error => e
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        raise "Connection to #{url} failed"
+      rescue Net::HTTPGatewayTimeOut => e
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        # do it threetimes
+        Capybara.default_max_wait_time = 120
+        visit_secure_counter <= 2 ? retry : raise
+      rescue Selenium::WebDriver::Error::UnhandledAlertError
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        sleep 1
+        puts "visit_secure"
+        puts "Failed to visit #{url}, retry #{visit_secure_counter}"
+        visit(current_url)
+        sleep 1
+        visit_secure_counter <= 3 ? retry : raise
+      rescue Selenium::WebDriver::Error::WebDriverError
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        sleep 1
+        puts "visit_secure"
+        puts "Failed to visit #{url}, retry #{visit_secure_counter}"
+        visit(current_url)
+        sleep 1
+        visit_secure_counter <= 3 ? retry : raise
+      rescue Exception => e
+        puts "\033[35m#{e.inspect}\033[0m\n"    
+        raise "UNKNOWN ERROR in visit_secure"
       end
-    rescue Net::HTTP::Persistent::Error => e
-      puts "#{e.message}"
-      raise "Connection to #{url} failed"
-    rescue Net::HTTPGatewayTimeOut => e
-      puts "#{e.message}"
-      # do it threetimes
-      sleep 1
-      #visit_secure_counter <= 3 ? retry : raise
-    rescue Net::ReadTimeout => e
-      puts "#{e.message}"
-      sleep 1
-      #visit_secure_counter <= 3 ? retry : raise
-    rescue Exception => e
-      puts "#{e}"
-      puts "#{e.inspect}"
-      raise "An exception is raised"
+    else
+      #puts "ERROR: This is no valid url:"
+      raise "invalid url: #{url}"
     end
   end
     
