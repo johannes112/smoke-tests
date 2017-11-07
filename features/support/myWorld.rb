@@ -119,7 +119,6 @@ module MyWorld
       find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
-<<<<<<< HEAD
       sleep 1
       puts "find_secure_with_two_args"
       Capybara.default_max_wait_time = 120
@@ -137,15 +136,6 @@ module MyWorld
       puts "#{e}"
       puts "\033[35m#{e.inspect}\033[0m\n"    
       raise "UNKNOWN ERROR in find_secure_with_two_args"
-=======
-      puts "Do it again"
-      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
-      find_secure_counter <= 2 ? retry : raise
-    rescue Exception => e
-      puts "#{e}"
-      puts "\033[35m#{e.inspect}\033[0m\n"    
-      raise "An exception is raised"
->>>>>>> 878454644914e0307708d2629dfddd43f153fbba
     end
     return found
   end
@@ -153,50 +143,6 @@ module MyWorld
   # visit: catch Errors 
   def visit_secure(url)
     visit_secure_counter = 0
-<<<<<<< HEAD
-    #puts "is_url_valid:#{is_url_valid(url)}"
-    if is_url_valid(url)
-      begin
-        puts "visit_secure"
-        visit_secure_counter += 1
-        visit(url)
-      rescue Net::ReadTimeout => e
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        sleep 1
-        Capybara.default_max_wait_time = 120
-        visit_secure_counter <= 2 ? retry : raise
-      rescue Net::HTTP::Persistent::Error => e
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        raise "Connection to #{url} failed"
-      rescue Net::HTTPGatewayTimeOut => e
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        # do it threetimes
-        Capybara.default_max_wait_time = 120
-        visit_secure_counter <= 2 ? retry : raise
-      rescue Selenium::WebDriver::Error::UnhandledAlertError
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        sleep 1
-        puts "visit_secure"
-        puts "Failed to visit #{url}, retry #{visit_secure_counter}"
-        visit(current_url)
-        sleep 1
-        visit_secure_counter <= 3 ? retry : raise
-      rescue Selenium::WebDriver::Error::WebDriverError
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        sleep 1
-        puts "visit_secure"
-        puts "Failed to visit #{url}, retry #{visit_secure_counter}"
-        visit(current_url)
-        sleep 1
-        visit_secure_counter <= 3 ? retry : raise
-      rescue Exception => e
-        puts "\033[35m#{e.inspect}\033[0m\n"    
-        raise "UNKNOWN ERROR in visit_secure"
-      end
-    else
-      #puts "ERROR: This is no valid url:"
-      raise "invalid url: #{url}"
-=======
     begin
       visit_secure_counter += 1
       visit(url)
@@ -219,7 +165,6 @@ module MyWorld
       visit_secure_counter <= 2 ? retry : raise
     rescue Exception => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
->>>>>>> 878454644914e0307708d2629dfddd43f153fbba
     end
   end
     
