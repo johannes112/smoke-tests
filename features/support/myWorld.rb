@@ -119,6 +119,7 @@ module MyWorld
       find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
+<<<<<<< HEAD
       sleep 1
       puts "find_secure_with_two_args"
       Capybara.default_max_wait_time = 120
@@ -136,6 +137,15 @@ module MyWorld
       puts "#{e}"
       puts "\033[35m#{e.inspect}\033[0m\n"    
       raise "UNKNOWN ERROR in find_secure_with_two_args"
+=======
+      puts "Do it again"
+      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
+      find_secure_counter <= 2 ? retry : raise
+    rescue Exception => e
+      puts "#{e}"
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      raise "An exception is raised"
+>>>>>>> 878454644914e0307708d2629dfddd43f153fbba
     end
     return found
   end
@@ -143,6 +153,7 @@ module MyWorld
   # visit: catch Errors 
   def visit_secure(url)
     visit_secure_counter = 0
+<<<<<<< HEAD
     #puts "is_url_valid:#{is_url_valid(url)}"
     if is_url_valid(url)
       begin
@@ -185,6 +196,30 @@ module MyWorld
     else
       #puts "ERROR: This is no valid url:"
       raise "invalid url: #{url}"
+=======
+    begin
+      visit_secure_counter += 1
+      visit(url)
+      if (ENV['SYSTEM']=='live')
+        url_functions.set_url_and_get_page(url)
+      end
+    rescue Net::HTTP::Persistent::Error => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      raise "Connection to #{url} failed"
+    rescue Net::HTTPGatewayTimeOut => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      # do it threetimes
+      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
+      visit_secure_counter <= 2 ? retry : raise
+    rescue Net::ReadTimeout => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+      sleep 1
+      visit(url)
+      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
+      visit_secure_counter <= 2 ? retry : raise
+    rescue Exception => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+>>>>>>> 878454644914e0307708d2629dfddd43f153fbba
     end
   end
     
