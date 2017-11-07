@@ -77,7 +77,7 @@ if ENV['DRIVER'] == 'saucelabs'
       puts "Timeout of capybara is set to 120"
       Capybara.default_max_wait_time = 120
     else
-      Capybara.default_max_wait_time = 20
+      Capybara.default_max_wait_time = 100
     end
   end
 end
