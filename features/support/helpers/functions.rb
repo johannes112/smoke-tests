@@ -66,8 +66,8 @@ def form_set_value(page_part, var_text, variable, var_path)
       page_part.find(var_path).set(variable)
       puts "- set #{var_text}: #{variable}"
     rescue Exception => e
-      puts "\033[35m#{e.message}\033[0m\n"
-      puts "status:failed"
+      puts "\033[32m#{e.message}\033[0m\n"
+      puts "form_set_value: status:failed"
     end
   else
     puts "#{var_text} is not available in #{ENV['COUNTRY']}"
@@ -90,18 +90,16 @@ end
 
 def catch_error_in_block(&block)
   @counter_error = 0
-  puts "CATCH ERROR"
   begin
     @counter_error++
     yield
-  rescue Exception => e
-    puts "catched error"
-    puts "\033[35m#{e.message} (35)\033[0m\n"
   rescue Capybara::ElementNotFound => e
     puts "counter_error:"+counter_error
     write_to_file("ElementNotFound_src", page.html)
     puts "\033[35m#{e.inspect}\033[0m\n"
     puts "status:failed"
+  rescue Exception => e
+    puts "\033[35mcatch_error_in_block -> #{e.message} (35)\033[0m\n"
   end
 end
 
@@ -230,4 +228,9 @@ def search_path_in_whole_html(path, html)
   output_string = path_output.to_s.gsub(/\"/, '\'').gsub(/[\[\]]/, '').gsub(/'/, "")
   puts "OUTPUT:#{output_string}"
   return output_string
+end
+
+def is_url_valid(url)
+  url_regexp = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  url =~ url_regexp ? true : false
 end
