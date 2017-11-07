@@ -158,7 +158,7 @@ class UrlFunctions
     begin
       linked_page = url_link.click
     rescue Exception => e
-      puts "#{e.message}"
+      puts "\033[37m#{e.inspect}\033[0m\n"    
       linked_page = @page
     end
     #initialize vars for return
