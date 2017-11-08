@@ -73,7 +73,7 @@ When(/^I change the language by clicking the button$/) do
     find_secure(homepage_content_navi_language_trigger_path)
     element = find_secure(homepage_content_navi_language_trigger_path)
     element.click
-    element = find_secure(homepage_content_navi_language_option_path, :text => language_change_to)
+    element = find(homepage_content_navi_language_option_path, :text => language_change_to)
     element.click
     puts "> selected #{language_change_to}"
   else 
