@@ -94,8 +94,8 @@ class User
       when 'ch' then nil
       when 'it' then 'IT99999999999'
       when 'fr' then nil
-      when 'no' then '9ID 204 252 MVA'
-      when 'se' then '556695-9234'
+      when 'no' then nil
+      when 'se' then nil
       when 'nl' then '22065260'
       when 'be' then nil
       when 'es' then 'B63679427'
@@ -104,12 +104,12 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
-      when 'it' then 'IT 02531440218' #Codice fiscale
-      when 'fr' then 'FR14P422P876P383'
-      when 'no' then '999 204 252 MVA'
-      when 'se' then '556695-9234'
+      when 'it' then '02531440218' #Codice fiscale
+      when 'fr' then nil
+      when 'no' then '999204252'
+      when 'se' then '5566959234'
       when 'nl' then nil
-      when 'be' then 'FR14 422 876 383'
+      when 'be' then '14422876383'
       when 'es' then nil 
     end
     @organumber = case ENV['COUNTRY']

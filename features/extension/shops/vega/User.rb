@@ -100,8 +100,8 @@ class User
       when 'ch' then nil
       when 'it' then 'IT02531440218'
       when 'fr' then nil
-      when 'no' then 'NO 999 204 252 MVA'
-      when 'se' then '556695-9234'
+      when 'no' then nil
+      when 'se' then nil
       when 'nl' then '22065260'
       when 'be' then nil
       when 'es' then '0123456789'
@@ -112,11 +112,11 @@ class User
       when 'at' then nil
       when 'ch' then nil
       when 'it' then '02531440218'
-      when 'fr' then 'FR14P422P876P383'
-      when 'no' then '999 204 252 MVA'
-      when 'se' then 'SE 556695923401'
+      when 'fr' then nil
+      when 'no' then '999204252'
+      when 'se' then '556695923401'
       when 'nl' then nil
-      when 'be' then 'FR14 422 876 383'
+      when 'be' then '14422876383'
       when 'es' then 'ES B63679427'
       when 'lu' then nil
     end

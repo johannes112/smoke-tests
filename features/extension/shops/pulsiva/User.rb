@@ -105,9 +105,9 @@ class User
       when 'at' then nil
       when 'ch' then nil
       when 'it' then "CodiceFiscale56"
-      when 'fr' then 'FR14P422P876P383'
-      when 'no' then '999 204 252 MVA'
-      when 'se' then '556695-9234'
+      when 'fr' then nil
+      when 'no' then '999204252'
+      when 'se' then '5566959234'
       when 'nl' then 'NL818450010B01'
       when 'be' then nil
       when 'es' then nil
@@ -119,7 +119,7 @@ class User
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
-      when 'se' then '556695-9234'
+      when 'se' then nil
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
