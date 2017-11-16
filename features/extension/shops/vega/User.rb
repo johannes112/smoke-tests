@@ -107,14 +107,14 @@ class User
       when 'es' then '0123456789'
       when 'lu' then nil
     end
-    @taxvat = case ENV['COUNTRY']
+    @taxvat = case ENV['COUNTRY'] # handelsregister
       when 'de' then nil
       when 'at' then nil
       when 'ch' then nil
       when 'it' then '02531440218'
       when 'fr' then nil
       when 'no' then '999204252'
-      when 'se' then '556695923401'
+      when 'se' then '5566959234'
       when 'nl' then nil
       when 'be' then '14422876383'
       when 'es' then 'ES B63679427'
