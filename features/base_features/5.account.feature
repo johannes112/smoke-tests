@@ -226,3 +226,20 @@ Feature: account
 		And I am logged in
 		When I get all items of the sidebar
   
+  @account
+  @vega
+  @v_jobeline
+  @account_login_in_subshop
+	Scenario: login with existing account in subshop
+		Given I already created an user account on Vega in DE
+		When I login with valid informations on Jobeline in DE
+		Then I should be on my account page
+
+	@account
+  @vega
+  @v_jobeline
+  @account_login_foreign
+	Scenario: login with account in shop of other country
+		Given I already created an user account on Vega in DE
+		When I login with valid informations on Vega in AT
+		Then I should get an errormessage

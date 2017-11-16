@@ -17,7 +17,7 @@ class Csspathes
   :account_registerform_path, :account_registerform_accordion_new_path, :account_registerform_accordion_login_path, :account_registerform_login_path, :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, :account_registerform_taxid_path,
   :account_registerform_taxvat_path, :account_registerform_email_path, :account_registerform_password_path, :account_registerform_phone_path, :account_registerform_company_path, :account_registerform_checkbox_company_path, :account_registerform_street_path, :account_registerform_streetnumber_path,
   :account_registerform_postcode_path, :account_registerform_city_path, :account_registerform_country_path, :account_registerform_button_path, :account_accountpage_welcome_path, :account_accountpage_info_path, :account_loginform_emailfield_path, :account_loginform_passwordfield_path, 
-  :account_loginform_registerbutton_path, :account_userinfo_passwordchange_button_appear_path, :account_userinfo_passwordchange_currentpassword_path, :account_userinfo_passwordchange_newpassword_path, 
+  :account_loginform_registerbutton_path, :account_userinfo_passwordchange_button_appear_path, :account_userinfo_passwordchange_currentpassword_path, :account_userinfo_passwordchange_newpassword_path, :account_login_errormessage_path, 
   :account_userinfo_passwordchange_repeatnewpassword_path, :account_userinfo_passwordchange_button_path, :account_userinfo_emailchange_button_appear_path, :account_userinfo_emailchange_currentpassword_path, 
   :account_userinfo_emailchange_newmail_path, :account_userinfo_emailchange_repeatnewmail_path, :account_userinfo_emailchange_button_path, :account_userinfo_success_hint_path , :account_accountinfo_menucontainer_logout_link_path, 
   :account_accountinfo_payment_box_path, :account_accountinfo_paymentchange_button_appear_path, :account_payment_paymentoptions_path, :account_payment_cashOnDelivery_path, :account_payment_change_button_path, 
@@ -915,6 +915,11 @@ class Csspathes
       when ENV['SHOP'].match(/chefworks/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '#account--email > form > div.panel--actions.is--wide > input'
       when ENV['SHOP'].match(/export/) && ENV['COUNTRY'].match(/[a-z]{2}/) then    '#account--email > form > div.panel--actions.is--wide > input'
       else '#account--email > form > div.panel--actions.is--wide > input'
+    end 
+    @account_login_errormessage_path = case 
+      when ENV['SHOP'].match(/vegaz/) && ENV['COUNTRY'].match(/[a-z]{2}/) then      '..'
+      when ENV['SHOP'].match(/chefworksz/) && ENV['COUNTRY'].match(/[a-z]{2}/) then '..'
+      else '.account--error > div > div.alert--content'
     end 
     @account_userinfo_success_hint_path  = case 
       when ENV['SHOP'].match(/pulsiva/) && ENV['COUNTRY'].match(/[a-z]{2}/) then   '.account--success'

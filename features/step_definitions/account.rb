@@ -637,3 +637,163 @@ When(/^I get all items of the sidebar$/) do
   }
 end
 
+Given(/^I already created an user account on Vega in DE$/) do
+  shop = ENV['SHOP']
+  country = ENV['COUNTRY']
+  if ( (shop == 'vega') && (country == 'de') )
+    eMail = user.eMail
+    shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
+    customer_id_determined = shopware.getCustomerIdByMail(eMail)
+    if customer_id_determined.is_a?(String)
+      puts "-> no unique account with customer:#{eMail} exists"
+      puts "I am on the registration page"
+      step("I am on the registration page")
+      puts "I create a new account with my data"
+      step("I create a new account with my data")
+      puts "I should be on my account page"
+      step("I should be on my account page")
+      puts "I log me out"
+      step("I log me out")
+      puts "I am on the registration page"
+      step("I am on the registration page")
+    else
+      puts   "-> there exists an unique account"
+    end
+  else 
+    puts "in #{country} on #{shop} skip this step"
+  end
+    
+end
+
+When(/^I login with valid informations on Jobeline in DE$/) do
+  shop = ENV['SHOP']
+  country = ENV['COUNTRY']
+  if ( (shop == 'vega') && (country == 'de') )
+    #var1
+    email = user.eMail
+    password = user.password
+    url_account = 'https://www.jobeline.com/de-de/account'
+    
+    #path
+    homepage_content_logo_path = csspathes.homepage_content_logo_path
+    account_registerform_login_path = csspathes.account_registerform_login_path
+    account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
+    account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
+    account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
+    account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
+    account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
+    navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+    
+    if (current_url == url_account) 
+      puts "> ok, I am on #{current_url}"
+    else
+      puts "--> go to #{url_account}"
+      visit_secure(url_account)
+      #mobile 
+      if (ENV['BROWSER'] == 'iPhone') 
+        if (page.has_css?(account_registerform_accordion_login_path))
+          puts "I touch the box for login"
+          step("I touch the box for login")
+        else
+          puts "> Nothing to do"
+          puts "I am on #{current_url}"
+        end
+      end
+      #hide
+      block_css('.navigation-main')
+      # ensure that page is loaded completely
+      find_secure(homepage_content_logo_path)
+    end
+    if (page.has_no_css?(account_accountpage_welcome_path))
+      # ensure that page is loaded completely
+      find_secure(homepage_content_logo_path)
+      #search for field, so you know that we are on the right site
+      find_secure(account_registerform_login_path)
+      login_form = find_secure(account_registerform_login_path)
+      #set value for mail
+      form_set_value(login_form, "email", email, account_loginform_emailfield_path)
+      puts "-> set email"
+      #set value for password
+      form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
+      puts "-> set password"
+      #click button
+      find_secure(account_loginform_registerbutton_path).click
+      puts "--> pushed button for registration"
+    else
+      puts "> and I am already be in my account"
+    end
+  else 
+    puts "in #{country} on #{shop} skip this step"
+  end
+end
+
+When(/^I login with valid informations on Vega in AT$/) do
+  shop = ENV['SHOP']
+  country = ENV['COUNTRY']
+  if ( (shop == 'vega') && (country == 'de') )
+    #var1
+    email = user.eMail
+    password = user.password
+    url_account = 'https://www.vega-direct.com/at-de/account'
+    
+    #path
+    homepage_content_logo_path = csspathes.homepage_content_logo_path
+    account_registerform_login_path = csspathes.account_registerform_login_path
+    account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
+    account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
+    account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
+    account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
+    account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
+    navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+    
+    if (current_url == url_account) 
+      puts "> ok, I am on #{current_url}"
+    else
+      puts "--> go to #{url_account}"
+      visit_secure(url_account)
+      #mobile 
+      if (ENV['BROWSER'] == 'iPhone') 
+        if (page.has_css?(account_registerform_accordion_login_path))
+          puts "I touch the box for login"
+          step("I touch the box for login")
+        else
+          puts "> Nothing to do"
+          puts "I am on #{current_url}"
+        end
+      end
+      #hide
+      block_css('.navigation-main')
+      # ensure that page is loaded completely
+      find_secure(homepage_content_logo_path)
+    end
+    if (page.has_no_css?(account_accountpage_welcome_path))
+      # ensure that page is loaded completely
+      find_secure(homepage_content_logo_path)
+      #search for field, so you know that we are on the right site
+      find_secure(account_registerform_login_path)
+      login_form = find_secure(account_registerform_login_path)
+      #set value for mail
+      form_set_value(login_form, "email", email, account_loginform_emailfield_path)
+      puts "-> set email"
+      #set value for password
+      form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
+      puts "-> set password"
+      #click button
+      find_secure(account_loginform_registerbutton_path).click
+      puts "--> pushed button for registration"
+    else
+      puts "> and I am already be in my account"
+    end
+  else 
+    puts "in #{country} on #{shop} skip this step"
+  end
+end
+
+Then(/^I should get an errormessage$/) do
+  logo_path = csspathes.homepage_content_logo_path
+  errormessage_path = csspathes.account_login_errormessage_path
+  
+  page.find(logo_path)
+  page.find(errormessage_path)
+  puts "> found errormessage on #{current_url}"
+end
