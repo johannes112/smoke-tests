@@ -229,15 +229,17 @@ Feature: account
   @account
   @vega
   @v_jobeline
-  @account_login_in_subshop
+  @account_advanced
+  @account_login_subshop
 	Scenario: login with existing account in subshop
 		Given I already created an user account on Vega in DE
 		When I login with valid informations on Jobeline in DE
-		Then I should be on my account page
+		Then I should be on my account page on the subshop
 
 	@account
   @vega
   @v_jobeline
+  @account_advanced
   @account_login_foreign
 	Scenario: login with account in shop of other country
 		Given I already created an user account on Vega in DE

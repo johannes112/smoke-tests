@@ -790,10 +790,27 @@ When(/^I login with valid informations on Vega in AT$/) do
 end
 
 Then(/^I should get an errormessage$/) do
-  logo_path = csspathes.homepage_content_logo_path
-  errormessage_path = csspathes.account_login_errormessage_path
-  
-  page.find(logo_path)
-  page.find(errormessage_path)
-  puts "> found errormessage on #{current_url}"
+  shop = ENV['SHOP']
+  country = ENV['COUNTRY']
+  if ( (shop == 'vega') && (country == 'de') )
+    logo_path = csspathes.homepage_content_logo_path
+    errormessage_path = csspathes.account_login_errormessage_path
+    
+    page.find(logo_path)
+    page.find(errormessage_path)
+    puts "> found errormessage on #{current_url}"
+  else 
+    puts "in #{country} on #{shop} skip this step"
+  end
+end
+
+Then(/^I should be on my account page on the subshop$/) do
+  shop = ENV['SHOP']
+  country = ENV['COUNTRY']
+  if ( (shop == 'vega') && (country == 'de') )
+    #var
+    step("I should be on my account page")
+  else 
+    puts "in #{country} on #{shop} skip this step"
+  end
 end
