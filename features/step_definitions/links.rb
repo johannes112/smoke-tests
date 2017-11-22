@@ -119,8 +119,6 @@ end
 
 
 When(/^I click the link of help$/) do
-  #var
-  start_url = current_url
   #pathes
   links_service_path = csspathes.links_service_path  
   #click button
@@ -128,13 +126,12 @@ When(/^I click the link of help$/) do
   link_text = element.text
   element.click
   puts "--> clicked on #{link_text}"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 Then(/^I should see a contextmenu$/) do
   #pathes
   links_context_path = csspathes.links_context_path
+  puts "links_context_path:#{links_context_path}"
   #wait for path
   find_secure(links_context_path)
 end

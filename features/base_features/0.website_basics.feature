@@ -167,6 +167,7 @@ Feature: website_basics
     @v_jobeline
     @navigation
     @links
+    @links_help
     Scenario: navigate to help
         When I click the link of help
         Then I should see a contextmenu
