@@ -434,9 +434,11 @@ When(/^I modify my paymentinfo$/) do
     puts "\033[35m#{e.inspect}\033[0m\n"    
     sleep 1
     puts "visit_secure"
-    Capybara.default_max_wait_time = 120
+    puts "visit #{url} again"
+    visit(url)
+    Capybara.default_max_wait_time = 20
     puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
-    find_secure_counter <= 3 ? retry : raise
+    find_secure_counter <= 2 ? retry : raise
   end
   element.click
   puts "--> clicked button for change of payment"
@@ -474,9 +476,11 @@ When(/^I modify my address for my bill$/) do
     puts "\033[35m#{e.inspect}\033[0m\n"    
     sleep 1
     puts "visit_secure"
-    Capybara.default_max_wait_time = 120
+    puts "visit #{url} again"
+    visit(url)
+    Capybara.default_max_wait_time = 20
     puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
-    find_secure_counter <= 3 ? retry : raise
+    find_secure_counter <= 2 ? retry : raise
   end
   
   element.click
@@ -578,7 +582,9 @@ When(/^I modify my address for my delivery/) do
     puts "\033[35m#{e.inspect}\033[0m\n"    
     sleep 1
     puts "visit_secure"
-    Capybara.default_max_wait_time = 120
+    puts "visit #{url} again"
+    visit(url)
+    Capybara.default_max_wait_time = 20
     puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
     find_secure_counter <= 3 ? retry : raise
   end

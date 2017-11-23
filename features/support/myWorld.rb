@@ -76,7 +76,9 @@ module MyWorld
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
       puts "find_secure_with_one_arg"
-      Capybara.default_max_wait_time = 120
+      puts "visit #{url} again"
+      visit(url)
+      Capybara.default_max_wait_time = 20
       if current_url
         puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
       else
@@ -121,13 +123,15 @@ module MyWorld
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
       puts "find_secure_with_two_args"
-      Capybara.default_max_wait_time = 120
+      puts "visit #{url} again"
+      visit(url)
+      Capybara.default_max_wait_time = 20
       if current_url
         puts "Failed to find css, retry #{find_secure_counter}"
       else
         puts "no URL IS Defined"
       end
-      find_secure_counter <= 3 ? retry : raise
+      find_secure_counter <= 2 ? retry : raise
     rescue UnhandledAlertException => e
       puts "#{e}"
       puts "\033[35m#{e.inspect}\033[0m\n"    
@@ -155,13 +159,14 @@ module MyWorld
     rescue Net::HTTPGatewayTimeOut => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
       # do it threetimes
-      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
+      Capybara.default_max_wait_time = 20
       visit_secure_counter <= 2 ? retry : raise
     rescue Net::ReadTimeout => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
+      puts "visit #{url} again"
       visit(url)
-      Capybara.default_max_wait_time = Capybara.default_max_wait_time + 60
+      Capybara.default_max_wait_time = 20
       visit_secure_counter <= 2 ? retry : raise
     rescue Exception => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
