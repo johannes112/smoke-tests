@@ -15,6 +15,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_vde@emmos.de'
@@ -27,6 +28,7 @@ class User
       when 'nl' then 'testmail_vnl@emmos.de'
       when 'be' then 'testmail_vbe@emmos.de'
       when 'es' then 'testmail_ves@emmos.de'
+      when 'en' then 'testmail_ven@emmos.de'
       when 'lu' then 'testmail_vlu@emmos.de'
     end
     @eMail_sec = case ENV['COUNTRY']
@@ -40,6 +42,7 @@ class User
       when 'nl' then 'testmail@vnl.de'
       when 'be' then 'testmail@vbe.de'
       when 'es' then 'testmail@ves.de'
+      when 'en' then 'testmail@ven.de'
       when 'lu' then 'testmail@vlu.de'
     end
     @password = case ENV['COUNTRY']
@@ -53,6 +56,7 @@ class User
       when 'nl' then 'Test2014'
       when 'be' then 'Test2014'
       when 'es' then 'Test2014'
+      when 'en' then 'Test2014'
       when 'lu' then 'Test2014'
     end
     @password_sec = case ENV['COUNTRY']
@@ -66,6 +70,7 @@ class User
       when 'nl' then 'Test2015'
       when 'be' then 'Test2015'
       when 'es' then 'Test2015'
+      when 'en' then 'Test2015'
       when 'lu' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
@@ -79,6 +84,7 @@ class User
       when 'nl' then 'Test Vega NL eBusiness'
       when 'be' then 'Test Vega BE eBusiness'
       when 'es' then 'Test Vega ES eBusiness'
+      when 'en' then 'Test Vega EN eBusiness'
       when 'lu' then 'Test Vega LU eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
@@ -92,6 +98,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @taxid = case ENV['COUNTRY'] # steuernummer
@@ -105,6 +112,7 @@ class User
       when 'nl' then '22065260'
       when 'be' then nil
       when 'es' then '0123456789'
+      when 'en' then '0123456789'
       when 'lu' then nil
     end
     @taxvat = case ENV['COUNTRY'] # handelsregister
@@ -118,6 +126,7 @@ class User
       when 'nl' then nil
       when 'be' then '14422876383'
       when 'es' then 'ES B63679427'
+      when 'en' then nil
       when 'lu' then nil
     end
     @organumber = case ENV['COUNTRY']
@@ -131,6 +140,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @country = case ENV['COUNTRY']
@@ -144,6 +154,7 @@ class User
       when 'nl' then 'Nederland'
       when 'be' then 'Belgique'
       when 'es' then 'Espana'
+      when 'en' then 'GERMANY'
       when 'lu' then nil
     end
     @owner_firstname = case ENV['COUNTRY']
@@ -157,6 +168,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @owner_lastname = case ENV['COUNTRY']
@@ -170,6 +182,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @firstname = case ENV['COUNTRY']
@@ -183,6 +196,7 @@ class User
       when 'nl' then 'Voornaam'
       when 'be' then 'Prenom'
       when 'es' then 'Nombre'
+      when 'en' then 'First'
       when 'lu' then 'Vorname'
     end
     @lastname = case ENV['COUNTRY']
@@ -196,6 +210,7 @@ class User
       when 'nl' then 'Achternaam'
       when 'be' then 'Nom'
       when 'es' then 'Apellido'
+      when 'en' then 'Last'
       when 'lu' then 'Vorname'
     end
     @department = case ENV['COUNTRY']
@@ -209,6 +224,7 @@ class User
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @prefix = case ENV['COUNTRY']
@@ -222,6 +238,7 @@ class User
       when 'nl' then 'Dhr.'
       when 'be' then 'Monsieur'
       when 'es' then 'Sr.'
+      when 'en' then 'Mr'
       when 'lu' then nil
     end
     @prefix_sec = case ENV['COUNTRY']
@@ -235,6 +252,7 @@ class User
       when 'nl' then 'Mevr.'
       when 'be' then 'Madame'
       when 'es' then 'Sra.'
+      when 'en' then 'Ms'
       when 'lu' then nil
     end
     @street = case ENV['COUNTRY']
@@ -247,6 +265,7 @@ class User
       when 'se' then 'Hamngatan'
       when 'nl' then 'Cereslaan'
       when 'be' then 'Place du Luxembourg'
+      when 'en' then 'Vegastr.'
       when 'es' then 'Carrer de Roger de Llúria'
       when 'lu' then nil
     end
@@ -261,6 +280,7 @@ class User
       when 'nl' then '8'
       when 'be' then '100'
       when 'es' then '44'
+      when 'en' then '2'
       when 'lu' then nil
     end
     @postcode = case ENV['COUNTRY']
@@ -274,6 +294,7 @@ class User
       when 'nl' then '5384 VT'
       when 'be' then '1050'
       when 'es' then '08009'
+      when 'en' then '86637'
       when 'lu' then nil
     end
     @city = case ENV['COUNTRY']
@@ -287,6 +308,7 @@ class User
       when 'nl' then 'Heesch'
       when 'be' then 'Ixelles'
       when 'es' then 'Barcelona'
+      when 'en' then 'Wertingen'
       when 'lu' then nil
     end
     @telephone = case ENV['COUNTRY']
@@ -300,6 +322,7 @@ class User
       when 'nl' then '01234567'
       when 'be' then '01234567'
       when 'es' then '01234567'
+      when 'en' then '01234567'
       when 'lu' then '01234567'
     end
     @language_change_to = case ENV['COUNTRY']
@@ -313,6 +336,7 @@ class User
       when 'nl' then nil
       when 'be' then 'Néerlandais'
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end
     @country_contraction_language_change_to = case ENV['COUNTRY']
@@ -326,6 +350,7 @@ class User
       when 'nl' then nil
       when 'be' then 'nl'
       when 'es' then nil
+      when 'en' then nil
       when 'lu' then nil
     end 
   end

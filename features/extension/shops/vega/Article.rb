@@ -14,6 +14,7 @@ class Article
       when (/nl/) then 'Los bestek'
       when (/be/) then 'Couverts à l\'unité'
       when (/es/) then 'Cubiertos sueltos'
+      when (/en/) then 'Forks'
     end
     @category = case ENV['COUNTRY']
       when (/de/) then 'Besteck'
@@ -26,6 +27,7 @@ class Article
       when (/nl/) then 'Bestek'
       when (/be/) then 'Couverts'
       when (/es/) then 'Cubiertos'
+      when (/en/) then 'Cutlery'
     end
     @category_language_changed = case ENV['COUNTRY']
       when (/ch/) then 'Vaisselle'
@@ -42,6 +44,7 @@ class Article
       when (/nl/) then '116366'
       when (/be/) then '116366'
       when (/es/) then '116366'
+      when (/en/) then '116366'
     end
     @sku = case ENV['COUNTRY']
       when (/de/) then '10082961'#without i!
@@ -54,6 +57,7 @@ class Article
       when (/nl/) then '10082961'
       when (/be/) then '10082961'
       when (/es/) then '10082961'
+      when (/en/) then '10082961'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -66,6 +70,7 @@ class Article
       when (/nl/) then 2
       when (/be/) then 2
       when (/es/) then 2
+      when (/en/) then 2
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
@@ -79,6 +84,7 @@ class Article
       when (/nl/) then 'PLAT bord Base'
       when (/be/) then 'Assiette plate Reims'
       when (/es/) then 'Plato llano Base'
+      when (/en/) then 'Flat plates Base'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'direktbestellen'
@@ -91,6 +97,7 @@ class Article
       when (/nl/) then 'EMGroupDirectOrder'
       when (/be/) then 'EMGroupDirectOrder'
       when (/es/) then 'EMGroupDirectOrder'
+      when (/en/) then 'EMGroupDirectOrder'
     end
   end
 end

@@ -16,6 +16,7 @@ class Settings
         when (/nl/) then 'http://int.vega-direct.com/nl-nl/'
         when (/be/) then 'http://int.vega-direct.com/be-fr/'
         when (/es/) then 'http://int.vega-direct.com/es-es/'
+        when (/en/) then 'http://int.vega-direct.com/en-us/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'http://int.vega-direct.com/de-de/'
@@ -29,7 +30,8 @@ class Settings
         when (/nl/) then 'http://int.vega-direct.com/nl-nl/'
         when (/be/) then 'http://int.vega-direct.com/be-fr/'
         when (/es/) then 'http://int.vega-direct.com/es-es/'
-        end
+        when (/en/) then 'http://int.vega-direct.com/en-us/'
+      end
       @urlBackend = 'http://int.vega-direct.com/'
     end
     
@@ -46,6 +48,7 @@ class Settings
         when (/nl/) then 'http://www.vega-direct.com/nl-nl/'
         when (/be/) then 'http://www.vega-direct.com/be-fr/'
         when (/es/) then 'http://www.vega-direct.com/es-es/'
+        when (/en/) then 'http://www.vega-direct.com/en-us/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.vega-direct.com/de-de/'
@@ -59,10 +62,10 @@ class Settings
         when (/nl/) then 'https://www.vega-direct.com/nl-nl/'
         when (/be/) then 'https://www.vega-direct.com/be-fr/'
         when (/es/) then 'https://www.vega-direct.com/es-es/'
+        when (/en/) then 'https://www.vega-direct.com/en-us/'
       end
       @urlBackend = 'https://www.vega-direct.com/'
     end
-    @url_add_comand = 'direktbestellen'
     @baby_steps = true
   end
 end
