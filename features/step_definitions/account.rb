@@ -586,7 +586,7 @@ When(/^I modify my address for my delivery/) do
     visit(url)
     Capybara.default_max_wait_time = 20
     puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
-    find_secure_counter <= 3 ? retry : raise
+    find_secure_counter <= 2 ? retry : raise
   end
 
   element.click

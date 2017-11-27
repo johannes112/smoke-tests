@@ -84,13 +84,13 @@ module MyWorld
       else
         puts "no URL IS Defined"
       end
-      find_secure_counter <= 3 ? retry : raise
+      find_secure_counter <= 2 ? retry : raise
     rescue Selenium::WebDriver::Error::UnhandledAlertError
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
       puts "find_secure"
       puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
-      find_secure_counter <= 3 ? retry : raise
+      find_secure_counter <= 2 ? retry : raise
     rescue Exception => e
       puts "#{e}"
       puts "\033[35m#{e.inspect}\033[0m\n"    
