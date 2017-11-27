@@ -14,6 +14,7 @@ class Article
       when (/nl/) then 'Los bestek'
       when (/be/) then 'Couverts à l\'unité'
       when (/es/) then 'Piezas sueltas'
+      when (/en/) then 'Vests'
     end
     @category = case ENV['COUNTRY']
       when (/de/) then 'Kochbekleidung'
@@ -26,6 +27,7 @@ class Article
       when (/nl/) then 'Kokskleding'
       when (/be/) then 'Tenues de cuisine'
       when (/es/) then 'Ropa de cocina'
+      when (/en/) then 'Service clothing'
     end
     @category_language_changed = case ENV['COUNTRY']
       when (/ch/) then 'Tenues de cuisine'
@@ -42,6 +44,7 @@ class Article
       when (/nl/) then '100710'
       when (/be/) then '100710'
       when (/es/) then '100710'
+      when (/en/) then '100710'
     end
     @sku = case ENV['COUNTRY']
       when (/de/) then '10041838'
@@ -53,7 +56,7 @@ class Article
       when (/se/) then '10041838'
       when (/nl/) then '10041838'
       when (/be/) then '10041838'
-      when (/es/) then '10041838'
+      when (/en/) then '10041838'
     end
     @amount = case ENV['COUNTRY']
       when (/de/) then 2
@@ -66,6 +69,7 @@ class Article
       when (/nl/) then 2
       when (/be/) then 2
       when (/es/) then 2
+      when (/en/) then 2
     end
     #no umlauts
     @name = case ENV['COUNTRY'] 
@@ -79,6 +83,7 @@ class Article
       when (/nl/) then 'HERENBROEK NICK'
       when (/be/) then 'PANTALON HOMME NICK'
       when (/es/) then 'PANTALóN DE COCINA NICK'
+      when (/en/) then 'Men\'s cook trousers Nick'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'EMGroupDirectOrder'
@@ -91,6 +96,7 @@ class Article
       when (/nl/) then 'EMGroupDirectOrder'
       when (/be/) then 'EMGroupDirectOrder'
       when (/es/) then 'EMGroupDirectOrder'
+      when (/en/) then 'EMGroupDirectOrder'
     end
   end
 end

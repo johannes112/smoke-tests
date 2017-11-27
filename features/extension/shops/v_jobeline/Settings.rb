@@ -16,6 +16,7 @@ class Settings
         when (/nl/) then 'http://int.jobeline.com/nl-nl/'
         when (/be/) then 'http://int.jobeline.com/be-fr/'
         when (/es/) then 'http://int.jobeline.com/es-es/'
+        when (/en/) then 'http://int.jobeline.com/en-us/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
         when (/de/) then 'http://int.jobeline.com/de-de/'
@@ -29,7 +30,8 @@ class Settings
         when (/nl/) then 'http://int.jobeline.com/nl-nl/'
         when (/be/) then 'http://int.jobeline.com/be-fr/'
         when (/es/) then 'http://int.jobeline.com/es-es/'
-        end
+        when (/en/) then 'http://int.jobeline.com/en-us/'
+      end
       @urlBackend = 'http://int.jobeline.com/'
     end
     
@@ -46,6 +48,7 @@ class Settings
         when (/nl/) then 'http://www.jobeline.com/nl-nl/'
         when (/be/) then 'http://www.jobeline.com/be-fr/'
         when (/es/) then 'http://www.jobeline.com/es-es/'
+        when (/en/) then 'http://www.jobeline.com/en-us/'
       end
       @urlHttps = case ENV['COUNTRY']
         when (/de/) then 'https://www.jobeline.com/de-de/'
@@ -59,6 +62,7 @@ class Settings
         when (/nl/) then 'https://www.jobeline.com/nl-nl/'
         when (/be/) then 'https://www.jobeline.com/be-fr/'
         when (/es/) then 'https://www.jobeline.com/es-es/'
+        when (/en/) then 'https://www.jobeline.com/en-us/'
       end
       @urlBackend = 'https://www.jobeline.com/'
     end
