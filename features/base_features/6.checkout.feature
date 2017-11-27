@@ -49,6 +49,7 @@ Feature: checkout
 	  Then Shopware should have my order
 	  
   @checkout_with
+  @checkout
 	Scenario: checkout with existing account
 	  Given no user account with my email exists
 	  And I already created an user account
@@ -81,6 +82,7 @@ Feature: checkout
 	  Given no user account with my email exists
 
   @checkout_without
+  @checkout
 	Scenario: checkout without existing account and without creating an account
 	  Given no user account with my email exists
 	  Given I am on the website
