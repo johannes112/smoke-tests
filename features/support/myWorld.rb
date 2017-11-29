@@ -116,7 +116,11 @@ module MyWorld
       puts "\033[35m#{e.inspect}\033[0m\n"    
       write_to_new_file("ElementNotFound_src", string)
       # search for similar path and rerun with new path given of function
-      path_to_search = search_path_in_whole_html(path, string)
+      if (html.include?('match'))
+        puts "I can not execute this function because my given path is #{path}"
+      else
+        path_to_search = search_path_in_whole_html(path, string)
+      end
       puts "\033[35m#instead of #{path} i have to look for #{path_to_search}\033[0m\n"    
       find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
