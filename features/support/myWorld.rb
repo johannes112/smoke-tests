@@ -61,6 +61,7 @@ module MyWorld
 
 # find: catch Errors 
   def find_secure_with_one_arg(path)
+    url ||= page.current_url
     path_to_search = path
     find_secure_counter ||= 0
     found = ''
@@ -104,6 +105,7 @@ module MyWorld
     path_to_search = path
     find_secure_counter ||= 0
     found = ''
+    url ||= page.current_url
     begin
       find_secure_counter = find_secure_counter + 1
       found = page.find(path_to_search)
