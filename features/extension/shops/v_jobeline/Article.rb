@@ -56,6 +56,7 @@ class Article
       when (/se/) then '10041838'
       when (/nl/) then '10041838'
       when (/be/) then '10041838'
+      when (/es/) then '10041838'
       when (/en/) then '10041838'
     end
     @amount = case ENV['COUNTRY']
