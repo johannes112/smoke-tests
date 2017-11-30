@@ -220,16 +220,20 @@ def search_path_in_whole_html(path, html)
   path_output = ''
   path_searchterm = path
   output_string = "no_path"
-  if ( path_searchterm.include?("#") || path_searchterm.include?(".") )     
-    path_searchterm_identifier = path_searchterm.scan(/[#|.]/)
-    path_searchterm_without_number_and_identifier = path_searchterm.gsub(/[#|.]*[0-9]*/, "")
-    content = html
-    searchterm_in_content = content.scan(/#{path_searchterm_without_number_and_identifier}[0-9]*/)
-    searchterm_in_content.uniq!
-    path_output = "#{path_searchterm_identifier}#{searchterm_in_content}"
-    output_string = path_output.to_s.gsub(/\"/, '\'').gsub(/[\[\]]/, '').gsub(/'/, "")
+  if (path.include?('match'))
+    puts ">#{path}< is a Regex, so skip this"
   else
-    output_string = path
+    if ( path_searchterm.include?("#") || path_searchterm.include?(".") )     
+      path_searchterm_identifier = path_searchterm.scan(/[#|.]/)
+      path_searchterm_without_number_and_identifier = path_searchterm.gsub(/[#|.]*[0-9]*/, "")
+      content = html
+      searchterm_in_content = content.scan(/#{path_searchterm_without_number_and_identifier}[0-9]*/)
+      searchterm_in_content.uniq!
+      path_output = "#{path_searchterm_identifier}#{searchterm_in_content}"
+      output_string = path_output.to_s.gsub(/\"/, '\'').gsub(/[\[\]]/, '').gsub(/'/, "")
+    else
+      output_string = path
+    end
   end
   puts "OUTPUT:#{output_string}"
   return output_string
