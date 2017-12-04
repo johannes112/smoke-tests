@@ -156,6 +156,9 @@ module MyWorld
     begin
       visit_secure_counter += 1
       visit(url)
+      if ENV('COUNTRY') == 'de'
+        block_css('.dpe-shopwide > .dig-pub') 
+      end
       if (ENV['SYSTEM']=='live')
         url_functions.set_url_and_get_page(url)
       end
