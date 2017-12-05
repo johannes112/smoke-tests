@@ -1,5 +1,7 @@
 class Csspathes
-  attr_accessor :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path, :homepage_content_navi_burger_category_title_path, :homepage_content_body_main_path, :homepage_content_footer_path, :homepage_content_logo_path, 
+  attr_accessor :env_country, :env_shop, :env_system, 
+  #homepage
+  :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path, :homepage_content_navi_burger_category_title_path, :homepage_content_body_main_path, :homepage_content_footer_path, :homepage_content_logo_path, 
   #navigation
   :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, :navigation_sidebar_path, :navigation_hover_breadcrumb_path, 
   #links
@@ -34,9 +36,11 @@ class Csspathes
 
 
   def initialize
-    @env_country ||= ENV['COUNTRY'] 
-    @env_system ||= ENV['SYSTEM']
-    @env_shop ||= ENV['SHOP']
+    @var ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
+    
+    @env_country ||= @var.r_country
+    @env_system ||= @var.r_system
+    @env_shop ||= @var.r_shop
   
     #website basics
     @homepage_content_header_path = case 
