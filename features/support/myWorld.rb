@@ -1,12 +1,12 @@
 module MyWorld
   require 'logger'
-  
+
   def url_functions
     @url_functions ||=UrlFunctions.new
   end
   
   def shopware
-    @shopware ||=ShopwareApi.new()
+    @shopware ||=ShopwareApi.new
   end
   
   def csspathes
@@ -156,7 +156,7 @@ module MyWorld
     begin
       visit_secure_counter += 1
       visit(url)
-      if ENV('COUNTRY') == 'de'
+      if (ENV['COUNTRY']=='de')
         block_css('.dpe-shopwide > .dig-pub') 
       end
       if (ENV['SYSTEM']=='live')
