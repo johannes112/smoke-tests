@@ -1,6 +1,6 @@
 #Here are all javascript-functions that are saved in ruby variables
 class Jsfunctions
-  attr_accessor :disableStylesheet
+  attr_accessor :disableStylesheet, :refreshPage
   
   def initialize
     
