@@ -11,7 +11,7 @@ class Csspathes
   #direct_ordering
   :direct_ordering_button_path, :direct_ordering_form_sku_path, :direct_ordering_form_quantity_path, :direct_ordering_form_button_path, :direct_ordering_sidebar_item_path, 
   #product_page
-  :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_rate_form, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container,
+  :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container,
   #product_cart
   :product_cart_article_path, :product_cart_hint_content_path, :product_cart_button_continue_path, :product_cart_remove_article_path, :product_cart_article_path, :product_cart_article_details_path, :product_cart_article_price_path, :product_cart_article_voucher_path, :product_cart_button_checkout_path, 
   :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path,
@@ -44,17 +44,11 @@ class Csspathes
   
     #website basics
     @homepage_content_header_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  'div.page-wrap > header'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     'div.page-wrap > header'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      'body > div.page-wrap > header'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   'body > div.page-wrap > header'
       else 'div.page-wrap > header' 
     end
     @homepage_content_searchfield_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.navigation--entry.entry--search'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.navigation--entry.entry--search'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.navigation--entry.entry--search'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.navigation--entry.entry--search'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.navigation--entry.entry--search'
       else '.navigation--entry.entry--search'
     end
     @homepage_content_logo_path = case 
@@ -62,15 +56,11 @@ class Csspathes
       else '.logo-main'
     end
     @homepage_content_navi_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.navigation-main'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.navigation-main'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      'body > div.page-wrap > nav'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   'body > div.page-wrap > nav'
       else '.navigation-main'
     end
     @homepage_content_navi_burger_path = case 
       # chefworks is not working with mobile
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.entry--menu-left.entry--menu > a > i'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.entry--menu-left > a > i'
       else '.entry--menu-left.entry--menu > a > i'
     end
@@ -85,29 +75,20 @@ class Csspathes
       else '.background > ul > li:nth-child(2) > a'
     end
     @homepage_content_body_main_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.content-main'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.content-main'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      'div.page-wrap > section > div'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.page-wrap > section > div'
       else '.content-main'
     end
     @homepage_content_footer_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  'footer'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     'footer'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      'footer'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   'footer'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  'footer'
       else 'footer'
     end
     #navigation
     @navigation_menu_path = case
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.page-wrap > nav'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.page-wrap > nav'
       else '.navigation--list-wrapper > ul > li:first-child > a'#'.navigation-main' 
     end
     @navigation_menu_title_path = case
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.page-wrap > nav'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.page-wrap > nav'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/) then  '.navigation--list-wrapper > ul > li:first-child > a'
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.navigation--list-wrapper > ul > li:first-child > a'
       else '.advanced-menu > div.menu--container.menu--is-active > div.button-container > a' 
     end
@@ -118,110 +99,71 @@ class Csspathes
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/nl/) then       '.menu--list-item'
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/es/) then       '.menu--list-item'
       when "#{@env_system}".match(/live/) && "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then     '.advanced-menu'
-      when "#{@env_system}".match(/int/) && "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then     '.advanced-menu'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then     '.advanced-menu'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then  '.advanced-menu'
       else '.advanced-menu > div.menu--container.menu--is-active > div.content--wrapper.has--content.has--teaser > div.menu--container-flyout > ul > li:first-child' 
     end
     @navigation_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.navigation-main'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.navigation-main'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.page-wrap > nav'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.page-wrap > nav'
       else '.navigation-main' 
     end
     @navigation_hovermenu_close_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then      'form > label'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then         'form > label'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then          '.menu--is-active > div.button-container > span > i'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then       '.menu--container.menu--is-active > div > span > i'
       else 'form > label'
     end
     @navigation_sidebar_sub_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/) then      '.has--sub-categories > ul > li:nth-child(1)'
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then      '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then          '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then       '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories'
       else '.navigation--entry.is--active.has--sub-categories.has--sub-children > ul > li:first-child > a '#
     end
     @navigation_sidebar_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then      '.sidebar--categories-navigation'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then         '.sidebar--categories-navigation'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then          '.sidebar--categories-navigation'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then       '.sidebar--categories-navigation'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/de/) then          '.sidebar--categories-navigation'
       else '.sidebar--categories-navigation'
     end
     @navigation_hover_breadcrumb_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.content--breadcrumb'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.content--breadcrumb'# maincategory is not on broadcrumb
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      'section > nav > ul' 
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   'section > nav > ul'
       else '.content--breadcrumb'
     end
     #links
     @links_account_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--account'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.entry--account'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.entry--account'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.entry--account'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--account'
       else '.entry--account' 
     end
     @links_account_icon_path = case 
-      when "#{@env_shop}".match(/xxx/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--account'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--account'
       else '.entry--account > a > i' 
     end
     @links_registration_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '#registration'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '#registration'  
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '#registration'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '#registration'
       else '#registration' 
     end
     @links_accordion_path = case 
-      when "#{@env_shop}".match(/xxx/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--cart'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--cart'
       else 'body > div.page-wrap > section > div > div > div.accordion-container > div.css-accordion-head.btn > label >.css-accordion-head-content'
     end
     @links_notes_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--wishlist > a'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.entry--wishlist > a'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.entry--notepad'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.entry--notepad'
       else '.entry--wishlist > a'
     end
     @links_note_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.note--content'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.note--content'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.note--content'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.note--content'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.note--content'
       else '.note--content'
     end
     @links_cart_symbol_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--cart'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.entry--cart'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.entry--cart'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.entry--cart'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then  '.entry--cart'
       else '.entry--cart'
     end
     @links_cart_button_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.button--open-basket'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.button--open-basket'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.button--open-basket'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.button--open-basket'
       else '.button--open-basket'
     end
     @links_cart_sidebar_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  '.container--ajax-cart'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then     '.container--ajax-cart'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then      '.container--ajax-cart.off-canvas.is--right.is--active.is--open'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then   '.container--ajax-cart.off-canvas.is--right.is--active.is--open'
       else '.container--ajax-cart'
     end
     @links_service_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/de/) then          'div.navigation--entry.entry--service'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then       'div.navigation--entry.entry--service'
       else ':nth-child(3) > nav > ul > li:nth-child(1) > a'
     end
     @links_context_path = case 
@@ -235,89 +177,60 @@ class Csspathes
       else '.navigation--entry.is--active.has--sub-categories' 
     end
     @links_about_path = case 
-      when "#{@env_shop}".match(/xpulsiv/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
-      when "#{@env_shop}".match(/xveg/) && "#{@env_country}".match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/xhotelwaesch/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/chefwork/) && "#{@env_country}".match(/de/) then          'div.navigation--entry.entry--service'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
       else 'footer > div:nth-child(3) > div > div:nth-child(3) > div'
     end
     @links_imprint_path = case 
-      when "#{@env_shop}".match(/xpulsiv/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
-      when "#{@env_shop}".match(/xveg/) && "#{@env_country}".match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/xhotelwaesch/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/xchefwork/) && "#{@env_country}".match(/de/) then          'div.navigation--entry.entry--service'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
       else ':nth-child(3) > nav > ul > li:nth-child(5) > a'
     end
     @links_info_headline = case 
-      when "#{@env_shop}".match(/xpulsiv/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
-      when "#{@env_shop}".match(/xveg/) && "#{@env_country}".match(/[a-z]{2}/) then         ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/xhotelwaesc/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3) > nav > ul > li:nth-child(1) > a'
-      when "#{@env_shop}".match(/xchefwor/) && "#{@env_country}".match(/de/) then          'div.navigation--entry.entry--service'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.navigation--entry.entry--service'
       else '.emotion--row > div > h1'
     end
     
     #search.rb
     @search_searchfield_path = case 
-      when "#{@env_shop}".match(/Hchefworks/) && "#{@env_country}".match(/de/) then      ''
-      when "#{@env_shop}".match(/hpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  ''
-      when "#{@env_shop}".match(/hexport/) && "#{@env_country}".match(/[a-z]{2}/) then   ''
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/de/) then      ''
       else '.entry--search > form > input'
     end
     @search_searchbutton_path = case 
-      when "#{@env_shop}".match(/Hchefworks/) && "#{@env_country}".match(/de/) then      ''
-      when "#{@env_shop}".match(/hpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  ''
-      when "#{@env_shop}".match(/hexport/) && "#{@env_country}".match(/[a-z]{2}/) then   ''
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/de/) then      ''
       else '.entry--search > form > button'
     end
     @search_searchbutton_icon_path = case 
-      when "#{@env_shop}".match(/Hchefworks/) && "#{@env_country}".match(/de/) then      ''
-      when "#{@env_shop}".match(/hpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  ''
-      when "#{@env_shop}".match(/hexport/) && "#{@env_country}".match(/[a-z]{2}/) then   ''
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/de/) then      ''
       else '.entry--search > form > button > i'
     end
     @search_product_name_path = case
-      when "#{@env_shop}".match(/Hchefworks/) && "#{@env_country}".match(/de/) then      ''
-      when "#{@env_shop}".match(/hpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then  ''
-      when "#{@env_shop}".match(/hexport/) && "#{@env_country}".match(/[a-z]{2}/) then   ''
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/de/) then      ''
       else '.product--header'
     end
     @search_results_path = case 
-      when "#{@env_shop}".match(/Hchefworks/) && "#{@env_country}".match(/de/) then      ''
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.content-main--inner > .content--wrapper'
-      when "#{@env_shop}".match(/hexport/) && "#{@env_country}".match(/[a-z]{2}/) then   ''
       when "#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/) then   '.content-main--inner > .content--wrapper'
       else '.search--results'
     end
     #direct_ordering
     @direct_ordering_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/) then   '.header--directOrder'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.header--directOrder'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'not available'
       else '.header--directOrder' 
     end
     @direct_ordering_form_sku_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.emgroup-direct-order-searchterm-column > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.emgroup-direct-order-searchterm-column > input'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'not available'
       else '.emgroup-direct-order-searchterm-column > input' 
     end
     @direct_ordering_form_quantity_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'not available'
       else '.emgroup-direct-order-quantity-column > div' 
     end
       @direct_ordering_form_button_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'form > button.emgroup-direct-order-submit.btn.right.is--icon-left'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'form > button.emgroup-direct-order-submit.btn.right.is--icon-left'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'not available'
       else '.emgroup-direct-order-submit'
     end
     @direct_ordering_sidebar_item_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.item--container > div > a'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.item--container > div > a'
       when "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) then      '.container--ajax-cart'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'not available'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'not available'
@@ -325,165 +238,97 @@ class Csspathes
     end
     #product_page.rb
     @product_page_buybutton_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'form > div > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'form > div > button'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.product--buybox.block > div > form > div > button'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div > div > button'
       else 'form > div > button'
     end
     @product_page_infobox_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.is--active.is--open'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.is--active.is--open'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.is--active.is--open'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.is--active.is--open'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then   '.is--active.is--open'
       else '.is--active.is--open'
     end
     @product_cart_productinfo_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.panel--td.table--content'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.panel--td.table--content'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel--td.table--content'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel--td.table--content'
       else 'div.panel--td.table--content'
     end
     @product_page_productname_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'header > div > h1'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'header > div > h1'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'header > div > h1'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'header > div > h1'
       else 'header > div > h1' 
     end
     @product_page_productpicture_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.product--image-container.image-slider.product--image-zoom'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.product--image-container.image-slider.product--image-zoom'
       else '.image-slider--container'
     end
     @product_page_productconfig_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.product--buybox.block'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.product--buybox.block'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.product--buybox.block'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.product--buybox.block'
       else 'div.product--buybox.block' 
     end
     @product_page_productinfo_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tab-menu--product'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.tab-menu--product'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.tab-menu--product.js--tab-menu'
       else '.tab-menu--product' 
     end
     @product_page_productrecommodations_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.tab-menu--cross-selling'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.tab-menu--cross-selling'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.tab-menu--cross-selling'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.tab-menu--cross-selling'
       else 'div.tab-menu--cross-selling'
     end
     @product_page_productlast_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.last-seen-products'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.last-seen-products'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.last-seen-products'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.last-seen-products'
       else 'div.last-seen-products' 
     end
     @product_page_rememberbutton_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.cart--add-to-list'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.cart--add-to-list'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.link--notepad'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.link--notepad'
       else '.cart--add-to-list'
     end
     @product_page_heart_badge_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.js--modal'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.js--modal'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'li.navigation--entry.entry--notepad > a > span'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'li.navigation--entry.entry--notepad > a > span'
       else '.js--modal'
     end
     @product_page_comparebutton_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.action--compare'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.action--compare'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.action--compare'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.action--compare'
       else '.action--compare'
     end
     @product_page_compareicon_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.compare--quantity'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.compare--quantity'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.navigation--entry.entry--compare > i'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.navigation--entry.entry--compare > i'
       else '.compare--quantity'
     end
     @product_page_rate_ratebutton_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'a.action--link.link--publish-comment'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'a.action--link.link--publish-comment'
       else '.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
     end
     @product_page_rate_tab_menu = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
       else 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
     end  
     @product_page_rate_tab_rateflag = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   ':nth-child(2)'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      ':nth-child(2)'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(2)'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    ':nth-child(2)'
       else ':nth-child(2)'
     end
     @product_page_rate_form = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#detail--product-reviews'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#detail--product-reviews'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#detail--product-reviews'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#detail--product-reviews'
       else '#detail--product-reviews'
     end
     @product_page_viewed_tab_menu = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tab-menu--cross-selling > div > div'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.tab-menu--cross-selling > div > div'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a'
       else '.tab-menu--cross-selling > div > div' 
     end
     @product_page_viewed_tab_otherCustomer = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   ':nth-child(2)'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      ':nth-child(2)'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then ':nth-child(3)'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    ':nth-child(2)'
       else ':nth-child(2)'
     end
     @product_page_suggest_container = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tab-menu--cross-selling > div > div:nth-child(2)'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.tab-menu--cross-selling > div > div:nth-child(2)'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active'
       else '.tab-menu--cross-selling > div > div:nth-child(2)'
     end
     #product_cart ###################################################################################################################################################################
     @product_cart_article_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.compare--quantity'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.compare--quantity'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel.has--border'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel.has--border'
       else '.compare--quantity'
     end
-    
     @product_cart_button_continue_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.table--content > a.content--title'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.table--content > a.content--title'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.continue-shopping--action'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.continue-shopping--action'
       else '.table--content > a.content--title'
     end
     @product_cart_remove_article_path = case
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/) then   '.row--product.is--last-row > div.panel--td.column--actions > form > button > i'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.column--actions > form > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.column--actions > form > button'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel--td.column--actions > a'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel--td.column--actions > a'
       else '.column--actions > form > button'
     end
     @product_cart_article_path = case
@@ -495,57 +340,35 @@ class Csspathes
       else "div > div > div > div > .alert--content"
     end
     @product_cart_article_details_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.table--tr.block-group.row--product.is--last-row'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.table--tr.block-group.row--product.is--last-row'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.table--tr.block-group.row--product.is--last-row'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.table--tr.block-group.row--product.is--last-row'
       else 'div.table--tr.block-group.row--product.is--last-row'
     end
     @product_cart_article_price_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.basket--footer > ul'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.basket--footer > ul'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.basket--footer > ul'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.basket--footer > ul'
       else 'div.basket--footer > ul'
     end
     @product_cart_article_voucher_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.panel--td.column--quantity.is--align-right'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.panel--td.column--quantity.is--align-right'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel--td.column--quantity.is--align-right'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel--td.column--quantity.is--align-right'
       else 'div.panel--td.column--quantity.is--align-right'
     end
     @product_cart_button_checkout_path = case
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.btn--checkout-proceed'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'a.btn.btn--checkout-proceed.is--primary.right.is--icon-right.is--large'
       else '.btn--checkout-proceed'
     end
     @product_cart_checkout_steps_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.steps--container.container'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'div.steps--container.container'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.steps--container.container'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.steps--container.container'
       else 'div.steps--container.container'
     end
     @product_cart_voucher_checkbox_path = case
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#add-voucher--trigger'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.add-voucher--form > div > input'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#add-voucher--trigger'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#add-voucher--trigger'
       else '.add-voucher--form > div > input'
     end
     @product_cart_voucher_input_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'form.table--add-voucher.add-voucher--form > div > input'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.add-voucher--form > div > input'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'form.table--add-voucher.add-voucher--form > div > input'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'form.table--add-voucher.add-voucher--form > div > input'
       else 'form.table--add-voucher.add-voucher--form > div > input'
     end
     @product_cart_voucher_button_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'form.table--add-voucher.add-voucher--form > div > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'form.table--add-voucher.add-voucher--form > div > button'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'form.table--add-voucher.add-voucher--form > div > button'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'form.table--add-voucher.add-voucher--form > div > button'
       else 'form.table--add-voucher.add-voucher--form > div > button'
     end
@@ -553,71 +376,45 @@ class Csspathes
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'product_cart_order_sku_path is not available'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'product_cart_order_sku_path is not available'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel.has--border > div > form > input'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel.has--border > div > form > input'
       else 'product_cart_order_sku_path is not defined' 
     end
     @product_cart_order_button_path = case
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'product_cart_order_button_path is not available'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'product_cart_order_button_path is not available'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel.has--border > div > form > button'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel.has--border > div > form > button'
       else 'product_cart_order_button_path is not defined' 
     end
     #account ########################################################################################################################################################
     @account_registerform_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#registration'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#registration'
       else '#registration'
     end 
     @account_registerform_accordion_new_path = case 
-      when "#{@env_shop}".match(/xxxpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxvega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxchefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#registration'
-      when "#{@env_shop}".match(/xexport/) && "#{@env_country}".match(/[a-z]{2}/) then    '#registration'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
       else "section > div > div > div.accordion-container > div.css-accordion-head.btn > label"
     end 
     @account_registerform_accordion_login_path = case 
-      when "#{@env_shop}".match(/xxxpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxvega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxchefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#registration'
-      when "#{@env_shop}".match(/xexport/) && "#{@env_country}".match(/[a-z]{2}/) then    '#registration'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
       else ".content > div > .css-accordion-head.btn > label"
     end 
     @account_registerform_login_path = case 
-      when "#{@env_shop}".match(/xxxpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxvega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/xxxchefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#registration'
-      when "#{@env_shop}".match(/xexport/) && "#{@env_country}".match(/[a-z]{2}/) then    '#registration'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
       else ".register--existing-customer"
     end 
     @account_registerform_prefix_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.register--personal > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.register--personal > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.register--personal > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.register--personal > div > div.register--salutation.field--select'
       else '.register--personal > div > div.register--salutation.field--select'
     end 
     @account_registerform_firstname_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#firstname'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#firstname'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#firstname'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#firstname'
       else '#firstname'
     end 
     @account_registerform_lastname_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#lastname'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#lastname'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#lastname'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#lastname'
       else '#lastname'
     end 
     @account_registerform_department_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_department'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#register_billing_department'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_department'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_department'
       else '#register_billing_department'
     end     
     @account_registerform_taxid_path = case #umsatzsteuernummer (UID)
@@ -627,341 +424,196 @@ class Csspathes
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/no/) then            '#register_billing_emgroup_commercial_register_nr'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/se/) then            '#register_billing_emgroup_commercial_register_nr'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_ustid'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_ustid'
       else '#register_billing_vatid' 
     end 
     @account_registerform_customernumber_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_registerform_customernumber is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_registerform_customernumber is not available'
-      else '#register_personal_number'
+            else '#register_personal_number'
     end
     @account_registerform_taxvat_path = case #handelsregister
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/fr/) then         '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/nl/) then         '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/no/) then         '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/se/) then         '#register_billing_emgroup_commercial_register_nr'
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/fr/) then            '#register_billing_emgroup_commercial_register_nr'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/be/) then            '#register_billing_vatid'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then       '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/be/) then       '#register_billing_emgroup_commercial_register_nr'
-      when "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/fr/) then       '#register_billing_emgroup_commercial_register_nr'
-      
-      when "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/se/) then       '#register_billing_emgroup_commercial_register_nr'
-      
       when "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_emgroup_commercial_register_nr'
       else 'account_registerform_taxvat_path is not defined'
     end 
     @account_registerform_email_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_personal_email'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_personal_email'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_personal_email'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_personal_email'
       else '#register_personal_email'
     end 
     @account_registerform_password_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_personal_password'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#register_personal_password'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_personal_password'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_personal_password'
       else '#register_personal_password'
     end 
     @account_registerform_phone_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#phone'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#phone'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#phone'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#phone'
       else '#phone'
     end 
     @account_registerform_company_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_company'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_company'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_company'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_company'
       else '#register_billing_company'
     end 
     @account_registerform_checkbox_company_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_emgroup_business_form_other'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#register_billing_emgroup_business_form_other'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '@account_registerform_checkbox_company_path is available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '@account_registerform_checkbox_company_path is available'
       else '#register_billing_emgroup_business_form_other' 
     end 
     @account_registerform_street_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#street'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#street'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#street'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#street'
       else '#street' 
     end
     @account_registerform_streetnumber_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emgroup_house_number'#on int no live
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emgroup_house_number'#on int no live
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then nil
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    nil
       else '#emgroup_house_number' 
     end
     @account_registerform_postcode_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#zipcode'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#zipcode'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#zipcode'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#zipcode'
       else '#zipcode'
     end 
     @account_registerform_city_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#city'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#city'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#city'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#city'
       else '#city'
     end 
     @account_registerform_country_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.panel.register--address > div > div.register--country.field--select'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.panel.register--address > div > div.register--country.field--select'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel.register--address > div > div.register--country.field--select'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel.register--address > div > div.register--country.field--select'
       else 'div.panel.register--address > div > div.register--country.field--select'
     end 
     @account_registerform_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.register--action > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.register--action > button'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.register--action > button'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.register--action > button'
       else 'div.register--action > button'
     end 
     @account_address_create_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--address'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--address'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'xxx'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'xxx'
       else '.account--address'
     end
     @account_address_prefix_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--salutation.field--select > .js--fancy-select'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--salutation.field--select > .js--fancy-select'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'xxx'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'xxx'
       else '.address--salutation.field--select > .js--fancy-select'
     end
     @account_address_firstname_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#firstname2'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#firstname2'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_firstname is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_firstname is not available'
       else '#firstname2'
     end
     @account_address_lastname_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#lastname2'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#lastname2'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_lastname is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_lastname is not available'
       else '#lastname2' 
     end
     @account_address_phone_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#address_emgroup_shipping_phone'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#address_emgroup_shipping_phone'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_phone is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_phone is not available'
       else '#address_emgroup_shipping_phone'
     end
     @account_address_company_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_company'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_company'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_company is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_company is not available'
       else '#register_billing_company'
     end
     @account_address_street_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#street'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#street'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_street is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_street is not available'
       else '#street'
     end
     @account_address_streetnumber_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emgroup_house_number'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emgroup_house_number'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_streetnumber is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_streetnumber is not available'
       else '#emgroup_house_number'
     end
     @account_address_postcode_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#zipcode'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#zipcode'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_postcode is not available is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_postcode is not available is not available'
       else '#zipcode'
     end
     @account_address_city_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#city'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#city'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_city is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_city is not available'
       else '#city'
     end
     @account_address_standard_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#set_default_shipping'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#set_default_shipping'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_standard is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_standard is not available'
       else '#set_default_shipping'
     end
     @account_address_country_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#country'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#country'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_country_path is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_country_path is not available'
       else '#country'
     end
     @account_address_savebutton_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--form-actions > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--form-actions > input'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'account_address_savebutton_path is not available'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'account_address_savebutton_path is not available'
       else '.address--form-actions > input'
     end
     @account_accountpage_welcome_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--welcome.panel'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--welcome.panel'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--welcome.panel'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--welcome.panel'
       else '.account--welcome.panel'
     end 
     @account_accountpage_info_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--info'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--info'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--info'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--info'
       else '.account--info'
     end 
     @account_loginform_emailfield_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#email'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#email'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#email'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#email'
       else '#email'
     end 
     @account_loginform_passwordfield_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#passwort'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#passwort'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#passwort'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#passwort'
       else '#passwort'
     end     
     @account_loginform_registerbutton_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.register--login-action > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.register--login-action > button'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.register--login-action > button'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.register--login-action > button'
       else '.register--login-action > button'
     end 
     @account_userinfo_passwordchange_button_appear_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn--password'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn--password'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.btn--password'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.btn--password'
       else '.btn--password' 
     end 
     @account_userinfo_passwordchange_currentpassword_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#currentPassword'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#currentPassword'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#currentPassword'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#currentPassword'
       else '#currentPassword'
     end 
     @account_userinfo_passwordchange_newpassword_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#newpwd'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#newpwd'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#newpwd'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#newpwd'
       else '#newpwd'
     end     
     @account_userinfo_passwordchange_repeatnewpassword_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#newpwdrepeat'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then   '#newpwdrepeat'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#newpwdrepeat'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#newpwdrepeat'
       else '#newpwdrepeat'
     end 
     @account_userinfo_passwordchange_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#account--password > form > div.panel--actions.is--wide > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#account--password > form > div.panel--actions.is--wide > input'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#account--password > form > div.panel--actions.is--wide > input'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#account--password > form > div.panel--actions.is--wide > input'
       else '#account--password > form > div.panel--actions.is--wide > input' 
     end 
     @account_userinfo_emailchange_button_appear_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn--email'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.btn--email'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.btn--email'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.btn--email'
       else '.btn--email'
     end 
     @account_userinfo_emailchange_currentpassword_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emailPassword'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#emailPassword'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#emailPassword'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#emailPassword'
       else '#emailPassword'
     end     
     @account_userinfo_emailchange_newmail_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#newmail'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#newmail'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#newmail'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#newmail'
       else '#newmail'
     end 
     @account_userinfo_emailchange_repeatnewmail_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#neweailrepeat'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#neweailrepeat'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#neweailrepeat'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#neweailrepeat'
       else '#neweailrepeat'
     end  
     @account_userinfo_emailchange_button_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#account--email > form > div.panel--actions.is--wide > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '#account--email > form > div.panel--actions.is--wide > input'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#account--email > form > div.panel--actions.is--wide > input'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#account--email > form > div.panel--actions.is--wide > input'
       else '#account--email > form > div.panel--actions.is--wide > input'
     end 
     @account_login_errormessage_path = case 
-      when "#{@env_shop}".match(/vegaz/) && "#{@env_country}".match(/[a-z]{2}/) then      '..'
-      when "#{@env_shop}".match(/chefworksz/) && "#{@env_country}".match(/[a-z]{2}/) then '..'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then      '..'
       else '.account--error > div > div.alert--content'
     end 
     @account_userinfo_success_hint_path  = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--success'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--success'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--success'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--success'
       else '.account--success'
     end 
     @account_accountinfo_menucontainer_logout_link_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.link--logout'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.link--logout'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.link--logout'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.link--logout'
       else '.link--logout'
     end     
     @account_accountinfo_payment_box_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--payment.account--box'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--payment.account--box'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--payment.account--box'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--payment.account--box'
       else '.account--payment.account--box'
     end 
     @account_accountinfo_paymentchange_button_appear_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.btn'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.btn'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.btn'
       else '.btn'
     end 
     @account_payment_paymentoptions_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.register--payment'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.register--payment'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.register--payment'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.register--payment'
       else '.register--payment' 
     end 
@@ -990,16 +642,10 @@ class Csspathes
       else '#payment_mean3'
     end 
     @account_payment_change_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--actions > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--actions > input'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--actions > input'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--actions > input'
       else '.account--actions > input'
     end     
     @account_accountinfo_billaddress_box_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--billing.account--box'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--billing.account--box'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--billing.account--box'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--billing.account--box'
       else '.account--billing.account--box'
     end 
@@ -1009,115 +655,71 @@ class Csspathes
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.panel--actions > a'
       when "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) then      '.panel--actions > a'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'a:nth-child(2)'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'a:nth-child(2)'
       else 'account_accountinfo_billaddresschange_button_appear_path is not defined' 
     end 
     @account_invoiceadresschange_form_prefix_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address-form--panel > div > div.address--salutation.field--select > div'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.address-form--panel > div > div.address--salutation.field--select > div'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.panel.register--personal > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.panel.register--personal > div > div.register--salutation.field--select'
       else '.address-form--panel > div > div.address--salutation.field--select > div' 
     end 
     @account_invoiceadresschange_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--form-actions > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.address--form-actions > input'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--actions > input'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--actions > input'
       else '.address--form-actions > input' 
     end 
     @account_accountinfo_deliveraddress_box_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--shipping.account--box'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--shipping.account--box'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--shipping.account--box'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--shipping.account--box'
       else '.account--shipping.account--box'
     end 
     @account_accountinfo_deliveraddresschange_button_appear_path = case 
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then       '.account--shipping.account--box.panel > div > a'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then  'a:nth-child(2)'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then     'a:nth-child(2)'
       else '.account--shipping.account--box.panel > div > a'
     end 
     @account_deliveradresschange_form_prefix_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address-form--panel > div > div.address--salutation.field--select > div'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.address-form--panel > div > div.address--salutation.field--select > div'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.panel.register--shipping > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.panel.register--shipping > div > div.register--salutation.field--select'
       else '.address-form--panel > div > div.address--salutation.field--select > div'
     end 
     @account_deliveradresschange_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.address--form-actions > input'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.address--form-actions > input'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--actions > input'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--actions > input'
       else '.address--form-actions > input'
     end 
     @account_newsletter_box_path = case 
-      when "#{@env_shop}".match(/xxx_pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'account_newsletter_box_path is not available'
-      when "#{@env_shop}".match(/xxx_vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'account_newsletter_box_path is not available'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#newsletter'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#newsletter'
       else '#newsletter' 
     end 
     @account_sidebar_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.account--menu > div > ul'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.account--menu > div > ul'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.account--menu > div > ul'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.account--menu > div > ul'
       else '.account--menu > div > ul'
     end
     #checkout
     @checkout_backbutton_path  = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.block-group > a'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.block-group > a'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.block-group > a'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.block-group > a'
       else '.block-group > a' 
     end
     @checkout_steps_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.steps--container.container'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.steps--container.container'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.steps--container.container'  
       else '.steps--container.container'
     end
     @checkout_agb_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tos--box'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.tos--panel'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.tos--panel'
       else '.tos--box'
     end
     @checkout_billing_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.billing--panel'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.billing--panel'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.billing--panel'
       else '.billing--panel'
     end
     @checkout_shipping_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.shipping--panel'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.shipping--panel'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.shipping--panel'
       else '.shipping--panel'
     end
     @checkout_payment_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.payment--panel'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.payment--panel'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.payment--panel' 
       else '.payment--panel' 
     end
     @checkout_product_container_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.product--table'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.product--table'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.product--table'
       else '.product--table'
     end
     @checkout_orderbutton_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.actions--bottom > div > button'
-      #when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/no/) then   '.actions--bottom > div > button'
-      #when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/se/) then   '.actions--bottom > div > button'
-      #when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/es/) then   '.actions--bottom > div > button'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.tos--top > div > div > button'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.tos--top > div > div > button'
       else '.tos--top > div > div > button'
     end
     @checkout_step_payment_path = case 
@@ -1129,128 +731,87 @@ class Csspathes
       else '.step--confirm.is--active' 
     end
     @checkout_agb_box_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#sAGB'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#sAGB'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#sAGB'
       else '#sAGB'
     end
     @checkout_panel_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/) then   '.panel.has--border > div > .table--header'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'section > div > div > div > div > div.panel.has--border'
-      when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      'section > div > div > div > div > div.panel.has--border'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.panel.has--border'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.panel.has--border'
       else 'section > div > div > div > div > div.panel.has--border'
     end
     @checkout_checkout_proceed_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn--checkout-proceed'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.btn--checkout-proceed'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.btn--checkout-proceed'
       else '.btn--checkout-proceed'
     end
     @checkout_registerform_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#registration'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#registration'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#registration'
       else '#registration'
     end
     @checkout_registerform_prefix_path = case                                       
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.register--personal > div > div.register--salutation.field--select'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.register--personal > div > div.register--salutation.field--select'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.register--personal > div > div.register--salutation.field--select'
       else '.register--personal > div > div.register--salutation.field--select'
     end
     @checkout_registerform_firstname_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#firstname'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#firstname'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#firstname'
       else '#firstname'
     end
     @checkout_registerform_lastname_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#lastname'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#lastname'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#lastname'
       else '#lastname'
     end
     @checkout_registerform_department_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_department'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_department'
       else 'checkout_registerform_department is not defined' 
     end
     @checkout_registerform_taxvat_path = case 
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_ustid'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_ustid'
       else 'checkout_registerform_taxvat_path is not defined'
     end
     @checkout_registerform_customernumber_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_customernumber'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then nil
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    nil
       else '#register_billing_customernumber'
     end
     @checkout_registerform_email_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_personal_email'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_personal_email'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_personal_email'
       else '#register_personal_email'
     end
     @checkout_registerform_skip_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_personal_skipLogin'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_personal_skipLogin'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_personal_skipLogin'
       else '#register_personal_skipLogin'
     end
     @checkout_registerform_phone_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#phone'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#phone'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#phone'
       else '#phone'
     end
     @checkout_registerform_company_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#register_billing_company'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#register_billing_company'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#register_billing_company'
       else '#register_billing_company'
     end
     @checkout_registerform_street_path = case
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#street'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#street'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#street'
       else '#street'
     end
     @checkout_registerform_streetnumber_path = case  
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#emgroup_house_number'
       when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then nil
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    nil
       else '#emgroup_house_number'
     end
     @checkout_registerform_postcode_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#zipcode'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#zipcode'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#zipcode'
       else '#zipcode'
     end
     @checkout_registerform_city_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#city'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#city'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#city'
       else '#city'
     end
     @checkout_registerform_country_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.panel.register--address > div > div.register--country.field--select'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.panel.register--address > div > div.register--country.field--select'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.panel.register--address > div > div.register--country.field--select'
       else 'div.panel.register--address > div > div.register--country.field--select'
     end
     @checkout_registerform_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   'div.register--action > button'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then 'div.register--action > button'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    'div.register--action > button'
       else 'div.register--action > button'
     end
     @checkout_payment_form_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.shipping-payment--information'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.shipping-payment--information'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.shipping-payment--information'
       else '.shipping-payment--information'
     end
@@ -1259,20 +820,15 @@ class Csspathes
       else '.shipping-payment--information > div:nth-child(1) > div > div'
     end
     @checkout_delivery_options_path = case 
-      when "#{@env_shop}".match(/xxx/) && "#{@env_country}".match(/[a-z]{2}/) then   '.shipping-payment--information > div:nth-child(2) > div > div'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then   '.shipping-payment--information > div:nth-child(2) > div > div'
       else '.shipping-payment--information > div:nth-child(2) > div > div'
     end
     @checkout_paymentInAdvance_radio_path = case 
       when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/es/) then         '#payment_mean3'
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '#payment_mean5'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '#payment_mean5'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '#payment_mean5'
       else '#payment_mean5'
     end
     @checkout_payment_continue_path = case 
-      when "#{@env_shop}".match(/xpulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.table--actions.block > button'
-      when "#{@env_shop}".match(/xchefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.table--actions.block > button'
-      when "#{@env_shop}".match(/xexport/) && "#{@env_country}".match(/[a-z]{2}/) then    '.table--actions.block > button'
+      when "#{@env_shop}".match(/something/) && "#{@env_country}".match(/[a-z]{2}/) then    '.table--actions.block > button'
       else 'div > div.confirm--actions.table--actions.block > button'
     end
     @checkout_payment_delivery_standard_radio_path = case 
@@ -1280,16 +836,11 @@ class Csspathes
       else '.dispatch--method .radio.auto_submit'
     end
     @checkout_order_success_teaser_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.finish--teaser'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.finish--teaser'
       when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.finish--teaser'
       else '.finish--teaser'
     end
     @checkout_checkout_buy_button_path = case 
-      when "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/) then   '.btn--checkout-proceed'
       when "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) then      '.confirm--actions.table--actions.block > button'
-      when "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/) then '.btn--checkout-proceed'
-      when "#{@env_shop}".match(/export/) && "#{@env_country}".match(/[a-z]{2}/) then    '.btn--checkout-proceed'
       else '.btn--checkout-proceed'
     end
   end
