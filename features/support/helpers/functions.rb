@@ -258,7 +258,9 @@ module MyFunctions
   #         do not use this function if there is the attribut ':visible'
   #         do not use this function if there is a specific element of the page given to find
   def find_secure(*args)
-    #puts "find_secure:#{args.size}"
+    if (ENV['COUNTRY']=='de')
+        block_css('.dpe-shopwide > .dig-pub') 
+    end
     if args.size == 1
       #puts "find_secure_with_one_arg:#{args}"
       element = find_secure_with_one_arg(*args)
