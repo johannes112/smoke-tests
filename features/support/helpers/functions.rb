@@ -258,8 +258,11 @@ module MyFunctions
   #         do not use this function if there is the attribut ':visible'
   #         do not use this function if there is a specific element of the page given to find
   def find_secure(*args)
-    if (ENV['COUNTRY']=='de')
-        block_css('.dpe-shopwide > .dig-pub') 
+    homepage_content_logo_path = csspathes.homepage_content_logo_path
+    page.find(homepage_content_logo_path)
+    
+    if (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it')
+      block_css('.dpe-shopwide') 
     end
     if args.size == 1
       #puts "find_secure_with_one_arg:#{args}"
@@ -370,8 +373,8 @@ module MyFunctions
     begin
       visit_secure_counter += 1
       visit(url)
-      if (ENV['COUNTRY']=='de')
-        block_css('.dpe-shopwide > .dig-pub') 
+      if (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it')
+        block_css('.dpe-shopwide') 
       end
       if (ENV['SYSTEM']=='live')
         url_functions.set_url_and_get_page(url)
