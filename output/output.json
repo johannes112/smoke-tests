@@ -7,506 +7,238 @@
       }
     ],
     "keyword": "Feature",
-    "name": "checkout",
-    "line": 6,
-    "description": "\nAs a customer,\nI want to be able to order my favorite products",
-    "tags": [
-      {
-        "name": "@pulsiva",
-        "line": 2
-      },
-      {
-        "name": "@export",
-        "line": 3
-      },
-      {
-        "name": "@chefworks",
-        "line": 4
-      },
-      {
-        "name": "@checkout",
-        "line": 5
-      }
-    ],
-    "id": "checkout",
-    "uri": "features/base_features/6.checkout.feature",
+    "name": "search",
+    "line": 2,
+    "description": "\n  As a customer\n  I will be able to search for a specific product",
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
-        "line": 11,
-        "description": "",
-        "type": "background",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "no user account with my email exists",
-            "line": 12,
-            "output": [
-              "UrlBackend:https://www.pulsiva.com/",
-              "user eMail:testmail_pit@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3142635775
-            }
-          }
-        ]
-      },
-      {
         "keyword": "Scenario",
-        "name": "checkout with existing account",
-        "line": 15,
+        "name": "search with sku",
+        "line": 17,
         "description": "",
         "tags": [
           {
-            "name": "@checkout_with",
+            "name": "@quickies",
+            "line": 7
+          },
+          {
+            "name": "@pulsiva",
+            "line": 8
+          },
+          {
+            "name": "@vega",
+            "line": 9
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 10
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 11
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 12
+          },
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@chefworks",
             "line": 14
+          },
+          {
+            "name": "@search",
+            "line": 15
+          },
+          {
+            "name": "@search_sku",
+            "line": 16
           }
         ],
-        "id": "checkout;checkout-with-existing-account",
+        "id": "search;search-with-sku",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am logged in",
-            "line": 16,
-            "output": [
-              "I already created an user account",
-              "-> no unique account with customer:testmail_pit@test.de exists",
-              "I am on the registration page",
-              "--> go to https://www.pulsiva.com/it-it/account",
-              "I create a new account with my data",
-              "- set prefix = \"Sig\"",
-              "- set firstname: Nome",
-              "- set lastname: Cognome",
-              "customernumber is not available in it",
-              "- set email: testmail_pit@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva Italy GmbH",
-              "chose company",
-              "department is not available in it",
-              "- set taxid: IT99999999999",
-              "- set taxvat: IT 02531440218",
-              "- set street: Via Luigi Galvani",
-              "- set streetnumber: 6/C",
-              "- set postcode: 39100",
-              "- set city: Bolzano",
-              "clicked button to continue",
-              "I log me out",
-              "--> logged me out",
-              "I am on the registration page",
-              "--> go to https://www.pulsiva.com/it-it/account",
-              "I login with valid informations",
-              "> ok, I am on https://www.pulsiva.com/it-it/account",
-              "-> set email",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.pulsiva.com/it-it/account",
-              "> the page contains testmail_pit@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:199"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 309156445060
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 17,
-            "output": [
-              "go to https://www.pulsiva.com/it-it/",
-              "-> add article: https://www.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://www.pulsiva.com/it-it/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 8967735303
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am on the checkout page",
+            "name": "I am on the website",
             "line": 18,
             "output": [
-              "url_checkout:https://www.pulsiva.com/it-it/checkout",
-              "> ups, I am on https://www.pulsiva.com/it-it/checkout/cart",
-              "--> click continue",
-              "-> set payment",
-              "current_url:https://www.pulsiva.com/it-it/checkout/shippingPayment",
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue",
-              "And the checkoutpage contains all elements"
+              "go to https://www.pulsiva.com/de-de/"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 16156894940
+              "duration": 5537958864
             }
           },
           {
             "keyword": "When ",
-            "name": "I send my order",
+            "name": "I am searching for a product by entering the sku in the searchfield",
             "line": 19,
             "output": [
-              "I am on the checkout page",
-              "url_checkout:https://www.pulsiva.com/it-it/checkout",
-              "> ok, I am on https://www.pulsiva.com/it-it/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "> found orderbutton but not press"
+              "- set sku = \"20040136\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:57"
+              "location": "features/step_definitions/search.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6951679311
+              "duration": 16110042616
             }
           },
           {
             "keyword": "Then ",
-            "name": "Shopware should have my order",
+            "name": "I should be on the detailsite of the related product",
             "line": 20,
             "output": [
-              "> Shopware can not have my order because i have not pressed the orderbutton"
+              "found 'STEAKGABEL'"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:222"
+              "location": "features/step_definitions/search.rb:21"
             },
             "result": {
               "status": "passed",
-              "duration": 60038
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 21,
-            "output": [
-              "UrlBackend:https://www.pulsiva.com/",
-              "user eMail:testmail_pit@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6397125664
+              "duration": 4424075712
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "checkout without existing account and create an account",
+        "name": "search with productnumber",
         "line": 24,
         "description": "",
         "tags": [
           {
-            "name": "@checkout_registration",
+            "name": "@search",
+            "line": 22
+          },
+          {
+            "name": "@search_number",
             "line": 23
           }
         ],
-        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "id": "search;search-with-productnumber",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
+            "keyword": "Given ",
+            "name": "I am on the website",
             "line": 25,
             "output": [
-              "go to https://www.pulsiva.com/it-it/",
-              "-> add article: https://www.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://www.pulsiva.com/it-it/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 8123996102
+              "duration": 2773283119
             }
           },
           {
             "keyword": "When ",
-            "name": "I go to the checkout",
+            "name": "I am searching for a product by entering the productnumber in the searchfield",
             "line": 26,
             "output": [
-              "\u001b[35munknown error: Cannot read property 'style' of null\n  (Session info: chrome=53.0.2785.89)\n  (Driver info: chromedriver=2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf),platform=Windows NT 6.1.7601 SP1 x86_64) (35)\u001b[0m\n",
-              "--> click button to continue"
+              "- set productnumber = \"104105\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:84"
+              "location": "features/step_definitions/search.rb:42"
             },
             "result": {
               "status": "passed",
-              "duration": 4451079387
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I create a new account with my data",
-            "line": 27,
-            "output": [
-              "- set prefix = \"Sig\"",
-              "- set firstname: Nome",
-              "- set lastname: Cognome",
-              "customernumber is not available in it",
-              "- set email: testmail_pit@test.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Pulsiva Italy GmbH",
-              "chose company",
-              "department is not available in it",
-              "- set taxid: IT99999999999",
-              "- set taxvat: IT 02531440218",
-              "- set street: Via Luigi Galvani",
-              "- set streetnumber: 6/C",
-              "- set postcode: 39100",
-              "- set city: Bolzano",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:42"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 164677306810
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I set payment and shipping",
-            "line": 28,
-            "output": [
-              "current_url:https://www.pulsiva.com/it-it/checkout/shippingPayment",
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:196"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16102972699
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 29,
-            "output": [
-              "I am on the checkout page",
-              "url_checkout:https://www.pulsiva.com/it-it/checkout",
-              "> ok, I am on https://www.pulsiva.com/it-it/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "> found orderbutton but not press"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:57"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 7769319125
+              "duration": 14015268258
             }
           },
           {
             "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 30,
+            "name": "I should see my product on the results of my search",
+            "line": 27,
             "output": [
-              "> Shopware can not have my order because i have not pressed the orderbutton"
+              "found 'Steakgabel'"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:222"
+              "location": "features/step_definitions/search.rb:57"
             },
             "result": {
               "status": "passed",
-              "duration": 56698
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 31,
-            "output": [
-              "UrlBackend:https://www.pulsiva.com/",
-              "user eMail:testmail_pit@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6471832773
+              "duration": 10643553963
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "checkout without existing account and without creating an account",
-        "line": 34,
+        "name": "search with name",
+        "line": 31,
         "description": "",
         "tags": [
           {
-            "name": "@checkout_without",
-            "line": 33
+            "name": "@search",
+            "line": 29
+          },
+          {
+            "name": "@search_name",
+            "line": 30
           }
         ],
-        "id": "checkout;checkout-without-existing-account-and-without-creating-an-account",
+        "id": "search;search-with-name",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 35,
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 32,
             "output": [
-              "go to https://www.pulsiva.com/it-it/",
-              "-> add article: https://www.pulsiva.com/it-it/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2",
-              "-> go to https://www.pulsiva.com/it-it/checkout/cart"
+              "go to https://www.pulsiva.com/de-de/"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:2"
+              "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 7560281172
+              "duration": 2493465252
             }
           },
           {
             "keyword": "When ",
-            "name": "I go to the checkout",
-            "line": 36,
+            "name": "I am searching for products by entering the productname in the searchfield",
+            "line": 33,
             "output": [
-              "\u001b[35munknown error: Cannot read property 'style' of null\n  (Session info: chrome=53.0.2785.89)\n  (Driver info: chromedriver=2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf),platform=Windows NT 6.1.7601 SP1 x86_64) (35)\u001b[0m\n",
-              "--> click button to continue"
+              "- set name = \"Steakgabel\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:84"
+              "location": "features/step_definitions/search.rb:92"
             },
             "result": {
               "status": "passed",
-              "duration": 5133960786
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I fill out a register form and send it without creating an account",
-            "line": 37,
-            "output": [
-              "- set prefix = \"Sig\"",
-              "- set firstname: Nome",
-              "- set lastname: Cognome",
-              "customernumber is not available in it",
-              "- set email: testmail_pit@test.de",
-              "- set phone: 01234567",
-              "- set company: Pulsiva Italy GmbH",
-              "chose company",
-              "department is not available in it",
-              "- set taxid: IT99999999999",
-              "- set taxvat: IT 02531440218",
-              "- set street: Via Luigi Galvani",
-              "- set streetnumber: 6/C",
-              "- set postcode: 39100",
-              "- set city: Bolzano",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:98"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 133068296218
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I set payment and shipping",
-            "line": 38,
-            "output": [
-              "current_url:https://www.pulsiva.com/it-it/checkout/shippingPayment",
-              "-> choose payment",
-              "-> choose delivery",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:196"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12493851659
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 39,
-            "output": [
-              "I am on the checkout page",
-              "url_checkout:https://www.pulsiva.com/it-it/checkout",
-              "> ok, I am on https://www.pulsiva.com/it-it/checkout",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "-> activate agb",
-              "> found orderbutton but not press"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:57"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5501691602
+              "duration": 16023035059
             }
           },
           {
             "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 40,
+            "name": "I should see my product on the results of my search",
+            "line": 34,
             "output": [
-              "> Shopware can not have my order because i have not pressed the orderbutton"
+              "found 'Steakgabel'"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:222"
+              "location": "features/step_definitions/search.rb:57"
             },
             "result": {
               "status": "passed",
-              "duration": 58861
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "no user account with my email exists",
-            "line": 41,
-            "output": [
-              "UrlBackend:https://www.pulsiva.com/",
-              "user eMail:testmail_pit@test.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6346604980
+              "duration": 13477601206
             }
           }
         ]

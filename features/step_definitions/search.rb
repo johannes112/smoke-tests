@@ -7,8 +7,8 @@ When(/^I am searching for a product by entering the sku in the searchfield$/) do
   printValue(:sku, binding)
   
   #variables:path
-  search_searchfield_path = csspathes.search_searchfield_path
-  search_searchbutton_path = csspathes.search_searchbutton_path
+  search_searchfield_path = search.search_searchfield_path
+  search_searchbutton_path = search.search_searchbutton_path
   #actions
   #find_secure(search_searchfield_path).set(sku)
   element = find_secure(search_searchfield_path, page_content)
@@ -24,7 +24,7 @@ Then(/^I should be on the detailsite of the related product$/) do
   search_product_name = name.upcase
   
   #variables:path
-  search_product_name_path = csspathes.search_product_name_path
+  search_product_name_path = search.search_product_name_path
   
   #actions
   element=find_secure(search_product_name_path)
@@ -45,8 +45,8 @@ When(/^I am searching for a product by entering the productnumber in the searchf
   printValue(:productnumber, binding)
   
   #variables:path
-  search_searchfield_path = csspathes.search_searchfield_path
-  search_searchbutton_path = csspathes.search_searchbutton_path
+  search_searchfield_path = search.search_searchfield_path
+  search_searchbutton_path = search.search_searchbutton_path
   #actions
   find_secure(search_searchfield_path).set(productnumber)
   search_searchbutton = find_secure(search_searchbutton_path)
@@ -60,7 +60,7 @@ Then(/^I should see my product on the results of my search$/) do
   search_name = name.upcase
   
   #variables:path
-  search_results_path = csspathes.search_results_path
+  search_results_path = search.search_results_path
   
   if ENV['SHOP'] == 'v_jobeline'
     if (page.has_no_css?(search_results_path))
@@ -95,8 +95,8 @@ When(/^I am searching for products by entering the productname in the searchfiel
   printValue(:name, binding)
   
   #variables:path
-  search_searchfield_path = csspathes.search_searchfield_path
-  search_searchbutton_path = csspathes.search_searchbutton_path
+  search_searchfield_path = search.search_searchfield_path
+  search_searchbutton_path = search.search_searchbutton_path
   #actions
   find_secure(search_searchfield_path).set(name)
   search_searchbutton = find_secure(search_searchbutton_path)
@@ -109,7 +109,7 @@ end
 
 When(/^I touch the button of searching$/) do
   start_url = current_url
-  search_searchbutton_mobile_path = ".entry--search > a > i"
+  search_searchbutton_mobile_path = search.search_searchbutton_mobile_path
   
   find_secure(search_searchbutton_mobile_path)
   element = find_secure(search_searchbutton_mobile_path)

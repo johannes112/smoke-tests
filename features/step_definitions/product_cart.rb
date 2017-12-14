@@ -11,13 +11,13 @@ Given(/^I am on the product cart page$/) do
 end
 
 Given(/^the product cart contains an article$/) do
-  homepage_content_logo_path = csspathes.homepage_content_logo_path
+  homepage_content_logo_path = productcart.homepage_content_logo_path
   
   puts "I am on the product cart page"
   step("I am on the product cart page")
   
   # with ajax'
-  product_cart_article_path = csspathes.product_cart_article_path
+  product_cart_article_path = productcart.product_cart_article_path
   find_secure(product_cart_article_path)
   
   #check if cart contains an article
@@ -51,7 +51,7 @@ end
 
 When(/^I click on the button to continue shopping$/) do
   start_url = current_url
-  product_cart_button_continue_path = csspathes.product_cart_button_continue_path
+  product_cart_button_continue_path = productcart.product_cart_button_continue_path
   
   element = find_secure(product_cart_button_continue_path, match: :first)
   element.click
@@ -69,7 +69,7 @@ Then(/^I will see the back on the productsite$/) do
 end
 
 When(/^I remove this article from the product cart$/) do
-  product_cart_remove_article_path = csspathes.product_cart_remove_article_path
+  product_cart_remove_article_path = productcart.product_cart_remove_article_path
   
   find_secure(product_cart_remove_article_path)
   element = find_secure(product_cart_remove_article_path)
@@ -78,7 +78,7 @@ When(/^I remove this article from the product cart$/) do
 end
 
 Then(/^the cart should not contain this article$/) do
-  product_cart_article_path = csspathes.product_cart_article_path
+  product_cart_article_path = productcart.product_cart_article_path
   #because ajax wait for element
   sleep 3
   expect(page).to have_no_css(product_cart_article_path)
@@ -86,9 +86,9 @@ Then(/^the cart should not contain this article$/) do
 end
 
 Then(/^I should see all necessary informations about this article within the product list of the product cart$/) do
-  product_cart_article_details_path = csspathes.product_cart_article_details_path
-  product_cart_article_price_path = csspathes.product_cart_article_price_path
-  product_cart_article_voucher_path = csspathes.product_cart_article_voucher_path
+  product_cart_article_details_path = productcart.product_cart_article_details_path
+  product_cart_article_price_path = productcart.product_cart_article_price_path
+  product_cart_article_voucher_path = productcart.product_cart_article_voucher_path
   
   expect(page).to have_css(product_cart_article_details_path),
      "expected to see here details to the article in my cart in the css (#{product_cart_article_details_path}), but it does not appear!"
@@ -103,7 +103,7 @@ end
 
 When(/^I navigate to the checkout by clicking the button which navigates to the checkout$/) do
   start_url = current_url
-  product_cart_button_checkout_path = csspathes.product_cart_button_checkout_path#there are 2 buttons
+  product_cart_button_checkout_path = productcart.product_cart_button_checkout_path#there are 2 buttons
   
   #check for first button
   element = find_secure(product_cart_button_checkout_path, match: :first)
@@ -115,7 +115,7 @@ end
 
 Then(/^I should be on the checkout\-page$/) do
   url_checkout_confirm = 'checkout'
-  product_cart_checkout_steps_path = csspathes.product_cart_checkout_steps_path
+  product_cart_checkout_steps_path = productcart.product_cart_checkout_steps_path
   
   expect(page).to have_css(product_cart_checkout_steps_path),
      "expected to find here the icons of each step for checkout (#{product_cart_checkout_steps_path}), but they do not appear!"
@@ -125,7 +125,7 @@ end
 
 When(/^I activate the function for voucher$/) do
   if (ENV['SHOP'] == 'chefworks')
-    product_cart_voucher_checkbox_path = csspathes.product_cart_voucher_checkbox_path
+    product_cart_voucher_checkbox_path = productcart.product_cart_voucher_checkbox_path
     
     find_secure(product_cart_voucher_checkbox_path)
     element = find_secure(product_cart_voucher_checkbox_path)
@@ -139,8 +139,8 @@ end
 When(/^I enter some code into the optional field$/) do
   if (ENV['SHOP'] == 'chefworks')
     code_voucher = '266233'
-    product_cart_voucher_input_path = csspathes.product_cart_voucher_input_path
-    product_cart_voucher_button_path = csspathes.product_cart_voucher_button_path
+    product_cart_voucher_input_path = productcart.product_cart_voucher_input_path
+    product_cart_voucher_button_path = productcart.product_cart_voucher_button_path
     
     element = find_secure(product_cart_voucher_input_path)
     element.set(code_voucher)
@@ -167,8 +167,8 @@ end
 When(/^I enter a sku into the integrated field on the cart$/) do
   if (ENV['SHOP'] == 'chefworks')
     sku = article.sku
-    product_cart_order_sku_path = csspathes.product_cart_order_sku_path
-    product_cart_order_button_path = csspathes.product_cart_order_button_path
+    product_cart_order_sku_path = productcart.product_cart_order_sku_path
+    product_cart_order_button_path = productcart.product_cart_order_button_path
     
     find_secure(product_cart_order_sku_path)
     element = find_secure(product_cart_order_sku_path)

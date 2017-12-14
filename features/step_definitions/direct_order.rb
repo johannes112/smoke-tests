@@ -2,7 +2,7 @@
 #only for pulsiva
 When(/^I click the button for direct ordering$/) do
   start_url = current_url
-  direct_ordering_button_path = csspathes.direct_ordering_button_path 
+  direct_ordering_button_path = directorder.direct_ordering_button_path 
   
   find_secure(direct_ordering_button_path)
   element = find_secure(direct_ordering_button_path)
@@ -15,9 +15,9 @@ end
 When(/^I send my inserted data with the form$/) do
   sku = article.sku
 
-  direct_ordering_form_sku_path = csspathes.direct_ordering_form_sku_path 
-  direct_ordering_form_quantity_path = csspathes.direct_ordering_form_quantity_path
-  direct_ordering_form_button_path = csspathes.direct_ordering_form_button_path 
+  direct_ordering_form_sku_path = directorder.direct_ordering_form_sku_path 
+  direct_ordering_form_quantity_path = directorder.direct_ordering_form_quantity_path
+  direct_ordering_form_button_path = directorder.direct_ordering_form_button_path 
   
   #find_secure(direct_ordering_form_sku_path)
   element = find_secure(direct_ordering_form_sku_path, match: :first)
@@ -32,7 +32,7 @@ When(/^I send my inserted data with the form$/) do
 end
 
 Then(/^I should find the article in the sidebar$/) do
-  direct_ordering_sidebar_item_path = csspathes.direct_ordering_sidebar_item_path 
+  direct_ordering_sidebar_item_path = directorder.direct_ordering_sidebar_item_path 
   
   find_secure(direct_ordering_sidebar_item_path)
   

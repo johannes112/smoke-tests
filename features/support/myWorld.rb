@@ -1,5 +1,21 @@
 module MyWorld
   require 'logger'
+ 
+  def search
+    @search ||= Search.new
+  end
+
+  def directorder
+    @directorder ||= Directorder.new
+  end
+  
+  def productcart
+    @productcart ||= Productcart.new
+  end
+
+  def productpage
+    @productpage ||= Productpage.new
+  end
 
   def url_functions
     @url_functions ||=UrlFunctions.new
