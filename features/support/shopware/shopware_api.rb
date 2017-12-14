@@ -9,7 +9,12 @@ class ShopwareApi
   include ShopwareFunctions
   
   #for int use htaccess-data too
-  default_timeout 10
+  if (ENV['SYSTEM'] == 'int') 
+    puts "Timeout of HTTParty is set to 20"
+    default_timeout 20 
+  else
+    default_timeout 10
+  end
 
   #file
   #out_file = File.new("httpactions.log", "w")

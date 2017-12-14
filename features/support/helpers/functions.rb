@@ -96,11 +96,12 @@ module MyFunctions
       yield
     rescue Capybara::ElementNotFound => e
       puts "counter_error:"+counter_error
-      write_to_file("ElementNotFound_src", page.html)
-      puts "\033[35m#{e.inspect}\033[0m\n"
+      # write_to_file("ElementNotFound_src", page.html)
+      # puts "\033[35m#{e.inspect}\033[0m\n"
       puts "status:failed"
     rescue Exception => e
-      puts "\033[35mcatch_error_in_block -> #{e.message} (35)\033[0m\n"
+      # puts "\033[35mcatch_error_in_block -> #{e.message} (35)\033[0m\n"
+      puts "\033[35mcatch_error_in_block (35)\033[0m\n"
     end
   end
   
@@ -261,7 +262,7 @@ module MyFunctions
     homepage_content_logo_path = csspathes.homepage_content_logo_path
     page.find(homepage_content_logo_path)
     
-    if (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it')
+    if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
       block_css('.dpe-shopwide') 
     end
     if args.size == 1
@@ -312,6 +313,7 @@ module MyFunctions
     rescue Exception => e
       puts "#{e}"
       puts "\033[35m#{e.inspect}\033[0m\n"    
+      puts "\033[35m#{e.message}\033[0m\n"    
       raise "UNKNOWN ERROR in find_secure_with_one_arg"
     end
     return found
@@ -373,7 +375,7 @@ module MyFunctions
     begin
       visit_secure_counter += 1
       visit(url)
-      if (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it')
+      if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
         block_css('.dpe-shopwide') 
       end
       if (ENV['SYSTEM']=='live')
