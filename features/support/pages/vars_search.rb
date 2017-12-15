@@ -1,5 +1,5 @@
 #search
-class Seach
+class Search
   attr_accessor :homepage_content_logo_path,
                 :search_searchfield_path, :search_searchbutton_path, :search_product_name_path, :search_results_path, :search_searchbutton_icon_path
                 

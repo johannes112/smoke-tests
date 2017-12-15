@@ -7,6 +7,767 @@
       }
     ],
     "keyword": "Feature",
+    "name": "website_basics",
+    "line": 3,
+    "description": "\n  As a customer\n  i will be able \n  to see all elements of the website and \n  to use all navigation elements",
+    "id": "website-basics",
+    "uri": "features/base_features/0.website_basics.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 10,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 11,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6266400959
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "check for elements",
+        "line": 23,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 13
+          },
+          {
+            "name": "@quickies",
+            "line": 14
+          },
+          {
+            "name": "@export",
+            "line": 15
+          },
+          {
+            "name": "@chefworks",
+            "line": 16
+          },
+          {
+            "name": "@pulsiva",
+            "line": 17
+          },
+          {
+            "name": "@vega",
+            "line": 18
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 19
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 20
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 21
+          },
+          {
+            "name": "@website_elements",
+            "line": 22
+          }
+        ],
+        "id": "website-basics;check-for-elements",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should see all basic elements",
+            "line": 24,
+            "output": [
+              "header exists",
+              "searchfield exists",
+              "navi exists",
+              "inner body exists",
+              "footer exists"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27143370610
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use hovermenu for navigating",
+        "line": 47,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 37
+          },
+          {
+            "name": "@export",
+            "line": 38
+          },
+          {
+            "name": "@pulsiva",
+            "line": 39
+          },
+          {
+            "name": "@vega",
+            "line": 40
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 41
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 42
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 43
+          },
+          {
+            "name": "@navigation",
+            "line": 44
+          },
+          {
+            "name": "@menu",
+            "line": 45
+          },
+          {
+            "name": "@hovermenu",
+            "line": 46
+          }
+        ],
+        "id": "website-basics;use-hovermenu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to an category by the hovermenu",
+            "line": 48,
+            "output": [
+              "-> hovered menu",
+              "-> clicked on hovermenu"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16641408418
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on a subcategorysite",
+            "line": 49,
+            "match": {
+              "location": "features/step_definitions/menu.rb:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8781007570
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "use menu for navigating",
+        "line": 60,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 51
+          },
+          {
+            "name": "@export",
+            "line": 52
+          },
+          {
+            "name": "@vega",
+            "line": 53
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 54
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 55
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 56
+          },
+          {
+            "name": "@navigation",
+            "line": 57
+          },
+          {
+            "name": "@menu",
+            "line": 58
+          },
+          {
+            "name": "@standardmenu",
+            "line": 59
+          }
+        ],
+        "id": "website-basics;use-menu-for-navigating",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I navigate to a subcategory by the menu",
+            "line": 61,
+            "output": [
+              "hovered navi",
+              "-> clicked category on menu",
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/menu.rb:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25489739767
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on a subcategorysite",
+            "line": 62,
+            "match": {
+              "location": "features/step_definitions/menu.rb:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8069877554
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to account",
+        "line": 87,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 77
+          },
+          {
+            "name": "@export",
+            "line": 78
+          },
+          {
+            "name": "@chefworks",
+            "line": 79
+          },
+          {
+            "name": "@pulsiva",
+            "line": 80
+          },
+          {
+            "name": "@vega",
+            "line": 81
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 82
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 83
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 84
+          },
+          {
+            "name": "@navigation",
+            "line": 85
+          },
+          {
+            "name": "@links",
+            "line": 86
+          }
+        ],
+        "id": "website-basics;navigate-to-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my account",
+            "line": 88,
+            "match": {
+              "location": "features/step_definitions/links.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8480944172
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the accountpage",
+            "line": 89,
+            "match": {
+              "location": "features/step_definitions/links.rb:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4712249376
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to note",
+        "line": 113,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 103
+          },
+          {
+            "name": "@export",
+            "line": 104
+          },
+          {
+            "name": "@chefworks",
+            "line": 105
+          },
+          {
+            "name": "@pulsiva",
+            "line": 106
+          },
+          {
+            "name": "@vega",
+            "line": 107
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 108
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 109
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 110
+          },
+          {
+            "name": "@navigation",
+            "line": 111
+          },
+          {
+            "name": "@links",
+            "line": 112
+          }
+        ],
+        "id": "website-basics;navigate-to-note",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link to my notes",
+            "line": 114,
+            "match": {
+              "location": "features/step_definitions/links.rb:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8275988853
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the notepage",
+            "line": 115,
+            "match": {
+              "location": "features/step_definitions/links.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5056376345
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "activate the cart",
+        "line": 140,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 130
+          },
+          {
+            "name": "@export",
+            "line": 131
+          },
+          {
+            "name": "@chefworks",
+            "line": 132
+          },
+          {
+            "name": "@pulsiva",
+            "line": 133
+          },
+          {
+            "name": "@vega",
+            "line": 134
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 135
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 136
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 137
+          },
+          {
+            "name": "@navigation",
+            "line": 138
+          },
+          {
+            "name": "@links",
+            "line": 139
+          }
+        ],
+        "id": "website-basics;activate-the-cart",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of the cart",
+            "line": 141,
+            "match": {
+              "location": "features/step_definitions/links.rb:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6070257441
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 142,
+            "output": [
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:96"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3369359556
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the link to edit the cart",
+            "line": 143,
+            "output": [
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".button--open-basket\">\u001b[0m\n"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23894728204
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the page of the productcart",
+            "line": 144,
+            "match": {
+              "location": "features/step_definitions/links.rb:112"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3392318026
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to help",
+        "line": 171,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 160
+          },
+          {
+            "name": "@export",
+            "line": 161
+          },
+          {
+            "name": "@chefworks",
+            "line": 162
+          },
+          {
+            "name": "@pulsiva",
+            "line": 163
+          },
+          {
+            "name": "@vega",
+            "line": 164
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 165
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 166
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 167
+          },
+          {
+            "name": "@navigation",
+            "line": 168
+          },
+          {
+            "name": "@links",
+            "line": 169
+          },
+          {
+            "name": "@links_help",
+            "line": 170
+          }
+        ],
+        "id": "website-basics;navigate-to-help",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I click the link of help",
+            "line": 172,
+            "output": [
+              "--> clicked on Kontakt"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8021639961
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a contextmenu",
+            "line": 173,
+            "output": [
+              "links_context_path:.listing-header-container"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:131"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3348310973
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "find all links",
+        "line": 185,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 175
+          },
+          {
+            "name": "@export",
+            "line": 176
+          },
+          {
+            "name": "@chefworks",
+            "line": 177
+          },
+          {
+            "name": "@pulsiva",
+            "line": 178
+          },
+          {
+            "name": "@vega",
+            "line": 179
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 180
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 181
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 182
+          },
+          {
+            "name": "@navigation",
+            "line": 183
+          },
+          {
+            "name": "@link_checker",
+            "line": 184
+          }
+        ],
+        "id": "website-basics;find-all-links",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I check all links for correct country",
+            "line": 186,
+            "output": [
+              "digital publishing: ",
+              "> All links include 'de'",
+              "product info Links: ",
+              "> All links include 'de'"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37562019178
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "change the language",
+        "line": 204,
+        "description": "",
+        "tags": [
+          {
+            "name": "@website_basics",
+            "line": 197
+          },
+          {
+            "name": "@pulsiva",
+            "line": 198
+          },
+          {
+            "name": "@vega",
+            "line": 199
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 200
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 201
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 202
+          },
+          {
+            "name": "@language_changer",
+            "line": 203
+          }
+        ],
+        "id": "website-basics;change-the-language",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I change the language by clicking the button",
+            "line": 205,
+            "output": [
+              "> in the shop of this country I can not change the language"
+            ],
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 130756
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the url should has changed",
+            "line": 206,
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:84"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47088
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the menu is in specific language",
+            "line": 207,
+            "match": {
+              "location": "features/step_definitions/website_basics.rb:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 487305
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
     "name": "search",
     "line": 2,
     "description": "\n  As a customer\n  I will be able to search for a specific product",
@@ -68,14 +829,14 @@
             "name": "I am on the website",
             "line": 18,
             "output": [
-              "go to https://www.pulsiva.com/de-de/"
+              "go to https://www.hotelwaesche.de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 5537958864
+              "duration": 4076226719
             }
           },
           {
@@ -83,7 +844,7 @@
             "name": "I am searching for a product by entering the sku in the searchfield",
             "line": 19,
             "output": [
-              "- set sku = \"20040136\"",
+              "- set sku = \"10001015\"",
               "clicked button of search"
             ],
             "match": {
@@ -91,7 +852,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16110042616
+              "duration": 18319806376
             }
           },
           {
@@ -99,146 +860,1812 @@
             "name": "I should be on the detailsite of the related product",
             "line": 20,
             "output": [
-              "found 'STEAKGABEL'"
+              "found 'BADEMATTE BOSTON'"
             ],
             "match": {
               "location": "features/step_definitions/search.rb:21"
             },
             "result": {
               "status": "passed",
-              "duration": 4424075712
+              "duration": 4135879712
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "direct order",
+    "line": 9,
+    "description": "\nAs a customer\nI want to have the opportunity to add an article to the cart, by simply opening a form and entering the sku and amount of this article",
+    "tags": [
+      {
+        "name": "@quickies",
+        "line": 2
+      },
+      {
+        "name": "@pulsiva",
+        "line": 3
+      },
+      {
+        "name": "@vega",
+        "line": 4
+      },
+      {
+        "name": "@v_jobeline",
+        "line": 5
+      },
+      {
+        "name": "@hotelwaesche",
+        "line": 6
+      },
+      {
+        "name": "@hw_jobeline",
+        "line": 7
+      },
+      {
+        "name": "@direct_order",
+        "line": 8
+      }
+    ],
+    "id": "direct-order",
+    "uri": "features/base_features/2.direct_order.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "add an article",
+        "line": 14,
+        "description": "",
+        "id": "direct-order;add-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 15,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3750208669
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the button for direct ordering",
+            "line": 16,
+            "output": [
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10248663972
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I send my inserted data with the form",
+            "line": 17,
+            "output": [
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 5 elements matching css \".emgroup-direct-order-searchterm-column > input\">\u001b[0m\n",
+              "-> inserted 10001015",
+              "-> clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55897522389
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the sidebar of the product cart",
+            "line": 18,
+            "output": [
+              "> found sidebar"
+            ],
+            "match": {
+              "location": "features/step_definitions/links.rb:96"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3333011592
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should find the article in the sidebar",
+            "line": 19,
+            "output": [
+              "> found item"
+            ],
+            "match": {
+              "location": "features/step_definitions/direct_order.rb:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4776262980
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "product page",
+    "line": 6,
+    "description": "\nAs a customer,\nI want to have the opportunity to use the feaatures of the product page",
+    "tags": [
+      {
+        "name": "@pulsiva",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      },
+      {
+        "name": "@product_page",
+        "line": 5
+      }
+    ],
+    "id": "product-page",
+    "uri": "features/base_features/3.product_page.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 11,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the product page of an article",
+            "line": 12,
+            "output": [
+              "go to https://www.hotelwaesche.de/",
+              "- set sku = \"10001015\"",
+              "clicked button of search",
+              "found 'BADEMATTE BOSTON'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26754929695
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "search with productnumber",
+        "name": "notice an article",
+        "line": 20,
+        "description": "",
+        "tags": [
+          {
+            "name": "@vega",
+            "line": 14
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 15
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 16
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 17
+          },
+          {
+            "name": "@export",
+            "line": 18
+          },
+          {
+            "name": "@product_page_note",
+            "line": 19
+          }
+        ],
+        "id": "product-page;notice-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the remember-button",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4234249570
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see a hint",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2167342892
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "compare an article",
+        "line": 40,
+        "description": "",
+        "tags": [
+          {
+            "name": "@vega",
+            "line": 34
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 35
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 36
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 37
+          },
+          {
+            "name": "@export",
+            "line": 38
+          },
+          {
+            "name": "@product_page_compare",
+            "line": 39
+          }
+        ],
+        "id": "product-page;compare-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I press the compare-button",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4403919004
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "there should see the icon to compare",
+            "line": 42,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2004629933
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "add an article to the product cart by clicking button",
+        "line": 51,
+        "description": "",
+        "tags": [
+          {
+            "name": "@quickies",
+            "line": 44
+          },
+          {
+            "name": "@vega",
+            "line": 45
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 46
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 47
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 48
+          },
+          {
+            "name": "@export",
+            "line": 49
+          },
+          {
+            "name": "@product_page_add",
+            "line": 50
+          }
+        ],
+        "id": "product-page;add-an-article-to-the-product-cart-by-clicking-button",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to the product cart by clicking the button to push it into the cart",
+            "line": 52,
+            "output": [
+              "-> clicked buy button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_page.rb:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9158491622
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see the cart on the right of the site",
+            "line": 53,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3474517749
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display products with data",
+        "line": 71,
+        "description": "",
+        "tags": [
+          {
+            "name": "@vega",
+            "line": 65
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 66
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 67
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 68
+          },
+          {
+            "name": "@export",
+            "line": 69
+          },
+          {
+            "name": "@product_page_data",
+            "line": 70
+          }
+        ],
+        "id": "product-page;display-products-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary elememts for getting more informations about this article",
+            "line": 72,
+            "match": {
+              "location": "features/step_definitions/product_page.rb:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14616463627
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "product_cart",
+    "line": 5,
+    "description": "\nAs a customer,\nI want to be able to put a product into my cart\nin order to manage my chosen products",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@product_cart",
+        "line": 4
+      }
+    ],
+    "id": "product-cart",
+    "uri": "features/base_features/4.product_cart.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "continue shopping",
+        "line": 17,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 11
+          },
+          {
+            "name": "@vega",
+            "line": 12
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 13
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 14
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 15
+          },
+          {
+            "name": "@product_cart_continue",
+            "line": 16
+          }
+        ],
+        "id": "product-cart;continue-shopping",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart manually",
+            "line": 18,
+            "output": [
+              "I am on the product page of an article",
+              "go to https://www.hotelwaesche.de/",
+              "- set sku = \"10001015\"",
+              "clicked button of search",
+              "found 'BADEMATTE BOSTON'",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "I add an article to the product cart by clicking the button to push it into the cart",
+              "-> clicked buy button",
+              "I am on the product cart page",
+              "-> go to https://www.hotelwaesche.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41317122354
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on the button to continue shopping",
+            "line": 19,
+            "output": [
+              "--> clicked button for continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7698882888
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I will see the back on the productsite",
+            "line": 20,
+            "output": [
+              "found 'BADEMATTE BOSTON'"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4035219055
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "remove an article",
+        "line": 72,
+        "description": "",
+        "tags": [
+          {
+            "name": "@chefworks",
+            "line": 65
+          },
+          {
+            "name": "@pulsiva",
+            "line": 66
+          },
+          {
+            "name": "@vega",
+            "line": 67
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 68
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 69
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 70
+          },
+          {
+            "name": "@product_cart_remove",
+            "line": 71
+          }
+        ],
+        "id": "product-cart;remove-an-article",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 73,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2606285928
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart by ajax",
+            "line": 74,
+            "output": [
+              "-> add article: https://www.hotelwaesche.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10001015&sQuantity=2"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4071780763
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the product cart contains an article",
+            "line": 75,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.hotelwaesche.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16028352821
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I remove this article from the product cart",
+            "line": 76,
+            "output": [
+              "clicked icon"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10261390387
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the cart should not contain this article",
+            "line": 77,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3682777866
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "display articles with data",
+        "line": 101,
+        "description": "",
+        "tags": [
+          {
+            "name": "@chefworks",
+            "line": 94
+          },
+          {
+            "name": "@pulsiva",
+            "line": 95
+          },
+          {
+            "name": "@vega",
+            "line": 96
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 97
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 98
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 99
+          },
+          {
+            "name": "@product_cart_data",
+            "line": 100
+          }
+        ],
+        "id": "product-cart;display-articles-with-data",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 102,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3495447307
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart by ajax",
+            "line": 103,
+            "output": [
+              "-> add article: https://www.hotelwaesche.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10001015&sQuantity=2"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3721579036
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 104,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.hotelwaesche.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15582187065
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see all necessary informations about this article within the product list of the product cart",
+            "line": 105,
+            "output": [
+              "found product details",
+              "found product prices",
+              "found field for voucher"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:88"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4017158850
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "navigate to checkout",
+        "line": 128,
+        "description": "",
+        "tags": [
+          {
+            "name": "@chefworks",
+            "line": 121
+          },
+          {
+            "name": "@vega",
+            "line": 122
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 123
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 124
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 125
+          },
+          {
+            "name": "@quickies",
+            "line": 126
+          },
+          {
+            "name": "@product_cart_checkout",
+            "line": 127
+          }
+        ],
+        "id": "product-cart;navigate-to-checkout",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 129,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2529042008
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I add an article to my cart by ajax",
+            "line": 130,
+            "output": [
+              "-> add article: https://www.hotelwaesche.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10001015&sQuantity=2"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4473446357
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 131,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.hotelwaesche.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16150828935
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I navigate to the checkout by clicking the button which navigates to the checkout",
+            "line": 132,
+            "output": [
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".btn--checkout-proceed\">\u001b[0m\n",
+              "clicked button"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22062816765
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on the checkout-page",
+            "line": 133,
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:116"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4225514891
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "account",
+    "line": 6,
+    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
+    "tags": [
+      {
+        "name": "@export",
+        "line": 3
+      },
+      {
+        "name": "@chefworks",
+        "line": 4
+      }
+    ],
+    "id": "account",
+    "uri": "features/base_features/5.account.feature",
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "",
+        "line": 12,
+        "description": "",
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the registration page",
+            "line": 13,
+            "output": [
+              "--> go to https://www.hotelwaesche.de/account",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5091803688
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "create new account",
         "line": 24,
         "description": "",
         "tags": [
           {
-            "name": "@search",
+            "name": "@account",
+            "line": 15
+          },
+          {
+            "name": "@export",
+            "line": 16
+          },
+          {
+            "name": "@chefworks",
+            "line": 17
+          },
+          {
+            "name": "@pulsiva",
+            "line": 18
+          },
+          {
+            "name": "@vega",
+            "line": 19
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 20
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 21
+          },
+          {
+            "name": "@v_jobeline",
             "line": 22
           },
           {
-            "name": "@search_number",
+            "name": "@account_registration",
             "line": 23
           }
         ],
-        "id": "search;search-with-productnumber",
+        "id": "account;create-new-account",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "Given ",
-            "name": "I am on the website",
+            "keyword": "And ",
+            "name": "no user account with my email exists",
             "line": 25,
             "output": [
-              "go to https://www.pulsiva.com/de-de/"
+              "UrlBackend:https://www.hotelwaesche.de",
+              "user eMail:testmail_hde@emmos.de"
             ],
             "match": {
-              "location": "features/step_definitions/global.rb:2"
+              "location": "features/step_definitions/account.rb:16"
             },
             "result": {
               "status": "passed",
-              "duration": 2773283119
+              "duration": 4799744882
             }
           },
           {
             "keyword": "When ",
-            "name": "I am searching for a product by entering the productnumber in the searchfield",
+            "name": "I create a new account with my data",
             "line": 26,
             "output": [
-              "- set productnumber = \"104105\"",
-              "clicked button of search"
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 493444351",
+              "- set email: testmail_hde@emmos.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Hotelwäsche Erwin Müller GmbH Test - eBusiness",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Hettlinger Str.",
+              "- set streetnumber: 9",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
+              "- set country: Deutschland",
+              "clicked button to continue"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:42"
+              "location": "features/step_definitions/account.rb:72"
             },
             "result": {
               "status": "passed",
-              "duration": 14015268258
+              "duration": 87422415483
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see my product on the results of my search",
+            "name": "I should be on my account page",
             "line": 27,
             "output": [
-              "found 'Steakgabel'"
+              "current_url:https://www.hotelwaesche.de/account"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:57"
+              "location": "features/step_definitions/account.rb:196"
             },
             "result": {
               "status": "passed",
-              "duration": 10643553963
+              "duration": 4058358968
             }
           }
         ]
       },
       {
         "keyword": "Scenario",
-        "name": "search with name",
-        "line": 31,
+        "name": "login with existing account",
+        "line": 53,
         "description": "",
         "tags": [
           {
-            "name": "@search",
-            "line": 29
+            "name": "@account",
+            "line": 44
           },
           {
-            "name": "@search_name",
-            "line": 30
+            "name": "@export",
+            "line": 45
+          },
+          {
+            "name": "@chefworks",
+            "line": 46
+          },
+          {
+            "name": "@pulsiva",
+            "line": 47
+          },
+          {
+            "name": "@vega",
+            "line": 48
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 49
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 50
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 51
+          },
+          {
+            "name": "@account_login",
+            "line": 52
           }
         ],
-        "id": "search;search-with-name",
+        "id": "account;login-with-existing-account",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 32,
+            "name": "I already created an user account",
+            "line": 54,
             "output": [
-              "go to https://www.pulsiva.com/de-de/"
+              "-> there exists an unique account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2391014833
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I login with valid informations",
+            "line": 55,
+            "output": [
+              "> ok, I am on https://www.hotelwaesche.de/account",
+              "- set email: testmail_hde@emmos.de",
+              "-> set email",
+              "- set password: Test2014",
+              "-> set password",
+              "--> pushed button for registration"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:221"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33293611444
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be on my account page",
+            "line": 56,
+            "output": [
+              "current_url:https://www.hotelwaesche.de/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4023274324
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify payment in my account",
+        "line": 85,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 75
+          },
+          {
+            "name": "@export",
+            "line": 76
+          },
+          {
+            "name": "@chefworks",
+            "line": 77
+          },
+          {
+            "name": "@pulsiva",
+            "line": 78
+          },
+          {
+            "name": "@vega",
+            "line": 79
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 80
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 81
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 82
+          },
+          {
+            "name": "@account_update",
+            "line": 83
+          },
+          {
+            "name": "@account_payment",
+            "line": 84
+          }
+        ],
+        "id": "account;modify-payment-in-my-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I already created an user account",
+            "line": 86,
+            "output": [
+              "-> there exists an unique account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2390743260
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am logged in",
+            "line": 87,
+            "output": [
+              "I login with valid informations",
+              "> ok, I am on https://www.hotelwaesche.de/account",
+              "- set email: testmail_hde@emmos.de",
+              "-> set email",
+              "- set password: Test2014",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "current_url:https://www.hotelwaesche.de/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:279"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37279903832
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my paymentinfo",
+            "line": 88,
+            "output": [
+              "--> clicked button for change of payment",
+              "I change option of payment",
+              "--> choose checkbox for cash on delivery"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:420"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27323656488
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see a confirmation hint",
+            "line": 89,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:363"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20097744379
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "modify adress of delivery",
+        "line": 139,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 129
+          },
+          {
+            "name": "@export",
+            "line": 130
+          },
+          {
+            "name": "@chefworks",
+            "line": 131
+          },
+          {
+            "name": "@pulsiva",
+            "line": 132
+          },
+          {
+            "name": "@vega",
+            "line": 133
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 134
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 135
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 136
+          },
+          {
+            "name": "@account_update",
+            "line": 137
+          },
+          {
+            "name": "@account_delivery",
+            "line": 138
+          }
+        ],
+        "id": "account;modify-adress-of-delivery",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I already created an user account",
+            "line": 140,
+            "output": [
+              "-> there exists an unique account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2438025846
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am logged in",
+            "line": 141,
+            "output": [
+              "I login with valid informations",
+              "> ok, I am on https://www.hotelwaesche.de/account",
+              "- set email: testmail_hde@emmos.de",
+              "-> set email",
+              "- set password: Test2014",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "current_url:https://www.hotelwaesche.de/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:279"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37920694904
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I modify my address for my delivery",
+            "line": 142,
+            "output": [
+              "--> clicked button for change the adress for delivery",
+              "I change prefix of my address for delivery",
+              "- set prefix: Frau",
+              "--> select prefix:Frau",
+              "--> click change-button"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:570"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25523075452
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see an alert for creating a new address",
+            "line": 143,
+            "output": [
+              "> found info for success"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:380"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4693215176
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "test links on the accountsite",
+        "line": 211,
+        "description": "",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 203
+          },
+          {
+            "name": "@export",
+            "line": 204
+          },
+          {
+            "name": "@chefworks",
+            "line": 205
+          },
+          {
+            "name": "@pulsiva",
+            "line": 206
+          },
+          {
+            "name": "@vega",
+            "line": 207
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 208
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 209
+          },
+          {
+            "name": "@account_links",
+            "line": 210
+          }
+        ],
+        "id": "account;test-links-on-the-accountsite",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I already created an user account",
+            "line": 212,
+            "output": [
+              "-> there exists an unique account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2435512949
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I am logged in",
+            "line": 213,
+            "output": [
+              "I login with valid informations",
+              "> ok, I am on https://www.hotelwaesche.de/account",
+              "- set email: testmail_hde@emmos.de",
+              "-> set email",
+              "- set password: Test2014",
+              "-> set password",
+              "--> pushed button for registration",
+              "I should be on my account page",
+              "current_url:https://www.hotelwaesche.de/account"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:279"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36858585270
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I get all items of the sidebar",
+            "line": 214,
+            "output": [
+              "> menuitems:7",
+              "- account",
+              "- profile",
+              "- address",
+              "- payment",
+              "- orders",
+              "- wishlist",
+              "- logout"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:633"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16897019322
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "checkout",
+    "line": 3,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "checkout without existing account and create an account",
+        "line": 17,
+        "description": "",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 8
+          },
+          {
+            "name": "@vega",
+            "line": 9
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 10
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 11
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 12
+          },
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@chefworks",
+            "line": 14
+          },
+          {
+            "name": "@checkout",
+            "line": 15
+          },
+          {
+            "name": "@checkout_registration",
+            "line": 16
+          }
+        ],
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "no user account with my email exists",
+            "line": 18,
+            "output": [
+              "UrlBackend:https://www.hotelwaesche.de",
+              "user eMail:testmail_hde@emmos.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4780859260
+            }
+          },
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 19,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 2493465252
+              "duration": 2422788939
             }
           },
           {
             "keyword": "When ",
-            "name": "I am searching for products by entering the productname in the searchfield",
-            "line": 33,
+            "name": "I add an article to my cart by ajax",
+            "line": 20,
             "output": [
-              "- set name = \"Steakgabel\"",
-              "clicked button of search"
+              "-> add article: https://www.hotelwaesche.de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10001015&sQuantity=2"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:92"
+              "location": "features/step_definitions/product_cart.rb:39"
             },
             "result": {
               "status": "passed",
-              "duration": 16023035059
+              "duration": 3825859862
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 21,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.hotelwaesche.de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15618058064
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 22,
+            "output": [
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".btn--checkout-proceed\">\u001b[0m\n",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:201"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25516369750
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I register a new account with my data",
+            "line": 23,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 493444351",
+              "- set email: testmail_hde@emmos.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Hotelwäsche Erwin Müller GmbH Test - eBusiness",
+              "department is not available in de",
+              "taxid is not available in de",
+              "taxvat is not available in de",
+              "- set street: Hettlinger Str.",
+              "- set streetnumber: 9",
+              "- set postcode: 86637",
+              "- set city: Wertingen",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92644840962
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I set payment and shipping",
+            "line": 24,
+            "output": [
+              "I am here: https://www.hotelwaesche.de/checkout/shippingPayment",
+              "-> choose payment",
+              "> payment is chosen",
+              "-> choose delivery",
+              "> shipping is chosen",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:335"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40589247037
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 25,
+            "output": [
+              "I am on the checkout page",
+              "I am already on the final checkout page",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "> no agbbox is here ",
+              "> found orderbutton but not press"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:171"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18817994567
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see my product on the results of my search",
-            "line": 34,
+            "name": "Shopware should have my order",
+            "line": 26,
             "output": [
-              "found 'Steakgabel'"
+              "> Shopware can not have my order because i have not pressed the orderbutton"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:57"
+              "location": "features/step_definitions/checkout.rb:430"
             },
             "result": {
               "status": "passed",
-              "duration": 13477601206
+              "duration": 91170
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "comments": [
+      {
+        "value": "# language: en",
+        "line": 1
+      }
+    ],
+    "keyword": "Feature",
+    "name": "content",
+    "line": 10,
+    "description": "\nAs a developer,\nI want to know some technical facts of a website",
+    "tags": [
+      {
+        "name": "@chefworks",
+        "line": 2
+      },
+      {
+        "name": "@pulsiva",
+        "line": 3
+      },
+      {
+        "name": "@vega",
+        "line": 4
+      },
+      {
+        "name": "@hotelwaesche",
+        "line": 5
+      },
+      {
+        "name": "@hw_jobeline",
+        "line": 6
+      },
+      {
+        "name": "@v_jobeline",
+        "line": 7
+      },
+      {
+        "name": "@quickies",
+        "line": 8
+      },
+      {
+        "name": "@content",
+        "line": 9
+      }
+    ],
+    "id": "content",
+    "uri": "features/base_features/content.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "name": "check output",
+        "line": 16,
+        "description": "",
+        "tags": [
+          {
+            "name": "@content_server",
+            "line": 15
+          }
+        ],
+        "id": "content;check-output",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 17,
+            "output": [
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4105306535
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I check the output of all servers of different webpage by visiting some links",
+            "line": 18,
+            "output": [
+              "amount of checked servers:3"
+            ],
+            "match": {
+              "location": "features/step_definitions/content.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6938750689
             }
           }
         ]
