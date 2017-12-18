@@ -60,11 +60,11 @@ if ENV['DRIVER'] == 'saucelabs'
       puts "Timeout is set to 65"
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 0:51min
-      @caps[:idleTimeout] = '65' #120max Duration between any command
+      @caps[:idleTimeout] = '100' #120max Duration between any command
     else
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 0:21min (Default: 300)
-      @caps[:idleTimeout] = '21' #22max Duration between any command (Default: 90)
+      @caps[:idleTimeout] = '90' #max Duration between any command (Default: 90)
     end    
     puts "Enviroment:#{@caps}"
     puts "browser:#{@caps[:browserName]}"
