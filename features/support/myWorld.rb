@@ -1,6 +1,10 @@
 module MyWorld
   require 'logger'
  
+  def websitebasics
+    @websitebasics ||= Websitebasics.new
+  end
+  
   def search
     @search ||= Search.new
   end

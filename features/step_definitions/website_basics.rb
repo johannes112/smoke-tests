@@ -1,11 +1,11 @@
 #website_elements
 Then(/^I should see all basic elements$/) do
   #define path of header
-  homepage_content_header_path = csspathes.homepage_content_header_path
-  homepage_content_searchfield_path = csspathes.homepage_content_searchfield_path
-  homepage_content_navi_path = csspathes.homepage_content_navi_path
-  homepage_content_body_main_path = csspathes.homepage_content_body_main_path
-  homepage_content_footer_path = csspathes.homepage_content_footer_path
+  homepage_content_header_path = websitebasics.homepage_content_header_path
+  homepage_content_searchfield_path = websitebasics.homepage_content_searchfield_path
+  homepage_content_navi_path = websitebasics.homepage_content_navi_path
+  homepage_content_body_main_path = websitebasics.homepage_content_body_main_path
+  homepage_content_footer_path = websitebasics.homepage_content_footer_path
 
   find_secure(homepage_content_searchfield_path)
   #check for existing css-elements
@@ -32,11 +32,11 @@ end
 
 Then(/^I should see all basic mobile elements$/) do
   #define path of header
-  homepage_content_header_path = csspathes.homepage_content_header_path
-  homepage_content_searchfield_path = csspathes.homepage_content_searchfield_path
-  homepage_content_navi_burger_path = csspathes.homepage_content_navi_burger_path
-  homepage_content_body_main_path = csspathes.homepage_content_body_main_path
-  homepage_content_footer_path = csspathes.homepage_content_footer_path
+  homepage_content_header_path = websitebasics.homepage_content_header_path
+  homepage_content_searchfield_path = websitebasics.homepage_content_searchfield_path
+  homepage_content_navi_burger_path = websitebasics.homepage_content_navi_burger_path
+  homepage_content_body_main_path = websitebasics.homepage_content_body_main_path
+  homepage_content_footer_path = websitebasics.homepage_content_footer_path
 
   find_secure(homepage_content_searchfield_path)
   #check for existing css-elements
@@ -100,7 +100,7 @@ Then(/^the menu is in specific language$/) do
   category_language_changed = article.category_language_changed
   
   #pathes
-  navigation_menu_path = csspathes.navigation_menu_path
+  navigation_menu_path = websitebasics.navigation_menu_path
   
   if language_change_to
     navigation = find_secure(navigation_menu_path)
