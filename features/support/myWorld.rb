@@ -21,6 +21,10 @@ module MyWorld
     @productpage ||= Productpage.new
   end
 
+  def account
+    @account ||= Account.new
+  end
+
   def url_functions
     @url_functions ||=UrlFunctions.new
   end

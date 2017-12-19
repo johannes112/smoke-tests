@@ -47,8 +47,8 @@ end
 
 When(/^I touch the box to create an new account$/) do
   #csspathes
-  account_registerform_accordion_new_path = csspathes.account_registerform_accordion_new_path
-  checkout_registerform_firstname_path = csspathes.checkout_registerform_firstname_path
+  account_registerform_accordion_new_path = account.account_registerform_accordion_new_path
+  checkout_registerform_firstname_path = account.checkout_registerform_firstname_path
   
   # check if path accordion is already clicked
   if (page.has_no_css?(checkout_registerform_firstname_path))
@@ -62,7 +62,7 @@ When(/^I touch the box to create an new account$/) do
 end
 
 When(/^I touch the box for login$/) do
-  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
+  account_registerform_accordion_login_path = account.account_registerform_accordion_login_path
   
   find_secure(account_registerform_accordion_login_path)
   element = find_secure(account_registerform_accordion_login_path)
@@ -90,26 +90,26 @@ When(/^I create a new account with my data$/) do
   country = user.country
   
   #path
-  account_registerform_path = csspathes.account_registerform_path
-  account_registerform_prefix_path = csspathes.account_registerform_prefix_path
-  account_registerform_firstname_path = csspathes.account_registerform_firstname_path
-  account_registerform_lastname_path = csspathes.account_registerform_lastname_path
-  account_registerform_department_path = csspathes.account_registerform_department_path
-  account_registerform_taxid_path = csspathes.account_registerform_taxid_path
-  account_registerform_taxvat_path = csspathes.account_registerform_taxvat_path
-  account_registerform_customernumber_path = csspathes.account_registerform_customernumber_path
-  account_registerform_email_path = csspathes.account_registerform_email_path
-  account_registerform_password_path = csspathes.account_registerform_password_path
-  account_registerform_phone_path = csspathes.account_registerform_phone_path
-  account_registerform_company_path = csspathes.account_registerform_company_path
-  account_registerform_checkbox_company_path = csspathes.account_registerform_checkbox_company_path
-  account_registerform_street_path = csspathes.account_registerform_street_path
-  account_registerform_streetnumber_path = csspathes.account_registerform_streetnumber_path
-  account_registerform_postcode_path = csspathes.account_registerform_postcode_path
-  account_registerform_city_path = csspathes.account_registerform_city_path
-  account_registerform_country_path = csspathes.account_registerform_country_path
-  account_registerform_button_path = csspathes.account_registerform_button_path
-  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+  account_registerform_path = account.account_registerform_path
+  account_registerform_prefix_path = account.account_registerform_prefix_path
+  account_registerform_firstname_path = account.account_registerform_firstname_path
+  account_registerform_lastname_path = account.account_registerform_lastname_path
+  account_registerform_department_path = account.account_registerform_department_path
+  account_registerform_taxid_path = account.account_registerform_taxid_path
+  account_registerform_taxvat_path = account.account_registerform_taxvat_path
+  account_registerform_customernumber_path = account.account_registerform_customernumber_path
+  account_registerform_email_path = account.account_registerform_email_path
+  account_registerform_password_path = account.account_registerform_password_path
+  account_registerform_phone_path = account.account_registerform_phone_path
+  account_registerform_company_path = account.account_registerform_company_path
+  account_registerform_checkbox_company_path = account.account_registerform_checkbox_company_path
+  account_registerform_street_path = account.account_registerform_street_path
+  account_registerform_streetnumber_path = account.account_registerform_streetnumber_path
+  account_registerform_postcode_path = account.account_registerform_postcode_path
+  account_registerform_city_path = account.account_registerform_city_path
+  account_registerform_country_path = account.account_registerform_country_path
+  account_registerform_button_path = account.account_registerform_button_path
+  navigation_hover_breadcrumb_path = account.navigation_hover_breadcrumb_path
   
   #search for field, so you know that we are on the right site
   find_secure(account_registerform_path)
@@ -195,7 +195,7 @@ end
 
 Then(/^I should be on my account page$/) do
   #var
-  account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
+  account_accountpage_welcome_path = account.account_accountpage_welcome_path
   account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
   account_registerform_vallidation_ignore_path = '.modal-ignore'
   
@@ -225,14 +225,14 @@ When(/^I login with valid informations$/) do
   url_account = settings.urlHttps+'account'
   
   #path
-  homepage_content_logo_path = csspathes.homepage_content_logo_path
-  account_registerform_login_path = csspathes.account_registerform_login_path
-  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
-  account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
-  account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
-  account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
-  account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
-  navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+  homepage_content_logo_path = account.homepage_content_logo_path
+  account_registerform_login_path = account.account_registerform_login_path
+  account_registerform_accordion_login_path = account.account_registerform_accordion_login_path
+  account_loginform_emailfield_path = account.account_loginform_emailfield_path
+  account_loginform_passwordfield_path = account.account_loginform_passwordfield_path
+  account_loginform_registerbutton_path = account.account_loginform_registerbutton_path
+  account_accountpage_welcome_path = account.account_accountpage_welcome_path
+  navigation_hover_breadcrumb_path = account.navigation_hover_breadcrumb_path
   
   if (current_url == url_account) 
     puts "> ok, I am on #{current_url}"
@@ -278,7 +278,7 @@ end
 
 Given(/^I am logged in$/) do
   #pathes
-  account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
+  account_registerform_accordion_login_path = account.account_registerform_accordion_login_path
   
   if (ENV['BROWSER'] == 'iPhone') 
     if (page.has_css?(account_registerform_accordion_login_path))
@@ -309,11 +309,11 @@ When(/^I change my password$/) do
   password = user.password
   password_sec = user.password_sec
   # define css pathes
-  account_userinfo_passwordchange_button_appear_path = csspathes.account_userinfo_passwordchange_button_appear_path
-  account_userinfo_passwordchange_currentpassword_path = csspathes.account_userinfo_passwordchange_currentpassword_path
-  account_userinfo_passwordchange_newpassword_path = csspathes.account_userinfo_passwordchange_newpassword_path
-  account_userinfo_passwordchange_repeatnewpassword_path = csspathes.account_userinfo_passwordchange_repeatnewpassword_path
-  account_userinfo_passwordchange_button_path = csspathes.account_userinfo_passwordchange_button_path
+  account_userinfo_passwordchange_button_appear_path = account.account_userinfo_passwordchange_button_appear_path
+  account_userinfo_passwordchange_currentpassword_path = account.account_userinfo_passwordchange_currentpassword_path
+  account_userinfo_passwordchange_newpassword_path = account.account_userinfo_passwordchange_newpassword_path
+  account_userinfo_passwordchange_repeatnewpassword_path = account.account_userinfo_passwordchange_repeatnewpassword_path
+  account_userinfo_passwordchange_button_path = account.account_userinfo_passwordchange_button_path
   
   find_secure(account_userinfo_passwordchange_button_appear_path)
   element = find_secure(account_userinfo_passwordchange_button_appear_path)
@@ -338,11 +338,11 @@ When(/^I change my emailaddress$/) do
   eMail_sec = user.eMail_sec
   password_sec = user.password_sec
   # define css pathes
-  account_userinfo_emailchange_button_appear_path = csspathes.account_userinfo_emailchange_button_appear_path
-  account_userinfo_emailchange_currentpassword_path = csspathes.account_userinfo_emailchange_currentpassword_path
-  account_userinfo_emailchange_newmail_path = csspathes.account_userinfo_emailchange_newmail_path
-  account_userinfo_emailchange_repeatnewmail_path = csspathes.account_userinfo_emailchange_repeatnewmail_path
-  account_userinfo_emailchange_button_path = csspathes.account_userinfo_emailchange_button_path
+  account_userinfo_emailchange_button_appear_path = account.account_userinfo_emailchange_button_appear_path
+  account_userinfo_emailchange_currentpassword_path = account.account_userinfo_emailchange_currentpassword_path
+  account_userinfo_emailchange_newmail_path = account.account_userinfo_emailchange_newmail_path
+  account_userinfo_emailchange_repeatnewmail_path = account.account_userinfo_emailchange_repeatnewmail_path
+  account_userinfo_emailchange_button_path = account.account_userinfo_emailchange_button_path
   
   element = find_secure(account_userinfo_emailchange_button_appear_path)
   element.click
@@ -361,7 +361,7 @@ When(/^I change my emailaddress$/) do
 end
 
 Then(/^I should see a confirmation hint$/) do
-  account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
+  account_userinfo_success_hint_path = account.account_userinfo_success_hint_path
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "There is no hint"
   else
@@ -378,7 +378,7 @@ Then(/^I should see a confirmation hint$/) do
 end
 
 Then(/^I should see an alert for creating a new address$/) do
-  account_userinfo_success_hint_path = csspathes.account_userinfo_success_hint_path
+  account_userinfo_success_hint_path = account.account_userinfo_success_hint_path
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "in #{ENV['COUNTRY']} there is no prefix"
@@ -403,7 +403,7 @@ end
 When(/^I log me out$/) do
   start_url = current_url
   #css pathes
-  account_accountinfo_menucontainer_logout_link_path = csspathes.account_accountinfo_menucontainer_logout_link_path
+  account_accountinfo_menucontainer_logout_link_path = account.account_accountinfo_menucontainer_logout_link_path
   
   if (ENV['BROWSER'] == 'iPhone')
     puts 'With mobile device use a trick to logout because the way of the menu is too complex'
@@ -419,8 +419,8 @@ end
 
 When(/^I modify my paymentinfo$/) do
   #css pathes
-  account_accountinfo_payment_box_path = csspathes.account_accountinfo_payment_box_path
-  account_accountinfo_paymentchange_button_appear_path = csspathes.account_accountinfo_paymentchange_button_appear_path
+  account_accountinfo_payment_box_path = account.account_accountinfo_payment_box_path
+  account_accountinfo_paymentchange_button_appear_path = account.account_accountinfo_paymentchange_button_appear_path
 
   find_secure(account_accountinfo_payment_box_path)
   account_accountinfo_payment_box = find_secure(account_accountinfo_payment_box_path)
@@ -449,9 +449,9 @@ When(/^I modify my paymentinfo$/) do
 end
 
 When(/^I change option of payment$/) do
-  account_payment_paymentoptions_path = csspathes.account_payment_paymentoptions_path
-  account_payment_cashOnDelivery_path = csspathes.account_payment_cashOnDelivery_path
-  account_payment_change_button_path = csspathes.account_payment_change_button_path
+  account_payment_paymentoptions_path = account.account_payment_paymentoptions_path
+  account_payment_cashOnDelivery_path = account.account_payment_cashOnDelivery_path
+  account_payment_change_button_path = account.account_payment_change_button_path
   
   find_secure(account_payment_paymentoptions_path)
   element = find_secure(account_payment_cashOnDelivery_path, page.html)
@@ -463,8 +463,8 @@ end
 When(/^I modify my address for my bill$/) do
 #  start_url = current_url
   #css pathes
-  account_accountinfo_billaddress_box_path = csspathes.account_accountinfo_billaddress_box_path
-  account_accountinfo_billaddresschange_button_appear_path = csspathes.account_accountinfo_billaddresschange_button_appear_path
+  account_accountinfo_billaddress_box_path = account.account_accountinfo_billaddress_box_path
+  account_accountinfo_billaddresschange_button_appear_path = account.account_accountinfo_billaddresschange_button_appear_path
   
   find_secure(account_accountinfo_billaddress_box_path)
   account_accountinfo_billaddresschange_box = find_secure(account_accountinfo_billaddress_box_path)
@@ -493,8 +493,8 @@ When(/^I change prefix of my address for invoice$/) do
   start_url = current_url
   prefix = user.prefix_sec
   
-  account_invoiceadresschange_form_prefix_path = csspathes.account_invoiceadresschange_form_prefix_path
-  account_invoiceadresschange_button_path = csspathes.account_invoiceadresschange_button_path
+  account_invoiceadresschange_form_prefix_path = account.account_invoiceadresschange_form_prefix_path
+  account_invoiceadresschange_button_path = account.account_invoiceadresschange_button_path
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "in #{ENV['COUNTRY']} there is no prefix"
@@ -524,18 +524,18 @@ When(/^I add a new address$/) do
   country = user.country
   
   # define css pathes
-  account_address_create_path = csspathes.account_address_create_path
-  account_address_prefix_path = csspathes.account_address_prefix_path
-  account_address_firstname_path = csspathes.account_address_firstname_path
-  account_address_lastname_path = csspathes.account_address_lastname_path
-  account_address_phone_path = csspathes.account_address_phone_path
-  account_address_company_path = csspathes.account_address_company_path
-  account_address_street_path = csspathes.account_address_street_path
-  account_address_streetnumber_path = csspathes.account_address_streetnumber_path
-  account_address_postcode_path = csspathes.account_address_postcode_path
-  account_address_city_path = csspathes.account_address_city_path
-  account_address_country_path = csspathes.account_address_country_path
-  account_address_savebutton_path = csspathes.account_address_savebutton_path
+  account_address_create_path = account.account_address_create_path
+  account_address_prefix_path = account.account_address_prefix_path
+  account_address_firstname_path = account.account_address_firstname_path
+  account_address_lastname_path = account.account_address_lastname_path
+  account_address_phone_path = account.account_address_phone_path
+  account_address_company_path = account.account_address_company_path
+  account_address_street_path = account.account_address_street_path
+  account_address_streetnumber_path = account.account_address_streetnumber_path
+  account_address_postcode_path = account.account_address_postcode_path
+  account_address_city_path = account.account_address_city_path
+  account_address_country_path = account.account_address_country_path
+  account_address_savebutton_path = account.account_address_savebutton_path
   
   find_secure(account_address_create_path)
   puts "> found formular to add a new address"
@@ -569,8 +569,8 @@ end
 
 When(/^I modify my address for my delivery/) do
   #css pathes
-  account_accountinfo_deliveraddress_box_path = csspathes.account_accountinfo_deliveraddress_box_path
-  account_accountinfo_deliveraddresschange_button_appear_path = csspathes.account_accountinfo_deliveraddresschange_button_appear_path
+  account_accountinfo_deliveraddress_box_path = account.account_accountinfo_deliveraddress_box_path
+  account_accountinfo_deliveraddresschange_button_appear_path = account.account_accountinfo_deliveraddresschange_button_appear_path
   
   find_secure(account_accountinfo_deliveraddress_box_path)
   account_accountinfo_deliveraddresschange_box = find_secure(account_accountinfo_deliveraddress_box_path)
@@ -604,8 +604,8 @@ When(/^I change prefix of my address for delivery$/) do
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "in #{ENV['COUNTRY']} there is no prefix"
   else
-    account_deliveradresschange_form_prefix_path = csspathes.account_deliveradresschange_form_prefix_path
-    account_deliveradresschange_button_path = csspathes.account_deliveradresschange_button_path
+    account_deliveradresschange_form_prefix_path = account.account_deliveradresschange_form_prefix_path
+    account_deliveradresschange_button_path = account.account_deliveradresschange_button_path
     #set value for prefix
     find_secure(account_deliveradresschange_form_prefix_path)
     form_set_dropdown("prefix", prefix, account_deliveradresschange_form_prefix_path)
@@ -620,7 +620,7 @@ end
 #it is not working on pulsiva
 When(/^I activate the newsletterbox$/) do
   #if (ENV['SHOP'] == 'chefworks')
-    account_newsletter_box_path = csspathes.account_newsletter_box_path
+    account_newsletter_box_path = account.account_newsletter_box_path
     find_secure(account_newsletter_box_path)
     find_secure(account_newsletter_box_path).click
     puts "--> activate the checkbox"
@@ -631,7 +631,7 @@ end
 
 #it is not implemented
 When(/^I get all items of the sidebar$/) do
-  account_sidebar_path = csspathes.account_sidebar_path
+  account_sidebar_path = account.account_sidebar_path
   
   find_secure(account_sidebar_path)
   account_sidebar_menuitems = find_secure(account_sidebar_path).all('li a')
@@ -681,14 +681,14 @@ When(/^I login with valid informations on Jobeline in DE$/) do
     url_account = 'https://www.jobeline.com/de-de/account'
     
     #path
-    homepage_content_logo_path = csspathes.homepage_content_logo_path
-    account_registerform_login_path = csspathes.account_registerform_login_path
-    account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
-    account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
-    account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
-    account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
-    account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
-    navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+    homepage_content_logo_path = account.homepage_content_logo_path
+    account_registerform_login_path = account.account_registerform_login_path
+    account_registerform_accordion_login_path = account.account_registerform_accordion_login_path
+    account_loginform_emailfield_path = account.account_loginform_emailfield_path
+    account_loginform_passwordfield_path = account.account_loginform_passwordfield_path
+    account_loginform_registerbutton_path = account.account_loginform_registerbutton_path
+    account_accountpage_welcome_path = account.account_accountpage_welcome_path
+    navigation_hover_breadcrumb_path = account.navigation_hover_breadcrumb_path
     
     if (current_url == url_account) 
       puts "> ok, I am on #{current_url}"
@@ -743,14 +743,14 @@ When(/^I login with valid informations on Vega in AT$/) do
     url_account = 'https://www.vega-direct.com/at-de/account'
     
     #path
-    homepage_content_logo_path = csspathes.homepage_content_logo_path
-    account_registerform_login_path = csspathes.account_registerform_login_path
-    account_registerform_accordion_login_path = csspathes.account_registerform_accordion_login_path
-    account_loginform_emailfield_path = csspathes.account_loginform_emailfield_path
-    account_loginform_passwordfield_path = csspathes.account_loginform_passwordfield_path
-    account_loginform_registerbutton_path = csspathes.account_loginform_registerbutton_path
-    account_accountpage_welcome_path = csspathes.account_accountpage_welcome_path
-    navigation_hover_breadcrumb_path = csspathes.navigation_hover_breadcrumb_path
+    homepage_content_logo_path = account.homepage_content_logo_path
+    account_registerform_login_path = account.account_registerform_login_path
+    account_registerform_accordion_login_path = account.account_registerform_accordion_login_path
+    account_loginform_emailfield_path = account.account_loginform_emailfield_path
+    account_loginform_passwordfield_path = account.account_loginform_passwordfield_path
+    account_loginform_registerbutton_path = account.account_loginform_registerbutton_path
+    account_accountpage_welcome_path = account.account_accountpage_welcome_path
+    navigation_hover_breadcrumb_path = account.navigation_hover_breadcrumb_path
     
     if (current_url == url_account) 
       puts "> ok, I am on #{current_url}"
@@ -799,8 +799,8 @@ Then(/^I should get an errormessage$/) do
   shop = ENV['SHOP']
   country = ENV['COUNTRY']
   if ( (shop == 'vega') && (country == 'de') )
-    logo_path = csspathes.homepage_content_logo_path
-    errormessage_path = csspathes.account_login_errormessage_path
+    logo_path = account.homepage_content_logo_path
+    errormessage_path = account.account_login_errormessage_path
     
     page.find(logo_path)
     page.find(errormessage_path)
