@@ -30,6 +30,7 @@ class Productpage
     @product_page_viewed_tab_menu = '.tab-menu--cross-selling > div > div' 
     @product_page_viewed_tab_otherCustomer = ':nth-child(2)'
     @product_page_suggest_container = '.tab-menu--cross-selling > div > div:nth-child(2)'
+    update_pathes 
   end
   
   def update_pathes

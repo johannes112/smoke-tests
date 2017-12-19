@@ -27,6 +27,7 @@ class Productcart
     @product_cart_voucher_button_path = 'form.table--add-voucher.add-voucher--form > div > button'
     @product_cart_order_sku_path = 'div.panel.has--border > div > form > input'
     @product_cart_order_button_path = 'div.panel.has--border > div > form > button'
+    update_pathes
   end
   
   def update_pathes

@@ -53,6 +53,7 @@ class Websitebasics
     @links_about_path = 'footer > div:nth-child(3) > div > div:nth-child(3) > div'
     @links_imprint_path = ':nth-child(3) > nav > ul > li:nth-child(5) > a'
     @links_info_headline ='.emotion--row > div > h1'
+    update_pathes
   end
   
   def update_pathes

@@ -16,7 +16,7 @@ class Directorder
     @direct_ordering_form_quantity_path = '.emgroup-direct-order-quantity-column > div'
     @direct_ordering_form_button_path = '.emgroup-direct-order-submit'
     @direct_ordering_sidebar_item_path = 'div.item--container > div > a'
-    
+    update_pathes
   end
   
   def update_pathes

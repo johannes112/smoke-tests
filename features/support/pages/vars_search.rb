@@ -16,6 +16,7 @@ class Search
     @search_searchbutton_icon_path = '.entry--search > form > button > i'
     @search_product_name_path = '.product--header'
     @search_results_path = '.search--results'
+    update_pathes
   end
   
   def update_pathes
