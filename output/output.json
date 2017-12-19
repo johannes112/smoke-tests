@@ -7,1053 +7,220 @@
       }
     ],
     "keyword": "Feature",
-    "name": "account",
-    "line": 6,
-    "description": "\nAs a customer,\nI want to be able to use an account\nin order to manage my user data",
-    "tags": [
-      {
-        "name": "@export",
-        "line": 3
-      },
-      {
-        "name": "@chefworks",
-        "line": 4
-      }
-    ],
-    "id": "account",
-    "uri": "features/base_features/5.account.feature",
+    "name": "checkout",
+    "line": 3,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
     "elements": [
       {
-        "keyword": "Background",
-        "name": "",
-        "line": 12,
-        "description": "",
-        "type": "background",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I am on the registration page",
-            "line": 13,
-            "output": [
-              "--> go to https://www.jobeline.at/account",
-              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:3"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6930035302
-            }
-          }
-        ]
-      },
-      {
         "keyword": "Scenario",
-        "name": "create new account",
-        "line": 24,
+        "name": "checkout without existing account and create an account",
+        "line": 17,
         "description": "",
         "tags": [
           {
-            "name": "@account",
-            "line": 15
-          },
-          {
-            "name": "@export",
-            "line": 16
-          },
-          {
-            "name": "@chefworks",
-            "line": 17
-          },
-          {
             "name": "@pulsiva",
-            "line": 18
+            "line": 8
           },
           {
             "name": "@vega",
-            "line": 19
-          },
-          {
-            "name": "@hotelwaesche",
-            "line": 20
-          },
-          {
-            "name": "@hw_jobeline",
-            "line": 21
+            "line": 9
           },
           {
             "name": "@v_jobeline",
-            "line": 22
+            "line": 10
           },
           {
-            "name": "@account_registration",
-            "line": 23
+            "name": "@hotelwaesche",
+            "line": 11
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 12
+          },
+          {
+            "name": "@export",
+            "line": 13
+          },
+          {
+            "name": "@chefworks",
+            "line": 14
+          },
+          {
+            "name": "@checkout",
+            "line": 15
+          },
+          {
+            "name": "@checkout_registration",
+            "line": 16
           }
         ],
-        "id": "account;create-new-account",
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
         "type": "scenario",
         "steps": [
           {
-            "keyword": "And ",
+            "keyword": "Given ",
             "name": "no user account with my email exists",
-            "line": 25,
+            "line": 18,
             "output": [
-              "UrlBackend:https://www.jobeline.de/",
-              "user eMail:testmail_hwjat@emmos.de"
+              "UrlBackend:https://www.jobeline.com/",
+              "user eMail:testmail_vjat@emmos.de"
             ],
             "match": {
               "location": "features/step_definitions/account.rb:16"
             },
             "result": {
               "status": "passed",
-              "duration": 4898349525
+              "duration": 2420019157
+            }
+          },
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 19,
+            "output": [
+              "go to https://www.jobeline.com/at-de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6371207034
             }
           },
           {
             "keyword": "When ",
-            "name": "I create a new account with my data",
-            "line": 26,
+            "name": "I add an article to my cart by ajax",
+            "line": 20,
+            "output": [
+              "-> add article: https://www.jobeline.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10041838&sQuantity=2"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4304433134
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 21,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.jobeline.com/at-de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16958012105
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 22,
+            "output": [
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".btn--checkout-proceed\">\u001b[0m\n",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:201"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24810269844
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I register a new account with my data",
+            "line": 23,
             "output": [
               "- set prefix = \"Herr\"",
               "- set firstname: Vorname",
               "- set lastname: Nachname",
               "- set customernumber: 495078701",
-              "- set email: testmail_hwjat@emmos.de",
+              "- set email: testmail_vjat@emmos.de",
               "- set password: Test2014",
               "- set phone: 01234567",
-              "- set company: Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB",
+              "- set company: Test AT Jobeline - eBusiness",
               "department is not available in at",
               "taxid is not available in at",
               "taxvat is not available in at",
-              "- set street: Tramstrasse",
+              "- set street: Schloßgasse",
               "- set streetnumber: 4",
               "- set postcode: 4470",
               "- set city: Enns",
-              "- set country: Österreich",
               "clicked button to continue"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:72"
+              "location": "features/step_definitions/checkout.rb:55"
             },
             "result": {
               "status": "passed",
-              "duration": 80322812224
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 27,
-            "output": [
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:196"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3567831625
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "login with existing account",
-        "line": 53,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 44
-          },
-          {
-            "name": "@export",
-            "line": 45
-          },
-          {
-            "name": "@chefworks",
-            "line": 46
-          },
-          {
-            "name": "@pulsiva",
-            "line": 47
-          },
-          {
-            "name": "@vega",
-            "line": 48
-          },
-          {
-            "name": "@hotelwaesche",
-            "line": 49
-          },
-          {
-            "name": "@hw_jobeline",
-            "line": 50
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 51
-          },
-          {
-            "name": "@account_login",
-            "line": 52
-          }
-        ],
-        "id": "account;login-with-existing-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 54,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2400023303
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations",
-            "line": 55,
-            "output": [
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:221"
-            },
-            "result": {
-              "status": "failed",
-              "error_message": "Net::ReadTimeout (Net::ReadTimeout)\n./features/support/helpers/functions.rb:263:in `find_secure'\n./features/step_definitions/account.rb:276:in `/^I login with valid informations$/'\nfeatures/base_features/5.account.feature:55:in `When I login with valid informations'",
-              "duration": 149046440431
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page",
-            "line": 56,
-            "match": {
-              "location": "features/step_definitions/account.rb:196"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify payment in my account",
-        "line": 85,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 75
-          },
-          {
-            "name": "@export",
-            "line": 76
-          },
-          {
-            "name": "@chefworks",
-            "line": 77
-          },
-          {
-            "name": "@pulsiva",
-            "line": 78
-          },
-          {
-            "name": "@vega",
-            "line": 79
-          },
-          {
-            "name": "@hotelwaesche",
-            "line": 80
-          },
-          {
-            "name": "@hw_jobeline",
-            "line": 81
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 82
-          },
-          {
-            "name": "@account_update",
-            "line": 83
-          },
-          {
-            "name": "@account_payment",
-            "line": 84
-          }
-        ],
-        "id": "account;modify-payment-in-my-account",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 86,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2488196284
+              "duration": 93904778938
             }
           },
           {
             "keyword": "And ",
-            "name": "I am logged in",
-            "line": 87,
+            "name": "I set payment and shipping",
+            "line": 24,
             "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
+              "I am here: https://www.jobeline.com/at-de/checkout/shippingPayment",
+              "-> choose payment",
+              "> payment is chosen",
+              "-> choose delivery",
+              "> shipping is chosen",
+              "--> click button to continue"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:279"
+              "location": "features/step_definitions/checkout.rb:335"
             },
             "result": {
               "status": "passed",
-              "duration": 35776593844
+              "duration": 45716743702
             }
           },
           {
             "keyword": "When ",
-            "name": "I modify my paymentinfo",
-            "line": 88,
+            "name": "I send my order",
+            "line": 25,
             "output": [
-              "--> clicked button for change of payment",
-              "I change option of payment",
-              "--> choose checkbox for cash on delivery"
+              "I am on the checkout page",
+              "I am already on the final checkout page",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "> no agbbox is here ",
+              "> found orderbutton but not press"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:420"
+              "location": "features/step_definitions/checkout.rb:171"
             },
             "result": {
               "status": "passed",
-              "duration": 25652346525
+              "duration": 18969029159
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 89,
+            "name": "Shopware should have my order",
+            "line": 26,
             "output": [
-              "> found info for success"
+              "> Shopware can not have my order because i have not pressed the orderbutton"
             ],
             "match": {
-              "location": "features/step_definitions/account.rb:363"
+              "location": "features/step_definitions/checkout.rb:430"
             },
             "result": {
               "status": "passed",
-              "duration": 20029526641
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "line": 112,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 107
-          },
-          {
-            "name": "@export",
-            "line": 108
-          },
-          {
-            "name": "@chefworks",
-            "line": 109
-          },
-          {
-            "name": "@account_update",
-            "line": 110
-          },
-          {
-            "name": "@account_invoice",
-            "line": 111
-          }
-        ],
-        "id": "account;modify-adress-of-invoice",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 113,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2416390502
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am logged in",
-            "line": 114,
-            "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:279"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 35645649660
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 115,
-            "output": [
-              "I change prefix of my address for invoice",
-              "- set prefix: Frau",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:463"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24824521171
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 116,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:363"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20388043893
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of delivery",
-        "line": 139,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 129
-          },
-          {
-            "name": "@export",
-            "line": 130
-          },
-          {
-            "name": "@chefworks",
-            "line": 131
-          },
-          {
-            "name": "@pulsiva",
-            "line": 132
-          },
-          {
-            "name": "@vega",
-            "line": 133
-          },
-          {
-            "name": "@hotelwaesche",
-            "line": 134
-          },
-          {
-            "name": "@hw_jobeline",
-            "line": 135
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 136
-          },
-          {
-            "name": "@account_update",
-            "line": 137
-          },
-          {
-            "name": "@account_delivery",
-            "line": 138
-          }
-        ],
-        "id": "account;modify-adress-of-delivery",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 140,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2413456038
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am logged in",
-            "line": 141,
-            "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:279"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 33763676302
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my delivery",
-            "line": 142,
-            "output": [
-              "--> clicked button for change the adress for delivery",
-              "I change prefix of my address for delivery",
-              "- set prefix: Frau",
-              "--> select prefix:Frau",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:570"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 22820964870
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see an alert for creating a new address",
-            "line": 143,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:380"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4061838447
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "modify adress of invoice",
-        "line": 166,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 161
-          },
-          {
-            "name": "@export",
-            "line": 162
-          },
-          {
-            "name": "@chefworks",
-            "line": 163
-          },
-          {
-            "name": "@account_update",
-            "line": 164
-          },
-          {
-            "name": "@account_invoice",
-            "line": 165
-          }
-        ],
-        "id": "account;modify-adress-of-invoice",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 167,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2438724664
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am logged in",
-            "line": 168,
-            "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:279"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 33503454982
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I modify my address for my bill",
-            "line": 169,
-            "output": [
-              "I change prefix of my address for invoice",
-              "- set prefix: Frau",
-              "--> click change-button"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:463"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 26103761528
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 170,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:363"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20291334044
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "change settings for newsletter",
-        "line": 187,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 183
-          },
-          {
-            "name": "@export",
-            "line": 184
-          },
-          {
-            "name": "@chefworks",
-            "line": 185
-          },
-          {
-            "name": "@account_newsletter",
-            "line": 186
-          }
-        ],
-        "id": "account;change-settings-for-newsletter",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 188,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2433040081
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am logged in",
-            "line": 189,
-            "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:279"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36523586864
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I activate the newsletterbox",
-            "line": 190,
-            "output": [
-              "--> activate the checkbox",
-              "On the shop of hw_jobeline this feature does not exist"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:621"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 10208182382
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should see a confirmation hint",
-            "line": 191,
-            "output": [
-              "> found info for success"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:363"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 20254345907
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "test links on the accountsite",
-        "line": 211,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 203
-          },
-          {
-            "name": "@export",
-            "line": 204
-          },
-          {
-            "name": "@chefworks",
-            "line": 205
-          },
-          {
-            "name": "@pulsiva",
-            "line": 206
-          },
-          {
-            "name": "@vega",
-            "line": 207
-          },
-          {
-            "name": "@hotelwaesche",
-            "line": 208
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 209
-          },
-          {
-            "name": "@account_links",
-            "line": 210
-          }
-        ],
-        "id": "account;test-links-on-the-accountsite",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account",
-            "line": 212,
-            "output": [
-              "-> there exists an unique account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2429025102
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I am logged in",
-            "line": 213,
-            "output": [
-              "I login with valid informations",
-              "> ok, I am on https://www.jobeline.at/account",
-              "- set email: testmail_hwjat@emmos.de",
-              "-> set email",
-              "- set password: Test2014",
-              "-> set password",
-              "--> pushed button for registration",
-              "I should be on my account page",
-              "current_url:https://www.jobeline.at/account"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:279"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36574005643
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I get all items of the sidebar",
-            "line": 214,
-            "output": [
-              "> menuitems:7",
-              "- account",
-              "- profile",
-              "- address",
-              "- payment",
-              "- orders",
-              "- wishlist",
-              "- logout"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:633"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16776948010
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "login with existing account in subshop",
-        "line": 234,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 229
-          },
-          {
-            "name": "@vega",
-            "line": 230
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 231
-          },
-          {
-            "name": "@account_advanced",
-            "line": 232
-          },
-          {
-            "name": "@account_login_subshop",
-            "line": 233
-          }
-        ],
-        "id": "account;login-with-existing-account-in-subshop",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account on Vega in DE",
-            "line": 235,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:646"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 66957
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations on Jobeline in DE",
-            "line": 236,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:674"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 46168
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should be on my account page on the subshop",
-            "line": 237,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:813"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 40384
-            }
-          }
-        ]
-      },
-      {
-        "keyword": "Scenario",
-        "name": "login with account in shop of other country",
-        "line": 244,
-        "description": "",
-        "tags": [
-          {
-            "name": "@account",
-            "line": 239
-          },
-          {
-            "name": "@vega",
-            "line": 240
-          },
-          {
-            "name": "@v_jobeline",
-            "line": 241
-          },
-          {
-            "name": "@account_advanced",
-            "line": 242
-          },
-          {
-            "name": "@account_login_foreign",
-            "line": 243
-          }
-        ],
-        "id": "account;login-with-account-in-shop-of-other-country",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Given ",
-            "name": "I already created an user account on Vega in DE",
-            "line": 245,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:646"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 55265
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I login with valid informations on Vega in AT",
-            "line": 246,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:736"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 36105
-            }
-          },
-          {
-            "keyword": "Then ",
-            "name": "I should get an errormessage",
-            "line": 247,
-            "output": [
-              "in at on hw_jobeline skip this step"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:798"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 30962
+              "duration": 51151
             }
           }
         ]

@@ -25,6 +25,10 @@ module MyWorld
     @account ||= Account.new
   end
 
+  def checkout
+    @checkout ||= Checkout.new
+  end
+
   def url_functions
     @url_functions ||=UrlFunctions.new
   end
