@@ -76,7 +76,7 @@ class User
     @company = case ENV['COUNTRY']
       when 'de' then "VEGA GmbH	Test - eBusiness"
       when 'at' then 'Vega Vetriebs GmbH & Co. KG	Test - eBusiness'
-      when 'ch' then 'Vega Vetrieb von 	Gastronomiebedarf GmbH'
+      when 'ch' then 'Vega Vetrieb von Gastronomiebedarf GmbH'
       when 'it' then 'Test Vega IT eBusiness'
       when 'fr' then 'Test Vega FR eBusiness'
       when 'no' then 'Test Vega NO eBusiness'
@@ -257,7 +257,7 @@ class User
     end
     @street = case ENV['COUNTRY']
       when 'de' then 'Vegastr.'
-      when 'at' then 'Schloßgasse'
+      when 'at' then 'Schlossgasse'
       when 'ch' then 'Tramstrasse'
       when 'it' then 'Via Luigi Galvani'
       when 'fr' then 'Rue Icare'
