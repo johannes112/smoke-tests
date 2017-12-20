@@ -63,7 +63,7 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps[:idleTimeout] = '100' #120max Duration between any command
     else
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
-      @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 0:21min (Default: 300)
+      @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 5:00min (Default: 300)
       @caps[:idleTimeout] = '90' #max Duration between any command (Default: 90)
     end    
     puts "Enviroment:#{@caps}"
@@ -74,8 +74,8 @@ if ENV['DRIVER'] == 'saucelabs'
     end
     Capybara.default_driver = :saucelabs_driver
     if (ENV['SYSTEM'] == 'int') 
-      puts "Timeout of capybara is set to 61"
-      Capybara.default_max_wait_time = 61
+      puts "Timeout of capybara is set to 91"
+      Capybara.default_max_wait_time = 91
     else
       Capybara.default_max_wait_time = 15
     end
