@@ -100,17 +100,17 @@ class User
       when 'ch' then 'Schlossgasse'
     end
     @streetnumber = case ENV['COUNTRY']
-      when 'de' then '44'
+      when 'de' then '9'
       when 'at' then '4'
       when 'ch' then '7'
     end
     @postcode = case ENV['COUNTRY']
-      when 'de' then '90449'
+      when 'de' then '86637'
       when 'at' then '4470'
       when 'ch' then '9444'
     end
     @city = case ENV['COUNTRY']
-      when 'de' then 'Nürnberg'
+      when 'de' then 'Wertingen'
       when 'at' then 'Enns'
       when 'ch' then 'Diepoldsau'
     end
