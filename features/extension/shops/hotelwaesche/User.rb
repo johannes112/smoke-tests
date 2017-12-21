@@ -5,9 +5,9 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY'] #kundennummer
-      when 'de' then '493444351'
-      when 'at' then '495078249'
-      when 'ch' then '211608920'
+      when 'de' then '20027336'#'493444351'
+      when 'at' then '20012564'#'495078249'
+      when 'ch' then '20014013'#'211608920'
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_hde@emmos.de'
@@ -31,8 +31,8 @@ class User
     end
     @company = case ENV['COUNTRY']
       when 'de' then 'Hotelwäsche Erwin Müller GmbH Test - eBusiness'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH & Co. KG Test-eBusiness'
-      when 'ch' then 'Hotelwäsche Erwin Müller GmbH Test - eBusiness'
+      when 'at' then 'HW Erwin Müller EM Group AUT GmbH & Co.KG - Test-eBusiness'#'Hotelwäsche Erwin Müller GmbH & Co. KG Test-eBusiness'
+      when 'ch' then 'Hotelwäsche Erwin Müller EM Group Schweiz GmbH -Test - eBusiness'#'Hotelwäsche Erwin Müller GmbH Test - eBusiness'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then nil

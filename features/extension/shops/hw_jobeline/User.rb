@@ -5,9 +5,9 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '493444604'
-      when 'at' then '495078701'
-      when 'ch' then '211609597'
+      when 'de' then '20027337'#'493444604'
+      when 'at' then '20012565'#'495078701'
+      when 'ch' then '211609597'#'211609597'
     end
     @eMail = case ENV['COUNTRY']
       when 'de' then 'testmail_hwjde@emmos.de'
@@ -30,9 +30,9 @@ class User
       when 'ch' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Hotelwäsche Erwin Müller GmbH	Jobeline-Test-eBus.'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB'
-      when 'ch' then 'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
+      when 'de' then 'Hotelwäsche Erwin Müller GmbH Jobeline-Test-eBus.'#'Hotelwäsche Erwin Müller GmbH	Jobeline-Test-eBus.'
+      when 'at' then 'HW Erwin Müller EM Group AUT GmbH & Co.KG - Jobeline Test-eB.'#'Hotelwäsche Erwin Müller GmbH& Co.KG-Jobel.-Test-eB'
+      when 'ch' then 'HW Erwin Müller EM Group Schweiz GmbH -Jobeline Test - eBus.'#'Hotelwäsche Erwin Müller Jobeline-Test-eBus.'
     end
     @company_kind = case ENV['COUNTRY']
       when 'de' then nil
@@ -97,7 +97,7 @@ class User
     @street = case ENV['COUNTRY']      
       when 'de' then 'Hettlinger Str.'
       when 'at' then 'Tramstrasse'
-      when 'ch' then 'Schlossgasse'
+      when 'ch' then 'Schloßgasse'#'Schlossgasse'
     end
     @streetnumber = case ENV['COUNTRY']
       when 'de' then '9'

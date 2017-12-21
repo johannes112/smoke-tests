@@ -1,17 +1,17 @@
-#vega
+#vega Steuernummer? handelsregister?
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '593497053'
-      when 'at' then '595067365'
-      when 'ch' then '311607643'
+      when 'de' then '20033676'#'593497053'
+      when 'at' then '595067365'#'595067365'
+      when 'ch' then '311607643'#'311607643'
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
-      when 'se' then '20010015'
+      when 'se' then '20010015'#'20010015' NO?
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
@@ -74,13 +74,13 @@ class User
       when 'lu' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then "VEGA GmbH	Test - eBusiness"
-      when 'at' then 'Vega Vetriebs GmbH & Co. KG	Test - eBusiness'
-      when 'ch' then 'Vega Vetrieb von Gastronomiebedarf GmbH'
+      when 'de' then 'VEGA GmbH Test - eBusiness'#"VEGA GmbH	Test - eBusiness"
+      when 'at' then 'VEGA - EM Group AUT GmbH & Co.KG - Test-eBusiness'#'Vega Vetriebs GmbH & Co. KG	Test - eBusiness'
+      when 'ch' then 'VEGA - EM Group Schweiz GmbH - Test-eBusiness'#'Vega Vetrieb von Gastronomiebedarf GmbH'
       when 'it' then 'Test Vega IT eBusiness'
       when 'fr' then 'Test Vega FR eBusiness'
       when 'no' then 'Test Vega NO eBusiness'
-      when 'se' then 'Test Vega SE eBusiness'
+      when 'se' then 'VEGA EMG Scandinavia - Test eBusiness'#'Test Vega SE eBusiness'
       when 'nl' then 'Test Vega NL eBusiness'
       when 'be' then 'Test Vega BE eBusiness'
       when 'es' then 'Test Vega ES eBusiness'
@@ -257,12 +257,12 @@ class User
     end
     @street = case ENV['COUNTRY']
       when 'de' then 'Vegastr.'
-      when 'at' then 'Schlossgasse'
+      when 'at' then 'Schloßgasse'#'Schlossgasse'
       when 'ch' then 'Tramstrasse'
       when 'it' then 'Via Luigi Galvani'
       when 'fr' then 'Rue Icare'
       when 'no' then 'Konows gate'
-      when 'se' then 'Hamngatan'
+      when 'se' then 'HAMNGATAN'#'Hamngatan'
       when 'nl' then 'Cereslaan'
       when 'be' then 'Place du Luxembourg'
       when 'en' then 'Vegastr.'
@@ -290,7 +290,7 @@ class User
       when 'it' then '39100'
       when 'fr' then '67960'
       when 'no' then '0192'
-      when 'se' then '211 22'
+      when 'se' then '21123'#'21122'
       when 'nl' then '5384 VT'
       when 'be' then '1050'
       when 'es' then '08009'
@@ -304,7 +304,7 @@ class User
       when 'it' then 'Bolzano'
       when 'fr' then 'Entzheim'
       when 'no' then 'Oslo'
-      when 'se' then 'Malmö'
+      when 'se' then 'MALMÖ'#'Malmö'
       when 'nl' then 'Heesch'
       when 'be' then 'Ixelles'
       when 'es' then 'Barcelona'

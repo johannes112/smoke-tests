@@ -1,17 +1,17 @@
-#v_jobeline
+#v_jobeline VAT_ID REG??? NO?
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '493444604'
-      when 'at' then '495078701'
-      when 'ch' then '211609597'
+      when 'de' then '20035829'#'493444604'
+      when 'at' then '20012615'#'495078701'
+      when 'ch' then '20013813'#'211609597'
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
-      when 'se' then nil
+      when 'se' then '20012758'#nil
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
@@ -70,13 +70,13 @@ class User
       when 'en' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Test DE Jobeline - eBusiness'
-      when 'at' then 'Test AT Jobeline - eBusiness'
-      when 'ch' then 'Test CH Jobeline - eBusiness'      
+      when 'de' then 'VEGA GmbH - Jobeline Test-eBusiness'#'Test DE Jobeline - eBusiness'
+      when 'at' then 'VEGA - EM Group AUT GmbH & Co.KG - Jobeline Test-eBusiness'#'Test AT Jobeline - eBusiness'
+      when 'ch' then 'VEGA - EM Group Schweiz GmbH - Jobeline Test-eBusiness'#'Test CH Jobeline - eBusiness'      
       when 'it' then 'Test IT Jobeline - eBusiness'
       when 'fr' then 'Test FR Jobeline - eBusiness'
       when 'no' then 'Test NO Jobeline - eBusiness'
-      when 'se' then 'Test SE Jobeline - eBusiness'
+      when 'se' then 'VEGA - EM Group AUT GmbH & Co.KG - Jobeline Test-eBusiness'#'Test SE Jobeline - eBusiness'
       when 'nl' then 'Test NL Jobeline - eBusiness'
       when 'be' then 'Test BE Jobeline - eBusiness'
       when 'es' then 'Test ES Jobeline - eBusiness'
@@ -238,13 +238,13 @@ class User
       when 'en' then 'Ms'
     end
     @street = case ENV['COUNTRY']
-      when 'de' then 'Südwestpark'
+      when 'de' then 'Vegastr.'
       when 'at' then 'Schloßgasse'
       when 'ch' then 'Tramstrasse'
       when 'it' then 'Via Luigi Galvani'
       when 'fr' then 'Rue Icare'
       when 'no' then 'Konows gate'
-      when 'se' then 'Hamngatan'
+      when 'se' then 'HAMNGATAN'#'Hamngatan'
       when 'nl' then 'Cereslaan'
       when 'be' then 'Place du Luxembourg'
       when 'es' then 'Carrer de Roger de Llúria'
@@ -264,26 +264,26 @@ class User
       when 'en' then '4'
     end
     @postcode = case ENV['COUNTRY']
-      when 'de' then '90449'
+      when 'de' then '86637'
       when 'at' then '4470'
       when 'ch' then '9444'
       when 'it' then '39100'
       when 'fr' then '67960'
       when 'no' then '0192'
-      when 'se' then '211 22'
+      when 'se' then '21123'#'211 22'
       when 'nl' then '5384 VT'
       when 'be' then '1050'
       when 'es' then '08009'
       when 'en' then '86639'
     end
     @city = case ENV['COUNTRY']
-      when 'de' then 'Nürnberg'
+      when 'de' then 'Wertingen'
       when 'at' then 'Enns'
       when 'ch' then 'Diepoldsau'
       when 'it' then 'Bolzano'
       when 'fr' then 'Entzheim'
       when 'no' then 'Oslo'
-      when 'se' then 'Malmö'
+      when 'se' then 'MALMÖ'#'Malmö'
       when 'nl' then 'Heesch'
       when 'be' then 'Ixelles'
       when 'es' then 'Barcelona'

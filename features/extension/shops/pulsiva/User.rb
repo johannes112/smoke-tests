@@ -5,13 +5,13 @@ class User
   
   def initialize
     @customer_number = case ENV['COUNTRY']
-      when 'de' then '20004906'
-      when 'at' then '20000021'
-      when 'ch' then '20000024'
+      when 'de' then '20004906'#'20004906'
+      when 'at' then '20000021'#'20000021'
+      when 'ch' then '20000024'#'20000024'
       when 'it' then nil
       when 'fr' then nil
       when 'no' then nil
-      when 'se' then '20000041'
+      when 'se' then '20000041'#'20000041'
       when 'nl' then nil
       when 'be' then nil
       when 'es' then nil
@@ -65,13 +65,13 @@ class User
       when 'es' then 'Test2015'
     end
     @company = case ENV['COUNTRY']
-      when 'de' then 'Pulsiva GmbH Test - eBusiness'
-      when 'at' then 'Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB'
-      when 'ch' then 'Pulsiva GmbH Test - eBusiness'
+      when 'de' then 'Pulsiva GmbH Test - eBusiness'#'Pulsiva GmbH Test - eBusiness'
+      when 'at' then 'Pulsiva EM Group AUT GmbH & Co.KG - Test-eBusiness'#'Hotelwäsche Erwin Müller GmbH&Co. KG Pulsiva-Test-eB'
+      when 'ch' then 'Pulsiva EM Group Schweiz GmbH -Test - eBusiness'#'Pulsiva GmbH Test - eBusiness'
       when 'it' then 'Pulsiva Italy GmbH'
       when 'fr' then 'Pulsiva France'
       when 'no' then 'Pulsiva Norge'
-      when 'se' then 'Pulsiva Scandinavia - eBusiness '
+      when 'se' then 'Pulsiva EMG Scandinavia - Test-eBusiness'#'Pulsiva Scandinavia - eBusiness '
       when 'nl' then 'Pulsiva Nederland'
       when 'be' then 'Pulsiva Belgium'
       when 'es' then 'Pulsiva Espana'
@@ -227,7 +227,7 @@ class User
       when 'it' then 'Via Luigi Galvani'
       when 'fr' then 'Rue Icare'
       when 'no' then 'Konows gate'
-      when 'se' then 'Hamngatan'
+      when 'se' then 'HAMNGATAN'#'Hamngatan'
       when 'nl' then 'Cereslaan'
       when 'be' then 'Place du Luxembourg'
       when 'es' then 'Carrer de Roger de Llúria'
@@ -251,7 +251,7 @@ class User
       when 'it' then '39100'
       when 'fr' then '67960'
       when 'no' then '0192'
-      when 'se' then '211 22'
+      when 'se' then '21122'#'211 22'
       when 'nl' then '5384 VT'
       when 'be' then '1050'
       when 'es' then '08009'
@@ -263,7 +263,7 @@ class User
       when 'it' then 'Bolzano'
       when 'fr' then 'Entzheim'
       when 'no' then 'Oslo'
-      when 'se' then 'Malmö'
+      when 'se' then 'MALMÖ'#'Malmö'
       when 'nl' then 'Heesch'
       when 'be' then 'Ixelles'
       when 'es' then 'Barcelona'
