@@ -7,22 +7,18 @@
       }
     ],
     "keyword": "Feature",
-    "name": "search",
-    "line": 2,
-    "description": "\n  As a customer\n  I will be able to search for a specific product",
-    "id": "search",
-    "uri": "features/base_features/1.search.feature",
+    "name": "checkout",
+    "line": 3,
+    "description": "\nAs a customer,\nI want to be able to order my favorite products",
+    "id": "checkout",
+    "uri": "features/base_features/6.checkout.feature",
     "elements": [
       {
         "keyword": "Scenario",
-        "name": "search with sku",
+        "name": "checkout without existing account and create an account",
         "line": 17,
         "description": "",
         "tags": [
-          {
-            "name": "@quickies",
-            "line": 7
-          },
           {
             "name": "@pulsiva",
             "line": 8
@@ -32,15 +28,15 @@
             "line": 9
           },
           {
-            "name": "@hotelwaesche",
+            "name": "@v_jobeline",
             "line": 10
           },
           {
-            "name": "@hw_jobeline",
+            "name": "@hotelwaesche",
             "line": 11
           },
           {
-            "name": "@v_jobeline",
+            "name": "@hw_jobeline",
             "line": 12
           },
           {
@@ -52,61 +48,179 @@
             "line": 14
           },
           {
-            "name": "@search",
+            "name": "@checkout",
             "line": 15
           },
           {
-            "name": "@search_sku",
+            "name": "@checkout_registration",
             "line": 16
           }
         ],
-        "id": "search;search-with-sku",
+        "id": "checkout;checkout-without-existing-account-and-create-an-account",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
+            "name": "no user account with my email exists",
             "line": 18,
             "output": [
-              "go to https://www.pulsiva.com/de-de/"
+              "UrlBackend:https://www.pulsiva.com/",
+              "user eMail:testmail_pch@emmos.de"
+            ],
+            "match": {
+              "location": "features/step_definitions/account.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4887024513
+            }
+          },
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 19,
+            "output": [
+              "go to https://www.pulsiva.com/ch-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4907711638
+              "duration": 4204430840
             }
           },
           {
             "keyword": "When ",
-            "name": "I am searching for a product by entering the sku in the searchfield",
-            "line": 19,
+            "name": "I add an article to my cart by ajax",
+            "line": 20,
             "output": [
-              "- set sku = \"20040136\"",
-              "clicked button of search"
+              "-> add article: https://www.pulsiva.com/ch-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=20040136&sQuantity=2"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:2"
+              "location": "features/step_definitions/product_cart.rb:39"
             },
             "result": {
               "status": "passed",
-              "duration": 18251177864
+              "duration": 3367309704
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the product cart contains an article",
+            "line": 21,
+            "output": [
+              "I am on the product cart page",
+              "-> go to https://www.pulsiva.com/ch-de/checkout/cart"
+            ],
+            "match": {
+              "location": "features/step_definitions/product_cart.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18175743227
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I go to the checkout",
+            "line": 22,
+            "output": [
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".btn--checkout-proceed\">\u001b[0m\n",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:201"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25259582177
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I register a new account with my data",
+            "line": 23,
+            "output": [
+              "- set prefix = \"Herr\"",
+              "- set firstname: Vorname",
+              "- set lastname: Nachname",
+              "- set customernumber: 20000024",
+              "- set email: testmail_pch@emmos.de",
+              "- set password: Test2014",
+              "- set phone: 01234567",
+              "- set company: Pulsiva EM Group Schweiz GmbH -Test - eBusiness",
+              "department is not available in ch",
+              "taxid is not available in ch",
+              "taxvat is not available in ch",
+              "- set street: Tramstrasse",
+              "- set streetnumber: 7",
+              "- set postcode: 9444",
+              "- set city: Diepoldsau",
+              "clicked button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93977605011
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I set payment and shipping",
+            "line": 24,
+            "output": [
+              "I am here: https://www.pulsiva.com/ch-de/checkout/shippingPayment",
+              "-> choose payment",
+              "> payment is chosen",
+              "-> choose delivery",
+              "> shipping is chosen",
+              "--> click button to continue"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:335"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35434361648
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I send my order",
+            "line": 25,
+            "output": [
+              "I am on the checkout page",
+              "I am already on the final checkout page",
+              "And the checkoutpage contains all elements",
+              "I activate the box of agb",
+              "> no agbbox is here ",
+              "> found orderbutton but not press"
+            ],
+            "match": {
+              "location": "features/step_definitions/checkout.rb:171"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19146439063
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the detailsite of the related product",
-            "line": 20,
+            "name": "Shopware should have my order",
+            "line": 26,
             "output": [
-              "found 'STEAKGABEL'"
+              "> Shopware can not have my order because i have not pressed the orderbutton"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:21"
+              "location": "features/step_definitions/checkout.rb:430"
             },
             "result": {
               "status": "passed",
-              "duration": 4364488963
+              "duration": 66512
             }
           }
         ]
