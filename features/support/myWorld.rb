@@ -1,6 +1,18 @@
 module MyWorld
   require 'logger'
  
+  def settings
+    @settings ||= Settings.new
+  end
+  
+  def article
+  	@article ||= Article.new
+  end
+  
+  def user
+    @user ||= User.new
+  end
+  
   def websitebasics
     @websitebasics ||= Websitebasics.new
   end
@@ -45,18 +57,6 @@ module MyWorld
     @jsfunctions ||= Jsfunctions.new
   end
 
-  def settings
-    @settings ||= Settings.new
-  end
-  
-  def article
-  	@article ||= Article.new
-  end
-  
-  def user
-    @user ||= User.new
-  end
-  
   def logger
     @logger ||= Logger.new(STDOUT)
   end

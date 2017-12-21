@@ -7,18 +7,22 @@
       }
     ],
     "keyword": "Feature",
-    "name": "checkout",
-    "line": 3,
-    "description": "\nAs a customer,\nI want to be able to order my favorite products",
-    "id": "checkout",
-    "uri": "features/base_features/6.checkout.feature",
+    "name": "search",
+    "line": 2,
+    "description": "\n  As a customer\n  I will be able to search for a specific product",
+    "id": "search",
+    "uri": "features/base_features/1.search.feature",
     "elements": [
       {
         "keyword": "Scenario",
-        "name": "checkout without existing account and create an account",
+        "name": "search with sku",
         "line": 17,
         "description": "",
         "tags": [
+          {
+            "name": "@quickies",
+            "line": 7
+          },
           {
             "name": "@pulsiva",
             "line": 8
@@ -28,15 +32,15 @@
             "line": 9
           },
           {
-            "name": "@v_jobeline",
+            "name": "@hotelwaesche",
             "line": 10
           },
           {
-            "name": "@hotelwaesche",
+            "name": "@hw_jobeline",
             "line": 11
           },
           {
-            "name": "@hw_jobeline",
+            "name": "@v_jobeline",
             "line": 12
           },
           {
@@ -48,179 +52,61 @@
             "line": 14
           },
           {
-            "name": "@checkout",
+            "name": "@search",
             "line": 15
           },
           {
-            "name": "@checkout_registration",
+            "name": "@search_sku",
             "line": 16
           }
         ],
-        "id": "checkout;checkout-without-existing-account-and-create-an-account",
+        "id": "search;search-with-sku",
         "type": "scenario",
         "steps": [
           {
             "keyword": "Given ",
-            "name": "no user account with my email exists",
+            "name": "I am on the website",
             "line": 18,
             "output": [
-              "UrlBackend:https://www.jobeline.com/",
-              "user eMail:testmail_vjat@emmos.de"
-            ],
-            "match": {
-              "location": "features/step_definitions/account.rb:16"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2420019157
-            }
-          },
-          {
-            "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 19,
-            "output": [
-              "go to https://www.jobeline.com/at-de/"
+              "go to https://www.pulsiva.com/ch-de/"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 6371207034
+              "duration": 4201295768
             }
           },
           {
             "keyword": "When ",
-            "name": "I add an article to my cart by ajax",
-            "line": 20,
+            "name": "I am searching for a product by entering the sku in the searchfield",
+            "line": 19,
             "output": [
-              "-> add article: https://www.jobeline.com/at-de/checkout/ajaxAddArticleCart?callback=jQuery&sAdd=10041838&sQuantity=2"
+              "- set sku = \"20040136\"",
+              "clicked button of search"
             ],
             "match": {
-              "location": "features/step_definitions/product_cart.rb:39"
+              "location": "features/step_definitions/search.rb:2"
             },
             "result": {
               "status": "passed",
-              "duration": 4304433134
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "the product cart contains an article",
-            "line": 21,
-            "output": [
-              "I am on the product cart page",
-              "-> go to https://www.jobeline.com/at-de/checkout/cart"
-            ],
-            "match": {
-              "location": "features/step_definitions/product_cart.rb:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16958012105
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I go to the checkout",
-            "line": 22,
-            "output": [
-              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
-              "\u001b[35m#<Capybara::Ambiguous: Ambiguous match, found 2 elements matching css \".btn--checkout-proceed\">\u001b[0m\n",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:201"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 24810269844
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I register a new account with my data",
-            "line": 23,
-            "output": [
-              "- set prefix = \"Herr\"",
-              "- set firstname: Vorname",
-              "- set lastname: Nachname",
-              "- set customernumber: 495078701",
-              "- set email: testmail_vjat@emmos.de",
-              "- set password: Test2014",
-              "- set phone: 01234567",
-              "- set company: Test AT Jobeline - eBusiness",
-              "department is not available in at",
-              "taxid is not available in at",
-              "taxvat is not available in at",
-              "- set street: Schloßgasse",
-              "- set streetnumber: 4",
-              "- set postcode: 4470",
-              "- set city: Enns",
-              "clicked button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:55"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 93904778938
-            }
-          },
-          {
-            "keyword": "And ",
-            "name": "I set payment and shipping",
-            "line": 24,
-            "output": [
-              "I am here: https://www.jobeline.com/at-de/checkout/shippingPayment",
-              "-> choose payment",
-              "> payment is chosen",
-              "-> choose delivery",
-              "> shipping is chosen",
-              "--> click button to continue"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:335"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 45716743702
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I send my order",
-            "line": 25,
-            "output": [
-              "I am on the checkout page",
-              "I am already on the final checkout page",
-              "And the checkoutpage contains all elements",
-              "I activate the box of agb",
-              "> no agbbox is here ",
-              "> found orderbutton but not press"
-            ],
-            "match": {
-              "location": "features/step_definitions/checkout.rb:171"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18969029159
+              "duration": 15879239465
             }
           },
           {
             "keyword": "Then ",
-            "name": "Shopware should have my order",
-            "line": 26,
+            "name": "I should be on the detailsite of the related product",
+            "line": 20,
             "output": [
-              "> Shopware can not have my order because i have not pressed the orderbutton"
+              "found 'STEAKGABEL'"
             ],
             "match": {
-              "location": "features/step_definitions/checkout.rb:430"
+              "location": "features/step_definitions/search.rb:21"
             },
             "result": {
               "status": "passed",
-              "duration": 51151
+              "duration": 4205954524
             }
           }
         ]
