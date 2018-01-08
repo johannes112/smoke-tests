@@ -5,12 +5,6 @@ class Productcart
                 :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path
                 
   def initialize
-    @vars ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
-    
-    @env_country ||= @vars.r_country
-    @env_system ||= @vars.r_system
-    @env_shop ||= @vars.r_shop
-    
     @homepage_content_logo_path = '.logo-main'
     @product_cart_article_path = '.compare--quantity'
     @product_cart_button_continue_path = '.table--content > a.content--title'

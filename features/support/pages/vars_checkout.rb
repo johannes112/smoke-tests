@@ -11,12 +11,6 @@ class Checkout
 
                 
   def initialize
-    @vars ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
-    
-    @env_country ||= @vars.r_country
-    @env_system ||= @vars.r_system
-    @env_shop ||= @vars.r_shop
-    
     @homepage_content_logo_path = '.logo-main'
     @navigation_hover_breadcrumb_path = '.content--breadcrumb'
     @account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'

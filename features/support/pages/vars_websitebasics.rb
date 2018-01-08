@@ -12,12 +12,6 @@ class Websitebasics
                 :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path, :links_about_path, :links_imprint_path, :links_info_headline
                 
   def initialize
-    @vars ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
-    
-    @env_country ||= @vars.r_country
-    @env_system ||= @vars.r_system
-    @env_shop ||= @vars.r_shop
-    
     @homepage_content_logo_path = '.logo-main'
     #website basics
     @homepage_content_header_path = 'div.page-wrap > header'

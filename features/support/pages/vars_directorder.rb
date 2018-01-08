@@ -4,11 +4,10 @@ class Directorder
                 :direct_ordering_button_path, :direct_ordering_form_sku_path, :direct_ordering_form_quantity_path, :direct_ordering_form_button_path, :direct_ordering_sidebar_item_path
                 
   def initialize
-    @vars ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
     
-    @env_country ||= @vars.r_country
-    @env_system ||= @vars.r_system
-    @env_shop ||= @vars.r_shop
+#    @env_country ||= @vars.r_country
+#    @env_system ||= @vars.r_system
+#    @env_shop ||= @vars.r_shop
     
     @homepage_content_logo_path = '.logo-main'
     @direct_ordering_button_path = '.header--directOrder' 

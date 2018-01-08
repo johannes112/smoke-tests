@@ -3,12 +3,6 @@ class Productpage
   attr_accessor :homepage_content_logo_path,
                 :product_page_buybutton_path, :product_page_infobox_path, :product_cart_productinfo_path, :product_page_productname_path, :product_page_productpicture_path, :product_page_productconfig_path, :product_page_productinfo_path, :product_page_productrecommodations_path, :product_page_productlast_path, :product_page_rememberbutton_path, :product_page_heart_badge_path, :product_page_comparebutton_path, :product_page_compareicon_path, :product_page_rate_ratebutton_path, :product_page_rate_tab_menu, :product_page_rate_tab_rateflag, :product_page_viewed_tab_menu, :product_page_viewed_tab_otherCustomer, :product_page_rate_form, :product_page_suggest_container
   def initialize
-    @vars ||= Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
-    
-    @env_country ||= @vars.r_country
-    @env_system ||= @vars.r_system
-    @env_shop ||= @vars.r_shop
-    
     @homepage_content_logo_path = '.logo-main'
     @product_page_buybutton_path = 'form > div > button'
     @product_page_infobox_path = '.is--active.is--open'
