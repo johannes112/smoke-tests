@@ -14,6 +14,10 @@ class Search
   end
   
   def update_pathes
+    #give vars of enviroment to local vars
+    @env_country ||= VARS_ENV.r_country
+    @env_system ||= VARS_ENV.r_system
+    @env_shop ||= VARS_ENV.r_shop
     # define hash of countries
     @search_results_path = '.content-main--inner > .content--wrapper' if "#{@env_shop}".match(/(pulsiva|hw_jobeline)/) && "#{@env_country}".match(/[a-z]{2}/)
   end

@@ -8,8 +8,6 @@ class Checkout
                 :checkout_registerform_city_path, :checkout_registerform_country_path, :checkout_registerform_button_path, :checkout_payment_form_path, :checkout_paymentInAdvance_radio_path, :checkout_registerform_customernumber_path, 
                 :checkout_payment_continue_path, :checkout_payment_delivery_standard_radio_path, :checkout_order_success_teaser_path, :checkout_checkout_buy_button_path
 
-
-                
   def initialize
     @homepage_content_logo_path = '.logo-main'
     @navigation_hover_breadcrumb_path = '.content--breadcrumb'
@@ -57,6 +55,10 @@ class Checkout
   end
   
   def update_pathes
+    #give vars of enviroment to local vars
+    @env_country ||= VARS_ENV.r_country
+    @env_system ||= VARS_ENV.r_system
+    @env_shop ||= VARS_ENV.r_shop
     @checkout_agb_container_path = '.tos--panel' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @checkout_orderbutton_path = '.actions--bottom > div > button' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @checkout_panel_path = '.panel.has--border > div > .table--header' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/)

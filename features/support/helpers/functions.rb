@@ -259,7 +259,7 @@ module MyFunctions
   #         do not use this function if there is the attribut ':visible'
   #         do not use this function if there is a specific element of the page given to find
   def find_secure(*args)
-    homepage_content_logo_path = csspathes.homepage_content_logo_path
+    homepage_content_logo_path = websitebasics.homepage_content_logo_path
     page.find(homepage_content_logo_path)
     
     if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )

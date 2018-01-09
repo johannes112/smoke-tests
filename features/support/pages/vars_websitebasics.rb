@@ -1,6 +1,6 @@
 #website_basics
 class Websitebasics
-  attr_accessor :homepage_content_logo_path,
+  attr_accessor :homepage_content_logo_path, :homepage_product_cart_hint_content_path,
                 #homepage
                 :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path, 
                 :homepage_content_navi_burger_category_title_path, :homepage_content_body_main_path, :homepage_content_footer_path,
@@ -13,6 +13,7 @@ class Websitebasics
                 
   def initialize
     @homepage_content_logo_path = '.logo-main'
+    @homepage_product_cart_hint_content_path = "div > div > div > div > .alert--content"
     #website basics
     @homepage_content_header_path = 'div.page-wrap > header'
     @homepage_content_searchfield_path = '.navigation--entry.entry--search'
@@ -51,6 +52,10 @@ class Websitebasics
   end
   
   def update_pathes
+    #give vars of enviroment to local vars
+    @env_country ||= VARS_ENV.r_country
+    @env_system ||= VARS_ENV.r_system
+    @env_shop ||= VARS_ENV.r_shop
     # define hash of countries
     @homepage_content_header_path = 'body > div.page-wrap > header' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @homepage_content_navi_path = 'body > div.page-wrap > nav' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
@@ -71,12 +76,14 @@ class Websitebasics
     @navigation_sidebar_sub_path = '.has--sub-categories > ul > li:nth-child(1)' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/it/)
     @navigation_sidebar_sub_path = '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
     @navigation_sidebar_sub_path = '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
+    @navigation_sidebar_sub_path = '.sidebar--categories-wrapper > div.sidebar--categories-navigation > ul > li.navigation--entry.is--active.has--sub-categories' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/nl/)
     @navigation_hover_breadcrumb_path = 'section > nav > ul' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_account_icon_path = 'div.product--buybox.block > div > form > div > button' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_notes_path = '.entry--notepad' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_cart_sidebar_path = '.container--ajax-cart.off-canvas.is--right.is--active.is--open' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_service_path = 'div.navigation--entry.entry--service' if "#{@env_shop}".match(/(pulsiva|chefworks)/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_context_path = '.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul' if "#{@env_shop}".match(/(pulsiva|chefworks)/) && "#{@env_country}".match(/[a-z]{2}/)
+    @links_context_path = '.navigation--entry.entry--service.has--drop-down' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/nl/)
   end
   
 end

@@ -6,8 +6,4 @@ Given(/^I am on the website$/) do
   
   #actions
   visit_secure(website_url)
-  #raise Net::ReadTimeout
-  #expections
-  #expect(current_url).to eq(website_url),
-  #  "Expected to be at #{website_url} but i am on #{current_url}"
 end

@@ -93,11 +93,15 @@ class Account
   end
   
   def update_pathes
+    #give vars of enviroment to local vars
+    @env_country ||= VARS_ENV.r_country
+    @env_system ||= VARS_ENV.r_system
+    @env_shop ||= VARS_ENV.r_shop
+
     # define hash of countries
     @account_registerform_taxid_path = '#register_billing_emgroup_commercial_register_nr' if "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/(no|nl)/)
     @account_registerform_taxid_path = '#register_billing_emgroup_commercial_register_nr' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/(no|nl|se)/)
     @account_registerform_taxid_path = '#register_billing_emgroup_commercial_register_nr' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
-    @account_registerform_taxvat_path = '#register_billing_vatid' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/be/)
     @account_payment_cashOnDelivery_path = '#payment_mean5' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/(ch|fr|no|se)/)
     @account_payment_cashOnDelivery_path = '#payment_mean4' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/(de|fr|be|no|se)/)
     @account_payment_cashOnDelivery_path = '#payment_mean5' if "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/(de)/)

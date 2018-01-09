@@ -25,6 +25,10 @@ class Productcart
   end
   
   def update_pathes
+    #give vars of enviroment to local vars
+    @env_country ||= VARS_ENV.r_country
+    @env_system ||= VARS_ENV.r_system
+    @env_shop ||= VARS_ENV.r_shop
     # define hash of countries
     @product_cart_article_path = 'div.panel.has--border' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @product_cart_button_continue_path = '.continue-shopping--action' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)

@@ -1,6 +1,6 @@
 module MyWorld
   require 'logger'
- 
+
   def settings
     @settings ||= Settings.new
   end
@@ -48,11 +48,7 @@ module MyWorld
   def shopware
     @shopware ||=ShopwareApi.new
   end
-  
-  def csspathes
-    @csspathes ||= Csspathes.new
-  end
-  
+
   def jsfunctions
     @jsfunctions ||= Jsfunctions.new
   end
