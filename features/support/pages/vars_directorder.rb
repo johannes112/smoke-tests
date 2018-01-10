@@ -1,5 +1,5 @@
 #directorder
-class Directorder
+class Csspathes_Directorder
   attr_accessor :homepage_content_logo_path,
                 :direct_ordering_button_path, :direct_ordering_form_sku_path, :direct_ordering_form_quantity_path, :direct_ordering_form_button_path, :direct_ordering_sidebar_item_path
                 

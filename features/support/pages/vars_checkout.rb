@@ -1,5 +1,5 @@
 #checkout
-class Checkout
+class Csspathes_Checkout
   attr_accessor :homepage_content_logo_path, :navigation_hover_breadcrumb_path, :navigation_path, :account_registerform_vallidation_modal_path, :account_registerform_vallidation_ignore_path, 
                 :checkout_backbutton_path, :checkout_steps_container_path, :checkout_agb_container_path, :checkout_billing_container_path, :checkout_shipping_container_path, :checkout_payment_container_path, 
                 :checkout_product_container_path, :checkout_orderbutton_path, :checkout_step_payment_path, :checkout_payment_options_path, :checkout_delivery_options_path, :checkout_step_confirm_path, :checkout_panel_path, :checkout_agb_box_path, :checkout_checkout_proceed_button_path, :checkout_registerform_path, :checkout_registerform_prefix_path, 

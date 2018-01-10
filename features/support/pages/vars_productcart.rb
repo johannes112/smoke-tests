@@ -1,5 +1,5 @@
 #product_page
-class Productcart
+class Csspathes_Productcart
   attr_accessor :homepage_content_logo_path,
                 :product_cart_article_path, :product_cart_hint_content_path, :product_cart_button_continue_path, :product_cart_remove_article_path, :product_cart_article_path, :product_cart_article_details_path, :product_cart_article_price_path, :product_cart_article_voucher_path, :product_cart_button_checkout_path, 
                 :product_cart_checkout_steps_path, :product_cart_voucher_checkbox_path, :product_cart_voucher_input_path, :product_cart_voucher_button_path, :product_cart_order_sku_path, :product_cart_order_button_path

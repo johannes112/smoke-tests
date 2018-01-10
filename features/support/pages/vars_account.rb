@@ -1,5 +1,5 @@
 #account
-class Account
+class Csspathes_Account
   attr_accessor :homepage_content_logo_path, :navigation_hover_breadcrumb_path, 
                 :account_registerform_path, :account_registerform_accordion_new_path, :account_registerform_accordion_login_path, :account_registerform_login_path, 
                 :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, :account_registerform_taxid_path,

@@ -1,7 +1,7 @@
 #checkout
 Given(/^I am on the checkout page$/) do
-  checkout_checkout_proceed_button_path = checkout.checkout_checkout_proceed_button_path
-  checkout_step_confirm_path = checkout.checkout_step_confirm_path
+  checkout_checkout_proceed_button_path = checkout[:pathes].checkout_checkout_proceed_button_path
+  checkout_step_confirm_path = checkout[:pathes].checkout_step_confirm_path
   
   if (page.has_css?(checkout_step_confirm_path)) 
     puts "I am already on the final checkout page"
@@ -23,14 +23,14 @@ Given(/^I am on the checkout page$/) do
 end
 
 And(/^the checkoutpage contains all elements/) do
-  checkout_backbutton_path = checkout.checkout_backbutton_path 
-  checkout_steps_container_path = checkout.checkout_steps_container_path 
-  checkout_agb_container_path = checkout.checkout_agb_container_path 
-  checkout_billing_container_path = checkout.checkout_billing_container_path 
-  checkout_shipping_container_path = checkout.checkout_shipping_container_path 
-  checkout_payment_container_path = checkout.checkout_payment_container_path 
-  checkout_product_container_path = checkout.checkout_product_container_path 
-  checkout_orderbutton_path = checkout.checkout_orderbutton_path 
+  checkout_backbutton_path = checkout[:pathes].checkout_backbutton_path 
+  checkout_steps_container_path = checkout[:pathes].checkout_steps_container_path 
+  checkout_agb_container_path = checkout[:pathes].checkout_agb_container_path 
+  checkout_billing_container_path = checkout[:pathes].checkout_billing_container_path 
+  checkout_shipping_container_path = checkout[:pathes].checkout_shipping_container_path 
+  checkout_payment_container_path = checkout[:pathes].checkout_payment_container_path 
+  checkout_product_container_path = checkout[:pathes].checkout_product_container_path 
+  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path 
   
   find_secure(checkout_orderbutton_path)
   
@@ -54,45 +54,45 @@ end
 
 When(/^I register a new account with my data$/) do
   #var
-  prefix = user.prefix
-  firstname = user.firstname
-  lastname = user.lastname
-  department = user.department
-  taxid = user.taxid
-  taxvat = user.taxvat
-  email = user.eMail
-  customer_number = user.customer_number
-  password = user.password
-  phone = user.telephone
-  company = user.company
-  company_kind = user.company_kind
-  street = user.street
-  streetnumber = user.streetnumber
-  postcode = user.postcode
-  city = user.city
-  country = user.country
+  prefix = account[:data].prefix
+  firstname = account[:data].firstname
+  lastname = account[:data].lastname
+  department = account[:data].department
+  taxid = account[:data].taxid
+  taxvat = account[:data].taxvat
+  email = account[:data].eMail
+  customer_number = account[:data].customer_number
+  password = account[:data].password
+  phone = account[:data].telephone
+  company = account[:data].company
+  company_kind = account[:data].company_kind
+  street = account[:data].street
+  streetnumber = account[:data].streetnumber
+  postcode = account[:data].postcode
+  city = account[:data].city
+  country = account[:data].country
   
   #path
-  account_registerform_path = account.account_registerform_path
-  account_registerform_prefix_path = account.account_registerform_prefix_path
-  account_registerform_firstname_path = account.account_registerform_firstname_path
-  account_registerform_lastname_path = account.account_registerform_lastname_path
-  account_registerform_department_path = account.account_registerform_department_path
-  account_registerform_taxid_path = account.account_registerform_taxid_path
-  account_registerform_taxvat_path = account.account_registerform_taxvat_path
-  account_registerform_customernumber_path = account.account_registerform_customernumber_path
-  account_registerform_email_path = account.account_registerform_email_path
-  checkout_registerform_skip_path = checkout.checkout_registerform_skip_path
-  account_registerform_password_path = account.account_registerform_password_path
-  account_registerform_phone_path = account.account_registerform_phone_path
-  account_registerform_company_path = account.account_registerform_company_path
-  account_registerform_checkbox_company_path = account.account_registerform_checkbox_company_path
-  account_registerform_street_path = account.account_registerform_street_path
-  account_registerform_streetnumber_path = account.account_registerform_streetnumber_path
-  account_registerform_postcode_path = account.account_registerform_postcode_path
-  account_registerform_city_path = account.account_registerform_city_path
-  account_registerform_country_path = account.account_registerform_country_path
-  account_registerform_button_path = account.account_registerform_button_path
+  account_registerform_path = account[:pathes].account_registerform_path
+  account_registerform_prefix_path = account[:pathes].account_registerform_prefix_path
+  account_registerform_firstname_path = account[:pathes].account_registerform_firstname_path
+  account_registerform_lastname_path = account[:pathes].account_registerform_lastname_path
+  account_registerform_department_path = account[:pathes].account_registerform_department_path
+  account_registerform_taxid_path = account[:pathes].account_registerform_taxid_path
+  account_registerform_taxvat_path = account[:pathes].account_registerform_taxvat_path
+  account_registerform_customernumber_path = account[:pathes].account_registerform_customernumber_path
+  account_registerform_email_path = account[:pathes].account_registerform_email_path
+  checkout_registerform_skip_path = checkout[:pathes].checkout_registerform_skip_path
+  account_registerform_password_path = account[:pathes].account_registerform_password_path
+  account_registerform_phone_path = account[:pathes].account_registerform_phone_path
+  account_registerform_company_path = account[:pathes].account_registerform_company_path
+  account_registerform_checkbox_company_path = account[:pathes].account_registerform_checkbox_company_path
+  account_registerform_street_path = account[:pathes].account_registerform_street_path
+  account_registerform_streetnumber_path = account[:pathes].account_registerform_streetnumber_path
+  account_registerform_postcode_path = account[:pathes].account_registerform_postcode_path
+  account_registerform_city_path = account[:pathes].account_registerform_city_path
+  account_registerform_country_path = account[:pathes].account_registerform_country_path
+  account_registerform_button_path = account[:pathes].account_registerform_button_path
   
   #search for field, so you know that we are on the right site
   find_secure(account_registerform_path)
@@ -157,7 +157,7 @@ When(/^I register a new account with my data$/) do
   puts "clicked button to continue"
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    account_registerform_vallidation_modal_path = checkout.account_registerform_vallidation_modal_path
+    account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "There is a popup!"
     else
@@ -169,7 +169,7 @@ end
 
 
 When(/^I send my order$/) do
-  checkout_orderbutton_path = checkout.checkout_orderbutton_path 
+  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path 
   puts "I am on the checkout page"
   step("I am on the checkout page")
   puts "I activate the box of agb"
@@ -187,7 +187,7 @@ end
 
 And(/^I activate the box of agb$/) do
   if ENV['SHOP'] == 'chefworks'
-    checkout_agb_box_path = checkout.checkout_agb_box_path 
+    checkout_agb_box_path = checkout[:pathes].checkout_agb_box_path 
     
     element = find_secure(checkout_agb_box_path)
     #element = find_secure(checkout_agb_box_path, match: :first)
@@ -199,9 +199,9 @@ And(/^I activate the box of agb$/) do
 end
 
 When(/^I go to the checkout$/) do
-  checkout_panel_path = checkout.checkout_panel_path 
-  checkout_checkout_proceed_button_path = checkout.checkout_checkout_proceed_button_path 
-  navigation_path = checkout.navigation_path
+  checkout_panel_path = checkout[:pathes].checkout_panel_path 
+  checkout_checkout_proceed_button_path = checkout[:pathes].checkout_checkout_proceed_button_path 
+  navigation_path = checkout[:pathes].navigation_path
   
   block_css(navigation_path)
   
@@ -214,44 +214,44 @@ end
 
 When(/^I fill out a register form and send it without creating an account$/) do
     #var
-  prefix = user.prefix
-  firstname = user.firstname
-  lastname = user.lastname
-  department = user.department
-  taxid = user.taxid
-  taxvat = user.taxvat
-  customer_number = user.customer_number
-  email = user.eMail
+  prefix = account[:data].prefix
+  firstname = account[:data].firstname
+  lastname = account[:data].lastname
+  department = account[:data].department
+  taxid = account[:data].taxid
+  taxvat = account[:data].taxvat
+  customer_number = account[:data].customer_number
+  email = account[:data].eMail
   skip = "skip only export and chefworks because this field has different meaning on all other templates of our shops"
-  phone = user.telephone
-  company = user.company
-  company_kind = user.company_kind
-  street = user.street
-  streetnumber = user.streetnumber
-  postcode = user.postcode
-  city = user.city
-  country = user.country
+  phone = account[:data].telephone
+  company = account[:data].company
+  company_kind = account[:data].company_kind
+  street = account[:data].street
+  streetnumber = account[:data].streetnumber
+  postcode = account[:data].postcode
+  city = account[:data].city
+  country = account[:data].country
 
   #path
-  checkout_registerform_path = account.account_registerform_path
-  checkout_registerform_prefix_path = account.account_registerform_prefix_path
-  checkout_registerform_firstname_path = account.account_registerform_firstname_path
-  checkout_registerform_lastname_path = account.account_registerform_lastname_path
-  checkout_registerform_department_path = account.account_registerform_department_path
-  checkout_registerform_taxid_path = account.account_registerform_taxid_path
-  checkout_registerform_taxvat_path = account.account_registerform_taxvat_path
-  checkout_registerform_customernumber_path = account.account_registerform_customernumber_path
-  checkout_registerform_email_path = account.account_registerform_email_path
-  checkout_registerform_skip_path = checkout.checkout_registerform_skip_path ####################################################
-  checkout_registerform_phone_path = account.account_registerform_phone_path
-  checkout_registerform_company_path = account.account_registerform_company_path
-  checkout_registerform_checkbox_company_path = account.account_registerform_checkbox_company_path
-  checkout_registerform_street_path = account.account_registerform_street_path
-  checkout_registerform_streetnumber_path = account.account_registerform_streetnumber_path
-  checkout_registerform_postcode_path = account.account_registerform_postcode_path
-  checkout_registerform_city_path = account.account_registerform_city_path
-  checkout_registerform_country_path = account.account_registerform_country_path
-  checkout_registerform_button_path = account.account_registerform_button_path
+  checkout_registerform_path = account[:pathes].account_registerform_path
+  checkout_registerform_prefix_path = account[:pathes].account_registerform_prefix_path
+  checkout_registerform_firstname_path = account[:pathes].account_registerform_firstname_path
+  checkout_registerform_lastname_path = account[:pathes].account_registerform_lastname_path
+  checkout_registerform_department_path = account[:pathes].account_registerform_department_path
+  checkout_registerform_taxid_path = account[:pathes].account_registerform_taxid_path
+  checkout_registerform_taxvat_path = account[:pathes].account_registerform_taxvat_path
+  checkout_registerform_customernumber_path = account[:pathes].account_registerform_customernumber_path
+  checkout_registerform_email_path = account[:pathes].account_registerform_email_path
+  checkout_registerform_skip_path = checkout[:pathes].checkout_registerform_skip_path ####################################################
+  checkout_registerform_phone_path = account[:pathes].account_registerform_phone_path
+  checkout_registerform_company_path = account[:pathes].account_registerform_company_path
+  checkout_registerform_checkbox_company_path = account[:pathes].account_registerform_checkbox_company_path
+  checkout_registerform_street_path = account[:pathes].account_registerform_street_path
+  checkout_registerform_streetnumber_path = account[:pathes].account_registerform_streetnumber_path
+  checkout_registerform_postcode_path = account[:pathes].account_registerform_postcode_path
+  checkout_registerform_city_path = account[:pathes].account_registerform_city_path
+  checkout_registerform_country_path = account[:pathes].account_registerform_country_path
+  checkout_registerform_button_path = account[:pathes].account_registerform_button_path
   
   #search for field, so you know that we are on the right site
   find_secure(checkout_registerform_path)
@@ -321,7 +321,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   puts "clicked button to continue"
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    account_registerform_vallidation_modal_path = checkout.account_registerform_vallidation_modal_path
+    account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "There is a popup!"
     else
@@ -334,16 +334,16 @@ end
 
 When(/^I set payment and shipping$/) do
   #css pathes
-  checkout_step_payment_path = checkout.checkout_step_payment_path
-  checkout_delivery_options_path = checkout.checkout_delivery_options_path
-  checkout_paymentInAdvance_radio_path = checkout.checkout_paymentInAdvance_radio_path 
-  checkout_payment_continue_path = checkout.checkout_payment_continue_path 
-  checkout_payment_delivery_standard_radio_path = checkout.checkout_payment_delivery_standard_radio_path
-  checkout_orderbutton_path = checkout.checkout_orderbutton_path
-  checkout_step_confirm_path = checkout.checkout_step_confirm_path
+  checkout_step_payment_path = checkout[:pathes].checkout_step_payment_path
+  checkout_delivery_options_path = checkout[:pathes].checkout_delivery_options_path
+  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path 
+  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path 
+  checkout_payment_delivery_standard_radio_path = checkout[:pathes].checkout_payment_delivery_standard_radio_path
+  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path
+  checkout_step_confirm_path = checkout[:pathes].checkout_step_confirm_path
   
-  account_registerform_vallidation_modal_path = checkout.account_registerform_vallidation_modal_path
-  account_registerform_vallidation_ignore_path = checkout.account_registerform_vallidation_ignore_path
+  account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
+  account_registerform_vallidation_ignore_path = checkout[:pathes].account_registerform_vallidation_ignore_path
 
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     if (page.has_css?(account_registerform_vallidation_modal_path))
@@ -376,7 +376,7 @@ end
 
 When(/^I click the button to go to the final page on mobile$/) do
   #css pathes
-  checkout_payment_continue_path = checkout.checkout_payment_continue_path 
+  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path 
   
   find_secure(checkout_payment_continue_path)
   element = find_secure(checkout_payment_continue_path)
@@ -385,9 +385,9 @@ When(/^I click the button to go to the final page on mobile$/) do
 end
 
 When(/^I set payment$/) do
-  checkout_payment_form_path = checkout.checkout_payment_form_path 
-  checkout_payment_options_path = checkout.checkout_payment_options_path
-  checkout_paymentInAdvance_radio_path = checkout.checkout_paymentInAdvance_radio_path 
+  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path 
+  checkout_payment_options_path = checkout[:pathes].checkout_payment_options_path
+  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path 
   
   #expect(page).not_to have_css('.js--loading-indicator')
   
@@ -406,9 +406,9 @@ When(/^I set payment$/) do
 end
 
 When(/^I set shipping$/) do
-  checkout_delivery_options_path = checkout.checkout_delivery_options_path
-  checkout_payment_delivery_standard_radio_path = checkout.checkout_payment_delivery_standard_radio_path
-  checkout_payment_form_path = checkout.checkout_payment_form_path 
+  checkout_delivery_options_path = checkout[:pathes].checkout_delivery_options_path
+  checkout_payment_delivery_standard_radio_path = checkout[:pathes].checkout_payment_delivery_standard_radio_path
+  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path 
 
   expect(page).not_to have_css('.js--loading-indicator')
   find_secure(checkout_payment_form_path)
@@ -433,10 +433,10 @@ Then(/^Shopware should have my order$/) do
     next
   else
     key = "email"
-    eMail = user.eMail
+    eMail = account[:data].eMail
     url_part = 'finish'
     
-    checkout_order_success_teaser = checkout.checkout_order_success_teaser_path
+    checkout_order_success_teaser = checkout[:pathes].checkout_order_success_teaser_path
     find_secure(checkout_order_success_teaser)
     puts "> found teaser for success"
     

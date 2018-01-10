@@ -4,8 +4,8 @@ When(/^I navigate to an category by the hovermenu$/) do
   start_url = current_url
   
   #set pathes
-  navigation_menu_path = websitebasics.navigation_menu_path
-  navigation_hovermenu_path = websitebasics.navigation_hovermenu_path
+  navigation_menu_path = websitebasics[:pathes].navigation_menu_path
+  navigation_hovermenu_path = websitebasics[:pathes].navigation_hovermenu_path
   
   #main-topmenu
   find_secure(navigation_menu_path)
@@ -25,11 +25,11 @@ When(/^I navigate to a subcategory by the menu$/) do
   start_url = current_url
   
   #set pathes
-  navigation_path = websitebasics.navigation_path
-  navigation_menu_path = websitebasics.navigation_menu_path
-  navigation_menu_title_path = websitebasics.navigation_menu_title_path
-  navigation_hover_breadcrumb_path = websitebasics.navigation_hover_breadcrumb_path
-  navigation_sidebar_sub_path = websitebasics.navigation_sidebar_sub_path
+  navigation_path = websitebasics[:pathes].navigation_path
+  navigation_menu_path = websitebasics[:pathes].navigation_menu_path
+  navigation_menu_title_path = websitebasics[:pathes].navigation_menu_title_path
+  navigation_hover_breadcrumb_path = websitebasics[:pathes].navigation_hover_breadcrumb_path
+  navigation_sidebar_sub_path = websitebasics[:pathes].navigation_sidebar_sub_path
   
   #main-menu
   find_secure(navigation_path)
@@ -55,9 +55,9 @@ When(/^I navigate to a subcategory by touching the burgermenu$/) do
   start_url = current_url
   
   #set pathes
-  homepage_content_navi_burger_path = websitebasics.homepage_content_navi_burger_path
-  homepage_content_navi_burger_category_path = websitebasics.homepage_content_navi_burger_category_path
-  homepage_content_navi_burger_category_title_path = websitebasics.homepage_content_navi_burger_category_title_path
+  homepage_content_navi_burger_path = websitebasics[:pathes].homepage_content_navi_burger_path
+  homepage_content_navi_burger_category_path = websitebasics[:pathes].homepage_content_navi_burger_category_path
+  homepage_content_navi_burger_category_title_path = websitebasics[:pathes].homepage_content_navi_burger_category_title_path
 
   #main-menu
   element = find_secure(homepage_content_navi_burger_path)
@@ -80,10 +80,10 @@ end
 
 Then(/^I should be on a subcategorysite$/) do
   #1 - pathe
-  navigation_sidebar_sub_path = websitebasics.navigation_sidebar_sub_path
+  navigation_sidebar_sub_path = websitebasics[:pathes].navigation_sidebar_sub_path
   
   #css-pathes
-  navigation_hover_breadcrumb_path = websitebasics.navigation_hover_breadcrumb_path
+  navigation_hover_breadcrumb_path = websitebasics[:pathes].navigation_hover_breadcrumb_path
   
   #2 - looking for sidebar of categories
   find_secure(navigation_hover_breadcrumb_path)

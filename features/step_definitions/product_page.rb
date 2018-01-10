@@ -7,7 +7,7 @@ end
 
 When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do
   #var
-  product_page_buybutton_path = productpage.product_page_buybutton_path
+  product_page_buybutton_path = productpage[:pathes].product_page_buybutton_path
   
   find_secure(product_page_buybutton_path)
   element = find_secure(product_page_buybutton_path)
@@ -16,7 +16,7 @@ When(/^I add an article to the product cart by clicking the button to push it in
 end
 
 Then(/^I should see the cart on the right of the site$/) do
-  product_page_infobox_path = productpage.product_page_infobox_path
+  product_page_infobox_path = productpage[:pathes].product_page_infobox_path
   
   find_secure(product_page_infobox_path)
 end
@@ -28,11 +28,11 @@ Then(/^I should see this article in the product cart$/) do
   #find block of productinfo
   #find text of sku in text of productinfo
   #expect
-  sku = article.sku
+  sku = productpage[:data].sku
   url_website = settings.urlHttps
   url_productcart = 'checkout/cart'
   url_cart = url_website+url_productcart
-  product_cart_productinfo_path = productpage.product_cart_productinfo_path
+  product_cart_productinfo_path = productpage[:pathes].product_cart_productinfo_path
   
   vistit(url_cart)
   find_secure(product_cart_productinfo_path)
@@ -49,21 +49,21 @@ end
 
 Then(/^I should see all necessary elememts for getting more informations about this article$/) do
   # define name
-  name = article.name 
+  name = productpage[:data].name 
   name = name.upcase
   
   # define path of name
-  product_page_productname_path = productpage.product_page_productname_path
+  product_page_productname_path = productpage[:pathes].product_page_productname_path
   # define path of product_picture
-  product_page_productpicture_path = productpage.product_page_productpicture_path
+  product_page_productpicture_path = productpage[:pathes].product_page_productpicture_path
   # define path of product_configuration
-  product_page_productconfig_path = productpage.product_page_productconfig_path
+  product_page_productconfig_path = productpage[:pathes].product_page_productconfig_path
   # define path of product_information
-  product_page_productinfo_path = productpage.product_page_productinfo_path
+  product_page_productinfo_path = productpage[:pathes].product_page_productinfo_path
   # define path of product_recommodations
-  product_page_productrecommodations_path = productpage.product_page_productrecommodations_path
+  product_page_productrecommodations_path = productpage[:pathes].product_page_productrecommodations_path
   # define path of product_information
-  product_page_productlast_path = productpage.product_page_productlast_path
+  product_page_productlast_path = productpage[:pathes].product_page_productlast_path
   
   # expect name_path include name
   productname_element = find_secure(product_page_productname_path)
@@ -90,7 +90,7 @@ end
 
 When(/^I press the remember\-button$/) do
   #define path of button
-  product_page_rememberbutton_path = productpage.product_page_rememberbutton_path #pulsiva: .cart--add-to-list
+  product_page_rememberbutton_path = productpage[:pathes].product_page_rememberbutton_path #pulsiva: .cart--add-to-list
   #find button
   element = find_secure(product_page_rememberbutton_path)
   #click button
@@ -99,7 +99,7 @@ end
 
 Then(/^there should see a hint$/) do
   #define path of symbol
-  product_page_heart_badge_path = productpage.product_page_heart_badge_path
+  product_page_heart_badge_path = productpage[:pathes].product_page_heart_badge_path
   #expect csspath of symbol
   expect(page).to have_css(product_page_heart_badge_path),
       "Expect to find the css-element (#{product_page_heart_badge_path}) but the page with the url #{current_url} has no such element"
@@ -107,7 +107,7 @@ end
 
 When(/^I press the compare\-button$/) do
   #define path of button
-  product_page_comparebutton_path = productpage.product_page_comparebutton_path
+  product_page_comparebutton_path = productpage[:pathes].product_page_comparebutton_path
   #find button
   element = find_secure(product_page_comparebutton_path)
   #click button
@@ -116,7 +116,7 @@ end
 
 Then(/^there should see the icon to compare$/) do
   #define path of symbol
-  product_page_compareicon_path = productpage.product_page_compareicon_path
+  product_page_compareicon_path = productpage[:pathes].product_page_compareicon_path
   #expect csspath of symbol
   expect(page).to have_css(product_page_compareicon_path),
       "Expect to find the css-element (#{product_page_compareicon_path}) but the page with the url #{current_url} has no such element"
@@ -125,7 +125,7 @@ end
 When(/^I click the button to rate for the article$/) do
   if (ENV['SHOP'] == 'chefworks')
     #define path of symbol
-    product_page_rate_ratebutton_path = productpage.product_page_rate_ratebutton_path
+    product_page_rate_ratebutton_path = productpage[:pathes].product_page_rate_ratebutton_path
     #expect csspath of symbol
     element = find_secure(product_page_rate_ratebutton_path)
     element.click
@@ -137,8 +137,8 @@ end
 When(/^I change in the tab to the rating$/) do
   if (ENV['SHOP'] == 'chefworks')
     #define path of tab
-    product_page_rate_tab_menu = productpage.product_page_rate_tab_menu
-    product_page_rate_tab_rateflag = productpage.product_page_rate_tab_rateflag
+    product_page_rate_tab_menu = productpage[:pathes].product_page_rate_tab_menu
+    product_page_rate_tab_rateflag = productpage[:pathes].product_page_rate_tab_rateflag
     #click tab for rate
     element = find_secure(product_page_rate_tab_menu+product_page_rate_tab_rateflag)
     element.click
@@ -150,7 +150,7 @@ end
 Then(/^there should be a form for rating the article$/) do
   if (ENV['SHOP'] == 'chefworks')
     #define path of form
-    product_page_rate_form = productpage.product_page_rate_form
+    product_page_rate_form = productpage[:pathes].product_page_rate_form
     #find path
     find_secure(product_page_rate_form)
     puts "found form to rate"
@@ -162,8 +162,8 @@ end
 When(/^I change to the tab of the customer viewed articles$/) do
   if (ENV['SHOP'] == 'chefworks')
     #define path 
-    product_page_viewed_tab_menu = productpage.product_page_viewed_tab_menu
-    product_page_viewed_tab_otherCustomer = productpage.product_page_viewed_tab_otherCustomer
+    product_page_viewed_tab_menu = productpage[:pathes].product_page_viewed_tab_menu
+    product_page_viewed_tab_otherCustomer = productpage[:pathes].product_page_viewed_tab_otherCustomer
     #click tab for rate
     element = find_secure(product_page_viewed_tab_menu+product_page_viewed_tab_otherCustomer)
     element.click
@@ -174,7 +174,7 @@ end
 
 Then(/^there should be a box of some articles$/) do
   if (ENV['SHOP'] == 'chefworks')
-    product_page_suggest_container = productpage.product_page_suggest_container
+    product_page_suggest_container = productpage[:pathes].product_page_suggest_container
     #find path
     find_secure(product_page_suggest_container)
     puts "found container list"
