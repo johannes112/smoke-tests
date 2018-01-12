@@ -84,6 +84,7 @@ class Csspathes_Websitebasics
     @links_service_path = 'div.navigation--entry.entry--service' if "#{@env_shop}".match(/(pulsiva|chefworks)/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_context_path = '.navigation--entry.entry--service.has--drop-down.js--is--dropdown-active > ul' if "#{@env_shop}".match(/(pulsiva|chefworks)/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_context_path = '.navigation--entry.entry--service.has--drop-down' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/)
+    @links_context_path = '.navigation--entry.entry--service.has--drop-down' if "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/)
   end
   
 end
