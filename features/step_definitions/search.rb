@@ -1,7 +1,6 @@
 #search
 When(/^I am searching for a product by entering the sku in the searchfield$/) do
   page_content = page.html
-  start_url = current_url
   #variables:value
   sku = search[:data].sku
   printValue(:sku, binding)

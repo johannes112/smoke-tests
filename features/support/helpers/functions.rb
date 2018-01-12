@@ -375,6 +375,7 @@ module MyFunctions
     begin
       visit_secure_counter += 1
       visit(url)
+      puts "go to #{url}"
       if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
         block_css('.dpe-shopwide') 
       end

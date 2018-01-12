@@ -21,7 +21,7 @@ module MyWorld
     return {:pathes => csspathes_websitebasics, :data => article}
   end
   
-  def csspathes_search
+  def csspathes_search  
     @search ||= Csspathes_Search.new
   end
 
