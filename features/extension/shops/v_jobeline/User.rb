@@ -270,11 +270,7 @@ class User
       when 'it' then '39100'
       when 'fr' then '67960'
       when 'no' then '0192'
-<<<<<<< HEAD
       when 'se' then '21122'#'211 22'
-=======
-      when 'se' then '21122'
->>>>>>> lusini_like
       when 'nl' then '5384 VT'
       when 'be' then '1050'
       when 'es' then '08009'
