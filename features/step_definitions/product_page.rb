@@ -1,8 +1,26 @@
 #product_page
 Given(/^I am on the product page of an article$/) do
-  step("I am on the website")
-  step("I am searching for a product by entering the sku in the searchfield")#"I am searching for an product by entering the sku in the searchfield")
-  step("I should be on the detailsite of the related product")
+  if (VARS_ENV.url_productpage)
+    website_url = VARS_ENV.url_productpage
+    #actions
+    visit_secure(website_url)
+  else
+    step("I am on the website")
+    step("I am searching for a product by entering the sku in the searchfield")#"I am searching for an product by entering the sku in the searchfield")
+    step("I should be on the detailsite of the related product")
+    step("set the url of the product page")
+  end
+  #VARS_ENV.url_productpage = current_url 
+  #puts VARS_ENV.url_pro
+Then(/^set the url of the product page$/) do
+  if current_url 
+    if VARS_ENV.url_productpage
+      VARS_ENV.url_productpage = current_url 
+      puts VARS_ENV.url_productpage
+    else
+      puts "Url of productpage is already set"
+    end
+  end
 end
 
 When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do

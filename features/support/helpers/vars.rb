@@ -1,5 +1,5 @@
 class Vars
-  attr_accessor :r_system, :r_country, :r_shop
+  attr_accessor :r_system, :r_country, :r_shop, :url_productpage
   
   def initialize (r_system='dual', r_country='eu', r_shop='veg')
     @r_system = r_system
@@ -21,6 +21,7 @@ class Vars
     end
     return bool
   end
+  
 end
 
 VARS_ENV = Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])
