@@ -10,6 +10,7 @@ Given(/^I am on the product page of an article$/) do
     step("I should be on the detailsite of the related product")
     step("set the url of the product page")
   end
+end
   #VARS_ENV.url_productpage = current_url 
   #puts VARS_ENV.url_pro
 Then(/^set the url of the product page$/) do
