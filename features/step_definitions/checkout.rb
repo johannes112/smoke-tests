@@ -18,8 +18,8 @@ Given(/^I am on the checkout page$/) do
       step("I set payment and shipping")
     end
   end
-  puts "And the checkoutpage contains all elements"
-  step("the checkoutpage contains all elements")
+  #puts "And the checkoutpage contains all elements"
+  #step("the checkoutpage contains all elements")
 end
 
 And(/^the checkoutpage contains all elements/) do
@@ -176,7 +176,7 @@ When(/^I send my order$/) do
   step("I activate the box of agb")
   
   element = find_secure(checkout_orderbutton_path)
-  if ENV['SYSTEM'] == 'live'
+  if VARS_ENV.r_system == 'live'
     puts "> found orderbutton but not press"
     next
   else
@@ -206,7 +206,6 @@ When(/^I go to the checkout$/) do
   block_css(navigation_path)
   
   find_secure(checkout_panel_path)
-  
   element = find_secure(checkout_checkout_proceed_button_path, match: :first)
   element.click
   puts "--> click button to continue"

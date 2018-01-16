@@ -1,8 +1,5 @@
 #navigation_menu
 When(/^I navigate to an category by the hovermenu$/) do
-  #var
-  start_url = current_url
-  
   #set pathes
   navigation_menu_path = websitebasics[:pathes].navigation_menu_path
   navigation_hovermenu_path = websitebasics[:pathes].navigation_hovermenu_path
@@ -16,14 +13,9 @@ When(/^I navigate to an category by the hovermenu$/) do
   element = find_secure(navigation_hovermenu_path, match: :first)
   element.click
   puts "-> clicked on hovermenu"
-  #check for success
-  check_for_url_change(start_url)
 end
 
 When(/^I navigate to a subcategory by the menu$/) do
-  #var
-  start_url = current_url
-  
   #set pathes
   navigation_path = websitebasics[:pathes].navigation_path
   navigation_menu_path = websitebasics[:pathes].navigation_menu_path
@@ -46,14 +38,9 @@ When(/^I navigate to a subcategory by the menu$/) do
   element = find_secure(navigation_sidebar_sub_path)
   puts "> found sidebar"
   
-  #check for success
-  check_for_url_change(start_url)
 end
 
 When(/^I navigate to a subcategory by touching the burgermenu$/) do
-  #var
-  start_url = current_url
-  
   #set pathes
   homepage_content_navi_burger_path = websitebasics[:pathes].homepage_content_navi_burger_path
   homepage_content_navi_burger_category_path = websitebasics[:pathes].homepage_content_navi_burger_category_path
@@ -74,8 +61,6 @@ When(/^I navigate to a subcategory by touching the burgermenu$/) do
   element.click
   puts "-> clicked title of category on menu"
   
-  #check for success
-  check_for_url_change(start_url)
 end
 
 Then(/^I should be on a subcategorysite$/) do

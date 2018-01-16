@@ -1,15 +1,12 @@
 #direct_ordering
 #only for pulsiva
 When(/^I click the button for direct ordering$/) do
-  start_url = current_url
   direct_ordering_button_path = directorder[:pathes].direct_ordering_button_path 
   
   find_secure(direct_ordering_button_path)
   element = find_secure(direct_ordering_button_path)
   element.click
   puts "-> clicked button"
-  #check for success
-  check_for_url_change(start_url)
 end
 
 When(/^I send my inserted data with the form$/) do

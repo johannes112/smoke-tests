@@ -1,26 +1,20 @@
 #account
 
 Given(/^I am on the registration page$/) do
-  start_url = current_url
   #var
   url = "#{settings.urlHttps}account"
-  puts "--> go to #{url}"
   
-  #got to url
+  #go to url
   visit_secure(url)
+  VARS_ENV.url_account = url
   block_css('.navigation-main')  
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 And(/^no user account with my email exists$/) do
   eMail = account[:data].eMail
   puts "UrlBackend:#{settings.urlBackend}"
   puts "user eMail:#{eMail}"
-  #key = "email"
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  #puts shopware.deleteDataByKey("Customers", key, eMail)
-  
   shopware.deleteCustomerByMail(eMail)
 end
 
@@ -115,12 +109,11 @@ When(/^I create a new account with my data$/) do
   find_secure(account_registerform_path)
   registerform = find_secure(account_registerform_path)
   
-  find_secure(account_registerform_path)
-  account_registerform = find_secure(account_registerform_path)
   #if mobile
   if (ENV['BROWSER'] == 'iPhone') 
     step("I touch the box to create an new account")
   end
+  
   #set value for prefix
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     if (page.has_no_css?(account_registerform_prefix_path))
@@ -135,7 +128,6 @@ When(/^I create a new account with my data$/) do
     element.select(prefix)
     printValue(:prefix, binding)
   end 
-  
   #set value for firstname
   form_set_value(registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
@@ -196,10 +188,10 @@ end
 Then(/^I should be on my account page$/) do
   #var
   account_accountpage_welcome_path = account[:pathes].account_accountpage_welcome_path
-  account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
-  account_registerform_vallidation_ignore_path = '.modal-ignore'
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+    account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+    account_registerform_vallidation_ignore_path = '.modal-ignore'
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "found popup"
       find_secure(account_registerform_vallidation_ignore_path).click
@@ -210,19 +202,13 @@ Then(/^I should be on my account page$/) do
   end
   puts "current_url:#{current_url}"
   find_secure(account_accountpage_welcome_path)
-  #find_secure(account_accountpage_info_path)
-  #element = find_secure(account_accountpage_info_path)
-  #infobox_txt = element.text
-  #expect(infobox_txt).to include(email),
-  #    "expect to find the mailadress (#{email}) in the infobox but it only contains #{infobox_txt}"
-  #puts "> the page contains #{email}"
 end
 
 When(/^I login with valid informations$/) do
   #var1
   email = account[:data].eMail
   password = account[:data].password
-  url_account = settings.urlHttps+'account'
+  #url_account = settings.urlHttps+'account'
   
   #path
   homepage_content_logo_path = account[:pathes].homepage_content_logo_path
@@ -234,10 +220,9 @@ When(/^I login with valid informations$/) do
   account_accountpage_welcome_path = account[:pathes].account_accountpage_welcome_path
   navigation_hover_breadcrumb_path = account[:pathes].navigation_hover_breadcrumb_path
   
-  if (current_url == url_account) 
+  if (current_url == VARS_ENV.url_account) 
     puts "> ok, I am on #{current_url}"
   else
-    puts "--> go to #{url_account}"
     visit_secure(url_account)
     #mobile 
     if (ENV['BROWSER'] == 'iPhone') 
@@ -252,20 +237,17 @@ When(/^I login with valid informations$/) do
     #hide
     block_css('.navigation-main')
     # ensure that page is loaded completely
-    find_secure(homepage_content_logo_path)
+    #find_secure(homepage_content_logo_path)
   end
   if (page.has_no_css?(account_accountpage_welcome_path))
     # ensure that page is loaded completely
     find_secure(homepage_content_logo_path)
     #search for field, so you know that we are on the right site
-    find_secure(account_registerform_login_path)
     login_form = find_secure(account_registerform_login_path)
     #set value for mail
     form_set_value(login_form, "email", email, account_loginform_emailfield_path)
-    puts "-> set email"
     #set value for password
     form_set_value(login_form, "password", password, account_loginform_passwordfield_path)
-    puts "-> set password"
     #click button
     find_secure(account_loginform_registerbutton_path).click
     puts "--> pushed button for registration"
@@ -289,6 +271,8 @@ Given(/^I am logged in$/) do
       puts "I am on #{current_url}"
     end
   end
+  puts "I already created an user account"
+  step ("I already created an user account")
   puts "I login with valid informations"
   step ("I login with valid informations")
   puts "I should be on my account page"
@@ -305,7 +289,6 @@ When("I modify my userinfo") do
 end
 
 When(/^I change my password$/) do
-  start_url = current_url
   password = account[:data].password
   password_sec = account[:data].password_sec
   # define css pathes
@@ -329,12 +312,9 @@ When(/^I change my password$/) do
   element.click
   
   puts "--> changed password"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 When(/^I change my emailaddress$/) do
-  start_url = current_url
   eMail_sec = account[:data].eMail_sec
   password_sec = account[:data].password_sec
   # define css pathes
@@ -356,8 +336,6 @@ When(/^I change my emailaddress$/) do
   element = find_secure(account_userinfo_emailchange_button_path)
   element.click
   puts "--> changed emailaddress"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 Then(/^I should see a confirmation hint$/) do
@@ -401,8 +379,8 @@ When(/^I delete the account with the modified mailadress$/) do
 end
 
 When(/^I log me out$/) do
-  start_url = current_url
   #css pathes
+  start_url = current_url
   account_accountinfo_menucontainer_logout_link_path = account[:pathes].account_accountinfo_menucontainer_logout_link_path
   
   if (ENV['BROWSER'] == 'iPhone')
@@ -413,8 +391,6 @@ When(/^I log me out$/) do
     find_secure(account_accountinfo_menucontainer_logout_link_path).click
     puts "--> logged me out"
   end
-  #check for success
-  ##check_for_url_change(start_url)
 end
 
 When(/^I modify my paymentinfo$/) do
@@ -490,7 +466,6 @@ When(/^I modify my address for my bill$/) do
 end
 
 When(/^I change prefix of my address for invoice$/) do
-  start_url = current_url
   prefix = account[:data].prefix_sec
   
   account_invoiceadresschange_form_prefix_path = account[:pathes].account_invoiceadresschange_form_prefix_path
@@ -504,13 +479,10 @@ When(/^I change prefix of my address for invoice$/) do
     form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
     find_secure(account_invoiceadresschange_button_path).click
     puts "--> click change-button"
-    #check for success
-    ##check_for_url_change(start_url)
   end
 end
 
 When(/^I add a new address$/) do
-  start_url = current_url
   # define variables
   prefix = account[:data].prefix_sec
   firstname = account[:data].firstname
@@ -563,8 +535,6 @@ When(/^I add a new address$/) do
   #click button for taking action
   account_addressform.find_secure(account_address_savebutton_path).click
   puts "> clicked button to save address"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 When(/^I modify my address for my delivery/) do
@@ -593,12 +563,9 @@ When(/^I modify my address for my delivery/) do
   puts "--> clicked button for change the adress for delivery"
   puts "I change prefix of my address for delivery"
   step("I change prefix of my address for delivery")
-  #check for success
-  ##check_for_url_change(start_url)
 end
 
 When(/^I change prefix of my address for delivery$/) do
-  start_url = current_url
   prefix = account[:data].prefix_sec
   
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
@@ -612,8 +579,6 @@ When(/^I change prefix of my address for delivery$/) do
     puts "--> select prefix:#{prefix}"
     find_secure(account_deliveradresschange_button_path).click
     puts "--> click change-button"
-    #check for success
-    ##check_for_url_change(start_url)
   end
 end
 
@@ -644,8 +609,8 @@ When(/^I get all items of the sidebar$/) do
 end
 
 Given(/^I already created an user account on Vega in DE$/) do
-  shop = ENV['SHOP']
-  country = ENV['COUNTRY']
+  shop = VARS_ENV.r_shop
+  country = VARS_ENV.r_country
   if ( (shop == 'vega') && (country == 'de') )
     eMail = account[:data].eMail
     shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
@@ -672,8 +637,8 @@ Given(/^I already created an user account on Vega in DE$/) do
 end
 
 When(/^I login with valid informations on Jobeline in DE$/) do
-  shop = ENV['SHOP']
-  country = ENV['COUNTRY']
+  shop = VARS_ENV.r_shop
+  country = VARS_ENV.r_country
   if ( (shop == 'vega') && (country == 'de') )
     #var1
     email = account[:data].eMail

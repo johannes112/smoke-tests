@@ -1,14 +1,10 @@
 #links
 When(/^I click the link to my account$/) do
-  #var
-  start_url = current_url
   #pathes
   links_account_path = websitebasics[:pathes].links_account_path  
   #click button
   element = find_secure(links_account_path)
   element.click
-  #success?
-  check_for_url_change(start_url)
 end
 
 When(/^I touch the link to my account$/) do
@@ -44,15 +40,11 @@ Then(/^I should be on the accountpage for mobile$/) do
 end
 
 When(/^I click the link to my notes$/) do
-  #var
-  start_url = current_url
   #pathes
   links_notes_path = websitebasics[:pathes].links_notes_path  
   #click button
   element = find_secure(links_notes_path)
   element.click
-  #check for success
-  check_for_url_change(start_url)
 end
 
 When(/^I touch the link to my notes$/) do
@@ -84,8 +76,6 @@ Then(/^I should be on the notepage of mobile$/) do
 end
 
 When(/^I click the link of the cart$/) do
-  #var
-  start_url = current_url
   #pathes
   links_cart_symbol_path = websitebasics[:pathes].links_cart_symbol_path  
   #click button

@@ -1,5 +1,5 @@
 class Vars
-  attr_accessor :r_system, :r_country, :r_shop, :url_productpage
+  attr_accessor :r_system, :r_country, :r_shop, :url_productpage, :url_productcart, :url_account
   
   def initialize (r_system='dual', r_country='eu', r_shop='veg')
     @r_system = r_system

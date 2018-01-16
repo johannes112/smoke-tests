@@ -83,8 +83,7 @@ Feature: account
   @account_update
   @account_payment
 	Scenario: modify payment in my account
-		Given I already created an user account
-		And I am logged in
+		Given I am logged in
 		When I modify my paymentinfo
 		Then I should see a confirmation hint
 		
@@ -99,8 +98,7 @@ Feature: account
   @account_update_mobile
   @account_payment_mobile
 	Scenario: modify payment in my account on mobile
-		Given I already created an user account
-		And I am logged in
+		Given I am logged in
 		When I modify my paymentinfo
 		Then I should see a confirmation hint
 		
@@ -110,8 +108,7 @@ Feature: account
 	@account_update
   @account_invoice
 	Scenario: modify adress of invoice
-	  Given I already created an user account
-		And I am logged in
+		Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 		
@@ -121,8 +118,7 @@ Feature: account
 	@account_update_mobile
   @account_invoice_mobile
 	Scenario: modify adress of invoice on mobile
-	  Given I already created an user account
-		And I am logged in
+	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 	
@@ -137,8 +133,7 @@ Feature: account
 	@account_update
   @account_delivery
 	Scenario: modify adress of delivery
-	  Given I already created an user account
-		And I am logged in
+	  Given I am logged in
 		When I modify my address for my delivery
 		Then I should see an alert for creating a new address
 
@@ -153,8 +148,7 @@ Feature: account
 	@account_update_mobile
   @account_delivery_mobile
 	Scenario: modify adress of delivery on mobile
-	  Given I already created an user account
-		And I am logged in
+	  Given I am logged in
 		When I modify my address for my delivery
 		Then I should see an alert for creating a new address
 
@@ -164,8 +158,7 @@ Feature: account
 	@account_update
   @account_invoice
 	Scenario: modify adress of invoice
-	  Given I already created an user account
-		And I am logged in
+	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 		
@@ -175,8 +168,7 @@ Feature: account
 	@account_update_mobile
   @account_invoice_mobile
 	Scenario: modify adress of invoice on mobile
-	  Given I already created an user account
-		And I am logged in
+	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
 		
@@ -185,8 +177,7 @@ Feature: account
   @chefworks
 	@account_newsletter
   Scenario: change settings for newsletter
-    Given I already created an user account
-		And I am logged in
+    Given I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
 		
@@ -195,8 +186,7 @@ Feature: account
   @chefworks_mobile
 	@account_newsletter_mobile
   Scenario: change settings for newsletter on mobile
-    Given I already created an user account
-		And I am logged in
+    Given I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
 	
@@ -209,8 +199,7 @@ Feature: account
   @v_jobeline
 	@account_links
   Scenario: test links on the accountsite
-		Given I already created an user account
-		And I am logged in
+		Given I am logged in
 		When I get all items of the sidebar
   
   @account_mobile
@@ -222,8 +211,7 @@ Feature: account
   @v_jobeline_mobile
 	@account_links_mobile
   Scenario: test links on the accountsite on mobile
-		Given I already created an user account
-		And I am logged in
+		Given I am logged in
 		When I get all items of the sidebar
   
   @account

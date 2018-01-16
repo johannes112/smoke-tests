@@ -16,8 +16,7 @@ Feature: checkout
   @checkout_registration
 	Scenario: checkout without existing account and create an account
 	  Given no user account with my email exists
-	  Given I am on the website
-	  When I add an article to my cart by ajax
+	  Given I have added a product to the cart
 	  And the product cart contains an article
 	  When I go to the checkout
 	  And I register a new account with my data

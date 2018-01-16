@@ -89,7 +89,6 @@ Then(/^I should see my product on the results of my search$/) do
 end
 
 When(/^I am searching for products by entering the productname in the searchfield$/) do
-  start_url = current_url
   name = search[:data].name
   printValue(:name, binding)
   
@@ -101,13 +100,10 @@ When(/^I am searching for products by entering the productname in the searchfiel
   search_searchbutton = find_secure(search_searchbutton_path)
   search_searchbutton.click()
   puts "clicked button of search"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 
 When(/^I touch the button of searching$/) do
-  start_url = current_url
   search_searchbutton_mobile_path = search[:pathes].search_searchbutton_mobile_path
   
   find_secure(search_searchbutton_mobile_path)

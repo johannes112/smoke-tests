@@ -252,15 +252,23 @@ module MyFunctions
     var_value = eval(var_name, value)
     puts "- set #{var_name} = #{var_value.inspect}"
   end
-  
+
+  def string_is_matcher?(arg)
+    is_matcher = false
+    string = arg.to_s
+    if string.include?(':match')
+      is_matcher = true
+    end
+    return is_matcher
+  end
   # find_secure: workaround -> in ruby overlaoding functions are not possible
   # warning: 
   #         do not use .page in front of this function
   #         do not use this function if there is the attribut ':visible'
   #         do not use this function if there is a specific element of the page given to find
   def find_secure(*args)
-    homepage_content_logo_path = websitebasics[:pathes].homepage_content_logo_path
-    page.find(homepage_content_logo_path)
+    #homepage_content_logo_path = websitebasics[:pathes].homepage_content_logo_path
+    #page.find(homepage_content_logo_path)
     
     if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
       block_css('.dpe-shopwide') 
@@ -279,27 +287,27 @@ module MyFunctions
 
 # find: catch Errors 
   def find_secure_with_one_arg(path)
-    url ||= page.current_url
     path_to_search = path
     find_secure_counter ||= 0
     found = ''
     begin
       find_secure_counter = find_secure_counter + 1
-      found = page.find(path_to_search)
+      found = page.find(path)
     rescue Capybara::ElementNotFound => e
       #wrong path
       puts "\033[35m#{e.inspect}\033[0m\n"    
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
+      url ||= page.current_url
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
       puts "find_secure_with_one_arg"
-      puts "visit #{url} again"
-      visit(url)
       Capybara.default_max_wait_time = 20
-      if current_url
-        puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+      if url
+        puts "visit #{url} again"
+        visit(url)
+        puts "Failed to visit #{url}, retry #{find_secure_counter}"
       else
         puts "no URL IS Defined"
       end
@@ -324,10 +332,13 @@ module MyFunctions
     path_to_search = path
     find_secure_counter ||= 0
     found = ''
-    url ||= page.current_url
     begin
       find_secure_counter = find_secure_counter + 1
-      found = page.find(path_to_search)
+      if string_is_matcher?(string)
+        found = page.find(path, string)
+      else
+        found = page.find(path_to_search)
+      end
     rescue Capybara::Ambiguous => e
       #more than one matches
       puts "\033[35m#{e.inspect}\033[0m\n"  
@@ -347,11 +358,12 @@ module MyFunctions
     rescue Net::ReadTimeout => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
       sleep 1
+      url ||= page.current_url
       puts "find_secure_with_two_args"
       puts "visit #{url} again"
-      visit(url)
+      if(url)
+        visit(url)
       Capybara.default_max_wait_time = 20
-      if current_url
         puts "Failed to find css, retry #{find_secure_counter}"
       else
         puts "no URL IS Defined"

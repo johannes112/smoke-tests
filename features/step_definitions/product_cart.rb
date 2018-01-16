@@ -3,18 +3,27 @@ Given(/^I am on the product cart page$/) do
   website_url = settings.urlHttps
   url_part_product_cart = 'checkout/cart'
   url = "#{website_url}#{url_part_product_cart}"
-  
+  VARS_ENV.url_productcart = url
   visit_secure(url)
-  puts "-> go to #{url}"
   expect(current_url).to include(url_part_product_cart),
     "Expected url contains #{url_part_product_cart} but i am on #{current_url}"
 end
 
+Given(/^I have added a product to the cart$/) do
+  step("I add an article to my cart by ajax")  
+end
+
 Given(/^the product cart contains an article$/) do
+  if VARS_ENV.url_productcart
+    url = VARS_ENV.url_productcart
+  else
+    website_url = settings.urlHttps
+    url_part_product_cart = 'checkout/cart'
+    url = "#{website_url}#{url_part_product_cart}"
+  end
   homepage_content_logo_path = productcart[:pathes].homepage_content_logo_path
   
-  puts "I am on the product cart page"
-  step("I am on the product cart page")
+  visit_secure(url)
   
   # with ajax'
   product_cart_article_path = productcart[:pathes].product_cart_article_path
@@ -45,7 +54,6 @@ And(/^I add an article to my cart by ajax$/) do
   ajax_params_sku = "&sAdd=#{sku}"
   ajax_params_amount = "&sQuantity=#{amount}"
   ajax_url = "#{website_url}#{ajax_params_function}#{ajax_params_sku}#{ajax_params_amount}"
-  puts "-> add article: #{ajax_url}"
   visit_secure(ajax_url)
 end
 
