@@ -110,15 +110,12 @@ Then(/^I should see all necessary informations about this article within the pro
 end
 
 When(/^I navigate to the checkout by clicking the button which navigates to the checkout$/) do
-  start_url = current_url
   product_cart_button_checkout_path = productcart[:pathes].product_cart_button_checkout_path#there are 2 buttons
   
   #check for first button
   element = find_secure(product_cart_button_checkout_path, match: :first)
   element.click
   puts "clicked button"
-  #check for success
-  #check_for_url_change(start_url)
 end
 
 Then(/^I should be on the checkout\-page$/) do
