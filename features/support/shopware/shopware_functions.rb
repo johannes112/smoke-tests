@@ -3,42 +3,42 @@ module ShopwareFunctions
   @shopwarestatus = 0
 
   #set properties of user and call creation
-  def setCustomerAttributes(email, firstname, lastname, password, street, streetnumber, city, postcode, country, shopId)
+  def setCustomerAttributes(customernumber, email, firstname, lastname, salutation, password, shopId, street, city, zipcode, country)
     #if string_country
     customer_properties = {
+      :customernumber => customernumber,
       :email => email,
       :firstname => firstname,
       :lastname => lastname,
-      :salutation => 'mr', 
+      :salutation => salutation,
       :password => password,
-      :shopId => shopId, 
+      :shopId => shopId,
       :billing => {
           :firstname => firstname,
           :lastname => lastname,
-          :salutation => 'mr',
+          :salutation => salutation,
           :street => street,
-          :streetNumber => streetnumber,
           :city => city,
-          :zipcode => postcode,
+          :zipcode => zipcode,
           :country => country
           }
       }
    createCustomer(customer_properties)
   end
 
-  
+
 #create new customer !!!IS NOT WORKING
   def createCustomer(customer_properties)
     url_data = "/api/customers/"
     @json_customer_properties = customer_properties.to_json
-      options = { 
+      options = {
       :digest_auth => @auth_digest,
       :body => @json_customer_properties
-      } 
+      }
     url_request = "#{url_data}"
     postData(url_request, options)
   end
-  
+
   #set suburl
   def stringGetUrlPath(data_of)
     #decide which url have to be set
@@ -50,11 +50,11 @@ module ShopwareFunctions
         url = "/api/orders"
     end
   end
-  
+
   #update entity of id and set key to value
-  def setValueToCancel(data_of, id, key) 
+  def setValueToCancel(data_of, id, key)
     @statusNumber = -1
-    options = { 
+    options = {
       :digest_auth => @auth_digest ,
       :body => { :orderStatusId => @statusNumber }.to_json
     }
@@ -65,13 +65,13 @@ module ShopwareFunctions
   end
 
   #get one customer with id
-  def getData(data_of, id) 
+  def getData(data_of, id)
     url_data = stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
     response_data = readData(url_request)
     return response_data
   end
-  
+
   #get one customer identified by its mailaddress
   #usage: delete customer with key by value and to determine order which is made by the customer
   def getCustomerIdByMail(mailaddress)
@@ -82,7 +82,7 @@ module ShopwareFunctions
     url_request = "#{url_data}/#{filter}"
     #puts "url_request: #{url_request}"
     response_data_customer = readData(url_request)
-    # looking for customerid and kind of account-registration (accountMode) because an buyer with no useraccount can not log in 
+    # looking for customerid and kind of account-registration (accountMode) because an buyer with no useraccount can not log in
     if response_data_customer['data'][0] != nil #&&  response_data_customer['data'][0]["accountMode"] == 0
       customer_id_by_mail = response_data_customer['data'][0][key]
     else
@@ -90,7 +90,7 @@ module ShopwareFunctions
     end
     return customer_id_by_mail
   end
-  
+
   #get orderid of order
   #usage: set status of order
   def getAndCancelOrderIdByCustomerId(id)
@@ -113,14 +113,14 @@ module ShopwareFunctions
   end
 
   #delete customer by id
-  def deleteDataId(data_of, id) 
+  def deleteDataId(data_of, id)
     url_data =  stringGetUrlPath(data_of)
     url_request = "#{url_data}/#{id}"
     puts ">>>>>> delete customer with id:#{id}"
     deleteData(url_request)
   end
-  
-  #delete customer with the given mailadress 
+
+  #delete customer with the given mailadress
   def deleteCustomerByMail(mailaddress)
     #search for id of customer with help of the mail
     #use filter function to find customer_id
@@ -135,8 +135,8 @@ module ShopwareFunctions
   end
 
   #update statusOrderId to 4 of order with order_id
-  def updateOrderStatusForMail(mail) 
-    #get order_id of order with customer_id with key and value 
+  def updateOrderStatusForMail(mail)
+    #get order_id of order with customer_id with key and value
     puts "mail: #{mail}"
     # looking for id of user which belongs to mailaddress
     #1. get customer_id by key
@@ -151,5 +151,5 @@ module ShopwareFunctions
       puts ">>>>>> No User with #{mail} exists"
     end
   end
-  
+
 end

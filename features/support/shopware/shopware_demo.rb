@@ -19,6 +19,9 @@ puts "urlname:#{urlname}"
 shopware_user1 = ShopwareApi.new()#husername, hapikey)
 shopware_user1.setDigest(username, apikey, urlname)
 #api:
-puts shopware_user1.getCustomerIdByMail("testmail_x@test.de")
-#shopware_user1.deleteCustomerByMail("testmail_pde@test.de")
+#puts shopware_user1.getCustomerIdByMail("testmail_pde@emmos.de")
+#shopware_user1.deleteCustomerByMail("testmail_xpde@emmos.de")
+# shopware_user1.setCustomerAttributes('testmail_xpde@emmos.de', 'firstname', 'lastname', 'mr', 'password', 1, 'street 1', 'Wertingen', '86637', 2)
+#shopware_user1.setCustomerAttributes('testmail_xpde@emmos.de', 'firstname', 'lastname', 'mr', 'password', 1, 'street 1', 'Wertingen', '86637', 2)
+#shopware_user1.setCustomerAttributes('testmail_pde@emmos.de', 'johann')
 #shopware_user1.updateOrderStatusForMail("testmail_pulsiva@test.de")

@@ -11,11 +11,11 @@ Feature: account
 
   Background:
     Given I am on the registration page
-  
+
   @account
   @export
   @chefworks
-  @pulsiva	
+  @pulsiva
   @vega
   @hotelwaesche
   @hw_jobeline
@@ -29,7 +29,7 @@ Feature: account
   @account_mobile
   @export_mobile
   @chefworks_mobile
-  @pulsiva_mobile	
+  @pulsiva_mobile
   @vega_mobile
   @hotelwaesche_mobile
   @hw_jobeline_mobile
@@ -71,8 +71,8 @@ Feature: account
 		When I touch the box for login
 		When I login with valid informations
 		Then I should be on my account page
-	
-  @account	
+
+  @account
   @export
   @chefworks
   @pulsiva
@@ -86,7 +86,7 @@ Feature: account
 		Given I am logged in
 		When I modify my paymentinfo
 		Then I should see a confirmation hint
-		
+
   @account_mobile
 	@export_mobile
   @chefworks_mobile
@@ -101,7 +101,7 @@ Feature: account
 		Given I am logged in
 		When I modify my paymentinfo
 		Then I should see a confirmation hint
-		
+
   @account
   @export
   @chefworks
@@ -111,7 +111,7 @@ Feature: account
 		Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
-		
+
 	@account_mobile
 	@export_mobile
   @chefworks_mobile
@@ -121,8 +121,8 @@ Feature: account
 	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
-	
-  @account	
+
+  @account
   @export
   @chefworks
 	@pulsiva
@@ -161,7 +161,7 @@ Feature: account
 	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
-		
+
 	@account_mobile
   @export_mobile
   @chefworks_mobile
@@ -171,7 +171,7 @@ Feature: account
 	  Given I am logged in
 		When I modify my address for my bill
 		Then I should see a confirmation hint
-		
+
 	@account
   @export
   @chefworks
@@ -180,7 +180,7 @@ Feature: account
     Given I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
-		
+
 	@account_mobile
 	@export_mobile
   @chefworks_mobile
@@ -189,7 +189,7 @@ Feature: account
     Given I am logged in
 		When I activate the newsletterbox
 		Then I should see a confirmation hint
-	
+
 	@account
   @export
   @chefworks
@@ -201,7 +201,7 @@ Feature: account
   Scenario: test links on the accountsite
 		Given I am logged in
 		When I get all items of the sidebar
-  
+
   @account_mobile
   @export_mobile
   @chefworks_mobile
@@ -213,7 +213,7 @@ Feature: account
   Scenario: test links on the accountsite on mobile
 		Given I am logged in
 		When I get all items of the sidebar
-  
+
   @account
   @vega
   @v_jobeline
