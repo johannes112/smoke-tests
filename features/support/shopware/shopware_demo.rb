@@ -21,7 +21,7 @@ shopware_user1.setDigest(username, apikey, urlname)
 #api:
 #puts shopware_user1.getCustomerIdByMail("testmail_pde@emmos.de")
 #shopware_user1.deleteCustomerByMail("testmail_xpde@emmos.de")
-# shopware_user1.setCustomerAttributes('testmail_xpde@emmos.de', 'firstname', 'lastname', 'mr', 'password', 1, 'street 1', 'Wertingen', '86637', 2)
+#shopware_user1.setCustomerAttributes('20004906', 'testmail_xpde@emmos.de', 'firstname', 'lastname', 'mr', 'password', 1, 'street 1', 'Wertingen', '86637', 2)
 #shopware_user1.setCustomerAttributes('testmail_xpde@emmos.de', 'firstname', 'lastname', 'mr', 'password', 1, 'street 1', 'Wertingen', '86637', 2)
 #shopware_user1.setCustomerAttributes('testmail_pde@emmos.de', 'johann')
 #shopware_user1.updateOrderStatusForMail("testmail_pulsiva@test.de")

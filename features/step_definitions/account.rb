@@ -21,19 +21,7 @@ Given(/^I register an user by api$/) do
   zipcode = account[:data].postcode
   country = account[:data].country
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  puts "costumernumber: #{customernumber}"
   shopware.setCustomerAttributes(customernumber, email, firstname, lastname, salutation, password, convert_countryname_to_shopId(country), street, city, zipcode, convert_countryname_to_countryid(country))
-  # puts "mail: #{email}"
-  # puts "firstname: #{firstname}"
-  # puts "lastname: #{lastname}"
-  # puts "salutation: #{salutation}"
-  # puts "password: #{password}"
-  # puts "shopId: #{convert_countryname_to_shopId(country)}"
-  # puts "street: #{street}"
-  # puts "zipcode: #{zipcode}"
-  # puts "city: #{city}"
-  # puts "country: #{country}"
-  # puts "country: #{convert_countryname_to_countryid(country)}"
 end
 
 And(/^no user account with my email exists$/) do

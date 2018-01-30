@@ -6,7 +6,7 @@ module ShopwareFunctions
   def setCustomerAttributes(customernumber, email, firstname, lastname, salutation, password, shopId, street, city, zipcode, country)
     #if string_country
     customer_properties = {
-      :customernumber => customernumber,
+      :number => customernumber,
       :email => email,
       :firstname => firstname,
       :lastname => lastname,
