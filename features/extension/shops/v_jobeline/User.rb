@@ -1,8 +1,8 @@
 #v_jobeline VAT_ID REG??? NO?
 class User
-  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
+  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber,
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
-  
+
   def initialize
     @customer_number = case ENV['COUNTRY']
       when 'de' then '20035829'#'493444604'
@@ -72,7 +72,7 @@ class User
     @company = case ENV['COUNTRY']
       when 'de' then 'VEGA GmbH - Jobeline Test-eBusiness'#'Test DE Jobeline - eBusiness'
       when 'at' then 'VEGA - EM Group AUT GmbH & Co.KG - Jobeline Test-eBusiness'#'Test AT Jobeline - eBusiness'
-      when 'ch' then 'VEGA - EM Group Schweiz GmbH - Jobeline Test-eBusiness'#'Test CH Jobeline - eBusiness'      
+      when 'ch' then 'VEGA - EM Group Schweiz GmbH - Jobeline Test-eBusiness'#'Test CH Jobeline - eBusiness'
       when 'it' then 'Test IT Jobeline - eBusiness'
       when 'fr' then 'Test FR Jobeline - eBusiness'
       when 'no' then 'Test NO Jobeline - eBusiness'
@@ -118,7 +118,7 @@ class User
       when 'se' then '5566959234'
       when 'nl' then nil
       when 'be' then '14422876383'
-      when 'en' then nil 
+      when 'en' then nil
     end
     @organumber = case ENV['COUNTRY']
       when 'de' then nil
@@ -217,8 +217,8 @@ class User
       when 'ch' then 'Herr'
       when 'it' then 'Sig.'
       when 'fr' then 'Monsieur'
-      when 'no' then 'Herr'
-      when 'se' then 'Herr'
+      when 'no' then nil
+      when 'se' then nil
       when 'nl' then 'Dhr.'
       when 'be' then 'Monsieur'
       when 'es' then 'Sr.'
@@ -327,6 +327,45 @@ class User
       when 'be' then 'nl'
       when 'es' then nil
       when 'en' then nil
-    end 
+    end
   end
+
+  #convert string of country into ID (s_core_shops)
+  def convert_countryname_to_shopId(string_country)
+    id_country = 1
+    case string_country
+      when "Deutschland"
+        puts "Germany"
+        id_country = 14
+      when "Österreich"
+        puts "Austria"
+        id_country = 15
+      when "Schweiz"
+        puts "Switzerland"
+        id_country = 16
+      when "Italia"
+        puts "Italy"
+        id_country = 20
+      when "France"
+        puts "France"
+        id_country = 18
+      when "Norge"
+        puts "Norway"
+        id_country = 23
+      when "Sverige"
+        puts "Sweden"
+        id_country = 19
+      when "Nederland"
+        puts "Nederland"
+        id_country = 22
+      when "Belgique"
+        puts "Begium"
+        id_country = 24
+      when "Espana"
+        puts "Spain"
+        id_country = 21
+    end
+    return id_country
+  end
+
 end

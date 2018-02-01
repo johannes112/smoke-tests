@@ -1,8 +1,8 @@
 #hotelwaesche
 class User
-  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
+  attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber,
                 :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
-  
+
   def initialize
     @customer_number = case ENV['COUNTRY'] #kundennummer
       when 'de' then '20027336'#'493444351'
@@ -128,6 +128,24 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then 'fr'
-    end 
+    end
   end
+
+  #convert string of country into ID (s_core_shops)
+  def convert_countryname_to_shopId(string_country)
+    id_country = 1
+    case string_country
+      when "Deutschland"
+        puts "Germany"
+        id_country = 1
+      when "Österreich"
+        puts "Austria"
+        id_country = 3
+      when "Schweiz"
+        puts "Switzerland"
+        id_country = 4
+    end
+    return id_country
+  end
+
 end

@@ -1,5 +1,4 @@
 # language: en
-
 @export
 @chefworks
 
@@ -12,7 +11,7 @@ Feature: account
   Background:
     Given I am on the registration page
 
-  @account
+	@account
   @export
   @chefworks
   @pulsiva
@@ -71,6 +70,37 @@ Feature: account
 		When I touch the box for login
 		When I login with valid informations
 		Then I should be on my account page
+
+  @account
+  @export
+  @chefworks
+  @pulsiva
+  @vega
+  @hotelwaesche
+  @hw_jobeline
+  @v_jobeline
+  @account_update
+  @account_payment_info
+	Scenario: list all options to pay
+		Given I am logged in
+		When I am looking for all different paymentmethods
+		Then I should see all possibilities of payoptions
+
+  @account
+  @export
+  @chefworks
+  @pulsiva
+  @vega
+  @hotelwaesche
+  @hw_jobeline
+  @v_jobeline
+  @account_update
+  @account_payment_change
+	Scenario: choose each option to pay
+		Given I am logged in
+		When I am changing to another paymentmethod
+		Then I should see all my choice of payoption
+
 
   @account
   @export

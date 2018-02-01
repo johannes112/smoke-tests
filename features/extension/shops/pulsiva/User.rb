@@ -1,8 +1,8 @@
 #pulsiva
 class User
-  attr_accessor :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
+  attr_accessor :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber,
                 :postcode, :city, :telephone, :customer_number, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
-  
+
   def initialize
     @customer_number = case ENV['COUNTRY']
       when 'de' then '20004906'#'20004906'
@@ -303,6 +303,45 @@ class User
       when 'nl' then nil
       when 'be' then 'nl'
       when 'es' then nil
-    end 
+    end
   end
+
+  #convert string of country into ID (s_core_shops)
+  def convert_countryname_to_shopId(string_country)
+    id_country = 1
+    case string_country
+      when "Deutschland"
+        puts "Germany"
+        id_country = 1
+      when "Österreich"
+        puts "Austria"
+        id_country = 12
+      when "Schweiz"
+        puts "Switzerland"
+        id_country = 8
+      when "Italia"
+        puts "Italy"
+        id_country = 3
+      when "France"
+        puts "France"
+        id_country = 6
+      when "Norge"
+        puts "Norway"
+        id_country = 16
+      when "Sverige"
+        puts "Sweden"
+        id_country = 14
+      when "Nederland"
+        puts "Nederland"
+        id_country = 20
+      when "Belgique"
+        puts "Begium"
+        id_country = 22
+      when "Espana"
+        puts "Spain"
+        id_country = 18
+    end
+    return id_country
+  end
+
 end

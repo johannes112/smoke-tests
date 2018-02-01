@@ -14,14 +14,21 @@ Given(/^I register an user by api$/) do
   email = account[:data].eMail
   firstname = account[:data].firstname
   lastname = account[:data].lastname
-  salutation  = 'mr'
+  prefix = account[:data].prefix
+  salutation = convert_salutation_conform_to_db(prefix)
   password = account[:data].password
   street = account[:data].street
   city = account[:data].city
   zipcode = account[:data].postcode
   country = account[:data].country
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
-  shopware.setCustomerAttributes(customernumber, email, firstname, lastname, salutation, password, convert_countryname_to_shopId(country), street, city, zipcode, convert_countryname_to_countryid(country))
+  customer_id = shopware.getCustomerIdByMail(email)
+  if customer_id.is_a?(String)
+    shopware.setCustomerAttributes(customernumber, email, firstname, lastname, salutation, password, account[:data].convert_countryname_to_shopId(country), street, city, zipcode, convert_countryname_to_countryid(country))
+    shopware.getCustomerIdByMail(email)
+  else
+    puts "#{customer_id}"
+  end
 end
 
 And(/^no user account with my email exists$/) do
@@ -36,6 +43,7 @@ Given(/^I already created an user account$/) do
   eMail = account[:data].eMail
   shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlBackend)
   customer_id_determined = shopware.getCustomerIdByMail(eMail)
+  puts "customer_id_determined: #{customer_id_determined}"
   if customer_id_determined.is_a?(String)
     puts "-> no unique account with customer:#{eMail} exists"
     step('I register an user by api')
@@ -358,15 +366,15 @@ Then(/^I should see a confirmation hint$/) do
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     puts "There is no hint"
   else
-      account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
-      if (page.has_css?(account_registerform_vallidation_modal_path))
-        puts "There is a popup!"
-      else
+      # account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
+      # if (page.has_css?(account_registerform_vallidation_modal_path))
+        # puts "There is a popup!"
+      # else
         find_secure(account_userinfo_success_hint_path)
         puts "> found info for success"
         expect(page).to have_css(account_userinfo_success_hint_path),
               "Expect to find a hint for success, but account_userinfo_success_hint_path is not available"
-      end
+      # end
   end
 end
 
@@ -799,4 +807,8 @@ Then(/^I should be on my account page on the subshop$/) do
   else
     puts "in #{country} on #{shop} skip this step"
   end
+end
+
+When(/^I am looking for all different paymentmethods$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end

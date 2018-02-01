@@ -1,8 +1,8 @@
 #hw_jobeline
 class User
-  attr_accessor :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber, 
+  attr_accessor :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber,
                 :postcode, :city, :telephone, :customer_number, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
-  
+
   def initialize
     @customer_number = case ENV['COUNTRY']
       when 'de' then '20027337'#'493444604'
@@ -56,7 +56,7 @@ class User
     end
     @country = case ENV['COUNTRY']
       when 'de' then 'Deutschland'
-      when 'at' then 'Österreich'  
+      when 'at' then 'Österreich'
       when 'ch' then 'Schweiz'
     end
     @owner_firstname = case ENV['COUNTRY']
@@ -94,7 +94,7 @@ class User
       when 'at' then 'Frau'
       when 'ch' then 'Frau'
     end
-    @street = case ENV['COUNTRY']      
+    @street = case ENV['COUNTRY']
       when 'de' then 'Hettlinger Str.'
       when 'at' then 'Tramstrasse'
       when 'ch' then 'Schloßgasse'#'Schlossgasse'
@@ -128,6 +128,24 @@ class User
       when 'de' then nil
       when 'at' then nil
       when 'ch' then 'fr'
-    end 
+    end
   end
+
+  #convert string of country into ID (s_core_shops)
+  def convert_countryname_to_shopId(string_country)
+    id_country = 14
+    case string_country
+      when "Deutschland"
+        puts "Germany"
+        id_country = 14
+      when "Österreich"
+        puts "Austria"
+        id_country = 15
+      when "Schweiz"
+        puts "Switzerland"
+        id_country = 16
+    end
+    return id_country
+  end
+
 end
