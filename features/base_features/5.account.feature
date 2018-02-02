@@ -80,37 +80,6 @@ Feature: account
   @hw_jobeline
   @v_jobeline
   @account_update
-  @account_payment_info
-	Scenario: list all options to pay
-		Given I am logged in
-		When I am looking for all different paymentmethods
-		Then I should see all possibilities of payoptions
-
-  @account
-  @export
-  @chefworks
-  @pulsiva
-  @vega
-  @hotelwaesche
-  @hw_jobeline
-  @v_jobeline
-  @account_update
-  @account_payment_change
-	Scenario: choose each option to pay
-		Given I am logged in
-		When I am changing to another paymentmethod
-		Then I should see all my choice of payoption
-
-
-  @account
-  @export
-  @chefworks
-  @pulsiva
-  @vega
-  @hotelwaesche
-  @hw_jobeline
-  @v_jobeline
-  @account_update
   @account_payment
 	Scenario: modify payment in my account
 		Given I am logged in
