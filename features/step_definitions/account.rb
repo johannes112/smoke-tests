@@ -231,7 +231,7 @@ When(/^I login with valid informations$/) do
   #var1
   email = account[:data].eMail
   password = account[:data].password
-  #url_account = settings.urlHttps+'account'
+  url_account = settings.urlHttps+'account'
 
   #path
   homepage_content_logo_path = account[:pathes].homepage_content_logo_path
@@ -810,5 +810,49 @@ Then(/^I should be on my account page on the subshop$/) do
 end
 
 When(/^I am looking for all different paymentmethods$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  url_payments = "#{settings.urlHttps}account/payment"
+  account_accountinfo_payment_options_path = '.payment--selection-label'
+  account_accountinfo_paymentchange_button_appear_path = account[:pathes].account_accountinfo_paymentchange_button_appear_path
+
+  payment_methods = account[:data].payment_methods
+  puts "Given payment_methods: #{payment_methods.inspect}"
+
+  visit_secure(url_payments)
+  payment_options = page.all(account_accountinfo_payment_options_path, visible: true)
+  payment_options.each do |payment|
+    puts "payment_options: #{payment.text}"
+    payment_txt = payment.text
+    puts payment_txt
+    VARS_ENV.paymentmethods << payment_txt
+  end
+  puts "count: #{payment_options.count}"
+  puts "count: #{payment_options.class}"
+  puts "paymentmethods: #{payment_methods.class}"
+  puts "count: #{payment_methods.inspect}"
+  # payment_methods.map!(&:upcase)
+  # VARS_ENV.paymentmethods.map!(&:upcase)
+  puts "VARS_ENV: #{VARS_ENV.paymentmethods.inspect}"
+  puts "compare: #{compare_values_of_arrays(payment_methods, VARS_ENV.paymentmethods)}"
+  # on the next step i can not use find_secure because i do not search on the page but on the paymentbox -> net::ReadTimeout can appear
+  # solution build a rescue block around the step
+  # find_secure_counter ||= 0
+  # begin
+  #   find_secure_counter = find_secure_counter + 1
+  #   element = account_accountinfo_payment_box.find(account_accountinfo_paymentchange_button_appear_path)
+  # rescue Net::ReadTimeout => e
+  #   puts "\033[35m#{e.inspect}\033[0m\n"
+  #   sleep 1
+  #   puts "visit_secure"
+  #   puts "visit #{url} again"
+  #   visit(url)
+  #   Capybara.default_max_wait_time = 20
+  #   puts "Failed to visit #{current_url}, retry #{find_secure_counter}"
+  #   find_secure_counter <= 2 ? retry : raise
+  # end
+  # element.click
+  # puts "--> clicked button for change of payment"
+  #
+  # puts "I change option of payment"
+  # step("I change option of payment")
+
 end
