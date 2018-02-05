@@ -89,6 +89,30 @@ module MyFunctions
     end
   end
 
+  #compare the values of two different arrays
+  def compare_values_of_arrays(array_1, array_2)
+    equal = false
+    if array_1.count == array_2.count
+      puts "Arrays have both #{array_1.count} elements"
+      puts "array_1: #{array_1.sort}"
+      puts "array_2: #{array_2.sort}"
+      array_1_sorted = array_1.sort
+      array_2_sorted = array_2.sort
+      array_1_sorted.map!(&:upcase)
+      array_2_sorted.map!(&:upcase)
+      if array_1_sorted == array_2_sorted
+        puts "true"
+        equal = true
+      else
+        differnce = array_1_sorted - array_2_sorted
+        puts "differnce: #{differnce}"
+      end
+    else
+      puts "The two arrays have different number of elements"
+    end
+    return equal
+  end
+
   def catch_error_in_block(&block)
     @counter_error = 0
     begin
@@ -222,6 +246,10 @@ module MyFunctions
       puts "\033[35m#{e.inspect}\033[0m\n"
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
+    rescue Capybara::Ambiguous => e
+      #more than one matches
+      puts "\033[35m#{e.inspect}\033[0m\n"
+      found = page.find(path, match: :first)
     rescue Net::ReadTimeout => e
       url ||= page.current_url
       puts "\033[35m#{e.inspect}\033[0m\n"
