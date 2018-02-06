@@ -92,23 +92,24 @@ module MyFunctions
   #compare the values of two different arrays
   def compare_values_of_arrays(array_1, array_2)
     equal = false
+    array_1_sorted = array_1.sort
+    array_2_sorted = array_2.sort
     if array_1.count == array_2.count
       puts "Arrays have both #{array_1.count} elements"
-      puts "array_1: #{array_1.sort}"
-      puts "array_2: #{array_2.sort}"
-      array_1_sorted = array_1.sort
-      array_2_sorted = array_2.sort
       array_1_sorted.map!(&:upcase)
       array_2_sorted.map!(&:upcase)
       if array_1_sorted == array_2_sorted
         puts "true"
         equal = true
       else
-        differnce = array_1_sorted - array_2_sorted
-        puts "differnce: #{differnce}"
+        difference = array_1_sorted - array_2_sorted
+        puts "difference: #{difference}"
       end
     else
       puts "The two arrays have different number of elements"
+      puts "array_1: #{array_1_sorted}"
+      puts "array_2: #{array_2_sorted}"
+      puts "These are the same: #{array_1_sorted&array_2_sorted}"
     end
     return equal
   end
