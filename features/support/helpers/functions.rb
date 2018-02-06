@@ -99,7 +99,6 @@ module MyFunctions
       array_1_sorted.map!(&:upcase)
       array_2_sorted.map!(&:upcase)
       if array_1_sorted == array_2_sorted
-        puts "true"
         equal = true
       else
         difference = array_1_sorted - array_2_sorted
