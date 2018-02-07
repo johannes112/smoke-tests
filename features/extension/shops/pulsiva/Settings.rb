@@ -1,7 +1,7 @@
 #pulsiva
 class Settings
   attr_accessor :url_checkout_confirm, :url_add_comand, :urlHttp, :urlHttps, :urlBackend, :baby_steps
-  
+
   def initialize
     if ENV['SYSTEM'] == "int"
       @urlHttp = case ENV['COUNTRY']
@@ -14,25 +14,23 @@ class Settings
         when (/no/) then 'http://int.pulsiva.com/no-no/'
         when (/se/) then 'http://int.pulsiva.com/se-se/'
         when (/nl/) then 'http://int.pulsiva.com/nl-nl/'
-        when (/be/) then 'http://int.pulsiva.com/be-fr/'
         when (/es/) then 'http://int.pulsiva.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']#Important:write 's
-        when (/de/) then 'http://int.pulsiva.com/de-de/'
-        when (/at/) then 'http://int.pulsiva.com/at-de/'
-        when (/ch/) then 'http://int.pulsiva.com/ch-de/'
-        when (/ch-fr/) then 'http://int.pulsiva.com/ch-fr/'
+        when (/de/) then 'https://int.pulsiva.com/de-de/'
+        when (/at/) then 'https://int.pulsiva.com/at-de/'
+        when (/ch/) then 'https://int.pulsiva.com/ch-de/'
+        when (/ch-fr/) then 'https://int.pulsiva.com/ch-fr/'
         when (/it/) then 'http://int.pulsiva.com/it-it/'
-        when (/fr/) then 'http://int.pulsiva.com/fr-fr/'
-        when (/no/) then 'http://int.pulsiva.com/no-no/'
-        when (/se/) then 'http://int.pulsiva.com/se-se/'
-        when (/nl/) then 'http://int.pulsiva.com/nl-nl/'
-        when (/be/) then 'http://int.pulsiva.com/be-fr/'
-        when (/es/) then 'http://int.pulsiva.com/es-es/'
+        when (/fr/) then 'https://int.pulsiva.com/fr-fr/'
+        when (/no/) then 'https://int.pulsiva.com/no-no/'
+        when (/se/) then 'https://int.pulsiva.com/se-se/'
+        when (/nl/) then 'https://int.pulsiva.com/nl-nl/'
+        when (/es/) then 'https://int.pulsiva.com/es-es/'
       end
       @urlBackend = 'http://int.pulsiva.com/'
     end
-    
+
     if ENV['SYSTEM'] == "live"
       @urlHttp = case ENV['COUNTRY']
         when (/de/) then 'http://www.pulsiva.com/de-de/'
@@ -44,7 +42,6 @@ class Settings
         when (/no/) then 'http://www.pulsiva.com/no-no/'
         when (/se/) then 'http://www.pulsiva.com/se-se/'
         when (/nl/) then 'http://www.pulsiva.com/nl-nl/'
-        when (/be/) then 'http://www.pulsiva.com/be-fr/'
         when (/es/) then 'http://www.pulsiva.com/es-es/'
       end
       @urlHttps = case ENV['COUNTRY']
@@ -57,7 +54,6 @@ class Settings
         when (/no/) then 'https://www.pulsiva.com/no-no/'
         when (/se/) then 'https://www.pulsiva.com/se-se/'
         when (/nl/) then 'https://www.pulsiva.com/nl-nl/'
-        when (/be/) then 'https://www.pulsiva.com/be-fr/'
         when (/es/) then 'https://www.pulsiva.com/es-es/'
       end
       @urlBackend = 'https://www.pulsiva.com/'

@@ -1,7 +1,7 @@
 #v_jobeline VAT_ID REG??? NO?
 class User
   attr_accessor :customer_number, :eMail, :eMail_sec ,:password, :password_sec, :company, :company_kind, :firstname, :lastname, :department, :prefix, :prefix_sec, :street, :streetnumber,
-                :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to
+                :postcode, :city, :telephone, :taxid, :taxvat, :organumber, :country, :owner_firstname, :owner_lastname, :language_change_to, :country_contraction_language_change_to, :payment_methods
 
   def initialize
     @customer_number = case ENV['COUNTRY']
@@ -327,6 +327,18 @@ class User
       when 'be' then 'nl'
       when 'es' then nil
       when 'en' then nil
+    end
+    @payment_methods = case ENV['COUNTRY']
+      when 'de' then ['Rechnung', 'Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'at' then ['Rechnung', 'Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'ch' then ['Rechnung', 'Nachnahme', 'Kreditkarte', 'Vorauskasse', 'Paypal']
+      when 'it' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'fr' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'no' then ['Nachnahme', 'Kreditkarte', 'Vorkasse']
+      when 'se' then ['Nachnahme', 'Kreditkarte', 'Vorkasse']
+      when 'nl' then ['Rechnung', 'Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal', 'iDeal']
+      when 'es' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'be' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
     end
   end
 

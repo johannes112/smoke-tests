@@ -1,7 +1,7 @@
 #pulsiva
 class Article
   attr_accessor :sub_category, :category, :category_language_changed, :productnumber, :sku, :amount, :name, :url_add_comand
-  
+
   def initialize
     @sub_category = case ENV['COUNTRY']
       when (/de/) then 'Gabeln'
@@ -12,7 +12,6 @@ class Article
       when (/no/) then 'Enkelt bestikk'
       when (/se/) then 'Enskilda bestick'
       when (/nl/) then 'Los bestek'
-      when (/be/) then 'Couverts à l\'unité'
       when (/es/) then 'Piezas sueltas'
     end
     @category = case ENV['COUNTRY']
@@ -24,12 +23,10 @@ class Article
       when (/no/) then 'Bestikk'
       when (/se/) then 'Bestick'
       when (/nl/) then 'Bestek'
-      when (/be/) then 'Couverts'
       when (/es/) then 'Cubiertos'
     end
     @category_language_changed = case ENV['COUNTRY']
       when (/ch/) then 'Vaisselle'
-      when (/be/) then 'Servies'
     end
     @productnumber = case ENV['COUNTRY']
       when (/de/) then '104105'#without i!
@@ -40,7 +37,6 @@ class Article
       when (/no/) then '104105'#other product
       when (/se/) then '104105'
       when (/nl/) then '104105'
-      when (/be/) then '104105'
       when (/es/) then '104105'
     end
     @sku = case ENV['COUNTRY']
@@ -52,7 +48,6 @@ class Article
       when (/no/) then '20040136'#other product
       when (/se/) then '20040136'
       when (/nl/) then '20040136'
-      when (/be/) then '20040136'
       when (/es/) then '20040136'
     end
     @amount = case ENV['COUNTRY']
@@ -64,11 +59,10 @@ class Article
       when (/no/) then 2
       when (/se/) then 2
       when (/nl/) then 2
-      when (/be/) then 2
       when (/es/) then 2
     end
     #no umlauts
-    @name = case ENV['COUNTRY'] 
+    @name = case ENV['COUNTRY']
       when (/de/) then 'Steakgabel'
       when (/at/) then 'Steakgabel'
       when (/ch/) then 'Steakgabel'
@@ -77,7 +71,6 @@ class Article
       when (/no/) then 'Grillgaffel'
       when (/se/) then 'GRILLGAFFEL'
       when (/nl/) then 'STEAKVORK'
-      when (/be/) then 'Fourchette'
       when (/es/) then 'TENEDOR PARA CARNE'
     end
     @url_add_comand = case ENV['COUNTRY']
@@ -89,7 +82,6 @@ class Article
       when (/no/) then 'EMGroupDirectOrder'
       when (/se/) then 'EMGroupDirectOrder'
       when (/nl/) then 'EMGroupDirectOrder'
-      when (/be/) then 'EMGroupDirectOrder'
       when (/es/) then 'EMGroupDirectOrder'
     end
   end
