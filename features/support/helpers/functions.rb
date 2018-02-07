@@ -89,7 +89,7 @@ module MyFunctions
     end
   end
 
-  #compare the values of two different arrays
+  #compare the (number of) values of two different arrays
   def compare_values_of_arrays(array_1, array_2)
     equal = false
     array_1_sorted = array_1.sort
@@ -98,19 +98,26 @@ module MyFunctions
       puts "Arrays have both #{array_1.count} elements"
       array_1_sorted.map!(&:upcase)
       array_2_sorted.map!(&:upcase)
-      if array_1_sorted == array_2_sorted
-        equal = true
-      else
-        difference = array_1_sorted - array_2_sorted
-        puts "difference: #{difference}"
-      end
+      equal = true
     else
       puts "The two arrays have different number of elements"
+      # if array_1_sorted == array_2_sorted
+      #   puts "Arrays have equal content"
+      # else
+      #   difference = array_1_sorted - array_2_sorted
+      #   puts "difference: #{difference}"
+      # end
       puts "array_1: #{array_1_sorted}"
       puts "array_2: #{array_2_sorted}"
       puts "These are the same: #{array_1_sorted&array_2_sorted}"
     end
     return equal
+  end
+
+  def click_label_of_xpath_from_element(element)
+    xpath = "#{element.path}/label"
+    #puts "xpath: #{xpath}"
+    page.find(:xpath, xpath).click
   end
 
   def catch_error_in_block(&block)
