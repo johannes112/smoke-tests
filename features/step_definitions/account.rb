@@ -799,8 +799,8 @@ Then(/^I should get an errormessage$/) do
 end
 
 Then(/^I should be on my account page on the subshop$/) do
-  shop = ENV['SHOP']
-  country = ENV['COUNTRY']
+  shop = VARS_ENV.r_shop
+  country = VARS_ENV.r_shop
   if ( (shop == 'vega') && (country == 'de') )
     #var
     step("I should be on my account page")
@@ -811,14 +811,21 @@ end
 
 When(/^I am looking for all different paymentmethods$/) do
   url_payments = "#{settings.urlHttps}account/payment"
-  account_accountinfo_payment_options_path = '.payment--selection-label'
+  account_accountinfo_payment_options_path = account[:pathes].account_accountinfo_payment_options_path
   account_accountinfo_paymentchange_button_appear_path = account[:pathes].account_accountinfo_paymentchange_button_appear_path
 
+  if (VARS_ENV.r_shop == 'vega' || VARS_ENV.r_shop == 'v_jobeline')
+    puts "On #{VARS_ENV.r_shop} first i have to add an product to cart"
+    step("I add an article to my cart by ajax")
+  end
   visit_secure(url_payments)
+  #puts "#{account_accountinfo_payment_options_path}"
   payment_options = page.all(account_accountinfo_payment_options_path, visible: true)
   payment_options.each do |payment|
     payment_txt = payment.text
     puts payment_txt
+    # do not use click_label_of_xpath_from_element because it takes too long time
+    #click_label_of_xpath_from_element(payment)
     VARS_ENV.paymentmethods << payment_txt
   end
 end
