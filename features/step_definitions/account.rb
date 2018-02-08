@@ -138,7 +138,7 @@ When(/^I create a new account with my data$/) do
   end
 
   #set value for prefix
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
     if (page.has_no_css?(account_registerform_prefix_path))
       puts "There is no prefix"
     else
@@ -196,7 +196,7 @@ When(/^I create a new account with my data$/) do
   puts "clicked button to continue"
 
   #check for success
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
     account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
     if (page.has_css?(account_registerform_vallidation_modal_path))
       puts "There is a popup!"
@@ -212,7 +212,7 @@ Then(/^I should be on my account page$/) do
   #var
   account_accountpage_welcome_path = account[:pathes].account_accountpage_welcome_path
 
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
     account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
     account_registerform_vallidation_ignore_path = '.modal-ignore'
     if (page.has_css?(account_registerform_vallidation_modal_path))
@@ -220,7 +220,7 @@ Then(/^I should be on my account page$/) do
       find_secure(account_registerform_vallidation_ignore_path).click
       puts "--> closed popup"
     else
-      puts "In #{ENV['COUNTRY']} is no popup"
+      puts "In #{VARS_ENV.r_country} is no popup"
     end
   end
   puts "current_url:#{current_url}"
@@ -363,7 +363,7 @@ end
 
 Then(/^I should see a confirmation hint$/) do
   account_userinfo_success_hint_path = account[:pathes].account_userinfo_success_hint_path
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
     puts "There is no hint"
   else
       # account_registerform_vallidation_modal_path = '.replyGoogleMapsAddressValidation'
@@ -381,8 +381,8 @@ end
 Then(/^I should see an alert for creating a new address$/) do
   account_userinfo_success_hint_path = account[:pathes].account_userinfo_success_hint_path
 
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    puts "in #{ENV['COUNTRY']} there is no prefix"
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
+    puts "in #{VARS_ENV.r_country} there is no prefix"
   else
     find_secure(account_userinfo_success_hint_path)
     puts "> found info for success"
@@ -494,8 +494,8 @@ When(/^I change prefix of my address for invoice$/) do
   account_invoiceadresschange_form_prefix_path = account[:pathes].account_invoiceadresschange_form_prefix_path
   account_invoiceadresschange_button_path = account[:pathes].account_invoiceadresschange_button_path
 
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    puts "in #{ENV['COUNTRY']} there is no prefix"
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
+    puts "in #{VARS_ENV.r_country} there is no prefix"
   else
     #set value for prefix
     find_secure(account_invoiceadresschange_form_prefix_path)
@@ -591,8 +591,8 @@ end
 When(/^I change prefix of my address for delivery$/) do
   prefix = account[:data].prefix_sec
 
-  if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
-    puts "in #{ENV['COUNTRY']} there is no prefix"
+  if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
+    puts "in #{VARS_ENV.r_country} there is no prefix"
   else
     account_deliveradresschange_form_prefix_path = account[:pathes].account_deliveradresschange_form_prefix_path
     account_deliveradresschange_button_path = account[:pathes].account_deliveradresschange_button_path
@@ -607,13 +607,13 @@ end
 
 #it is not working on pulsiva
 When(/^I activate the newsletterbox$/) do
-  #if (ENV['SHOP'] == 'chefworks')
+  #if (VARS_ENV.r_shop == 'chefworks')
     account_newsletter_box_path = account[:pathes].account_newsletter_box_path
     find_secure(account_newsletter_box_path)
     find_secure(account_newsletter_box_path).click
     puts "--> activate the checkbox"
   #else
-    puts "On the shop of #{ENV['SHOP']} this feature does not exist"
+    puts "On the shop of #{VARS_ENV.r_shop} this feature does not exist"
   #end
 end
 
@@ -722,8 +722,8 @@ When(/^I login with valid informations on Jobeline in DE$/) do
 end
 
 When(/^I login with valid informations on Vega in AT$/) do
-  shop = ENV['SHOP']
-  country = ENV['COUNTRY']
+  shop = VARS_ENV.r_shop
+  country = VARS_ENV.r_country
   if ( (shop == 'vega') && (country == 'de') )
     #var1
     email = account[:data].eMail
@@ -784,8 +784,8 @@ When(/^I login with valid informations on Vega in AT$/) do
 end
 
 Then(/^I should get an errormessage$/) do
-  shop = ENV['SHOP']
-  country = ENV['COUNTRY']
+  shop = VARS_ENV.r_shop
+  country = VARS_ENV.r_country
   if ( (shop == 'vega') && (country == 'de') )
     logo_path = account[:pathes].homepage_content_logo_path
     errormessage_path = account[:pathes].account_login_errormessage_path
