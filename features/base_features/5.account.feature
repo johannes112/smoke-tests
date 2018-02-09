@@ -83,7 +83,7 @@ Feature: account
   @account_payment_info
 	Scenario: list all options to pay
 		Given I am logged in
-		When I am looking for all different paymentmethods
+		When I am looking for all different paymentmethods on the account
 		Then I should see all possibilities of payoptions
 
   @account

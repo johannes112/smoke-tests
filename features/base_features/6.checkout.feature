@@ -1,10 +1,9 @@
 # language: en
-
 Feature: checkout
 
 	As a customer,
 	I want to be able to order my favorite products
-  
+
   @pulsiva
 	@vega
 	@v_jobeline
@@ -23,7 +22,7 @@ Feature: checkout
 	  And I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
-	  
+
 	@pulsiva_mobile
 	@vega_mobile
 	@v_jobeline_mobile
@@ -46,20 +45,23 @@ Feature: checkout
 	  When I click the button to go to the final page on mobile
 	  When I send my order
 	  Then Shopware should have my order
-	  
+
   @checkout_with
   @checkout
 	Scenario: checkout with existing account
-	  Given no user account with my email exists
 	  And I already created an user account
 	  Given I am logged in
 	  When I add an article to my cart by ajax
 	  Then the product cart contains an article
 	  And I am on the checkout page
+		When I set payment
+		And I set shipping
+		Then I am looking for all different paymentmethods
+		When I click the button to coninue on the checkoutpage
+		Then I should see all possibilities of payoptions
 	  When I send my order
 	  Then Shopware should have my order
-	  Given no user account with my email exists
-	  
+
 	@pulsiva_mobile
 	@vega_mobile
 	@v_jobeline_mobile
@@ -76,6 +78,7 @@ Feature: checkout
 	  When I add an article to my cart by ajax
 	  Then the product cart contains an article
 	  And I am on the checkout page
+		When I set payment and shipping
 	  When I send my order
 	  Then Shopware should have my order
 	  Given no user account with my email exists
