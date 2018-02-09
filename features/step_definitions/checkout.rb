@@ -2,20 +2,18 @@
 Given(/^I am on the checkout page$/) do
   checkout_checkout_proceed_button_path = checkout[:pathes].checkout_checkout_proceed_button_path
   checkout_step_confirm_path = checkout[:pathes].checkout_step_confirm_path
-  
-  if (page.has_css?(checkout_step_confirm_path)) 
+
+  if (page.has_css?(checkout_step_confirm_path))
     puts "I am already on the final checkout page"
   else
     puts "--> click continue"
     element = find_secure(checkout_checkout_proceed_button_path, match: :first)
     element.click
-    puts "-> set payment and shipping"
-    if (ENV['BROWSER'] == 'iPhone') 
+    if (ENV['BROWSER'] == 'iPhone')
+      puts "-> set payment and shipping"
       step("I set payment")
       step("I set shipping")
       step("I click the button to go to the final page on mobile")
-    else
-      step("I set payment and shipping")
     end
   end
   #puts "And the checkoutpage contains all elements"
@@ -23,17 +21,17 @@ Given(/^I am on the checkout page$/) do
 end
 
 And(/^the checkoutpage contains all elements/) do
-  checkout_backbutton_path = checkout[:pathes].checkout_backbutton_path 
-  checkout_steps_container_path = checkout[:pathes].checkout_steps_container_path 
-  checkout_agb_container_path = checkout[:pathes].checkout_agb_container_path 
-  checkout_billing_container_path = checkout[:pathes].checkout_billing_container_path 
-  checkout_shipping_container_path = checkout[:pathes].checkout_shipping_container_path 
-  checkout_payment_container_path = checkout[:pathes].checkout_payment_container_path 
-  checkout_product_container_path = checkout[:pathes].checkout_product_container_path 
-  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path 
-  
+  checkout_backbutton_path = checkout[:pathes].checkout_backbutton_path
+  checkout_steps_container_path = checkout[:pathes].checkout_steps_container_path
+  checkout_agb_container_path = checkout[:pathes].checkout_agb_container_path
+  checkout_billing_container_path = checkout[:pathes].checkout_billing_container_path
+  checkout_shipping_container_path = checkout[:pathes].checkout_shipping_container_path
+  checkout_payment_container_path = checkout[:pathes].checkout_payment_container_path
+  checkout_product_container_path = checkout[:pathes].checkout_product_container_path
+  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path
+
   find_secure(checkout_orderbutton_path)
-  
+
   expect(page).to have_css(checkout_backbutton_path),
     "expected to find #{checkout_backbutton_path}, but the checkout_backbutton is still missing on the page"
   expect(page).to have_css(checkout_steps_container_path),
@@ -71,7 +69,7 @@ When(/^I register a new account with my data$/) do
   postcode = account[:data].postcode
   city = account[:data].city
   country = account[:data].country
-  
+
   #path
   account_registerform_path = account[:pathes].account_registerform_path
   account_registerform_prefix_path = account[:pathes].account_registerform_prefix_path
@@ -93,7 +91,7 @@ When(/^I register a new account with my data$/) do
   account_registerform_city_path = account[:pathes].account_registerform_city_path
   account_registerform_country_path = account[:pathes].account_registerform_country_path
   account_registerform_button_path = account[:pathes].account_registerform_button_path
-  
+
   #search for field, so you know that we are on the right site
   find_secure(account_registerform_path)
   account_registerform = find_secure(account_registerform_path)
@@ -110,7 +108,7 @@ When(/^I register a new account with my data$/) do
     element = find_secure(account_registerform_prefix_path)
     element.select(prefix)
     printValue(:prefix, binding)
-  end 
+  end
   #set value for firstname
   form_set_value(account_registerform, "firstname", firstname, account_registerform_firstname_path)
   #set value for lastname
@@ -142,7 +140,7 @@ When(/^I register a new account with my data$/) do
   form_set_value(account_registerform, "taxvat", taxvat, account_registerform_taxvat_path)
   #set value for street
   form_set_value(account_registerform, "street", street, account_registerform_street_path)
-  #set streetnumber 
+  #set streetnumber
   form_set_value(account_registerform, "streetnumber", streetnumber, account_registerform_streetnumber_path)
   #set value for postcode
   form_set_value(account_registerform, "postcode", postcode, account_registerform_postcode_path)
@@ -155,7 +153,7 @@ When(/^I register a new account with my data$/) do
   element = find_secure(account_registerform_button_path)
   element.click
   puts "clicked button to continue"
-  
+
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
     if (page.has_css?(account_registerform_vallidation_modal_path))
@@ -169,12 +167,12 @@ end
 
 
 When(/^I send my order$/) do
-  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path 
+  checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path
   puts "I am on the checkout page"
   step("I am on the checkout page")
   puts "I activate the box of agb"
   step("I activate the box of agb")
-  
+
   element = find_secure(checkout_orderbutton_path)
   if VARS_ENV.r_system == 'live'
     puts "> found orderbutton but not press"
@@ -187,8 +185,8 @@ end
 
 And(/^I activate the box of agb$/) do
   if ENV['SHOP'] == 'chefworks'
-    checkout_agb_box_path = checkout[:pathes].checkout_agb_box_path 
-    
+    checkout_agb_box_path = checkout[:pathes].checkout_agb_box_path
+
     element = find_secure(checkout_agb_box_path)
     #element = find_secure(checkout_agb_box_path, match: :first)
     element.click
@@ -199,12 +197,12 @@ And(/^I activate the box of agb$/) do
 end
 
 When(/^I go to the checkout$/) do
-  checkout_panel_path = checkout[:pathes].checkout_panel_path 
-  checkout_checkout_proceed_button_path = checkout[:pathes].checkout_checkout_proceed_button_path 
+  checkout_panel_path = checkout[:pathes].checkout_panel_path
+  checkout_checkout_proceed_button_path = checkout[:pathes].checkout_checkout_proceed_button_path
   navigation_path = checkout[:pathes].navigation_path
-  
+
   block_css(navigation_path)
-  
+
   find_secure(checkout_panel_path)
   element = find_secure(checkout_checkout_proceed_button_path, match: :first)
   element.click
@@ -251,7 +249,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   checkout_registerform_city_path = account[:pathes].account_registerform_city_path
   checkout_registerform_country_path = account[:pathes].account_registerform_country_path
   checkout_registerform_button_path = account[:pathes].account_registerform_button_path
-  
+
   #search for field, so you know that we are on the right site
   find_secure(checkout_registerform_path)
   checkout_registerform = find_secure(checkout_registerform_path)
@@ -269,7 +267,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
     element = find_secure(checkout_registerform_prefix_path)
     element.select(prefix)
     printValue(:prefix, binding)
-  end 
+  end
   #set value for firstname
   form_set_value(checkout_registerform, "firstname", firstname, checkout_registerform_firstname_path)
   #set value for lastname
@@ -305,7 +303,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   form_set_value(checkout_registerform, "taxvat", taxvat, checkout_registerform_taxvat_path)
   #set value for street
   form_set_value(checkout_registerform, "street", street, checkout_registerform_street_path)
-  #set streetnumber 
+  #set streetnumber
   form_set_value(checkout_registerform, "streetnumber", streetnumber, checkout_registerform_streetnumber_path)
   #set value for postcode
   form_set_value(checkout_registerform, "postcode", postcode, checkout_registerform_postcode_path)
@@ -318,7 +316,7 @@ When(/^I fill out a register form and send it without creating an account$/) do
   element = find_secure(checkout_registerform_button_path)
   element.click
   puts "clicked button to continue"
-  
+
   if (ENV['COUNTRY'] == 'no') || (ENV['COUNTRY'] == 'se')
     account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
     if (page.has_css?(account_registerform_vallidation_modal_path))
@@ -328,19 +326,19 @@ When(/^I fill out a register form and send it without creating an account$/) do
         "expected not find '#{checkout_registerform_skip_path}' but it is here"
     end
   end
-  
+
 end
 
 When(/^I set payment and shipping$/) do
   #css pathes
   checkout_step_payment_path = checkout[:pathes].checkout_step_payment_path
   checkout_delivery_options_path = checkout[:pathes].checkout_delivery_options_path
-  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path 
-  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path 
+  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path
+  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path
   checkout_payment_delivery_standard_radio_path = checkout[:pathes].checkout_payment_delivery_standard_radio_path
   checkout_orderbutton_path = checkout[:pathes].checkout_orderbutton_path
   checkout_step_confirm_path = checkout[:pathes].checkout_step_confirm_path
-  
+
   account_registerform_vallidation_modal_path = checkout[:pathes].account_registerform_vallidation_modal_path
   account_registerform_vallidation_ignore_path = checkout[:pathes].account_registerform_vallidation_ignore_path
 
@@ -353,14 +351,15 @@ When(/^I set payment and shipping$/) do
       puts "In #{ENV['COUNTRY']} is no popup"
     end
   end
-  
-  if (page.has_css?(checkout_step_payment_path)) 
+
+  if (page.has_css?(checkout_step_payment_path))
     puts "I am here: #{current_url}"
+    #step('I am looking for all different paymentmethods')
     #set payment
     step("I set payment")
     #set delivery
     step("I set shipping")
-    
+    #step("I am looking for all different paymentmethods")
     element = find_secure(checkout_payment_continue_path)
     element.click
     puts "--> click button to continue"
@@ -373,23 +372,48 @@ When(/^I set payment and shipping$/) do
   end
 end
 
+When(/^I click the button to coninue on the checkoutpage$/) do
+  checkout_payment_confirm_button_path = ".confirm--actions > button"
+  find_secure(checkout_payment_confirm_button_path, match: :first).click
+  puts "> clicked button to confirm"
+end
+
 When(/^I click the button to go to the final page on mobile$/) do
   #css pathes
-  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path 
-  
+  checkout_payment_continue_path = checkout[:pathes].checkout_payment_continue_path
+
   find_secure(checkout_payment_continue_path)
   element = find_secure(checkout_payment_continue_path)
   element.click
   puts "--> click button to continue"
 end
 
+When(/^I am looking for all different paymentmethods$/) do
+  account_accountinfo_payment_options_path = '.payment--method > .method--label'
+  # for a clean array
+  VARS_ENV.paymentmethods = []
+  puts "account_accountinfo_payment_options_path:#{account_accountinfo_payment_options_path}"
+
+  payment_options = page.all(account_accountinfo_payment_options_path, visible: true)
+  payment_options.each do |payment|
+    payment_txt = payment.text
+    puts "payment_txt:#{payment_txt}"
+    # do not use click_label_of_xpath_from_element because it takes too long time
+    if ENV['TAG'] == 'checkout_with'
+      puts "If I use the tag '#{ENV['TAG']}' I will check if each payment can be choosen"
+      #click_label_of_xpath_from_element(payment)
+    end
+    VARS_ENV.paymentmethods << payment_txt #if (VARS_ENV.paymentmethods.empty?)
+  end
+end
+
 When(/^I set payment$/) do
-  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path 
+  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path
   checkout_payment_options_path = checkout[:pathes].checkout_payment_options_path
-  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path 
-  
+  checkout_paymentInAdvance_radio_path = checkout[:pathes].checkout_paymentInAdvance_radio_path
+
   #expect(page).not_to have_css('.js--loading-indicator')
-  
+
   find_secure(checkout_payment_form_path)
   #set payment
   if (page.has_css?(checkout_payment_options_path))
@@ -407,7 +431,7 @@ end
 When(/^I set shipping$/) do
   checkout_delivery_options_path = checkout[:pathes].checkout_delivery_options_path
   checkout_payment_delivery_standard_radio_path = checkout[:pathes].checkout_payment_delivery_standard_radio_path
-  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path 
+  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path
 
   expect(page).not_to have_css('.js--loading-indicator')
   find_secure(checkout_payment_form_path)
@@ -415,7 +439,7 @@ When(/^I set shipping$/) do
     #puts "if"
     #visit_secure(current_url)
     find_secure(checkout_delivery_options_path)
-    #find_secure(checkout_payment_delivery_standard_radio_path).click  
+    #find_secure(checkout_payment_delivery_standard_radio_path).click
     element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
     element.click
     puts "-> choose delivery"
@@ -434,14 +458,14 @@ Then(/^Shopware should have my order$/) do
     key = "email"
     eMail = account[:data].eMail
     url_part = 'finish'
-    
+
     checkout_order_success_teaser = checkout[:pathes].checkout_order_success_teaser_path
     find_secure(checkout_order_success_teaser)
     puts "> found teaser for success"
-    
+
     expect(current_url).to include(url_part),
       "Expected to be at #{url_part} but i am on #{current_url}"
-      
+
     shopware.setDigest(ENV['SHOPWARE_USERNAME'], ENV['SHOPWARE_PASSWORD'], settings.urlHttps)
     puts ">> cancel orders of customer with #{key}:#{eMail}"
     shopware.updateOrderStatusForMail(eMail)
