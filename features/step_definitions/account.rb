@@ -809,7 +809,7 @@ Then(/^I should be on my account page on the subshop$/) do
   end
 end
 
-When(/^I am looking for all different paymentmethods$/) do
+When(/^I am looking for all different paymentmethods on the account$/) do
   url_payments = "#{settings.urlHttps}account/payment"
   account_accountinfo_payment_options_path = account[:pathes].account_accountinfo_payment_options_path
   account_accountinfo_paymentchange_button_appear_path = account[:pathes].account_accountinfo_paymentchange_button_appear_path
@@ -825,7 +825,10 @@ When(/^I am looking for all different paymentmethods$/) do
     payment_txt = payment.text
     puts payment_txt
     # do not use click_label_of_xpath_from_element because it takes too long time
-    #click_label_of_xpath_from_element(payment)
+    if ENV['TAG'] == 'account_payment_info' || ENV['TAG'] == 'checkout_with'
+      puts "If I use the tag '#{ENV['TAG']}' I will check if each payment can be choosen"
+      #click_label_of_xpath_from_element(payment)
+    end
     VARS_ENV.paymentmethods << payment_txt
   end
 end
