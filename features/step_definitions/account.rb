@@ -825,7 +825,7 @@ When(/^I am looking for all different paymentmethods on the account$/) do
     payment_txt = payment.text
     puts payment_txt
     # do not use click_label_of_xpath_from_element because it takes too long time
-    if ENV['TAG'] == 'account_payment_info' || ENV['TAG'] == 'checkout_with'
+    if ENV['TAG'] == 'account_payment_info'
       puts "If I use the tag '#{ENV['TAG']}' I will check if each payment can be choosen"
       #click_label_of_xpath_from_element(payment)
     end

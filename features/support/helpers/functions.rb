@@ -116,7 +116,16 @@ module MyFunctions
 
   def click_label_of_xpath_from_element(element)
     xpath = "#{element.path}/label"
-    #puts "xpath: #{xpath}"
+    # p "org_xpath: #{org_xpath}"
+    # #visit(current_url)
+    # sub_xpath = org_xpath.match(/div\[2\].*/)
+    # p "sub_xpath: #{sub_xpath}"
+    # xpath = "//*/#{sub_xpath}"
+    # p xpath
+    # !xpath.to_s!
+    # page.find(:xpath, xpath)
+     #new_url = url.scan(/div\[2\].*/)
+
     page.find(:xpath, xpath).click
   end
 
@@ -484,6 +493,15 @@ module MyFunctions
     salutation = 'mr'
     prefix ? salutation='mr' : salutation='unknown'
     return salutation
+  end
+
+  def wait_for_ajax
+    return unless respond_to?(:evaluate_script)
+    wait_until { finished_all_ajax_requests? }
+  end
+
+  def finished_all_ajax_requests?
+    evaluate_script("!window.jQuery") || evaluate_script("jQuery.active").zero?
   end
 
 end
