@@ -396,7 +396,7 @@ When(/^I am looking for all different paymentmethods$/) do
 
   payment_options = page.all(account_accountinfo_payment_options_path, visible: true)
   payment_options.each do |payment|
-    expect(page).not_to have_css('.js--loading-indicator')
+    #expect(page).not_to have_css('.js--loading-indicator')
     payment_txt = payment.text
     puts "payment_txt:#{payment_txt}"
     #page.choose(payment_txt)
@@ -421,10 +421,15 @@ When(/^I am looking for all different paymentmethods$/) do
     puts "payment:#{payment.class}"
     puts "payment.path:#{payment.path}"
     xpath = "#{payment.path}/label"
-    element = page.find(:xpath, xpath)
-    element.click
-
+    VARS_ENV.payment_xpath = xpath
+    step('I click the payment')
   end
+end
+
+When(/^I click the payment/) do
+  xpath = VARS_ENV.payment_xpath
+  element = page.find(:xpath, xpath)
+  element.click
 end
 
 When(/^I set payment$/) do

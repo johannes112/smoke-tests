@@ -1,11 +1,12 @@
 class Vars
-  attr_accessor :r_system, :r_country, :r_shop, :url_productpage, :url_productcart, :url_account, :paymentmethods
+  attr_accessor :r_system, :r_country, :r_shop, :url_productpage, :url_productcart, :url_account, :paymentmethods, :payment_xpath
 
   def initialize (r_system='dual', r_country='eu', r_shop='veg')
     @r_system = r_system
     @r_country = r_country
     @r_shop = r_shop
     self.paymentmethods = []
+    self.payment_xpath = []
   end
 
   def output_var

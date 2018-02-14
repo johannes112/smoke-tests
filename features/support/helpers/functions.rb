@@ -496,12 +496,12 @@ module MyFunctions
   end
 
   def wait_for_ajax
-    return unless respond_to?(:evaluate_script)
-    wait_until { finished_all_ajax_requests? }
-  end
-
-  def finished_all_ajax_requests?
-    evaluate_script("!window.jQuery") || evaluate_script("jQuery.active").zero?
+    Timeout.timeout(Capybara.default_wait_time) do
+      loop do
+        active = page.evaluate_script('jQuery.active')
+        break if active == 0
+      end
+    end
   end
 
 end
