@@ -56,9 +56,8 @@ Feature: checkout
 	  And I am on the checkout page
 		When I set payment
 		And I set shipping
-		Then I am looking for all different paymentmethods
+		When I am looking for all different paymentmethods
 		When I click the button to coninue on the checkoutpage
-		Then I should see all possibilities of payoptions
 	  When I send my order
 	  Then Shopware should have my order
 
