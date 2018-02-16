@@ -6,7 +6,6 @@ class Vars
     @r_country = r_country
     @r_shop = r_shop
     self.paymentmethods = []
-    self.payment_xpath = []
   end
 
   def output_var
