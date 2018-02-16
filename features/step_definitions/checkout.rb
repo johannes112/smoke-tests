@@ -389,47 +389,22 @@ When(/^I click the button to go to the final page on mobile$/) do
 end
 
 When(/^I am looking for all different paymentmethods$/) do
-  account_accountinfo_payment_options_path = '.payment--method > .method--label'
+  account_accountinfo_payment_options_path = checkout[:pathes].account_accountinfo_payment_options_path
+  account_accountinfo_payment_radio_path = checkout[:pathes].account_accountinfo_payment_radio_path
+  account_accountinfo_payment_label_path = checkout[:pathes].account_accountinfo_payment_label_path
   # for a clean array
   VARS_ENV.paymentmethods = []
-  puts "account_accountinfo_payment_options_path:#{account_accountinfo_payment_options_path}"
-
   payment_options = page.all(account_accountinfo_payment_options_path, visible: true)
   payment_options.each do |payment|
-    #expect(page).not_to have_css('.js--loading-indicator')
-    payment_txt = payment.text
-    puts "payment_txt:#{payment_txt}"
-    #page.choose(payment_txt)
-    # do not use click_label_of_xpath_from_element because it takes too long time
-    #if ENV['TAG'] == 'checkout_with'
-    #puts "If I use the tag '#{ENV['TAG']}' I will check if each payment can be choosen"
-    #sleep 5
-    #click_label_of_xpath_from_element(payment)
-    # puts("payment: #{payment}")
-    # puts("payment path: #{payment.path}")
-    # org_xpath = payment.path
-    # sub_xpath = org_xpath.match(/div\[2\].*/)
-    # puts("sub_xpath: #{sub_xpath}")
-    # xpath = "//*/#{sub_xpath}"
-    # puts("xpath: #{xpath}")
-    # element = page.find(:xpath, xpath)
-    # element.click
-    # puts "allright"
-    #end
-    VARS_ENV.paymentmethods << payment_txt #if (VARS_ENV.paymentmethods.empty?)
-    puts "payment:#{payment}"
-    puts "payment:#{payment.class}"
-    puts "payment.path:#{payment.path}"
-    xpath = "#{payment.path}/label"
-    VARS_ENV.payment_xpath = xpath
-    step('I click the payment')
+    payment.find(account_accountinfo_payment_radio_path)
+    element = payment.find(account_accountinfo_payment_label_path)
+    element_txt = element.text
+    puts "> Payment: #{element_txt}"
+    VARS_ENV.paymentmethods << element_txt
   end
-end
-
-When(/^I click the payment/) do
-  xpath = VARS_ENV.payment_xpath
-  element = page.find(:xpath, xpath)
-  element.click
+  expect(VARS_ENV.paymentmethods.count).to eq(payment_options.count),
+        "Expect to find the equal amount of paymentmethods as defined (in user.rb) but it isn't so"
+  puts "> all paymentmethods are visible"
 end
 
 When(/^I set payment$/) do
