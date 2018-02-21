@@ -3,10 +3,10 @@
 Feature: website_basics
 
     As a customer
-    i will be able 
-    to see all elements of the website and 
+    i will be able
+    to see all elements of the website and
     to use all navigation elements
-    
+
     Background:
       Given I am on the website
 
@@ -22,7 +22,7 @@ Feature: website_basics
     @website_elements
     Scenario: check for elements
         Then I should see all basic elements
-        
+
     @export_mobile
     @chefworks_mobile
     @pulsiva_mobile
@@ -33,7 +33,7 @@ Feature: website_basics
     @website_elements_mobile
     Scenario: check for elements
         Then I should see all basic mobile elements
-        
+
     @website_basics
     @export
     @pulsiva
@@ -43,7 +43,7 @@ Feature: website_basics
     @v_jobeline
     @navigation
     @menu
-    @hovermenu    
+    @hovermenu
     Scenario: use hovermenu for navigating
 		When I navigate to an category by the hovermenu
 		Then I should be on a subcategorysite
@@ -56,11 +56,11 @@ Feature: website_basics
     @v_jobeline
     @navigation
     @menu
-    @standardmenu    
+    @standardmenu
     Scenario: use menu for navigating
 		When I navigate to a subcategory by the menu
 		Then I should be on a subcategorysite
-    
+
     @export_mobile
     @pulsiva_mobile
     @vega_mobile
@@ -69,11 +69,11 @@ Feature: website_basics
     @v_jobeline_mobile
     @navigation_mobile
     @menu_mobile
-    @standardmenu_mobile    
+    @standardmenu_mobile
     Scenario: use menu for navigating
 		When I navigate to a subcategory by touching the burgermenu
 		Then I should be on a subcategorysite
-    
+
     @website_basics
     @export
     @chefworks
@@ -98,9 +98,9 @@ Feature: website_basics
     @links_mobile
     Scenario: navigate to account
         When I touch the link to my account
-        Then I should be on the accountpage for mobile 
-        
-    @website_basics        
+        Then I should be on the accountpage for mobile
+
+    @website_basics
     @export
     @chefworks
     @pulsiva
@@ -113,7 +113,7 @@ Feature: website_basics
     Scenario: navigate to note
         When I click the link to my notes
         Then I should be on the notepage
-        
+
     @chefworks_mobile
     @pulsiva_mobile
     @vega_mobile
@@ -142,7 +142,7 @@ Feature: website_basics
         Then I should see the sidebar of the product cart
         When I click the link to edit the cart
         Then I should be on the page of the productcart
-        
+
     @chefworks_mobile
     @pulsiva_mobile
     @vega_mobile
@@ -150,7 +150,7 @@ Feature: website_basics
     @hw_jobeline_mobile
     @v_jobeline_mobile
     @navigation_mobile
-    @links_mobile    
+    @links_mobile
     Scenario: activate the cart
         When I click the link of the cart
         Then I should see the sidebar of the product cart
@@ -158,13 +158,6 @@ Feature: website_basics
         Then I should be on the page of the productcart
 
     @website_basics
-    @export
-    @chefworks
-    @pulsiva
-    @vega
-    @hotelwaesche
-    @hw_jobeline
-    @v_jobeline
     @navigation
     @links
     @links_help
@@ -205,4 +198,3 @@ Feature: website_basics
         When I change the language by clicking the button
         Then the url should has changed
         And the menu is in specific language
-

@@ -46,6 +46,12 @@ Feature: checkout
 	  When I send my order
 	  Then Shopware should have my order
 
+	@pulsiva
+	@vega
+	@v_jobeline
+	@hotelwaesche
+	@hw_jobeline
+	@export
   @checkout_with
   @checkout
 	Scenario: checkout with existing account
@@ -82,6 +88,12 @@ Feature: checkout
 	  Then Shopware should have my order
 	  Given no user account with my email exists
 
+	@pulsiva
+	@vega
+	@v_jobeline
+	@hotelwaesche
+	@hw_jobeline
+	@export
   @checkout_without
   @checkout
 	Scenario: checkout without existing account and without creating an account
