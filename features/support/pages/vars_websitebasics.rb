@@ -1,19 +1,20 @@
 #website_basics
 class Csspathes_Websitebasics
-  attr_accessor :homepage_content_logo_path, :homepage_product_cart_hint_content_path,
+  attr_accessor :homepage_content_logo_path, :homepage_product_cart_hint_content_path, :account_accountpage_welcome_path,
                 #homepage
-                :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path, 
+                :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path,
                 :homepage_content_navi_burger_category_title_path, :homepage_content_body_main_path, :homepage_content_footer_path,
                 #navigation
-                :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path, 
+                :navigation_menu_path, :navigation_hovermenu_path, :navigation_menu_title_path, :navigation_path, :navigation_hovermenu_close_path, :navigation_sidebar_sub_path,
                 :navigation_sidebar_path, :navigation_hover_breadcrumb_path,
                 #links
-                :links_account_path, :links_account_icon_path, :links_registration_path, :links_accordion_path, :links_notes_path, :links_note_path, :links_cart_symbol_path, 
+                :links_account_path, :links_account_icon_path, :links_registration_path, :links_accordion_path, :links_notes_path, :links_note_path, :links_cart_symbol_path,
                 :links_cart_sidebar_path, :links_cart_button_path, :links_service_path, :links_context_path, :links_about_path, :links_imprint_path, :links_info_headline
-                
+
   def initialize
     @homepage_content_logo_path = '.logo-main'
     @homepage_product_cart_hint_content_path = "div > div > div > div > .alert--content"
+    @account_accountpage_welcome_path = '.account--welcome.panel'
     #website basics
     @homepage_content_header_path = 'div.page-wrap > header'
     @homepage_content_searchfield_path = '.navigation--entry.entry--search'
@@ -50,7 +51,7 @@ class Csspathes_Websitebasics
     @links_info_headline ='.emotion--row > div > h1'
     update_pathes
   end
-  
+
   def update_pathes
     #give vars of enviroment to local vars
     @env_country ||= VARS_ENV.r_country
@@ -86,5 +87,5 @@ class Csspathes_Websitebasics
     @links_context_path = '.navigation--entry.entry--service.has--drop-down' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/)
     @links_context_path = '.navigation--entry.entry--service.has--drop-down' if "#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/)
   end
-  
+
 end
