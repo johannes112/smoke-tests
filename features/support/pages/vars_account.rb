@@ -1,6 +1,6 @@
 #account
 class Csspathes_Account
-  attr_accessor :homepage_content_logo_path, :navigation_hover_breadcrumb_path,
+  attr_accessor :homepage_content_logo_path, :navigation_hover_breadcrumb_path, :checkout_registerform_firstname_path,
                 :account_registerform_path, :account_registerform_accordion_new_path, :account_registerform_accordion_login_path, :account_registerform_login_path,
                 :account_registerform_prefix_path, :account_registerform_firstname_path, :account_registerform_lastname_path, :account_registerform_department_path, :account_registerform_taxid_path,
                 :account_registerform_taxvat_path, :account_registerform_email_path, :account_registerform_password_path, :account_registerform_phone_path, :account_registerform_company_path,
@@ -19,6 +19,7 @@ class Csspathes_Account
   def initialize
     @homepage_content_logo_path = '.logo-main'
     @navigation_hover_breadcrumb_path = '.content--breadcrumb'
+    @checkout_registerform_firstname_path = '#firstname'
     @account_registerform_path = '#registration'
     @account_registerform_accordion_new_path = 'section > div > div > div.accordion-container > div.css-accordion-head.btn > label'
     @account_registerform_accordion_login_path = '.content > div > .css-accordion-head.btn > label'
