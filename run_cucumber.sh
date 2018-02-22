@@ -84,19 +84,20 @@ else
 fi
 
 #only run failed scenarios on mobile again or if there is an additional arg
-if [[ "$BROWSER" == "iPhone" ]] || [[ $# == 13 ]]; then
+if [[ "$BROWSER" == "iPhone" ]]; then # || [[ $# == 13 ]]; then
     echo ""
     echo 'Mobile and RERUN'
-    cucumber $config_base_generate_rerun_with_tag
-    if [[ -s rerun.txt ]]; then
-      echo ""
-      echo ""
-      echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
-      cucumber $config_base_rerun_errors
-    fi
-else
-    cucumber $config_base
+#     cucumber $config_base_generate_rerun_with_tag
+#     if [[ -s rerun.txt ]]; then
+#       echo ""
+#       echo ""
+#       echo '++++++++++++RERUN OF FAILING FEATURES++++++++++++'
+#       cucumber $config_base_rerun_errors
+#     fi
+# else
 fi
+    cucumber $config_base
+
 
 
 #bash run_cucumber.sh saucelabs <browser> <sauce_username> <sauce_access_key> <system> <shop> <country> @search
