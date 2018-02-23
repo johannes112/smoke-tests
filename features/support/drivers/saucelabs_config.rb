@@ -8,7 +8,7 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps = {
         :platform => "Windows 7",
         :browserName => "Firefox",
-        :version => "46", 
+        :version => "46",
         :screenResolution => "1920x1200"
         }
     elsif ENV['BROWSER'] == 'ie'
@@ -65,7 +65,7 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 5:00min (Default: 300)
       @caps[:idleTimeout] = '90' #max Duration between any command (Default: 90)
-    end    
+    end
     puts "Enviroment:#{@caps}"
     puts "browser:#{@caps[:browserName]}"
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
@@ -73,7 +73,7 @@ if ENV['DRIVER'] == 'saucelabs'
       $driver = Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    if (ENV['SYSTEM'] == 'int') 
+    if (ENV['SYSTEM'] == 'int') || (ENV['BROWSER'] == 'iPhone') || (ENV['BROWSER'] == 'iPad')
       puts "Timeout of capybara is set to 91"
       Capybara.default_max_wait_time = 91
     else

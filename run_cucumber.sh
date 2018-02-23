@@ -86,7 +86,7 @@ fi
 #only run failed scenarios on mobile again or if there is an additional arg
 if [[ "$BROWSER" == "iPhone" ]]; then # || [[ $# == 13 ]]; then
     echo ""
-    echo 'Mobile and RERUN'
+    echo "Mobile"
 fi
     cucumber $config_base
 
