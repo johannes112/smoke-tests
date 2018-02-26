@@ -77,6 +77,7 @@ Feature: checkout
 	@checkout_mobile
   @checkout_with_mobile
 	Scenario: checkout with existing account on mobile
+	  Given no user account with my email exists
 	  And I already created an user account
 	  Given I am logged in
 	  When I add an article to my cart by ajax
@@ -84,6 +85,7 @@ Feature: checkout
 	  And I am on the checkout page
 		When I send my order
 	  Then Shopware should have my order
+		Given no user account with my email exists
 
 	@pulsiva
 	@vega
