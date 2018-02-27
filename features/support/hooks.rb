@@ -6,13 +6,13 @@ Before('@ignore') do | s |
   puts "status: pending"
   write_to_existing_file("skipped_scenarios", output_string)
   s.skip_invoke!
-  
+
 end
 
 Before do
   @start_time = Time.now
   $start ||= false
-  if !$start 
+  if !$start
     #puts "Time: #{@start_time.hour.to_s}:#{@start_time.min.to_s}:#{@start_time.sec.to_s}"
     # if browser is for a desktop then resize dimension otherwise some windows could distrub the flow
     if ENV['BROWSER'] == 'iPad' || ENV['BROWSER'] == 'iPhone'
@@ -20,20 +20,20 @@ Before do
     else
       page.driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1920, 1200)#1280x1024
     end
-    $start = true 
+    $start = true
   end
 end
 
 at_exit() do
   puts "\033[42mReset whole session and quit driver\033[0m\n"
   Capybara.reset_sessions!
-  $driver.quit
+  #$driver.quit
   #Capybara.current_session.driver.quit
   #Capybara.use_default_driver
   #Environment.debug?
 end
 
-#After do |s| 
+#After do |s|
   #puts_time_elapsed
   # Tell Cucumber to quit after this scenario is done  if it failed.
   #Cucumber.wants_to_quit = true if s.failed?
