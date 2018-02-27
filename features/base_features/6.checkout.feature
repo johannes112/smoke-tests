@@ -19,7 +19,10 @@ Feature: checkout
 	  And the product cart contains an article
 	  When I go to the checkout
 	  And I register a new account with my data
-	  And I set payment and shipping
+		When I set payment
+		And I set shipping
+		When I am looking for all different paymentmethods
+		When I click the button to continue on the checkoutpage
 	  When I send my order
 	  Then Shopware should have my order
 
@@ -63,7 +66,7 @@ Feature: checkout
 		When I set payment
 		And I set shipping
 		When I am looking for all different paymentmethods
-		When I click the button to coninue on the checkoutpage
+		When I click the button to continue on the checkoutpage
 	  When I send my order
 	  Then Shopware should have my order
 
@@ -82,10 +85,9 @@ Feature: checkout
 	  Given I am logged in
 	  When I add an article to my cart by ajax
 	  Then the product cart contains an article
-	  And I am on the checkout page
+		And I am on the checkout page
 		When I send my order
 	  Then Shopware should have my order
-		Given no user account with my email exists
 
 	@pulsiva
 	@vega
