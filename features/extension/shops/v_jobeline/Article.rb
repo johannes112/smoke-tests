@@ -1,7 +1,7 @@
 #v_jobeline
 class Article
   attr_accessor :sub_category, :category, :category_language_changed, :productnumber, :sku, :amount, :name, :url_add_comand
-  
+
   def initialize
     @sub_category = case ENV['COUNTRY']
       when (/de/) then 'Kochhosen'
@@ -73,7 +73,7 @@ class Article
       when (/en/) then 2
     end
     #no umlauts
-    @name = case ENV['COUNTRY'] 
+    @name = case ENV['COUNTRY']
       when (/de/) then 'HERRENKOcHHOSE NICK'
       when (/at/) then 'HERRENKOcHHOSE NICK'
       when (/ch/) then 'HERRENKOcHHOSE NICK'
@@ -84,7 +84,7 @@ class Article
       when (/nl/) then 'HERENBROEK NICK'
       when (/be/) then 'PANTALON HOMME NICK'
       when (/es/) then 'PANTALóN DE COCINA NICK'
-      when (/en/) then 'Men\'s cook trousers Nick'
+      when (/en/) then 'Nick'
     end
     @url_add_comand = case ENV['COUNTRY']
       when (/de/) then 'EMGroupDirectOrder'

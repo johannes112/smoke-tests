@@ -6,5 +6,7 @@ features/support/drivers/poltergeist_config.rb
 webdriver*
 demo_mechanize.rb
 failed_scenarios.txt
+/output/html_reports.html
 /output/shopware_demo.rb
+/output/output.json
 skipped_scenarios.txt
