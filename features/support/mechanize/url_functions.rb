@@ -1,22 +1,25 @@
 require 'mechanize'
 class UrlFunctions
-  
+
+  attr_accessor :number_of_server
+
   def initialize()
     # convert base_url into an object of mechanize and save the response into an instance variable
     @mechanize = Mechanize.new
     @full_stack_of_server = false
+    @number_of_server
   end
-  
+
   def set_url(base_url)
     @page = @mechanize.get(base_url)
     @mechanize_base_url = base_url
   end
-  
+
   def set_url_and_get_page(base_url)
     newpage = @mechanize.get(base_url)
     return newpage
   end
-  
+
   def check_header(page_link)
     header_value_x_made_on = "xyx"
     # look in header for value of key 'x-made-on' it says which webserver returns the currrent content
@@ -33,13 +36,13 @@ class UrlFunctions
     end
     return header_value_x_made_on
   end
-  
+
   def push_to_server_arr(value)
     #array to store servernames in it
     @stack_of_server ||= Array.new
     stack_of_server = @stack_of_server
     #end if all servers are found
-    if (stack_of_server.size==3)
+    if (stack_of_server.size==number_of_server.to_i)
       @full_stack_of_server = true
     else
       #to prevent duplicate values
@@ -63,7 +66,7 @@ class UrlFunctions
     #url_links = @page.at_css('.navigation--list-wrapper')
     #puts "url_links.class:#{url_links.class}"
   end
-  
+
   def check_if_element_is_part_of_navi(page)
     #puts page
     #puts page.inspect
@@ -92,7 +95,7 @@ class UrlFunctions
     #end
     #puts "NOKO:#{noko_page.at('a')['.navigation--list-wrapper']}"
   end
-  
+
   def check_state_of_server(url_links)
     #looking for all servers and check their status
     server_status ||= "server_status_default"
@@ -114,14 +117,14 @@ class UrlFunctions
           if (visited_server[counter].include?(value_false))
             #to prevent duplicate content (server) in array
             unless unique_visited_server.include?(visited_server[counter])
-              unique_visited_server = unique_visited_server.push(visited_server[counter]) 
+              unique_visited_server = unique_visited_server.push(visited_server[counter])
             end
             #failed_servers = "Error on #{visited_server[counter]}\n"
             failed_servers = "Error on #{unique_visited_server}\n"
             server_status << failed_servers
           else
             unless unique_visited_server.include?(visited_server[counter])
-              unique_visited_server = unique_visited_server << (visited_server[counter]) 
+              unique_visited_server = unique_visited_server << (visited_server[counter])
             end
             server_status = "#{unique_visited_server.size}"# webservers are working
           end
@@ -137,7 +140,7 @@ class UrlFunctions
     # end
     return server_status
   end
-  
+
   #links
   def get_all_links()
     # looking for all elements 'a' with https part in url
@@ -158,7 +161,7 @@ class UrlFunctions
     begin
       linked_page = url_link.click
     rescue Exception => e
-      puts "\033[37m#{e.inspect}\033[0m\n"    
+      puts "\033[37m#{e.inspect}\033[0m\n"
       linked_page = @page
     end
     #initialize vars for return
@@ -170,13 +173,13 @@ class UrlFunctions
     # check if page contain something
     if linked_page.body.include?(check_for_key)
       server_status_delivery = get_status(linked_page)
-    else 
+    else
       raise ("page of #{linked_page.uri.to_s} do not include #{check_for_key}")
     end
     server_status = "#{determined_server}:#{server_status_delivery}"
     return server_status
   end
-  
+
   def get_status(url)
     server_delivery_ok = true
     code1 = 100..102
@@ -207,9 +210,9 @@ class UrlFunctions
       server_delivery_ok = false
     else
       #puts "#{status_code} - unbekannter Fehler"
-      server_delivery_ok = false  
+      server_delivery_ok = false
     end
     return server_delivery_ok
   end
-  
+
 end
