@@ -835,6 +835,7 @@ end
 
 Then(/^I should see all possibilities of payoptions$/) do
   payment_methods = account[:data].payment_methods
+  #insert if case
   if compare_values_of_arrays(payment_methods, VARS_ENV.paymentmethods)
     puts "all paymentmethods are shown"
   else
