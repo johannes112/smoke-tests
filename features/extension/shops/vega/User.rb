@@ -364,6 +364,7 @@ class User
       when 'nl' then ['Rechnung', 'Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal', 'iDeal']
       when 'es' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
       when 'be' then ['Nachnahme', 'Kreditkarte', 'Vorkasse', 'Paypal']
+      when 'en' then ['Vorkasse']
     end
   end
 
