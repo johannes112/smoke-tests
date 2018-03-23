@@ -1,10 +1,10 @@
 # shopware_tests
-##Automated Feature Testing 
-This is functional testing for webshops of pulsiva, export, chefworks.
+##Automated Feature Testing
+This is functional testing for webshops of vega, jobeline, hotelwaesche, pulsiva, chefworks.
 
 ###Following **test-cases/features** exists:
-- quickies
-- website basics 
+- content
+- website basics
 - search
 - direct_order
 - product_page
@@ -14,11 +14,11 @@ This is functional testing for webshops of pulsiva, export, chefworks.
 
 #### website_basics
   - website-elements
-    : check for basic elements via css-pathes 
+    : check for basic elements via css-pathes
   - navigation
     - hovermenu
       : check possibility of navigating with hovering
-    - standartmenu
+    - standardmenu
       : check possibility of navigating with menu
     - links
       - check internal links
@@ -26,33 +26,47 @@ This is functional testing for webshops of pulsiva, export, chefworks.
         - link to cart
         - link to note
         - link to help
-- TODO:      on pulsiva be-fr & be-nl & ch-fr & ch-de - check button to change language
-- TODO:      - check external links
+      - check links of digital publishing for the correct country
+      - check possibility to change the language
+     - mobile:
+         : use burgermenu
 
 #### search
   - search by sku
     : look for availibility of given sku
-TODO:  - search by name
+  - search by productnumber
+    : look for availibility of given productnumber in results
+  - search by name
+    : look for availibility of given product in results
 
 #### direct_ordering
-  - add an artcle 
+  - add an article as a direct order
+    : put the article into the cart
 
 #### product_page
   - notice an article
+    : look for hint
   - compare an article
+    : look for compare-icon
   - add an article
+    : look for opened productcart on the right
   - display data of an article
+    : look for visibility of informations about the article
   - rate an article
     - rate by clicking tab
+      : look for the form of rating
     - rate by clicking button
-  - check visibility of related articles
+      : look for the form of rating
+  - check visibility of last seen articles
 
 #### product_cart
   - continue shopping
+    : exit product cart and continue with shopping
   - add article additionally
-  - enter voucher 
+  - enter voucher
   - remove article
   - show data of article
+    : find all informationboxes
   - navigate to checkout
 
 #### account
@@ -72,8 +86,11 @@ TODO:  - search by name
       : change data of delivery
   - newsletter
     : change settings for newsletter
-  -links
+  - links
     : test links on the accountsite
+  - subshop (only vega)
+    : ability to login into jobeline(tabbed) with data of vega --> success  
+    : ability to login in a shop of vega it two different countries --> failure  
 
 #### checkout
   - with
@@ -82,6 +99,10 @@ TODO:  - search by name
     : checkout as an unregistered user
   - registration
     : register and checkout an user
+
+#### content
+  - check servers
+    : check delivery of all servers
 
 ##### Following tags exist:
 To start different tests on each mandant navigate via tags:
@@ -103,7 +124,7 @@ To start different tests on each mandant navigate via tags:
 - @search
 - @direct_order
 - @product_page
-- @product_page_compare 
+- @product_page_compare
 - @product_page_add
 - @product_page_data
 - @product_page_rate   
@@ -127,6 +148,7 @@ To start different tests on each mandant navigate via tags:
 - @checkout_with
 - @checkout_registration
 - @checkout_without
+- @content
 
 ##### Following options for browsers exist:
 - firefox
@@ -141,4 +163,3 @@ Syntax (bash-shellaufruf): bash run_cucumber.sh <testenviroment-system> <browser
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> live vega de @vega
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
-bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int export de @export
