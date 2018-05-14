@@ -278,7 +278,7 @@ When(/^I login with valid informations$/) do
     puts "> and I am already be in my account"
   end
   #check for success
-  find_secure(navigation_hover_breadcrumb_path)
+  #find_secure(navigation_hover_breadcrumb_path)
 end
 
 Given(/^I am logged in$/) do
