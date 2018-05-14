@@ -431,15 +431,11 @@ end
 When(/^I set shipping$/) do
   checkout_delivery_options_path = checkout[:pathes].checkout_delivery_options_path
   checkout_payment_delivery_standard_radio_path = checkout[:pathes].checkout_payment_delivery_standard_radio_path
-  checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path
+  #checkout_payment_form_path = checkout[:pathes].checkout_payment_form_path
 
   expect(page).not_to have_css('.js--loading-indicator')
-  find_secure(checkout_payment_form_path)
   if (page.has_css?(checkout_delivery_options_path))
-    #puts "if"
-    #visit_secure(current_url)
     find_secure(checkout_delivery_options_path)
-    #find_secure(checkout_payment_delivery_standard_radio_path).click
     element = find_secure(checkout_payment_delivery_standard_radio_path, page.html)
     element.click
     puts "-> choose delivery"
