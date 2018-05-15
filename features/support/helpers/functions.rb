@@ -409,7 +409,7 @@ module MyFunctions
       puts "visit #{url} again"
       visit(url)
       Capybara.default_max_wait_time = 20
-      visit_secure_counter <= 2 ? retry : raise
+      visit_secure_counter <= 3 ? retry : raise
     rescue Exception => e
       puts "\033[35m#{e.inspect}\033[0m\n"    
     end
