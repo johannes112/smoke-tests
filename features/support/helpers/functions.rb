@@ -274,10 +274,10 @@ module MyFunctions
       block_css('.dpe-shopwide') 
     end
     if args.size == 1
-      #puts "find_secure_with_one_arg:#{args}"
+      puts "find_secure_with_one_arg:#{args}"
       element = find_secure_with_one_arg(*args)
     elsif args.size == 2
-      #puts "find_secure_with_two_args:#{args[0]}"
+      puts "find_secure_with_two_args:#{args[0]}"
       element = find_secure_with_two_args(*args)
     else
       puts "Error there are too much or less args"
