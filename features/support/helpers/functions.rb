@@ -89,6 +89,37 @@ module MyFunctions
     end
   end
   
+    #compare the (number of) values of two different arrays
+  def compare_values_of_arrays(array_1, array_2)
+    equal = false
+    if (array_1)
+      array_1_sorted = array_1.sort
+      array_2_sorted = array_2.sort
+      if array_1.count == array_2.count
+        puts "Arrays have both #{array_1.count} elements"
+        array_1_sorted.map!(&:upcase)
+        array_2_sorted.map!(&:upcase)
+        equal = true
+      else
+        puts "The two arrays have different number of elements"
+        # if array_1_sorted == array_2_sorted
+        #   puts "Arrays have equal content"
+        # else
+        #   difference = array_1_sorted - array_2_sorted
+        #   puts "difference: #{difference}"
+        # end
+        puts "array_1: #{array_1_sorted}"
+        puts "array_2: #{array_2_sorted}"
+        puts "These are the same: #{array_1_sorted&array_2_sorted}"
+      end
+    else
+      puts "array_1:#{array_1}"
+      puts "array_2:#{array_2}"
+      puts "array to compare is nil"
+    end
+    return equal
+  end
+
   def catch_error_in_block(&block)
     @counter_error = 0
     begin
