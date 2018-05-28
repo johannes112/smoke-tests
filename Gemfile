@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'headless', '2.3.0'
+gem 'geckodriver-helper'
 gem 'cucumber', '3.1.0'#, '2.0.0'
 gem "capybara", '2.18.0'#, '2.7.1'
 gem "rspec", '3.7.0'#, '3.5.0'

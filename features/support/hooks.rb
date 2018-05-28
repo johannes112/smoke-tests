@@ -67,19 +67,20 @@ end
 # end
 
 #with this around there will be a video for each scenario but this takes too much time
-Around do |scenario, block|
-  block.call
-  #get id of job
-  sessionid = ::Capybara.current_session.driver.browser.session_id
-  ::Capybara.current_session.driver.quit
-  #get last tag-name
-  scenario_tag = scenario.source_tag_names.last
-  env_vars = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
-  jobname = "#{env_vars} - #{scenario_tag}"
-  # jobname = "#{scenario.feature.name} - #{scenario.name} - #{scenario_tag}"
-  
-  job = SauceWhisk::Jobs.fetch sessionid
-  job.name = jobname
-  job.passed = scenario.passed? ? true : false
-  job.save
+if ENV['DRIVER'] == 'sauelabs'
+  Around do |scenario, block|
+    block.call
+    #get id of job
+    sessionid = ::Capybara.current_session.driver.browser.session_id
+    ::Capybara.current_session.driver.quit
+    #get last tag-name
+    scenario_tag = scenario.source_tag_names.last
+    env_vars = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
+    jobname = "#{env_vars} - #{scenario_tag}"
+    # jobname = "#{scenario.feature.name} - #{scenario.name} - #{scenario_tag}"
+    job = SauceWhisk::Jobs.fetch sessionid
+    job.name = jobname
+    job.passed = scenario.passed? ? true : false
+    job.save
+  end
 end
