@@ -63,7 +63,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44972
+              "duration": 23324
             }
           },
           {
@@ -72,7 +72,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45225
+              "duration": 40580
             }
           },
           {
@@ -81,7 +81,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2999927818
+              "duration": 7887669037
             }
           }
         ],
@@ -99,7 +99,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4104039783
+              "duration": 7474256094
             }
           },
           {
@@ -117,7 +117,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3805464143
+              "duration": 16383652688
             }
           },
           {
@@ -133,7 +133,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 208982471
+              "duration": 2405918628
             }
           }
         ],
@@ -144,7 +144,277 @@
             },
             "result": {
               "status": "passed",
-              "duration": 76038436
+              "duration": 2471668399
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;search-with-productnumber",
+        "keyword": "Scenario",
+        "name": "search with productnumber",
+        "description": "",
+        "line": 30,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 22
+          },
+          {
+            "name": "@vega",
+            "line": 23
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 24
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 25
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 26
+          },
+          {
+            "name": "@export",
+            "line": 27
+          },
+          {
+            "name": "@search",
+            "line": 28
+          },
+          {
+            "name": "@search_number",
+            "line": 29
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25239
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37137
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12715
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 31,
+            "output": [
+              "try visit_secure(https://www.hotelwaesche.de/)",
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2932252780
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am searching for a product by entering the productnumber in the searchfield",
+            "line": 32,
+            "output": [
+              "- set productnumber = \"100898\"",
+              "find_secure_with_one_arg:[\".entry--search > form > input\"]",
+              "find_secure_with_one_arg:[\".entry--search > form > button\"]",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12366227825
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see my product on the results of my search",
+            "line": 33,
+            "output": [
+              "find_secure_with_one_arg:[\".content-main--inner > .content--wrapper\"]",
+              "find_secure_with_one_arg:[\".content-main--inner > .content--wrapper\"]",
+              "found 'Badematte Boston'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14165236526
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2699636071
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;search-with-name",
+        "keyword": "Scenario",
+        "name": "search with name",
+        "description": "",
+        "line": 43,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@pulsiva",
+            "line": 35
+          },
+          {
+            "name": "@vega",
+            "line": 36
+          },
+          {
+            "name": "@hotelwaesche",
+            "line": 37
+          },
+          {
+            "name": "@hw_jobeline",
+            "line": 38
+          },
+          {
+            "name": "@v_jobeline",
+            "line": 39
+          },
+          {
+            "name": "@export",
+            "line": 40
+          },
+          {
+            "name": "@search",
+            "line": 41
+          },
+          {
+            "name": "@search_name",
+            "line": 42
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24603
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42732
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15380
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the website",
+            "line": 44,
+            "output": [
+              "try visit_secure(https://www.hotelwaesche.de/)",
+              "go to https://www.hotelwaesche.de/"
+            ],
+            "match": {
+              "location": "features/step_definitions/global.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2468525351
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I am searching for products by entering the productname in the searchfield",
+            "line": 45,
+            "output": [
+              "- set name = \"Badematte Boston\"",
+              "find_secure_with_one_arg:[\".entry--search > form > input\"]",
+              "find_secure_with_one_arg:[\".entry--search > form > button\"]",
+              "clicked button of search"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13542263202
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see my product on the results of my search",
+            "line": 46,
+            "output": [
+              "find_secure_with_one_arg:[\".content-main--inner > .content--wrapper\"]",
+              "find_secure_with_one_arg:[\".content-main--inner > .content--wrapper\"]",
+              "found 'Badematte Boston'"
+            ],
+            "match": {
+              "location": "features/step_definitions/search.rb:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9426189274
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-2.18.0/lib/capybara/cucumber.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2908495770
             }
           }
         ]

@@ -67,7 +67,7 @@ end
 # end
 
 #with this around there will be a video for each scenario but this takes too much time
-if ENV['DRIVER'] == 'sauelabs'
+if ENV['DRIVER'] == 'saucelabs'
   Around do |scenario, block|
     block.call
     #get id of job
