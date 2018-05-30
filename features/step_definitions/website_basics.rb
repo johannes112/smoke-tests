@@ -1,4 +1,23 @@
 #website_elements
+When("I am looking for the current url") do
+  website_url = settings.urlHttps
+  VARS_ENV.url_base = current_url
+end
+
+Then("the defined url and the current_url should be equal") do
+  website_url = settings.urlHttps
+  url = VARS_ENV.url_base
+  compare_urls(website_url, url)
+end
+
+Then("css elements should be modified by stylesheet") do
+  #margin = page.find(".navigation--list-wrapper").native.css_value('margin')
+  #puts "#{margin}"
+  color = page.find("body").native.css_value('color')
+  puts "#{color}"
+  expect(color). to eq("rgba(29, 29, 27, 1)")
+end
+
 Then(/^I should see all basic elements$/) do
   #define path of header
   homepage_content_header_path = websitebasics[:pathes].homepage_content_header_path

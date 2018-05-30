@@ -10,6 +10,36 @@ Feature: website_basics
     Background:
       Given I am on the website
 
+    @prestep    
+    @website_basics
+    @quickies
+    @export
+    @chefworks
+    @pulsiva
+    @vega
+    @hotelwaesche
+    @hw_jobeline
+    @v_jobeline
+    @website_url
+    Scenario: check for correct url
+        When I am looking for the current url
+        Then the defined url and the current_url should be equal
+    
+    @prestep
+    @website_basics
+    @quickies
+    @export
+    @chefworks
+    @pulsiva
+    @vega
+    @hotelwaesche
+    @hw_jobeline
+    @v_jobeline
+    @website_css
+    Scenario: check for css
+        Then css elements should be modified by stylesheet
+    
+    @prestep
     @website_basics
     @quickies
     @export
