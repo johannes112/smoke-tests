@@ -500,7 +500,7 @@ module MyFunctions
   def get_alternate(header)
     alternate_url = "xxx"
     alternate_array = Array.new
-    alternate_link = header.all('link', :visible => false).map { |a| 
+    alternate_link = heater.all('link', :visible => false).map { |a| 
     if a['rel']=="alternate"
       alternate_url = "#{a['href']}"
     end }
@@ -514,4 +514,11 @@ module MyFunctions
     return url.host
   end
 
+  def compare_urls(expect_url, url)
+    if (expect_url == (url))
+      puts("#{expect_url}")
+    else
+      exit("WRONG URL:##{url}")
+    end
+  end
 end
