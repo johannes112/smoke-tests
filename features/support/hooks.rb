@@ -37,6 +37,10 @@ at_exit() do
   #Environment.debug?
 end
 
+After ('@prestep') do |s|
+  Cucumber.wants_to_quit = true if s.failed?
+end
+
 # After do |s|
   #set job status : Success|Failed
   
