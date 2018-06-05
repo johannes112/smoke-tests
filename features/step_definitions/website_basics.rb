@@ -11,11 +11,17 @@ Then("the defined url and the current_url should be equal") do
 end
 
 Then("css elements should be modified by stylesheet") do
-  #margin = page.find(".navigation--list-wrapper").native.css_value('margin')
-  #puts "#{margin}"
-  color = page.find("body").native.css_value('color')
-  puts "#{color}"
-  expect(color). to eq("rgba(29, 29, 27, 1)")
+  node_element = page.find(".page-wrap") #=node element
+  webdriver_element = node_element.native#=selenium webdriver element
+  #get style of webdriver element
+  margin_right = webdriver_element.style('margin-right')
+  puts ("> margin_right:#{margin_right}")
+  expect(margin_right).to eq(('0px')), 
+     ".page-wrap: Expect to get margin of 0px, but i get #{margin_right}"
+  #puts "Style: #{webdriver_element.style('margin-right')}"
+  #puts "Style: #{node_element.native.style('margin-left')}"
+  #puts "Style: #{node_element.native.style('margin-top')}"
+  #puts "Style: #{node_element.native.style('margin-bottom')}"
 end
 
 Then(/^I should see all basic elements$/) do
