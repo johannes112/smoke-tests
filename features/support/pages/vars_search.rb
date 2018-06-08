@@ -8,7 +8,7 @@ class Csspathes_Search
     @search_searchfield_path = '.entry--search > form > input'
     @search_searchbutton_path = '.entry--search > form > button'
     @search_searchbutton_icon_path = '.entry--search > form > button > i'
-    @search_product_name_path = '.product--header'
+    @search_product_name_path = '.product--header' #pdp: .MainProductName
     @search_results_path = '.search--results'
     update_pathes
   end
