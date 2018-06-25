@@ -149,7 +149,7 @@ Feature: account
 	Scenario: modify adress of delivery
 	  Given I am logged in
 		When I modify my address for my delivery
-		Then I should see an alert for creating a new address
+		Then I should see a new window to manage my addresses
 
   @account_mobile
   @export_mobile

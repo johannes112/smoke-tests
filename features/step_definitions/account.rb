@@ -392,6 +392,13 @@ Then(/^I should see an alert for creating a new address$/) do
   end
 end
 
+Then(/^I should see a new window to manage my addresses$/) do
+  account_userinfo_modal_adressmanager_path = account[:pathes].account_userinfo_modal_adressmanager_path
+
+  find_secure(account_userinfo_modal_adressmanager_path)
+  puts "found modal window of adressmanager"
+end
+
 When(/^I delete the account with the modified mailadress$/) do
   eMail = account[:data].eMail_sec
 
@@ -584,8 +591,8 @@ When(/^I modify my address for my delivery/) do
 
   element.click
   puts "--> clicked button for change the adress for delivery"
-  puts "I change prefix of my address for delivery"
-  step("I change prefix of my address for delivery")
+  #puts "I change prefix of my address for delivery"
+  #step("I change prefix of my address for delivery")
 end
 
 When(/^I change prefix of my address for delivery$/) do
