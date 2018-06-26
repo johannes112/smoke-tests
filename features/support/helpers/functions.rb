@@ -2,7 +2,7 @@
 module MyFunctions
   # close_popup(css_path, timeInSek) waits a defined time for an given path of a closebutton and click it
   def close_popup(popup_close_button_path, expected_time)
-    Capybara.default_wait_time = expected_time
+    Capybara.default_max_wait_time = expected_time
     begin
       page.find(popup_close_button_path)
       popup_window = page.driver.browser.window_handles.last
@@ -305,10 +305,10 @@ module MyFunctions
       block_css('.dpe-shopwide') 
     end
     if args.size == 1
-      puts "find_secure_with_one_arg:#{args}"
+      #puts "find_secure_with_one_arg:#{args}"
       element = find_secure_with_one_arg(*args)
     elsif args.size == 2
-      puts "find_secure_with_two_args:#{args[0]}"
+      #puts "find_secure_with_two_args:#{args[0]}"
       element = find_secure_with_two_args(*args)
     else
       puts "Error there are too much or less args"
@@ -415,7 +415,6 @@ module MyFunctions
   # visit: catch Errors 
   def visit_secure(url)
     visit_secure_counter = 0
-    puts "try visit_secure(#{url})"
     begin
       visit_secure_counter += 1
       visit(url)
@@ -442,6 +441,30 @@ module MyFunctions
       Capybara.default_max_wait_time = 20
       visit_secure_counter <= 3 ? retry : raise
     rescue Exception => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+    end
+  end 
+  
+  # click: catch Errors 
+  def click_secure(element)
+    click_secure_counter = 0
+    begin
+      click_secure_counter += 1
+      element.click
+    rescue Net::HTTP::Persistent::Error => e
+      puts "\033[35m#{e.inspect}\033[0m\n"    
+    rescue Capybara::ElementNotFound => e
+      puts "\033[35m#{e.inspect}\033[0m\n"
+      close_popup("#close-dpe-shopwide", 5)
+      #Capybara.default_max_wait_time = 20
+      # do it threetimes
+      click_secure_counter <= 2 ? retry : raise
+    rescue Selenium::WebDriver::Error::UnknownError => e
+      puts "close banner of summer-sale"
+      close_popup("#close-dpe-shopwide", 3)
+      click_secure_counter <= 2 ? retry : raise
+    rescue Exception => e
+      puts "click_secure"
       puts "\033[35m#{e.inspect}\033[0m\n"    
     end
   end

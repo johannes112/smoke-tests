@@ -467,11 +467,11 @@ When(/^I change option of payment$/) do
 end
 
 When(/^I modify my address for my bill$/) do
-#  start_url = current_url
+  url = current_url
   #css pathes
   account_accountinfo_billaddress_box_path = account[:pathes].account_accountinfo_billaddress_box_path
   account_accountinfo_billaddresschange_button_appear_path = account[:pathes].account_accountinfo_billaddresschange_button_appear_path
-
+  
   find_secure(account_accountinfo_billaddress_box_path)
   account_accountinfo_billaddresschange_box = find_secure(account_accountinfo_billaddress_box_path)
   find_secure_counter ||= 0
@@ -489,8 +489,9 @@ When(/^I modify my address for my bill$/) do
     find_secure_counter <= 2 ? retry : raise
   end
 
+  close_popup("#close-dpe-shopwide", 3)
   element.click
-
+  
   puts "I change prefix of my address for invoice"
   step("I change prefix of my address for invoice")
 end
@@ -500,14 +501,17 @@ When(/^I change prefix of my address for invoice$/) do
 
   account_invoiceadresschange_form_prefix_path = account[:pathes].account_invoiceadresschange_form_prefix_path
   account_invoiceadresschange_button_path = account[:pathes].account_invoiceadresschange_button_path
-
+  
   if (VARS_ENV.r_country == 'no') || (VARS_ENV.r_country == 'se')
     puts "in #{VARS_ENV.r_country} there is no prefix"
   else
     #set value for prefix
     find_secure(account_invoiceadresschange_form_prefix_path)
     form_set_dropdown("prefix", prefix, account_invoiceadresschange_form_prefix_path)
-    find_secure(account_invoiceadresschange_button_path).click
+    puts "has set dropdown"
+    element = find_secure(account_invoiceadresschange_button_path)#.click
+    puts "found secure"
+    click_secure(element)
     puts "--> click change-button"
   end
 end
