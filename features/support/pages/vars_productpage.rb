@@ -5,7 +5,7 @@ class Csspathes_Productpage
   def initialize
     @homepage_content_logo_path = '.logo-main'
     @product_page_buybutton_path = 'form > div > button' #pdp: .MainProductButtons > div
-    @product_page_infobox_path = '.is--active.is--open' 
+    @product_page_infobox_path = '.is--active.is--open'
     @product_cart_productinfo_path = 'div.panel--td.table--content'
     @product_page_productname_path = 'header > div > h1' #pdp: .MainProductName
     @product_page_productpicture_path = '.image-slider--container' #pdp: .image-gallery
@@ -14,25 +14,37 @@ class Csspathes_Productpage
     @product_page_productrecommodations_path = 'div.tab-menu--cross-selling' #pdp: .ProductList
     @product_page_productlast_path = 'div.last-seen-products' #pdp: .tab-menu--cross-selling
     @product_page_rememberbutton_path = '.cart--add-to-list' #pdp: .merken
-    @product_page_heart_badge_path = '.js--modal' #pdp: 
+    @product_page_heart_badge_path = '.js--modal'
     @product_page_comparebutton_path = '.action--compare' #pdp: .vergleichen
     @product_page_compareicon_path = '.compare--quantity' #pdp: .icon--compare
     @product_page_rate_ratebutton_path = '.tab-menu--product.js--tab-menu > div.tab--navigation > a:nth-child(2)'
     @product_page_rate_tab_menu = 'div.tab-menu--product.js--tab-menu > div.tab--navigation > a'
     @product_page_rate_tab_rateflag = ':nth-child(2)'
     @product_page_rate_form = '#detail--product-reviews'
-    @product_page_viewed_tab_menu = '.tab-menu--cross-selling > div > div' 
+    @product_page_viewed_tab_menu = '.tab-menu--cross-selling > div > div'
     @product_page_viewed_tab_otherCustomer = ':nth-child(2)'
     @product_page_suggest_container = '.tab-menu--cross-selling > div > div:nth-child(2)'
-    update_pathes 
+    update_pathes
   end
-  
+
   def update_pathes
     #give vars of enviroment to local vars
     @env_country ||= VARS_ENV.r_country
     @env_system ||= VARS_ENV.r_system
     @env_shop ||= VARS_ENV.r_shop
-    
+
+    #pdp
+    @product_page_buybutton_path = '.MainProductButtons > div' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/)  || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productname_path = '.MainProductName' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productpicture_path = '.image-gallery' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productconfig_path = '.ProductSelectionBox' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productinfo_path = '.ProductDescription' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productrecommodations_path = '.ProductList' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_productlast_path = '.slick-prev' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_rememberbutton_path = '.merken' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_comparebutton_path = '.vergleichen' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @product_page_compareicon_path = '.icon--compare' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+
     # define hash of countries
     @product_page_buybutton_path = 'div.product--buybox.block > div > form > div > button' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @product_page_productpicture_path = '.product--image-container.image-slider.product--image-zoom' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
@@ -44,5 +56,5 @@ class Csspathes_Productpage
     @product_page_viewed_tab_menu = '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @product_page_suggest_container = '.tab-menu--cross-selling.js--tab-menu > div.tab--navigation > a.tab--link.has--content.is--active' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
   end
-  
+
 end
