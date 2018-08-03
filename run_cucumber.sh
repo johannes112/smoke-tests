@@ -51,10 +51,14 @@ echo "Number of args:"$#
 if [[ $# -lt 11 ]]; then
   echo "Wrong number of arguments!"
 else
-  if [[ "$BROWSER" == "iPhone" ]]; then
+  if [[ "$BROWSER" == "iPhone" ]] && [[ "$TAG" != *"_mobile" ]]; then
       echo "Mobile"
       TAG="$TAG""_mobile"
-    fi
+  fi
+  if [[ "$TAG" == *"mobile" ]]; then
+      BROWSER="iPhone"
+      echo $BROWSER
+  fi
   if [[ -z "${TAG}" ]]; then
     echo "NO TAG!"
     if [[ "$SHOP" == "export" ]]; then
