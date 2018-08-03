@@ -537,11 +537,21 @@ module MyFunctions
     return url.host
   end
 
+  # create user by api -> only 3 values for salutation: mr, ms, unknown
+  def convert_salutation_conform_to_db(prefix)
+    salutation = 'mr'
+    prefix ? salutation='mr' : salutation='unknown'
+    return salutation
+  end
+  
+  
   def compare_urls(expect_url, url)
     if (expect_url == (url))
       puts("#{expect_url}")
     else
       exit("WRONG URL:##{url}")
     end
+    
+    
   end
 end
