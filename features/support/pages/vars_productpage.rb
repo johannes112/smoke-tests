@@ -34,17 +34,37 @@ class Csspathes_Productpage
     @env_shop ||= VARS_ENV.r_shop
 
     #pdp
+    #hotelwaesche + hw_jobeline
     @product_page_buybutton_path = '.MainProductButtons > div' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_productname_path = '.MainProductName' if ("#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/)) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_productpicture_path = '.image-gallery' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_productconfig_path = '.ProductSelectionBox' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_productinfo_path = '.ProductDescription' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_productrecommodations_path = '.ProductList' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
-    #@product_page_productlast_path = '.slick-prev' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_rememberbutton_path = '.merken' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_comparebutton_path = '.vergleichen' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     @product_page_compareicon_path = '.icon--compare' if "#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
-
+    #pulsiva
+    # @product_page_buybutton_path = '.MainProductButtons > div' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_productname_path = '.MainProductName' if ("#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productpicture_path = '.image-gallery' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_productconfig_path = '.ProductSelectionBox' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_productinfo_path = '.ProductDescription' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_productrecommodations_path = '.ProductList' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_rememberbutton_path = '.merken' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_comparebutton_path = '.vergleichen' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    # @product_page_compareicon_path = '.icon--compare' if "#{@env_shop}".match(/pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)
+    #vega + v_jobeline
+    # @product_page_buybutton_path = '.MainProductButtons > div' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productname_path = '.MainProductName' if ("#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/)) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productpicture_path = '.image-gallery' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productconfig_path = '.ProductSelectionBox' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productinfo_path = '.ProductDescription' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_productrecommodations_path = '.ProductList' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_rememberbutton_path = '.merken' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_comparebutton_path = '.vergleichen' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    # @product_page_compareicon_path = '.icon--compare' if "#{@env_shop}".match(/vega/) && "#{@env_country}".match(/[a-z]{2}/) || ("#{@env_shop}".match(/v_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    
     # define hash of countries
     @product_page_buybutton_path = 'div.product--buybox.block > div > form > div > button' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
     @product_page_productpicture_path = '.product--image-container.image-slider.product--image-zoom' if "#{@env_shop}".match(/chefworks/) && "#{@env_country}".match(/[a-z]{2}/)
