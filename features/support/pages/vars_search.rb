@@ -19,7 +19,7 @@ class Csspathes_Search
     @env_system ||= VARS_ENV.r_system
     @env_shop ||= VARS_ENV.r_shop
     #pdp
-    @search_product_name_path = '.MainProductName'  if ("#{@env_shop}".match(/hotelwaesche/) && "#{@env_country}".match(/[a-z]{2}/)) || ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
+    @search_product_name_path = '.MainProductName'  if ("#{@env_shop}".match(/hotelwaesche|hw_jobeline|vega|v_jobeline|pulsiva/) && "#{@env_country}".match(/[a-z]{2}/)) #|| ("#{@env_shop}".match(/hw_jobeline/) && "#{@env_country}".match(/[a-z]{2}/))
     # define hash of countries
     #@search_results_path = '.content-main--inner > .content--wrapper' if "#{@env_shop}".match(/(pulsiva|hw_jobeline)/) && "#{@env_country}".match(/[a-z]{2}/)
     @search_results_path = '.content-main--inner > .content--wrapper' if "#{@env_shop}".match(/(pulsiva|hw_jobeline|hotelwaesche)/) && "#{@env_country}".match(/[a-z]{2}/)
