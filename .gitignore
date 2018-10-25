@@ -8,4 +8,5 @@ demo_mechanize.rb
 failed_scenarios.txt
 output/html_reports.html
 output/output.json
+output/*
 skipped_scenarios.txt
