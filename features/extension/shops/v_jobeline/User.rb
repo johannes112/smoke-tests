@@ -76,7 +76,7 @@ class User
       when 'it' then 'Test IT Jobeline - eBusiness'
       when 'fr' then 'Test FR Jobeline - eBusiness'
       when 'no' then 'Test NO Jobeline - eBusiness'
-      when 'se' then 'VEGA - EM Group AUT GmbH & Co.KG - Jobeline Test-eBusiness'#'Test SE Jobeline - eBusiness'
+      when 'se' then 'VEGA EMG Scandinavia - Jobeline Test-eBusiness'
       when 'nl' then 'Test NL Jobeline - eBusiness'
       when 'be' then 'Test BE Jobeline - eBusiness'
       when 'es' then 'Test ES Jobeline - eBusiness'
