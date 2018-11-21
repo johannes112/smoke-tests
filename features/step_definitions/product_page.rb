@@ -11,12 +11,12 @@ Given(/^I am on the product page of an article$/) do
     step("set the url of the product page")
   end
 end
-  #VARS_ENV.url_productpage = current_url 
+  #VARS_ENV.url_productpage = current_url
   #puts VARS_ENV.url_pro
 Then(/^set the url of the product page$/) do
-  if current_url 
+  if current_url
     if VARS_ENV.url_productpage
-      VARS_ENV.url_productpage = current_url 
+      VARS_ENV.url_productpage = current_url
       puts VARS_ENV.url_productpage
     else
       puts "Url of productpage is already set"
@@ -27,7 +27,7 @@ end
 When(/^I add an article to the product cart by clicking the button to push it into the cart$/) do
   #var
   product_page_buybutton_path = productpage[:pathes].product_page_buybutton_path
-  
+
   find_secure(product_page_buybutton_path)
   element = find_secure(product_page_buybutton_path)
   element.click
@@ -36,7 +36,7 @@ end
 
 Then(/^I should see the cart on the right of the site$/) do
   product_page_infobox_path = productpage[:pathes].product_page_infobox_path
-  
+
   find_secure(product_page_infobox_path)
 end
 
@@ -52,25 +52,25 @@ Then(/^I should see this article in the product cart$/) do
   url_productcart = 'checkout/cart'
   url_cart = url_website+url_productcart
   product_cart_productinfo_path = productpage[:pathes].product_cart_productinfo_path
-  
+
   vistit(url_cart)
   find_secure(product_cart_productinfo_path)
   element = find_secure(product_cart_productinfo_path)
-  productinfo_txt = element.text 
-  
+  productinfo_txt = element.text
+
   #check for success
   expect(current_url).to eq(url_cart),
      "Expect url of the cart (#{url_cart}) but it was still #{current_url}"
   expect(productinfo_txt).to include(sku),
      "Expect to find the sku (#{sku}) in the block of the productinfo_txt but only found (#{productinfo_txt})"
-  
+
 end
 
 Then(/^I should see all necessary elememts for getting more informations about this article$/) do
   # define name
-  name = productpage[:data].name 
+  name = productpage[:data].name
   name = name.upcase
-  
+
   # define path of name
   product_page_productname_path = productpage[:pathes].product_page_productname_path
   # define path of product_picture
@@ -82,8 +82,8 @@ Then(/^I should see all necessary elememts for getting more informations about t
   # define path of product_recommodations
   product_page_productrecommodations_path = productpage[:pathes].product_page_productrecommodations_path
   # define path of product_information
-  product_page_productlast_path = productpage[:pathes].product_page_productlast_path
-  
+  # product_page_productlast_path = productpage[:pathes].product_page_productlast_path #new pdp: if nothing is in my history then the class is not visible
+
   # expect name_path include name
   productname_element = find_secure(product_page_productname_path)
   productname_txt = productname_element.text
@@ -101,10 +101,10 @@ Then(/^I should see all necessary elememts for getting more informations about t
       "Expect to find the css-element (#{product_page_productinfo_path}) but the page with the url #{current_url} has no such element"
   # expect page has css of productrecommodations
   expect(page).to have_css(product_page_productrecommodations_path),
-      "Expect to find the css-element (#{product_page_productrecommodations_path}) but the page with the url #{current_url} has no such element"  
+      "Expect to find the css-element (#{product_page_productrecommodations_path}) but the page with the url #{current_url} has no such element"
   # expect page has css of product_configuration
-  expect(page).to have_css(product_page_productlast_path),
-      "Expect to find the css-element (#{product_page_productlast_path}) but the page with the url #{current_url} has no such element"
+  #expect(page).to have_css(product_page_productlast_path),
+  #    "Expect to find the css-element (#{product_page_productlast_path}) but the page with the url #{current_url} has no such element"
 end
 
 When(/^I press the remember\-button$/) do
@@ -180,7 +180,7 @@ end
 
 When(/^I change to the tab of the customer viewed articles$/) do
   if (ENV['SHOP'] == 'chefworks')
-    #define path 
+    #define path
     product_page_viewed_tab_menu = productpage[:pathes].product_page_viewed_tab_menu
     product_page_viewed_tab_otherCustomer = productpage[:pathes].product_page_viewed_tab_otherCustomer
     #click tab for rate
