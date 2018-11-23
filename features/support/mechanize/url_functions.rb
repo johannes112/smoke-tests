@@ -189,6 +189,7 @@ class UrlFunctions
     code5 = 500..511
     code9 = 900..999
     status_code = url.code.to_i
+    puts "statuscode#{status_code}"
     case status_code
     when code1
       #puts "#{status_code} - Information"
@@ -215,4 +216,9 @@ class UrlFunctions
     return server_delivery_ok
   end
 
+  def get_status_code (url)
+    page = @mechanize.get(url)
+    status = page.code.to_i
+    return status
+  end
 end
