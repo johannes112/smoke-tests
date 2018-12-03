@@ -481,6 +481,14 @@ module MyFunctions
       puts "click_secure"
       puts "\033[35m#{e.inspect}\033[0m\n"
     end
+
+    sc = url_functions.get_status_code(url)
+    if sc != 200
+      puts "i can not visit #{url}"
+      exit
+    else
+      puts "statuscode:#{sc}"
+    end
   end
 
   def write_to_new_file(filename, content)
