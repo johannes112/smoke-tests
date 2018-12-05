@@ -331,9 +331,25 @@ module MyFunctions
     begin
       find_secure_counter = find_secure_counter + 1
       found = page.find(path)
+      # if element is not found
     rescue Capybara::ElementNotFound => e
-      #wrong path
-      puts "\033[35m#{e.inspect}\033[0m\n"
+      #wrong path or required data
+        begin # identiy kind of error: check if element has class 'has--error'
+          find(".has--error")
+          puts "\033[35m>>> There is a errormessage\033[0m\n"
+          puts "\033[35m#{e.inspect}\033[0m\n"
+          # are there several elements of this errortyoe exist
+        rescue Capybara::Ambiguous => e
+          puts "\033[35m#{e.inspect}\033[0m\n"
+          puts "\033[45m  >>> Several errors exist\033[0m\n"
+          begin # identiy kind of error: check if element has class '.is--required.has--error'
+            find(".is--required.has--error")
+          rescue Capybara::Ambiguous => e
+            puts "\033[45m  >>> several inputs are required\033[0m\n"
+            element = find(".is--required.has--error")
+            puts "\033[31m    >>>>>> #{element[:class]}\033[0m\n"
+          end
+        end
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
     rescue Net::ReadTimeout => e
@@ -470,8 +486,6 @@ module MyFunctions
     rescue Capybara::ElementNotFound => e
       puts "\033[35m#{e.inspect}\033[0m\n"
       close_popup("#close-dpe-shopwide", 5)
-      #Capybara.default_max_wait_time = 20
-      # do it threetimes
       click_secure_counter <= 2 ? retry : raise
     rescue Selenium::WebDriver::Error::UnknownError => e
       puts "close banner of summer-sale"
