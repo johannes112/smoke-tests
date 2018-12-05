@@ -113,7 +113,7 @@ class User
       when 'at' then nil
       when 'ch' then nil
       when 'it' then '02531440218' #Codice fiscale
-      when 'fr' then nil
+      when 'fr' then '999204252'
       when 'no' then '999204252'
       when 'se' then '5566959234'
       when 'nl' then nil
