@@ -84,6 +84,8 @@ module MyWorld
   def logger
     @logger ||= Logger.new(STDOUT)
   end
+  
+  
 
 end
 

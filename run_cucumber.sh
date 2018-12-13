@@ -1,25 +1,20 @@
 #!/bin/bash
-> failed_scenarios.txt
 #bash script for better controlling of execution of tests
 #Variables
 DRIVER=${1}
 BROWSER=${2}
-HTACCESS_USERNAME=${3}
-HTACCESS_PASSWORD=${4}
-SHOPWARE_USERNAME=${5}
-SHOPWARE_PASSWORD=${6}
-SAUCE_USERNAME=${7}
-SAUCE_ACCESS_KEY=${8}
-SYSTEM=${9}
-SHOP=${10}
-COUNTRY=${11}
-TAG=${12}
+SHOPWARE_USERNAME=${3}
+SHOPWARE_PASSWORD=${4}
+SAUCE_USERNAME=${5}
+SAUCE_ACCESS_KEY=${6}
+SYSTEM=${7}
+SHOP=${8}
+COUNTRY=${9}
+TAG=${10}
 
 #export (for saucelabs variables)
 export DRIVER
 export BROWSER
-export HTACCESS_USERNAME
-export HTACCESS_PASSWORD
 export SHOPWARE_USERNAME
 export SHOPWARE_PASSWORD
 export SYSTEM
@@ -33,8 +28,6 @@ parameter_config="$DRIVER $BROWSER $SYSTEM $SHOP $COUNTRY"
 sauce_config="$SAUCE_USERNAME $SAUCE_ACCESS_KEY"
 #tag=" -t ${TAG}"
 features_folder_path="features/base_features/"
-#extension_features_folder_path="features/extension/special_features/${8}/"
-#support_folder_path="features/extension/shops/${8}/"
 step_definitions_folder_path="features/step_definitions/"
 default_support_folder_path="features/support/"
 support_folder_path="features/extension/shops/$SHOP/"
@@ -48,7 +41,7 @@ echo "SYSTEM:"$SYSTEM
 echo "SHOP:"$SHOP
 echo "COUNTRY:"$COUNTRY
 echo "Number of args:"$#
-if [[ $# -lt 11 ]]; then
+if [[ $# -lt 9 ]]; then
   echo "Wrong number of arguments!"
 else
   if [[ "$BROWSER" == "iPhone" ]] && [[ "$TAG" != *"_mobile" ]]; then

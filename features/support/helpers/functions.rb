@@ -304,13 +304,13 @@ module MyFunctions
     if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
       block_css('.dpe-shopwide')
     end
-    if (page.has_css?("#mnd-cookie-bar"))
-      puts "found popup"
-      block_css("mnd-cookie-bar")
-      puts "--> closed popup"
-    else
-      puts "In #{VARS_ENV.r_country} is no popup"
-    end
+    # if (page.has_css?("#mnd-cookie-bar"))
+    #   puts "found popup"
+    #   block_css("mnd-cookie-bar")
+    #   puts "--> closed popup"
+    # else
+    #   puts "In #{VARS_ENV.r_country} is no popup"
+    # end
     if args.size == 1
       #puts "find_secure_with_one_arg:#{args}"
       element = find_secure_with_one_arg(*args)
@@ -587,7 +587,28 @@ module MyFunctions
     else
       exit("WRONG URL:##{url}")
     end
-
-
   end
+  
+  def get_url_part_of_website(site_of)
+    #replace given string with url of this page
+    if(site_of)
+      case site_of
+      when "homepage"
+        puts "homepage"
+        url_part = ""
+      when "category"
+        puts "categorypage of #{websitebasics[:data].category}"
+        url_part = "#{websitebasics[:data].category}/".downcase
+      when "subcategory"
+        puts "subcategorypage of #{websitebasics[:data].sub_category}"
+        url_part = "#{websitebasics[:data].category}/#{websitebasics[:data].sub_category}/".downcase
+      else 
+        puts "Options: \n -homepage\n- category \n- subcategory \ndefault: take the given string"
+        url_part = site_of
+      end
+      return url_part
+    end
+  end
+  
+  
 end

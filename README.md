@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # shopware_tests
 ##Automated Feature Testing
 This is functional testing for webshops of vega, jobeline, hotelwaesche, pulsiva, chefworks.
@@ -163,3 +164,7 @@ Syntax (bash-shellaufruf): bash run_cucumber.sh <testenviroment-system> <browser
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> live vega de @vega
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int chefworks de @chefworks
 bash run_cucumber.sh saucelabs <browser> <htaccess_user> <htaccess_key> <shopware_apiuser_name> <shopware_apiuser_key> <saucelabs_user_name> <saucelabs_api_key> int pulsiva at @pulsiva
+=======
+# smoke-tests
+Kind of smoke-tests for shopware. Test the appearance of a webshop by several environments by the help of saucelabs.
+>>>>>>> d58d9b0f2cc1c7070b75dffb8c3fcad012c58c79

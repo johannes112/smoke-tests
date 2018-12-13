@@ -4,9 +4,9 @@ class Article
   
   def initialize
     @sub_category = case ENV['COUNTRY']
-      when (/de/) then 'Einzelbesteck'
-      when (/at/) then 'Einzelbesteck'
-      when (/ch/) then 'Einzelbesteck'
+      when (/de/) then 'Gabel'
+      when (/at/) then 'Gabel'
+      when (/ch/) then 'Gabel'
       when (/it/) then 'Posate singole'
       when (/fr/) then 'Couverts à l\'unité'
       when (/no/) then 'Vinglass'

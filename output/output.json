@@ -1,59 +1,43 @@
 [
   {
-    "uri": "features/base_features/1.search.feature",
-    "id": "search",
+    "uri": "features/base_features/0.website_basics.feature",
+    "id": "website_basics",
     "keyword": "Feature",
-    "name": "search",
-    "description": "    As a customer\n    I will be able to search for a specific product",
-    "line": 2,
+    "name": "website_basics",
+    "description": "    As a customer\n    i will be able\n    to see all elements of the website ",
+    "line": 3,
     "elements": [
       {
-        "id": "search;search-with-sku",
+        "id": "website_basics;check-elements-of-homepage",
         "keyword": "Scenario",
-        "name": "search with sku", 
+        "name": "check elements of homepage",
         "description": "",
-        "line": 17,
+        "line": 25,
         "type": "scenario",
         "tags": [
           {
-            "name": "@quickies",
-            "line": 7
+            "name": "@homepage",
+            "line": 19
           },
           {
             "name": "@pulsiva",
-            "line": 8
+            "line": 20
           },
           {
             "name": "@vega",
-            "line": 9
+            "line": 21
           },
           {
             "name": "@hotelwaesche",
-            "line": 10
+            "line": 22
           },
           {
             "name": "@hw_jobeline",
-            "line": 11
+            "line": 23
           },
           {
             "name": "@v_jobeline",
-            "line": 12
-          },
-          {
-            "name": "@export",
-            "line": 13
-          },
-          {
-            "name": "@chefworks",
-            "line": 14
-          },
-          {
-            "name": "@search",
-            "line": 15
-          },
-          {
-            "name": "@search_sku",
-            "line": 16
+            "line": 24
           }
         ],
         "before": [
@@ -63,7 +47,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29356
+              "duration": 37761
             }
           },
           {
@@ -72,72 +56,63 @@
             },
             "result": {
               "status": "passed",
-              "duration": 68151
+              "duration": 54157
             }
           },
           {
+            "output": [
+              "Test mobile. So i can not set any size of browser"
+            ],
             "match": {
               "location": "features/support/hooks.rb:16"
             },
             "result": {
               "status": "passed",
-              "duration": 4458173349
+              "duration": 73824
             }
           }
         ],
         "steps": [
           {
             "keyword": "Given ",
-            "name": "I am on the website",
-            "line": 18,
+            "name": "I am on the website \"\"",
+            "line": 26,
             "output": [
-              "try visit_secure(http://int.vega-direct.com/de-de/)",
-              "go to http://int.vega-direct.com/de-de/",
-              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n"
+              "Options: \n- category \n- subcategory \ndefault go to homepage",
+              "go to https://www.vega-direct.com/de-de/",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "statuscode:200"
             ],
             "match": {
               "location": "features/step_definitions/global.rb:1"
             },
             "result": {
               "status": "passed",
-              "duration": 41025513501
-            }
-          },
-          {
-            "keyword": "When ",
-            "name": "I am searching for a product by entering the sku in the searchfield",
-            "line": 19,
-            "output": [
-              "- set sku = \"10082961\"",
-              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
-              "find_secure_with_two_args:.entry--search > form > input",
-              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
-              "find_secure_with_two_args:.entry--search > form > button",
-              "clicked button of search"
-            ],
-            "match": {
-              "location": "features/step_definitions/search.rb:2"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 54973441930
+              "duration": 16923106032
             }
           },
           {
             "keyword": "Then ",
-            "name": "I should be on the detailsite of the related product",
-            "line": 20,
+            "name": "I should see all basic elements",
+            "line": 27,
             "output": [
               "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
-              "find_secure_with_one_arg:[\".product--header\"]",
-              "found 'TELLER FLACH BASE'"
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "header exists",
+              "searchfield exists",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "navi exists",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "inner body exists",
+              "\u001b[35mcatch_error_in_block (35)\u001b[0m\n",
+              "footer exists"
             ],
             "match": {
-              "location": "features/step_definitions/search.rb:20"
+              "location": "features/step_definitions/website_basics.rb:27"
             },
             "result": {
               "status": "passed",
-              "duration": 3101730312
+              "duration": 18315772188
             }
           }
         ],
@@ -148,7 +123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3258958004
+              "duration": 1917976590
             }
           }
         ]
