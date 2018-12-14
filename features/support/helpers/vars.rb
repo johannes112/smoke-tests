@@ -14,15 +14,6 @@ class Vars
     puts "r_shop:#{r_shop}"
   end
 
-  def pulsiva?
-    bool = false
-    if @r_shop.match(/pulsiva/)
-      puts "pulsiva"
-      bool = true
-    end
-    return bool
-  end
-
 end
 
 VARS_ENV = Vars.new(ENV['SYSTEM'], ENV['COUNTRY'], ENV['SHOP'])

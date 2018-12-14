@@ -1,5 +1,5 @@
 #website_basics
-class Csspathes_Websitebasics
+class Csspathes_Homepage
   attr_accessor :homepage_content_logo_path, :homepage_product_cart_hint_content_path, :account_accountpage_welcome_path,
                 #homepage
                 :homepage_content_header_path, :homepage_content_searchfield_path, :homepage_content_navi_path, :homepage_content_navi_burger_path, :homepage_content_navi_burger_category_path,
