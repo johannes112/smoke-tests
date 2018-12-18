@@ -1,20 +1,24 @@
 #!/bin/bash
 #bash script for better controlling of execution of tests
 #Variables
-DRIVER=${1}
-BROWSER=${2}
-SHOPWARE_USERNAME=${3}
-SHOPWARE_PASSWORD=${4}
-SAUCE_USERNAME=${5}
-SAUCE_ACCESS_KEY=${6}
-SYSTEM=${7}
-SHOP=${8}
-COUNTRY=${9}
-TAG=${10}
+SHOPWARE_USERNAME=${1}
+SHOPWARE_PASSWORD=${2}
+SAUCE_USERNAME=${3}
+SAUCE_ACCESS_KEY=${4}
+SYSTEM=${5}
+SHOP=${6}
+COUNTRY=${7}
+TAG=${8}
+DRIVER=${9}
+PLATFORM=${10}
+BROWSER=${11}
+VERSION=${12}
 
 #export (for saucelabs variables)
 export DRIVER
+export PLATFORM
 export BROWSER
+export VERSION
 export SHOPWARE_USERNAME
 export SHOPWARE_PASSWORD
 export SYSTEM

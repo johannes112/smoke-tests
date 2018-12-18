@@ -4,55 +4,57 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.default_selector = :css
     Capybara.ignore_hidden_elements = true
 
-    if ENV['BROWSER'] == 'firefox'
-      @caps = {
-        :platform => "Windows 7",
-        :browserName => "Firefox",
-        :version => "46",
-        :screenResolution => "1920x1200"
-        }
-    elsif ENV['BROWSER'] == 'ie'
-      @caps = {
-        :platform => "Windows 8",
-        :browserName => "Internet Explorer",
-        :version => "latest",
-        :screenResolution => "1920x1200"
-        }
-    elsif ENV['BROWSER'] == 'chrome'
-      @caps = {
-        :platform => "Windows 7",
-        :browserName => "Chrome",
-        :version => "latest-1",
-        :screenResolution => "1920x1200"
-        }
-    elsif ENV['BROWSER'] == 'safari'
-      @caps = {
-        :platform => "OS X 10.10",
-        :browserName => "Safari",
-        :version => "latest",
-        :screenResolution => "1920x1200"
-        }
-    elsif ENV['BROWSER'] == 'iPhone'
-        @caps = {
-          :appiumVersion => "1.6.5", #'1.5.3',
-          :deviceName => 'iPhone 6 Simulator',#"iPhone Simulator",
-          :deviceOrientation => "portrait",
-          :platformVersion => "9.3",#9'3 is the newest Version which works
-          :platformName => 'iOS',
-          :browserName => 'Safari',
-          :name => "iPhone Simulator"
-        }
-    elsif ENV['BROWSER'] == 'iPad'
-        @caps = {
-          :appiumVersion => '1.6.5',
-          :deviceName => "iPad Simulator",
-          :deviceOrientation => "portrait",
-          :platformVersion => '9.3',
-          :platformName => 'iOS',
-          :browserName => 'Safari',
-          :name => "iPad Simulator"
-        }
+    #all posibility combinations: https://saucelabs.com/platforms
+    # Windows 7:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest, latest-1
+    # Windows 8:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest,
+    # Windows 10: browser max. -> firefox: 52, 51,           chrome: latest, latest-1,                             MicrosoftEdge: latest, latest-1
+    # Linux:      browser max. -> firefox: latest, latest-1, chrome: latest, latest-1
+    # Mac OS:     browser max. ->
+
+    platform = "Windows 10"
+    browserName = "internet explorer"
+    version = "10"
+
+    #os =
+    if (ENV['PLATFORM'].length > 1)
+      #check for missing whitespace in os
+      os = ENV['PLATFORM']
+      if(!"#{os}"!~/\d/)
+        # separate os into letter and numbers
+        os_letters = os.slice(/([a-z]|[A-Z])*/)
+        os_numbers = os.slice(/\d+/)
+        os = "#{os_letters} #{os_numbers}"
+      end
+      platform_name = os
+    else
+      platform_name = "Windows 7"
     end
+
+    if (ENV['BROWSER'].length > 1)
+      browsername = ENV['BROWSER']
+      if(browsername == "internet_explorer" || browsername == "ie")
+        browser_name = "internet explorer"
+      else
+        browser_name = ENV['BROWSER']
+      end
+    else
+      browser_name = "firefox"
+    end
+
+    if (ENV['VERSION'].length > 1)
+      browser_version = ENV['VERSION']
+    else
+      browser_version = "52"
+    end
+
+    @caps = {
+      :platform => "#{platform_name}",
+      :browserName => "#{browser_name}",
+      :version => "#{browser_version}"
+      #:screenResolution => "1920x1200"
+      }
+
+    #@caps[:screenResolution] = "1920x1200"
     @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
     @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
     @caps[:autoAcceptAlerts] = true
@@ -68,7 +70,9 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps[:idleTimeout] = '90' #max Duration between any command (Default: 90)
     end
     puts "Enviroment:#{@caps}"
+    puts "platform:#{@caps[:platform]}"
     puts "browser:#{@caps[:browserName]}"
+    puts "version:#{@caps[:Version]}"
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
