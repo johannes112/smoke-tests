@@ -21,7 +21,7 @@ end
 
 Then("css elements should be modified by stylesheet") do
   node_element = page.find(".page-wrap") #=node element
-  webdriver_element = node_element.native#=selenium webdriver element
+  webdriver_element = node_element.native
   #get style of webdriver element
   margin_right = webdriver_element.style('margin-right')
   puts ("> margin_right:#{margin_right}")
