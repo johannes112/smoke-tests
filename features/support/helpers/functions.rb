@@ -9,15 +9,8 @@ module MyFunctions
     #homepage_content_logo_path = websitebasics[:pathes].homepage_content_logo_path
     #page.find(homepage_content_logo_path)
 
-    if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
-      block_css('.dpe-shopwide')
-    end
-    # if (page.has_css?("#mnd-cookie-bar"))
-    #   puts "found popup"
-    #   block_css("mnd-cookie-bar")
-    #   puts "--> closed popup"
-    # else
-    #   puts "In #{VARS_ENV.r_country} is no popup"
+    # if ( ENV['SHOP']=='vega' && (ENV['COUNTRY']=='de') || (ENV['COUNTRY']=='it') )
+    #   block_css('.dpe-shopwide')
     # end
     if args.size == 1
       #puts "find_secure_with_one_arg:#{args}"
@@ -38,43 +31,46 @@ module MyFunctions
     found = ''
     begin
       find_secure_counter = find_secure_counter + 1
+      page.find(path)
       found = page.find(path)
       # if element is not found
     rescue Capybara::ElementNotFound => e
       #wrong path or required data
       puts "Some elements not existing on the page"
-      puts "#{path} is not found"
-        begin # identiy kind of error: check if element has class 'has--error'
-          find(".has--error")
-          puts "\033[35m>>> There is a errormessage\033[0m\n"
-          puts "\033[35m#{e.inspect}\033[0m\n"
-          # are there several elements of this errortyoe exist
-        rescue Capybara::Ambiguous => e
-          puts "\033[35m#{e.inspect}\033[0m\n"
-          puts "\033[45m  >>> Several errors exist\033[0m\n"
-          begin # identiy kind of error: check if element has class '.is--required.has--error'
-            find(".is--required.has--error")
-          rescue Capybara::Ambiguous => e
-            puts "\033[45m  >>> several inputs are required\033[0m\n"
-            element = find(".is--required.has--error")
-            puts "\033[31m    >>>>>> #{element[:class]}\033[0m\n"
-          end
-        end
+      puts "'#{path}' is not found"
+      # look if there react-elements
+      if (page.html).include?('/react/')
+        puts "it is a page with content of react"
+        find_element_with_scrolling(path)
+      if(page.has_css?(".has--error"))
+        # begin # identiy kind of error: check if element has class 'has--error'
+        #   find(".has--error")
+        #   puts "\033[35m>>> There is a errormessage\033[0m\n"
+        #   puts "\033[35m#{e.inspect}\033[0m\n"
+        #   # are there several elements of this errortyoe exist
+        # rescue Capybara::Ambiguous => e
+        #   puts "\033[35m#{e.inspect}\033[0m\n"
+        #   puts "\033[45m  >>> Several errors exist\033[0m\n"
+        #   begin # identiy kind of error: check if element has class '.is--required.has--error'
+        #     find(".is--required.has--error")
+        #   rescue Capybara::Ambiguous => e
+        #     puts "\033[45m  >>> several inputs are required\033[0m\n"
+        #     element = find(".is--required.has--error")
+        #     puts "\033[31m    >>>>>> #{element[:class]}\033[0m\n"
+        #   end
+        # end
+        exception_has_error
+      end
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
+      end
     rescue Net::ReadTimeout => e
       url ||= page.current_url
       puts "\033[35m#{e.inspect}\033[0m\n"
       sleep 1
       puts "find_secure_with_one_arg"
-      Capybara.default_max_wait_time = 20
-      if url
-        puts "visit #{url} again"
-        visit(url)
-        puts "Failed to visit #{url}, retry #{find_secure_counter}"
-      else
-        puts "no URL IS Defined"
-      end
+      #Capybara.default_max_wait_time = 20
+      reload_page(url)
       find_secure_counter <= 2 ? retry : raise
     rescue Selenium::WebDriver::Error::UnhandledAlertError
       puts "\033[35m#{e.inspect}\033[0m\n"
@@ -90,6 +86,60 @@ module MyFunctions
     end
     return found
   end
+
+  def exception_has_error
+    begin # identiy kind of error: check if element has class 'has--error'
+      find(".has--error")
+      puts "\033[35m>>> There is a errormessage\033[0m\n"
+      puts "\033[35m#{e.inspect}\033[0m\n"
+      # are there several elements of this errortyoe exist
+    rescue Capybara::Ambiguous => e
+      puts "\033[35m#{e.inspect}\033[0m\n"
+      puts "\033[45m  >>> Several errors exist\033[0m\n"
+      begin # identiy kind of error: check if element has class '.is--required.has--error'
+        find(".is--required.has--error")
+      rescue Capybara::Ambiguous => e
+        puts "\033[45m  >>> several inputs are required\033[0m\n"
+        element = find(".is--required.has--error")
+        puts "\033[31m    >>>>>> #{element[:class]}\033[0m\n"
+      end
+    end
+  end
+
+  def reload_page(url)
+    if url
+      puts "visit #{url} again"
+      visit(url)
+      puts "Failed to visit #{url}, retry #{find_secure_counter}"
+    else
+      puts "no URL IS Defined"
+    end
+  end
+
+  # find: lazyloading
+  def find_element_with_scrolling(path)
+    # it is useful for our pdp because react uses lazyload
+    # it is a workaround to handle lazyload in Capybara/Selenium
+    # generate a loop without the template of a loop
+    # scoll down for 100px until Capybara the element which I am looking for
+    if (page.html).include?('/react/')
+      puts "it is a page with content of react"
+    end
+    begin
+      # counter to avoid an endless loop
+      find_scrolling_counter = 0
+      # For faster 'loop' set lower Timeout
+      Capybara.default_max_wait_time = 1
+      find(path)
+    rescue Capybara::ElementNotFound
+      puts "> Maybe there is something like lazyloading active -> scroll down"
+      page.execute_script("window.scrollBy(0,100)")
+      # condition to exit the fuencton
+      find_scrolling_counter =+ 1
+      find_scrolling_counter < 100 ? retry : raise
+    end
+  end
+
 
   # find: catch Errors
   def find_secure_with_two_args(path, string)
