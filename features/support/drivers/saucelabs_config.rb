@@ -5,15 +5,14 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.ignore_hidden_elements = true
 
     #all posibility combinations: https://saucelabs.com/platforms
-    # Windows 7:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest, latest-1
-    # Windows 8:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest,
-    # Windows 10: browser max. -> firefox: 52, 51,           chrome: latest, latest-1,                             MicrosoftEdge: latest, latest-1
-    # Linux:      browser max. -> firefox: latest, latest-1, chrome: latest, latest-1
-    # Mac OS:     browser max. ->
-
-    platform = "Windows 10"
-    browserName = "internet explorer"
-    version = "10"
+    # Windows7:    browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest, latest-1
+    # Windows8:    browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    ie: latest,
+    # Windows10:   browser max. -> firefox: 52, 51,           chrome: latest, latest-1,    MicrosoftEdge: latest, latest-1, latest-2
+    # Linux:       browser max. -> firefox: latest, latest-1, chrome: latest, latest-1
+    # MacOS10.13:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1     safari: latest
+    # MacOS10.12:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1
+    # osx10.11:    browser max. -> firefox: latest, latest-1  chrome: latest, latest-1     safari: latest
+    # osx10.10:    browser max. -> firefox: latest, latest-1  chrome: latest, latest-1     safari: latest
 
     #os =
     if (ENV['PLATFORM'].length > 1)
@@ -22,10 +21,15 @@ if ENV['DRIVER'] == 'saucelabs'
       if(!"#{os}"!~/\d/)
         # separate os into letter and numbers
         os_letters = os.slice(/([a-z]|[A-Z])*/)
-        os_numbers = os.slice(/\d+/)
+        # macos to os x : with whitespace
+        if(os_letters == "osx")
+          os_letters = "os x"
+        end
+        os_numbers = os.slice(/\d+.\d*/)
         os = "#{os_letters} #{os_numbers}"
       end
       platform_name = os
+      puts "platform: #{platform_name}"
     else
       platform_name = "Windows 7"
     end
@@ -50,7 +54,7 @@ if ENV['DRIVER'] == 'saucelabs'
     @caps = {
       :platform => "#{platform_name}",
       :browserName => "#{browser_name}",
-      :version => "#{browser_version}"
+      :version => "#{browser_version}"#,
       #:screenResolution => "1920x1200"
       }
 
