@@ -1,4 +1,4 @@
-# smoke-tests for shopware shops
+ # smoke-tests for shopware shops
 smoke-testing like browser-testing related to the appearance of a website
 ## browser-tests for webshops of emmos
 test the appearance of webshops of vega, jobeline, hotelwaesche, pulsiva in different environments via saucelabs
@@ -9,10 +9,11 @@ each webshop have different types of pages and our webshops using two different 
 - react
 therefore different pages will be tested
 - homepage
-<d> extended tests:
-- categorypage
-- subcategorypage
-</d>
+
+> extended tests:
+>- categorypage
+>- subcategorypage
+
 - productdetailpage
 
 ### how will it be tested:
@@ -26,39 +27,38 @@ therefore different pages will be tested
      - body
      - footer
 
-<d>
-extended: not implemented
-* categorypage:
-   - visit categorypage
-     go to 'url'
-   - look for existing elements of several parts of the page
-     - header
-     - searchfield
-     - navi
-     - body
-     - footer
+>extended: not implemented
+>* categorypage:
+>   - visit categorypage
+>     go to 'url'
+>   - look for existing elements of several parts of the >page
+>     - header
+>     - searchfield
+>     - navi
+>     - body
+>     - footer
 
-* subcategorypage:
-   - visit subcategorypage
-     go to 'url'
-   - look for existing elements of several parts of the page
-     - header
-     - searchfield
-     - navi
-     - body
-     - footer
-</d>
+>* subcategorypage:
+>   - visit subcategorypage
+>     go to 'url'
+>   - look for existing elements of several parts of the >page
+>     - header
+>     - searchfield
+>     - navi
+>     - body
+>     - footer
 
 * productdetailpage:
    - visit productdetailpage
      go to 'url'
    - look for existing elements of several parts of the page
-     - productbox
-     - productname (not empty)
-     - dropdown_filter
+     -   productbox
+     -   productname (not empty)
+     -   dropdown_filter
 
 ##### Following tags exist:
 To start different tests on each mandant navigate via tags:
+- @visibility
 - @homepage
 - @productdetailpage
 - @website_css
