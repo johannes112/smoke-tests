@@ -122,9 +122,6 @@ module MyFunctions
     # it is a workaround to handle lazyload in Capybara/Selenium
     # generate a loop without the template of a loop
     # scoll down for 100px until Capybara the element which I am looking for
-    if (page.html).include?('/react/')
-      puts "it is a page with content of react"
-    end
     begin
       # counter to avoid an endless loop
       find_scrolling_counter = 0
