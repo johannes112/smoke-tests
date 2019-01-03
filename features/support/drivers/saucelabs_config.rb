@@ -51,18 +51,36 @@ if ENV['DRIVER'] == 'saucelabs'
       browser_version = "52"
     end
 
-    @caps = {
-      :platform => "#{platform_name}",
-      :browserName => "#{browser_name}",
-      :version => "#{browser_version}"#,
-      #:screenResolution => "1920x1200"
-      }
+    #environment
+    if (ENV['PLATFORM'] == 'iOS')
+      @caps = {
+        :appiumVersion => '1.9.1',
+        :deviceName => 'iPhone Simulator',
+        :deviceOrientation => 'portrait',
+        :platformVersion => '12.0',
+        :platformName => 'iOS',
+        :browserName => 'Safari'
+        }
+    else
+      @caps = {
+        :platform => "#{platform_name}",
+        :browserName => "#{browser_name}",
+        :version => "#{browser_version}"#,
+        #:screenResolution => "1920x1200"
+        }
+      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['BROWSER']} #{ENV['PLATFORM']} #{ENV['VERSION']}"
+      @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
+      @caps[:autoAcceptAlerts] = true
+      #@caps[:unexpectedAlertBehaviour] = "dismiss"
+    end
 
-    #@caps[:screenResolution] = "1920x1200"
-    @caps[:name] = "Shopware tests: #{ENV['BROWSER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
-    @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
-    @caps[:autoAcceptAlerts] = true
-    #@caps[:unexpectedAlertBehaviour] = "dismiss"
+      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['BROWSER']} #{ENV['PLATFORM']} #{ENV['VERSION']}"
+      @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
+      @caps[:autoAcceptAlerts] = true
+      #@caps[:unexpectedAlertBehaviour] = "dismiss"
+    end
+
+    #Timeouts
     if (ENV['SYSTEM'] == 'int')
       puts "Timeout is set to 65"
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
