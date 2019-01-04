@@ -52,7 +52,8 @@ if ENV['DRIVER'] == 'saucelabs'
     end
 
     #environment
-    if (ENV['PLATFORM'] == 'iOS')
+    if (ENV['PLATFORM'] == 'iOS_iPhone')
+      @mobile_device = true
       @caps = {
         :appiumVersion => '1.9.1',
         :deviceName => 'iPhone Simulator',
@@ -61,6 +62,26 @@ if ENV['DRIVER'] == 'saucelabs'
         :platformName => 'iOS',
         :browserName => 'Safari'
         }
+    elsif (ENV['PLATFORM'] == 'iOS_iPad')
+      @mobile_device = true
+      @caps = {
+        :appiumVersion => '1.9.1',
+        :deviceName => 'iPad Simulator',
+        :deviceOrientation => 'portrait',
+        :platformVersion => '12.0',
+        :platformName => 'iOS',
+        :browserName => 'Safari'
+        }
+    elsif (ENV['PLATFORM'] == 'android')
+      @mobile_device = true
+      @caps = {
+        :appiumVersion => '1.9.1',
+        :deviceName => 'Samsung Galaxy S9 HD GoogleAPI Emulator',
+        :deviceOrientation => 'portrait',
+        :browserName => 'Chrome',
+        :platformVersion => '7.1',
+        :platformName => 'Android'
+        }
     else
       @caps = {
         :platform => "#{platform_name}",
@@ -68,17 +89,12 @@ if ENV['DRIVER'] == 'saucelabs'
         :version => "#{browser_version}"#,
         #:screenResolution => "1920x1200"
         }
-      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['BROWSER']} #{ENV['PLATFORM']} #{ENV['VERSION']}"
-      @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
-      @caps[:autoAcceptAlerts] = true
-      #@caps[:unexpectedAlertBehaviour] = "dismiss"
     end
 
       @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['BROWSER']} #{ENV['PLATFORM']} #{ENV['VERSION']}"
       @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
       @caps[:autoAcceptAlerts] = true
       #@caps[:unexpectedAlertBehaviour] = "dismiss"
-    end
 
     #Timeouts
     if (ENV['SYSTEM'] == 'int')
@@ -91,10 +107,17 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps[:commandTimeout] = '600' #max Duration of seleniumcommand is set to 10:00min (Default: 300)
       @caps[:idleTimeout] = '90' #max Duration between any command (Default: 90)
     end
-    puts "Enviroment:#{@caps}"
-    puts "platform:#{@caps[:platform]}"
-    puts "browser:#{@caps[:browserName]}"
-    puts "version:#{@caps[:Version]}"
+
+    if(@mobile_device)
+      puts "it is tested by a mobile device"
+      puts "Enviroment:#{@caps}"
+    else
+      puts "Enviroment:#{@caps}"
+      puts "platform:#{@caps[:platform]}"
+      puts "browser:#{@caps[:browserName]}"
+      puts "version:#{@caps[:Version]}"
+    end
+
     @url_path = "https://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:443/wd/hub"
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
