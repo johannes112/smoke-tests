@@ -42,20 +42,20 @@ Then(/^I should see all basic elements$/) do
   find_secure(homepage_content_header_path)
   expect(page).to have_css(homepage_content_header_path),
       "Expect to find the css-element (#{homepage_content_header_path}) but the page with the url #{current_url} has no such element"
-  puts "header exists"
+  puts "> header exists"
   expect(page).to have_css(homepage_content_searchfield_path),
       "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
-  puts "searchfield exists"
+  puts "> searchfield exists"
   find_secure(homepage_content_navi_path)
   expect(page).to have_css(homepage_content_navi_path),
       "Expect to find the css-element (#{homepage_content_navi_path}) but the page with the url #{current_url} has no such element"
-  puts "navi exists"
+  puts "> navi exists"
   find_secure(homepage_content_body_main_path)
   expect(page).to have_css(homepage_content_body_main_path),
       "Expect to find the css-element (#{homepage_content_body_main_path}) but the page with the url #{current_url} has no such element"
-  puts "inner body exists"
+  puts "> inner body exists"
   find_secure(homepage_content_footer_path)
   expect(page).to have_css(homepage_content_footer_path),
       "Expect to find the css-element (#{homepage_content_footer_path}) but the page with the url #{current_url} has no such element"
-  puts "footer exists"
+  puts "> footer exists"
 end
