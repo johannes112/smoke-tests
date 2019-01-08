@@ -1,6 +1,6 @@
 # language: en
 
-Feature: homepage
+Feature: visibility
 
     As a customer
     i will be able
@@ -26,8 +26,6 @@ Feature: homepage
     Scenario: check elements of homepage
       Given I am on the website "homepage"
       Then I should see all basic elements
-
-
 
     @pulsiva
     @vega
