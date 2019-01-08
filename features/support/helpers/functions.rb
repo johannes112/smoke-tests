@@ -42,28 +42,11 @@ module MyFunctions
       if (page.html).include?('/react/')
         puts "it is a page with content of react"
         find_element_with_scrolling(path)
-      if(page.has_css?(".has--error"))
-        # begin # identiy kind of error: check if element has class 'has--error'
-        #   find(".has--error")
-        #   puts "\033[35m>>> There is a errormessage\033[0m\n"
-        #   puts "\033[35m#{e.inspect}\033[0m\n"
-        #   # are there several elements of this errortyoe exist
-        # rescue Capybara::Ambiguous => e
-        #   puts "\033[35m#{e.inspect}\033[0m\n"
-        #   puts "\033[45m  >>> Several errors exist\033[0m\n"
-        #   begin # identiy kind of error: check if element has class '.is--required.has--error'
-        #     find(".is--required.has--error")
-        #   rescue Capybara::Ambiguous => e
-        #     puts "\033[45m  >>> several inputs are required\033[0m\n"
-        #     element = find(".is--required.has--error")
-        #     puts "\033[31m    >>>>>> #{element[:class]}\033[0m\n"
-        #   end
-        # end
+      elsif(page.has_css?(".has--error"))
         exception_has_error
       end
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
-      end
     rescue Net::ReadTimeout => e
       url ||= page.current_url
       puts "\033[35m#{e.inspect}\033[0m\n"
@@ -80,9 +63,8 @@ module MyFunctions
       find_secure_counter <= 2 ? retry : raise
     rescue Exception => e
       puts "#{e}"
-      puts "\033[35m#{e.inspect}\033[0m\n"
       puts "\033[35m#{e.message}\033[0m\n"
-      raise "UNKNOWN ERROR in find_secure_with_one_arg"
+      raise "custom message: UNKNOWN ERROR in find_secure_with_one_arg"
     end
     return found
   end
