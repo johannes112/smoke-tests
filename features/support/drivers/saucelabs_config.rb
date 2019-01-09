@@ -122,6 +122,7 @@ if ENV['DRIVER'] == 'saucelabs'
     Capybara.register_driver :saucelabs_driver do |app|
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
+    Capybara.default_max_wait_time = 10
     Capybara.default_driver = :saucelabs_driver
     if (ENV['SYSTEM'] == 'int') || (ENV['BROWSER'] == 'iPhone') || (ENV['BROWSER'] == 'iPad')
       puts "Timeout of capybara is set to 81"
