@@ -13,11 +13,15 @@ if ENV['DRIVER'] == 'saucelabs'
     # MacOS10.12:  browser max. -> firefox: 52, 51,           chrome: latest, latest-1
     # osx10.11:    browser max. -> firefox: latest, latest-1  chrome: latest, latest-1     safari: latest
     # osx10.10:    browser max. -> firefox: latest, latest-1  chrome: latest, latest-1     safari: latest
+    env_platform = ENV['PLATFORM']
+    env_browser = ENV['BROWSER']
+    env_version = ENV['VERSION']
+    env_system = ENV['SYSTEM']
 
     #os =
-    if (ENV['PLATFORM'].length > 1)
+    if (env_platform.length > 1)
       #check for missing whitespace in os
-      os = ENV['PLATFORM']
+      os = env_platform
       if(!"#{os}"!~/\d/)
         # separate os into letter and numbers
         os_letters = os.slice(/([a-z]|[A-Z])*/)
@@ -25,7 +29,7 @@ if ENV['DRIVER'] == 'saucelabs'
         if(os_letters == "osx")
           os_letters = "os x"
         end
-        os_numbers = os.slice(/\d+.\d*/)
+        os_numbers = os.slice(/[0-9.]+/)
         os = "#{os_letters} #{os_numbers}"
       end
       platform_name = os
@@ -34,25 +38,25 @@ if ENV['DRIVER'] == 'saucelabs'
       platform_name = "Windows 7"
     end
 
-    if (ENV['BROWSER'].length > 1)
-      browsername = ENV['BROWSER']
+    if (env_browser.length > 1)
+      browsername = env_browser
       if(browsername == "internet_explorer" || browsername == "ie")
         browser_name = "internet explorer"
       else
-        browser_name = ENV['BROWSER']
+        browser_name = env_browser
       end
     else
       browser_name = "firefox"
     end
 
-    if (ENV['VERSION'].length > 1)
-      browser_version = ENV['VERSION']
+    if (env_version.length > 1)
+      browser_version = env_version
     else
       browser_version = "52"
     end
 
     #environment
-    if (ENV['PLATFORM'] == 'iOS_iPhone')
+    if (env_platform == 'iOS_iPhone')
       @mobile_device = true
       @caps = {
         :appiumVersion => '1.9.1',
@@ -62,7 +66,7 @@ if ENV['DRIVER'] == 'saucelabs'
         :platformName => 'iOS',
         :browserName => 'Safari'
         }
-    elsif (ENV['PLATFORM'] == 'iOS_iPad')
+    elsif (env_platform == 'iOS_iPad')
       @mobile_device = true
       @caps = {
         :appiumVersion => '1.9.1',
@@ -72,7 +76,7 @@ if ENV['DRIVER'] == 'saucelabs'
         :platformName => 'iOS',
         :browserName => 'Safari'
         }
-    elsif (ENV['PLATFORM'] == 'android')
+    elsif (env_platform == 'android')
       @mobile_device = true
       @caps = {
         :appiumVersion => '1.9.1',
@@ -91,13 +95,13 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     end
 
-      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SYSTEM']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{ENV['BROWSER']} #{ENV['PLATFORM']} #{ENV['VERSION']}"
+      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{env_version} #{ENV['SHOP']} #{ENV['COUNTRY']} #{env_browser} #{env_platform} #{env_version}"
       @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
       @caps[:autoAcceptAlerts] = true
       #@caps[:unexpectedAlertBehaviour] = "dismiss"
 
     #Timeouts
-    if (ENV['SYSTEM'] == 'int')
+    if (env_version == 'int')
       puts "Timeout is set to 65"
       @caps[:maxDuration] = '7200' #max Duration of Tests is set to 120 min
       @caps[:commandTimeout] = '300' #max Duration of seleniumcommand is set to 0:51min
@@ -123,7 +127,7 @@ if ENV['DRIVER'] == 'saucelabs'
       Capybara::Selenium::Driver.new(app, :browser => :remote, :url => @url_path, :desired_capabilities => @caps)
     end
     Capybara.default_driver = :saucelabs_driver
-    if (ENV['SYSTEM'] == 'int') || (ENV['BROWSER'] == 'iPhone') || (ENV['BROWSER'] == 'iPad')
+    if (env_system == 'int') || (env_browser == 'iPhone') || (env_browser == 'iPad')
       puts "Timeout of capybara is set to 81"
       Capybara.default_max_wait_time = 81
     else
