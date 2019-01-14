@@ -90,8 +90,8 @@ if ENV['DRIVER'] == 'saucelabs'
       @caps = {
         :platform => "#{platform_name}",
         :browserName => "#{browser_name}",
-        :version => "#{browser_version}"#,
-        #:screenResolution => "1920x1200"
+        :version => "#{browser_version}",
+        :screenResolution => "1024x768"
         }
     end
 
