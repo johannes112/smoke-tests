@@ -25,6 +25,7 @@ Feature: visibility
     @homepage
     Scenario: check elements of homepage
       Given I am on the website "homepage"
+      And it is the right url
       Then I should see all basic elements
 
     @pulsiva
@@ -36,4 +37,5 @@ Feature: visibility
     @productdetailpage
     Scenario: check for elements
       Given I am on the website "test-addtocart-735707?number=7357-07-1"
+      And it is the right url
       Then I should see elements of pdp

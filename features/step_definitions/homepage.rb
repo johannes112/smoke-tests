@@ -3,9 +3,15 @@ Given("I am on the website {string}") do |site_of|
   #variables:path
   base_url = settings.urlHttps
   #replace given string with url of this page
-  website_url = "#{base_url}#{get_url_part_of_website(site_of)}"
+  @start_url = "#{base_url}#{get_url_part_of_website(site_of)}"
   #actions
-  visit_secure(website_url)
+  visit_secure(@start_url)
+end
+
+Given("it is the right url") do
+  puts "start_url:#{@start_url}"
+  puts "current_url:#{current_url}"
+  compare_urls(@start_url.to_s, current_url.to_s)
 end
 
 When("I am looking for the current url") do
@@ -47,8 +53,6 @@ Then(/^I should see all basic elements$/) do
       "Expect to find the css-element (#{homepage_content_searchfield_path}) but the page with the url #{current_url} has no such element"
   puts "> searchfield exists"
   find_secure(homepage_content_navi_path)
-  expect(page).to have_css(homepage_content_navi_path),
-      "Expect to find the css-element (#{homepage_content_navi_path}) but the page with the url #{current_url} has no such element"
   puts "> navi exists"
   find_secure(homepage_content_body_main_path)
   expect(page).to have_css(homepage_content_body_main_path),
