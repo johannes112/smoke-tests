@@ -44,6 +44,8 @@ module MyFunctions
         find_element_with_scrolling(path)
       elsif(page.has_css?(".has--error"))
         exception_has_error
+      elsif(page.has_css?('.entry--menu'))
+        path = '.entry--menu'
       end
       # search for similar path and rerun with new path given of function
       find_secure_counter < 2 ? retry : raise
