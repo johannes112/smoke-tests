@@ -17,6 +17,7 @@ if ENV['DRIVER'] == 'saucelabs'
     env_browser = ENV['BROWSER']
     env_version = ENV['VERSION']
     env_system = ENV['SYSTEM']
+    env_tag = ENV['TAG']
 
     #os =
     if (env_platform.length > 1)
@@ -95,7 +96,7 @@ if ENV['DRIVER'] == 'saucelabs'
         }
     end
 
-      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{env_version} #{ENV['SHOP']} #{ENV['COUNTRY']} #{env_browser} #{env_platform} #{env_version}"
+      @caps[:name] = "#{ENV['JOB_NAME']} -> build: #{ENV['BUILD_NUMBER']} #{ENV['SHOP']} #{ENV['COUNTRY']} #{env_browser} #{env_platform} #{env_version} #{env_tag}"
       @caps[:build] = "#{ENV['JOB_NAME']}__#{ENV['BUILD_NUMBER']}"
       @caps[:autoAcceptAlerts] = true
       #@caps[:unexpectedAlertBehaviour] = "dismiss"
