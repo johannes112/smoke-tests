@@ -117,7 +117,7 @@ module MyFunctions
       page.execute_script("window.scrollBy(0,100)")
       # condition to exit the fuencton
       find_scrolling_counter =+ 1
-      find_scrolling_counter < 50 ? retry : raise
+      find_scrolling_counter < 20 ? retry : raise
     end
   end
 
@@ -210,7 +210,7 @@ module MyFunctions
     sc = url_functions.get_status_code(url)
     if sc != 200
       puts "i can not visit #{url}"
-      exit
+      abort("HTTPCODE: #{sc}")
     else
       puts "statuscode:#{sc}"
     end
