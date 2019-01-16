@@ -4,13 +4,12 @@ Given("I am on the website {string}") do |site_of|
   base_url = settings.urlHttps
   #replace given string with url of this page
   @start_url = "#{base_url}#{get_url_part_of_website(site_of)}"
+  @start_url = @start_url.to_s
   #actions
   visit_secure(@start_url)
 end
 
 Given("it is the right url") do
-  puts "start_url:#{@start_url}"
-  puts "current_url:#{current_url}"
   compare_urls(@start_url.to_s, current_url.to_s)
 end
 
