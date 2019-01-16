@@ -24,6 +24,7 @@ export SHOPWARE_PASSWORD
 export SYSTEM
 export SHOP
 export COUNTRY
+export TAG
 export SAUCE_USERNAME
 export SAUCE_ACCESS_KEY
 
