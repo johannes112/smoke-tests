@@ -242,13 +242,11 @@ module MyFunctions
   end
 
   def compare_urls(expect_url, url)
-    puts "class expect_url:#{expect_url.class}"
-    puts "class url:#{url.class}"
     if (expect_url.eql? url)
       puts("#{expect_url}")
     else
-      exit("WRONG URL:##{url}")
-      throw "WRONG URL:##{url}"
+      puts("> URL should be:##{url}")
+      abort("> WRONG URL:##{expect_url}")
     end
   end
 
