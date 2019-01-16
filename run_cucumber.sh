@@ -28,7 +28,7 @@ export SAUCE_USERNAME
 export SAUCE_ACCESS_KEY
 
 #delete output.json
-> output.json
+> output/output.json
 
 #variables for cucumber
 parameter_config="$DRIVER $BROWSER $SYSTEM $SHOP $COUNTRY"
