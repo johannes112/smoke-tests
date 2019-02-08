@@ -1,4 +1,4 @@
- # smoke-tests for shopware shops
+# smoke-tests for shopware shops
 smoke-testing like browser-testing related to the appearance of a website
 ## browser-tests for webshops of emmos
 test the appearance of webshops of vega, jobeline, hotelwaesche, pulsiva in different environments via saucelabs
@@ -73,8 +73,8 @@ To start different tests on each mandant navigate via tags:
 - ie
 - chrome
 - safari
-- iPad
-- iPhone
+- MicrosoftEdge
+- headless
 
 ###### to start tests:
 Syntax (bash-shellaufruf):
