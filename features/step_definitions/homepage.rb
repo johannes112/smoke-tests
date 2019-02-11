@@ -2,9 +2,13 @@
 Given("I am on the website {string}") do |site_of|
   #variables:path
   base_url = settings.urlHttps
+  extension_url = get_url_part_of_website(site_of)
   #replace given string with url of this page
-  @start_url = "#{base_url}#{get_url_part_of_website(site_of)}"
+  @start_url = "#{base_url}#{extension_url}"
   @start_url = @start_url.to_s
+  puts "base_url: #{base_url}"
+  puts "url_extension:#{extension_url}"
+  puts "url: #{@start_url}"
   #actions
   visit_secure(@start_url)
 end

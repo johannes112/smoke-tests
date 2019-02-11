@@ -231,7 +231,7 @@ module MyFunctions
       #   puts "subcategorypage of #{websitebasics[:data].sub_category}"
       #   url_part = "#{websitebasics[:data].category}/#{websitebasics[:data].sub_category}/".downcase
       when "productdetailpage"
-        puts "subcategorypage of #{websitebasics[:data].productdetailpage}"
+        puts "productdetailpage of #{websitebasics[:data].productdetailpage}"
         url_part = "test-addtocart-735707?number=7357-07-1"
       else
         puts "Options: \n -homepage\n- category \n- subcategory \ndefault: take the given string"
